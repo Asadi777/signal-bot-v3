@@ -44,6 +44,11 @@
           <div class="card-t">Quick Mix</div>
           <div class="card-d">20 random questions</div>
         </button>
+        <button class="card" data-go="keymap">
+          <div class="card-ic">🔑</div>
+          <div class="card-t">Keyword → Table Map</div>
+          <div class="card-d">See a keyword, jump to the exact Rule/Table — searchable</div>
+        </button>
       </div>
 
       <div class="ai-row">
@@ -107,6 +112,17 @@
       <div id="score" class="score"></div>
       <div id="rdetail" class="rdetail"></div>
       <button class="primary" data-home>Home</button>
+    </section>
+
+    <!-- KEYWORD MAP -->
+    <section id="keymap" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>🔑 Keyword → Table / Rule</h2>
+      <p class="sub">See a keyword in a question → jump straight to the right place.
+        Type to filter (e.g. <b>motor</b>, <b>conduit</b>, <b>voltage drop</b>).</p>
+      <input id="kmSearch" type="text" placeholder="🔎 Search keyword, table, or rule…" />
+      <div id="kmList" class="kmlist"></div>
+      <p id="kmEmpty" class="foot hidden">No match — try another word.</p>
     </section>
 
     <!-- AI TUTOR -->

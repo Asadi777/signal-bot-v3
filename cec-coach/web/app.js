@@ -1,4 +1,4 @@
-/* CEC Coach — web app  (v1.0.2)
+/* CEC Coach — web app  (v1.1.0 — keyword map)
    Offline quiz bank + AI features (tutor / generator / vision) via the Claude API.
    The API key lives only in this browser (localStorage) and is sent straight to
    Anthropic with the direct-browser-access header — no backend needed. */
@@ -382,6 +382,105 @@
     return (err && err.message) ? err.message : "Request failed.";
   }
 
+  // ---------- keyword → table map ----------
+  var KEYWORD_MAP = [
+    { sec: "Section 4 — Conductors / Ampacity", rows: [
+      ["\"ampacity\" / \"max current a conductor can carry\"", "Tables 1–4", "base ampacity"],
+      ["\"in free air\" (Cu / Al)", "Table 1 (Cu) / Table 3 (Al)", ""],
+      ["\"in a raceway / conduit / cable\" (Cu / Al)", "Table 2 (Cu) / Table 4 (Al)", "start in the 90 °C column"],
+      ["\"more than 3 conductors\" / \"X conductors\"", "Table 5C", "grouping derate (4–6 = 0.80, 7–24 = 0.70)"],
+      ["\"ambient … °C\" (above 30 °C)", "Table 5A", "temperature correction"],
+      ["\"terminated at / terminal marked X °C\"", "Rule 4-006", "use the X °C column"],
+      ["\"continuous load\"", "Rule 8-104", "size at 125 %"],
+      ["\"neutral-supported / NS / overhead service\"", "Table 36B (Cu) / 36A (Al)", ""],
+      ["\"flexible cord / equipment wire / portable\"", "Table 12", ""],
+      ["\"underground, direct-buried, spaced\"", "Rule 4-004 1)d) + Diagrams D8/D10/D11", ""]
+    ]},
+    { sec: "Section 8 — Loads & Demand", rows: [
+      ["\"single dwelling … demand/service\"", "Rule 8-200", ""],
+      ["\"apartment / multiple dwelling\"", "Rule 8-202", ""],
+      ["\"basic load W/m² by occupancy\"", "Table 14", ""],
+      ["\"show window\"", "650 W/m", ""],
+      ["\"electric range\"", "Rule 8-200 (service = 6 kW) / 8-300 (branch = 8 kW)", ""],
+      ["\"voltage drop\"", "Rule 8-102 + Table D3", "3 % / 3 % / 5 %"],
+      ["\"how many receptacles on a circuit\"", "max 12 on a 15 A circuit", ""],
+      ["\"parking / EV charger load\"", "Rule 8-400", ""]
+    ]},
+    { sec: "Section 10 — Grounding & Bonding", rows: [
+      ["\"grounding electrode conductor / size of grounding conductor\"", "Table 43", "keyed to service-conductor ampacity"],
+      ["\"bonding conductor / bonding jumper\"", "Table 16", "ampacity OR overcurrent device"],
+      ["\"field-assembled grounding electrode\"", "Rule 10-102 / 10-104", ""],
+      ["\"equipotential bonding\"", "Rule 10-406", "#6 Cu / #4 Al"]
+    ]},
+    { sec: "Section 12 — Wiring Methods", rows: [
+      ["\"box fill / conductors in a box\"", "Rule 12-3036 + Table 23", ""],
+      ["\"conduit fill / minimum conduit size\"", "Rule 12-910 + Tables 6/8/9", "1→53 %, 2→31 %, 3+→40 %"],
+      ["\"bend radius\"", "Table 7", ""],
+      ["\"number of bends\"", "Rule 12-936", "max 360°"],
+      ["\"support / secured / spacing\"", "Rule 12-510/560; Table 21", "300 mm then ≤1.5 m"],
+      ["\"minimum cover / buried depth\"", "Table 53", ""],
+      ["\"NMD90 / NMSC distance from stud\"", "32 mm (Rule 12-516)", ""],
+      ["\"cable type selection / dry-damp-wet\"", "Table 19 + Table D1", ""]
+    ]},
+    { sec: "Section 14 — Protection", rows: [
+      ["\"overcurrent / breaker or fuse size for a conductor\"", "Rule 14-104 + Table 13", ""],
+      ["\"is ground-fault protection required?\"", "Rule 14-102", "only if ≥1000 A AND >150 V to ground"]
+    ]},
+    { sec: "Section 26 — Equipment", rows: [
+      ["\"receptacle spacing in a dwelling\"", "Rule 26-712", ""],
+      ["\"GFCI required?\"", "Rule 26-700 area", ""],
+      ["\"transformer overcurrent / primary fuse\"", "Rule 26-250 / 26-254", ""],
+      ["\"capacitor conductor size\"", "Rule 26-210", "≥135 %"],
+      ["\"panelboard handle height\"", "1.7 m max", ""]
+    ]},
+    { sec: "Section 28 — Motors", rows: [
+      ["\"motor full-load current / FLC\"", "Table 44 (3-phase) / 45 (1-phase)", "not the nameplate"],
+      ["\"motor branch conductor size\"", "Rule 28-106", "125 % of FLC"],
+      ["\"overload size\"", "Rule 28-306", "nameplate FLA × 1.25 (or 1.15)"],
+      ["\"max fuse/breaker for a motor branch\"", "Table 29", "175 / 225 / 300 / 1300 %"],
+      ["\"disconnect distance\"", "within 9 m / in sight", ""]
+    ]},
+    { sec: "Section 2 / 0 — General & Definitions", rows: [
+      ["\"working space / clearance in front of\"", "Rule 2-308 + Table 56", "Table 56 uses line-to-ground voltage"],
+      ["\"voltage to ground in a dwelling\"", "Rule 2-110", "150 V"],
+      ["\"enclosure type (3R, 4X…)\"", "Table 65", ""],
+      ["\"deviation / special permission\"", "Rule 2-030", ""]
+    ]}
+  ];
+
+  function hl(text, q) {
+    var s = esc(text);
+    if (!q) return s;
+    var re = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
+    return s.replace(re, "<mark>$1</mark>");
+  }
+  function renderKeymap(q) {
+    q = (q || "").trim().toLowerCase();
+    var host = $("kmList"); host.innerHTML = "";
+    var any = false;
+    KEYWORD_MAP.forEach(function (group) {
+      var rows = group.rows.filter(function (r) {
+        if (!q) return true;
+        return (r[0] + " " + r[1] + " " + r[2] + " " + group.sec).toLowerCase().indexOf(q) >= 0;
+      });
+      if (!rows.length) return;
+      any = true;
+      var box = el("div", "kmsec");
+      var count = group.rows.length;
+      box.appendChild(el("h3", null, esc(group.sec) + " <span class='pill'>" + rows.length + "/" + count + "</span>"));
+      rows.forEach(function (r) {
+        var row = el("div", "kmrow");
+        row.innerHTML =
+          "<div class='kmkw'>" + hl(r[0], q) + "</div>" +
+          "<div class='kmjump'><span class='kmlbl'>Jump to</span><span class='arrow'>→</span> <b>" + hl(r[1], q) + "</b></div>" +
+          "<div class='kmwhy'>" + (r[2] ? "<span class='kmlbl'>Why</span>" + hl(r[2], q) : "") + "</div>";
+        box.appendChild(row);
+      });
+      host.appendChild(box);
+    });
+    $("kmEmpty").classList.toggle("hidden", any);
+  }
+
   // ---------- nav ----------
   function gotoSettings(note) {
     show("settings");
@@ -418,6 +517,7 @@
       if (g === "tutor") show("tutor");
       else if (g === "generate") show("generate");
       else if (g === "vision") show("vision");
+      else if (g === "keymap") { show("keymap"); renderKeymap($("kmSearch").value); }
       return;
     }
   });
@@ -432,6 +532,7 @@
   };
   $("chatsend").onclick = function () { sendChat(); };
   $("chatinput").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); } });
+  $("kmSearch").addEventListener("input", function (e) { renderKeymap(e.target.value); });
   $("genGo").onclick = generate;
   $("visionGo").onclick = askVision;
   $("fileInput").onchange = function (e) { handleFile(e.target.files[0]); };

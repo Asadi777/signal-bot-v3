@@ -130,6 +130,28 @@ textarea,input[type=text],input[type=password],select{
 .attachPreview img{max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .attachPreview .pill{display:inline-block; background:#fff; color:var(--ink); padding:8px 12px; border-radius:10px; font-size:13px}
 
+/* keyword map */
+#kmSearch{margin-bottom:14px; position:sticky; top:60px; z-index:5}
+.kmlist{display:flex; flex-direction:column; gap:18px}
+.kmsec{background:#fff; border-radius:16px; padding:14px 14px 8px; box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.kmsec h3{margin:2px 0 10px; color:var(--accent2); font-size:16px; display:flex; align-items:center; gap:8px}
+.kmsec h3 .pill{background:#eef4f1; color:#2c5d4a; font-size:11px; padding:2px 8px; border-radius:99px; font-weight:700}
+.kmrow{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:10px; align-items:center;
+  padding:11px 6px; border-top:1px solid var(--line)}
+.kmrow:first-of-type{border-top:0}
+.kmkw{font-weight:600; color:var(--ink); line-height:1.4}
+.kmjump{display:flex; align-items:center; gap:6px}
+.kmjump .arrow{color:var(--muted)}
+.kmjump b{background:#e9f7ee; color:#0b6b34; padding:4px 10px; border-radius:9px; font-weight:800; line-height:1.35}
+.kmwhy{color:var(--muted); font-size:13px; line-height:1.4}
+.kmrow mark{background:#ffe9a8; color:inherit; padding:0 2px; border-radius:4px}
+.kmlbl{display:none; font-size:11px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.4px}
+@media(max-width:560px){
+  .kmrow{grid-template-columns:1fr; gap:4px; padding:12px 4px}
+  .kmlbl{display:block; margin-top:6px}
+  .kmjump b{display:inline-block}
+}
+
 .dots:after{content:'…'; animation:dots 1.2s steps(4,end) infinite; display:inline-block; width:1em; text-align:left}
 @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
 
