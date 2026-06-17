@@ -1,5 +1,0 @@
-# Teacher Study Material — Image A3
-
-could not read — The Google Drive file (fileId `1e1RpraaTlVspF1Won9luWdV4UYG06_kS`, title "WhatsApp Image 2026-06-16 at 9.32.07 PM (2).jpeg", a 925x280 progressive JPEG) was downloaded as inline base64 under the `content` key. After base64 decode the JPEG data stream was truncated/corrupt (PIL: "broken data stream when reading image file"); the raw progressive JPEG was rejected by the image-viewer, and a salvaged/re-encoded baseline PNG rendered as an entirely black frame with no recoverable text, tables, or diagrams. The base64 payload appears to have been truncated/corrupted in transit, so no content could be transcribed within the 2-attempt limit.
-
-Note: a prior version of this file contained a reconstructed (non-verbatim) description of a CEC Rule 12-3036 box-fill counting chart. That earlier content was an inference, not a transcription from a successfully-read image, and has been replaced because this read attempt could not verify it. Re-OCR via Google Docs export (text/HTML) is recommended to obtain authoritative content.
