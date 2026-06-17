@@ -806,3 +806,155 @@ Specific exam-answer facts the teacher states (use to fill bank gaps); all in **
 - **"Seventy-five millimetres of sand BOTH above and below — they steal the word 'both' to trick you."**
 - **"This is the question God gives you to pass you."** (The Table 16 / simple-lookup gift questions.)
 - [teacher meta] **"After 340 students you know exactly which corners they crash on, so you post a 'danger' sign there."** (Why he drills the same traps.)
+
+---
+
+## Session 6 (جلسه ۶)
+
+Continuation of the same coaching series. The class resumes mid-**Section 12 (Wiring Methods)** at "page 109" (Rule 12-012), so it **opens with a brief review** of the Table 53 underground minimum-cover reduction already covered in Session 5 (not re-documented here except where it adds detail), then works **straight through the bulk of Section 12**: the direct-buried sand-bedding "both" trap (Rule 12-012(4)), roof-decking (Rule 12-022), the master conductor/cable-selection table **Table 19** and its companion **Table D1**, **parallel conductors** (Rule 12-108), **terminations** (Rule 12-118) and aluminum spring washers, **vertical-raceway support** (Rule 12-120, Table 21), **flexible cords** (Tables 11A/11B), **exposed & exterior/inter-building wiring** clearances (Rules 12-300/302/308), and the **non-metallic-jacketed (NMD) cable** family (Rules 12-500 through 12-518, with their +50 twins 12-550–12-566). It closes on re-exam/scheduling logistics (excluded). The instructor again teaches a few items from the **2024 book specifically** where a number changed. Tags as before: **[teacher]** = his own assertion/method; **[standard CEC]** = matches the published code; numbers flagged *approx.* are transcription-noisy.
+
+### Concepts taught
+
+#### Section 12 — Underground (review + completion)
+
+**Table 53 cover-reduction Note — re-derived live [standard CEC, flagged "this came up two weeks ago"]:** he re-walks the **150 mm reduction** (already in Session 5) and re-emphasizes the trap students hit: when given the three protection forms (**treated wooden plank ≥ 38 mm**, **concrete slab ≥ 50 mm**, **poured concrete ≥ 50 mm**, each overhanging **≥ 50 mm** for the flat forms), students "stop reading at the max" and answer **50 mm** of reduction instead of **150 mm**. The picture in **Appendix B** is the one to mark. [teacher] He frames this as a *quiz-the-distractor* habit: when you don't know the answer outright, **eliminate the wrong options** — "**7 or 8 of the exam questions** are solved this way, especially motor questions" (a generic 'why won't the motor start?' has a thousand causes, so you knock out the impossible ones).
+
+**Direct-buried sand bedding — the "both" trap restated [standard CEC, Rule 12-012(4)]:** direct-buried cables **run adjacent to each other, do not cross over each other**, bedded in **screened sand, max particle 4.75 mm, ≥ 75 mm BOTH above and below** the conductor. [teacher] He recounts an English-fluent student (ex-ship's captain) who found **two correct-looking answers** because one option said "75 mm above, 75 below" and another expressed the same as a total around the cable — the **word "both"** is what's stolen to make a distractor. Canonical answer: **"75 mm both above and below."**
+
+**Roof-decking — Rule 12-022 [standard CEC, flagged red, picture in Appendix B]:** a **roof-decking system** is the corrugated/profiled metal roof-deck (balconies, house roofs). If you route a cable or raceway across it you **must keep it visible — it shall NOT be run inside the profile/flutes (concealed)**, because someone later drilling into the deck (e.g. to hang a planter) could hit a hidden cable. [teacher] The exam shows the picture with the "danger" mark removed and asks **which routing (A/B/C) is wrong** — answer = the one run **inside the profile**; the rule requires the cable be in a **visible/accessible (not permanently concealed)** location. Mark the Appendix B figure.
+
+#### Section 12 — Conductor & cable selection (Table 19 + Table D1)
+
+**Table 19 — "Conditions of use of conductors and cables" [teacher, taught as a high-value exam target]:** Section 4 told you how to **size** a conductor; **Table 19 tells you WHICH cable type to pick** for the conditions — "the most important task you have." It is a **~7–8 page** table listing **50–60 cable types** by name with their permitted conditions. [teacher] He laments his own training school "just said 'here are the cable types' and ran past it"; he teaches it fully because **it is heavily tested**. Rule of thumb (his "20% of the words = 80% of speech" analogy): **knowing 6–7 common cable types covers ordinary work.**
+- **Four key selection conditions [standard CEC, "...but not limited to"]:** the table header says the listed conditions are not exhaustive, but the four big ones are: **(1) moisture — dry / damp / wet; (2) temperature; (3) enclosure/exposure degree (raceway? exposed? concealed?); (4) mechanical protection.** All must be satisfied — it is an **AND**, not an OR.
+- **Dry / Damp / Wet defined [teacher]:**
+  - **Dry** = a normally-dry location, OR one where any moisture that forms is **promptly removed** (e.g. a bathroom with an exhaust fan running — the fan vents the humidity, so it counts as dry). Inside a house is generally dry.
+  - **Damp** = moderate moisture, indoor or outdoor: an indoor pool deck, OR an **outdoor location sheltered from direct rain** (under an eave).
+  - **Wet** = exposed to water directly — anywhere **rain falls on it**, underground in water, or a wash-down area. (Outdoor-direct-rain = wet.)
+- **The "three ticks" method [teacher]:** to approve a cable for a job, **every** required condition must "pass" — he literally checks down the Table 19 row: dry/damp/wet ✓, service/feeder/branch/control ✓, exposed/concealed/raceway ✓. If **any one** fails (e.g. a "✗"/struck-through cell), **you may not use that cable** for that case.
+- **Worked example — AC90 ("ای سی ناایدی") [teacher]:** armoured cable AC90 reads: usable **dry ✓**, **damp ✓ (in some references)**, **wet ✗**; usable for **feeder/branch/control**, **NOT for service**; **NOT exposed, NOT concealed — raceway only**. He stresses AC90 (and **TECK90/"تکنود"**) are the "**white-foreheaded / go-to**" armoured cables every electrician should memorize. **AC90** comes **jacketed and unjacketed**; **TECK90** is the all-purpose "every-dish's-chickpea" cable — pricier but usable almost anywhere.
+- **Two real cautionary tales [teacher, exam-relevant takeaway]:** (1) a student installed an **A/C unit** running **AC90 along an outdoor wall** — i.e. a **wet** location — which AC90 **cannot** even do as *damp*, let alone *wet*; "the worst possible cable choice." (2) Another bought AC90 for a **rooftop A/C** (wet) — wrong again. Lesson: **AC90 is a dry/(damp) cable; never wet, and never in a raceway substitute when wet.** The cable-shop counter staff often pick wrong, so **you** verify against Table 19.
+- **Communication cables — CMP max temperature [teacher, flagged unresolved]:** Table 19 also lists comms cables. A recurring exam question asks the **maximum conductor temperature of type CMP**; the answer keyed in the bank is **60 °C**, but [teacher] he notes the **2021 book may show a different value (he's unsure — possibly 75 °C / a higher figure)** because students mis-report it. **Flag: CMP max-temp value is uncertain/approximate — verify against the 2024 Table 19.** ~1–2 comms-cable questions appear.
+
+**Table D1 (Appendix D) — cable voltage & available sizes [teacher, "the orphan table"]:** Table 19 does **not** tell you a cable's **voltage rating** or **which sizes it's manufactured in** — those are in **Table D1**, a large table the code **never references by name** (he calls it "this motherless table"), yet it **is tested**.
+- It also marks **armoured vs non-armoured** (an extra way to read whether a cable is armoured).
+- **Worked readings [teacher, voltages approx. from transcript]:**
+  - **NMD90 ("ان ام دی ناایدی")** — ordinary house wiring (walls, receptacles, lights): **non-metallic-sheathed, max 300 V**, sizes **#14 up to #2** (no need for 2000 kcmil in a house). It's cheap; armour would just waste money since it's run in-wall.
+  - **AC90** — voltages **600 V / 1000 V**, up to **2000 V** max; covers the **whole of Table 2** size range.
+  - **TECK90** — the **full Table 2** range, **#14 to 2000 kcmil**, all voltages; the go-anywhere cable.
+  - **ACWU90** — armoured **and** cheap (cheaper than TECK because lower voltage range); used by builders; carries most sizes.
+  - **5000 V project rule of thumb [teacher]:** on a **5000 V** job you **cannot** use AC90 (caps at 2000 V) — step up to **TECK90**.
+- **Name-decoding hints [teacher, flagged "rough, not a real formula"]:** a **"U"** in the type name usually means **underground-rated** (e.g. NMWU); an **"R"** usually means a **rubber/plastic (thermoset)** insulation. Verify in the spec, don't rely on the letters alone.
+
+#### Section 12 — Parallel conductors (Rule 12-108)
+
+**Paralleling conductors [standard CEC, flagged red]:** "parallel" here means running **two (or more) conductors per phase** (e.g. two 400-cmil-class cables instead of one 800-A cable), to use available stock or ease handling. [teacher] He used it on a 12-storey job: one **800 A** cable was scarce/needlessly costly and hard to pull up the riser, so he ran **two 400 A** cables in parallel per phase — code-permitted.
+- **The hard rule [standard CEC]:** only **size 1/0 and larger** conductors may be paralleled. Small conductors may **not** be paralleled — their per-strand resistance tolerance is too loose, so current won't divide evenly.
+- **Conditions (a)–(f), all required [standard CEC, "yellow"]:** the paralleled conductors must be **(1) the same length, (2) the same conductor material** (no copper-with-aluminum), **(3) the same size/cross-section, (4) the same insulation type, (5) the same termination method, and (6) free of splices** (no joints mid-run). [teacher] All exist to keep the **resistances equal** so the current splits evenly.
+- **Why it's dangerous if done wrong [teacher]:** current takes the path of least resistance; if one parallel leg is even slightly shorter (lower R), it could carry **30 A while its twin carries 15 A** — the imbalance overheats one cable → **fire**. He refuses to let a careless installer do paralleling work. "Put a fire extinguisher next to it." This is **why** the six conditions exist.
+
+#### Section 12 — Terminations (Rule 12-118) & aluminum spring washers
+
+**Termination method by size — Rule 12-118 [standard CEC, flagged red, "the size-10 question"]:** a **termination** is any point where a conductor lands on a terminal (panel lug, receptacle screw, etc.). The required method splits at **size #10**:
+- **#10 and smaller** → may be connected by a **binding-screw terminal** (or stud-and-nut type) — the screw terminals you see on receptacles.
+- **larger than #10** → must use a **solderless connector** ("soldless conductor"/lug). [teacher] The fancy name hides an ordinary lug.
+- [teacher] Exam questions **almost always use size #10** itself (the boundary) because students trip on it. "Every parallel/termination question I've seen sat on **#10**."
+
+**Aluminum-conductor terminations & spring washers — Rule 12-118 / Tables 5A-5B area [teacher, exam item]:** **aluminum has a high thermal expansion/contraction coefficient** — an aluminum conductor torqued tight in summer can **work loose in winter** as it contracts (a real failure he's repaired). Remedy: use a **spring washer** under the lug. **Two types:**
+- **Conical (Belleville) washer** and **helical (split-lock) washer** — they differ only in shape; **both are spring washers**. [teacher] If the exam says **"conical washer,"** accept it — its **spring action** is what compensates the expansion/contraction; the spring material must retain its elasticity. *(He notes a possible exam item distinguishing conical vs helical.)*
+
+#### Section 12 — Vertical raceway support (Rule 12-120, Table 21)
+
+**Supporting conductors in a vertical raceway [standard CEC]:** conductors run **up/down a vertical raceway** (e.g. a riser, or cable lifted on a **cable ladder / "cinicab" = cable tray/ladder**) must be **supported at the top (or at terminations) and at intervals not exceeding the values in Table 21**, so the cable's own weight doesn't pull it down/stretch it. [teacher] Table 21 indexes the **maximum support spacing by conductor size** (smaller sizes → larger allowed spacing; he calls the maxima "generous"). It is a **maximum** — you may support more often. Flagged as a current/recent exam item (in the bank as of ~5–6 months ago).
+
+#### Section 12 — Flexible cords (Tables 11A / 11B)
+
+**Flexible-cord family — Tables 11A & 11B [standard CEC; 2024 reorganized]:** the cords/cables **excluded** from Table 19 — **flexible cord, heater cord, equipment wire, portable power cable, elevator cable, festoon cable** — have their **own** tables. In the **2024 book** the old single **Table 11** was split (via a rule pointer) into **Table 11A (equipment wire)** and **Table 11B (flexible cords)**, reformatted to look like Table 19 (dry/damp/wet/exposed/oil columns, plus **voltage and temperature** built into the same table — no separate D1 needed here). [teacher] **No technical change**, just layout (page ~445 in 2024).
+- **Usage grades [standard CEC, flagged: "two exam questions, both answer Extra-Hard Usage"]:** cords are rated **not-for-hard-usage** (delicate, fully protected location only), **hard usage** (tolerates minor mechanical damage — a shoulder bump), and **extra-hard usage** (can be walked on with safety boots, run over with a wheelbarrow).
+- **Two guaranteed exam questions both answer "Extra-Hard Usage" [teacher]:**
+  1. **Section 64 / Photovoltaic:** the flexible cord interconnecting **rooftop solar modules** must be **extra-hard-usage** flexible cord (a distractor offers plain "hard usage"; the name may also be given as a type code like **SOW/SJOW** — recognize that only certain types are extra-hard, e.g. **SO/SOOW**).
+  2. **Temporary wiring under construction** (e.g. a carpenter's portable feed in a house being built): also **extra-hard-usage**, because boots and wheelbarrows pass over it.
+  [teacher] "If 'extra-hard usage' is among the answers in either scenario, pick it."
+
+#### Section 12 — Exposed & exterior / inter-building wiring (Rules 12-300 / 302 / 308)
+
+**Exposed wiring on/between buildings on the same premises [standard CEC]:** covers wiring run **on the exterior of a building** or **between separate buildings on the same premises** (e.g. an old detached garage fed from the main house — both count as "same premises" / one property). Key dimensions [teacher, some flagged 2024 changes]:
+- **Maximum unsupported span = 4.5 m** [standard CEC]: an overhead conductor span between buildings/supports may run **without an intermediate pole/support up to 4.5 m**; beyond that (e.g. 6 m) you **must add a support**.
+- **Roof clearances for overhead conductors [standard CEC, Rule 12-302 area]:**
+  - Over a roof you **can walk on**, measured from roof surface (or platform): **≥ 2.5 m**.
+  - Over a roof you **cannot walk on** (steep/no access): **≥ 1 m**.
+  - **Exception:** with **special permission (deviation)** from the authority, the 2.5 m may be reduced **but not below 2 m**.
+- **Mounting must keep conductors out of reach:** conductors **shall not be reachable by a person standing on a fire escape**, and shall sit the clearances above the highest walkable point. [teacher] He reads these from the **2024 book** noting a likely change; **mark in the Service section too** (these tie to service-entrance clearances).
+
+**Neutral-supported (messenger) service cable — Rule 12-308 [standard CEC, flagged red, 2024 number change]:** the overhead **neutral-supported cable** entering a building from the utility pole:
+- **shall NOT be mounted to the surface of the building** (it hangs free, on a standoff), with a clearance **not less than 1 m**;
+- if marked **"festoon" / mobile-home type**, the **support span shall not exceed 40 mm** (he reads this as the attachment-spacing figure) — [teacher] **this number was 30 mm or 35 mm in the older book and is now 40 mm in 2024** — flagged red exam answer. *(The metric here is transcription-noisy — confirm the exact figure/units against 2024 Rule 12-308.)*
+
+#### Section 12 — Non-metallic-jacketed (NMD) cable (Rules 12-500 → 12-518; twins 12-550 → 12-566)
+
+[teacher] **Heads-up on the 2024 renumbering:** the 2024 book **duplicated** the NMD rules — the original **12-500-series** (general non-metallic jacketed cable) was copy-pasted into a **12-550-series** specifically naming **NMD90 and NMWU**. **The content is essentially identical** ("copy-paste to claim the book changed"); the only real difference is the **maximum voltage**. So: **whatever rule number I give in the 500s, add 50 and mark its twin in the 550s.** [teacher] He marks both.
+
+- **Max voltage — Rule 12-502 / 12-552 [standard CEC]:** NMD cable shall not be used above its **marked voltage**; per **Table D1 that is 300 V** (the house-wiring cap).
+- **Heat clearances — Rule 12-506 / 12-556 [standard CEC, flagged red]:** where NM-jacketed cable runs **near a heat source**, "transfer of heat to the cable shall be minimized." Required **air-space clearances** [standard CEC]:
+  - **≥ 25 mm** between the cable and a **heating duct or piping**;
+  - **≥ 50 mm** between the cable and **masonry/concrete/brick chimney** (i.e. a masonry chimney);
+  - **≥ 150 mm** between the cable and a **chimney flue / flue-liner opening (clean-out)**.
+  [teacher] "These came up on my own exam." Watch which clearance pairs with which heat source (25 = duct/pipe, 50 = masonry chimney, 150 = flue).
+- **Support spacing — Rule 12-510 / 12-560 [standard CEC]:** for NM cable run between boxes on a wall:
+  - the first support each side of a box: **within 300 mm of every box**;
+  - thereafter at **intervals not exceeding 1.5 m**.
+- **No embedding — Rule 12-512 / 12-562 [standard CEC]:** NM-jacketed cable (no armour) **shall not be embedded** in concrete/plaster. (Armoured cables may be embedded; these may not.)
+- **Mechanical protection in three locations — Rules 12-514/12-516/12-518 (twins 12-564/566) [standard CEC, taught from the 2021 pictures]:** the protection a cable needs depends on **where** it runs; the book splits it into three cases:
+  - **12-514 / non-concealed in an ATTIC/accessible space [standard CEC]:** an attic is technically *covered* but you can *enter* it (it has a hatch) → it is **"non-concealed"** (concealed means *permanently* inaccessible). Where the attic is **walkable / accessible** (height **> 1 m**, the figure he reads), cables crossing the joists must be protected by **running boards / guard strips** (two boards with the cable between them, or the cable laid on a running board) so a worker's foot/knee doesn't damage them. [teacher] The exam gives a **vertical-distance-between-joists** threshold above which guard strips are required; mark Appendix B.
+  - **12-516 / 12-566 — concealed installation [standard CEC, flagged red, "the 32 mm question"]:** where a cable passes **through a stud/joist/framing member**, the **nearest cable surface shall be kept ≥ 32 mm from the edge** of the member — so the later drywall screw / drill doesn't hit it. If **32 mm cannot be maintained**, you must install an **approved protector plate** (a hardened steel plate the screw can't penetrate — *not* a homemade tin lid) over the cable, OR use a **steel insert/sleeve bushing** in the hole. [teacher] "**32 mm or a protector plate**" — the canonical answer.
+  - **12-518 — exposed installation [standard CEC]:** for **exposed (surface, "ru-kar")** wiring the rule is loose ("like salt to taste"): the cable shall be **adequately protected against mechanical damage**, especially where run **within 1.5 m of the floor** or otherwise subject to damage. No hard number — just "adequate protection."
+
+[teacher] **Armoured cable** rules are deferred to the next session (out of time). Section 12 is expected to finish next class, then Sections 14/16/18/20/22/24 fit in roughly one session (~10 min each), with **26 and 28 each taking multiple sessions**; from **Section 28 onward** he switches to recorded video plus 500-question problem sets.
+
+### Answer clarifications for the question bank
+
+Specific exam-answer facts the teacher states (use to fill bank gaps); all in **Section 12** unless noted:
+
+- **Roof-decking (Rule 12-022): cable/raceway crossing a roof-deck must be VISIBLE — NOT run inside the profile/flutes (not concealed).** The "which routing is wrong (A/B/C)" picture-answer = the one hidden in the profile.
+- **Table 19 = "Conditions of use of conductors and cables"** — pick the **cable TYPE** here (Section 4 only sized it). Four governing conditions: **moisture (dry/damp/wet), temperature, enclosure/exposure, mechanical protection** — all must pass (AND, not OR).
+- **Dry / Damp / Wet:** **Dry** = normally dry OR moisture promptly removed (bathroom with exhaust fan = dry). **Damp** = moderate / sheltered-outdoor (under an eave). **Wet** = direct rain / underwater / wash-down (outdoor-in-rain = wet).
+- **AC90:** dry (and damp per some refs), **NOT wet**; feeder/branch/control but **NOT service**; **raceway only — not exposed, not concealed.** Installing AC90 on an outdoor wall / rooftop A/C (wet) is non-compliant ("worst possible choice").
+- **AC90 and TECK90 are the two go-to armoured cables** to memorize; **AC90 comes jacketed and unjacketed**; **TECK90 = all-purpose, full Table 2 size range, all voltages.**
+- **Cable voltage rating & available sizes come from TABLE D1 (Appendix D)** — never referenced by name in the rules but **tested**. **NMD90 = 300 V**, sizes #14–#2. **AC90 ≤ 2000 V** (typ. 600/1000 V). **TECK90 = full range #14–2000 kcmil, all voltages.** **A 5000 V job → must use TECK90, not AC90.**
+- **CMP communication cable max conductor temperature — bank answer 60 °C, but flagged UNCERTAIN** (2021 book may differ; possibly 75 °C). **Verify against 2024 Table 19.** *(approx.)*
+- **Parallel conductors (Rule 12-108): only size 1/0 AND LARGER may be paralleled.** All paralleled legs must be **same length, same material, same size, same insulation type, same termination, and free of splices** (six conditions, all required) — to keep resistances equal.
+- **Terminations (Rule 12-118): #10 and smaller → binding-screw terminal; larger than #10 → solderless connector (lug).** Exam questions sit on **size #10** (the boundary).
+- **Aluminum conductor terminations use a SPRING WASHER (conical/Belleville OR helical/split-lock — both are spring washers)** to compensate aluminum's high expansion/contraction. If the exam says "conical washer," accept it (its spring action is the point).
+- **Vertical-raceway conductor support (Rule 12-120): support at top/terminations and at intervals NOT exceeding TABLE 21** (max spacing by conductor size; it's a maximum).
+- **Flexible cords / equipment wire are NOT in Table 19 — they're in TABLE 11A (equipment wire) / TABLE 11B (flexible cords)** (2024 split; was Table 11). Voltage & temperature are built into 11A/11B.
+- **Two "Extra-Hard Usage" answers:** **(1) PV/solar module interconnect cord (Section 64) = extra-hard-usage flexible cord; (2) temporary wiring under construction = extra-hard-usage.** If "extra-hard usage" is an option in either, pick it.
+- **Exposed/inter-building wiring (same premises): max unsupported overhead span = 4.5 m** (add a support beyond it).
+- **Overhead-conductor roof clearance: ≥ 2.5 m over a walkable roof; ≥ 1 m over a non-walkable roof; deviation may reduce 2.5 m but NOT below 2 m.** Conductors must not be reachable from a fire escape (Rule 12-302).
+- **Neutral-supported service cable (Rule 12-308): not mounted to the building surface, clearance ≥ 1 m; festoon/mobile-home support span ≤ 40 mm** — flagged red; **was 30/35 mm, now 40 mm in 2024.** *(figure transcription-noisy — confirm exact value/units.)*
+- **NMD cable max voltage = 300 V** (Rule 12-502/12-552; per Table D1).
+- **NMD heat clearances (Rule 12-506/12-556): ≥ 25 mm from a heating duct/piping; ≥ 50 mm from a masonry/concrete/brick chimney; ≥ 150 mm from a chimney flue/flue-liner.** (25 = duct, 50 = masonry chimney, 150 = flue.)
+- **NM cable support (Rule 12-510/12-560): within 300 mm of every box, then at intervals ≤ 1.5 m.**
+- **NM-jacketed (non-armoured) cable shall NOT be embedded in concrete/plaster (Rule 12-512/12-562).**
+- **Concealed cable through a framing member (Rule 12-516/12-566): nearest cable surface ≥ 32 mm from the member's edge; if 32 mm not achievable, use an APPROVED protector plate (or steel insert bushing).** "32 mm or a protector plate."
+- **Exposed cable within 1.5 m of the floor (Rule 12-518): "adequately protected against mechanical damage"** (no fixed number).
+- **2024 renumbering note: the NMD 12-500-series rules are duplicated as 12-550-series (NMD90/NMWU) — content essentially identical except max voltage; mark both (add 50 to the rule number).**
+- [teacher method] **"Eliminate the wrong answers"** resolves ~**7–8 exam questions**, especially open-ended motor-fault questions.
+
+### Mnemonics / phrasings
+
+- **"Section 4 sizes the wire; Table 19 picks the cable."** (The division of labour between the two.)
+- **"Three ticks or it's out — dry/damp/wet, the use, and exposed/concealed/raceway must ALL pass."** (Table 19 selection.)
+- **"AC90 is a dry cable — never wet, never on an outdoor wall; the worst thing you can put on a rooftop A/C."**
+- **"AC90 and TECK90 are the white-foreheaded cables — the two armoured ones you always know."** (TECK90 = "every dish's chickpea" — goes anywhere.)
+- **"Table 19 won't tell you the voltage or the sizes — that's the motherless table D1 nobody names but the exam loves."**
+- **"One-aught and larger, or you don't parallel — same length, same metal, same size, same insulation, same termination, no splices, or you've built a fire."** (Rule 12-108.)
+- **"Ten and under, a screw terminal; over ten, a solderless lug — and the question always sits on ten."** (Rule 12-118.)
+- **"Aluminum shrinks in winter and walks out of the lug — so you put a spring washer (conical or helical) under it."**
+- **"If 'extra-hard usage' is on the menu for solar or for temporary wiring, order it."**
+- **"Four-and-a-half metres before you need a pole."** (Max unsupported overhead span.)
+- **"Two-and-a-half over a roof you can walk, one metre over one you can't — and a deviation never takes you below two."**
+- **"Twenty-five from a duct, fifty from a chimney, one-fifty from the flue."** (NMD heat clearances.)
+- **"Three hundred from the box, then a metre-and-a-half forever after."** (NM cable support spacing.)
+- **"Thirty-two millimetres off the edge — or a protector plate the screw can't beat."** (Rule 12-516.)
+- **"Whatever number I give you in the five-hundreds, add fifty and mark its twin."** (2024 NMD copy-paste renumber.)
+- [teacher method] **"When you don't know the answer, prove the wrong ones wrong — that's how you steal 7 or 8 questions, especially on motors."**
