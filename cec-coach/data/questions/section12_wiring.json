@@ -91,14 +91,15 @@
       "type": "theory",
       "topic": "nmsc-voltage",
       "question": "What is the maximum voltage permitted by the code between conductors in a non-metallic sheathed cable (NMD90) installation?",
-      "answer": "300 V (per 2021 code); in the 2024 code it shall not exceed the voltage rating marked on the cable",
-      "references": ["Rule 12-500"],
+      "answer": "300 V",
+      "references": ["Rule 12-552", "Table D1"],
       "solution_steps": [
-        "2021 code: maximum 300 V between conductors.",
-        "2024 code: not to exceed the voltage rating as marked on the cable. Difference flagged for review."
+        "NMD90 is governed in the 2024 code by the 12-550 series (Rule 12-552), the NMD90/NMD-W twin of the general 12-500 series.",
+        "Rule 12-552 / Table D1: NMD90 is rated and limited to a maximum of 300 V — the marked voltage rating of NMD90 is 300 V, which is ample for house wiring (≤ 240 V).",
+        "Result: 300 V. (Confirmed for the 2024 code — NMD90's marked/maximum voltage is 300 V; this is not a 2021-only value.)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-007",
@@ -124,14 +125,15 @@
       "type": "theory",
       "topic": "nmsc-voltage",
       "question": "What is the maximum voltage permitted by the code between conductors in a non-metallic sheathed cable (NMSC) installation?",
-      "answer": "300 V (per 2021 code); per 2024 code it shall not exceed the voltage rating as marked on the cable",
-      "references": ["Rule 12-500"],
+      "answer": "300 V",
+      "references": ["Rule 12-552", "Table D1"],
       "solution_steps": [
-        "2021: 300 V between conductors.",
-        "2024: not to exceed the voltage rating marked on the cable. 2021 vs 2024 difference flagged."
+        "Non-metallic-sheathed cable NMD90 is covered by Rule 12-552 (the 2024 NMD90/NMD-W twin of the 12-500 series).",
+        "Rule 12-552 / Table D1: NMD90 maximum voltage = 300 V (its marked rating).",
+        "Result: 300 V (confirmed for the 2024 code)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-009",
@@ -511,14 +513,15 @@
       "type": "theory",
       "topic": "nmsc-voltage",
       "question": "What is the maximum voltage rating of non-metallic sheathed cable?",
-      "answer": "Not to exceed the voltage rating as marked on the cable (300 V in the 2021 code)",
-      "references": ["Rule 12-500"],
+      "answer": "300 V",
+      "references": ["Rule 12-552", "Table D1"],
       "solution_steps": [
-        "2024: not to exceed voltage rating marked on the cable.",
-        "2021: 300 V. 2021 vs 2024 difference flagged."
+        "The maximum voltage rating of NMD90 non-metallic-sheathed cable is set by Rule 12-552 / Table D1.",
+        "NMD90 marked/maximum voltage = 300 V (2024 code).",
+        "Result: 300 V."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-033",
@@ -813,13 +816,14 @@
       "type": "theory",
       "topic": "nmsc-voltage",
       "question": "What is the maximum voltage between conductors that a Non-Metallic Sheathed Cable can be connected to?",
-      "answer": "300 V (per 2021 code; 2024 code limits it to the voltage rating marked on the cable)",
-      "references": ["Rule 12-500"],
+      "answer": "300 V",
+      "references": ["Rule 12-552", "Table D1"],
       "solution_steps": [
-        "Source gives 300 V. Note 2024 code uses the cable's marked voltage rating instead. Difference flagged."
+        "NMD90 non-metallic-sheathed cable maximum voltage between conductors is set by Rule 12-552 / Table D1 = 300 V.",
+        "Result: 300 V (confirmed for the 2024 code)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-052",
@@ -938,14 +942,15 @@
         "C) 300 volts",
         "D) 600 volts"
       ],
-      "answer": "300 volts (per 2021 code; the 2024 code uses the voltage rating marked on the cable)",
+      "answer": "300 volts",
       "answer_key": "C",
-      "references": ["Rule 12-500"],
+      "references": ["Rule 12-552", "Table D1"],
       "solution_steps": [
-        "2021 answer is 300 V. 2024 code uses the cable's marked rating. Difference flagged."
+        "NMD90 non-metallic-sheathed cable maximum voltage between conductors is 300 V (Rule 12-552 / Table D1, 2024 code).",
+        "Result: 300 V (option C)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-059",

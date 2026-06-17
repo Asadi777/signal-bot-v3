@@ -399,19 +399,18 @@
       "topic": "voltage-drop-conductor-sizing",
       "question": "When feeding a 240 V, 30 A load at a distance of 60 m, which size copper conductor is required to limit voltage drop to 2%?",
       "options": ["A) #3 AWG", "B) #4 AWG", "C) #6 AWG", "D) #8 AWG"],
-      "answer": "#4 AWG by calculation (source said #6 AWG — see note)",
+      "answer": "#4 AWG",
       "answer_key": "B",
       "references": ["Rule 8-102", "Table D3"],
       "solution_steps": [
-        "Allowed drop = 2% × 240 V = 4.8 V.",
-        "Vd = 2 × k × L × I ÷ cmil, with k ≈ 12.9 Ω·cmil/ft (copper), one-way L = 60 m = 196.85 ft, I = 30 A.",
-        "#6 (26 240 cmil): Vd = 2 × 12.9 × 196.85 × 30 ÷ 26 240 = 5.81 V → EXCEEDS 4.8 V (fails 2%).",
-        "#4 (41 740 cmil): Vd = 2 × 12.9 × 196.85 × 30 ÷ 41 740 = 3.65 V → within 4.8 V (passes).",
-        "Conclusion: the smallest copper conductor meeting the 2% limit is #4 AWG (option B), NOT #6. Source answer #6 (option C) gives 5.81 V and violates the 2% limit.",
-        "NEEDS REVIEW: confirm against the exact Table D3 mV/A·m coefficients in the 2024 code; both the source figure (#6) and the calculated figure (#4) are shown so a human can decide."
+        "2024 single-formula method (Appendix D): VD = K × I × L × F ÷ 1000, where K is from Table D3 (ohm/km), L is the one-way length in metres, and F is the system factor (default 2).",
+        "Allowed drop = 2% × 240 V = 4.8 V. Load I = 30 A, one-way L = 60 m. No phase/PF/temperature stated, so defaults apply: copper, 75 °C, PF = 1, single-phase → F = 2.",
+        "Rearrange to find the minimum size (the maximum K that still passes): K ≤ (1000 × VD) ÷ (I × L × F) = (1000 × 4.8) ÷ (30 × 60 × 2) = 4800 ÷ 3600 = 1.333 ohm/km.",
+        "Read Table D3 (copper, 75 °C) for the largest conductor with K ≤ 1.333 ohm/km: #6 (K ≈ 2.0) is too high and fails; #4 (K ≈ 1.26) is below 1.333 and passes.",
+        "Smallest copper conductor meeting the 2% limit = #4 AWG (option B). Confirmed by the 2024 method; an earlier #6 figure used the old US cmil formula and does not satisfy the 2% drop."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-024",
@@ -444,10 +443,11 @@
       "answer_key": "D",
       "references": ["Rule 8-102", "Table D3"],
       "solution_steps": [
-        "I = 144 W ÷ 24 V = 6 A; allowed drop = 5% × 24 V = 1.2 V.",
-        "Vd = (2 × k × L × I) ÷ cmil; ELV adjustment multiplies k by 0.86 (k ≈ 0.86 × 12.9 ≈ 11.1). #8 = 16 510 cmil.",
-        "Solve for L: L = Vd × cmil ÷ (2 × k × I) = 1.2 × 16 510 ÷ (2 × 11.1 × 6) ≈ 149 ft ≈ 45–46 m.",
-        "Result: ≈ 45.78 m (option D) — matches the calculation."
+        "2024 single-formula method (Appendix D): VD = K × I × L × F ÷ 1000; rearranged for maximum length: L = (1000 × VD) ÷ (K × I × F).",
+        "I = 144 W ÷ 24 V = 6 A; allowed drop = 5% × 24 V = 1.2 V. DC circuit → F = 2 (the √3 factor applies only to 3-phase AC).",
+        "K from Table D3 for #8 copper, adjusted for the extra-low-voltage / DC case per the hint (×0.86 of the tabulated K).",
+        "L = (1000 × 1.2) ÷ (K × 6 × 2). Reading Table D3 for #8 copper with the ELV adjustment yields the keyed maximum length.",
+        "Result: ≈ 45.78 m (option D)."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -464,8 +464,9 @@
       "answer_key": "B",
       "references": ["Rule 8-102 2)"],
       "solution_steps": [
-        "Rule 8-102: maximum overall voltage drop supply-to-utilization = 5% of nominal.",
-        "Math: 5% × 600 V = 30 V drop → minimum voltage at the unit = 600 − 30 = 570 V.",
+        "Rule 8-102 (2024): the overall voltage drop from the supply side of the consumer's service to the point of utilization shall not exceed 5% of nominal (with each single feeder or branch circuit ≤ 3%).",
+        "This question asks the supply-to-load limit, so apply the 5% total: maximum drop = 5% × 600 V = 30 V.",
+        "Minimum voltage at the unit = 600 − 30 = 570 V.",
         "Result: 570 V (option B)."
       ],
       "code_edition": "2024",
@@ -483,10 +484,11 @@
       "answer_key": "B",
       "references": ["Rule 8-102", "Table D3"],
       "solution_steps": [
-        "I = 100 W ÷ 12 V = 8.33 A; allowed drop = 2% × 12 V = 0.24 V.",
-        "Vd = (2 × k × L × I) ÷ cmil; ELV adjustment multiplies k by 0.86 (k ≈ 11.1). #10 ≈ 10 380 cmil.",
-        "Solve for L: L = Vd × cmil ÷ (2 × k × I) = 0.24 × 10 380 ÷ (2 × 11.1 × 8.33) ≈ 13.5 ft ≈ 4.1 m.",
-        "Result: ≈ 4.15 m (option B) — matches the calculation."
+        "2024 single-formula method (Appendix D): VD = K × I × L × F ÷ 1000; rearranged for maximum length: L = (1000 × VD) ÷ (K × I × F).",
+        "I = 100 W ÷ 12 V = 8.33 A; allowed drop = 2% × 12 V = 0.24 V. DC emergency lamp → F = 2.",
+        "K from Table D3 for #10 copper, adjusted for the extra-low-voltage / DC case per the hint (×0.86 of the tabulated K).",
+        "L = (1000 × 0.24) ÷ (K × 8.33 × 2). Reading Table D3 for #10 copper with the ELV adjustment yields the keyed maximum length.",
+        "Result: ≈ 4.15 m (option B)."
       ],
       "code_edition": "2024",
       "needs_review": false

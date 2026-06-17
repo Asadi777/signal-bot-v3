@@ -8,13 +8,15 @@
       "type": "lookup",
       "topic": "grounding-conductor-sizing",
       "question": "What is the minimum size of grounding conductor required where a field-assembled grounding electrode is used as the grounding means for the following services: a) 150 A, service conductor 1/0 RW75; b) 400 A, 600 kcmil R90; c) 250 A, 350 kcmil TW (60°C); d) 500 A, 750 kcmil R90?",
-      "answer": "a) #4; b) 2/0; c) #2; d) 3/0",
-      "references": ["Rule 10-114", "Table 17"],
+      "answer": "a) #4 (confirmed); b) c) d) require the full Table 43 bands above 200 A — see steps",
+      "references": ["Rule 10-114", "Table 43", "Table 2"],
       "solution_steps": [
-        "Rule 10-114: the grounding conductor to a field-assembled grounding electrode is sized from the largest service/feeder conductor per Table 17 (copper service conductor size in left column → copper grounding conductor size).",
-        "Table 17 bands: service conductor up to #2 → grounding #8; #1 to 1/0 → #6; 2/0 to 3/0 → #4; over 3/0 to 350 kcmil → #2; over 350 to 600 kcmil → 1/0; over 600 to 1100 kcmil → 2/0.",
-        "Reconciling against Table 17: a) 1/0 service → #6 (not #4); b) 600 kcmil → 1/0 (not 2/0); c) 350 kcmil → #2; d) 750 kcmil → 2/0 (not 3/0). The original answer key does not match the current Table 17 bands; only (c) is confirmed.",
-        "Keep needs_review: requires confirmation against the printed CEC 2024 Table 17 values before changing the published answer key."
+        "Correct method (per class notes): the grounding conductor to a field-assembled electrode is sized from Table 43, keyed to the AMPACITY OF THE LARGEST SERVICE CONDUCTOR — NOT the breaker rating and NOT the load current. The earlier 'Table 17' reference was wrong; electrode sizing is Table 43 (bonding is Table 16).",
+        "Service conductors are taken at their rating temperature (75 °C for buildings; a 60 °C-rated cable such as TW is read in the 60 °C column). First get the conductor's ampacity from Table 2, then enter Table 43.",
+        "Table 43 documented bands: ampacity ≤ 165 A → size 4; 166–200 A → size 3; above 200 A the table continues 2, 1, 1/0, 2/0, 3/0 (worked example from notes: 4/0 Cu at 75 °C = 230 A → size 2).",
+        "a) 1/0 RW75 (75 °C) = 150 A ampacity → ≤ 165 A → grounding conductor size 4. CONFIRMED.",
+        "b) 600 kcmil R90 taken at 75 °C (≈ 420 A), c) 350 kcmil TW at 60 °C (≈ 250 A), d) 750 kcmil R90 at 75 °C (≈ 475 A) all fall above 200 A, where the exact Table 43 breakpoints are not documented in the class notes.",
+        "Keep needs_review: part (a) is resolved (#4) by the correct Table 43 / service-conductor-ampacity method; parts (b)(c)(d) need the printed CEC 2024 Table 43 bands above 200 A to confirm their sizes."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -110,15 +112,16 @@
       "type": "lookup",
       "topic": "grounding-conductor-sizing",
       "question": "What minimum size field-assembled copper grounding electrode would be required for a 100 A consumer service fed with #3 R90 copper conductors in a raceway?",
-      "answer": "#2 AWG copper",
-      "references": ["Rule 10-114", "Table 17"],
+      "answer": "#4 AWG copper",
+      "references": ["Rule 10-114", "Table 43", "Table 2"],
       "solution_steps": [
-        "Rule 10-114 / Table 17: the grounding conductor to a field-assembled (concrete-encased) electrode is sized from the service conductor. A #3 Cu service conductor falls in the smallest Table 17 band, which gives a grounding conductor of #8 Cu, not #2.",
-        "The stated #2 answer does not match the Table 17 band for a #3 service conductor and is likely an error (possibly confusing it with a larger service).",
-        "Keep needs_review: confirm the correct value against the printed CEC 2024 Table 17 before changing the published answer."
+        "Electrode-conductor sizing is by Table 43, keyed to the AMPACITY OF THE SERVICE CONDUCTOR (not the breaker, not the load). The earlier 'Table 17' reference was wrong.",
+        "Service conductor = #3 R90 copper, taken at 75 °C for a building (Table 2): #3 Cu at 75 °C = 110 A.",
+        "Enter Table 43 with 110 A: it falls in the lowest band (ampacity ≤ 165 A → size 4).",
+        "Result: #4 AWG copper. (The stated '#2 AWG' was an error from the wrong table; the 100 A / #3 service maps to the ≤ 165 A band → size 4.)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S10-008",
