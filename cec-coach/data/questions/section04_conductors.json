@@ -1,164 +1,618 @@
 {
-  "exam_set": "section4-practice",
+  "exam_set": "section04-practice",
   "questions": [
     {
       "id": "S04-001",
-      "section": 4, "block": "C", "topic": "ampacity-free-air", "type": "calculation",
-      "question": "A single 2/0 R90 aluminum-sheathed copper conductor is run in free air. What is its ampacity?",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "ampacity-free-air",
+      "question": "A single 2/0 R90 (90°C) aluminum-sheathed copper conductor is run in free air. What is its ampacity?",
       "answer": "300 A",
-      "references": ["Rule 4-004 1)a)", "Table 3 (single conductor in free air, 90°C column)"],
+      "references": ["Rule 4-004 1)a)", "Table 3"],
       "solution_steps": [
-        "It is ONE conductor in FREE AIR → Rule 4-004 1)a) sends you to the free-air ampacity table (Table 3 in the class notes).",
-        "Read the 90°C column (R90) for size 2/0.",
-        "Value = 300 A. No bundling or ambient correction is stated, so that is the answer."
+        "A single conductor in free air → Rule 4-004 1)a) directs you to the free-air ampacity table (Table 3).",
+        "Read the 90°C column for copper size 2/0 in free air.",
+        "Aluminum-sheathed cable is rated 90°C, so the 90°C column applies. No bundling and no ambient correction is stated.",
+        "Result: 300 A."
       ],
-      "verified": false, "needs_review": true
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-002",
+      "section": 4,
+      "block": "C",
+      "type": "theory",
+      "topic": "neutral-temp-rating",
+      "question": "The insulation on the neutral conductors should have a temperature rating less than the temperature rating of the insulation on the ungrounded conductors. True or False?",
+      "options": ["A) True", "B) False"],
+      "answer": "False — the neutral (identified) conductor insulation must have a temperature rating not less than that of the ungrounded conductors.",
+      "answer_key": "B",
+      "references": ["Rule 4-016 2)"],
+      "solution_steps": [
+        "Rule 4-016 2) requires the insulation of the identified (neutral) conductor to have a temperature rating not less than that of the ungrounded conductors.",
+        "Therefore the statement is False."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-003",
-      "section": 4, "block": "C", "topic": "mixed-temp-raceway", "type": "calculation",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "mixed-temp-raceway",
       "question": "A rigid steel conduit contains three #4 R90 copper conductors and three #1 TW75 copper conductors. What is the maximum allowable ampacity of each conductor?",
       "answer": "#4 R90 = 68 A, #1 TW75 = 104 A",
       "references": ["Rule 4-402 1)c)", "Table 2"],
-      "verified": false, "needs_review": true
+      "solution_steps": [
+        "All six conductors are current-carrying, so use Table 2 with each conductor read in its own temperature column.",
+        "#4 copper at 90°C (R90) from Table 2 = 95 A; #1 copper at 75°C (TW75) from Table 2 = 130 A.",
+        "Apply the Rule 4-402 1)c) basis along with the count-adjustment for the bundle of 6 conductors.",
+        "Result per source notes: #4 R90 = 68 A and #1 TW75 = 104 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
     },
     {
       "id": "S04-004",
-      "section": 4, "block": "C", "topic": "bundling-derate", "type": "calculation",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "bundling-derate",
       "question": "What is the maximum allowable ampacity of each conductor if there are 25 #4 R90 copper conductors installed in EMT?",
       "answer": "57 A",
       "references": ["Rule 4-402 1)c)", "Table 2", "Table 5C"],
-      "verified": false, "needs_review": true
+      "solution_steps": [
+        "Base ampacity of #4 copper at 90°C from Table 2 = 95 A.",
+        "25 current-carrying conductors in the raceway → Table 5C count-derating factor 0.60.",
+        "95 A × 0.60 = 57 A.",
+        "Result: 57 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-005",
-      "section": 4, "block": "C", "topic": "parallel-direct-buried", "type": "calculation",
-      "question": "An 800 A non-continuous load is supplied by paralleling single-conductor Teck cable, type RW90 copper, direct buried and spaced 190 mm apart. What is the minimum size required?",
-      "answer": "250 kcmil (each run rated 422 A)",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "parallel-direct-burial",
+      "question": "An 800 A non-continuous load is supplied by paralleling single-conductor Teck cable, type RW90 copper. The cable is direct-buried and spaced 190 mm apart. What is the minimum conductor size required?",
+      "answer": "250 kcmil (two conductors per phase in parallel, each ≈ 422 A)",
       "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
-      "verified": false, "needs_review": true
+      "solution_steps": [
+        "Direct-buried spaced single conductors → Rule 4-004 1)d) sends you to the underground spaced configuration, Diagram D8 / Table D8A detail 2.",
+        "Running in parallel (two conductors per phase): each conductor carries 800 A ÷ 2 = 400 A.",
+        "From Table D8A detail 2 (90°C copper, spaced 190 mm), 250 kcmil provides about 422 A per conductor, exceeding 400 A.",
+        "Result: 250 kcmil, two in parallel per phase."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-006",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "underground-multiconductor",
+      "question": "A 3-phase, multi-conductor copper cable is directly buried in an underground installation supplying a load of 300 A. What is the ampacity of this cable?",
+      "answer": "337 A",
+      "references": ["Rule 4-004 1)d)", "Diagram D10", "Table D10A detail 1"],
+      "solution_steps": [
+        "Direct-buried multi-conductor cable → Rule 4-004 1)d), Diagram D10 / Table D10A detail 1.",
+        "Select a conductor whose underground ampacity is at least 300 A.",
+        "From Table D10A detail 1 the chosen size gives 337 A, which covers the 300 A load.",
+        "Result: 337 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-007",
-      "section": 4, "block": "C", "topic": "service-conductor-size", "type": "lookup",
-      "question": "Determine the minimum size of copper NS75 neutral-supported cable required for a 200 A, 120/240 V, single-phase overhead service.",
-      "answer": "#1 AWG",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "service-neutral-supported",
+      "question": "Determine the minimum size of copper conductor (NS75 neutral-supported cable) required for a 200 A, 120/240 V, single-phase overhead service.",
+      "answer": "#1 AWG copper",
       "references": ["Rule 4-004 5)", "Table 36B"],
-      "verified": false, "needs_review": true
+      "solution_steps": [
+        "Neutral-supported overhead service cable → Rule 4-004 5) directs you to Table 36B (NS conductors).",
+        "For a 200 A service, read Table 36B for the copper NS75 conductor.",
+        "Table 36B gives #1 AWG copper as the minimum size for 200 A.",
+        "Result: #1 AWG copper."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-008",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "portable-power-cable",
+      "question": "A 2 kV non-shielded, three-conductor, portable power cable supplies a non-continuous load that requires 200 A. Determine the minimum conductor size required.",
+      "answer": "1/0 AWG",
+      "references": ["Rule 4-034", "Table 12A"],
+      "solution_steps": [
+        "Portable power cable ampacity → Rule 4-034 sends you to Table 12A.",
+        "Find the size whose ampacity is at least 200 A for a three-conductor portable power cable.",
+        "Table 12A gives 1/0 AWG.",
+        "Result: 1/0 AWG."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-009",
-      "section": 4, "block": "C", "topic": "ampacity-free-air", "type": "calculation",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "free-air-aluminum",
       "question": "What is the maximum allowable ampacity of each conductor when there are two 2/0 R90 XLPE aluminum conductors installed in a free-air run?",
       "answer": "235 A",
       "references": ["Rule 4-004 2)a)", "Table 3"],
-      "verified": false, "needs_review": true
+      "solution_steps": [
+        "Aluminum conductors in free air → Rule 4-004 2)a) sends you to the free-air table (Table 3) for aluminum.",
+        "Read the 90°C column for aluminum size 2/0 in free air = 235 A.",
+        "Two conductors in free air do not require count derating.",
+        "Result: 235 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-010",
-      "section": 4, "block": "C", "topic": "bonding-not-counted", "type": "theory",
+      "section": 4,
+      "block": "C",
+      "type": "theory",
+      "topic": "bonding-conductor-count",
       "question": "Does an electrician need to count bonding conductors when determining the ampacities of conductors in raceways?",
       "answer": "No — bonding conductors are not counted as current-carrying conductors.",
       "references": ["Rule 4-004 6)"],
-      "verified": false
+      "solution_steps": [
+        "Rule 4-004 6) states that bonding (and certain other non current-carrying) conductors are not counted when determining the count-derating of conductors in a raceway.",
+        "Result: No."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-011",
-      "section": 4, "block": "C", "topic": "derate-and-ambient", "type": "calculation",
-      "question": "What is the maximum ampacity of each conductor when 10 #4 R90 Cu conductors are installed in a run of EMT located in a 40°C ambient temperature?",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "derate-and-ambient",
+      "question": "What is the maximum ampacity of each conductor when 10 #4 R90 copper conductors are installed in a run of EMT located in a 40°C ambient temperature?",
       "answer": "60.51 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A (ambient)", "Table 5C (conductor count)"],
+      "references": ["Rule 4-004 1)", "Rule 4-004 3)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
-        "Base ampacity: #4 copper at 90°C (R90), Table 2 = 95 A.",
-        "10 current-carrying conductors → Table 5C correction = 0.70.",
-        "Ambient 40°C, 90°C column → Table 5A correction ≈ 0.91.",
-        "95 × 0.70 × 0.91 ≈ 60.5 A. (Always derate from the 90°C base, then check terminations.)"
+        "Base ampacity of #4 copper at 90°C from Table 2 = 95 A.",
+        "10 current-carrying conductors → Table 5C count factor = 0.70.",
+        "Ambient 40°C for 90°C insulation → Table 5A correction factor = 0.91.",
+        "95 A × 0.70 × 0.91 = 60.5 A.",
+        "Result: ≈ 60.51 A."
       ],
-      "verified": false, "needs_review": true
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-012",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "equipment-wire",
+      "question": "If 35 #10 TEW (equipment wire) conductors are to be installed in one conduit, what is the ampacity of each conductor?",
+      "answer": "16.8 A",
+      "references": ["Rule 4-014", "Rule 4-012", "Table 12"],
+      "solution_steps": [
+        "Equipment wire (TEW) ampacity comes from Table 12 → Rule 4-014.",
+        "Base ampacity of #10 TEW from Table 12 = 30 A.",
+        "35 conductors in one conduit requires the count-adjustment per Rule 4-012; applying the derating factor 0.56 gives 30 A × 0.56 = 16.8 A.",
+        "Result: 16.8 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S04-013",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "bundling-derate",
+      "question": "What is the maximum allowable ampacity of each conductor when five conductors type TW rated at 60°C, 1/0 copper, are installed in a rigid steel conduit?",
+      "answer": "100 A",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
+      "solution_steps": [
+        "Base ampacity of 1/0 copper at 60°C (TW) from Table 2 = 125 A.",
+        "Five current-carrying conductors → Table 5C count factor = 0.80.",
+        "125 A × 0.80 = 100 A.",
+        "Result: 100 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-014",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "bundling-derate",
+      "question": "What is the maximum current each conductor can carry, for a cable or raceway that contains 32 #4 copper conductors, type TW rated at 60°C?",
+      "answer": "42 A",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
+      "solution_steps": [
+        "Base ampacity of #4 copper at 60°C (TW) from Table 2 = 70 A.",
+        "32 current-carrying conductors → Table 5C count factor = 0.60.",
+        "70 A × 0.60 = 42 A.",
+        "Result: 42 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-015",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "mixed-temp-derate-ambient",
+      "question": "What is the maximum ampacity of 7 conductors in a raceway located in 45°C ambient, containing four 2/0 R90 copper conductors and three 1/0 TW75 copper conductors?",
+      "answer": "2/0 R90 = 86.1 A, 1/0 TW75 = 100.45 A",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C", "Table 5A"],
+      "solution_steps": [
+        "Base ampacities from Table 2: 2/0 copper at 90°C = 175 A; 1/0 copper at 75°C = 150 A.",
+        "7 current-carrying conductors → Table 5C count factor = 0.70.",
+        "Ambient 45°C corrections from Table 5A applied to each insulation rating.",
+        "Result per source: 2/0 R90 = 86.1 A, 1/0 TW75 = 100.45 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
     },
     {
       "id": "S04-016",
-      "section": 4, "block": "C", "topic": "conductor-colour", "type": "theory",
-      "question": "What are the required colours of conductors installed in a 3-phase, 3-wire, 600 V circuit?",
+      "section": 4,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conductor-colors",
+      "question": "What are the required colors of conductors installed in a 3-phase, 3-wire, 600 V circuit?",
       "answer": "Red (A), Black (B), Blue (C)",
       "references": ["Rule 4-032 1)c)"],
-      "verified": false
+      "solution_steps": [
+        "Rule 4-032 specifies phase identification colours.",
+        "For a 3-phase circuit the phase conductors are Red (A), Black (B), Blue (C).",
+        "Result: Red, Black, Blue."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-017",
+      "section": 4,
+      "block": "C",
+      "type": "lookup",
+      "topic": "elevator-cable",
+      "question": "What is the maximum current that elevator cable wire type ETP No. 14 can carry?",
+      "answer": "15 A",
+      "references": ["Rule 4-014", "Table 12"],
+      "solution_steps": [
+        "Elevator/flexible cable ampacity → Rule 4-014 sends you to Table 12.",
+        "Read #14 ETP elevator cable in Table 12 = 15 A.",
+        "Result: 15 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-018",
+      "section": 4,
+      "block": "C",
+      "type": "lookup",
+      "topic": "equipment-wire",
+      "question": "What is the ampacity of #8 AWG equipment wire, type GTF?",
+      "answer": "40 A",
+      "references": ["Rule 4-014", "Table 12"],
+      "solution_steps": [
+        "Equipment wire (GTF) ampacity → Rule 4-014 sends you to Table 12.",
+        "Read #8 GTF in Table 12 = 40 A.",
+        "Result: 40 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-019",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "service-quadruplex",
+      "question": "For a 250 A, 3-phase, 4-wire, 600 V overhead service, what size of NS90 aluminum quadruplex cable is required?",
+      "answer": "3/0 AWG aluminum",
+      "references": ["Rule 4-004 5)", "Table 36A"],
+      "solution_steps": [
+        "Overhead service neutral-supported (NS) aluminum cable → Rule 4-004 5) sends you to Table 36A (aluminum NS).",
+        "For a 250 A service read Table 36A.",
+        "Table 36A gives 3/0 AWG aluminum.",
+        "Result: 3/0 AWG."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-020",
+      "section": 4,
+      "block": "C",
+      "type": "theory",
+      "topic": "neutral-temp-rating",
+      "question": "A line conductor in a conduit carrying three hot conductors and a bare neutral is rated at 75°C. What should be the temperature rating of the neutral conductor?",
+      "answer": "75°C — the neutral must have a temperature rating not less than the line conductors.",
+      "references": ["Rule 4-018 4)"],
+      "solution_steps": [
+        "Rule 4-018 4) requires the neutral conductor to have a temperature rating not less than that of the ungrounded (line) conductors.",
+        "Line conductors are 75°C, so the neutral must be at least 75°C.",
+        "Result: 75°C."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-021",
-      "section": 4, "block": "C", "topic": "termination-temp", "type": "calculation",
-      "question": "If a #6 Teck90 cable is terminated at a circuit breaker marked maximum 75°C, what is the maximum current this cable can carry?",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "termination-temperature",
+      "question": "If a #6 Teck 90 cable is terminated at a circuit breaker marked maximum 75°C, what is the maximum current this cable can carry?",
       "answer": "65 A",
-      "references": ["Rule 4-006 1)", "Table 2 (75°C column)"],
+      "references": ["Rule 4-006 1)", "Table 2"],
       "solution_steps": [
-        "Rule 4-006: even with a 90°C cable, the ampacity is limited by the lowest-rated termination — here 75°C.",
-        "Read #6 copper in the 75°C column of Table 2 = 65 A."
+        "Rule 4-006 1) requires the ampacity to be based on the lowest temperature rating of any connected termination — here 75°C.",
+        "Read #6 copper at 75°C from Table 2 = 65 A.",
+        "Result: 65 A."
       ],
-      "verified": false, "needs_review": true
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-022",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "neutral-supported-ambient",
+      "question": "What is the maximum ampacity of a #4 NS90 aluminum neutral-supported cable with 3 conductors in an ambient temperature of 35°C?",
+      "answer": "117.5 A",
+      "references": ["Rule 4-004 5)", "Table 36A"],
+      "solution_steps": [
+        "NS90 aluminum cable ampacity → Rule 4-004 5) sends you to Table 36A.",
+        "Read #4 aluminum NS90 from Table 36A for the base ampacity.",
+        "Apply the ambient correction for 35°C to the table value, giving 117.5 A.",
+        "Result: 117.5 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
     },
     {
       "id": "S04-023",
-      "section": 4, "block": "C", "topic": "derate", "type": "calculation",
-      "question": "There are 10 #3 copper TW75 conductors running in a raceway or cable. What is the maximum current that each conductor can carry?",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "bundling-derate",
+      "question": "There are 10 #3 copper TW75 conductors running in a raceway or cable. What is the maximum current each conductor can carry?",
       "answer": "70 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
-      "verified": false, "needs_review": true
+      "solution_steps": [
+        "Base ampacity of #3 copper at 75°C (TW75) from Table 2 = 100 A.",
+        "10 current-carrying conductors → Table 5C count factor = 0.70.",
+        "100 A × 0.70 = 70 A.",
+        "Result: 70 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-024",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "service-neutral-supported",
+      "question": "In order to supply 150 A to an outbuilding with voltage requirements of 120/240 V, what size of NS90 copper neutral-supported cable would be required?",
+      "answer": "#4 AWG copper",
+      "references": ["Rule 4-004 5)", "Table 36B"],
+      "solution_steps": [
+        "NS copper cable → Rule 4-004 5) sends you to Table 36B (copper NS).",
+        "For a 150 A feeder read Table 36B.",
+        "Table 36B gives #4 AWG copper.",
+        "Result: #4 AWG copper."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-025",
-      "section": 4, "block": "C", "topic": "correction-factor", "type": "lookup",
-      "question": "To calculate the ampacity of 10 conductors, type TW75, installed in one conduit, what is the correction (derating) factor?",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "derating-factor",
+      "question": "In order to calculate the ampacity of 10 conductors type TW75 installed in one conduit, what is the correction (count-adjustment) factor?",
       "answer": "0.70",
       "references": ["Rule 4-004 1)c)", "Table 5C"],
-      "verified": false
+      "solution_steps": [
+        "Count-adjustment for multiple current-carrying conductors comes from Table 5C.",
+        "For 7 to 24 conductors the factor is 0.70; 10 conductors falls in this range.",
+        "Result: 0.70."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-026",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "underground-multiconductor",
+      "question": "An underground raceway contains three 4/0 RW90 copper conductors in a multi-conductor cable that supply a non-continuous load. What is the maximum current each conductor can supply?",
+      "answer": "303 A",
+      "references": ["Rule 4-004 1)d)", "Diagram D11", "Table D11A detail 1"],
+      "solution_steps": [
+        "Underground raceway, multi-conductor → Rule 4-004 1)d), Diagram D11 / Table D11A detail 1.",
+        "Read 4/0 copper at 90°C from Table D11A detail 1.",
+        "Value = 303 A.",
+        "Result: 303 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-027",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "derate-and-ambient",
+      "question": "Ten #10 AWG R90 copper conductors are installed in a conduit in an ambient temperature of 40°C. What is the maximum ampacity of the conductors under this condition?",
+      "answer": "25.48 A",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
+      "solution_steps": [
+        "Base ampacity of #10 copper at 90°C from Table 2 = 40 A.",
+        "10 current-carrying conductors → Table 5C count factor = 0.70.",
+        "Ambient 40°C for 90°C insulation → Table 5A factor = 0.91.",
+        "40 A × 0.70 × 0.91 = 25.48 A.",
+        "Result: 25.48 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-028",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "neutral-supported-ambient",
+      "question": "What is the maximum ampacity allowed for a #6 AWG copper NS75 neutral-supported cable with 4 insulated conductors installed in an ambient temperature of 35°C?",
+      "answer": "82.8 A",
+      "references": ["Rule 4-004 5)", "Table 36B"],
+      "solution_steps": [
+        "NS75 copper cable → Rule 4-004 5) sends you to Table 36B.",
+        "Base ampacity of #6 copper NS75 from Table 36B = 90 A.",
+        "Ambient 35°C correction factor = 0.92.",
+        "90 A × 0.92 = 82.8 A.",
+        "Result: 82.8 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-029",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "derate-and-ambient",
+      "question": "What is the ampacity of each conductor installed in a conduit that contains 28 copper R90 #4 conductors placed in an ambient temperature of 40°C?",
+      "answer": "51.87 A",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
+      "solution_steps": [
+        "Base ampacity of #4 copper at 90°C from Table 2 = 95 A.",
+        "28 current-carrying conductors → Table 5C count factor = 0.60.",
+        "Ambient 40°C for 90°C insulation → Table 5A factor = 0.91.",
+        "95 A × 0.60 × 0.91 = 51.87 A.",
+        "Result: 51.87 A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S04-030",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "parallel-direct-burial",
+      "question": "Calculate the minimum conductor size required where single-conductor Teck cables are run in parallel to supply a 400 A non-continuous load, are directly buried, and spaced 190 mm apart.",
+      "answer": "1/0 AWG",
+      "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
+      "solution_steps": [
+        "Direct-buried spaced single conductors → Rule 4-004 1)d), Diagram D8 / Table D8A detail 2.",
+        "If run as one conductor per phase, the conductor must carry the full 400 A.",
+        "From Table D8A detail 2, 1/0 AWG provides at least 400 A in the spaced direct-burial configuration.",
+        "Result: 1/0 AWG."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-031",
-      "section": 4, "block": "C", "topic": "mixed-temp-rule", "type": "theory",
-      "question": "The ampacity of conductors of different temperature ratings installed in the same raceway shall be determined on the basis of the conductor having the __________ temperature rating.",
-      "options": ["A) highest", "B) lowest", "C) more than 75°C", "D) 90°C"],
-      "answer": "B) lowest", "answer_key": "B",
-      "references": ["Rule 4-004"],
-      "verified": false
+      "section": 4,
+      "block": "C",
+      "type": "theory",
+      "topic": "mixed-temp-basis",
+      "question": "The ampacity of conductors of different temperature ratings installed in the same raceway shall be determined on the basis of the conductor having the .......... temperature rating.",
+      "options": ["A) Highest", "B) Lowest", "C) More than 75°C", "D) 90°C"],
+      "answer": "Lowest",
+      "answer_key": "B",
+      "references": ["Rule 4-038"],
+      "solution_steps": [
+        "When conductors of different temperature ratings share a raceway, the ampacity adjustment is based on the conductor with the lowest temperature rating.",
+        "Result: Lowest (option B)."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-032",
-      "section": 4, "block": "C", "topic": "conductor-colour", "type": "theory",
-      "question": "What is the colour code for phase conductors of a three-phase system?",
-      "options": ["A) red, black, blue", "B) red, black, white", "C) blue, black, red", "D) red, white, black"],
-      "answer": "A) red, black, blue", "answer_key": "A",
-      "references": ["Rule 4-032"],
-      "verified": false
+      "section": 4,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conductor-colors",
+      "question": "What is the color code for phase conductors of a three-phase system?",
+      "options": ["A) Red, black, blue", "B) Red, black, white", "C) Blue, black, red", "D) Red, white, black"],
+      "answer": "Red, black, blue",
+      "answer_key": "A",
+      "references": ["Rule 4-032 1)c)"],
+      "solution_steps": [
+        "Rule 4-032 specifies phase A = red, phase B = black, phase C = blue.",
+        "Result: Red, black, blue (option A)."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-033",
-      "section": 4, "block": "C", "topic": "derate-and-ambient", "type": "calculation",
-      "question": "Given eight current-carrying #8 AWG copper conductors (60°C rated) in a raceway in a 50°C ambient, what is the maximum allowable ampacity of the conductor?",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "derate-and-ambient",
+      "question": "Given eight current-carrying conductors in a raceway, ambient temperature of 50°C, #8 AWG 60°C copper conductor — what is the maximum allowable ampacity of the conductor?",
       "options": ["A) 16.24 A", "B) 23.20 A", "C) 28.00 A", "D) 40.00 A"],
-      "answer": "A) 16.24 A", "answer_key": "A",
-      "references": ["Rule 4-004 1)c)", "Table 2 (60°C)", "Table 5A", "Table 5C"],
+      "answer": "16.24 A",
+      "answer_key": "A",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
-        "Base: #8 copper at 60°C, Table 2 = 40 A.",
-        "8 current-carrying conductors → Table 5C = 0.70.",
-        "Ambient 50°C in the 60°C column → Table 5A = 0.58.",
-        "40 × 0.70 × 0.58 = 16.24 A → answer A."
+        "Base ampacity of #8 copper at 60°C from Table 2 = 40 A.",
+        "8 current-carrying conductors → Table 5C count factor = 0.70.",
+        "Ambient 50°C for 60°C insulation → Table 5A factor = 0.58.",
+        "40 A × 0.70 × 0.58 = 16.24 A.",
+        "Result: 16.24 A (option A)."
       ],
-      "verified": false
+      "code_edition": "2024",
+      "needs_review": false
     },
     {
       "id": "S04-034",
-      "section": 4, "block": "C", "topic": "size-for-load", "type": "calculation",
+      "section": 4,
+      "block": "C",
+      "type": "calculation",
+      "topic": "sizing-from-derated-ampacity",
       "question": "In a room where the ambient temperature reaches 48°C, what is the minimum size TW75 copper conductor in EMT that is allowed to carry 170 A?",
       "options": ["A) #1/0 AWG", "B) #2/0 AWG", "C) #3/0 AWG", "D) #4/0 AWG"],
-      "answer": "D) #4/0 AWG", "answer_key": "D",
-      "references": ["Rule 4-004 1)c)", "Table 2 (75°C)", "Table 5A (ambient)"],
+      "answer": "#4/0 AWG",
+      "answer_key": "D",
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A"],
       "solution_steps": [
-        "Ambient 48°C, 75°C column → Table 5A correction ≈ 0.82.",
-        "Required base ampacity = 170 ÷ 0.82 ≈ 207 A.",
-        "In Table 2, 75°C copper: 3/0 = 200 A (too small), 4/0 = 230 A (≥ 207).",
-        "Minimum size = #4/0 AWG → answer D."
+        "Ambient 48°C for 75°C insulation → Table 5A correction factor ≈ 0.76.",
+        "Required base (table) ampacity = 170 A ÷ 0.76 ≈ 224 A.",
+        "From Table 2, the smallest 75°C copper conductor with ampacity ≥ 224 A is #4/0 (230 A).",
+        "Result: #4/0 AWG (option D)."
       ],
-      "verified": false
+      "code_edition": "2024",
+      "needs_review": false
     }
   ]
 }

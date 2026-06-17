@@ -1,0 +1,1193 @@
+{
+  "exam_set": "section12-practice",
+  "questions": [
+    {
+      "id": "S12-001",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "There are seven R90 XLPE type #8 AWG 600V unjacketed copper conductors and four T90 Nylon type #4 AWG copper conductors that need to be installed in a rigid metal conduit. What is the minimum conduit size required for these conductors?",
+      "answer": "Size 41 (trade size 41 mm / 1-1/2 in.)",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Look up the cross-sectional area of each conductor (Table 10 for the #8 R90 and #4 T90).",
+        "Sum the areas and apply the conduit fill percentage (Table 8, over 2 conductors = 40%).",
+        "Select the smallest conduit from Table 6 (RMC) that accommodates the total area: size 41."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-002",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "terminations",
+      "question": "What is the largest size of solid conductor that can be permitted to be used as a termination means under a wire binding screw?",
+      "answer": "#10 AWG",
+      "references": ["Rule 12-118"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-003",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "box-fill",
+      "question": "An outlet box contains three insulated wire connectors, a duplex receptacle and five #10 AWG insulated conductors. What is the minimum volume required for the outlet box?",
+      "answer": "295.2 mL",
+      "references": ["Table 22", "Table 23", "Rule 12-3036"],
+      "solution_steps": [
+        "Use the per-conductor volume allowance for #10 AWG from Table 22/23.",
+        "Count conductor equivalents: the five #10 conductors, plus allowances for the wire connectors and the duplex receptacle (device counts as based on the largest conductor).",
+        "Total required box volume = 295.2 mL."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-004",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "underground-cover",
+      "question": "Non-metallic sheathed cable, type NMWU, is used as the wiring method for a 60A, 120/240V subservice. The cable is direct burial without additional protection under a non-vehicular area. Determine the minimum cover requirements for the cable.",
+      "answer": "600 mm",
+      "references": ["Table 53"],
+      "solution_steps": [
+        "Table 53 gives minimum cover for direct-buried cable without mechanical protection.",
+        "For this voltage/installation in a non-vehicular area the required cover is 600 mm."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-005",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "conduit-bends",
+      "question": "What is the maximum number of bends allowed between outlets or pull-in points when installing a conduit?",
+      "answer": "The equivalent of four quarter bends (4 x 90 degrees = 360 degrees total)",
+      "references": ["Rule 12-940", "Rule 12-1118"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-006",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-voltage",
+      "question": "What is the maximum voltage permitted by the code between conductors in a non-metallic sheathed cable (NMD90) installation?",
+      "answer": "300 V (per 2021 code); in the 2024 code it shall not exceed the voltage rating marked on the cable",
+      "references": ["Rule 12-500"],
+      "solution_steps": [
+        "2021 code: maximum 300 V between conductors.",
+        "2024 code: not to exceed the voltage rating as marked on the cable. Difference flagged for review."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-007",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "pull-box",
+      "question": "What is the minimum dimension for side A when the size of conductor used in this installation is 1/0 Cu, RW90 XLPE, 600 V, unjacketed? (Conduit entries are 41 mm and 35 mm as shown in the diagram.)",
+      "answer": "A = 328 mm",
+      "references": ["Rule 12-3034", "Table 9", "Table 10"],
+      "solution_steps": [
+        "Diagram-based pull box sizing for a straight/angle pull.",
+        "Apply the pull box rule multipliers to the conduit trade sizes shown (41 mm and 35 mm).",
+        "Result A = 328 mm. Diagram needed to fully verify the entry layout."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-008",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-voltage",
+      "question": "What is the maximum voltage permitted by the code between conductors in a non-metallic sheathed cable (NMSC) installation?",
+      "answer": "300 V (per 2021 code); per 2024 code it shall not exceed the voltage rating as marked on the cable",
+      "references": ["Rule 12-500"],
+      "solution_steps": [
+        "2021: 300 V between conductors.",
+        "2024: not to exceed the voltage rating marked on the cable. 2021 vs 2024 difference flagged."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-009",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-support",
+      "question": "How far away must non-metallic sheathed cable be installed from the outer edges of studs, joists, or similar wooden members through which it may be run?",
+      "answer": "32 mm",
+      "references": ["Rule 12-516", "Rule 12-518"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-010",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "box-conductors",
+      "question": "What is the minimum free length of conductors that shall be left at each outlet for connection purposes in outlet boxes?",
+      "answer": "150 mm",
+      "references": ["Rule 12-3014"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-011",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "bend-radius",
+      "question": "Which table should be consulted to find information on minimum radii of bends required in a raceway?",
+      "answer": "Table 7",
+      "references": ["Table 7"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-012",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "pull-box",
+      "question": "Determine the minimum dimensions A, B and C required according to code rules for pull boxes. (Conduit entries 2.5 in., 1.5 in. and 1 in. as shown in the diagram.)",
+      "answer": "A = 17.5 in., B = 18 in., C = 15 in.",
+      "references": ["Rule 12-3034"],
+      "solution_steps": [
+        "Apply pull box sizing rules to the conduit trade sizes shown in the diagram.",
+        "A = 17.5, B = 18, C = 15 inches. Diagram needed to verify layout."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-013",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "wireway",
+      "question": "What is the largest size of aluminum conductor that may be installed in a wireway?",
+      "answer": "750 kcmil",
+      "references": ["Rule 12-2102"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-014",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "pull-box",
+      "question": "Determine the minimum dimensions required for a pull box that is installed for an angle pull in a run of 2-1/2 in. conduit. The two 2-1/2 in. conduit entries are located diagonally to each other.",
+      "answer": "15 x 15 in.",
+      "references": ["Rule 12-3034 1)b)"],
+      "solution_steps": [
+        "Angle pull: minimum distance = 6 x the largest conduit trade size = 6 x 2.5 in. = 15 in.",
+        "Box is 15 x 15 in."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-015",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "terminations",
+      "question": "Field assembled connections between aluminum lug and aluminum or copper busbar can be made by using a ______ spring washer.",
+      "answer": "Helical or conical spring washer",
+      "references": ["Rule 12-118"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-016",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "pull-box",
+      "question": "Find the dimensions for side A, side B, and minimum distance between two 53 mm conduits as shown by the double-headed arrow. This pull box contains #6 AWG, T90 NYLON, Cu conductors. (Conduit entries 53 mm, 41 mm, 35 mm, 27 mm and 21 mm as shown.)",
+      "answer": "A = 386 mm, B = 374 mm, C (distance between the two 53 mm conduits) = 318 mm",
+      "references": ["Rule 12-3034", "Table 9"],
+      "solution_steps": [
+        "Diagram-based pull box sizing combining straight and angle pulls.",
+        "A = 386, B = 374, C = 318 mm. Diagram needed to confirm conduit positions."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-017",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "box-fill",
+      "question": "What is the minimum size of device box required for an installation that has three #12 conductors, six wire connectors and one duplex receptacle outlet?",
+      "answer": "3 x 2 x 3 in. (or 4 x 2-1/8 x 1-7/8 in.)",
+      "references": ["Table 23"],
+      "solution_steps": [
+        "Count conductor equivalents for the #12 conductors, connectors and the duplex receptacle.",
+        "Select a device box from Table 23 with adequate capacity: 3x2x3 in. (or 4x2-1/8x1-7/8 in.)."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-018",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "pull-box",
+      "question": "Determine the minimum dimensions A, B and C required in a 'U pull' based on the diagram (2 in. conduit entries).",
+      "answer": "A = 18 in., B = 14 in., C = 12 in.",
+      "references": ["Rule 12-3034 1)b)"],
+      "solution_steps": [
+        "U pull sizing based on diagram with 2 in. conduit entries.",
+        "A = 18, B = 14, C = 12 inches. Diagram needed to verify."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-019",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "underground-cover",
+      "question": "How much can the minimum cover requirements be reduced if you provide acceptable mechanical protection?",
+      "answer": "150 mm",
+      "references": ["Table 53", "Rule 12-012"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-020",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "underground-splices",
+      "question": "Splices in an underground run of cable shall be permitted to be made in junction boxes ______ m above grade.",
+      "answer": "Answer not given in source notes (Rule 12-112 6a referenced)",
+      "references": ["Rule 12-112 6)a)"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-021",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "conduit-expansion",
+      "question": "For a 15 m run of RPVC conduit when minimum expected temperature is -50 degC and maximum expected temperature is +25 degC, what is the expansion in this conduit?",
+      "answer": "58.5 mm",
+      "references": ["Table 38", "Rule 12-1102"],
+      "solution_steps": [
+        "Temperature change = 25 - (-50) = 75 degC.",
+        "Use the RPVC expansion coefficient (Table 38) per metre per degree, multiplied by 15 m run and 75 degC.",
+        "Result = 58.5 mm."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-022",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "cable-tray",
+      "question": "What is the minimum clearance needed between the top of a cable tray and all ceilings and heating ducts?",
+      "answer": "300 mm",
+      "references": ["Rule 12-2202"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-023",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "gutter-fill",
+      "question": "How many #14 copper R90 XLPE, 600V, unjacketed stranded power conductors can be installed in a 50 mm x 50 mm auxiliary gutter?",
+      "answer": "56 conductors",
+      "references": ["Rule 12-2100", "Table 10"],
+      "solution_steps": [
+        "Auxiliary gutter fill is limited to 20% of the cross-sectional area.",
+        "Gutter area = 50 x 50 = 2500 mm2; usable = 20% = 500 mm2.",
+        "Divide by the #14 conductor area (Table 10) to get 56 conductors."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-024",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "bend-radius",
+      "question": "What is the minimum bending radius permitted for the 2-1/2 in. RPVC conduit?",
+      "answer": "267 mm",
+      "references": ["Table 7"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-025",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "What is the minimum conduit size required for an installation that has ten aluminum unjacketed conductors, type RW75 XLPE, 1000 volt, #8 AWG?",
+      "answer": "Size 35 mm",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Find the #8 RW75 1000V conductor area (Table 10).",
+        "Total area for 10 conductors, apply 40% fill (over 2 conductors, Table 8).",
+        "Smallest conduit from Table 6 = size 35 mm."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-026",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "How many jacketed #6 AWG, 600V R90 XLPE, Cu conductors are allowed by the code to be drawn into a 2 inch conduit?",
+      "answer": "15 conductors",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Determine the #6 R90 600V conductor area (Table 10).",
+        "Take the 2 in. conduit usable area at 40% fill (Table 6 / Table 8).",
+        "Number of conductors = 15."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-027",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "underground-cover",
+      "question": "What is the minimum cover requirement permitted for a cable having a metal sheath crossing under a driveway to supply a 600V, 3-phase service?",
+      "answer": "600 mm",
+      "references": ["Table 53"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-028",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "terminations",
+      "question": "What is the largest size of conductor that can be terminated without the use of a lug?",
+      "answer": "#10 AWG",
+      "references": ["Rule 12-118"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-029",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "vertical-support",
+      "question": "What is the maximum distance permitted between supports for 250 kcmil copper conductors installed in a vertical raceway?",
+      "answer": "18 m",
+      "references": ["Table 21", "Rule 12-120"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-030",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "fcc-cable",
+      "question": "Can type FCC cable be used in a dwelling unit?",
+      "answer": "No",
+      "references": ["Rule 12-806 c)"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-031",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "ns-cable-support",
+      "question": "Neutral supported cable shall be supported in spans of not more than ______ m in length.",
+      "answer": "40 m (the source notes 38 m in the 2021 code)",
+      "references": ["Rule 12-310"],
+      "solution_steps": [
+        "Source gives 40 m, noting the 2021 code value was 38 m.",
+        "2021 vs 2024 difference flagged for review."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-032",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-voltage",
+      "question": "What is the maximum voltage rating of non-metallic sheathed cable?",
+      "answer": "Not to exceed the voltage rating as marked on the cable (300 V in the 2021 code)",
+      "references": ["Rule 12-500"],
+      "solution_steps": [
+        "2024: not to exceed voltage rating marked on the cable.",
+        "2021: 300 V. 2021 vs 2024 difference flagged."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-033",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-clearance",
+      "question": "What is the minimum clearance required between a NMSC and a concrete chimney?",
+      "answer": "50 mm",
+      "references": ["Rule 12-506", "Rule 12-510"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-034",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "armoured-cable-support",
+      "question": "What is the maximum distance between two supports in armoured cables?",
+      "answer": "1.5 m",
+      "references": ["Rule 12-618"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-035",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-protection",
+      "question": "What is the minimum height above a floor that an NMSC must be installed such that it does not necessarily require mechanical protection?",
+      "answer": "1.5 m",
+      "references": ["Rule 12-516", "Rule 12-518"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-036",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "fcc-cable",
+      "question": "In type FCC Cable, what is the maximum current permitted for branch circuits?",
+      "answer": "30 A",
+      "references": ["Rule 12-806"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-037",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "bend-radius",
+      "question": "What is the minimum bending radius for a 2.5 inch conduit in mm when 1/0 R90 XLPE conductors are pulled into this conduit?",
+      "answer": "267 mm",
+      "references": ["Table 7"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-038",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "Determine the minimum RPVC conduit size for the following conductors: Four 3/0 R90 XLPE conductors and one #6 R90 XLPE conductor. The conductors are stranded and rated at 600V unjacketed.",
+      "answer": "Size 53",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Sum the areas of the four 3/0 and one #6 R90 conductors (Table 10).",
+        "Apply 40% fill (over 2 conductors) and select the RPVC conduit from Table 6.",
+        "Result = size 53."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-039",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "cable-tray",
+      "question": "What is the minimum clearance required between cable tray and any short length obstructions?",
+      "answer": "150 mm",
+      "references": ["Rule 12-2202"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-040",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "box-fill",
+      "question": "How many more #12 AWG conductors are permitted in an FS 4-gang box if it contains 13 wire connectors, 3 three-way switches and 1 four-way switch?",
+      "answer": "18 x #12 AWG",
+      "references": ["Table 23", "Table 22"],
+      "solution_steps": [
+        "Determine the total volume of the FS 4-gang box and the volume allowance per #12 conductor.",
+        "Subtract the conductor equivalents already used by the connectors and switches.",
+        "Remaining capacity = 18 more #12 AWG conductors."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-041",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "emt",
+      "question": "Can EMT be used in a wet location?",
+      "answer": "Yes",
+      "references": ["Rule 12-1402 c)"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-042",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "What is the minimum size of conduit required in order to run fifteen #8 AWG R90 XLPE, 600V, unjacketed, copper conductors?",
+      "answer": "Size 41",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Total area = 15 x area of #8 R90 (Table 10).",
+        "Apply 40% fill and select from Table 6: size 41."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-043",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "fcc-cable",
+      "question": "What are the maximum dimensions of carpet squares allowed to cover type FCC cable?",
+      "answer": "750 mm x 750 mm",
+      "references": ["Rule 12-806"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-044",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "conduit-fill",
+      "question": "A 41 mm EMT contains 10 conductors, #8 R90 XLPE, Cu, 600V, unjacketed. How many more #10 of the same type and rating can be installed in the same raceway?",
+      "answer": "14 x #10 R90 XLPE 600V unjacketed",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Determine 40% usable area of 41 mm EMT (Table 6).",
+        "Subtract area used by the existing 10 #8 conductors (Table 10).",
+        "Divide remaining area by the #10 conductor area = 14 more conductors."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-045",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-protection",
+      "question": "Where NMSC is run through studs or joists, what is the minimum distance that the outer surface of the cable should be kept away in order to protect it from mechanical injury?",
+      "answer": "32 mm",
+      "references": ["Rule 12-516", "Rule 12-518"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-046",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "pull-box",
+      "question": "Determine the minimum dimensions required according to the requirements of code rules for pull boxes (1.5 in. conduit entries as shown in the diagram).",
+      "answer": "9 x 9 in.",
+      "references": ["Rule 12-3034 1)b)"],
+      "solution_steps": [
+        "Angle/U pull: minimum = 6 x largest conduit = 6 x 1.5 in. = 9 in.",
+        "Box is 9 x 9 in. Diagram needed to confirm."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-047",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "splices",
+      "question": "Are joints or splices allowed in conductors or cables within rigid metal conduit?",
+      "answer": "No",
+      "references": ["Rule 12-912"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-048",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "pv-raceway",
+      "question": "Can the conductors of a PV System (Photovoltaic system) be placed in the same raceway with conductors of other systems?",
+      "answer": "No",
+      "references": ["Rule 12-904 2)"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-049",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "If there are 4 TWU75, 600V, with jacket, 2/0 AWG copper conductors that need to be installed in a conduit, what is the minimum size of the conduit required?",
+      "answer": "53 mm",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Find the 2/0 TWU75 conductor area (Table 10).",
+        "Total for 4 conductors, apply 40% fill (Table 8), select from Table 6: 53 mm."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-050",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "underground-cover",
+      "question": "Determine the minimum cover requirements for a Non-Metallic Sheathed Cable which is directly buried without additional protection under a vehicular area and is used as a wiring method for a 200A, 120/240V subservice.",
+      "answer": "900 mm",
+      "references": ["Table 53"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-051",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-voltage",
+      "question": "What is the maximum voltage between conductors that a Non-Metallic Sheathed Cable can be connected to?",
+      "answer": "300 V (per 2021 code; 2024 code limits it to the voltage rating marked on the cable)",
+      "references": ["Rule 12-500"],
+      "solution_steps": [
+        "Source gives 300 V. Note 2024 code uses the cable's marked voltage rating instead. Difference flagged."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-052",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "box-setback",
+      "question": "The front edge of boxes installed in concrete walls or ceilings shall not be set in more than ______ mm from the finished surface.",
+      "answer": "Answer not given in source notes (per Rule 12-3018, the maximum setback is 6 mm)",
+      "references": ["Rule 12-3018"],
+      "solution_steps": [
+        "Source left this answer blank; flagged for review. Code value is 6 mm."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-053",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "bend-radius",
+      "question": "What is the minimum bend radius for a 63 mm EMT?",
+      "answer": "267 mm",
+      "references": ["Table 7"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-054",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-clearance",
+      "question": "What is the minimum air space required between Non-Metallic Sheathed Cable and a heating pipe?",
+      "answer": "25 mm",
+      "references": ["Rule 12-506", "Rule 12-510"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-055",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "box-fill",
+      "question": "What is the maximum number of conductors of size #8 AWG permitted in a 3 in. x 2 in. x 3 in. device box?",
+      "answer": "5 x #8 AWG",
+      "references": ["Table 23"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-056",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "conduit-fill",
+      "question": "Determine the trade size of EMT to contain four #3/0 AWG RW90 XLPE stranded conductors rated at 600V without a jacket and six #12 AWG TW75 stranded conductors, to be used on a 347/600V, 3-phase, 4-wire system with one #6 R90 XLPE 600V stranded unjacketed bonding conductor.",
+      "answer": "Size 53",
+      "references": ["Table 6", "Table 8", "Table 10"],
+      "solution_steps": [
+        "Sum conductor areas: four 3/0 RW90, six #12 TW75, one #6 R90 bonding (Table 10).",
+        "Apply 40% fill (over 2 conductors), select EMT from Table 6: size 53."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-057",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "grounding-conductor",
+      "question": "A rigid steel conduit is used for mechanical protection for an AC grounding conductor. What is done to the conduit?",
+      "options": [
+        "A) Connect to the grounding conductor at one end only",
+        "B) Connect to the grounding conductor at both ends",
+        "C) Connect to the bonding conductor at the service",
+        "D) Connect to the upstream side of the grounding conductor"
+      ],
+      "answer": "Connect to the grounding conductor at both ends (the conduit must be bonded at both ends)",
+      "answer_key": "B",
+      "references": ["Rule 10-806", "Rule 12-122"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-058",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "nmsc-voltage",
+      "question": "When using non-metallic sheathed cable, what is the maximum voltage permitted between two conductors?",
+      "options": [
+        "A) 120 volts",
+        "B) 150 volts",
+        "C) 300 volts",
+        "D) 600 volts"
+      ],
+      "answer": "300 volts (per 2021 code; the 2024 code uses the voltage rating marked on the cable)",
+      "answer_key": "C",
+      "references": ["Rule 12-500"],
+      "solution_steps": [
+        "2021 answer is 300 V. 2024 code uses the cable's marked rating. Difference flagged."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-059",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "ampacity-ambient",
+      "question": "In a room where the ambient temperature reaches 48 degC, what is the minimum size TW75 copper conductor in EMT that is allowed to carry 170 amp?",
+      "options": [
+        "A) #1/0 AWG",
+        "B) #2/0 AWG",
+        "C) #3/0 AWG",
+        "D) #4/0 AWG"
+      ],
+      "answer": "Answer not given in source notes",
+      "references": ["Table 2", "Table 5A"],
+      "solution_steps": [
+        "Apply the ambient temperature correction factor (Table 5A) for 48 degC to the TW75 ampacity (Table 2), then select the size that still carries 170 A. Source did not state the answer."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-060",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "flex-conduit-support",
+      "question": "When flexible metal conduit is installed, what is the maximum distance it must be secured from an outlet box?",
+      "options": [
+        "A) 150 mm",
+        "B) 300 mm",
+        "C) 600 mm",
+        "D) 900 mm"
+      ],
+      "answer": "300 mm",
+      "answer_key": "B",
+      "references": ["Rule 12-1010", "Rule 12-1306"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-061",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "conduit-expansion",
+      "question": "What is the expansion for a 60 m run of rigid aluminum conduit when the temperature ranges from -32 degC to +35 degC?",
+      "options": [
+        "A) 3.96 mm",
+        "B) 45.83 mm",
+        "C) 88.44 mm",
+        "D) 209.04 mm"
+      ],
+      "answer": "88.44 mm",
+      "answer_key": "C",
+      "references": ["Table 38", "Rule 12-1102"],
+      "solution_steps": [
+        "Temperature change = 35 - (-32) = 67 degC.",
+        "Apply the rigid aluminum expansion coefficient over a 60 m run.",
+        "Result = 88.44 mm."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-062",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "splices",
+      "question": "Under which conditions are joints and splices permitted (in a raceway/wireway)?",
+      "options": [
+        "A) It is a sealed raceway",
+        "B) The operating voltage is below 300 volts",
+        "C) Has a removable cover",
+        "D) The fill does not exceed (a set percentage)"
+      ],
+      "answer": "When the raceway/wireway has a removable cover that is accessible after installation",
+      "answer_key": "C",
+      "references": ["Rule 12-912", "Rule 12-2106"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-063",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "box-fill",
+      "question": "Given the following information: three pairs of #14 RW90 conductors connected using wire connectors, and two #12 RW90 conductors connected using wire connectors. What is the minimum size box used for this installation?",
+      "options": [
+        "A) 245 mL",
+        "B) 344 mL",
+        "C) 491 mL",
+        "D) 686 mL"
+      ],
+      "answer": "Answer not explicitly stated in source notes",
+      "references": ["Table 22", "Table 23"],
+      "solution_steps": [
+        "Count conductor equivalents for six #14 and two #12 conductors plus wire connector allowances, then select from Table 22/23. Source did not state which option."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-064",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "box-setback",
+      "question": "What is the maximum allowable depth between a finished surface and the front edge of an outlet box (non-combustible wall)?",
+      "options": [
+        "A) 0 mm",
+        "B) 3 mm",
+        "C) 6 mm",
+        "D) 9 mm"
+      ],
+      "answer": "6 mm",
+      "answer_key": "C",
+      "references": ["Rule 12-3018"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-065",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "armoured-cable-cover",
+      "question": "An armored cable is used for direct burial in masonry or concrete. What is the minimum cover required in the encasement?",
+      "options": [
+        "A) 25 mm",
+        "B) 50 mm",
+        "C) 425 mm",
+        "D) 450 mm"
+      ],
+      "answer": "Answer not explicitly stated in source notes",
+      "references": ["Table 53", "Rule 12-012"],
+      "solution_steps": [
+        "Source did not state which option. Flagged for review."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-066",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "vertical-support",
+      "question": "A rooftop HVAC unit is supplied with #3/0 AWG copper feeders in a vertical conduit. What is the maximum distance between the conductor supports?",
+      "options": [
+        "a. 15 m",
+        "b. 18 m",
+        "c. 24 m",
+        "d. 30 m"
+      ],
+      "answer": "30 m",
+      "answer_key": "d",
+      "references": ["Table 21", "Rule 12-120"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-067",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "underground-cover",
+      "question": "A metal-sheathed, direct-buried 600V cable is exposed to vehicular traffic. What is the minimum cover requirement?",
+      "options": [
+        "a. 450 mm",
+        "b. 600 mm",
+        "c. 900 mm",
+        "d. 1000 mm"
+      ],
+      "answer": "900 mm",
+      "answer_key": "c",
+      "references": ["Table 53"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S12-068",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "faceplate",
+      "question": "A metal faceplate is installed on a box containing a receptacle. What is the minimum allowable distance between the receptacle face and the metal faceplate?",
+      "options": [
+        "a. 0.4 mm",
+        "b. 0.675 mm",
+        "c. 4.0 mm",
+        "d. 6.750 mm"
+      ],
+      "answer": "0.4 mm",
+      "answer_key": "a",
+      "references": ["Rule 12-3008"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-069",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "plenum-cable",
+      "question": "A CMP communication cable is being installed in a ceiling space used as an air-handling plenum. When the cable is supplying a public address system, what is the maximum conductor temperature rating?",
+      "options": [
+        "a. 60 degrees celsius",
+        "b. 75 degrees celsius",
+        "c. 90 degrees celsius",
+        "d. 105 degrees celsius"
+      ],
+      "answer": "Answer not explicitly stated in source notes",
+      "references": [],
+      "solution_steps": [
+        "Source did not state which option. Flagged for review."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-070",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "cable-tray",
+      "question": "Given a new cable tray with 18 x three-conductor 12 AWG TC cables and 2 x three-conductor 750 kcmil TECK90 cables measuring 75 mm in diameter. The tray is installed parallel and below an existing cable tray. How much vertical clearance is required between the trays?",
+      "options": [
+        "a. 50 mm",
+        "b. 150 mm",
+        "c. 300 mm",
+        "d. 600 mm"
+      ],
+      "answer": "300 mm",
+      "answer_key": "c",
+      "references": ["Rule 12-2202"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-071",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "vertical-support",
+      "question": "What is the maximum support distance of an aluminum 250 kcmil conductor in a vertical run?",
+      "options": [
+        "a. 25 m",
+        "b. 35 m",
+        "c. 15 m",
+        "d. 40 m"
+      ],
+      "answer": "Approximately 25 m (per Table 21 for aluminum 250 kcmil)",
+      "answer_key": "a",
+      "references": ["Table 21", "Rule 12-120"],
+      "solution_steps": [
+        "OCR garbled the option layout; verify against Table 21."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-072",
+      "section": 12,
+      "block": "C",
+      "type": "lookup",
+      "topic": "bend-radius",
+      "question": "What is the minimum radius of bending of a 3 in. EMT (non-lead sheathed cable)?",
+      "options": [
+        "a. 241 mm",
+        "b. 330 mm",
+        "c. 610 mm",
+        "d. 762 mm"
+      ],
+      "answer": "Per Table 7 (OCR did not clearly mark the selected option)",
+      "references": ["Table 7"],
+      "solution_steps": [
+        "Read the minimum bend radius for 3 in. (78 mm) conduit from Table 7. Source flagged Table 7 but option not clearly marked."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-073",
+      "section": 12,
+      "block": "C",
+      "type": "calculation",
+      "topic": "conduit-support",
+      "question": "A raceway system consisting of 30 m runs of 103 mm PVC and 53 mm PVC conduits is installed between pull boxes. How many supports are required when they are installed on the same rack?",
+      "options": [
+        "a. 9",
+        "b. 14",
+        "c. 19",
+        "d. 20"
+      ],
+      "answer": "Answer not explicitly marked in source notes",
+      "references": ["Table 21", "Rule 12-1114"],
+      "solution_steps": [
+        "Determine support spacing for the larger conduit from the rigid PVC support table, then count supports over the 30 m run. Source did not clearly mark the option."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S12-074",
+      "section": 12,
+      "block": "C",
+      "type": "theory",
+      "topic": "busway",
+      "question": "When reducing the size of a busway, overcurrent protection may be omitted only if the smaller busway section meets which requirement?",
+      "options": [
+        "A) It does not exceed 5 m in length",
+        "B) It does not exceed 10 m in length",
+        "C) It does not exceed 15 m in length",
+        "D) It does not exceed 25 m in length"
+      ],
+      "answer": "It does not exceed 15 m in length",
+      "answer_key": "C",
+      "references": ["Rule 12-2010"],
+      "solution_steps": [],
+      "code_edition": "2024",
+      "needs_review": true
+    }
+  ]
+}

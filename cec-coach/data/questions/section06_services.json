@@ -1,0 +1,131 @@
+{
+  "exam_set": "section06-practice",
+  "questions": [
+    {
+      "id": "S06-001",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-mast",
+      "question": "Rigid steel conduit of a minimum nominal size of ______ shall be permitted for use as a service mast.",
+      "answer": "53 mm (the source answer 'of 63' appears to be an OCR error for trade size 2 in., i.e. 53 mm metric designator; CEC requires a minimum 53 mm rigid metal conduit for a service mast)",
+      "references": ["Rule 6-112"],
+      "solution_steps": ["Rule 6-112 governs service masts.", "Minimum rigid metal conduit nominal size for a service mast is 53 mm (trade size 2)."],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S06-002",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-clearance",
+      "question": "Service conductors shall be at a distance of ______ from porches, doors and windows.",
+      "answer": "1.0 m",
+      "references": ["Rule 6-116", "Rule 12-310"],
+      "solution_steps": ["Open service conductors must be kept clear of building openings.", "Required minimum clearance from porches, doors, and windows is 1.0 m."],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S06-003",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-raceway",
+      "question": "The minimum rigid conduit size for installation as a consumer's service raceway is ______.",
+      "answer": "21 mm (trade size 3/4)",
+      "references": ["Rule 6-110"],
+      "solution_steps": ["The source answer reads '21', corresponding to 21 mm rigid conduit (trade size 3/4) as the minimum for a consumer's service raceway."],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S06-004",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-height",
+      "question": "What is the minimum height required for service conductors crossing a highway?",
+      "answer": "5.5 m",
+      "references": ["Rule 6-112", "Rule 12-310", "Table 32"],
+      "solution_steps": ["Overhead conductors crossing a roadway/highway require a minimum vertical clearance.", "For conductors crossing a highway the minimum height is 5.5 m."],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S06-005",
+      "section": 6, "block": "B", "type": "lookup", "topic": "min-conductor-size",
+      "question": "The minimum wire size allowed by the CEC for consumer's service conductors is ______ Cu and ______ Al.",
+      "answer": "No. 10 AWG copper and No. 8 AWG aluminum",
+      "references": ["Rule 6-302"],
+      "solution_steps": ["Minimum consumer's service conductor sizes are No. 10 AWG for copper and No. 8 AWG for aluminum."],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S06-006",
+      "section": 6, "block": "B", "type": "lookup", "topic": "point-of-attachment",
+      "question": "What is the maximum height allowed by the code for the point of attachment for supply service conductors?",
+      "answer": "9 m",
+      "references": ["Rule 6-112"],
+      "solution_steps": ["The maximum height of the point of attachment for overhead supply service conductors is 9 m."],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S06-007",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-equipment-location",
+      "question": "Service box or other consumer's service equipment shall be placed within the building being served as close as possible to the point where consumer's service conductors enter the building, and shall not be located where headroom clearance is less than ______ m.",
+      "answer": "2 m",
+      "references": ["Rule 6-206"],
+      "solution_steps": ["Consumer's service equipment must not be installed where headroom clearance is less than 2 m."],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S06-008",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-height",
+      "question": "What is the minimum height for service conductors that are crossing an alley?",
+      "answer": "5.5 m",
+      "references": ["Rule 6-112", "Table 32"],
+      "solution_steps": ["For service conductors crossing an alley (vehicular access) the minimum vertical clearance is 5.5 m."],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S06-009",
+      "section": 6, "block": "B", "type": "lookup", "topic": "service-mast",
+      "question": "When installing a service mast, an assembly is considered to be installed in an acceptable manner where the maximum unguyed projection of support members does not exceed ______ m.",
+      "answer": "Source did not provide the answer. Per CEC Rule 6-112, the maximum unguyed projection (height of mast above the topmost support/roof) is commonly taken as 1.5 m before guying or additional support is required.",
+      "references": ["Rule 6-112"],
+      "solution_steps": ["The OCR 'Answers' section omits this item.", "Rule 6-112 limits the unguyed projection of a service mast; a typical maximum unguyed projection is 1.5 m. Verify against the source/Code."],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S06-010",
+      "section": 6, "block": "B", "type": "lookup", "topic": "conductors-inside-building",
+      "question": "Which condition allows for consumer's service conductors to be located inside a building?",
+      "options": ["A) conductors are run in a 53 mm rigid steel pipe", "B) conductors are protected by a 5 mm steel plate", "C) conductors are embedded in 50 mm of concrete", "D) conductors are run in an attic with 1.2 m clearance"],
+      "answer": "Conductors are embedded in not less than 50 mm of concrete (consumer's service conductors run inside a building must be encased in at least 50 mm of concrete or masonry)",
+      "answer_key": "C",
+      "references": ["Rule 6-300", "Rule 6-302"],
+      "solution_steps": ["Consumer's service conductors are generally not permitted inside a building unless they are run underground, encased in at least 50 mm of concrete/masonry, or otherwise specified.", "Option C (embedded in 50 mm of concrete) satisfies this requirement."],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S06-011",
+      "section": 6, "block": "B", "type": "lookup", "topic": "point-of-attachment",
+      "question": "What is the minimum height for the point of attachment where conductors are run above areas accessible only to pedestrians?",
+      "options": ["A) 3.5 m", "B) 4.5 m", "C) 5.0 m", "D) 5.5 m"],
+      "answer": "3.5 m (minimum vertical clearance over areas accessible to pedestrians only)",
+      "answer_key": "A",
+      "references": ["Rule 6-112", "Table 32"],
+      "solution_steps": ["Areas accessible to pedestrians only have the lowest required overhead clearance.", "Minimum height for the point of attachment over pedestrian-only areas is 3.5 m."],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S06-012",
+      "section": 6, "block": "B", "type": "lookup", "topic": "conductors-inside-building",
+      "question": "Which condition allows consumer's service conductors to be located inside a building?",
+      "options": ["A) conductors are run in a 53 mm rigid steel pipe", "B) conductors are protected by a 5 mm steel plate", "C) conductors are embedded in 50 mm of concrete", "D) conductors are run in an attic with 1.2 m clearance"],
+      "answer": "Conductors are embedded in not less than 50 mm of concrete",
+      "answer_key": "C",
+      "references": ["Rule 6-300", "Rule 6-302"],
+      "solution_steps": ["This is a duplicate of Q10 in the source (it appears in both the question set and the answer set).", "Consumer's service conductors inside a building must be encased in at least 50 mm of concrete/masonry → option C."],
+      "code_edition": "2024",
+      "needs_review": false
+    }
+  ]
+}
