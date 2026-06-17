@@ -64,6 +64,45 @@ h2{color:#fff; margin:6px 0 10px}
 .timer{color:var(--gold); font-weight:700; margin-bottom:10px; font-variant-numeric:tabular-nums}
 .timer.warn{color:#ff6b6b}
 
+/* exam meta row: number, live score, per-question + total timers */
+.qmeta{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
+.qchip{background:rgba(255,255,255,.12); color:#eaf7f0; font-size:13px; font-weight:700;
+  padding:6px 12px; border-radius:99px; font-variant-numeric:tabular-nums}
+.qchip.score{background:#13402e; color:#7be0a6}
+.qchip.warn{background:#5a1d1d; color:#ff9b9b}
+
+.banner{border-radius:12px; padding:11px 14px; margin-bottom:14px; font-size:15px; line-height:1.5}
+.banner.good{background:#e9f7ee; color:#0b6b34; border:1.5px solid #9be0b5}
+.banner.bad{background:#fdecea; color:#9a2a1d; border:1.5px solid #f3b6ad}
+
+.navbtns{justify-content:space-between}
+.navbtns .ghost{flex:0 0 auto; min-width:84px}
+.teachbtn{flex:1; margin:0 8px; white-space:nowrap}
+.ghost:disabled{opacity:.4; cursor:default}
+.finishbtn{width:100%}
+.kbhint{text-align:center; margin-top:6px}
+
+.teachbox{background:#f3f9f6; border:1px solid var(--line); border-radius:12px; padding:14px; margin-top:14px}
+.teachbox:empty{display:none}
+
+/* results: misses review */
+.miss{background:#fff; color:var(--ink); border-radius:14px; padding:14px; margin:12px 0; line-height:1.55}
+.miss .missq{font-weight:700; margin-bottom:8px}
+.miss .missline{font-size:14px; margin-bottom:8px}
+.miss .missline .bad{color:var(--bad)}
+.miss .missline .ok{color:var(--good)}
+.miss ol{margin:6px 0; padding-inline-start:20px}
+.miss li{margin:4px 0}
+.miss .refs{font-size:13px; color:var(--muted); margin-top:6px}
+
+@media(max-width:480px){
+  .qchip{font-size:12px; padding:5px 10px}
+  .teachbtn{white-space:normal; font-size:13px; padding:11px 10px}
+  .navbtns{flex-wrap:wrap}
+  .navbtns .ghost{flex:1}
+  .teachbtn{flex:1 1 100%; order:3; margin:8px 0 0}
+}
+
 .qcard{background:var(--card); border-radius:16px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.18)}
 .qtags{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
 .tag{background:#eef4f1; color:#2c5d4a; font-size:11px; padding:3px 9px; border-radius:99px; font-weight:600}

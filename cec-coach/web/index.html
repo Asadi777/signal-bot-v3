@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — BC Construction Electrician (CEC 2024)</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
   <header class="topbar">
@@ -88,30 +88,41 @@
       <div class="quizbar">
         <button class="back" data-home>← Quit</button>
         <div class="progress"><div id="bar" class="bar"></div></div>
-        <div id="qcount" class="qcount"></div>
       </div>
-      <div id="timer" class="timer hidden"></div>
+      <div class="qmeta">
+        <span id="qcount" class="qchip"></span>
+        <span id="qscore" class="qchip score"></span>
+        <span id="qtimer" class="qchip" title="Time on this question">⏱ 0:00</span>
+        <span id="ttimer" class="qchip" title="Total exam time">🕒 0:00</span>
+      </div>
 
       <div class="qcard">
         <div id="qtags" class="qtags"></div>
         <div id="qtext" class="qtext"></div>
+        <div id="banner" class="banner hidden"></div>
         <div id="options" class="options"></div>
-        <button id="reveal" class="primary hidden">Show answer</button>
       </div>
 
       <div id="explain" class="explain hidden"></div>
-      <div class="rowbtns">
-        <button id="askai" class="ghost hidden">💬 Ask AI about this</button>
-        <button id="next" class="primary hidden">Next →</button>
+
+      <div class="rowbtns navbtns">
+        <button id="prev" class="ghost">← Prev</button>
+        <button id="teach" class="primary teachbtn hidden">🧑‍🏫 Teach me · فارسی + English</button>
+        <button id="next" class="ghost">Next →</button>
       </div>
+      <div class="rowbtns">
+        <button id="finish" class="primary finishbtn">Finish &amp; see score ✓</button>
+      </div>
+      <p class="foot kbhint">Tip: press <b>A B C D</b> to answer · <b>←</b> / <b>→</b> to move</p>
     </section>
 
     <!-- RESULTS -->
     <section id="results" class="screen hidden">
       <h2>Session complete</h2>
       <div id="score" class="score"></div>
+      <div id="resultActions" class="rowbtns"></div>
       <div id="rdetail" class="rdetail"></div>
-      <button class="primary" data-home>Home</button>
+      <div id="resultActions2" class="rowbtns"></div>
     </section>
 
     <!-- KEYWORD MAP -->
@@ -195,7 +206,7 @@
     </section>
   </main>
 
-  <script src="questions.js"></script>
-  <script src="app.js"></script>
+  <script src="questions.js?v=13"></script>
+  <script src="app.js?v=13"></script>
 </body>
 </html>

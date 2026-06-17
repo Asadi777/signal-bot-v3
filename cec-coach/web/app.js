@@ -1,4 +1,4 @@
-/* CEC Coach — web app  (v1.2.0 — markdown answers + error surfacing)
+/* CEC Coach — web app  (v1.3.0 — full exam UX: timers, nav, bilingual teacher, memory)
    Offline quiz bank + AI features (tutor / generator / vision) via the Claude API.
    The API key lives only in this browser (localStorage) and is sent straight to
    Anthropic with the direct-browser-access header — no backend needed. */
@@ -184,10 +184,41 @@
     "motor FLC→Table 44 (3ph)/45 (1ph); motor branch conductor→Rule 28-106 (125% FLC); overload→Rule 28-306 (nameplate FLA); " +
     "motor fuse/breaker→Table 29; working space→Rule 2-308 + Table 56; voltage to ground in dwelling→Rule 2-110 (150V); " +
     "enclosure type→Table 65. Unknown defined term→Section 0.\n\n" +
-    "FORMATTING (always): reply in clean Markdown for a study app — use ## headings, **bold** for the final answer and for each keyword, numbered steps, and Markdown TABLES for any lookup/comparison/calculation. Separate major parts with a horizontal rule (---) and keep generous spacing. When a figure helps (circuit, conduit cross-section, panel/box layout, one-line), draw a clear ASCII/Unicode diagram inside a ``` fenced code block. Structure most answers as: ## Answer · ## Keyword(s) to spot · ## Table/Rule to jump to · ## Fastest steps (numbered) · ## خلاصهٔ فارسی (a short right-to-left Persian summary).";
+    "TEACH like a patient teacher explaining to a brand-new beginner who is nervous about the exam. Be encouraging and concrete. ALWAYS give the FULL explanation in BOTH English AND Persian (فارسی) — not just a short Persian summary, but a real Persian explanation of every step, because the student is a native Persian speaker.\n\n" +
+    "FORMATTING (always): clean Markdown — use ## headings, **bold** for the final answer and for each keyword, numbered steps, and Markdown TABLES for any lookup/comparison/calculation. Separate major parts with a horizontal rule (---). When a figure helps (circuit, conduit cross-section, panel/box layout, one-line), draw a clear ASCII/Unicode diagram in a ``` fenced code block. Structure each answer as: \n## ✅ Answer\n## 🔑 Keyword(s) you should spot — quote the exact words in the question and say what they signal.\n## 📖 Which Table/Rule & why — name it and explain WHY that is the right place.\n## 🧭 Step-by-step to the answer (numbered, the fastest open-book path)\n## 🇮🇷 توضیح کامل فارسی — همه‌چیز را روان و کامل به فارسی توضیح بده (کلمهٔ کلیدی، کدام جدول/قانون و چرا، و قدم‌به‌قدم چطور به جواب می‌رسیم).";
+
+  // ---------- student profile (personalization memory) ----------
+  var PROFILE = JSON.parse(localStorage.getItem("cec_profile") || '{"sections":{},"topics":{},"exams":0,"answered":0,"correct":0}');
+  function saveProfile() { localStorage.setItem("cec_profile", JSON.stringify(PROFILE)); }
+  function profileRecord(q, ok) {
+    var s = (q.section != null ? q.section : "occ");
+    var ps = PROFILE.sections[s] || (PROFILE.sections[s] = { seen: 0, wrong: 0 });
+    ps.seen++; if (!ok) ps.wrong++;
+    if (q.topic) { var pt = PROFILE.topics[q.topic] || (PROFILE.topics[q.topic] = { seen: 0, wrong: 0 }); pt.seen++; if (!ok) pt.wrong++; }
+    PROFILE.answered = (PROFILE.answered || 0) + 1; if (ok) PROFILE.correct = (PROFILE.correct || 0) + 1;
+    saveProfile();
+  }
+  function weakSummary() {
+    var secs = Object.keys(PROFILE.sections).map(function (s) {
+      var p = PROFILE.sections[s];
+      return { name: (s === "occ" ? "Occupational/Safety" : (SECTION_NAMES[s] || ("Section " + s))), wrong: p.wrong, seen: p.seen };
+    }).filter(function (x) { return x.wrong > 0; }).sort(function (a, b) { return b.wrong - a.wrong; });
+    var tops = Object.keys(PROFILE.topics).map(function (t) {
+      var p = PROFILE.topics[t]; return { name: t, wrong: p.wrong, seen: p.seen };
+    }).filter(function (x) { return x.wrong > 0; }).sort(function (a, b) { return b.wrong - a.wrong; }).slice(0, 8);
+    return { secs: secs.slice(0, 5), tops: tops };
+  }
+  function tutorSystem() {
+    var w = weakSummary();
+    if (!w.secs.length && !w.tops.length) return TUTOR_SYSTEM;
+    var prof = "\n\nSTUDENT PROFILE (use it to personalize — focus on these weak spots, drill them, and check the student really learned): weakest sections: " +
+      w.secs.map(function (x) { return x.name + " (" + x.wrong + "/" + x.seen + " wrong)"; }).join(", ") +
+      (w.tops.length ? ". Weak topics: " + w.tops.map(function (x) { return x.name; }).join(", ") : "") + ".";
+    return TUTOR_SYSTEM + prof;
+  }
 
   // ---------- quiz engine ----------
-  var Q = { list: [], i: 0, correct: 0, mode: "", answered: false, timer: null, endAt: 0, answers: [] };
+  var Q = { list: [], i: 0, mode: "", answers: [], totalTimer: null, endAt: 0, budget: 0, startedAt: 0, qStartAt: 0 };
 
   function pickWeighted(n) {
     // group by block, sample proportional to blueprint block_weights
@@ -208,122 +239,185 @@
     return shuffle(out).slice(0, n);
   }
 
+  function fmt(ms) { if (ms < 0) ms = 0; var m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000); return m + ":" + (s < 10 ? "0" : "") + s; }
+
   function startQuiz(list, mode, timed) {
-    // safety: never show a card you can't answer
     list = (list || []).filter(function (q) { return (q.options || []).length >= 2 && q.answer_key; });
     if (!list.length) { alert("No answerable questions in that selection yet."); return; }
-    Q = { list: list, i: 0, correct: 0, mode: mode, answered: false, timer: null, endAt: 0, answers: [] };
-    show("quiz");
-    if (timed) {
-      var mins = list.length >= 100 ? (BP.time_minutes_standard || 240) : Math.max(1, Math.round(list.length * 1.5));
-      Q.endAt = Date.now() + mins * 60000;
-      $("timer").classList.remove("hidden");
-      tick();
-      Q.timer = setInterval(tick, 1000);
-    } else {
-      $("timer").classList.add("hidden");
+    if (Q.totalTimer) clearInterval(Q.totalTimer);
+    Q = { list: list, i: 0, mode: mode, answers: list.map(function () { return null; }),
+      totalTimer: null, endAt: 0, budget: 0, startedAt: Date.now(), qStartAt: Date.now() };
+    if (timed || mode === "mock") {
+      var mins = list.length >= 100 ? (BP.time_minutes_standard || 240) : Math.max(1, Math.round(list.length * 1.2));
+      Q.budget = mins * 60000; Q.endAt = Q.startedAt + Q.budget;
     }
+    show("quiz");
+    Q.totalTimer = setInterval(tickTimers, 500); tickTimers();
     renderQ();
   }
-  function tick() {
-    var ms = Q.endAt - Date.now();
-    if (ms <= 0) { ms = 0; clearInterval(Q.timer); finish(); return; }
-    var m = Math.floor(ms / 60000), s = Math.floor((ms % 60000) / 1000);
-    var t = $("timer"); t.textContent = "⏱ " + m + ":" + (s < 10 ? "0" : "") + s;
-    t.classList.toggle("warn", ms < 60000);
+  function tickTimers() {
+    var a = Q.answers[Q.i];
+    var qms = a ? (a.timeMs || 0) : (Date.now() - Q.qStartAt);
+    $("qtimer").textContent = "⏱ " + fmt(qms);
+    var tt = $("ttimer");
+    if (Q.budget) {
+      var rem = Q.endAt - Date.now();
+      tt.textContent = "🕒 " + fmt(rem) + " left";
+      tt.classList.toggle("warn", rem < 120000);
+      if (rem <= 0) { finish(); }
+    } else {
+      tt.textContent = "🕒 " + fmt(Date.now() - Q.startedAt);
+    }
+  }
+  function liveScore() {
+    var ans = Q.answers.filter(Boolean), ok = ans.filter(function (a) { return a.ok; }).length;
+    $("qscore").textContent = "✓ " + ok + "/" + ans.length + " right";
   }
 
   function renderQ() {
-    Q.answered = false;
-    var q = Q.list[Q.i];
-    $("bar").style.width = ((Q.i) / Q.list.length * 100) + "%";
-    $("qcount").textContent = (Q.i + 1) + " / " + Q.list.length;
+    var q = Q.list[Q.i], a = Q.answers[Q.i];
+    Q.qStartAt = Date.now();
+    $("bar").style.width = (((Q.i + (a ? 1 : 0)) / Q.list.length) * 100) + "%";
+    $("qcount").textContent = "Q " + (Q.i + 1) + " / " + Q.list.length;
+    liveScore();
     var tags = $("qtags"); tags.innerHTML = "";
-    var secName = SECTION_NAMES[q.section] || ("Section " + (q.section || "?"));
-    tags.appendChild(el("span", "tag", esc(secName)));
+    tags.appendChild(el("span", "tag", esc(SECTION_NAMES[q.section] || ("Section " + (q.section || "?")))));
     if (q.block) tags.appendChild(el("span", "tag block", "Block " + esc(q.block)));
     if (q.topic) tags.appendChild(el("span", "tag", esc(q.topic)));
     $("qtext").textContent = q.question;
+    var correctKey = (q.answer_key || "").toUpperCase();
     var opts = $("options"); opts.innerHTML = "";
     (q.options || []).forEach(function (optText, idx) {
-      var keyLetter = (optText.match(/^([A-Da-d])\)/) || [])[1] || String.fromCharCode(65 + idx);
+      var keyLetter = ((optText.match(/^([A-Da-d])\)/) || [])[1] || String.fromCharCode(65 + idx)).toUpperCase();
       var label = optText.replace(/^([A-Da-d])\)\s*/, "");
       var b = el("button", "opt");
-      b.appendChild(el("span", "k", esc(keyLetter.toUpperCase())));
+      b.appendChild(el("span", "k", esc(keyLetter)));
       b.appendChild(el("span", null, esc(label)));
-      b.dataset.key = keyLetter.toUpperCase();
-      b.onclick = function () { choose(b.dataset.key); };
+      b.dataset.key = keyLetter;
+      if (a) {
+        b.disabled = true;
+        if (keyLetter === correctKey) b.classList.add("correct");
+        else if (keyLetter === a.picked) b.classList.add("wrong");
+        else b.classList.add("dim");
+      } else {
+        b.onclick = function () { choose(keyLetter); };
+      }
       opts.appendChild(b);
     });
-    $("reveal").classList.add("hidden");
-    $("explain").classList.add("hidden");
-    $("explain").innerHTML = "";
-    $("next").classList.add("hidden");
-    $("askai").classList.add("hidden");
+    if (a) { showBanner(a.ok, correctKey); showExplain(q); $("teach").classList.remove("hidden"); }
+    else { $("banner").classList.add("hidden"); $("explain").classList.add("hidden"); $("explain").innerHTML = ""; $("teach").classList.add("hidden"); }
+    $("prev").disabled = (Q.i === 0);
+    $("next").disabled = (Q.i >= Q.list.length - 1);
+  }
+
+  function showBanner(ok, correctKey) {
+    var b = $("banner");
+    b.className = "banner " + (ok ? "good" : "bad");
+    b.innerHTML = ok ? "✅ <b>Correct!</b> — درست بود! 🎉"
+      : "❌ <b>Incorrect</b> — the right answer is <b>" + esc(correctKey) + "</b>. اشکالی نداره، با هم یاد می‌گیریم 👇";
+    b.classList.remove("hidden");
   }
 
   function choose(key) {
-    if (Q.answered) return;
-    Q.answered = true;
+    if (Q.answers[Q.i]) return;
     var q = Q.list[Q.i];
     var correctKey = (q.answer_key || "").toUpperCase();
     var ok = key === correctKey;
-    if (ok) Q.correct++;
-    record(q.id, ok);
-    Q.answers.push({ q: q, picked: key, ok: ok });
+    Q.answers[Q.i] = { picked: key, ok: ok, timeMs: Date.now() - Q.qStartAt };
+    record(q.id, ok); profileRecord(q, ok);
     var btns = $("options").children;
     for (var i = 0; i < btns.length; i++) {
-      var b = btns[i]; b.disabled = true;
-      if (b.dataset.key === correctKey) b.classList.add("correct");
-      else if (b.dataset.key === key) b.classList.add("wrong");
-      else b.classList.add("dim");
+      var btn = btns[i]; btn.disabled = true; btn.onclick = null;
+      if (btn.dataset.key === correctKey) btn.classList.add("correct");
+      else if (btn.dataset.key === key) btn.classList.add("wrong");
+      else btn.classList.add("dim");
     }
-    showExplain(q);
-    $("next").classList.remove("hidden");
-    $("askai").classList.remove("hidden");
-    $("next").textContent = (Q.i + 1 >= Q.list.length) ? "See results →" : "Next →";
+    showBanner(ok, correctKey); showExplain(q); liveScore();
+    $("teach").classList.remove("hidden");
+    $("bar").style.width = (((Q.i + 1) / Q.list.length) * 100) + "%";
   }
 
   function showExplain(q) {
     var e = $("explain");
     var refs = (q.references || []).join(" · ");
-    var html = "";
-    html += "<h4>Answer</h4><p>" + esc(q.answer || ("Option " + (q.answer_key || ""))) + "</p>";
+    var html = "<h4>✅ Answer</h4><p>" + esc(q.answer || ("Option " + (q.answer_key || ""))) + "</p>";
     if (q.solution_steps && q.solution_steps.length) {
-      html += "<h4>Fastest path</h4><ol>";
+      html += "<h4>🧭 Fastest path (English)</h4><ol>";
       q.solution_steps.forEach(function (s) { html += "<li>" + esc(s) + "</li>"; });
       html += "</ol>";
     }
     if (refs) html += "<div class='refs'>📖 " + esc(refs) + "</div>";
+    html += "<div id='teachout'></div>";
     e.innerHTML = html;
     e.classList.remove("hidden");
   }
 
-  function nextQ() {
-    Q.i++;
-    if (Q.i >= Q.list.length) { finish(); return; }
-    renderQ();
+  function teachThis() {
+    var q = Q.list[Q.i], a = Q.answers[Q.i];
+    if (!getKey()) { gotoSettings("Add your API key to get the bilingual teacher explanation."); return; }
+    var out = $("teachout"); if (!out) return;
+    var wait = thinking(out, "rich teachbox");
+    var started = false;
+    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "rich teachbox"; out.innerHTML = mdToHtml(t); }
+    var msg = "Teach me this exam question like a patient teacher to a beginner, in BOTH English and full Persian.\n\n" +
+      "Question: " + q.question + "\n" + (q.options || []).join("\n") +
+      "\nCorrect answer: " + (q.answer_key || "") + " — " + (q.answer || "") +
+      (a ? ("\nI answered: " + a.picked + " (" + (a.ok ? "correct" : "incorrect") + ").") : "");
+    callClaude([{ role: "user", content: msg }], { system: tutorSystem(), maxTokens: 3500, onText: paint })
+      .then(function (full) { wait.stop(); out.className = "rich teachbox"; out.innerHTML = mdToHtml(full); })
+      .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
 
+  function gotoQ(i) { if (i < 0 || i >= Q.list.length) return; Q.i = i; renderQ(); window.scrollTo(0, 0); }
+  function nextQ() { if (Q.i < Q.list.length - 1) gotoQ(Q.i + 1); }
+  function prevQ() { if (Q.i > 0) gotoQ(Q.i - 1); }
+
   function finish() {
-    if (Q.timer) clearInterval(Q.timer);
+    if (Q.totalTimer) { clearInterval(Q.totalTimer); Q.totalTimer = null; }
+    var answered = Q.answers.filter(Boolean);
+    var correct = answered.filter(function (a) { return a.ok; }).length;
+    PROFILE.exams = (PROFILE.exams || 0) + 1; saveProfile();
     show("results");
-    var pct = Math.round(Q.correct / Q.list.length * 100);
+    var pct = Q.list.length ? Math.round(correct / Q.list.length * 100) : 0;
     var pass = pct >= (BP.pass_mark_percent || 70);
-    $("score").innerHTML = pct + "%<small>" + Q.correct + " / " + Q.list.length +
-      " correct · pass mark " + (BP.pass_mark_percent || 70) + "%</small>";
+    var totalMs = answered.reduce(function (s, a) { return s + (a.timeMs || 0); }, 0);
+    $("score").innerHTML = pct + "%<small>" + correct + " / " + Q.list.length + " correct · " +
+      "answered " + answered.length + " · avg " + (answered.length ? Math.round(totalMs / answered.length / 1000) : 0) + "s/Q · pass mark " + (BP.pass_mark_percent || 70) + "%</small>";
     var d = $("rdetail");
-    var missed = Q.answers.filter(function (a) { return !a.ok; });
-    var h = "<p class='" + (pass ? "pass" : "fail") + "'>" + (pass ? "✅ Pass — keep this pace." : "❌ Below 70% — drill the misses.") + "</p>";
+    var h = "<p class='" + (pass ? "pass" : "fail") + "'>" + (pass ? "✅ PASS — keep this pace!" : "❌ Below 70% — let's drill the misses below.") + "</p>";
+    // weak sections this session
+    var bySec = {};
+    Q.list.forEach(function (q, i) { var a = Q.answers[i]; if (a && !a.ok) { var s = SECTION_NAMES[q.section] || ("Sec " + q.section); bySec[s] = (bySec[s] || 0) + 1; } });
+    var secList = Object.keys(bySec).sort(function (a, b) { return bySec[b] - bySec[a]; });
+    if (secList.length) h += "<p><b>Weakest areas this session:</b> " + secList.map(function (s) { return esc(s) + " (" + bySec[s] + ")"; }).join(" · ") + "</p>";
+    // missed questions with full explanation
+    var missed = [];
+    Q.list.forEach(function (q, i) { var a = Q.answers[i]; if (a && !a.ok) missed.push({ q: q, a: a }); });
     if (missed.length) {
-      h += "<p>Review these:</p><ul>";
-      missed.slice(0, 20).forEach(function (a) {
-        var sec = SECTION_NAMES[a.q.section] || ("Sec " + a.q.section);
-        h += "<li>" + esc(sec) + " — " + esc((a.q.references || []).join(", ") || a.q.topic || a.q.id) + "</li>";
+      h += "<h3 style='color:#fff'>📚 Review your misses (" + missed.length + ")</h3>";
+      missed.forEach(function (m) {
+        var q = m.q;
+        h += "<div class='miss'>";
+        h += "<div class='missq'>" + esc(q.question) + "</div>";
+        h += "<div class='missline'>You: <b class='bad'>" + esc(m.a.picked) + "</b> · Correct: <b class='ok'>" + esc((q.answer_key || "")) + " — " + esc(q.answer || "") + "</b></div>";
+        if (q.solution_steps && q.solution_steps.length) {
+          h += "<ol>"; q.solution_steps.forEach(function (s) { h += "<li>" + esc(s) + "</li>"; }); h += "</ol>";
+        }
+        if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";
+        h += "</div>";
       });
-      h += "</ul>";
+    } else if (answered.length) {
+      h += "<p class='pass'>No misses — excellent! 🌟</p>";
     }
     d.innerHTML = h;
+    // buttons
+    var ra = $("resultActions"); ra.innerHTML = "";
+    if (missed.length) {
+      var drill = el("button", "primary", "🎯 Drill these " + missed.length + " again");
+      drill.onclick = function () { startQuiz(shuffle(missed.map(function (m) { return m.q; })), "weak", false); };
+      ra.appendChild(drill);
+    }
+    var home = el("button", "ghost", "Home"); home.setAttribute("data-home", "1"); ra.appendChild(home);
   }
 
   // ---------- section picker ----------
@@ -366,7 +460,7 @@
     var started = false;
     function paint(t) { if (!started) { started = true; wait.stop(); } bubble.className = "msg ai rich"; bubble.innerHTML = mdToHtml(t); $("chat").scrollTop = $("chat").scrollHeight; }
     callClaude(chatHistory, {
-      system: TUTOR_SYSTEM, maxTokens: 4096, onText: paint
+      system: tutorSystem(), maxTokens: 4096, onText: paint
     }).then(function (full) {
       wait.stop(); bubble.className = "msg ai rich"; bubble.innerHTML = mdToHtml(full);
       chatHistory.push({ role: "assistant", content: full });
@@ -442,7 +536,7 @@
       : { type: "image", source: { type: "base64", media_type: attached.media, data: attached.data } };
     var content = [block, { type: "text", text: qtext }];
     callClaude([{ role: "user", content: content }], {
-      system: TUTOR_SYSTEM, maxTokens: 4096, onText: paint
+      system: tutorSystem(), maxTokens: 4096, onText: paint
     }).then(function (full) { wait.stop(); out.className = "explain rich"; out.innerHTML = mdToHtml(full); })
       .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
@@ -568,7 +662,7 @@
   // ---------- events ----------
   document.addEventListener("click", function (ev) {
     var t = ev.target.closest("[data-home]");
-    if (t) { if (Q.timer) clearInterval(Q.timer); show("home"); homeStats(); return; }
+    if (t) { if (Q.totalTimer) { clearInterval(Q.totalTimer); Q.totalTimer = null; } show("home"); homeStats(); return; }
     var mode = ev.target.closest("[data-mode]");
     if (mode) {
       var m = mode.getAttribute("data-mode");
@@ -594,12 +688,23 @@
 
   $("gear").onclick = function () { gotoSettings(); };
   $("next").onclick = nextQ;
-  $("askai").onclick = function () {
-    var q = Q.list[Q.i];
-    show("tutor");
-    sendChat("Explain this exam question step by step (keyword → table, fastest path), with a short Persian summary:\n\n" +
-      q.question + "\n" + (q.options || []).join("\n") + "\nCorrect answer: " + (q.answer_key || ""));
+  $("prev").onclick = prevQ;
+  $("finish").onclick = function () {
+    var un = Q.answers.filter(function (a) { return !a; }).length;
+    if (un && !confirm(un + " question(s) still unanswered. Finish anyway?")) return;
+    finish();
   };
+  $("teach").onclick = teachThis;
+  // keyboard: A–D to answer, ← / → to move
+  document.addEventListener("keydown", function (e) {
+    if ($("quiz").classList.contains("hidden")) return;
+    var tag = (document.activeElement && document.activeElement.tagName) || "";
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+    var k = e.key.toUpperCase();
+    if (k === "ARROWRIGHT") { nextQ(); e.preventDefault(); }
+    else if (k === "ARROWLEFT") { prevQ(); e.preventDefault(); }
+    else if ("ABCD".indexOf(k) >= 0 && !Q.answers[Q.i]) { choose(k); e.preventDefault(); }
+  });
   $("chatsend").onclick = function () { sendChat(); };
   $("chatinput").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); } });
   $("kmSearch").addEventListener("input", function (e) { renderKeymap(e.target.value); });
