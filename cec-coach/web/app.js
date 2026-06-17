@@ -1,4 +1,4 @@
-/* CEC Coach — web app
+/* CEC Coach — web app  (v1.0.1)
    Offline quiz bank + AI features (tutor / generator / vision) via the Claude API.
    The API key lives only in this browser (localStorage) and is sent straight to
    Anthropic with the direct-browser-access header — no backend needed. */
