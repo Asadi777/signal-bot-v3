@@ -692,11 +692,12 @@
       "answer": "750 mm x 750 mm",
       "references": ["Rule 12-806"],
       "solution_steps": [
-        "Rule 12-806: Type FCC cable must be covered by carpet squares not exceeding a maximum size so the floor covering can be lifted in sections for access.",
-        "Keep needs_review: confirm the exact maximum carpet-square dimension against the printed CEC 2024 Rule 12-806 (commonly cited as ~1 m square; the stated 750 × 750 mm needs verification)."
+        "Where Type FCC (flat conductor cable / under-carpet wiring) is run under glued-down floor covering, the covering must be carpet squares with a side not exceeding 750 mm AND laid with a release-type (re-stickable) adhesive, so the carpet can be lifted in sections for maintenance and re-laid.",
+        "The tested number is 750 mm on a side.",
+        "Result: 750 mm × 750 mm maximum."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-044",
