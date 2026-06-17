@@ -1,0 +1,152 @@
+[
+  {
+    "section": 4,
+    "name": "Conductors & Ampacity",
+    "block": "C",
+    "qcount": 34,
+    "importance": 5,
+    "summary": "Pick the correct ampacity table by metal + install method, then multiply by grouping (5C) and ambient (5A) corrections, and cap at the terminal/lowest temperature. Pure lookup-and-multiply marks once the table grid is automatic.",
+    "keyTables": [
+      {"ref": "Table 1", "stars": 4, "what": "Copper ampacity in FREE AIR", "use": "free-air copper only; start in the 90°C column"},
+      {"ref": "Table 2", "stars": 5, "what": "Copper ampacity in raceway/cable", "use": "default Cu table; pick the column = conductor temp (60/75/90)"},
+      {"ref": "Table 3", "stars": 3, "what": "Aluminum ampacity in FREE AIR", "use": "the rare free-air aluminum combo the exam loves"},
+      {"ref": "Table 4", "stars": 3, "what": "Aluminum ampacity in raceway/cable", "use": "raceway Al; same column logic as Table 2"},
+      {"ref": "Table 5C", "stars": 5, "what": "Grouping/bundling derate (>3 current-carrying)", "use": "4-6=0.80, 7-24=0.70, 25-42=0.60; count power+lighting only"},
+      {"ref": "Table 5A", "stars": 5, "what": "Ambient temperature correction (>30°C)", "use": "pick by the conductor insulation column; round the ambient temp UP to next listed row"},
+      {"ref": "Table 36B", "stars": 3, "what": "Copper neutral-supported (NS) service cable", "use": "overhead service/feeder Cu; read down to size ≥ load"},
+      {"ref": "Table 36A", "stars": 2, "what": "Aluminum neutral-supported (NS) service cable", "use": "overhead service/feeder Al (quadruplex)"},
+      {"ref": "Table 12", "stars": 3, "what": "Flexible cord / equipment wire / portable-power-cable ampacity", "use": "TEW, GTF, elevator ETP, DLO; cords use 11A/11B, portable power 12A"},
+      {"ref": "Appendix D — D8/D10/D11", "stars": 2, "what": "Underground direct-buried / spaced ampacity", "use": "Rule 4-004 1)d) routes here for buried/spaced configurations"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 4-004", "stars": 5, "what": "How to determine ampacity / pick the table & corrections", "note": "Governs nearly every Section 4 question; 1)c)=raceway, 1)d)=underground, 5)=NS service; subrules 6&7 say which conductors count for derate"},
+      {"ref": "Rule 4-006", "stars": 5, "what": "Terminal temperature limitation", "note": "Ampacity capped at the LOWEST marked termination temp; unmarked = 60°C if ≤100A (≤#1), 75°C if >100A. The cable's 90 is bait"},
+      {"ref": "Rule 4-038", "stars": 4, "what": "Mixed temperature ratings in one raceway", "note": "Size every conductor on the LOWEST temp rating present; compute each conductor separately, never add"},
+      {"ref": "Rule 4-016", "stars": 3, "what": "Neutral/identified conductor temp rating", "note": "Neutral insulation must be NOT LESS than the ungrounded conductors' rating"},
+      {"ref": "Rule 4-036", "stars": 2, "what": "Conductor colour identification", "note": "3-phase colour-coded sequence A=red, B=black, C=blue"},
+      {"ref": "Rule 8-104", "stars": 3, "what": "Continuous-load 125% (referenced from Sec 8)", "note": "For continuous loads, conductor & breaker sized at 125% of the load before applying ampacity"}
+    ],
+    "mustKnow": [
+      "Table grid: free-air Cu=T1, raceway Cu=T2, free-air Al=T3, raceway Al=T4. Exam loves the rare free-air aluminum (T3).",
+      "Table 5C grouping: 4-6=0.80, 7-24=0.70, 25-42=0.60. Applies only when MORE than 3 current-carrying conductors.",
+      "Table 5A ambient: only when ambient >30°C; pick the factor by the insulation column (60/75/90) and round the temperature UP.",
+      "Multiply BOTH correction factors when both apply (grouping × ambient); order does not matter.",
+      "Count current-carrying conductors only: bonding/ground never counts; a balanced 3-wire neutral does not count.",
+      "Rule 4-038: different temp ratings in one raceway -> use the lowest rating column for ALL of them.",
+      "Rule 4-006 termination cap: 90°C cable on a 75°C breaker is held to the 75°C ampacity.",
+      "NS overhead service: Cu=Table 36B, Al=Table 36A. Min service conductor #10 Cu / #8 Al (Rule 6-302)."
+    ],
+    "traps": [
+      "Using the cable's 90°C column when the termination is marked 75°C (Rule 4-006) — the lower governs.",
+      "Choosing Table 3 (free-air Al) for a copper conductor that merely has an aluminum sheath — the current-carrying metal sets the table (S04-001).",
+      "Mixed-temp raceway: forgetting the R90 conductor must be read in the 75°C column when a 75°C conductor shares the raceway (Rule 4-038).",
+      "Derating free-air conductors when no spacing is given — grouping in free air only applies if spacing < 25% of the largest cable diameter; if not stated, do NOT derate.",
+      "Counting bonding or a balanced neutral as current-carrying when applying Table 5C.",
+      "Forgetting to round the ambient temperature UP to the next listed row before reading Table 5A.",
+      "On 'minimum size' questions: divide the load by the derate factors to get the required TABLE ampacity, then pick the next size up (S04-034)."
+    ],
+    "mnemonic": "Tables 1&2 = Copper, 3&4 = Aluminum; Tables 1&3 = free Air, 2&4 = raceway. So free-air copper = T1, raceway aluminum = T4. Corrections: '5C = Count' (grouping), '5A = Air temp' (ambient).",
+    "method": [
+      "1. Pick the base table: metal (Cu/Al) + install (free-air vs raceway/cable) -> T1/T2/T3/T4 (or 36A/B for NS, T12 for cords/equip wire, App D for underground).",
+      "2. Read the base ampacity in the column = conductor temp rating; if mixed ratings share the raceway use the LOWEST (Rule 4-038).",
+      "3. Apply termination cap (Rule 4-006): if a terminal is marked lower, drop to that column.",
+      "4. Grouping derate (Table 5C) if >3 current-carrying conductors; count power/lighting only.",
+      "5. Ambient correction (Table 5A) if ambient >30°C; round temp up, pick by insulation column.",
+      "6. Multiply base × grouping × ambient. For 'minimum size', divide the required load by the factors first, then pick the next standard size up."
+    ],
+    "examples": ["S04-001", "S04-003", "S04-011", "S04-021", "S04-034"],
+    "keywords": [
+      {"kw": "\"ampacity / max current a conductor can carry\"", "jump": "Tables 1-4", "why": "free air: T1 Cu / T3 Al; raceway/cable: T2 Cu / T4 Al; start 90°C column", "stars": 5},
+      {"kw": "\"in a raceway / conduit / cable\" + copper", "jump": "Table 2", "why": "default copper ampacity table; column = conductor temp", "stars": 5},
+      {"kw": "\"in free air\" + copper", "jump": "Table 1", "why": "free-air copper, NOT Table 3 (that's free-air aluminum)", "stars": 4},
+      {"kw": "\"in free air\" + aluminum", "jump": "Table 3", "why": "the rare free-air-aluminum combo the exam targets", "stars": 3},
+      {"kw": "\"in a raceway\" + aluminum", "jump": "Table 4", "why": "raceway aluminum ampacity", "stars": 3},
+      {"kw": "\"more than 3 conductors\" / \"X conductors\" / bundling", "jump": "Table 5C", "why": "grouping derate 4-6=0.80, 7-24=0.70, 25-42=0.60", "stars": 5},
+      {"kw": "\"ambient ___ °C\" (above 30°C)", "jump": "Table 5A", "why": "temperature correction; pick by insulation column, round temp UP", "stars": 5},
+      {"kw": "\"how to pick the table / determine ampacity / which conductors count\"", "jump": "Rule 4-004", "why": "master ampacity rule; subrules set raceway/underground/NS and the count rules", "stars": 5},
+      {"kw": "\"terminated at / terminal marked X°C\"", "jump": "Rule 4-006", "why": "cap ampacity at the lowest terminal temp; 90 cable on 75 breaker = 75 value", "stars": 5},
+      {"kw": "\"different temperature ratings in same raceway\"", "jump": "Rule 4-038", "why": "size all conductors on the LOWEST rating present; compute separately", "stars": 4},
+      {"kw": "\"continuous load\"", "jump": "Rule 8-104", "why": "conductor & breaker sized at 125% before ampacity check", "stars": 3},
+      {"kw": "\"neutral / identified conductor temperature rating\"", "jump": "Rule 4-016", "why": "neutral insulation not less than the ungrounded conductors", "stars": 3},
+      {"kw": "\"neutral-supported / NS cable / overhead service\" copper", "jump": "Table 36B", "why": "Cu NS service/feeder cable, via Rule 4-004 5)", "stars": 3},
+      {"kw": "\"neutral-supported / NS / quadruplex\" aluminum", "jump": "Table 36A", "why": "Al NS overhead service cable", "stars": 3},
+      {"kw": "\"flexible cord / equipment wire / TEW / GTF / portable / elevator\"", "jump": "Table 12", "why": "cord & equipment-wire ampacity (cords 11A/11B, portable power 12A) via Rule 4-014/4-034", "stars": 3},
+      {"kw": "\"underground / direct-buried / spaced\"", "jump": "Rule 4-004 1)d) + Diagrams D8/D10/D11", "why": "buried & spaced ampacity from Appendix D tables", "stars": 3},
+      {"kw": "\"bonding conductor counted for derating?\"", "jump": "Rule 4-004 6)", "why": "bonding/non current-carrying conductors are NOT counted", "stars": 4},
+      {"kw": "\"count-adjustment / derating factor for N conductors\"", "jump": "Table 5C", "why": "10 conductors -> 0.70; the standalone factor lookup", "stars": 4},
+      {"kw": "\"phase conductor colours / 3-phase colour code\"", "jump": "Rule 4-036", "why": "A=red, B=black, C=blue", "stars": 2},
+      {"kw": "\"minimum conductor size for a given load\"", "jump": "Rule 4-004 + Tables 2/4", "why": "divide load by derate factors -> required table ampacity -> next size up", "stars": 4},
+      {"kw": "\"voltage drop / smallest size by 3%-5% limit\"", "jump": "Rule 8-102 + Table D3", "why": "K ≤ (VD×1000)/(I·L·f); f=2 single-phase, √3 three-phase", "stars": 2}
+    ]
+  },
+  {
+    "section": 6,
+    "name": "Services & Metering",
+    "block": "B",
+    "qcount": 12,
+    "importance": 4,
+    "summary": "Mostly direct lookups on overhead service heights/clearances, the service mast, and where service conductors/equipment may be located. Rule 6-112 and Table 32 dominate; memorize the heights and the 50 mm-concrete answer.",
+    "keyTables": [
+      {"ref": "Table 32", "stars": 4, "what": "Minimum overhead conductor clearances above ground/areas", "use": "read the row by what is below: pedestrians 3.5 m up to highways 5.5 m"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 6-112", "stars": 5, "what": "Service mast, heights, clearances, support/attachment", "note": "Mast metal, min 63 (2-1/2) rigid steel; point-of-attachment 3.5 m min to 9 m max; unguyed projection limit ~1.5 m; roof clearance 915 mm (600 mm over drip loop)"},
+      {"ref": "Rule 6-300", "stars": 4, "what": "Consumer service conductors inside a building", "note": "Generally kept outside; if inside must be embedded in ≥50 mm of concrete or masonry (no overcurrent protection until the panel)"},
+      {"ref": "Rule 6-206", "stars": 4, "what": "Consumer service equipment location", "note": "As close as practicable to entry; NOT where headroom <2 m, not in bathroom/closet/coal bin, not where ambient normally >30°C"},
+      {"ref": "Rule 6-116", "stars": 3, "what": "Service-head / point-of-emergence dimensions", "note": "Conductor emergence 150-300 mm above and max 600 mm horizontally from the attachment"},
+      {"ref": "Rule 6-302", "stars": 3, "what": "Minimum consumer service conductor size", "note": "#10 Cu / #8 Al minimum — it is a MINIMUM, not 'house-sized'"},
+      {"ref": "Rule 6-112 (clearance from openings)", "stars": 3, "what": "Clearance from windows/doors/porches", "note": "1.0 m clearance to sides and below (also Rule 6-116/12-310)"},
+      {"ref": "Rule 6-102 / 6-104", "stars": 3, "what": "Number of supply vs consumer services", "note": "Max ONE supply service; max FOUR consumer services (unless a deviation)"},
+      {"ref": "Rule 6-110", "stars": 2, "what": "Minimum service raceway size", "note": "Consumer service raceway not less than 21 (3/4) trade size"}
+    ],
+    "mustKnow": [
+      "Point of attachment of overhead service conductors: minimum 3.5 m (pedestrian-only), maximum 9 m.",
+      "Crossing a highway / alley / vehicle area: minimum 5.5 m (Table 32).",
+      "Service mast: must be metal, minimum 63 (2-1/2) trade-size rigid steel conduit; unguyed projection limited to ~1.5 m.",
+      "Min service conductor: #10 Cu / #8 Al (Rule 6-302) — a minimum, applies to small services.",
+      "Service conductors inside a building must be embedded in ≥50 mm concrete/masonry (Rule 6-300) — the high-probability answer.",
+      "Service equipment must not be where headroom <2 m (Rule 6-206).",
+      "Drip loop: leave minimum 750 mm of extra conductor at the service head.",
+      "Max ONE supply service; max FOUR consumer services (Rule 6-102/6-104).",
+      "Clearance from porches/doors/windows = 1.0 m. Service raceway minimum 21 (3/4) trade size.",
+      "Connection point: overhead = at the service head; underground = at the meter (no mid-run splice)."
+    ],
+    "traps": [
+      "Confusing the 9 m MAX point-of-attachment with the 5.5 m highway-crossing MINIMUM (different limits, different rows).",
+      "Thinking #10 Cu / #8 Al is 'too small for a house' — it is the code MINIMUM, not the typical size.",
+      "Choosing a steel-plate or rigid-pipe option for conductors inside a building — only the 50 mm-concrete embedment satisfies Rule 6-300.",
+      "Using the 2 m × 2 m working-space figure for service equipment — service equipment needs 2 m HEADROOM (Rule 6-206), not the full working space.",
+      "Mixing up service mast minimum (63 / 2-1/2) with service raceway minimum (21 / 3/4).",
+      "Saying 'unlimited' consumer services — max is four unless a deviation is obtained."
+    ],
+    "mnemonic": "Service heights climb 'people to pavement': 3.5 m pedestrians → 5.5 m highway → 9 m max attachment. Mast = '2½ and 63' (metal, big); raceway = '¾ and 21' (small). Inside a wall? '50 in concrete.'",
+    "method": [
+      "1. Identify the keyword: mast/attachment/clearance/inside-building/equipment-location/number-of-services.",
+      "2. Height or clearance question -> Rule 6-112 + Table 32; read the row by what is below the conductors.",
+      "3. 'Inside a building' -> Rule 6-300, answer = embedded in ≥50 mm concrete/masonry.",
+      "4. 'Where can equipment go' -> Rule 6-206 (prohibited: <2 m headroom, bathroom, closet, >30°C ambient).",
+      "5. Mast size/support -> Rule 6-112 (metal, 63 trade size, ~1.5 m unguyed). Min conductor -> Rule 6-302 (#10 Cu / #8 Al).",
+      "6. Watch modifier words (minimum vs maximum) — the limit asked for flips the answer."
+    ],
+    "examples": ["S06-004", "S06-005", "S06-006", "S06-007", "S06-010"],
+    "keywords": [
+      {"kw": "\"service mast / minimum rigid conduit size for mast\"", "jump": "Rule 6-112", "why": "metal, minimum 63 (2-1/2) trade-size rigid steel", "stars": 5},
+      {"kw": "\"point of attachment height (max)\"", "jump": "Rule 6-112", "why": "maximum 9 m (utility bucket-truck reach)", "stars": 5},
+      {"kw": "\"crossing a highway / alley / vehicle area (min height)\"", "jump": "Table 32 + Rule 6-112", "why": "minimum 5.5 m over roadways/alleys", "stars": 5},
+      {"kw": "\"above pedestrians only (min height)\"", "jump": "Table 32 + Rule 6-112", "why": "minimum 3.5 m over pedestrian-only areas", "stars": 4},
+      {"kw": "\"conductors inside a building\"", "jump": "Rule 6-300", "why": "must be embedded in ≥50 mm concrete/masonry", "stars": 4},
+      {"kw": "\"service equipment location / headroom\"", "jump": "Rule 6-206", "why": "not where headroom <2 m; not bathroom/closet/>30°C", "stars": 4},
+      {"kw": "\"minimum service conductor size\"", "jump": "Rule 6-302", "why": "#10 Cu / #8 Al minimum", "stars": 4},
+      {"kw": "\"clearance from porches / doors / windows\"", "jump": "Rule 6-116 / 6-112", "why": "1.0 m clearance to sides and below", "stars": 4},
+      {"kw": "\"service-head point of emergence dimensions\"", "jump": "Rule 6-116", "why": "150-300 mm above, max 600 mm horizontal from attachment", "stars": 3},
+      {"kw": "\"number of supply / consumer services\"", "jump": "Rule 6-102 / 6-104", "why": "max ONE supply, max FOUR consumer (unless deviation)", "stars": 3},
+      {"kw": "\"minimum service raceway size\"", "jump": "Rule 6-110", "why": "not less than 21 (3/4) trade size", "stars": 3},
+      {"kw": "\"drip loop / spare conductor at service head\"", "jump": "Rule 6-112 / 4-302", "why": "leave minimum 750 mm extra conductor", "stars": 3},
+      {"kw": "\"roof clearance of service conductors\"", "jump": "Rule 6-112", "why": "915 mm above roof, reducible to 600 mm over the drip-loop area", "stars": 3},
+      {"kw": "\"unguyed mast projection / when is a guy wire needed\"", "jump": "Rule 6-112", "why": "projection above support beyond ~1.5 m requires guying", "stars": 2},
+      {"kw": "\"connection / splice point (overhead vs underground)\"", "jump": "Rule 6-112", "why": "overhead = at service head; underground = at the meter (no mid-run splice)", "stars": 2},
+      {"kw": "\"meter base / metering location\"", "jump": "Section 6 + utility spec", "why": "metering equipment per Rule 6-200 series and utility requirements", "stars": 2},
+      {"kw": "\"service / feeder demand load (interface to Sec 8)\"", "jump": "Rule 8-200 / 8-202", "why": "service size comes from the calculated demand, then size conductors in Sec 4", "stars": 2}
+    ]
+  }
+]

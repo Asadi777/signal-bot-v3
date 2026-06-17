@@ -1,0 +1,137 @@
+[
+  {
+    "section": 8,
+    "name": "Loads & Demand",
+    "block": "B",
+    "qcount": 27,
+    "importance": 5,
+    "summary": "Calculate the CALCULATED (not connected) load for dwellings and non-dwellings, size ranges by service vs branch base, and apply the 2024 single-formula voltage drop method. Heavy math block that decides pass/fail.",
+    "keyTables": [
+      {"ref": "Table D3", "stars": 5, "what": "Voltage-drop K value (ohm/km) by size, material, temp, PF", "use": "2024 single formula VD=(K×I×L×F)/1000; defaults Cu, 75°C, PF=1"},
+      {"ref": "Table 14", "stars": 4, "what": "Basic load W/m² by occupancy (store, theatre, etc.)", "use": "Non-dwelling basic area load under Rule 8-210"},
+      {"ref": "Table 2", "stars": 3, "what": "Ampacity, raceway Cu", "use": "Convert calculated demand (A) to conductor size at the terminal temp"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 8-102", "stars": 5, "what": "Voltage drop limits + 2024 method", "note": "3% branch, 3% feeder, 5% supply-to-utilization total; 3%+3%≠5%"},
+      {"ref": "Rule 8-200", "stars": 5, "what": "Single-dwelling SERVICE/feeder demand", "note": "5000 W first 90 m² + 1000 W/extra 90 m²; range base 6 kW; min 100 A if ≥80 m²"},
+      {"ref": "Rule 8-210", "stars": 4, "what": "Non-dwelling demand (basic + actual loads)", "note": "Area × Table 14 W/m² per occupancy + connected loads at demand factors"},
+      {"ref": "Rule 8-300", "stars": 4, "what": "Range BRANCH-circuit demand", "note": "Dwelling: 8 kW base +40% over 12 kW; non-dwelling = 100% nameplate"},
+      {"ref": "Rule 8-104", "stars": 4, "what": "Continuous load / 80% rule", "note": "Non-100% switch or breaker: continuous load ≤ 80% of rating"},
+      {"ref": "Rule 8-106", "stars": 3, "what": "Non-coincident loads / interlock", "note": "Use only the LARGER of two loads that can't run together (e.g. heat vs AC)"},
+      {"ref": "Rule 62-118", "stars": 3, "what": "Electric heating demand", "note": "Baseboard 100% first 10 kW + 75% remainder; electric furnace 100%; gas furnace not counted"},
+      {"ref": "Rule 8-400", "stars": 2, "what": "EV / parking-space receptacle feeder demand", "note": "Controlled loading reduced; uncontrolled little/no reduction"}
+    ],
+    "mustKnow": [
+      "VD limits: 3% branch / 3% feeder / 5% total supply-to-utilization (the #1 2021→2024 change)",
+      "Range bases: SERVICE/feeder (8-200) = 6 kW; dwelling BRANCH (8-300) = 8 kW; both +40% over 12 kW",
+      "Basic dwelling load: 5000 W first 90 m² + 1000 W each additional 90 m² (round UP partial increments)",
+      "Min dwelling service: ≥80 m² → 24 000 W / 100 A; <80 m² → 14 400 W / 60 A (take larger)",
+      "Other loads >1500 W with a range present: count at 25% (8-200 1)a)(vii))",
+      "Heating (62-118): 100% first 10 kW + 75% remainder for baseboard",
+      "Continuous (8-104): non-100% device carries load ≤ 80% of rating (or size device = load/0.80)",
+      "Show window = 650 W/m along base; max 12 receptacles on a 15 A circuit",
+      "Non-dwelling range = 100% nameplate (no demand reduction)",
+      "VD factor F = 2 default; F = 1.73 (√3) only for 3-phase AC"
+    ],
+    "traps": [
+      "Connected load vs CALCULATED load: appliance wattages are bait — use the 8-200 method, don't sum everything",
+      "Range base confusion: 6 kW for service (8-200), 8 kW for dwelling branch (8-300) — different bases",
+      "3% + 3% ≠ 5%: if branch uses full 3%, feeder may only use 2% to keep total ≤ 5%",
+      "Non-dwelling range gets NO reduction (100%); reduction is dwelling-only",
+      "Round partial 90 m² increments UP (e.g. 100 m² extra = 2 increments = 2000 W)",
+      "Heating not at 100%: baseboard gets 100% first 10 kW + 75% remainder, not full kW",
+      "3-phase wye service: divide by √3×line voltage when converting W to A; don't forget √3",
+      "VD F-factor: F=2 for single-phase/DC; only true 3-phase AC uses 1.73"
+    ],
+    "mnemonic": "VD = KILF/1000 (\"Kill over a thousand\"): K×I×L×F ÷ 1000.",
+    "method": [
+      "Voltage drop (2024 single formula): VD=(K×I×L×F)/1000. VD=system V×allowed%; K from Table D3 (defaults Cu/75°C/PF1); L=one-way metres; F=2 (1.73 only 3-ph AC).",
+      "Find max length: L ≤ (1000×VD)/(K×I×F). Find min size: K ≤ (1000×VD)/(I×L×F), then read Table D3 for a size with K ≤ that.",
+      "Table D3 temp note: base 75°C; ×0.95 if 60°C, ×1.35 if 90°C. ELV/DC hint: ×0.86×K.",
+      "Dwelling service (8-200): basic area load + range (6 kW base) + heating (62-118) + 25% of other >1500 W loads → ÷240 V → amps.",
+      "Continuous 80% rule (8-104): device rating = continuous load ÷ 0.80, or max load = rating × 0.80."
+    ],
+    "examples": ["S08-003", "S08-006", "S08-013", "S08-023", "S08-009", "S08-024"],
+    "keywords": [
+      {"kw": "\"voltage drop\"", "jump": "Rule 8-102 + Table D3", "why": "2024: ONE formula VD=(K×I×L×F)/1000; 3%/3%/5%", "stars": 5},
+      {"kw": "\"single dwelling\" / \"calculate demand\"", "jump": "Rule 8-200", "why": "5000 W first 90 m² + 1000 W/extra; range base 6 kW", "stars": 5},
+      {"kw": "\"electric range\" / \"branch circuit\"", "jump": "Rule 8-300 1)a)", "why": "Dwelling branch base 8 kW +40% over 12 kW", "stars": 5},
+      {"kw": "\"basic load\" W/m² by occupancy", "jump": "Rule 8-210 + Table 14", "why": "Non-dwelling: area × occupancy W/m²", "stars": 4},
+      {"kw": "\"continuous load\" / 80% switch or breaker", "jump": "Rule 8-104", "why": "Non-100% device: load ≤ 80% of rating", "stars": 4},
+      {"kw": "\"electric heating\" / baseboard / furnace demand", "jump": "Rule 8-200 1)a)(v) + Rule 62-118", "why": "100% first 10 kW + 75% remainder; gas furnace not counted", "stars": 4},
+      {"kw": "\"minimum service\" for dwelling area", "jump": "Rule 8-200 1)b)", "why": "≥80 m² → 100 A; <80 m² → 60 A", "stars": 4},
+      {"kw": "\"show window\"", "jump": "Rule 8-200 1)b)", "why": "650 W per metre along base", "stars": 3},
+      {"kw": "\"apartment\" / multiple dwelling", "jump": "Rule 8-202", "why": "Multi-dwelling demand with reductions per # of units", "stars": 3},
+      {"kw": "\"non-coincident\" / two loads not together / heat vs AC interlock", "jump": "Rule 8-106 3)", "why": "Use only the LARGER load", "stars": 3},
+      {"kw": "\"range in commercial/industrial\" / non-dwelling range", "jump": "Rule 8-300 2)", "why": "100% nameplate, no reduction", "stars": 3},
+      {"kw": "\"how many receptacles\" on a circuit", "jump": "Rule 8-304 / 26-712", "why": "Max 12 outlets on a 15 A circuit", "stars": 3},
+      {"kw": "\"parking spaces\" / \"EV charger\" load", "jump": "Rule 8-400", "why": "Controlled = reduced; uncontrolled = little reduction", "stars": 2},
+      {"kw": "\"extra-low voltage\" VD / emergency lamp distance", "jump": "Rule 8-102 + Table D3", "why": "Same formula; ELV hint ×0.86×K; F=2 for DC", "stars": 2},
+      {"kw": "\"two occupancies\" in one building", "jump": "Rule 8-210 + Table 14", "why": "Compute each area at its own W/m², then add", "stars": 2}
+    ]
+  },
+  {
+    "section": 10,
+    "name": "Grounding & Bonding",
+    "block": "B",
+    "qcount": 14,
+    "importance": 4,
+    "summary": "Distinguish grounding (electrode conductor, Table 43, keyed to service-conductor ampacity) from bonding (Table 16, by overcurrent device). Know field-assembled electrode geometry, equipotential bonding sizes, and the bare-conductor-in-raceway limits.",
+    "keyTables": [
+      {"ref": "Table 43", "stars": 5, "what": "Grounding (electrode) conductor size", "use": "Keyed to AMPACITY of largest service conductor — NOT breaker, NOT load"},
+      {"ref": "Table 16", "stars": 4, "what": "Bonding conductor / jumper size", "use": "Sized by ampacity OR rating of the overcurrent device ahead of it"},
+      {"ref": "Table 2", "stars": 3, "what": "Ampacity, raceway Cu", "use": "Get service-conductor ampacity (at its temp column) before entering Table 43"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 10-114", "stars": 5, "what": "Sizing grounding conductor to electrode", "note": "Table 43 by service-conductor ampacity; to a MANUFACTURED electrode need not exceed #6 Cu"},
+      {"ref": "Rule 10-102", "stars": 4, "what": "Field-assembled (concrete-encased) electrode", "note": "≥6 m bare Cu (≥#4), in bottom 50 mm of footing, ≥600 mm below grade"},
+      {"ref": "Rule 10-406", "stars": 4, "what": "Equipotential bonding", "note": "Min #6 Cu / #4 Al (pools, raised floors, etc.)"},
+      {"ref": "Rule 10-104", "stars": 3, "what": "Electrode spacing", "note": "Two+ rod/plate electrodes spaced ≥ 3 m apart"},
+      {"ref": "Rule 10-806", "stars": 3, "what": "Bare grounding conductor in raceway", "note": "Bare system grounding conductor in raceway only where run ≤ 15 m"},
+      {"ref": "Rule 10-614 / 10-616", "stars": 3, "what": "Bonding conductor sizing", "note": "Size from OCPD rating via Table 16 (e.g. 40 A → #10 Cu)"}
+    ],
+    "mustKnow": [
+      "Grounding ELECTRODE conductor = Table 43, keyed to SERVICE-CONDUCTOR AMPACITY (4/0 Cu @75°C=230 A → size 2)",
+      "BONDING conductor/jumper = Table 16, by ampacity OR overcurrent device rating",
+      "To a MANUFACTURED (rod/plate) electrode the grounding conductor need not exceed #6 Cu (10-114)",
+      "Field-assembled electrode: ≥6 m of bare Cu, not smaller than #4, bottom 50 mm of footing, ≥600 mm below grade",
+      "Electrode spacing: ≥ 3 m between rod/plate electrodes",
+      "Equipotential bonding (10-406): #6 Cu / #4 Al minimum",
+      "Bare grounding conductor shares a raceway only if run ≤ 15 m (10-806)",
+      "Bends limit in a run is 360° (four quarter-bends) per 12-940 — not a '180°' grounding limit",
+      "Table 43 lowest band: ampacity ≤165 A → size 4; 166–200 A → size 3; then 2,1,1/0...",
+      "Raised metal floor (Section 84) bonded as equipotential: #8 Cu / #6 Al"
+    ],
+    "traps": [
+      "Table 43 vs Table 16: ELECTRODE conductor uses ampacity ONLY (Table 43); BONDING uses ampacity OR device (Table 16)",
+      "Table 43 is keyed to SERVICE-CONDUCTOR AMPACITY, never the breaker rating or the load current",
+      "Manufactured electrode cap: grounding conductor need not exceed #6 Cu — don't oversize from Table 43",
+      "Bare-in-raceway limit is 15 m by length (10-806); separately bends ≤ 360° (12-940) — add offsets/bends",
+      "Equipotential bonding direction: Al is one size LARGER than Cu (#4 Al ≡ #6 Cu)",
+      "Read the temp column: a 60°C cable (TW) ampacity from Table 2's 60°C column before Table 43",
+      "PV DC grounding is Section 64, not Section 10 (those questions are mis-filed)"
+    ],
+    "mnemonic": "\"43 to the EARTH, 16 to the BOX\": Table 43 = electrode/ground; Table 16 = bonding.",
+    "method": [
+      "Grounding electrode conductor: get the LARGEST service conductor's ampacity from Table 2 (correct temp column) → enter Table 43 → read size. Cap at #6 Cu if going to a manufactured electrode (10-114).",
+      "Bonding conductor: take the OCPD ampere rating → Table 16 → minimum Cu/Al bond (10-614/10-616).",
+      "Field-assembled electrode check: ≥6 m bare Cu ≥#4, bottom 50 mm of footing, ≥600 mm below grade, electrodes ≥3 m apart.",
+      "Bare conductor in raceway: confirm run ≤ 15 m (10-806) and total bends ≤ 360° (12-940)."
+    ],
+    "examples": ["S10-007", "S10-008", "S10-009", "S10-006", "S10-004", "S10-014"],
+    "keywords": [
+      {"kw": "\"grounding electrode conductor\" / size of grounding conductor", "jump": "Rule 10-114 + Table 43", "why": "Keyed to service-conductor AMPACITY (not breaker)", "stars": 5},
+      {"kw": "\"bonding conductor\" / bonding jumper", "jump": "Rule 10-614/10-616 + Table 16", "why": "Sized by ampacity OR overcurrent device rating", "stars": 5},
+      {"kw": "\"field-assembled\" / concrete-encased electrode", "jump": "Rule 10-102", "why": "≥6 m bare Cu ≥#4, bottom 50 mm of footing, ≥600 mm deep", "stars": 4},
+      {"kw": "\"equipotential bonding\" (pool, raised floor, pipe)", "jump": "Rule 10-406", "why": "#6 Cu / #4 Al minimum", "stars": 4},
+      {"kw": "\"manufactured\" / rod / plate electrode conductor", "jump": "Rule 10-114", "why": "Need not exceed #6 Cu", "stars": 4},
+      {"kw": "\"electrode spacing\" / two electrodes apart", "jump": "Rule 10-104", "why": "≥ 3 m apart", "stars": 3},
+      {"kw": "\"bare grounding conductor\" in raceway / conduit length", "jump": "Rule 10-806", "why": "Bare allowed only if run ≤ 15 m", "stars": 3},
+      {"kw": "\"grounded vs bonding\" / definitions", "jump": "Rule 10-114 / Section 0", "why": "Bonding = low-impedance path for non-current-carrying metal; memorize the sentence", "stars": 3},
+      {"kw": "\"raised floor\" / computer room bonding", "jump": "Section 84 + Rule 10-406", "why": "Equipotential: #8 Cu / #6 Al", "stars": 2},
+      {"kw": "\"bonding jumper\" for a 40 A device", "jump": "Table 16", "why": "OCPD rating → #10 Cu", "stars": 2},
+      {"kw": "\"PV DC\" grounding / two-wire system", "jump": "Section 64 (not Section 10)", "why": "Functionally-grounded/ungrounded arrays permitted in 2024", "stars": 2},
+      {"kw": "\"service-conductor ampacity\" → electrode size", "jump": "Table 43", "why": "≤165 A → size 4; 166–200 A → size 3; then 2,1,1/0", "stars": 3}
+    ]
+  }
+]

@@ -1,0 +1,176 @@
+[
+  {
+    "section": 2,
+    "name": "General & Working Space",
+    "block": "A",
+    "qcount": 18,
+    "importance": 4,
+    "summary": "Section 2 sets the universal rules: working space, headroom, voltage-to-ground, enclosure selection and gas-meter clearance. Easy, high-frequency lookups that protect free marks across the whole exam.",
+    "keyTables": [
+      {"ref": "Table 65", "stars": 5, "what": "Enclosure type selection (1, 3R, 4, 4X...)", "use": "match enclosure to the location: wet, corrosive, outdoor, dust"},
+      {"ref": "Table 56", "stars": 4, "what": "Working space for exposed live parts >750 V", "use": "enter with line-to-ground voltage AND the facing-surface condition"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 2-308", "stars": 5, "what": "Working space / clearance / headroom about equipment", "note": "1 m front (2-308 1); 2.2 m headroom (2-308 5); HV via Table 56 (2-308 4) - guaranteed exam topic"},
+      {"ref": "Rule 2-110", "stars": 4, "what": "Max voltage-to-ground in a dwelling = 150 V", "note": "exception only if calc load >250 kVA AND qualified maintenance staff"},
+      {"ref": "Rule 2-328", "stars": 3, "what": "Clearance of equipment from gas metering/relief devices", "note": "numeric values live in Appendix B, not the rule body"},
+      {"ref": "Rule 2-130", "stars": 2, "what": "Flame-spread (FT) rating of cables in buildings", "note": "FT ratings explained in Appendix B; references the NBC"},
+      {"ref": "Appendix B", "stars": 3, "what": "Plain-language notes, gas-meter distances, FT ratings", "note": "the 'note of the day' - 6-7 questions exam-wide live here"}
+    ],
+    "mustKnow": [
+      "General working space in front of equipment = 1.0 m with secure footing (Rule 2-308 1).",
+      "Minimum headroom over switchboards/MCCs with exposed live parts = 2.2 m (2-308 5).",
+      "Dwelling branch circuits: max 150 V to ground (2-110); 120/240 V system = 120 V to ground, complies.",
+      "Enclosure suffix 'X' = corrosion resistant; '3R' = rainproof outdoor; '4' = watertight/hose; '4X' = watertight + corrosive.",
+      "Transformer working space needed only when >50 kVA (exactly 50 kVA = none).",
+      "Gas-meter clearance (Appendix B): natural gas ~1 m, propane ~3 m, 0.3 m with a listed regulator; arc-producing equipment kept farther."
+    ],
+    "traps": [
+      "Table 56 uses LINE-TO-GROUND voltage - convert first (divide 3-phase by root3); don't re-divide an already-converted value.",
+      "Voltage-class boundaries are inclusive: 'not exceeding X' includes X (exactly 50 kVA transformer = no working space required).",
+      "Gas-meter distance is an Appendix B value, NOT in the Rule 2-328 body - students stop at the rule and miss it.",
+      "Don't confuse Type 3R (rain only) with Type 4 (splash/hose) or 4X (splash + corrosive); read the exact location words.",
+      "Dwelling 150 V rule is 2-110, not 2-130 (2-130 is flame-spread)."
+    ],
+    "mnemonic": "Working space = ONE in front, TWO-point-TWO up. 'X' = corroXion; '3R' = Rain; '4' = wash (hose); '4X' = wash + corroXion.",
+    "method": [
+      "Spot the keyword: working space -> Rule 2-308; enclosure -> Table 65; voltage-to-ground -> Rule 2-110; gas meter -> Rule 2-328 + Appendix B.",
+      "For working space, first decide the voltage class: <=750 V uses the flat 1 m; >750 V goes to Table 56 with line-to-ground voltage.",
+      "For enclosures, list the location conditions (wet? corrosive? outdoor? dust?) and match the lowest Type in Table 65 that covers all of them.",
+      "If the number isn't in the rule body, jump to Appendix B (gas clearances, FT ratings)."
+    ],
+    "examples": ["S02-002", "S02-004", "S02-007", "S02-013", "S02-017", "S02-018"],
+    "keywords": [
+      {"kw": "\"enclosure type (3R, 4, 4X, 5)\"", "jump": "Table 65", "why": "selects enclosure by wet/corrosive/dust/outdoor conditions", "stars": 5},
+      {"kw": "\"working space / clearance in front of\"", "jump": "Rule 2-308 1) + Table 56", "why": "1 m general; Table 56 (line-to-ground) above 750 V", "stars": 5},
+      {"kw": "\"voltage to ground in a dwelling\"", "jump": "Rule 2-110", "why": "150 V max; exception >250 kVA + qualified staff", "stars": 4},
+      {"kw": "\"headroom of working space\"", "jump": "Rule 2-308 5)", "why": "2.2 m over switchboards/MCCs with exposed live parts", "stars": 4},
+      {"kw": "\"high-voltage / >750 V working space\"", "jump": "Rule 2-308 4) + Table 56", "why": "keyed to voltage class and facing surface", "stars": 4},
+      {"kw": "\"corrosive area / splash of water\"", "jump": "Table 65 (Type 4X / 3X)", "why": "'X' suffix = added corrosion resistance", "stars": 4},
+      {"kw": "\"gas meter clearance / pressure-relief device\"", "jump": "Rule 2-328 + Appendix B", "why": "numeric distances are in Appendix B", "stars": 3},
+      {"kw": "\"transformer working space\"", "jump": "Rule 2-308", "why": "required only when transformer >50 kVA", "stars": 3},
+      {"kw": "\"cable flame rating / FT1 FT4\"", "jump": "Rule 2-130 + Appendix B", "why": "combustible vs non-combustible construction", "stars": 2},
+      {"kw": "\"deviation / special permission\"", "jump": "Rule 2-030", "why": "approved before work, that installation only", "stars": 2},
+      {"kw": "\"disconnecting means / open position indication\"", "jump": "Rule 2-308 + 14-500 series", "why": "must positively indicate OFF (a 3-way switch cannot)", "stars": 2},
+      {"kw": "\"illumination of equipment\"", "jump": "Rule 2-320", "why": "lighting at electrical rooms - do not confuse with 2-328", "stars": 1}
+    ]
+  },
+  {
+    "section": 0,
+    "name": "Definitions",
+    "block": "A",
+    "qcount": 0,
+    "importance": 3,
+    "summary": "Section 0 is the dictionary of the Code. Defined terms change how every rule applies, and the exam asks several straight definition questions - free marks if you know the exact wording.",
+    "keyTables": [],
+    "keyRules": [
+      {"ref": "Section 0", "stars": 5, "what": "All CEC defined terms", "note": "first move for any unfamiliar word; a wrong definition corrupts the whole answer"}
+    ],
+    "mustKnow": [
+      "Bonding: a low-impedance path, permanently and effectively established, to carry fault current and connect non-current-carrying metal parts (memorize the full sentence).",
+      "Grounding: a connection to earth or to a conducting body serving in place of earth.",
+      "Feeder: conductors from service box to the branch-circuit overcurrent device. Branch circuit: from the final OCPD to the outlet(s).",
+      "Overcurrent protects WIRES (fuse/breaker); overload protects the MOTOR (thermal). Most-confused pair on the exam.",
+      "Ampacity: current a conductor can carry continuously without exceeding its temperature rating.",
+      "Voltage classes: Extra-Low <=30 V; Low-voltage >30 to 750 V; High-voltage >750 V (boundaries inclusive of the stated value).",
+      "Dwelling unit / continuous load / duty cycle (continuous, intermittent, periodic, short-time) are all defined here."
+    ],
+    "traps": [
+      "Bonding definition trap: a version with a word dropped (e.g. 'permanently' or 'low-impedance' missing) is the wrong answer.",
+      "Feeder vs branch-circuit: feeder ends at the branch OCPD; branch starts there. Trips up ~90% of electricians.",
+      "Overcurrent vs overload: don't swap them - wires vs motor.",
+      "Voltage boundaries are inclusive: 30 V = Extra-Low, 750 V is the top of Low (not High); '1000 V = Low' in older framing - read the exact code value.",
+      "A defined term may override your field/site meaning - always check Section 0 first."
+    ],
+    "mnemonic": "Bonding = Big Permanent Low-impedance path. OverCurrent = Conductors; overLoad = motor (Load).",
+    "method": [
+      "Any unfamiliar or pivotal term -> Section 0 BEFORE reading the rule.",
+      "For definition questions, match every clause of the option to the exact code sentence - the trap is one dropped/changed word.",
+      "Use the Index if the word could live in a specific section too."
+    ],
+    "examples": ["OCC-062"],
+    "keywords": [
+      {"kw": "\"bonding\"", "jump": "Section 0 definitions", "why": "low-impedance permanent path - memorize verbatim", "stars": 5},
+      {"kw": "\"feeder vs branch circuit\"", "jump": "Section 0 definitions", "why": "service box->branch OCPD vs final OCPD->outlet", "stars": 5},
+      {"kw": "\"overcurrent vs overload\"", "jump": "Section 0 definitions", "why": "protects wires vs protects motor", "stars": 5},
+      {"kw": "\"ampacity\"", "jump": "Section 0 definitions", "why": "continuous current without exceeding temp rating", "stars": 4},
+      {"kw": "\"voltage / voltage-to-ground / voltage classes\"", "jump": "Section 0 definitions", "why": "Extra-Low/Low/High boundaries are inclusive", "stars": 4},
+      {"kw": "\"dwelling unit\"", "jump": "Section 0 definitions", "why": "controls Section 8 load calcs and Rule 2-110", "stars": 4},
+      {"kw": "\"continuous load\"", "jump": "Section 0 definitions", "why": "triggers 125% sizing (Rule 8-104)", "stars": 4},
+      {"kw": "\"grounding\"", "jump": "Section 0 definitions", "why": "earth/conducting-body connection - distinct from bonding", "stars": 4},
+      {"kw": "\"duty cycle (continuous/intermittent/periodic/short-time)\"", "jump": "Section 0 definitions", "why": "periodic = intermittent duty, regularly recurrent", "stars": 3},
+      {"kw": "\"approved / labelled / listed\"", "jump": "Section 0 definitions", "why": "acceptance terms that change a rule's force", "stars": 2},
+      {"kw": "\"any unfamiliar defined term\"", "jump": "Section 0 definitions", "why": "golden first move before reading the rule", "stars": 5}
+    ]
+  },
+  {
+    "section": "occ",
+    "name": "Occupational / Safety Skills (Block A)",
+    "block": "A",
+    "qcount": 62,
+    "importance": 5,
+    "summary": "Block A is the largest no-codebook block: PPE, lockout, transformer hazards, generators, PV, VFDs, HVAC controls, torque specs and troubleshooting. Mostly trade-knowledge recall with a few fault-current and signal calcs - lots of fast marks.",
+    "keyTables": [
+      {"ref": "Table D7", "stars": 3, "what": "Tightening torque for connecting hardware", "use": "look up bolt size -> N.m (e.g. 1/2 in = 54 N.m)"},
+      {"ref": "Appendix D", "stars": 2, "what": "Torque / reference engineering data", "use": "supports torque-spec and fault-current questions"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 4-024 / 4-036", "stars": 2, "what": "Identified (neutral) conductor colour", "note": "white/grey for #2 AWG and smaller - the one Section reference in this block's analysis"},
+      {"ref": "Section 64", "stars": 2, "what": "Renewable energy / PV backfeed breaker placement", "note": "back-fed PV breaker at the opposite end from the main (120% rule)"},
+      {"ref": "Section 46", "stars": 1, "what": "Emergency systems wiring methods", "note": "life-safety supply conductors in protected raceway"}
+    ],
+    "mustKnow": [
+      "Lockout step 1 = IDENTIFY all potential energy sources; then isolate, lock, and verify zero energy.",
+      "Transformer hazards: primary = back-feed; secondary = arc flash (high available fault current).",
+      "Torque: 1/2 in connecting hardware = 54 N.m; 1/4 in HVAC bolt = 8 N.m (Table D7 / mfr data).",
+      "Available short-circuit current = secondary FLC / %Z (e.g. 833 A / 0.03 = 27.8 kA).",
+      "4-20 mA signal: output = 4 mA + (%open x 16 mA span); 85% = 17.6 mA.",
+      "Cutting/grinding metal tray -> add a FACE SHIELD; HV rubber gloves retest 12 months in storage / 6 months in service.",
+      "Class A GFCI trips at 5 mA ground-fault current.",
+      "Bump test = checks direction of rotation. Off-delay timer = keeps fan running after shutdown.",
+      "Exit signs / smoke alarms: REQUIREMENT is in the National Building Code; electrical sizing is in the CEC."
+    ],
+    "traps": [
+      "Lockout: the first step is identify energy sources, NOT install the hasp or complete the log.",
+      "Primary hazard is back-feed; secondary hazard is arc flash - don't swap them.",
+      "Split receptacle that trips instantly: the break-off tab on the UNGROUNDED (hot) side was left intact, shorting the phases.",
+      "Heating cable resistance drops after install = a staple penetrated the cable (fault), not a sensor failure.",
+      "VFD startup: program parameters BEFORE any rotation/bump test; confirm motor is free first.",
+      "Exit-sign authority = NBC, not the CEC (read which document the question asks for)."
+    ],
+    "mnemonic": "Lockout = I-I-V (Identify, Isolate, Verify). Transformer: Primary Pushes back (back-feed), Secondary Sparks (arc flash). 4-20 mA: '4 plus 16'.",
+    "method": [
+      "Most Block A questions are pure trade recall - answer fast, flag none, bank time for the calc-heavy blocks.",
+      "For hazard/safety: name the energy and the protection (lockout, PPE, arc-flash/back-feed).",
+      "For controls (VFD, HVAC sequence, timers): order the steps logically - prove safe/free first, program, then test.",
+      "For the few calcs: fault current = FLC / %Z; 4-20 mA = 4 + (span x percent); torque = look up the bolt size."
+    ],
+    "examples": ["OCC-001", "OCC-002", "OCC-003", "OCC-010", "OCC-026", "OCC-030"],
+    "keywords": [
+      {"kw": "\"torque spec / N.m for hardware\"", "jump": "Table D7 (Appendix D)", "why": "1/2 in = 54 N.m, 1/4 in HVAC = 8 N.m", "stars": 4},
+      {"kw": "\"lock-out first step\"", "jump": "Identify energy sources (LOTO)", "why": "identify before isolate/lock/verify", "stars": 4},
+      {"kw": "\"transformer hazard primary vs secondary\"", "jump": "Back-feed (primary) / arc flash (secondary)", "why": "classic paired safety question", "stars": 4},
+      {"kw": "\"PPE for grinding / cutting tray\"", "jump": "Face shield", "why": "flying metal particles and sparks", "stars": 3},
+      {"kw": "\"available fault / short-circuit current\"", "jump": "FLC / %Z", "why": "interrupting rating must exceed it", "stars": 3},
+      {"kw": "\"back-fed PV breaker location\"", "jump": "Section 64 (opposite end from main)", "why": "120% busbar / backfeed rule", "stars": 3},
+      {"kw": "\"VFD startup sequence\"", "jump": "Program params -> bump/rotation test", "why": "set parameters before any rotation", "stars": 3},
+      {"kw": "\"generator won't start (cold / outage)\"", "jump": "Battery heater / charger failure", "why": "cold or dead batteries can't crank", "stars": 3},
+      {"kw": "\"4-20 mA control signal\"", "jump": "4 mA + percent x 16 mA span", "why": "85% open = 17.6 mA", "stars": 3},
+      {"kw": "\"overload heater won't reset\"", "jump": "Melted solder pot (eutectic relay)", "why": "won't latch until cooled/replaced", "stars": 3},
+      {"kw": "\"split receptacle / breaker trips instantly\"", "jump": "Broken tab on ungrounded side", "why": "intact hot tab shorts the phases", "stars": 3},
+      {"kw": "\"HVAC heating sequence / high-limit\"", "jump": "Purge -> gas valve -> damper/blower", "why": "no airflow -> high-limit opens, gas de-energizes", "stars": 3},
+      {"kw": "\"GFCI trip current / pool deck\"", "jump": "Class A = 5 mA", "why": "won't reset with power & no fault = faulty device", "stars": 2},
+      {"kw": "\"bump test\"", "jump": "Direction of rotation", "why": "momentary energize to confirm rotation", "stars": 2},
+      {"kw": "\"off-delay vs on-delay timer\"", "jump": "Off-delay = run after shutdown", "why": "20 s cooling fan after motor stops", "stars": 2},
+      {"kw": "\"3-wire control / holding contact\"", "jump": "Low-voltage protection", "why": "coil drops out on voltage loss, needs restart", "stars": 2},
+      {"kw": "\"in-floor heating cable resistance drop\"", "jump": "Staple penetrated cable", "why": "insulation fault lowers resistance", "stars": 2},
+      {"kw": "\"HV rubber glove retest interval\"", "jump": "12 mo storage / 6 mo in service", "why": "periodic dielectric retest", "stars": 2},
+      {"kw": "\"who coordinates sub-trades / schedule\"", "jump": "General contractor", "why": "site coordination question", "stars": 2},
+      {"kw": "\"rough-in inspection timing\"", "jump": "Before any work is concealed", "why": "drywall/concrete cover-up trigger", "stars": 2},
+      {"kw": "\"exit signs / smoke alarm authority\"", "jump": "National Building Code (not CEC)", "why": "requirement vs electrical sizing", "stars": 2},
+      {"kw": "\"hotspots in connections\"", "jump": "Infrared / thermal camera", "why": "detects loose/high-resistance heat", "stars": 1},
+      {"kw": "\"fasteners (concrete / strut)\"", "jump": "Drop-in anchor / strut spring nuts", "why": "panel-to-concrete vs equipment-to-strut", "stars": 1},
+      {"kw": "\"neutral conductor identification\"", "jump": "Rule 4-024/4-036 (white, <=#2 AWG)", "why": "identified-conductor colour", "stars": 1}
+    ]
+  }
+]

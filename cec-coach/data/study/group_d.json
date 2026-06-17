@@ -1,0 +1,150 @@
+[
+  {
+    "section": 12,
+    "name": "Wiring Methods",
+    "block": "C",
+    "qcount": 74,
+    "importance": 5,
+    "summary": "The single biggest source of exam questions (Block C) — conduit fill, box/pull-box fill, cover depths, bend radius and cable rules dominate. Most of these are pure table lookups, so speed and the right table choice decide pass/fail here.",
+    "keyTables": [
+      {"ref": "Table 10", "stars": 5, "what": "Conductor cross-sectional area (insulation incl.)", "use": "Feeds every conduit/raceway/gutter fill calc — sum areas here"},
+      {"ref": "Table 6", "stars": 5, "what": "Max conductors / conduit dimensions for fill", "use": "Pick smallest conduit whose allowable area ≥ total"},
+      {"ref": "Table 8", "stars": 5, "what": "Maximum raceway fill %", "use": "1→53%, 2→31%, 3+→40% (not-lead-sheathed top row)"},
+      {"ref": "Table 9", "stars": 4, "what": "Conduit % cross-section areas by trade size", "use": "Used with Table 6/8 to land the conduit size and for pull-box math"},
+      {"ref": "Table 23", "stars": 5, "what": "Max conductors permitted in standard boxes", "use": "Quick box-fill lookup by conductor size"},
+      {"ref": "Table 22", "stars": 4, "what": "mL volume allowance per conductor by size", "use": "Box-fill calc: multiply mL/conductor × equivalents"},
+      {"ref": "Table 53", "stars": 5, "what": "Minimum underground cover depths", "use": "By voltage, protection, vehicular vs non-vehicular; -150 mm with mech. protection"},
+      {"ref": "Table 7", "stars": 4, "what": "Minimum bend radius by trade size", "use": "Radius set by CONDUIT size, not the conductor"},
+      {"ref": "Table 21", "stars": 3, "what": "Vertical-raceway conductor support spacing", "use": "By conductor size — bigger/heavier = shorter spacing"},
+      {"ref": "Table 19 / Table D1", "stars": 3, "what": "Cable type by condition & voltage rating", "use": "NMD90=300V, AC90≤2000V, TECK90≤5000V; dry/damp/wet selection"},
+      {"ref": "Table 38", "stars": 2, "what": "Conduit thermal expansion coefficient", "use": "Expansion = coeff × length(m) × ΔT for RPVC runs"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 12-910", "stars": 5, "what": "Conductors per conduit/raceway (fill)", "note": "Use with Tables 6/8/9/10; the fill engine"},
+      {"ref": "Rule 12-3036", "stars": 5, "what": "Pull/junction box sizing", "note": "Straight pull = 8× largest raceway; angle/U = 6× largest + sum of others on that wall"},
+      {"ref": "Rule 12-3034", "stars": 4, "what": "Box fill / minimum box volume", "note": "Device = 1 conductor of largest size; bond adds NO separate volume"},
+      {"ref": "Rule 12-012", "stars": 5, "what": "Underground installation / minimum cover", "note": "Pairs with Table 53; mech. protection reduces cover 150 mm"},
+      {"ref": "Rule 12-516", "stars": 4, "what": "Cable through studs/joists — 32 mm from edge", "note": "Else steel protector plate (Fig 12-30)"},
+      {"ref": "Rule 12-940", "stars": 4, "what": "Max bends between pull points", "note": "Equivalent of four 90° bends = 360° total"},
+      {"ref": "Rule 12-552", "stars": 4, "what": "NMD90 / non-metallic sheathed cable max voltage", "note": "300 V (with Table D1)"},
+      {"ref": "Rule 12-510 / 12-520", "stars": 3, "what": "NMSC clearances & support spacing", "note": "25 mm from heat pipe, 50 mm from chimney; within 300 mm of box then ≤1.5 m"},
+      {"ref": "Rule 12-108", "stars": 3, "what": "Parallel conductors", "note": "Permitted only for #1/0 AWG and larger"},
+      {"ref": "Rule 12-118", "stars": 3, "what": "Terminations", "note": ">#10 needs a lug; #10 solid max under a binding screw; Belleville washer for Al lugs"},
+      {"ref": "Rule 12-2100", "stars": 2, "what": "Wireway / auxiliary-gutter fill", "note": "Max 20% area, max 30 current-carrying conductors"}
+    ],
+    "mustKnow": [
+      "Fill %: 1 conductor→53%, 2→31%, 3 or more→40% (Table 8). Conduit-fill engine = Table 10 (areas) + Table 8 (fill %) + Table 6/9 (conduit size); bonding conductor IS counted in conduit fill.",
+      "Box fill (CEC ≠ NEC): a device (receptacle/switch) counts as ONE conductor of the largest size; the bonding/ground conductor adds NO separate volume; wire connectors are NOT each counted like in the NEC.",
+      "Pull boxes (12-3036): straight pull = 8× largest raceway trade size; angle or U pull = 6× largest + sum of the other raceways entering the same wall.",
+      "Max bends between pull points = 4 × 90° = 360° (12-940). Bend radius is read from Table 7 by conduit trade size, not the conductor.",
+      "Underground cover (Table 53): ≤750 V unprotected = 600 mm non-vehicular / 900 mm vehicular; mechanical protection (plank/concrete) reduces cover by 150 mm.",
+      "Cable through studs: keep 32 mm from the outer edge (12-516) or fit a steel protector plate; min 150 mm free conductor at each box (12-3014).",
+      "Voltage ratings: NMD90 = 300 V, AC90 ≤ 2000 V, TECK90 ≤ 5000 V. Parallel only #1/0 and larger (12-108).",
+      "Support: secure within 300 mm of a box, then ≤1.5 m for cable/armoured (12-510/12-618). NMSC clearances 25 mm heat pipe / 50 mm chimney.",
+      "No splices inside conduit (12-912); PV conductors not in same raceway as other systems (12-904). Box set-back ≤6 mm in non-combustible surfaces, flush in combustible."
+    ],
+    "traps": [
+      "Box fill: counting the bonding conductor as a separate volume (it is NOT in the CEC) or counting each wire connector as a conductor like the NEC — both inflate the answer.",
+      "Wrong fill %: using 53% or 31% when there are 3+ conductors — almost always 40% on real exam questions.",
+      "Pull box: applying 8× (straight) when the entries are at an angle/U (should be 6× + sum of others) or vice-versa — read the diagram carefully.",
+      "Bend radius from Table 7 is keyed to the CONDUIT trade size, not the conductor being pulled in.",
+      "Cover depth: forgetting the 150 mm reduction with mechanical protection, or confusing it with the 38 mm plank / 50 mm concrete thickness values.",
+      "Voltage: picking 600 V for NMD90 — it is 300 V. 'EMT is NOT a conduit' wording can flip a fill/bend answer.",
+      "Counting a balanced neutral or bonding conductor when sizing for fill — bond IS counted in conduit fill but NOT in box fill (opposite rules).",
+      "Conduit expansion: forgetting ΔT spans below zero (e.g. -50 to +25 = 75°C, not 25)."
+    ],
+    "mnemonic": "Fill counts down the road: 1-lane 53, 2-lane 31, 3+-lane 40. Pull boxes: STraight = 8 (eight letters in 'straight-ish'), angle/U = 6.",
+    "method": [
+      "Conduit fill: (1) Table 10 → area of each conductor, sum all; (2) Table 8 → fill % by count (3+ = 40%); (3) Table 6/9 → smallest conduit whose allowable area ≥ total. Reverse for 'how many fit.'",
+      "Box fill: count conductors entering + 1 per device (largest size) — ignore bond volume and connectors; multiply Table 22 mL × equivalents, or read Table 23 directly.",
+      "Pull box: identify straight vs angle/U pulls per the diagram; straight wall = 8× largest, angle/U wall = 6× largest + sum of other entries on that wall.",
+      "Cover/bend/voltage/clearance: pure lookup — go straight to Table 53 / Table 7 / Table D1 / Rule 12-510 and read the matching row.",
+      "Expansion: ΔT = max − min temp; expansion = Table 38 coeff × length (m) × ΔT."
+    ],
+    "examples": ["S12-002", "S12-004", "S12-005", "S12-009", "S12-019", "S12-021"],
+    "keywords": [
+      {"kw": "\"conduit fill / minimum conduit size / how many conductors fit\"", "jump": "Rule 12-910 + Tables 6/8/9/10", "why": "1→53%, 2→31%, 3+→40%; sum Table 10 areas, pick smallest conduit", "stars": 5},
+      {"kw": "\"conductor cross-sectional area / area of conductor\"", "jump": "Table 10", "why": "Insulated area feeding every fill calc", "stars": 5},
+      {"kw": "\"box fill / box volume / minimum size of box / how many in a box\"", "jump": "Rule 12-3034/12-3036 + Tables 22/23", "why": "Device = 1 largest conductor; bond adds NO volume", "stars": 5},
+      {"kw": "\"pull box / junction box dimensions / straight vs angle pull\"", "jump": "Rule 12-3036", "why": "Straight = 8× largest raceway; angle/U = 6× + sum of others", "stars": 5},
+      {"kw": "\"minimum cover / buried depth / direct burial\"", "jump": "Rule 12-012 + Table 53", "why": "≤750 V: 600 mm non-veh / 900 mm veh; -150 mm with mech. protection", "stars": 5},
+      {"kw": "\"number of bends / 360 degrees / quarter bends between pulls\"", "jump": "Rule 12-940", "why": "Max equivalent of four 90° bends = 360°", "stars": 4},
+      {"kw": "\"bend radius / minimum radius of bend\"", "jump": "Table 7", "why": "Radius keyed to conduit trade size, NOT the conductor", "stars": 4},
+      {"kw": "\"NMSC / NMD90 maximum voltage\"", "jump": "Rule 12-552 + Table D1", "why": "NMD90 = 300 V (not 600 V)", "stars": 4},
+      {"kw": "\"cable distance from stud / through joists / 32 mm\"", "jump": "Rule 12-516", "why": "32 mm from outer edge or steel protector plate", "stars": 4},
+      {"kw": "\"free conductor length at outlet / box\"", "jump": "Rule 12-3014", "why": "Minimum 150 mm of free conductor at each box", "stars": 3},
+      {"kw": "\"cable type selection / dry-damp-wet / voltage rating of cable\"", "jump": "Table 19 + Table D1", "why": "NMD90=300V, AC90≤2000V, TECK90≤5000V", "stars": 3},
+      {"kw": "\"parallel conductors\"", "jump": "Rule 12-108", "why": "Permitted only #1/0 AWG and larger", "stars": 3},
+      {"kw": "\"general wiring method / installation requirements\"", "jump": "Rule 12-012 + Section 12 general", "why": "Catch-all for underground/general method rules", "stars": 3},
+      {"kw": "\"support spacing / secured / fastening interval\"", "jump": "Rule 12-510/12-520/12-618 + Table 21", "why": "Within 300 mm of box then ≤1.5 m; Table 21 vertical raceways", "stars": 4},
+      {"kw": "\"NMSC clearance / heat pipe / chimney\"", "jump": "Rule 12-510", "why": "25 mm from heating pipe, 50 mm from masonry chimney", "stars": 3},
+      {"kw": "\"termination / lug / binding screw / largest conductor without lug\"", "jump": "Rule 12-118", "why": ">#10 needs a lug; #10 solid max under a screw; Belleville washer for Al", "stars": 3},
+      {"kw": "\"splices / joints in conduit\"", "jump": "Rule 12-912", "why": "No splices inside conduit — only in accessible boxes/fittings", "stars": 3},
+      {"kw": "\"wireway / auxiliary gutter fill\"", "jump": "Rule 12-2100 + Table 10", "why": "Max 20% area, max 30 current-carrying conductors", "stars": 2},
+      {"kw": "\"cable tray clearance\"", "jump": "Rule 12-2202", "why": "300 mm above to ceiling/ducts; 150 mm at short obstructions", "stars": 2},
+      {"kw": "\"conduit expansion / thermal movement\"", "jump": "Rule 12-1102 + Table 38", "why": "Expansion = coeff × length(m) × ΔT (ΔT spans below zero)", "stars": 2},
+      {"kw": "\"box set-back / front edge of box / concrete wall\"", "jump": "Rule 12-3018", "why": "≤6 mm set-back in non-combustible; flush in combustible", "stars": 2},
+      {"kw": "\"FCC / flat conductor cable / under-carpet\"", "jump": "Rule 12-806", "why": "Not in dwellings; 30 A max branch; carpet squares ≤750 mm", "stars": 2},
+      {"kw": "\"PV conductors in same raceway\"", "jump": "Rule 12-904", "why": "PV conductors must not share raceway with other systems", "stars": 2},
+      {"kw": "\"EMT in wet location\"", "jump": "Rule 12-1402", "why": "Permitted with wet-rated fittings; EMT is NOT a conduit", "stars": 2},
+      {"kw": "\"neutral-supported cable span\"", "jump": "Rule 12-310", "why": "Max span between supports (verify 38 vs 40 m in 2024)", "stars": 1}
+    ]
+  },
+  {
+    "section": 14,
+    "name": "Overcurrent Protection",
+    "block": "B",
+    "qcount": 11,
+    "importance": 3,
+    "summary": "Fewer questions but high-value and predictable — the ground-fault-protection 'both conditions' rule and basic overcurrent sizing recur almost every exam. Most are one-step rule lookups, so these are easy marks if you know the two thresholds cold.",
+    "keyTables": [
+      {"ref": "Table 13", "stars": 4, "what": "Standard overcurrent device ratings", "use": "Pick the standard breaker/fuse size at or below conductor ampacity"},
+      {"ref": "Table 2", "stars": 3, "what": "Conductor ampacity (Cu in raceway)", "use": "Get ampacity first, then size the OCPD to it (14-104)"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 14-102", "stars": 5, "what": "Ground-fault protection of equipment", "note": "Required ONLY if BOTH ≥1000 A AND >150 V to ground; must clear ≥3000 A within 1 s"},
+      {"ref": "Rule 14-104", "stars": 5, "what": "Overcurrent device rating for conductors", "note": "≤ conductor ampacity; if no standard size matches, next LOWER standard (with permitted exception to next higher)"},
+      {"ref": "Rule 14-100", "stars": 3, "what": "Overcurrent protection required for each conductor", "note": "Foundation rule — every ungrounded conductor protected"},
+      {"ref": "Rule 14-012", "stars": 3, "what": "Interrupting / withstand rating", "note": "Device must safely interrupt available fault current"},
+      {"ref": "Rule 14-606", "stars": 3, "what": "Breaker interrupting rating", "note": "Default 10 000 A symmetrical unless marked higher"},
+      {"ref": "Rule 14-200", "stars": 2, "what": "Plug fuses", "note": "Max 30 A (Type T / Type S)"},
+      {"ref": "Rule 14-212", "stars": 2, "what": "Fuse type for cyclic loads (heating)", "note": "Time-delay / HRC type"},
+      {"ref": "Rule 14-500/14-510", "stars": 2, "what": "Switch ratings", "note": "Tungsten ('T') rated for incandescent; knife switch limits"}
+    ],
+    "mustKnow": [
+      "GFP rule (14-102): equipment ground-fault protection required ONLY when BOTH conditions are true — service rated 1000 A or more AND more than 150 V to ground. 208Y/120 V (120 V to ground) never qualifies; 600/347 V qualifies only at ≥1000 A.",
+      "GFP clearing time: a ground-fault current of 3000 A or more must be cleared within a maximum of 1 second (14-102).",
+      "Overcurrent vs overload: overcurrent (fuse/breaker, Section 14) protects the CONDUCTORS; overload (thermal, Section 28) protects the MOTOR — the single most-confused exam pair.",
+      "OCPD sizing (14-104): device rating ≤ conductor ampacity; where ampacity doesn't equal a standard size, use the next LOWER standard size from Table 13 (a permitted exception allows next higher for non-continuous loads ≤ certain ratings).",
+      "Breaker default interrupting rating = 10 000 A symmetrical unless specifically marked otherwise (14-606); plug fuse max = 30 A (14-200)."
+    ],
+    "traps": [
+      "GFP: answering 'Yes' when only ONE of the two conditions is met — high current at low voltage (2000 A, 208 V) or high voltage at low current (800 A, 347 V) both = NO.",
+      "Confusing overcurrent (protects wire) with overload (protects motor) — they are different sections and different sizing bases.",
+      "Sizing the breaker to the LOAD instead of the CONDUCTOR ampacity, or rounding UP to next standard size when 14-104 calls for next lower.",
+      "Assuming a higher interrupting rating than the 10 000 A default just because voltage/frame size is large.",
+      "Treating 150 V to ground as exclusive — '>150 V' means 347 V qualifies but 150 V itself does not."
+    ],
+    "mnemonic": "GFP needs the GRAND SLAM: 1000 A AND 150 V — BOTH bases or you're OUT (no GFP).",
+    "method": [
+      "Ground-fault protection: check BOTH gates — is it ≥1000 A? AND is it >150 V to ground? Only 'yes' to both → GFP required. Either 'no' → not required.",
+      "Conductor overcurrent: (1) Table 2/4 → conductor ampacity; (2) Rule 14-104 → set OCPD ≤ that ampacity; (3) Table 13 → nearest standard size (next lower unless exception applies).",
+      "Device rating questions (plug fuse, knife switch, interrupting rating): straight rule lookup — go to 14-200 / 14-510 / 14-606 and read the limit."
+    ],
+    "examples": ["S14-001", "S14-005", "S14-007", "S14-009", "S14-011"],
+    "keywords": [
+      {"kw": "\"is ground-fault protection required / GFP service\"", "jump": "Rule 14-102", "why": "ONLY if BOTH ≥1000 A AND >150 V to ground", "stars": 5},
+      {"kw": "\"overcurrent / breaker or fuse size for a conductor\"", "jump": "Rule 14-104 + Table 13", "why": "≤ conductor ampacity; next LOWER standard size", "stars": 5},
+      {"kw": "\"ground-fault clearing time / 3000 A\"", "jump": "Rule 14-102", "why": "≥3000 A fault cleared within max 1 second", "stars": 4},
+      {"kw": "\"overcurrent vs overload / what protects the wire\"", "jump": "Rule 14-100 (vs Section 28)", "why": "Overcurrent protects conductors; overload protects the motor", "stars": 4},
+      {"kw": "\"overcurrent protection required per conductor\"", "jump": "Rule 14-100", "why": "Every ungrounded conductor must be protected", "stars": 3},
+      {"kw": "\"interrupting rating / available fault current / withstand\"", "jump": "Rule 14-012 + 14-606", "why": "Default 10 000 A symmetrical unless marked higher", "stars": 3},
+      {"kw": "\"maximum breaker for a load / non-continuous\"", "jump": "Rule 14-104 + Table 2 + Table 13", "why": "Size to conductor ampacity, then standard size", "stars": 3},
+      {"kw": "\"plug fuse maximum rating\"", "jump": "Rule 14-200", "why": "Plug fuse max = 30 A (Type T / Type S)", "stars": 2},
+      {"kw": "\"fuse type for heating / cyclic load\"", "jump": "Rule 14-212", "why": "Time-delay / HRC-type fuse (Type D or P)", "stars": 2},
+      {"kw": "\"knife switch rating / general-use switch\"", "jump": "Rule 14-510", "why": "Knife switch max ~750 V / 600 A (verify)", "stars": 2},
+      {"kw": "\"switch rating for incandescent / tungsten / T-rated\"", "jump": "Rule 14-500", "why": "Tungsten ('T') rated for high lamp inrush", "stars": 2},
+      {"kw": "\"overcurrent for equipment wire / small conductor\"", "jump": "Rule 14-104 + Table 13", "why": "#16 equipment wire OCP per Table 13 limits", "stars": 2}
+    ]
+  }
+]

@@ -1,0 +1,204 @@
+[
+  {
+    "section": 16,
+    "name": "Class 1 & 2 Circuits",
+    "block": "E",
+    "qcount": 15,
+    "importance": 3,
+    "summary": "Low-question-count but easy marks: it all turns on Class 1 vs Class 2 (power-limited) and the extra-low-voltage 30 V boundary. Most questions are straight rule lookups in 16-200/16-210/16-212 plus the ELC/LVT ampacity table.",
+    "keyTables": [
+      {"ref": "Table 11", "stars": 3, "what": "ELC / LVT cable ampacity, derated by conductor count", "use": "look up base #16 AWG ampacity then derate for the number of conductors in the cable"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 16-200", "stars": 5, "what": "Class 1 / Class 2 power-source limits", "note": "ELV = max 30 V; Class 1 ELV power = 30 V / 1000 VA; Class 2 above 30 V limited to 100 VA (so fuse = 100 VA ÷ V)"},
+      {"ref": "Rule 16-210", "stars": 5, "what": "Class 2 conductor sizing, ELC use, small Class 1 conductor overcurrent", "note": "smallest Class 2 conductor = #30 AWG; #18 Class 1 conductor max 5 A, #16 max 7 A"},
+      {"ref": "Rule 16-212", "stars": 5, "what": "Separation of Class 2 from light/power/Class 1 conductors", "note": "where neither in raceway: 50 mm at ≤300 V, 600 mm at higher voltage (480 V)"},
+      {"ref": "Rule 16-100", "stars": 3, "what": "Class 1 vs Class 2 classification", "note": "fire alarm = Class 1 life-safety even at 24 V"},
+      {"ref": "Rule 32-100", "stars": 3, "what": "Fire alarm conductor wiring (cross-ref from Sec 16)", "note": "#18 single / #19 minimum in an integral assembly of 4+ conductors"}
+    ],
+    "mustKnow": [
+      "Extra-low-voltage = not exceeding 30 V (boundary inclusive: 30 V is ELV)",
+      "Class 2 = power-limited; smallest permitted conductor = #30 AWG",
+      "Class 1 ELV power circuit max = 30 V and 1000 VA (16-200)",
+      "Class 2 above 30 V limited to 100 VA → max fuse = 100 VA ÷ operating voltage",
+      "Separation (neither in raceway): 50 mm at ≤300 V, 600 mm above (≈480 V)",
+      "Fire alarm circuits are Class 1, not Class 2 — ELC wire is NOT permitted for fire alarm",
+      "Small Class 1 control conductor overcurrent: #18 = 5 A, #16 = 7 A"
+    ],
+    "traps": [
+      "Calling a 24 V fire alarm circuit 'Class 2' because the voltage is low — it is Class 1 (life-safety)",
+      "Using TEW/equipment wire for open Class 2 field wiring — only conductors approved for Class 2 (e.g. ELC) are allowed when not in a raceway",
+      "Confusing the 50 mm (≤300 V) and 600 mm (higher voltage) separations in 16-212",
+      "Forgetting the 100 VA limit on Class 2 above 30 V — that VA cap sets the max fuse, not a fixed amp value"
+    ],
+    "mnemonic": "Class 2 = power-limited (100 VA above 30 V); Fire Alarm = Class 1 (Life = Class 1).",
+    "method": [
+      "Classification question → 16-100: is it life-safety (fire alarm)? → Class 1. Otherwise check if power-limited → Class 2.",
+      "Class 2 max fuse above 30 V → 100 VA ÷ operating voltage.",
+      "Separation question → 16-212: ≤300 V = 50 mm, higher = 600 mm (when neither is in a raceway).",
+      "Conductor/cable ampacity → Table 11, base AWG ampacity then derate for conductor count."
+    ],
+    "examples": ["S16-002", "S16-005", "S16-007", "S16-010", "S16-013"],
+    "keywords": [
+      {"kw": "\"Class 2 / power-limited circuit\"", "jump": "Rule 16-200 / 16-210", "why": "power-limited; smallest conductor #30 AWG", "stars": 5},
+      {"kw": "\"smallest conductor size, Class 2\"", "jump": "Rule 16-210", "why": "#30 AWG permitted (power-limited)", "stars": 5},
+      {"kw": "\"max fuse / overcurrent, Class 2 above 30 V\"", "jump": "Rule 16-200", "why": "100 VA cap → 100 ÷ V (e.g. 100/150 = 0.67 A)", "stars": 5},
+      {"kw": "\"Class 1 ELV power circuit max V and VA\"", "jump": "Rule 16-200", "why": "30 V and 1000 VA", "stars": 5},
+      {"kw": "\"extra-low-voltage limit / max ELV voltage\"", "jump": "Rule 16-200 (Sec 0 definition)", "why": "30 V — boundary is inclusive", "stars": 5},
+      {"kw": "\"separation Class 2 from power / Class 1\"", "jump": "Rule 16-212", "why": "50 mm at ≤300 V, 600 mm higher (neither in raceway)", "stars": 5},
+      {"kw": "\"Class 1 vs Class 2 / fire alarm classification\"", "jump": "Rule 16-100 / 32-100", "why": "fire alarm = Class 1 life-safety even at 24 V", "stars": 4},
+      {"kw": "\"ELC conductor / extra-low-voltage control wire\"", "jump": "Rule 16-210", "why": "Class 2 only, max 30 V; NOT for fire alarm", "stars": 4},
+      {"kw": "\"TEW / equipment wire in open Class 2 wiring\"", "jump": "Rule 16-210 / 16-212", "why": "equipment wire NOT approved for open Class 2", "stars": 3},
+      {"kw": "\"ELC / LVT cable ampacity (multi-conductor)\"", "jump": "Table 11", "why": "base AWG ampacity, derate by conductor count", "stars": 3},
+      {"kw": "\"#18 / #16 Class 1 conductor overcurrent\"", "jump": "Rule 16-210", "why": "#18 = 5 A, #16 = 7 A max", "stars": 3},
+      {"kw": "\"fire alarm conductor minimum size\"", "jump": "Rule 32-100", "why": "#18 single, #19 in integral 4+ conductor assembly", "stars": 2}
+    ]
+  },
+  {
+    "section": 26,
+    "name": "Equipment & Receptacles",
+    "block": "B",
+    "qcount": 53,
+    "importance": 4,
+    "summary": "High question count, mostly fast lookups: receptacle spacing/placement, GFCI/AFCI rules, panelboard handle height, transformer/capacitor protection and clearances. Know the dwelling receptacle rules cold — they are near-guaranteed easy marks.",
+    "keyTables": [
+      {"ref": "Table 50", "stars": 3, "what": "Transformer overcurrent device max % (primary/secondary, ≤750 V vs >750 V)", "use": "for transformer fuse/breaker sizing in 26-250/26-252"},
+      {"ref": "Table 13", "stars": 3, "what": "Standard overcurrent device (fuse/breaker) sizes", "use": "round the calculated transformer/capacitor OCPD to a standard size"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 26-712", "stars": 5, "what": "Dwelling receptacle spacing & counter/island requirements", "note": "no point on usable wall floor line >1.8 m from a receptacle → max 3.6 m apart"},
+      {"ref": "Rule 26-700", "stars": 5, "what": "Receptacle general rules / faceplate / GFCI near sinks", "note": "face projects ≥0.4 mm past metal plate; GFCI within 1.5 m of a sink"},
+      {"ref": "Rule 26-714", "stars": 5, "what": "Outdoor receptacle GFCI (Class A) within 2.5 m of grade", "note": "residential outdoor ≤2.5 m of finished grade = Class A GFCI"},
+      {"ref": "Rule 26-722", "stars": 5, "what": "Dwelling branch-circuit / AFCI / dedicated-circuit requirements", "note": "combination-type AFCI for 125 V receptacles ≤20 A; dedicated circuits (central vac, etc.)"},
+      {"ref": "Rule 26-724", "stars": 4, "what": "Required dwelling receptacles (outdoor, etc.)", "note": "min 2 outdoor duplex receptacles readily accessible from grade"},
+      {"ref": "Rule 26-210", "stars": 4, "what": "Capacitor conductor & overcurrent sizing", "note": "conductor ampacity ≥135% of capacitor rated current"},
+      {"ref": "Rule 26-400", "stars": 4, "what": "Panelboard installation / handle height", "note": "highest operating handle ≤1.7 m above finished floor"},
+      {"ref": "Rule 26-244", "stars": 3, "what": "Dry-type transformer wall/floor clearance", "note": "floor-mounted dry-type ≈150 mm from wall for ventilation"},
+      {"ref": "Rule 26-250 / 26-252", "stars": 3, "what": "Transformer overcurrent protection (interrupting rating, primary OCPD)", "note": "OCPD % from Table 50; secondary fault = FLA ÷ per-unit impedance"}
+    ],
+    "mustKnow": [
+      "Receptacle spacing (26-712): max 3.6 m apart (no point >1.8 m from a receptacle)",
+      "Panelboard handle height (26-400): max 1.7 m above finished floor",
+      "Receptacle face projects ≥0.4 mm beyond a metal faceplate (26-700)",
+      "Range receptacle centre ≤130 mm above finished floor (26-744)",
+      "Outdoor residential receptacle within 2.5 m of grade = Class A GFCI (26-714)",
+      "GFCI within 1.5 m of a sink (26-700)",
+      "Combination AFCI for dwelling 125 V receptacles ≤20 A (26-722)",
+      "Capacitor conductor ≥135% of rated current (26-210)",
+      "≥2 outdoor duplex receptacles required at a single dwelling (26-724)",
+      "Transformer secondary fault current = secondary FLA ÷ per-unit impedance"
+    ],
+    "traps": [
+      "Reading 26-712 as '1.8 m apart' — the 1.8 m is the distance from any point to a receptacle, so receptacles are up to 3.6 m apart",
+      "Applying GFCI to a dedicated stationary-appliance receptacle (washer behind machine, sump pump) — those have exceptions",
+      "Forgetting the 2.5 m-of-grade trigger for outdoor GFCI (26-714)",
+      "Confusing capacitor 135% conductor rule (26-210) with the 125% motor branch rule (28-106)",
+      "Using the ≤750 V transformer OCPD % when the primary is >750 V (different Table 50 column → e.g. 300% permitted)",
+      "Handle height: 1.7 m is the max, not 2.1 m or 1.5 m"
+    ],
+    "mnemonic": "Receptacles: 1.8 to a point, 3.6 between; Panel handle 1.7; Range 130; Outdoor GFCI within 2.5 of grade.",
+    "method": [
+      "Dwelling receptacle spacing/placement → 26-712 (1.8 m / 3.6 m, counter & island rules).",
+      "GFCI question → near sink (1.5 m) or outdoor ≤2.5 m grade → Class A GFCI, then check dedicated-appliance exceptions.",
+      "AFCI / dedicated-circuit dwelling question → 26-722.",
+      "Capacitor → 26-210: conductor ≥135% of rated current; rated current = kVA ÷ (V × √3 for 3-φ).",
+      "Transformer OCPD → primary current, then Table 50 % (watch ≤750 V vs >750 V), round with Table 13.",
+      "Transformer fault/interrupting rating → secondary FLA ÷ per-unit impedance."
+    ],
+    "examples": ["S26-003", "S26-004", "S26-013", "S26-019", "S26-026", "S26-001"],
+    "keywords": [
+      {"kw": "\"receptacle spacing in a dwelling\"", "jump": "Rule 26-712", "why": "no point >1.8 m from a receptacle → max 3.6 m apart", "stars": 5},
+      {"kw": "\"kitchen counter / island receptacle required\"", "jump": "Rule 26-712", "why": "counter & island dimension thresholds trigger a receptacle", "stars": 4},
+      {"kw": "\"GFCI required? (sink / kitchen / outdoor)\"", "jump": "Rule 26-700", "why": "within 1.5 m of a sink → Class A GFCI", "stars": 5},
+      {"kw": "\"outdoor receptacle within 2.5 m of grade\"", "jump": "Rule 26-714", "why": "residential ≤2.5 m grade = Class A GFCI", "stars": 5},
+      {"kw": "\"AFCI / combination arc-fault, dwelling\"", "jump": "Rule 26-722", "why": "125 V receptacles ≤20 A in dwelling need combo AFCI", "stars": 5},
+      {"kw": "\"dedicated branch circuit (central vac, fridge, etc.)\"", "jump": "Rule 26-722", "why": "lists which dwelling loads need their own circuit + exceptions", "stars": 4},
+      {"kw": "\"required dwelling receptacles (outdoor count)\"", "jump": "Rule 26-724", "why": "min 2 outdoor duplex readily accessible from grade", "stars": 4},
+      {"kw": "\"panelboard handle height\"", "jump": "Rule 26-400", "why": "highest handle ≤1.7 m above finished floor", "stars": 5},
+      {"kw": "\"receptacle face / metal faceplate projection\"", "jump": "Rule 26-700", "why": "face ≥0.4 mm beyond metal plate", "stars": 3},
+      {"kw": "\"range receptacle height\"", "jump": "Rule 26-744", "why": "centre ≤130 mm above finished floor", "stars": 3},
+      {"kw": "\"capacitor conductor / fuse sizing\"", "jump": "Rule 26-210", "why": "conductor ≥135% of capacitor rated current", "stars": 4},
+      {"kw": "\"transformer overcurrent / primary fuse or breaker\"", "jump": "Rule 26-250 / 26-252 + Table 50", "why": "OCPD % differs ≤750 V vs >750 V; round with Table 13", "stars": 4},
+      {"kw": "\"transformer fault current / interrupting rating\"", "jump": "Rule 26-250", "why": "secondary FLA ÷ per-unit impedance", "stars": 3},
+      {"kw": "\"dry-type transformer wall / floor clearance\"", "jump": "Rule 26-244", "why": "floor-mounted ≈150 mm from wall for ventilation", "stars": 3},
+      {"kw": "\"liquid-filled transformer / capacitor vault\"", "jump": "Rule 26-350 / 26-012", "why": "vault/containment required above a liquid-quantity threshold", "stars": 2},
+      {"kw": "\"fence / enclosure clearance to live parts\"", "jump": "Rule 26-302", "why": "min 1 m to enclosure; larger to unguarded live parts by voltage", "stars": 2},
+      {"kw": "\"corridor receptacle spacing (apartment)\"", "jump": "Rule 26-710", "why": "max 15 m between duplex receptacles in public corridors", "stars": 2},
+      {"kw": "\"rooftop / HVAC maintenance receptacle\"", "jump": "Rule 26-708 / 26-714", "why": "5-20R, GFCI protected", "stars": 2}
+    ]
+  },
+  {
+    "section": 28,
+    "name": "Motors & Control",
+    "block": "D",
+    "qcount": 45,
+    "importance": 5,
+    "summary": "The hardest block — calculation- and diagram-heavy. Everything starts from the Table 44/45 FLC (NOT the nameplate) for conductors and branch overcurrent; only the overload comes from the nameplate FLA.",
+    "keyTables": [
+      {"ref": "Table 44", "stars": 5, "what": "3-phase motor full-load current (FLC) by hp & voltage", "use": "USE THIS for conductors and branch OCPD, NOT the nameplate"},
+      {"ref": "Table 45", "stars": 4, "what": "Single-phase motor FLC by hp & voltage", "use": "single-phase equivalent of Table 44"},
+      {"ref": "Table 29", "stars": 5, "what": "Max motor branch-circuit fuse/breaker as % of FLC", "use": "time-delay fuse 175% (225% won't-start), non-time-delay 300%, inverse-time CB 250%, instantaneous-trip 1300%"},
+      {"ref": "Table 27", "stars": 4, "what": "Duty-cycle / non-continuous service percentages", "use": "replaces the 125% continuous factor for short-time/intermittent/periodic/varying duty"}
+    ],
+    "keyRules": [
+      {"ref": "Rule 28-106", "stars": 5, "what": "Branch-circuit conductor = 125% of FLC", "note": "FLC from Table 44/45; continuous duty"},
+      {"ref": "Rule 28-108", "stars": 5, "what": "Feeder conductor for a group of motors", "note": "125% of the largest motor FLC + sum of the other motors' FLCs (duty-adjusted via Table 27)"},
+      {"ref": "Rule 28-200", "stars": 5, "what": "Branch-circuit overcurrent (max % from Table 29)", "note": "next size NOT exceeding by default; next-higher only if motor won't start"},
+      {"ref": "Rule 28-306", "stars": 5, "what": "Overload sized from NAMEPLATE FLA", "note": "×1.25 if SF ≥1.15 or temp-rise ≤40 °C, else ×1.15; single-phase = 1 device"},
+      {"ref": "Rule 28-604", "stars": 4, "what": "Disconnecting means location", "note": "within sight of AND ≤9 m from the motor/equipment"},
+      {"ref": "Rule 28-204", "stars": 3, "what": "Feeder overcurrent for a group of motors", "note": "largest-motor branch OCPD + remaining motor FLCs, to next size not exceeding"},
+      {"ref": "Rule 28-300", "stars": 3, "what": "Air-conditioning / refrigeration (compressor) sizing", "note": "size on marked rated-load current; LRC = 6×FLC if not marked"}
+    ],
+    "mustKnow": [
+      "FLC from Table 44 (3-φ) / Table 45 (1-φ) — NOT the nameplate",
+      "Branch conductor = 125% of FLC (28-106)",
+      "Feeder = 125% of largest motor FLC + sum of remaining motor FLCs (28-108)",
+      "Overload from NAMEPLATE FLA: ×1.25 (SF≥1.15 / rise≤40 °C) or ×1.15 (28-306)",
+      "Table 29 branch OCPD: time-delay fuse 175% (225% won't-start), non-time-delay 300%, inverse-time CB 250%, instantaneous-trip 1300%",
+      "Default: round OCPD to next size NOT exceeding; go higher only if the motor will not start",
+      "Disconnect within sight AND ≤9 m (28-604)",
+      "Duty-cycle service uses Table 27 % instead of the 125% continuous factor",
+      "Single-phase motor needs 1 overload device"
+    ],
+    "traps": [
+      "Using the nameplate FLA for conductors/branch fuses (must use Table 44/45 FLC)",
+      "Using Table 44 FLC for the overload (overload uses NAMEPLATE FLA, 28-306)",
+      "Overcurrent vs overload confusion: overcurrent (fuse/breaker) protects the WIRE; overload (thermal) protects the MOTOR",
+      "Rounding the OCPD to the next-HIGHER size when the motor isn't stated as 'won't start' — default is next size NOT exceeding",
+      "Applying 125% to a duty-cycle motor — use the Table 27 percentage instead",
+      "DC motor FLC comes from Table D2 (Appendix D), not Table 44",
+      "Feeder: only the LARGEST motor gets the 125%; the rest are added at their plain FLC"
+    ],
+    "mnemonic": "Wires & fuses = Table 44 (×1.25 / Table 29); Overload = nameplate. OverCURRENT protects Conductors, overLOAD protects the motor.",
+    "method": [
+      "Branch conductor: Table 44/45 FLC × 1.25 (28-106).",
+      "Branch OCPD: FLC × Table 29 % for the device type; default next standard size NOT exceeding (28-200).",
+      "Overload: nameplate FLA × 1.25 or 1.15 per 28-306 (count devices: 1 for single-phase).",
+      "Feeder (group): 125% of largest FLC + sum of other FLCs; apply Table 27 for any duty-cycle motors (28-108).",
+      "Feeder OCPD: largest-motor branch OCPD + remaining FLCs, next size not exceeding (28-204).",
+      "Disconnect: within sight and ≤9 m (28-604).",
+      "Compressor/DC: marked rated-load current / Table D2 FLC respectively."
+    ],
+    "examples": ["S28-012", "S28-008", "S28-025", "S28-022", "S28-003", "S28-015"],
+    "keywords": [
+      {"kw": "\"motor full-load current / FLC\"", "jump": "Table 44 (3-φ) / Table 45 (1-φ)", "why": "NOT the nameplate", "stars": 5},
+      {"kw": "\"motor branch-circuit conductor size\"", "jump": "Rule 28-106", "why": "125% of FLC (Table 44/45)", "stars": 5},
+      {"kw": "\"max fuse / breaker for a motor branch\"", "jump": "Table 29 + Rule 28-200", "why": "TD fuse 175% (225% won't-start), non-TD 300%, inverse CB 250%, inst-trip 1300%", "stars": 5},
+      {"kw": "\"motor overload / heater size\"", "jump": "Rule 28-306", "why": "from NAMEPLATE FLA ×1.25 (SF≥1.15) or ×1.15", "stars": 5},
+      {"kw": "\"feeder for a group of motors\"", "jump": "Rule 28-108", "why": "125% largest FLC + sum of other FLCs", "stars": 5},
+      {"kw": "\"instantaneous-trip / magnetic-only breaker %\"", "jump": "Table 29", "why": "1300% of FLC", "stars": 4},
+      {"kw": "\"time-delay fuse, motor won't start\"", "jump": "Rule 28-200 + Table 29", "why": "raise 175% → up to 225% only if it won't start", "stars": 4},
+      {"kw": "\"duty cycle / intermittent / short-time motor\"", "jump": "Table 27", "why": "use the duty % instead of 125% continuous", "stars": 4},
+      {"kw": "\"motor disconnect distance / location\"", "jump": "Rule 28-604", "why": "within sight AND ≤9 m", "stars": 4},
+      {"kw": "\"number of overload devices (single-phase)\"", "jump": "Rule 28-306 / Table 14", "why": "single-phase = 1 device", "stars": 3},
+      {"kw": "\"overload multiplier, service factor not marked\"", "jump": "Rule 28-306", "why": "115% of nameplate FLA", "stars": 3},
+      {"kw": "\"feeder overcurrent for motor group\"", "jump": "Rule 28-204", "why": "largest-motor branch OCPD + remaining FLCs", "stars": 3},
+      {"kw": "\"compressor / refrigeration / A-C motor sizing\"", "jump": "Rule 28-300 series", "why": "size on marked rated-load current; LRC = 6×FLC if unmarked", "stars": 3},
+      {"kw": "\"DC motor conductor / breaker\"", "jump": "Table D2 (Appendix D) + Table 29", "why": "DC FLC from Table D2, not Table 44", "stars": 3},
+      {"kw": "\"motor supply conductor insulation temp\"", "jump": "Rule 28-104 / Table 37", "why": "by motor enclosure/insulation class", "stars": 2},
+      {"kw": "\"control circuit / holding (seal-in) contact\"", "jump": "Section 28 control (theory)", "why": "maintaining contact in parallel with start button", "stars": 3},
+      {"kw": "\"low-voltage release vs protection (auto restart)\"", "jump": "Section 28 control (theory)", "why": "LV release = auto restart; LV protection = stays off", "stars": 2},
+      {"kw": "\"locked-rotor current\"", "jump": "Table 28", "why": "LRC by hp/voltage; or 6×FLC when unmarked", "stars": 2}
+    ]
+  }
+]

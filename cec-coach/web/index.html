@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — BC Construction Electrician (CEC 2024)</title>
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
 </head>
 <body>
   <header class="topbar">
@@ -44,10 +44,15 @@
           <div class="card-t">Quick Mix</div>
           <div class="card-d">20 random questions</div>
         </button>
+        <button class="card" data-go="study">
+          <div class="card-ic">📘</div>
+          <div class="card-t">Study Program</div>
+          <div class="card-d">A fast, magical lesson per section — ranked by what matters</div>
+        </button>
         <button class="card" data-go="keymap">
           <div class="card-ic">🔑</div>
           <div class="card-t">Keyword → Table Map</div>
-          <div class="card-d">See a keyword, jump to the exact Rule/Table — searchable</div>
+          <div class="card-d">Every keyword → exact Rule/Table, ranked by importance — searchable</div>
         </button>
       </div>
 
@@ -123,6 +128,26 @@
       <div id="resultActions" class="rowbtns"></div>
       <div id="rdetail" class="rdetail"></div>
       <div id="resultActions2" class="rowbtns"></div>
+    </section>
+
+    <!-- STUDY PROGRAM -->
+    <section id="study" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>📘 Study Program</h2>
+      <p class="sub">One tight, high-yield lesson per section — ordered by how much it
+        weighs on the exam. Tap a section to learn the fast way to the answer.</p>
+      <div id="studyList" class="studylist"></div>
+    </section>
+
+    <!-- STUDY LESSON -->
+    <section id="lesson" class="screen hidden">
+      <button class="back" data-study>← All sections</button>
+      <div id="lessonBody" class="rich"></div>
+      <div class="rowbtns">
+        <button id="lessonDrill" class="primary">🎯 Drill this section</button>
+        <button id="lessonTeach" class="ghost">🧑‍🏫 Ask AI to teach this</button>
+      </div>
+      <div id="lessonTeachOut"></div>
     </section>
 
     <!-- KEYWORD MAP -->
@@ -206,7 +231,8 @@
     </section>
   </main>
 
-  <script src="questions.js?v=14"></script>
-  <script src="app.js?v=14"></script>
+  <script src="questions.js?v=15"></script>
+  <script src="study.js?v=15"></script>
+  <script src="app.js?v=15"></script>
 </body>
 </html>

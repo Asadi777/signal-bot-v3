@@ -1,0 +1,1192 @@
+{
+ "occ": {
+  "name": "Occupational/Safety",
+  "qcount": 62,
+  "block": "A",
+  "topRefs": [
+   [
+    "Rule 4-024",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "torque-spec",
+    6
+   ],
+   [
+    "ppe-safety",
+    4
+   ],
+   [
+    "transformer-hazard",
+    4
+   ],
+   [
+    "lockout",
+    4
+   ],
+   [
+    "generator",
+    4
+   ],
+   [
+    "photovoltaic",
+    3
+   ],
+   [
+    "vfd",
+    3
+   ],
+   [
+    "hvac-controls",
+    3
+   ],
+   [
+    "site-coordination",
+    2
+   ],
+   [
+    "fasteners",
+    2
+   ],
+   [
+    "troubleshooting",
+    2
+   ],
+   [
+    "overload-heater",
+    2
+   ]
+  ],
+  "examples": [
+   "OCC-001",
+   "OCC-002",
+   "OCC-003",
+   "OCC-004",
+   "OCC-005",
+   "OCC-006",
+   "OCC-007",
+   "OCC-009",
+   "OCC-010",
+   "OCC-011",
+   "OCC-012",
+   "OCC-013",
+   "OCC-014",
+   "OCC-015"
+  ]
+ },
+ "28": {
+  "name": "Motors & Control",
+  "qcount": 45,
+  "block": "D",
+  "topRefs": [
+   [
+    "Table 44",
+    12
+   ],
+   [
+    "Table 29",
+    11
+   ],
+   [
+    "Rule 28-200",
+    8
+   ],
+   [
+    "Rule 28-108",
+    8
+   ],
+   [
+    "Rule 28-306",
+    6
+   ],
+   [
+    "Table 27",
+    5
+   ],
+   [
+    "Rule 28-604",
+    4
+   ],
+   [
+    "Table 14",
+    3
+   ],
+   [
+    "Rule 28-106",
+    3
+   ],
+   [
+    "Rule 28-204",
+    3
+   ],
+   [
+    "Rule 28-300",
+    3
+   ],
+   [
+    "Rule 28-104",
+    2
+   ],
+   [
+    "Table 37",
+    2
+   ],
+   [
+    "Appendix D",
+    2
+   ]
+  ],
+  "topTopics": [
+   [
+    "control-circuit",
+    4
+   ],
+   [
+    "max-time-delay-fuse",
+    3
+   ],
+   [
+    "overload-device-count",
+    3
+   ],
+   [
+    "feeder-and-fuse-group",
+    3
+   ],
+   [
+    "overload-sizing",
+    2
+   ],
+   [
+    "branch-conductor-duty-cycle",
+    2
+   ],
+   [
+    "conductor-insulation-temp",
+    2
+   ],
+   [
+    "disconnect-location",
+    2
+   ],
+   [
+    "disconnect-location-refrigeration",
+    2
+   ],
+   [
+    "dc-motor-breaker",
+    2
+   ],
+   [
+    "feeder-group",
+    2
+   ],
+   [
+    "duty-cycle-definition",
+    1
+   ]
+  ],
+  "examples": [
+   "OCC-062",
+   "S28-002",
+   "S28-003",
+   "S28-004",
+   "S28-005",
+   "S28-006",
+   "S28-007",
+   "S28-009",
+   "S28-010",
+   "S28-011",
+   "S28-016",
+   "S28-019",
+   "S28-022",
+   "S28-024"
+  ]
+ },
+ "2": {
+  "name": "General & Working Space",
+  "qcount": 18,
+  "block": "A",
+  "topRefs": [
+   [
+    "Rule 2-308",
+    6
+   ],
+   [
+    "Table 65",
+    5
+   ],
+   [
+    "Appendix B",
+    3
+   ],
+   [
+    "Table 56",
+    3
+   ],
+   [
+    "Rule 2-328",
+    2
+   ],
+   [
+    "Rule 2-110",
+    2
+   ],
+   [
+    "Rule 14-500",
+    1
+   ],
+   [
+    "Rule 2-130",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "enclosure-type",
+    5
+   ],
+   [
+    "working-space",
+    2
+   ],
+   [
+    "gas-meter-clearance",
+    2
+   ],
+   [
+    "voltage-to-ground",
+    2
+   ],
+   [
+    "working-space-mv",
+    2
+   ],
+   [
+    "disconnecting-means",
+    1
+   ],
+   [
+    "working-space-hv",
+    1
+   ],
+   [
+    "headroom",
+    1
+   ],
+   [
+    "cable-flame-rating",
+    1
+   ],
+   [
+    "motor-nameplate",
+    1
+   ]
+  ],
+  "examples": [
+   "S02-001",
+   "S02-002",
+   "S02-004",
+   "S02-005",
+   "S02-007",
+   "S02-008",
+   "S02-009",
+   "S02-011",
+   "S02-013",
+   "S02-015",
+   "S02-016",
+   "S02-017",
+   "S02-018"
+  ]
+ },
+ "4": {
+  "name": "Conductors & Ampacity",
+  "qcount": 34,
+  "block": "C",
+  "topRefs": [
+   [
+    "Rule 4-004",
+    24
+   ],
+   [
+    "Table 2",
+    12
+   ],
+   [
+    "Table 5C",
+    12
+   ],
+   [
+    "Table 5A",
+    8
+   ],
+   [
+    "Rule 4-038",
+    3
+   ],
+   [
+    "Table 36B",
+    3
+   ],
+   [
+    "Rule 4-014",
+    3
+   ],
+   [
+    "Table 12",
+    3
+   ],
+   [
+    "Rule 4-016",
+    2
+   ],
+   [
+    "Diagram D8",
+    2
+   ],
+   [
+    "Rule 4-036",
+    2
+   ],
+   [
+    "Table 36A",
+    2
+   ],
+   [
+    "Table 1",
+    1
+   ],
+   [
+    "Diagram D10",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "bundling-derate",
+    4
+   ],
+   [
+    "derate-and-ambient",
+    4
+   ],
+   [
+    "neutral-temp-rating",
+    2
+   ],
+   [
+    "parallel-direct-burial",
+    2
+   ],
+   [
+    "underground-multiconductor",
+    2
+   ],
+   [
+    "service-neutral-supported",
+    2
+   ],
+   [
+    "equipment-wire",
+    2
+   ],
+   [
+    "conductor-colors",
+    2
+   ],
+   [
+    "neutral-supported-ambient",
+    2
+   ],
+   [
+    "ampacity-free-air",
+    1
+   ],
+   [
+    "mixed-temp-raceway",
+    1
+   ],
+   [
+    "portable-power-cable",
+    1
+   ]
+  ],
+  "examples": [
+   "S04-001",
+   "S04-002",
+   "S04-003",
+   "S04-004",
+   "S04-010",
+   "S04-011",
+   "S04-013",
+   "S04-014",
+   "S04-015",
+   "S04-016",
+   "S04-020",
+   "S04-021",
+   "S04-023",
+   "S04-025"
+  ]
+ },
+ "6": {
+  "name": "Services & Metering",
+  "qcount": 12,
+  "block": "B",
+  "topRefs": [
+   [
+    "Rule 6-112",
+    6
+   ],
+   [
+    "Table 32",
+    3
+   ],
+   [
+    "Rule 12-310",
+    2
+   ],
+   [
+    "Rule 6-300",
+    2
+   ],
+   [
+    "Rule 6-116",
+    1
+   ],
+   [
+    "Rule 6-110",
+    1
+   ],
+   [
+    "Rule 6-302",
+    1
+   ],
+   [
+    "Rule 6-206",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "service-mast",
+    2
+   ],
+   [
+    "service-height",
+    2
+   ],
+   [
+    "point-of-attachment",
+    2
+   ],
+   [
+    "conductors-inside-building",
+    2
+   ],
+   [
+    "service-clearance",
+    1
+   ],
+   [
+    "service-raceway",
+    1
+   ],
+   [
+    "min-conductor-size",
+    1
+   ],
+   [
+    "service-equipment-location",
+    1
+   ]
+  ],
+  "examples": [
+   "S06-002",
+   "S06-004",
+   "S06-005",
+   "S06-006",
+   "S06-007",
+   "S06-008",
+   "S06-010",
+   "S06-011",
+   "S06-012"
+  ]
+ },
+ "8": {
+  "name": "Loads & Demand",
+  "qcount": 27,
+  "block": "B",
+  "topRefs": [
+   [
+    "Rule 8-102",
+    6
+   ],
+   [
+    "Rule 8-200",
+    6
+   ],
+   [
+    "Rule 8-210",
+    5
+   ],
+   [
+    "Table 14",
+    5
+   ],
+   [
+    "Rule 8-300",
+    5
+   ],
+   [
+    "Rule 8-104",
+    4
+   ],
+   [
+    "Rule 62-118",
+    3
+   ],
+   [
+    "Rule 8-106",
+    2
+   ],
+   [
+    "Rule 8-400",
+    2
+   ],
+   [
+    "Rule 14-104",
+    1
+   ],
+   [
+    "Rule 4-006",
+    1
+   ],
+   [
+    "Table 2",
+    1
+   ],
+   [
+    "Rule 62-114",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "service-calculation-nonresidential",
+    3
+   ],
+   [
+    "dwelling-service-calc",
+    3
+   ],
+   [
+    "receptacle-feeder-demand",
+    2
+   ],
+   [
+    "range-branch-circuit",
+    2
+   ],
+   [
+    "show-window-lighting",
+    2
+   ],
+   [
+    "range-branch-circuit-commercial",
+    2
+   ],
+   [
+    "voltage-drop-extra-low-voltage",
+    2
+   ],
+   [
+    "voltage-drop",
+    1
+   ],
+   [
+    "continuous-load-switch-rating",
+    1
+   ],
+   [
+    "noncoincident-loads",
+    1
+   ],
+   [
+    "continuous-load-breaker-sizing",
+    1
+   ],
+   [
+    "range-demand-factor",
+    1
+   ]
+  ],
+  "examples": [
+   "S08-002",
+   "S08-003",
+   "S08-004",
+   "S08-006",
+   "S08-007",
+   "S08-008",
+   "S08-009",
+   "S08-010",
+   "S08-011",
+   "S08-012",
+   "S08-013",
+   "S08-014",
+   "S08-015",
+   "S08-021"
+  ]
+ },
+ "10": {
+  "name": "Grounding & Bonding",
+  "qcount": 14,
+  "block": "B",
+  "topRefs": [
+   [
+    "Rule 10-114",
+    3
+   ],
+   [
+    "Rule 10-102",
+    3
+   ],
+   [
+    "Rule 10-406",
+    3
+   ],
+   [
+    "Table 43",
+    2
+   ],
+   [
+    "Table 2",
+    2
+   ],
+   [
+    "Rule 10-806",
+    2
+   ],
+   [
+    "Rule 10-104",
+    1
+   ],
+   [
+    "Rule 12-940",
+    1
+   ],
+   [
+    "Rule 10-614",
+    1
+   ],
+   [
+    "Rule 10-616",
+    1
+   ],
+   [
+    "Table 16",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "grounding-conductor-sizing",
+    3
+   ],
+   [
+    "bare-grounding-conductor-raceway",
+    2
+   ],
+   [
+    "field-assembled-electrode",
+    2
+   ],
+   [
+    "pv-dc-grounding",
+    2
+   ],
+   [
+    "raised-floor-bonding",
+    2
+   ],
+   [
+    "electrode-spacing",
+    1
+   ],
+   [
+    "equipotential-bonding",
+    1
+   ],
+   [
+    "bonding-conductor-sizing",
+    1
+   ]
+  ],
+  "examples": [
+   "S10-002",
+   "S10-003",
+   "S10-004",
+   "S10-005",
+   "S10-006",
+   "S10-007",
+   "S10-008",
+   "S10-009",
+   "S10-011",
+   "S10-013",
+   "S10-014"
+  ]
+ },
+ "12": {
+  "name": "Wiring Methods",
+  "qcount": 74,
+  "block": "C",
+  "topRefs": [
+   [
+    "Table 10",
+    9
+   ],
+   [
+    "Rule 12-910",
+    8
+   ],
+   [
+    "Table 6",
+    8
+   ],
+   [
+    "Table 8",
+    8
+   ],
+   [
+    "Rule 12-3036",
+    7
+   ],
+   [
+    "Rule 12-012",
+    6
+   ],
+   [
+    "Table 53",
+    6
+   ],
+   [
+    "Table 23",
+    5
+   ],
+   [
+    "Rule 12-552",
+    5
+   ],
+   [
+    "Table 7",
+    5
+   ],
+   [
+    "Rule 12-3034",
+    4
+   ],
+   [
+    "Table 22",
+    4
+   ],
+   [
+    "Table 21",
+    4
+   ],
+   [
+    "Table 9",
+    3
+   ]
+  ],
+  "topTopics": [
+   [
+    "conduit-fill",
+    8
+   ],
+   [
+    "pull-box",
+    6
+   ],
+   [
+    "box-fill",
+    5
+   ],
+   [
+    "underground-cover",
+    5
+   ],
+   [
+    "nmsc-voltage",
+    5
+   ],
+   [
+    "bend-radius",
+    5
+   ],
+   [
+    "terminations",
+    3
+   ],
+   [
+    "cable-tray",
+    3
+   ],
+   [
+    "vertical-support",
+    3
+   ],
+   [
+    "fcc-cable",
+    3
+   ],
+   [
+    "conduit-expansion",
+    2
+   ],
+   [
+    "nmsc-clearance",
+    2
+   ]
+  ],
+  "examples": [
+   "S12-002",
+   "S12-004",
+   "S12-005",
+   "S12-006",
+   "S12-008",
+   "S12-009",
+   "S12-010",
+   "S12-011",
+   "S12-014",
+   "S12-015",
+   "S12-019",
+   "S12-021",
+   "S12-022",
+   "S12-023"
+  ]
+ },
+ "14": {
+  "name": "Overcurrent Protection",
+  "qcount": 11,
+  "block": "B",
+  "topRefs": [
+   [
+    "Rule 14-102",
+    4
+   ],
+   [
+    "Rule 14-104",
+    2
+   ],
+   [
+    "Table 13",
+    1
+   ],
+   [
+    "Rule 14-212",
+    1
+   ],
+   [
+    "Rule 14-510",
+    1
+   ],
+   [
+    "Rule 14-012",
+    1
+   ],
+   [
+    "Rule 14-606",
+    1
+   ],
+   [
+    "Rule 14-200",
+    1
+   ],
+   [
+    "Rule 14-100",
+    1
+   ],
+   [
+    "Table 2",
+    1
+   ],
+   [
+    "Rule 14-500",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "ground-fault-protection",
+    3
+   ],
+   [
+    "overcurrent-equipment-wire",
+    1
+   ],
+   [
+    "fuse-type-heating",
+    1
+   ],
+   [
+    "knife-switch-rating",
+    1
+   ],
+   [
+    "interrupting-rating",
+    1
+   ],
+   [
+    "plug-fuse-rating",
+    1
+   ],
+   [
+    "breaker-sizing",
+    1
+   ],
+   [
+    "switch-rating",
+    1
+   ],
+   [
+    "ground-fault-clearing-time",
+    1
+   ]
+  ],
+  "examples": [
+   "S14-001",
+   "S14-005",
+   "S14-006",
+   "S14-007",
+   "S14-008",
+   "S14-009",
+   "S14-011"
+  ]
+ },
+ "16": {
+  "name": "Class 1 & 2 Circuits",
+  "qcount": 15,
+  "block": "E",
+  "topRefs": [
+   [
+    "Rule 16-210",
+    7
+   ],
+   [
+    "Rule 16-212",
+    4
+   ],
+   [
+    "Rule 16-200",
+    3
+   ],
+   [
+    "Rule 32-100",
+    3
+   ],
+   [
+    "Table 11",
+    2
+   ],
+   [
+    "Rule 16-100",
+    1
+   ]
+  ],
+  "topTopics": [
+   [
+    "class2-separation",
+    3
+   ],
+   [
+    "class2-conductor-size",
+    1
+   ],
+   [
+    "class2-fuse-size",
+    1
+   ],
+   [
+    "class2-conductor-type",
+    1
+   ],
+   [
+    "elc-ampacity",
+    1
+   ],
+   [
+    "class1-vs-class2",
+    1
+   ],
+   [
+    "class1-elv-voltage",
+    1
+   ],
+   [
+    "elc-voltage-limit",
+    1
+   ],
+   [
+    "class1-overcurrent",
+    1
+   ],
+   [
+    "lvt-ampacity",
+    1
+   ],
+   [
+    "class1-elv-power",
+    1
+   ],
+   [
+    "elc-fire-alarm",
+    1
+   ]
+  ],
+  "examples": [
+   "S16-001",
+   "S16-002",
+   "S16-003",
+   "S16-005",
+   "S16-006",
+   "S16-007",
+   "S16-008",
+   "S16-009",
+   "S16-010",
+   "S16-011",
+   "S16-012",
+   "S16-013",
+   "S16-014"
+  ]
+ },
+ "26": {
+  "name": "Equipment & Receptacles",
+  "qcount": 53,
+  "block": "B",
+  "topRefs": [
+   [
+    "Rule 26-712",
+    6
+   ],
+   [
+    "Rule 26-700",
+    6
+   ],
+   [
+    "Rule 26-722",
+    4
+   ],
+   [
+    "Rule 26-714",
+    4
+   ],
+   [
+    "Rule 26-210",
+    3
+   ],
+   [
+    "Rule 26-302",
+    3
+   ],
+   [
+    "Rule 26-244",
+    3
+   ],
+   [
+    "Rule 26-012",
+    3
+   ],
+   [
+    "Rule 26-708",
+    3
+   ],
+   [
+    "Rule 26-744",
+    2
+   ],
+   [
+    "Rule 26-252",
+    2
+   ],
+   [
+    "Table 50",
+    2
+   ],
+   [
+    "Table 13",
+    2
+   ],
+   [
+    "Rule 26-250",
+    2
+   ]
+  ],
+  "topTopics": [
+   [
+    "gfci",
+    4
+   ],
+   [
+    "capacitor",
+    3
+   ],
+   [
+    "dry-transformer-clearance",
+    3
+   ],
+   [
+    "branch-circuit",
+    3
+   ],
+   [
+    "transformer-fault-current",
+    3
+   ],
+   [
+    "capacitor-liquid",
+    3
+   ],
+   [
+    "rooftop-receptacle",
+    3
+   ],
+   [
+    "receptacle-config",
+    2
+   ],
+   [
+    "receptacle-spacing",
+    2
+   ],
+   [
+    "clearances",
+    2
+   ],
+   [
+    "faceplate",
+    2
+   ],
+   [
+    "range-receptacle",
+    2
+   ]
+  ],
+  "examples": [
+   "S26-001",
+   "S26-003",
+   "S26-004",
+   "S26-009",
+   "S26-010",
+   "S26-011",
+   "S26-013",
+   "S26-014",
+   "S26-015",
+   "S26-016",
+   "S26-017",
+   "S26-018",
+   "S26-019",
+   "S26-020"
+  ]
+ }
+}

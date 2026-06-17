@@ -1,4 +1,4 @@
-/* CEC Coach — web app  (v1.3.0 — full exam UX: timers, nav, bilingual teacher, memory)
+/* CEC Coach — web app  (v1.4.0 — Study Program + comprehensive ranked Keyword map)
    Offline quiz bank + AI features (tutor / generator / vision) via the Claude API.
    The API key lives only in this browser (localStorage) and is sent straight to
    Anthropic with the direct-browser-access header — no backend needed. */
@@ -682,31 +682,111 @@
     var re = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
     return s.replace(re, "<mark>$1</mark>");
   }
+  // ===== Study program + comprehensive keyword map (data-driven from study.js) =====
+  var STUDY = (window.CEC_STUDY && window.CEC_STUDY.sections) || [];
+  function stars(n) { n = Math.max(0, Math.min(5, n || 0)); return "<span class='stars' title='" + n + "/5'>" + "★★★★★".slice(0, n) + "<span class='stardim'>" + "★★★★★".slice(n) + "</span></span>"; }
+  function secLabel(s) {
+    var head = s.section === "occ" ? "Occupational / Safety" : (s.section === 0 ? "Section 0" : "Section " + s.section);
+    var nm = esc(s.name || "").replace(/^Section\s+\d+\s*[—-]\s*/, "");
+    return head + (nm ? " — " + nm : "");
+  }
+
+  function keymapGroups() {
+    return STUDY.slice().sort(function (a, b) { return (b.importance || 0) - (a.importance || 0); })
+      .map(function (s) {
+        var rows = (s.keywords || []).slice().sort(function (a, b) { return (b.stars || 0) - (a.stars || 0); });
+        return { sec: secLabel(s), rows: rows };
+      }).filter(function (g) { return g.rows.length; });
+  }
   function renderKeymap(q) {
     q = (q || "").trim().toLowerCase();
-    var host = $("kmList"); host.innerHTML = "";
-    var any = false;
-    KEYWORD_MAP.forEach(function (group) {
+    var host = $("kmList"); host.innerHTML = ""; var any = false;
+    keymapGroups().forEach(function (group) {
       var rows = group.rows.filter(function (r) {
         if (!q) return true;
-        return (r[0] + " " + r[1] + " " + r[2] + " " + group.sec).toLowerCase().indexOf(q) >= 0;
+        return ((r.kw || "") + " " + (r.jump || "") + " " + (r.why || "") + " " + group.sec).toLowerCase().indexOf(q) >= 0;
       });
       if (!rows.length) return;
       any = true;
       var box = el("div", "kmsec");
-      var count = group.rows.length;
-      box.appendChild(el("h3", null, esc(group.sec) + " <span class='pill'>" + rows.length + "/" + count + "</span>"));
+      box.appendChild(el("h3", null, esc(group.sec) + " <span class='pill'>" + rows.length + "</span>"));
       rows.forEach(function (r) {
         var row = el("div", "kmrow");
         row.innerHTML =
-          "<div class='kmkw'>" + hl(r[0], q) + "</div>" +
-          "<div class='kmjump'><span class='kmlbl'>Jump to</span><span class='arrow'>→</span> <b>" + hl(r[1], q) + "</b></div>" +
-          "<div class='kmwhy'>" + (r[2] ? "<span class='kmlbl'>Why</span>" + hl(r[2], q) : "") + "</div>";
+          "<div class='kmkw'>" + hl(r.kw || "", q) + "</div>" +
+          "<div class='kmjump'><span class='kmlbl'>Jump to</span><span class='arrow'>→</span> <b>" + hl(r.jump || "", q) + "</b></div>" +
+          "<div class='kmwhy'>" + (r.why ? "<span class='kmlbl'>Why</span>" + hl(r.why, q) + " " : "") + stars(r.stars) + "</div>";
         box.appendChild(row);
       });
       host.appendChild(box);
     });
     $("kmEmpty").classList.toggle("hidden", any);
+  }
+
+  function buildStudyList() {
+    var host = $("studyList"); host.innerHTML = "";
+    STUDY.slice().sort(function (a, b) { return (b.importance || 0) - (a.importance || 0); }).forEach(function (s) {
+      var card = el("button", "studycard");
+      card.innerHTML =
+        "<div class='sctop'><b>" + esc(secLabel(s)) + "</b>" + stars(s.importance) + "</div>" +
+        "<div class='scsum'>" + esc(s.summary || "") + "</div>" +
+        "<div class='scmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + " questions · " + ((s.keywords || []).length) + " keywords</div>";
+      card.onclick = function () { renderLesson(s); };
+      host.appendChild(card);
+    });
+  }
+
+  var currentLesson = null;
+  function renderLesson(s) {
+    currentLesson = s;
+    var h = "<h2 style='margin-top:0'>" + esc(secLabel(s)) + " " + stars(s.importance) + "</h2>";
+    h += "<p class='lsum'>" + esc(s.summary || "") + "</p>";
+    h += "<div class='lmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + " questions in the bank</div>";
+    if ((s.keyTables || []).length) {
+      h += "<h3>📊 Key tables — most important first</h3><table><thead><tr><th>Table</th><th>What</th><th>How / why</th><th>★</th></tr></thead><tbody>";
+      s.keyTables.forEach(function (t) { h += "<tr><td><b>" + esc(t.ref) + "</b></td><td>" + esc(t.what || "") + "</td><td>" + esc(t.use || "") + "</td><td>" + stars(t.stars) + "</td></tr>"; });
+      h += "</tbody></table>";
+    }
+    if ((s.keyRules || []).length) {
+      h += "<h3>📏 Key rules</h3><table><thead><tr><th>Rule</th><th>What</th><th>Note</th><th>★</th></tr></thead><tbody>";
+      s.keyRules.forEach(function (r) { h += "<tr><td><b>" + esc(r.ref) + "</b></td><td>" + esc(r.what || "") + "</td><td>" + esc(r.note || "") + "</td><td>" + stars(r.stars) + "</td></tr>"; });
+      h += "</tbody></table>";
+    }
+    if ((s.method || []).length) { h += "<h3>🧭 The fast method</h3><ol>"; s.method.forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ol>"; }
+    if ((s.mustKnow || []).length) { h += "<h3>⭐ Must-know values</h3><ul>"; s.mustKnow.forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
+    if ((s.traps || []).length) { h += "<h3>⚠️ Common traps</h3><ul class='traps'>"; s.traps.forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
+    if (s.mnemonic) h += "<div class='mnemo'>🧠 <b>Memory aid:</b> " + esc(s.mnemonic) + "</div>";
+    var exQ = (s.examples || []).map(function (id) { return ALL.filter(function (q) { return q.id === id; })[0]; }).filter(Boolean).slice(0, 4);
+    if (exQ.length) {
+      h += "<h3>📝 Worked examples</h3>";
+      exQ.forEach(function (q) {
+        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + "</div>";
+        h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + "</div>";
+        if ((q.solution_steps || []).length) { h += "<ol>"; q.solution_steps.slice(0, 5).forEach(function (st) { h += "<li>" + esc(st) + "</li>"; }); h += "</ol>"; }
+        if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";
+        h += "</div>";
+      });
+    }
+    $("lessonBody").innerHTML = h;
+    $("lessonTeachOut").innerHTML = "";
+    show("lesson");
+  }
+  function lessonDrill() {
+    if (!currentLesson) return;
+    var sec = currentLesson.section;
+    startQuiz(shuffle(ALL.filter(function (q) { return (q.section != null ? q.section : "occ") == sec; })), "section", false);
+  }
+  function lessonTeach() {
+    var s = currentLesson; if (!s) return;
+    if (!getKey()) { gotoSettings("Add your API key to have the AI teach this section."); return; }
+    var out = $("lessonTeachOut");
+    var wait = thinking(out, "rich teachbox"); var started = false;
+    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "rich teachbox"; out.innerHTML = mdToHtml(t); }
+    var msg = "Give me a fast, high-yield lesson on CEC 2024 " + secLabel(s) + " for the BC Construction Electrician exam, in BOTH English and full Persian. " +
+      "Cover the most-tested tables/rules, the fastest keyword→table method, the common traps, and one short worked example. Keep it tight and exam-ready.";
+    callClaude([{ role: "user", content: msg }], { system: tutorSystem(), maxTokens: 4096, onText: paint })
+      .then(function (full) { wait.stop(); out.className = "rich teachbox"; out.innerHTML = mdToHtml(full); })
+      .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
 
   // ---------- nav ----------
@@ -727,6 +807,8 @@
   document.addEventListener("click", function (ev) {
     var t = ev.target.closest("[data-home]");
     if (t) { if (Q.totalTimer) { clearInterval(Q.totalTimer); Q.totalTimer = null; } show("home"); homeStats(); return; }
+    var ds = ev.target.closest("[data-study]");
+    if (ds) { buildStudyList(); show("study"); return; }
     var mode = ev.target.closest("[data-mode]");
     if (mode) {
       var m = mode.getAttribute("data-mode");
@@ -745,6 +827,7 @@
       if (g === "tutor") show("tutor");
       else if (g === "generate") show("generate");
       else if (g === "vision") show("vision");
+      else if (g === "study") { buildStudyList(); show("study"); }
       else if (g === "keymap") { show("keymap"); renderKeymap($("kmSearch").value); }
       return;
     }
@@ -772,6 +855,8 @@
   $("chatsend").onclick = function () { sendChat(); };
   $("chatinput").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); } });
   $("kmSearch").addEventListener("input", function (e) { renderKeymap(e.target.value); });
+  $("lessonDrill").onclick = lessonDrill;
+  $("lessonTeach").onclick = lessonTeach;
   $("genGo").onclick = generate;
   $("visionGo").onclick = askVision;
   $("fileInput").onchange = function (e) { handleFile(e.target.files[0]); };
