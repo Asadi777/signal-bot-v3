@@ -928,7 +928,8 @@
   function renderPlan() {
     langBar("planLang", renderPlan);
     planUI();
-    var T = planT();
+    var T = planT(), rtl = getLang() === "fa";
+    ["planTitle", "nowTask", "planList"].forEach(function (id) { var e = $(id); if (e) e.dir = rtl ? "rtl" : "ltr"; });
     var seg = curSeg(), nt = $("nowTask");
     if (seg) {
       var wk = PLAN_CUR[seg.wi];
@@ -975,7 +976,8 @@
     $("chReveal").innerHTML = "<b>→ " + esc(r.jump) + "</b> " + pageChip(r.jump) + (why ? ("<div class='chwhy'>" + esc(why) + "</div>") : "");
   }
   function chLocalize() {
-    var T = chT();
+    var T = chT(), rtl = getLang() === "fa";
+    ["chTitle", "chIntro", "chScore", "chPrompt", "chReveal"].forEach(function (id) { var e = $(id); if (e) e.dir = rtl ? "rtl" : "ltr"; });
     if ($("chTitle")) $("chTitle").textContent = T.title;
     if ($("chIntro")) $("chIntro").textContent = T.intro;
     $("chScore").textContent = T.score + " " + CH.found + " / " + CH.total;
