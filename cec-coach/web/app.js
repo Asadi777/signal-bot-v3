@@ -42,8 +42,29 @@
   function mdRow(line) {
     return line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
   }
+  // strip any LaTeX the model slips in, into readable plain text
+  function deLatex(s) {
+    if (!s) return s;
+    s = s.replace(/\$\$([\s\S]*?)\$\$/g, function (_, x) { return x; });
+    s = s.replace(/\\\[([\s\S]*?)\\\]/g, function (_, x) { return x; });
+    s = s.replace(/\\\(([\s\S]*?)\\\)/g, function (_, x) { return x; });
+    s = s.replace(/\$([^$\n]+)\$/g, function (_, x) { return x; });
+    s = s.replace(/\{,\}/g, ",").replace(/\\,/g, " ").replace(/\\;/g, " ").replace(/\\!/g, "");
+    s = s.replace(/\\d?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, "($1)/($2)");
+    s = s.replace(/\\d?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, "($1)/($2)");
+    s = s.replace(/\\sqrt\s*\{([^{}]*)\}/g, "√($1)");
+    s = s.replace(/\\(?:text|mathrm|mathbf|textbf|operatorname)\s*\{([^{}]*)\}/g, "$1");
+    var map = { "\\times": "×", "\\cdot": "·", "\\div": "÷", "\\approx": "≈", "\\leq": "≤", "\\le": "≤", "\\geq": "≥", "\\ge": "≥", "\\neq": "≠", "\\pm": "±", "\\Omega": "Ω", "\\omega": "ω", "\\pi": "π", "\\circ": "°", "\\rightarrow": "→", "\\Rightarrow": "⇒", "\\to": "→", "\\sqrt": "√" };
+    Object.keys(map).forEach(function (k) { s = s.split(k).join(map[k]); });
+    s = s.replace(/\\\\/g, "\n").replace(/\\left|\\right/g, "");
+    s = s.replace(/\^\{([^{}]*)\}/g, "^$1").replace(/_\{([^{}]*)\}/g, "_$1");
+    s = s.replace(/\\([%$#&_{}])/g, "$1");
+    s = s.replace(/\\([a-zA-Z]+)\b/g, "$1");
+    return s;
+  }
   function mdToHtml(md) {
     if (!md) return "";
+    md = deLatex(md);
     var lines = md.replace(/\r\n/g, "\n").split("\n"), out = [], i = 0;
     while (i < lines.length) {
       var line = lines[i];
@@ -185,7 +206,9 @@
     "motor fuse/breaker→Table 29; working space→Rule 2-308 + Table 56; voltage to ground in dwelling→Rule 2-110 (150V); " +
     "enclosure type→Table 65. Unknown defined term→Section 0.\n\n" +
     "TEACH like a patient teacher explaining to a brand-new beginner who is nervous about the exam. Be encouraging and concrete. ALWAYS give the FULL explanation in BOTH English AND Persian (فارسی) — not just a short Persian summary, but a real Persian explanation of every step, because the student is a native Persian speaker.\n\n" +
-    "FORMATTING (always): clean Markdown — use ## headings, **bold** for the final answer and for each keyword, numbered steps, and Markdown TABLES for any lookup/comparison/calculation. Separate major parts with a horizontal rule (---). When a figure helps (circuit, conduit cross-section, panel/box layout, one-line), draw a clear ASCII/Unicode diagram in a ``` fenced code block. Structure each answer as: \n## ✅ Answer\n## 🔑 Keyword(s) you should spot — quote the exact words in the question and say what they signal.\n## 📖 Which Table/Rule & why — name it and explain WHY that is the right place.\n## 🧭 Step-by-step to the answer (numbered, the fastest open-book path)\n## 🇮🇷 توضیح کامل فارسی — همه‌چیز را روان و کامل به فارسی توضیح بده (کلمهٔ کلیدی، کدام جدول/قانون و چرا، و قدم‌به‌قدم چطور به جواب می‌رسیم).";
+    "FORMATTING (always): clean Markdown — use ## headings, **bold** for the final answer and for each keyword, numbered steps, and Markdown TABLES for any lookup/comparison/calculation. " +
+    "NEVER use LaTeX or MathJax — do NOT use $ … $, $$ … $$, \\frac, \\text, \\times, or any backslash commands. Write ALL math in plain readable text with ÷ × = ( ) and units, e.g. `I = 100000 ÷ 600 = 166.67 A`; for a multi-line calculation use a fenced code block so it lines up. " +
+    "Separate major parts with a horizontal rule (---). When a figure helps (circuit, conduit cross-section, panel/box layout, one-line), draw a clear ASCII/Unicode diagram in a ``` fenced code block. Structure each answer as: \n## ✅ Answer\n## 🔑 Keyword(s) you should spot — quote the exact words in the question and say what they signal.\n## 📖 Which Table/Rule & why — name it and explain WHY that is the right place.\n## 🧭 Step-by-step to the answer (numbered, the fastest open-book path)\n## 🇮🇷 توضیح کامل فارسی — همه‌چیز را روان و کامل به فارسی توضیح بده (کلمهٔ کلیدی، کدام جدول/قانون و چرا، و قدم‌به‌قدم چطور به جواب می‌رسیم).";
 
   // ---------- student profile (personalization memory) ----------
   var PROFILE = JSON.parse(localStorage.getItem("cec_profile") || '{"sections":{},"topics":{},"exams":0,"answered":0,"correct":0}');
@@ -352,20 +375,61 @@
     e.classList.remove("hidden");
   }
 
+  var teachConvo = [];
   function teachThis() {
     var q = Q.list[Q.i], a = Q.answers[Q.i];
     if (!getKey()) { gotoSettings("Add your API key to get the bilingual teacher explanation."); return; }
-    var out = $("teachout"); if (!out) return;
-    var wait = thinking(out, "rich teachbox");
-    var started = false;
-    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "rich teachbox"; out.innerHTML = mdToHtml(t); }
-    var msg = "Teach me this exam question like a patient teacher to a beginner, in BOTH English and full Persian.\n\n" +
+    var host = $("teachout"); if (!host) return;
+    teachConvo = [{ role: "user", content:
+      "Teach me this exam question like a patient teacher to a beginner, fully in BOTH English AND Persian. " +
+      "Name the keyword(s), which Table/Rule and why, then the fastest step-by-step path. Use plain readable math (NO LaTeX). " +
+      "At the very END, ask me ONE short multiple-choice check question to confirm I understood — give 4 options labelled A) B) C) D) — and tell me to reply with the letter. Then wait for my answer; when I answer, tell me if I'm right and why.\n\n" +
       "Question: " + q.question + "\n" + (q.options || []).join("\n") +
       "\nCorrect answer: " + (q.answer_key || "") + " — " + (q.answer || "") +
-      (a ? ("\nI answered: " + a.picked + " (" + (a.ok ? "correct" : "incorrect") + ").") : "");
-    callClaude([{ role: "user", content: msg }], { system: tutorSystem(), maxTokens: 3500, onText: paint })
-      .then(function (full) { wait.stop(); out.className = "rich teachbox"; out.innerHTML = mdToHtml(full); })
-      .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
+      (a ? ("\nI answered: " + a.picked + " (" + (a.ok ? "correct" : "incorrect") + ").") : "") }];
+    host.innerHTML =
+      "<div id='teachthread' class='teachbox'></div>" +
+      "<div class='composer teachcomposer'>" +
+      "<textarea id='teachinput' rows='1' placeholder='جواب چک‌سؤال را بنویس (مثلاً B) یا هر سؤال دیگری بپرس…'></textarea>" +
+      "<button id='teachsend' class='primary'>Send</button></div>";
+    $("teachsend").onclick = teachReply;
+    $("teachinput").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); teachReply(); } });
+    runTeach();
+  }
+  function renderTeachThread() {
+    var thr = $("teachthread"); if (!thr) return;
+    var html = "";
+    teachConvo.forEach(function (m, i) {
+      if (i === 0) return; // hide the long initial instruction
+      if (m.role === "user") html += "<div class='tmsg me'>" + esc(m.content) + "</div>";
+      else html += "<div class='tmsg ai rich'>" + mdToHtml(m.content) + "</div>";
+    });
+    thr.innerHTML = html;
+  }
+  function runTeach() {
+    var thr = $("teachthread"); if (!thr) return;
+    renderTeachThread();
+    var bubble = el("div", "tmsg ai rich");
+    var t0 = Date.now();
+    bubble.innerHTML = "<p class='waiting'>⏳ Thinking…</p>";
+    thr.appendChild(bubble); thr.scrollTop = thr.scrollHeight;
+    var iv = setInterval(function () { if (bubble) bubble.innerHTML = "<p class='waiting'>⏳ Thinking… " + Math.round((Date.now() - t0) / 1000) + "s</p>"; }, 1000);
+    var started = false;
+    callClaude(teachConvo, { system: tutorSystem(), maxTokens: 3500, onText: function (t) {
+      if (!started) { started = true; clearInterval(iv); }
+      bubble.innerHTML = mdToHtml(t); thr.scrollTop = thr.scrollHeight;
+    } }).then(function (full) {
+      clearInterval(iv); teachConvo.push({ role: "assistant", content: full });
+      bubble.innerHTML = mdToHtml(full);
+      var inp = $("teachinput"); if (inp) inp.focus();
+    }).catch(function (err) { clearInterval(iv); bubble.className = "status err"; bubble.textContent = "⚠️ " + apiErr(err); });
+  }
+  function teachReply() {
+    var inp = $("teachinput"); if (!inp) return;
+    var txt = inp.value.trim(); if (!txt) return;
+    inp.value = "";
+    teachConvo.push({ role: "user", content: txt });
+    runTeach();
   }
 
   function gotoQ(i) { if (i < 0 || i >= Q.list.length) return; Q.i = i; renderQ(); window.scrollTo(0, 0); }

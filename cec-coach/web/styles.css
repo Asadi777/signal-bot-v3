@@ -84,6 +84,11 @@ h2{color:#fff; margin:6px 0 10px}
 
 .teachbox{background:#f3f9f6; border:1px solid var(--line); border-radius:12px; padding:14px; margin-top:14px}
 .teachbox:empty{display:none}
+.tmsg{padding:10px 13px; border-radius:12px; margin:8px 0; line-height:1.6; word-wrap:break-word; overflow-x:auto}
+.tmsg.me{background:var(--accent); color:#042a17; max-width:90%; margin-inline-start:auto; font-weight:600; unicode-bidi:plaintext}
+.tmsg.ai{background:#fff; border:1px solid var(--line)}
+.teachcomposer{margin-top:10px}
+.teachcomposer textarea{flex:1}
 
 /* results: misses review */
 .miss{background:#fff; color:var(--ink); border-radius:14px; padding:14px; margin:12px 0; line-height:1.55}
