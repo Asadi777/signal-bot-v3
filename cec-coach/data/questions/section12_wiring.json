@@ -9,12 +9,13 @@
       "topic": "conduit-fill",
       "question": "There are seven R90 XLPE type #8 AWG 600V unjacketed copper conductors and four T90 Nylon type #4 AWG copper conductors that need to be installed in a rigid metal conduit. What is the minimum conduit size required for these conductors?",
       "answer": "Size 41 (trade size 41 mm / 1-1/2 in.)",
-      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 9"],
       "solution_steps": [
-        "Rule 12-910: total conductor area must not exceed the Table 8 percentage of the conduit's internal area. For >2 conductors the fill limit is 40%.",
-        "Table 10: look up the area of each #8 R90 XLPE conductor (×7) and each #4 T90 Nylon conductor (×4); sum all 11 areas.",
-        "Table 6: select the smallest rigid metal conduit whose 40% usable area exceeds the total — gives size 41.",
-        "Keep needs_review: confirm the exact #8 R90 and #4 T90 areas and the size-41 RMC 40% area against the printed CEC 2024 Tables 10 and 6."
+        "Conduit-fill uses three tables together (the 'fill machine'): Table 6 → conductor cross-sectional area; Table 8 → maximum fill %; Table 9 → conduit trade size.",
+        "Table 8 fill %: 1 conductor → 53%, 2 → 31%, 3-or-more → 40%. Here 11 conductors → use 40% (not-lead-sheathed, top row of Table 8).",
+        "Table 6 (e.g. 6K for these insulations): area of each #8 R90 XLPE (×7) and each #4 T90 nylon (×4); sum all 11 areas.",
+        "Table 9 (40% column for rigid metal conduit): read the smallest trade size whose 40% area exceeds the total — gives size 41.",
+        "Keep needs_review: confirm the exact #8 R90 and #4 T90 areas (Table 6) and the size-41 RMC 40% area (Table 9) against the printed CEC 2024 tables."
       ],
       "code_edition": "2024",
       "needs_review": true
