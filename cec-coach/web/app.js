@@ -1,4 +1,4 @@
-/* CEC Coach — web app  (v1.1.0 — keyword map)
+/* CEC Coach — web app  (v1.2.0 — markdown answers + error surfacing)
    Offline quiz bank + AI features (tutor / generator / vision) via the Claude API.
    The API key lives only in this browser (localStorage) and is sent straight to
    Anthropic with the direct-browser-access header — no backend needed. */
@@ -29,6 +29,67 @@
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+  // ---------- markdown -> pretty HTML (tables, lists, hr, code, RTL-aware) ----------
+  function mdInline(s) {
+    s = esc(s);
+    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/__([^_]+)__/g, "<strong>$1</strong>");
+    s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>");
+    return s;
+  }
+  function mdRow(line) {
+    return line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
+  }
+  function mdToHtml(md) {
+    if (!md) return "";
+    var lines = md.replace(/\r\n/g, "\n").split("\n"), out = [], i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      if (/^```/.test(line)) {
+        var buf = []; i++;
+        while (i < lines.length && !/^```/.test(lines[i])) { buf.push(lines[i]); i++; }
+        i++; out.push("<pre><code>" + esc(buf.join("\n")) + "</code></pre>"); continue;
+      }
+      if (/^\s*([-*_])(\s*\1){2,}\s*$/.test(line)) { out.push("<hr>"); i++; continue; }
+      var h = line.match(/^(#{1,6})\s+(.*)$/);
+      if (h) { var lv = h[1].length; out.push("<h" + lv + ">" + mdInline(h[2]) + "</h" + lv + ">"); i++; continue; }
+      if (/\|/.test(line) && i + 1 < lines.length && /^\s*\|?[\s:|-]+\|?\s*$/.test(lines[i + 1]) && /-/.test(lines[i + 1])) {
+        var head = mdRow(line); i += 2; var rows = [];
+        while (i < lines.length && /\|/.test(lines[i]) && lines[i].trim() !== "") { rows.push(mdRow(lines[i])); i++; }
+        var t = "<table><thead><tr>" + head.map(function (c) { return "<th>" + mdInline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
+        rows.forEach(function (r) { t += "<tr>" + r.map(function (c) { return "<td>" + mdInline(c) + "</td>"; }).join("") + "</tr>"; });
+        out.push(t + "</tbody></table>"); continue;
+      }
+      if (/^\s*[-*+]\s+/.test(line)) {
+        var li = [];
+        while (i < lines.length && /^\s*[-*+]\s+/.test(lines[i])) { li.push("<li>" + mdInline(lines[i].replace(/^\s*[-*+]\s+/, "")) + "</li>"); i++; }
+        out.push("<ul>" + li.join("") + "</ul>"); continue;
+      }
+      if (/^\s*\d+[.)]\s+/.test(line)) {
+        var ol = [];
+        while (i < lines.length && /^\s*\d+[.)]\s+/.test(lines[i])) { ol.push("<li>" + mdInline(lines[i].replace(/^\s*\d+[.)]\s+/, "")) + "</li>"); i++; }
+        out.push("<ol>" + ol.join("") + "</ol>"); continue;
+      }
+      if (line.trim() === "") { i++; continue; }
+      var para = [line]; i++;
+      while (i < lines.length && lines[i].trim() !== "" &&
+        !/^(#{1,6}\s|```|\s*[-*+]\s|\s*\d+[.)]\s)/.test(lines[i]) &&
+        !/^\s*([-*_])(\s*\1){2,}\s*$/.test(lines[i]) && !/\|/.test(lines[i])) { para.push(lines[i]); i++; }
+      out.push("<p>" + para.map(mdInline).join("<br>") + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  // animated "thinking… Ns" placeholder until the first token streams in
+  function thinking(node, baseClass) {
+    var t0 = Date.now();
+    function upd() { node.className = baseClass; node.innerHTML = "<p class='waiting'>⏳ Thinking… " + Math.round((Date.now() - t0) / 1000) + "s</p>"; }
+    upd(); var iv = setInterval(upd, 1000);
+    return { stop: function () { clearInterval(iv); } };
+  }
+
 
   // ---------- progress (weak-area tracking) ----------
   var PROG = JSON.parse(localStorage.getItem("cec_progress") || "{}"); // id -> {seen, wrong}
@@ -91,6 +152,7 @@
             if (!data || data === "[DONE]") continue;
             var ev;
             try { ev = JSON.parse(data); } catch (e) { continue; }
+            if (ev.type === "error") { throw new Error((ev.error && ev.error.message) || "API stream error"); }
             if (ev.type === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") {
               full += ev.delta.text;
               if (opts.onText) opts.onText(full);
@@ -121,7 +183,8 @@
     "ground-fault protection→Rule 14-102 (≥1000A AND >150V to ground); receptacle spacing→Rule 26-712 (≤1.8m); " +
     "motor FLC→Table 44 (3ph)/45 (1ph); motor branch conductor→Rule 28-106 (125% FLC); overload→Rule 28-306 (nameplate FLA); " +
     "motor fuse/breaker→Table 29; working space→Rule 2-308 + Table 56; voltage to ground in dwelling→Rule 2-110 (150V); " +
-    "enclosure type→Table 65. Unknown defined term→Section 0.";
+    "enclosure type→Table 65. Unknown defined term→Section 0.\n\n" +
+    "FORMATTING (always): reply in clean Markdown for a study app — use ## headings, **bold** for the final answer and for each keyword, numbered steps, and Markdown TABLES for any lookup/comparison/calculation. Separate major parts with a horizontal rule (---) and keep generous spacing. When a figure helps (circuit, conduit cross-section, panel/box layout, one-line), draw a clear ASCII/Unicode diagram inside a ``` fenced code block. Structure most answers as: ## Answer · ## Keyword(s) to spot · ## Table/Rule to jump to · ## Fastest steps (numbered) · ## خلاصهٔ فارسی (a short right-to-left Persian summary).";
 
   // ---------- quiz engine ----------
   var Q = { list: [], i: 0, correct: 0, mode: "", answered: false, timer: null, endAt: 0, answers: [] };
@@ -296,14 +359,17 @@
     input.value = "";
     addMsg("user", text);
     chatHistory.push({ role: "user", content: text });
-    var bubble = addMsg("assistant", "…"); bubble.className = "msg ai dots";
+    var bubble = addMsg("assistant", "");
+    var wait = thinking(bubble, "msg ai");
+    var started = false;
+    function paint(t) { if (!started) { started = true; wait.stop(); } bubble.className = "msg ai rich"; bubble.innerHTML = mdToHtml(t); $("chat").scrollTop = $("chat").scrollHeight; }
     callClaude(chatHistory, {
-      system: TUTOR_SYSTEM, maxTokens: 2500,
-      onText: function (t) { bubble.className = "msg ai"; bubble.textContent = t; $("chat").scrollTop = $("chat").scrollHeight; }
+      system: TUTOR_SYSTEM, maxTokens: 4096, onText: paint
     }).then(function (full) {
-      bubble.className = "msg ai"; bubble.textContent = full;
+      wait.stop(); bubble.className = "msg ai rich"; bubble.innerHTML = mdToHtml(full);
       chatHistory.push({ role: "assistant", content: full });
-    }).catch(function (err) { bubble.className = "msg ai"; bubble.textContent = "⚠️ " + apiErr(err); });
+      $("chat").scrollTop = $("chat").scrollHeight;
+    }).catch(function (err) { wait.stop(); bubble.className = "msg ai"; bubble.textContent = "⚠️ " + apiErr(err); });
   }
 
   // ---------- generate questions ----------
@@ -365,16 +431,18 @@
     var qtext = $("visionQ").value.trim() || "Explain this and how it relates to the CEC 2024 exam.";
     if (!getKey()) { gotoSettings("Add your API key first to use vision."); return; }
     if (!attached) { alert("Attach an image or PDF first."); return; }
-    var out = $("visionOut"); out.classList.remove("hidden"); out.className = "explain"; out.innerHTML = "<span class='dots'>Reading</span>";
+    var out = $("visionOut"); out.classList.remove("hidden");
+    var wait = thinking(out, "explain rich");
+    var started = false;
+    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "explain rich"; out.innerHTML = mdToHtml(t); }
     var block = attached.type === "document"
       ? { type: "document", source: { type: "base64", media_type: "application/pdf", data: attached.data } }
       : { type: "image", source: { type: "base64", media_type: attached.media, data: attached.data } };
     var content = [block, { type: "text", text: qtext }];
     callClaude([{ role: "user", content: content }], {
-      system: TUTOR_SYSTEM, maxTokens: 3000,
-      onText: function (t) { out.textContent = t; }
-    }).then(function (full) { out.textContent = full; })
-      .catch(function (err) { out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
+      system: TUTOR_SYSTEM, maxTokens: 4096, onText: paint
+    }).then(function (full) { wait.stop(); out.className = "explain rich"; out.innerHTML = mdToHtml(full); })
+      .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
 
   function apiErr(err) {

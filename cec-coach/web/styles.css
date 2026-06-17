@@ -130,6 +130,28 @@ textarea,input[type=text],input[type=password],select{
 .attachPreview img{max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .attachPreview .pill{display:inline-block; background:#fff; color:var(--ink); padding:8px 12px; border-radius:10px; font-size:13px}
 
+/* rich markdown (AI answers) */
+.rich{line-height:1.65}
+.rich > *:first-child{margin-top:0}
+.rich > *:last-child{margin-bottom:0}
+.rich h1,.rich h2,.rich h3,.rich h4{margin:16px 0 8px; color:var(--accent2); line-height:1.3}
+.rich h1{font-size:20px}.rich h2{font-size:18px}.rich h3{font-size:16px}.rich h4{font-size:15px}
+.rich p{margin:9px 0}
+.rich ul,.rich ol{margin:9px 0; padding-inline-start:22px}
+.rich li{margin:5px 0}
+.rich strong{color:#0b3d2e}
+.rich code{background:#eef4f1; padding:1px 6px; border-radius:6px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.92em}
+.rich pre{background:#0e2a20; color:#d7f5e6; padding:13px 15px; border-radius:12px; overflow-x:auto; margin:12px 0; line-height:1.5}
+.rich pre code{background:transparent; color:inherit; padding:0; white-space:pre}
+.rich hr{border:0; border-top:2px solid var(--line); margin:16px 0}
+.rich table{border-collapse:collapse; width:100%; margin:12px 0; font-size:14px}
+.rich th,.rich td{border:1px solid var(--line); padding:8px 11px; text-align:start; vertical-align:top}
+.rich thead th{background:#0b3d2e; color:#fff; font-weight:700}
+.rich tbody tr:nth-child(even){background:#f3f7f5}
+.rich h1,.rich h2,.rich h3,.rich h4,.rich p,.rich li,.rich td,.rich th{unicode-bidi:plaintext}
+.waiting{color:var(--muted); font-weight:600}
+.chat .msg.ai.rich{max-width:100%; overflow-x:auto}
+
 /* keyword map */
 #kmSearch{margin-bottom:14px; position:sticky; top:60px; z-index:5}
 .kmlist{display:flex; flex-direction:column; gap:18px}
