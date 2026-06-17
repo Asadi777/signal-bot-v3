@@ -274,14 +274,15 @@
       "type": "lookup",
       "topic": "basic-load-allowance",
       "question": "What are the watts per square metre for the basic load when calculating demand for a theatre?",
-      "answer": "30 W/m²",
-      "references": ["Rule 8-210", "Table (basic load allowances)"],
+      "answer": "30 W/m² (source) — verify against the 2024 basic-load table",
+      "references": ["Rule 8-210", "Table 14"],
       "solution_steps": [
-        "The basic lighting/area load allowance for a theatre occupancy is 30 W per square metre.",
-        "Result: 30 W/m²."
+        "Rule (non-dwelling basic load): the basic lighting/area allowance (W/m²) comes from the basic-load table referenced by Rule 8-210.",
+        "Value: source gives 30 W/m² for a theatre occupancy.",
+        "NEEDS REVIEW: confirm the theatre-occupancy basic W/m² in the 2024 basic-load table (table value not verified here; many occupancies are 30 W/m² but theatre should be checked)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S08-017",
@@ -308,13 +309,13 @@
       "type": "calculation",
       "topic": "service-calculation-nonresidential",
       "question": "A building 20 m x 100 m has one half used as a beauty salon and the other half as a bank. What is the minimum service demand for this building?",
-      "answer": "Sum of each occupancy's area load at its basic W/m² allowance (calculate each half separately, then add).",
-      "references": ["Rule 8-210", "Rule 8-106"],
+      "answer": "Sum of each occupancy's area load at its own basic W/m² (each half = 1000 m²), then add.",
+      "references": ["Rule 8-210", "Table 14"],
       "solution_steps": [
-        "Total area = 20 × 100 = 2000 m²; each occupancy = 1000 m².",
-        "Apply the basic area allowance (W/m²) appropriate to each occupancy to its 1000 m², then add the two demands.",
-        "Service demand = (salon area load) + (bank area load) plus any specific equipment loads.",
-        "Result: sum of the two area-based demands (source did not give a single number)."
+        "Rule (non-dwelling, 8-210): basic demand = floor area × the occupancy's basic W/m² (from the Table-14 basic-load list); compute each occupancy separately because the W/m² differs.",
+        "Area: 20 × 100 = 2000 m² total → beauty salon = 1000 m², bank = 1000 m².",
+        "Method: demand = (1000 m² × salon W/m²) + (1000 m² × bank W/m²) + any specific equipment loads, each at its demand factor.",
+        "NEEDS REVIEW: needs the 2024 basic W/m² for 'beauty salon' and 'bank/office' from the basic-load table to produce a single number (table values not verified here)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -326,14 +327,13 @@
       "type": "calculation",
       "topic": "service-calculation-nonresidential",
       "question": "A two-story building 100 m x 20 m has a restaurant on the lower floor and a beauty salon on the second floor. The restaurant has a 28 kW power load and the beauty salon a 22 kW power load. What is the total service demand for this building?",
-      "answer": "Sum of each floor's basic area load plus the 28 kW and 22 kW power loads (calculate per occupancy and add).",
-      "references": ["Rule 8-210", "Rule 8-106"],
+      "answer": "Sum of each floor's basic area load plus the 28 kW and 22 kW power loads (per occupancy, then add).",
+      "references": ["Rule 8-210", "Table 14"],
       "solution_steps": [
-        "Each floor area = 100 × 20 = 2000 m².",
-        "Apply each occupancy's basic W/m² allowance to its 2000 m² to get the lighting/area load for each floor.",
-        "Add the power loads: restaurant 28 kW and salon 22 kW.",
-        "Total service demand = (restaurant area load + 28 kW) + (salon area load + 22 kW) with applicable demand factors.",
-        "Result: sum of both occupancy demands (source did not give a single number)."
+        "Rule (non-dwelling, 8-210): demand per occupancy = floor area × its basic W/m² (Table-14 basic-load list) + the connected power loads at their demand factors.",
+        "Area: each floor = 100 × 20 = 2000 m².",
+        "Method: total = (2000 m² × restaurant W/m² + 28 kW) + (2000 m² × salon W/m² + 22 kW).",
+        "NEEDS REVIEW: needs the 2024 basic W/m² for 'restaurant' and 'beauty salon' to produce a single number (table values not verified here)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -345,13 +345,13 @@
       "type": "calculation",
       "topic": "industrial-service-calc",
       "question": "An industrial complex has a covered area of 3000 m². There is 500 kW of power loads plus a 500 kW electric space-heating load. The service is 600/347 V, 3-phase, 4-wire. Determine the calculated service demand in amps.",
-      "answer": "Demand W ÷ (√3 × 600 V) — combine area load + power + heating, then convert.",
-      "references": ["Rule 8-210", "Rule 8-106", "Rule 62-118"],
+      "answer": "I = total demand W ÷ (√3 × 600 V) — combine area load + 500 kW power + heating demand, then convert.",
+      "references": ["Rule 8-210", "Rule 62-118", "Table 14"],
       "solution_steps": [
-        "Basic area load = 3000 m² × applicable W/m².",
-        "Add power loads 500 kW and electric heating 500 kW (heating per Rule 62 demand factor).",
-        "Sum to total demand watts, then I = total W ÷ (√3 × 600 V).",
-        "Result: calculated demand in amps from the summed loads (source did not give a single number)."
+        "Rule (non-dwelling, 8-210): basic area load = 3000 m² × the occupancy's basic W/m² (Table-14 basic-load list).",
+        "Add: 500 kW power load (at 100% / its demand factor) + 500 kW electric space heating (Section 62/62-118: 100% of first 10 kW + 75% of remainder for the heating portion, as applicable).",
+        "Convert: 600/347 V is a wye 3-phase service → I = total demand W ÷ (√3 × 600).",
+        "NEEDS REVIEW: needs the 2024 basic W/m² for the occupancy and confirmation of the industrial heating demand treatment to give a single number (the √3 × 600 conversion is correct; table value not verified here)."
       ],
       "code_edition": "2024",
       "needs_review": true
