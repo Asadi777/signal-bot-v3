@@ -330,3 +330,176 @@ Specific exam-answer facts the teacher states (use to fill bank gaps):
 - **"Get fluent in the book first, then solve problems"** — his core teaching philosophy vs Q&A-drilling schools.
 - **Use cartoon/animation YouTube videos** for bonding/grounding/armoured cable — "I understand animations better myself."
 - Two physics axioms for grounding/bonding: **"electricity always wants to go to earth"** and **"electricity always takes the path of least resistance."**
+
+---
+
+## Session 3 (جلسه ۳)
+
+Continuation of the same coaching series. This session **finishes Section 4** (the items not covered in Session 2-2 — Section-4 Question 3, neutral-supported cables, flexible cords / equipment wire, portable power cable & DLO, conductor colour identification, and the critical **termination/terminal-temperature limitation rule**) and then **starts Section 6 (Service & Service Equipment)**, taught largely from photos. The recording closes with re-exam logistics and personal chatter (excluded here). Tags as before: **[teacher]** = his own assertion/method; **[standard CEC]** = matches the published code; numbers flagged *approx.* are transcription-noisy.
+
+### Concepts taught
+
+#### Section 4 — finishing conductor ampacity
+
+**Section 4, Question 3 — two different insulation temperatures in one conduit [teacher, worked]:**
+- Setup (his reading): *"What is the maximum ampacity of each conductor"* when conductors of **two different temperature ratings** share **one rigid steel conduit** — three **#4** conductors and three **#1** conductors, **six total**, copper, in raceway → **Table 2**.
+- **Key conceptual rule he drills:** when a raceway contains conductors of **two different temperature ratings, you must base everything on the LOWER-rated conductor** — otherwise the cooler-rated cable's insulation overheats and degrades. ("If the lower one is rated 75 °C and you let the run reach 90 °C, after about a week the 75 °C insulation is damaged.") He praises the student for deriving this independently, says *"this is itself the exam question / exam definition."*
+- Worked numbers (Table 2, copper, raceway):
+  - **#4 at 75 °C → 85 A** (he first mis-states 65 A, then corrects to **85 A** by re-checking the table — flagged as his own live correction).
+  - **#1 at 75 °C → 130 A** (he uses 75 °C for *both* because the lower-rated conductor governs).
+  - **6 conductors → grouping factor 0.8** (Table 5C).
+  - **#4: 85 × 0.8 = 68 A**; **#1: 130 × 0.8 = 104 A.**
+  - **Each conductor is reported separately** — do NOT sum them. Final answer: **68 A and 104 A.** [teacher]
+- Earlier in the worked talk he tied this to a #4 at the three columns: #4 at **60 °C / 75 °C** → the table value steps down as the column temperature drops; the takeaway sentence he wants memorized: *"If I want it not to exceed 75 °C, I can only pass [the 75 °C-column ampacity] through it; and conversely, if I pass that current it heats only to 75 °C."*
+
+**Neutral-supported cables — Tables D36A / D36B [teacher]:**
+- **Neutral-supported (messenger) overhead cables** are the building-feed aerial wires where the **bare neutral conductor doubles as the mechanical support (messenger)** — wrapped around the standoff/insulator, clamped, and the two/three hots hang off it. ("It does both the neutral job and the support job.")
+- These are **NOT** sized from Tables 1–4 — they have their **own tables: Table D36A and Table D36B** (in Appendix D).
+- **Order is REVERSED vs Tables 1–4 [teacher, flagged as a common error]:** Tables 1–4 list **copper first, aluminum second**; but **Table D36A = ALUMINUM**, **Table D36B = COPPER**. Reason: aerial/messenger cables are usually aluminum (lighter for overhead spans), so aluminum is listed first. He admits he personally kept getting this wrong (looking in the copper table by habit).
+- Cable naming: prefix **"NS"** = Neutral-Supported. Two temperature columns (**75 °C and 90 °C**). Conductor count drives the ampacity column:
+  - **Duplex** = 2 wires (one hot + neutral) — e.g. a small corner store needing only one phase.
+  - **Triplex** = 3 wires (two hots + neutral) — the normal house feed (120/240).
+  - **Quadruplex** = 4 wires (three phases + neutral) — three-phase service.
+- **Worked lookup [teacher]:** NS75 aluminum, neutral-supported, for a **200 A** house → read the table to the size that covers 200 A (he points to "size 2/0" area). *(Exact size approximate from his table read.)* He repeats this is the "20% of the exam that is easy table lookups."
+- **Correction factors for D36A/B:** the table itself prints the **ambient-temperature** factors in its note (he reads ≈ **1.0 at 30 °C, ~0.94 at 35 °C, ~0.88 at 40 °C** — *factors approx. from transcript*). **There is NO separate grouping/number-of-conductors factor** for these cables — the table is already built for the duplex/triplex/quad case, so don't apply Table 5C on top. [teacher] He notes this in contrast to Tables 1–4 where you add grouping.
+
+**Flexible cords & equipment wire — Table 12 [teacher]:**
+- **Cord** = ordinary flexible wire; **flexible cord** = very bendable wire used where movement happens (elevator-car trailing cable that travels up/down, Christmas-tree light strings).
+- **Equipment wire** = same family — the attached lead/pigtail that hangs off a purchased appliance (fridge, TV, motor) that you plug into the board.
+- **Ampacity for BOTH flexible cord AND equipment wire = Table 12** (one table, split into a flexible-cord section and an equipment-wire section). Mark Table 12 for both. [teacher]
+- Smallest sizes go **much smaller than #14**: Table 12 includes **#18, #20, even #27**.
+  - Christmas-tree string ~**2 A → about size 20**.
+  - **Tinsel cord** (very thin decorative LED-blink light wire) → **size 27, ~0.5 A only**; not even allowed for general 120 V use.
+- **Grouping factors are printed in Table 12's own note** (1–3 cond. = full value; 4–6 → ×0.8; 7–24 → next factor — "the same percentages as Table 5C"). [teacher]
+- Rounding reminder he repeats: when the exact ampacity isn't a listed size, **go up to the next-larger size** (as in the earlier 25 A → size that covers it example).
+
+**Portable power cable & DLO cable — Table 12-area / Appendix [teacher]:**
+- **Portable power cable** = movable ("portable") **high-voltage/power** cable, e.g. a generator feed temporarily run to a building during a power-equipment outage (his water-treatment-plant project example). "Power" here means **high voltage / power-level**, not just any energized wire. Ampacity from its dedicated table; look up by insulated-conductor count (1 through 6) and voltage column (e.g. a 2000 V column). Rare exam item — *"I haven't seen a question from it, but know it exists."* [teacher]
+- **DLO cable** ("Diesel Locomotive" cable) — a flexible, durable cable he uses in the trade (especially **cable tray** wiring); the code even cites it for cable-tray use. Originally for diesel locomotives. Ampacity from a simple two-column table (size vs ampacity). Very rare exam item. [teacher]
+
+**Conductor colour identification — Rule 4-036 area [standard CEC, paraphrased by teacher]:**
+- **"Identified conductor"** ≠ casually "neutral." Precisely, an **identified conductor is the white/grey conductor that is INTENDED to carry the return current** (in a 2-wire single-phase circuit the return on the white wire equals the current on the black). The book uses **"identified," not "neutral,"** in the colour rule because a true *neutral* only carries the *imbalance* (in a 3-wire system), whereas an identified conductor may carry the full return. [teacher: "neutral means it's resting — the difference of the two legs; if all current returns on it, it's working, so it's an *identified* conductor, not a neutral."]
+- **"Ungrounded conductor"** = the **hot** conductors (the ones NOT grounded). The neutral/identified conductor is the one that gets grounded. Exam wording trap: "ungrounded" = hot.
+- **Bonding/grounding conductor colour:** **green, OR green with one or more yellow stripes.** [standard CEC]
+- **Single-phase / DC, 2-wire:** hot = **black** (or red); identified (white) = **white**, used **"when identified"** (i.e. when a return/neutral is needed). A pure-240 V 2-wire load (EV charger) needs **no white** — two hots only.
+- **Single-phase, 3-wire (e.g. dryer/range):** two hots **black + red**, plus **white** when a neutral is required (because the 120 V parts — motor, timer, oven light — return on it while the 240 V element does not). Count "how many wires" excludes bonding: **3-wire = black, red, white.**
+- **Three-phase colour order (matters in the field):** **Phase A = red, Phase B = black, Phase C = blue**, in that order, plus **white** if a neutral is needed. It says **"if neutral required," NOT "if identified required"** — because a true 3-phase neutral only carries imbalance (it rests when balanced). [teacher contrasts this wording deliberately with the single-phase "identified" wording.]
+  - A/B/C labelling is **arbitrary/by convention** — "in Canada the phase rotation swaps 60 times a second" — you just agree which is A, B, C.
+- **Exam form [teacher]:** usually pure colour-order multiple choice — *"which is correct: red-black-blue / blue-black-red / blue-red-black?"* Field importance: lighting & receptacles run **black + white**; dryer runs **black-red-white**. Mis-wiring white (assumed neutral) when it is actually energized is dangerous.
+
+**TERMINATION / TERMINAL-TEMPERATURE LIMITATION — Rule 4-006 [standard CEC; teacher flags as one of the most important & most-failed rules]:**
+- He tells students they may not memorize most of the book, **but Rule 4-006 they MUST memorize** — "you'll get 2–3 questions tied to this and it's critical on the job; even experienced engineers get it wrong." Mark it.
+- **The core principle:** equipment terminals (the two screws/lugs you land the cable on) have a **maximum terminal temperature**; the conductor must be sized so that **neither the cable overheats the terminal nor the terminal overheats the cable.** Therefore you must **size the conductor based on the TERMINAL'S temperature column — not the cable's own higher insulation rating.**
+- **Worked example [teacher]:** a transformer/equipment terminal marked **75 °C**, you want to use **armoured copper cable** in a raceway (Table 2). Even though the cable's insulation may be rated 90 °C, you must read the **75 °C column** (because the terminal is the limit). You **may** use a 90 °C-rated cable, but its **size is still set by the 75 °C ampacity** — you do NOT get to read the 90 °C column and pick the smaller wire. Picking the 90 °C size (e.g. size 14 for a 25 A job) is the classic mistake; the right answer uses the 75 °C-column size (e.g. size 12). [teacher]
+- **When the terminal temperature is NOT marked — Rule 4-006 default (the part everyone misreads):** read the rule's "where the maximum terminal temperature of equipment is not marked" clause:
+  - **Use 60 °C** if the equipment is rated **100 A or less** (he renders the threshold as "100 amp" — *the transcription is noisy here; standard CEC threshold is 100 A / #1 AWG*).
+  - **Use 75 °C** if the equipment is rated **above that threshold.**
+  - **Exam trap he highlights:** if the equipment is **exactly at the threshold (100 A)**, you take **60 °C** (because the rule says "*not more than* / *and below*" → the boundary value falls in the 60 °C group). Students wrongly pick 75 °C. He stresses he has had to repeat this three times to students who still got it wrong.
+- **Restated takeaway:** *"Higher cable insulation rating lets you USE the cable, but the BASE for sizing is always the terminal temperature (or the unmarked default)."* The armour/insulation rating is "never the deciding factor" for the terminal-limited size.
+
+#### Section 6 — Service & Service Equipment
+
+**Definitions [standard CEC, paraphrased]:**
+- **Service** = the portion where power **enters the building** — the incoming supply from BC Hydro (or other utility).
+- **Service equipment** = the equipment in that path: the **meter**, the main panel/board, disconnect, etc.
+- Taught heavily with photos ("this section is meaningless without pictures — the book describes distances between things you can't even visualize from text").
+
+**Number of supply services — Rule 6-102 [standard CEC]:**
+- **Maximum number of supply services to a building = ONE.** Code wording: *"two or more supply services of the same voltage shall not be run to any building."*
+- **Exceptions (don't get tricked):** a **separate supply is permitted for a fire pump** (so that a fire burning the building's main service doesn't kill the fire pump — fire pumps in high-rises / malls have their own service, own panel, in a safe protected location, breaker run "reverse/locked" so it's hard to accidentally cut). Also exceptions for **industrial establishments and other large/complex structures** (a big mall may legitimately take service at two or three points). [teacher: "if the question asks the *maximum number of services permitted*, the answer is **one** — the others are exceptions."]
+
+**Number of consumer services — Rule 6-104 [standard CEC]:**
+- *"Number of consumer services shall not exceed FOUR"* — one supply service may feed **up to four** consumers. [teacher]
+- Apparent contradiction (one service in, but four consumers off it) resolved by reading both rules together.
+- For buildings with **many units** (10, 20, 30 suites) the rule says **"unless..."** → you obtain a **deviation/special permission** (with calculations submitted to the authority). The code itself authorizes the deviation here. [teacher ties back to Session-1/2 deviation teaching: "deviation is allowed exactly where the code says it's allowed."]
+
+**Overhead vs underground service [standard CEC + teacher]:**
+- Two ways power enters: **overhead service installation** (aerial wires) or **underground service installation** (buried cable). Older areas = overhead; newer areas (last ~5–20 yrs) = underground (lower maintenance, survives storms, cheaper long-term).
+- **Connection point** = where the utility hands off:
+  - **Overhead:** the owner/electrician hangs a length of conductor out of the conduit; the inspector approves; then the utility splices on at that **connection point**.
+  - **Underground:** the connection point is **inside the meter** — no splicing allowed mid-run, underground or in the conduit.
+- Overhead service drops are aerial **neutral-supported cables** → sized from **Tables D36A/D36B** (ties back to earlier in the session).
+
+**Service mast & drip loop — Rule 6-112 (+ Appendix B) [standard CEC; many exam questions]:**
+- **Service mast** = the conduit projecting above the roof that the overhead service lands on; its **upper portion must be METAL** ("the part above is the mast; it can be PVC or metal lower, but the mast itself is metal"). [standard CEC]
+- **Service mast conduit minimum size = 63 trade size (= 2.5", rigid steel conduit).** He clarifies **"63" is the THREAD/TRADE size, not 63 mm** — the actual measured diameter differs (e.g. ~62.5 mm rigid, ~60.5 mm flexible); the trade just calls it "63" or "2.5". *(Standard CEC service-mast minimum is rigid metal conduit of this trade size.)*
+- **Drip loop** = the **U-shaped loop** left in the service conductors so rain/snow water drips off the bottom of the loop instead of tracking into the building (waterproofing degrades over years). Required.
+- **Lengths/clearances he states [standard CEC, some approx. from transcript]:**
+  - **Minimum free conductor length left for the utility at the head = 750 mm**, complete with drip loop. (Rule 6-302 sub-rule 3 — *"minimum length 750 mm."*)
+  - **Drip loop can hang down up to 600 mm** (and not less). 
+  - **Clearance between roof and the supply-service attachment ≥ 915 mm** (Appendix-B note on Rule 6-112), reducible to **600 mm** for the drip-loop portion in the listed case.
+  - At the **consumer service head**, the conductor emergence point must be **150 mm to 300 mm above** and **maximum 600 mm horizontally** from the attachment/insulator of the overhead service conductor (Rule 6-116 sub-rule(?) — *he cites this off the photo*). The standoff/insulator itself must sit within that 150–300 mm vertical band and ≤ 600 mm horizontal.
+  - **Service-drop height above ground = 3.5 m to 9 m** depending on what's below: **3.5 m** over pedestrian-only areas, **~5 m** over driveways/where vehicles pass, up to **9 m max** (utility bucket-truck reach limit). *(Mid-range values approx.)*
+  - If the mast/run **exceeds 1.5 m**, it needs a **guy wire** (back-stay) for support; and the mast's projection above its support must **not exceed 1 m** without guying (Appendix-B note: *"maximum unguyed projection."*).
+  - Mounting to a wood structure: the backing block/ladder **shall be not less than 38 mm × 38 mm** ("not less than 38 mm in any dimension").
+  - **Window/door/porch/balcony clearance = 1 m** on left, right, and below (a person opening a window mustn't reach it; firefighters breaking a window must be clear of it). The rule does **not** specify above. (Rule 6-112 sub-rule 4.)
+
+**Consumer service conductor minimum size — Rule 6-208 (sub-rule 4) [standard CEC]:**
+- **Consumer service conductor: minimum #10 copper / #8 aluminum.** [teacher: students think "#10 is tiny for a house" — but the rule says *minimum*, and it's not necessarily for a house; a small corner-store service can legitimately be that small. "It says minimum — go bigger if you want, nobody cares."]
+- **Meter wire allowance:** leave **≥ 450 mm** of extra conductor at the meter (Rule 6-?? sub-rule, *"service conductor not less than 450 mm"* for the meter connection).
+- **Conduit feeding the meter: minimum trade size 21** (must bear the cable weight; tradespeople think this is too small, but it's a *minimum*).
+
+**Consumer service equipment location — Rule 6-206 (sub-rule c) [standard CEC]:**
+- The service equipment **shall be located as close as possible to the point of entry** of the service conductors (because the un-protected service conductors — no fuse/breaker ahead of them yet — should travel the **shortest possible distance inside**).
+- **Shall NOT be located in:** [standard CEC list he reads]
+  - a **coal bin** (coal dust is conductive/combustible),
+  - a **clothes closet**,
+  - a **bathroom**,
+  - any room whose **ambient temperature is normally above ~30 °C** ("storeroom that runs hot"),
+  - **hazardous / dangerous locations** (e.g. near oil on a ship, flammable areas),
+  - any space with **headroom less than ~2 m**, and **similar** locations.
+- **Headroom note [teacher]:** service-equipment headroom **2 m** is enough because the parts are **not exposed live** — contrast with **Section 2's motor-control / exposed-live-parts** working space, which needs the larger figure. "Different rule, but don't confuse the two." He says the difference exists but "doesn't matter much" for pass/fail.
+
+**Unprotected service conductor inside a building — embed 50 mm [standard CEC; teacher's exam tip]:**
+- A consumer service conductor (which has **no overcurrent protection** ahead of it) **shall be located outside** the building as far as practicable. **Unless** it is **embedded in not less than 50 mm of concrete or masonry** — that **mechanical protection** substitutes for being outdoors.
+- **General "embedded = 50 mm" rule of thumb [teacher]:** the word **"embedded"** appears in ~12 places in the code, and **every time, the figure is 50 mm.** Exam shortcut: *"if a question stumps you and one of the answers says 'embedded in 50 mm of concrete,' it's right about 90% of the time."* (His own anecdote: an aluminum-service-conductor question that looked like it was about aluminum oxidation was actually answered by "embedded 50 mm.")
+
+### Answer clarifications for the question bank
+
+New specific exam-answer facts the teacher states in Session 3:
+
+- **Two different conductor temperature ratings in one raceway → size EVERYTHING on the LOWER rating.** (Worked: #4 & #1 copper, six conductors, → use 75 °C column for both.)
+- **Section 4 Q3 final answer:** **#4 → 68 A** and **#1 → 104 A** (Table 2 at 75 °C: 85 A and 130 A, each × 0.8 grouping for 6 conductors, **reported separately, not summed**).
+- **#4 copper, raceway, 75 °C = 85 A; #1 copper, raceway, 75 °C = 130 A** (Table 2). *(85 A is his corrected value.)*
+- **Neutral-supported cable ampacity → Tables D36A / D36B**, NOT Tables 1–4. **D36A = aluminum, D36B = copper** (order reversed vs the usual copper-first convention).
+- **Duplex = 2 wires, Triplex = 3 wires, Quadruplex = 4 wires** (for neutral-supported/messenger cable selection). House service = **triplex**.
+- **Flexible cord AND equipment wire ampacity → Table 12** (single table, two sections). Smallest sizes include **#18, #20, #27**; **tinsel cord = #27 ≈ 0.5 A.**
+- **Portable power cable** and **DLO cable** each have their own ampacity tables (rare exam items).
+- **Bonding/grounding conductor colour = green OR green-with-one-or-more-yellow-stripes.**
+- **"Ungrounded conductor" = the HOT conductor(s)** (the neutral/identified conductor is the grounded one).
+- **"Identified conductor"** (white) = intended to carry return current; distinct from a true **neutral** (which carries only imbalance). Colour rule says **"black/red hot, white identified."**
+- **Three-phase colour order: A = red, B = black, C = blue**, plus **white** if a **neutral** (not "identified") is required.
+- **Rule 4-006 (terminal/termination temperature):** size the conductor on the **terminal's marked temperature** (or unmarked default), **not** the cable's higher insulation column.
+- **Unmarked terminal default: 60 °C if equipment ≤ ~100 A; 75 °C if above.** At exactly **100 A → use 60 °C** (boundary falls in the lower group). *(Threshold value transcription-noisy; standard CEC is 100 A / #1 AWG.)*
+- **Maximum supply services to a building = ONE** (Rule 6-102). Exceptions: **fire pump**, industrial/large complex structures.
+- **Maximum consumer services off one supply = FOUR** (Rule 6-104); more units → deviation/special permission with calculations.
+- **Overhead service-drop height = 3.5 m (pedestrian) to 9 m (max);** ~5 m over driveways/vehicle areas. *(Mid-values approx.)*
+- **Service mast minimum = 63 trade size (2.5") rigid steel conduit; upper portion must be metal.** "63" is the **thread/trade size, not millimetres.**
+- **Minimum free conductor at service head = 750 mm** (with drip loop); **drip loop hangs up to 600 mm.**
+- **Roof-to-service-attachment clearance ≥ 915 mm** (reducible to **600 mm** for the drip-loop portion, per Appendix B).
+- **Service head conductor emergence: 150–300 mm above and ≤ 600 mm horizontally** from the overhead-conductor attachment point.
+- **Mast/run > 1.5 m → requires a guy wire;** unguyed mast projection above support **≤ 1 m.**
+- **Wood backing block/ladder for the mast: not less than 38 mm in any dimension.**
+- **Service-conductor clearance from windows/doors/porches/balconies = 1 m** (left, right, below; above not specified).
+- **Consumer service conductor minimum size = #10 copper / #8 aluminum** (Rule 6-208). It is a **minimum** — not "too small for a house."
+- **Leave ≥ 450 mm of conductor at the meter;** meter-feed conduit **minimum trade size 21.**
+- **Service equipment location (Rule 6-206):** **as close as possible to point of entry**, and **NOT** in a **coal bin, clothes closet, bathroom, room normally > ~30 °C, hazardous location, or where headroom < ~2 m** (or similar). Service-equipment headroom **2 m** (vs the larger Section-2 figure for exposed-live motor controls).
+- **Unprotected consumer service conductor inside a building must be embedded in ≥ 50 mm of concrete/masonry.** General tip: wherever the code says **"embedded," the figure is 50 mm** (≈12 occurrences) — a high-probability correct answer.
+- **Re-exam logistics [teacher/logistics]:** if you fail, you may **re-book immediately the same day** (no mandatory waiting period in practice — earliest open slot is usually ~1.5 months out anyway); you **cannot** book two attempts at once — the result must post first. Advice: book the exam **2 weeks to 1 month after the course ends**, never longer ("the material is volatile/perishable"), using that gap purely for practice questions.
+
+### Mnemonics / phrasings
+
+- **"With two temperatures in one conduit, the lower rating rules everything."** (Section 4 Q3 takeaway.)
+- **"The cable's higher insulation rating lets you USE it, but the TERMINAL temperature sets the size."** (Rule 4-006.)
+- **"At exactly 100 A with an unmarked terminal, take 60 °C, not 75."** (Boundary-value trap.)
+- **"D36A is aluminum, D36B is copper — backwards from the usual, because aerial cable is aluminum."**
+- **"Neutral means resting; if it carries the full return it's *working* — so it's an *identified* conductor, not a neutral."**
+- **"A, B, C is just a convention — in Canada the phase order swaps 60 times a second."**
+- **"Red, black, blue — A, B, C."** (Three-phase colour order.)
+- **"Drip loop — the U so the water drips off instead of running into the house."**
+- **"63 is the thread size, not 63 millimetres."** (Service mast / conduit trade sizing.)
+- **"Service equipment: as close as possible to where the power enters — that bare conductor has no breaker in front of it."**
+- **"Wherever the book says *embedded*, it's 50 mm — and that's the right answer about 90% of the time."**
+- **"One service in, up to four consumers out."** (Rules 6-102 / 6-104.)
+- **"Maximum services to a building? One. Everything else is an exception."**
+- **"Book the re-take within two weeks to a month — never longer — because the material is perishable."**

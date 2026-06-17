@@ -27,9 +27,10 @@
       "topic": "voltage-drop",
       "question": "Based on code, what is the maximum voltage drop permitted between the supply side of a consumer service and the point of utilization in any installation?",
       "answer": "5%",
-      "references": ["Rule 8-102 2)"],
+      "references": ["Rule 8-102 1)", "Rule 8-102 2)"],
       "solution_steps": [
-        "Rule 8-102 2) limits the voltage drop between the supply side of the consumer's service and the point of utilization to 5% of the nominal voltage.",
+        "Rule 8-102: overall voltage drop from the supply side of the consumer's service to the point of utilization shall not exceed 5% of nominal.",
+        "Companion limit (don't confuse): any single feeder OR branch circuit shall not exceed 3% — the 5% is the cumulative supply-to-utilization figure asked here.",
         "Result: 5%."
       ],
       "code_edition": "2024",
@@ -155,9 +156,9 @@
       "topic": "show-window-lighting",
       "question": "Based on the Canadian Electrical Code, what is the minimum watts per metre demand load for a show-window lighting installation?",
       "answer": "650 W/m",
-      "references": ["Rule 8-200 1)b)", "Rule 8-302"],
+      "references": ["Rule 8-200 1)b)"],
       "solution_steps": [
-        "Show-window lighting demand is calculated at 650 W per metre measured along the base of the window.",
+        "Rule 8-200 1)b): show-window lighting demand = 650 W per metre measured along the base of the window.",
         "Result: 650 W/m."
       ],
       "code_edition": "2024",
@@ -188,10 +189,10 @@
       "topic": "show-window-lighting",
       "question": "How much demand load would you provide for a show window in a department store that has a total length of 5 m measured along the base of each window?",
       "answer": "3250 W",
-      "references": ["Rule 8-200 1)b)", "Rule 8-302"],
+      "references": ["Rule 8-200 1)b)"],
       "solution_steps": [
-        "Show-window lighting allowance = 650 W per metre.",
-        "5 m × 650 W/m = 3250 W.",
+        "Rule 8-200 1)b): show-window lighting = 650 W per metre along the base of the window.",
+        "Math: 5 m × 650 W/m = 3250 W.",
         "Result: 3250 W."
       ],
       "code_edition": "2024",
@@ -289,12 +290,13 @@
       "type": "calculation",
       "topic": "receptacle-feeder-demand",
       "question": "A parking garage contains 100 parking spaces, each with a 15 A duplex receptacle, where the loading is controlled. The garage is supplied from a 120/208 V, 3-phase, 4-wire feeder. What is the minimum ampacity required for the feeder conductors?",
-      "answer": "54 000 W and 149.89 A",
-      "references": ["Rule 8-200", "Rule 8-106"],
+      "answer": "54 000 W → 149.89 A (source) — verify per-space allowance for controlled loading",
+      "references": ["Rule 8-400"],
       "solution_steps": [
-        "Controlled parking-space loading: allowance per space (per the notes) totals 54 000 W for 100 spaces.",
-        "Convert on a 120/208 V, 3-phase service: I = 54 000 ÷ (√3 × 208) = 54 000 ÷ 360.3 ≈ 149.89 A.",
-        "Result: 54 000 W, 149.89 A."
+        "Rule: parking/automobile-heater receptacle feeders → Rule 8-400. CONTROLLED loading permits a reduced demand per space.",
+        "Method: source gives total controlled demand = 54 000 W for 100 spaces (= 540 W/space).",
+        "Convert 120/208 V 3-phase (√3, wye service): I = 54 000 ÷ (√3 × 208) = 54 000 ÷ 360.3 ≈ 149.89 A.",
+        "NEEDS REVIEW: confirm the controlled per-space watt allowance / demand factor under Rule 8-400 in the 2024 code (the √3 conversion and 54 000 ÷ 360.3 math are correct; per-space value not verified here)."
       ],
       "code_edition": "2024",
       "needs_review": true

@@ -307,9 +307,13 @@
       "options": ["A) 2 m", "B) 9 m", "C) 3 m", "D) 10 m"],
       "answer": "9 m — within sight of and not more than 9 m from the refrigeration equipment.",
       "answer_key": "B",
-      "references": ["Rule 28-604", "Rule 28-700 series (air-conditioning/refrigeration)"],
+      "references": ["Rule 28-604"],
+      "solution_steps": [
+        "The motor/equipment disconnecting means must be within sight of and not more than 9 m from the refrigeration equipment.",
+        "Answer = 9 m (B)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S28-025",
@@ -484,11 +488,12 @@
       "answer_key": "B",
       "references": ["Rule 28-200", "Table 29 (inverse-time CB 250%)"],
       "solution_steps": [
+        "FLC is given (17 A), so no table lookup is needed.",
         "Inverse-time circuit breaker max = 250% of FLC (Table 29): 17 × 2.5 = 42.5 A.",
-        "Next standard breaker size not exceeding 42.5 A = 40 A → answer B."
+        "Motor not required to start under load, so use the next standard breaker size NOT exceeding 42.5 A = 40 A → answer B."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S28-037",
@@ -506,16 +511,16 @@
       "section": 28, "block": "D", "topic": "max-time-delay-fuse", "type": "calculation",
       "question": "A motor has 60 A FLC and a service factor of 1.15. If the overload protection does not allow continuous motor movement, which time-delay fuse is suitable?",
       "options": ["A) 60 A", "B) 70 A", "C) 80 A", "D) 100 A"],
-      "answer": "100 A (when 175% won't start the motor, Rule 28-200 permits up to 225%: 60 × 2.25 = 135 A; next standard ≤ that and suitable = 100 A as marked).",
+      "answer": "100 A (time-delay fuse 175% × 60 A = 105 A → next standard not exceeding = 100 A).",
       "answer_key": "D",
-      "references": ["Rule 28-200", "Table 29 (time-delay fuse, 175%/225%)"],
+      "references": ["Rule 28-200", "Table 29 (time-delay fuse 175%; up to 225% if won't start)"],
       "solution_steps": [
-        "Normal time-delay fuse max = 175%: 60 × 1.75 = 105 A → 100 A standard.",
-        "If that will not allow the motor to start/run, Rule 28-200 allows increasing to 225%: 60 × 2.25 = 135 A.",
-        "The suitable next standard time-delay fuse here = 100 A → answer D."
+        "FLC is given (60 A), so no table lookup is needed.",
+        "Time-delay fuse max = 175%: 60 × 1.75 = 105 A → next standard size not exceeding = 100 A.",
+        "100 A is the largest offered option and matches the 175% result → answer D. (Rule 28-200 would allow up to 225% = 135 A only if the motor still won't start.)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S28-039",
@@ -547,8 +552,12 @@
       "answer": "6 — locked-rotor current is taken as 6 times the full-load current when not otherwise marked.",
       "answer_key": "D",
       "references": ["Rule 28-300 series (air conditioning/refrigeration)"],
+      "solution_steps": [
+        "When the locked-rotor current of horsepower-rated HVAC equipment is not marked, it is taken as 6 × the full-load current.",
+        "Answer = 6 (D)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S28-042",

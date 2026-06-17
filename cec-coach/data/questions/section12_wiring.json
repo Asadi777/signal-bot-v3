@@ -1058,9 +1058,11 @@
         "D) 686 mL"
       ],
       "answer": "Answer not explicitly stated in source notes",
-      "references": ["Table 22", "Table 23"],
+      "references": ["Rule 12-3034", "Table 22", "Table 23"],
       "solution_steps": [
-        "Count conductor equivalents for six #14 and two #12 conductors plus wire connector allowances, then select from Table 22/23. Source did not state which option."
+        "Rule 12-3034 / Table 22: count six #14 + two #12 conductor equivalents (each at its own size allowance); per the CEC, wire connectors do not each add a conductor count and a bond adds no volume.",
+        "Sum the Table 22 allowances and pick the smallest listed box (option) at least that large.",
+        "Keep needs_review: source did not mark an option and the choice depends on the exact Table 22 mL values; confirm against the printed CEC 2024 tables."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -1081,9 +1083,12 @@
       "answer": "6 mm",
       "answer_key": "C",
       "references": ["Rule 12-3018"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-3018: in a non-combustible wall/ceiling, the front edge of an outlet box may be set back not more than 6 mm from the finished surface.",
+        "Result: 6 mm (option C). Consistent with S12-052."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-065",
@@ -1098,10 +1103,13 @@
         "C) 425 mm",
         "D) 450 mm"
       ],
-      "answer": "Answer not explicitly stated in source notes",
+      "answer": "50 mm (option B)",
+      "answer_key": "B",
       "references": ["Table 53", "Rule 12-012"],
       "solution_steps": [
-        "Source did not state which option. Flagged for review."
+        "Table 53: where a cable is encased in masonry or concrete, the minimum concrete cover over the cable is 50 mm (the concrete itself provides the mechanical protection).",
+        "Result: 50 mm (option B).",
+        "Keep needs_review: confirm the masonry/concrete-encasement row of the printed CEC 2024 Table 53."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -1122,7 +1130,10 @@
       "answer": "30 m",
       "answer_key": "d",
       "references": ["Table 21", "Rule 12-120"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-120 / Table 21: maximum spacing between supports for conductors in a vertical raceway, by size. Smaller conductors (such as #3/0 Cu) fall in the band with the largest permitted spacing, 30 m.",
+        "Result: 30 m (option d). (Larger conductors get shorter spacings — cf. S12-029, 250 kcmil Cu = 18 m.)"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
