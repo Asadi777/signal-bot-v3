@@ -6,32 +6,32 @@
     "qcount": 74,
     "importance": 5,
     "summary": "The single biggest source of exam questions (Block C) — conduit fill, box/pull-box fill, cover depths, bend radius and cable rules dominate. Most of these are pure table lookups, so speed and the right table choice decide pass/fail here.",
-    "summary_fa": "بزرگ‌ترین منبع سوالات آزمون (Block C) — پر کردن کاندوییت، پر کردن باکس و pull-box، عمق دفن (cover)، شعاع خم (bend radius) و قوانین کابل بیشترین سهم را دارند. اغلب این‌ها صرفاً جستجوی جدول هستند، پس سرعت و انتخاب جدول درست تعیین‌کننده قبولی یا ردی شماست.",
+    "summary_fa": "ببین، پرسؤال‌ترین قسمتِ کلِ آزمون همین Block C است. هرچه دیدی دربارهٔ پر شدنِ لوله (conduit fill)، پر شدنِ باکس و pull-box، عمقِ دفن (cover)، شعاعِ خم (bend radius) و قوانینِ کابل، از همین‌جا می‌آید. نکتهٔ کلیدی این است که تقریباً همه‌اش جستجوی جدول است؛ یعنی اگر سریع باشی و جدولِ درست را بشناسی، همین بخش قبولی‌ات را تضمین می‌کند — برعکس، اگر اینجا لنگ بزنی، می‌بازی. پس روی همین تمرکز کن.",
     "keyTables": [
-      {"ref": "Table 10", "stars": 5, "what": "Conductor cross-sectional area (insulation incl.)", "what_fa": "سطح مقطع هادی شامل عایق (Table 10)", "use": "Feeds every conduit/raceway/gutter fill calc — sum areas here", "use_fa": "ورودی هر محاسبه پر کردن conduit/raceway/gutter است — مساحت‌ها را اینجا جمع بزنید"},
-      {"ref": "Table 6", "stars": 5, "what": "Max conductors / conduit dimensions for fill", "what_fa": "حداکثر هادی‌ها / ابعاد کاندوییت برای پر کردن (Table 6)", "use": "Pick smallest conduit whose allowable area ≥ total", "use_fa": "کوچک‌ترین کاندوییتی را انتخاب کنید که مساحت مجازش ≥ مجموع باشد"},
-      {"ref": "Table 8", "stars": 5, "what": "Maximum raceway fill %", "what_fa": "حداکثر درصد پر کردن raceway (Table 8)", "use": "1→53%, 2→31%, 3+→40% (not-lead-sheathed top row)", "use_fa": "۱→53%، ۲→31%، ۳ یا بیشتر→40% (ردیف بالای not-lead-sheathed)"},
-      {"ref": "Table 9", "stars": 4, "what": "Conduit % cross-section areas by trade size", "what_fa": "درصد سطح مقطع کاندوییت بر حسب trade size (Table 9)", "use": "Used with Table 6/8 to land the conduit size and for pull-box math", "use_fa": "همراه Table 6/8 برای تعیین سایز کاندوییت و محاسبات pull-box به کار می‌رود"},
-      {"ref": "Table 23", "stars": 5, "what": "Max conductors permitted in standard boxes", "what_fa": "حداکثر هادی مجاز در باکس‌های استاندارد (Table 23)", "use": "Quick box-fill lookup by conductor size", "use_fa": "جستجوی سریع box-fill بر حسب سایز هادی"},
-      {"ref": "Table 22", "stars": 4, "what": "mL volume allowance per conductor by size", "what_fa": "مجاز حجم mL به ازای هر هادی بر حسب سایز (Table 22)", "use": "Box-fill calc: multiply mL/conductor × equivalents", "use_fa": "محاسبه box-fill: mL هر هادی × تعداد معادل"},
-      {"ref": "Table 53", "stars": 5, "what": "Minimum underground cover depths", "what_fa": "حداقل عمق دفن زیرزمینی (Table 53)", "use": "By voltage, protection, vehicular vs non-vehicular; -150 mm with mech. protection", "use_fa": "بر حسب ولتاژ، محافظت، عبور خودرو یا نه؛ با محافظت مکانیکی 150 mm کمتر"},
-      {"ref": "Table 7", "stars": 4, "what": "Minimum bend radius by trade size", "what_fa": "حداقل شعاع خم بر حسب trade size (Table 7)", "use": "Radius set by CONDUIT size, not the conductor", "use_fa": "شعاع بر اساس سایز کاندوییت تعیین می‌شود، نه هادی"},
-      {"ref": "Table 21", "stars": 3, "what": "Vertical-raceway conductor support spacing", "what_fa": "فاصله نگه‌داری هادی در raceway عمودی (Table 21)", "use": "By conductor size — bigger/heavier = shorter spacing", "use_fa": "بر حسب سایز هادی — بزرگ‌تر/سنگین‌تر = فاصله کوتاه‌تر"},
-      {"ref": "Table 19 / Table D1", "stars": 3, "what": "Cable type by condition & voltage rating", "what_fa": "نوع کابل بر حسب شرایط و رتبه ولتاژ (Table 19 / Table D1)", "use": "NMD90=300V, AC90≤2000V, TECK90≤5000V; dry/damp/wet selection", "use_fa": "NMD90=300V، AC90≤2000V، TECK90≤5000V؛ انتخاب dry/damp/wet"},
-      {"ref": "Table 38", "stars": 2, "what": "Conduit thermal expansion coefficient", "what_fa": "ضریب انبساط حرارتی کاندوییت (Table 38)", "use": "Expansion = coeff × length(m) × ΔT for RPVC runs", "use_fa": "انبساط = ضریب × طول (m) × ΔT برای مسیرهای RPVC"}
+      {"ref": "Table 10", "stars": 5, "what": "Conductor cross-sectional area (insulation incl.)", "what_fa": "سطح مقطعِ هر هادی همراه با عایقش (Table 10)", "use": "Feeds every conduit/raceway/gutter fill calc — sum areas here", "use_fa": "این پایهٔ هر محاسبهٔ پر شدنِ لوله/raceway/gutter است؛ سطح مقطعِ تک‌تکِ هادی‌ها را از همین‌جا بردار و با هم جمع بزن."},
+      {"ref": "Table 6", "stars": 5, "what": "Max conductors / conduit dimensions for fill", "what_fa": "بیشترین تعدادِ هادی و ابعادِ لوله برای پر شدن (Table 6)", "use": "Pick smallest conduit whose allowable area ≥ total", "use_fa": "کوچک‌ترین لوله‌ای را بردار که سطحِ مجازش از مجموعِ هادی‌هایت کمتر نباشد — هرچه کوچک‌تر و درست‌تر، بهتر."},
+      {"ref": "Table 8", "stars": 5, "what": "Maximum raceway fill %", "what_fa": "بیشترین درصدِ مجازِ پر شدنِ raceway (Table 8)", "use": "1→53%, 2→31%, 3+→40% (not-lead-sheathed top row)", "use_fa": "این درصدها را حفظ کن: یک هادی 53%، دو هادی 31%، سه‌تا و بیشتر 40% (ردیفِ بالای not-lead-sheathed)."},
+      {"ref": "Table 9", "stars": 4, "what": "Conduit % cross-section areas by trade size", "what_fa": "درصدِ سطح مقطعِ لوله به تفکیکِ trade size (Table 9)", "use": "Used with Table 6/8 to land the conduit size and for pull-box math", "use_fa": "دستِ کمکِ Table 6/8 است؛ هم برای رسیدن به سایزِ لوله و هم برای حسابِ pull-box ازش استفاده می‌کنی."},
+      {"ref": "Table 23", "stars": 5, "what": "Max conductors permitted in standard boxes", "what_fa": "بیشترین هادیِ مجاز در باکس‌های استاندارد (Table 23)", "use": "Quick box-fill lookup by conductor size", "use_fa": "میان‌برِ box fill است؛ سایزِ هادی را می‌بینی و یک‌راست تعداد را می‌خوانی، بدون حساب‌وکتاب."},
+      {"ref": "Table 22", "stars": 4, "what": "mL volume allowance per conductor by size", "what_fa": "حجمِ مجاز برحسب mL برای هر هادی به تفکیکِ سایز (Table 22)", "use": "Box-fill calc: multiply mL/conductor × equivalents", "use_fa": "وقتی می‌خواهی box fill را دقیق حساب کنی: mLِ هر هادی را در تعدادِ معادل ضرب کن."},
+      {"ref": "Table 53", "stars": 5, "what": "Minimum underground cover depths", "what_fa": "حداقل عمقِ دفن (cover) در زیرِ زمین (Table 53)", "use": "By voltage, protection, vehicular vs non-vehicular; -150 mm with mech. protection", "use_fa": "ورود به جدول با سه چیز: ولتاژ، اینکه محافظت داری یا نه، و اینکه روی مسیر خودرو عبور می‌کند یا نه. یادت باشد محافظتِ مکانیکی 150 mm از عمق کم می‌کند."},
+      {"ref": "Table 7", "stars": 4, "what": "Minimum bend radius by trade size", "what_fa": "حداقل شعاعِ خم به تفکیکِ trade size (Table 7)", "use": "Radius set by CONDUIT size, not the conductor", "use_fa": "حواست باشد: شعاعِ خم را سایزِ خودِ لوله تعیین می‌کند، نه هادیِ داخلش — اینجا اشتباه نکن."},
+      {"ref": "Table 21", "stars": 3, "what": "Vertical-raceway conductor support spacing", "what_fa": "فاصلهٔ نگه‌دارنده‌های هادی در raceway عمودی (Table 21)", "use": "By conductor size — bigger/heavier = shorter spacing", "use_fa": "بر اساس سایزِ هادی است؛ منطقش ساده است — هرچه هادی بزرگ‌تر و سنگین‌تر، فاصلهٔ ساپورت‌ها کوتاه‌تر."},
+      {"ref": "Table 19 / Table D1", "stars": 3, "what": "Cable type by condition & voltage rating", "what_fa": "انتخابِ نوعِ کابل بر اساس شرایطِ محیط و ردهٔ ولتاژ (Table 19 / Table D1)", "use": "NMD90=300V, AC90≤2000V, TECK90≤5000V; dry/damp/wet selection", "use_fa": "این سه را به خاطر بسپار: NMD90 تا 300V، AC90 تا 2000V، TECK90 تا 5000V؛ و کابل را با محیطِ خشک/نم‌دار/تر (dry/damp/wet) جور کن."},
+      {"ref": "Table 38", "stars": 2, "what": "Conduit thermal expansion coefficient", "what_fa": "ضریبِ انبساطِ حرارتیِ لوله (Table 38)", "use": "Expansion = coeff × length(m) × ΔT for RPVC runs", "use_fa": "برای مسیرهای RPVC: مقدارِ انبساط = ضریب × طول (m) × ΔT — همین فرمولِ ساده کافی است."}
     ],
     "keyRules": [
-      {"ref": "Rule 12-910", "stars": 5, "what": "Conductors per conduit/raceway (fill)", "what_fa": "تعداد هادی در هر conduit/raceway (پر کردن) (Rule 12-910)", "note": "Use with Tables 6/8/9/10; the fill engine", "note_fa": "همراه Tables 6/8/9/10 به کار می‌رود؛ موتور محاسبه پر کردن"},
-      {"ref": "Rule 12-3036", "stars": 5, "what": "Pull/junction box sizing", "what_fa": "تعیین اندازه pull/junction box (Rule 12-3036)", "note": "Straight pull = 8× largest raceway; angle/U = 6× largest + sum of others on that wall", "note_fa": "کشش مستقیم = 8× بزرگ‌ترین raceway؛ زاویه/U = 6× بزرگ‌ترین + مجموع بقیه روی همان دیوار"},
-      {"ref": "Rule 12-3034", "stars": 4, "what": "Box fill / minimum box volume", "what_fa": "پر کردن باکس / حداقل حجم باکس (Rule 12-3034)", "note": "Device = 1 conductor of largest size; bond adds NO separate volume", "note_fa": "هر دستگاه = ۱ هادی از بزرگ‌ترین سایز؛ هادی bond حجم جداگانه اضافه نمی‌کند"},
-      {"ref": "Rule 12-012", "stars": 5, "what": "Underground installation / minimum cover", "what_fa": "نصب زیرزمینی / حداقل عمق دفن (Rule 12-012)", "note": "Pairs with Table 53; mech. protection reduces cover 150 mm", "note_fa": "همراه Table 53؛ محافظت مکانیکی عمق را 150 mm کاهش می‌دهد"},
-      {"ref": "Rule 12-516", "stars": 4, "what": "Cable through studs/joists — 32 mm from edge", "what_fa": "عبور کابل از studs/joists — 32 mm از لبه (Rule 12-516)", "note": "Else steel protector plate (Fig 12-30)", "note_fa": "در غیر این صورت صفحه محافظ فولادی (Fig 12-30)"},
-      {"ref": "Rule 12-940", "stars": 4, "what": "Max bends between pull points", "what_fa": "حداکثر تعداد خم بین نقاط کشش (Rule 12-940)", "note": "Equivalent of four 90° bends = 360° total", "note_fa": "معادل چهار خم 90° = مجموع 360°"},
-      {"ref": "Rule 12-552", "stars": 4, "what": "NMD90 / non-metallic sheathed cable max voltage", "what_fa": "حداکثر ولتاژ NMD90 / کابل با روکش غیرفلزی (Rule 12-552)", "note": "300 V (with Table D1)", "note_fa": "300 V (همراه Table D1)"},
-      {"ref": "Rule 12-510 / 12-520", "stars": 3, "what": "NMSC clearances & support spacing", "what_fa": "فواصل مجاز و فاصله نگه‌داری NMSC (Rule 12-510 / 12-520)", "note": "25 mm from heat pipe, 50 mm from chimney; within 300 mm of box then ≤1.5 m", "note_fa": "25 mm از لوله گرمایش، 50 mm از دودکش؛ تا 300 mm نزدیک باکس سپس ≤1.5 m"},
-      {"ref": "Rule 12-108", "stars": 3, "what": "Parallel conductors", "what_fa": "هادی‌های موازی (Rule 12-108)", "note": "Permitted only for #1/0 AWG and larger", "note_fa": "فقط برای #1/0 AWG و بزرگ‌تر مجاز است"},
-      {"ref": "Rule 12-118", "stars": 3, "what": "Terminations", "what_fa": "سرسیم‌بندی / اتصالات انتهایی (Rule 12-118)", "note": ">#10 needs a lug; #10 solid max under a binding screw; Belleville washer for Al lugs", "note_fa": "بزرگ‌تر از #10 به lug نیاز دارد؛ #10 مفتولی حداکثر زیر پیچ گیره؛ واشر Belleville برای lug آلومینیومی"},
-      {"ref": "Rule 12-2100", "stars": 2, "what": "Wireway / auxiliary-gutter fill", "what_fa": "پر کردن wireway / auxiliary-gutter (Rule 12-2100)", "note": "Max 20% area, max 30 current-carrying conductors", "note_fa": "حداکثر 20% مساحت، حداکثر 30 هادی جریان‌دار"}
+      {"ref": "Rule 12-910", "stars": 5, "what": "Conductors per conduit/raceway (fill)", "what_fa": "تعدادِ هادیِ مجاز در هر لوله/raceway، یعنی همان پر شدن (Rule 12-910)", "note": "Use with Tables 6/8/9/10; the fill engine", "note_fa": "این قلبِ محاسبهٔ fill است؛ همیشه دستِ‌درستِ Tables 6/8/9/10 با آن می‌رود."},
+      {"ref": "Rule 12-3036", "stars": 5, "what": "Pull/junction box sizing", "what_fa": "تعیینِ اندازهٔ pull box و junction box (Rule 12-3036)", "note": "Straight pull = 8× largest raceway; angle/U = 6× largest + sum of others on that wall", "note_fa": "دو حالت را جدا کن: کششِ مستقیم = 8 برابرِ بزرگ‌ترین raceway؛ کششِ زاویه‌ای یا U = 6 برابرِ بزرگ‌ترین + مجموعِ بقیهٔ راه‌ها روی همان دیوار."},
+      {"ref": "Rule 12-3034", "stars": 4, "what": "Box fill / minimum box volume", "what_fa": "پر شدنِ باکس و حداقل حجمِ لازمِ باکس (Rule 12-3034)", "note": "Device = 1 conductor of largest size; bond adds NO separate volume", "note_fa": "دو نکتهٔ طلایی: هر دستگاه را یک هادیِ هم‌اندازهٔ بزرگ‌ترین حساب کن، و هادیِ bond اینجا حجمِ جداگانه نمی‌گیرد."},
+      {"ref": "Rule 12-012", "stars": 5, "what": "Underground installation / minimum cover", "what_fa": "نصبِ زیرزمینی و حداقل عمقِ دفن (Rule 12-012)", "note": "Pairs with Table 53; mech. protection reduces cover 150 mm", "note_fa": "همیشه با Table 53 جفت می‌شود؛ یادت باشد محافظتِ مکانیکی 150 mm از عمق کم می‌کند."},
+      {"ref": "Rule 12-516", "stars": 4, "what": "Cable through studs/joists — 32 mm from edge", "what_fa": "عبورِ کابل از داخلِ studs/joists — 32 mm از لبه (Rule 12-516)", "note": "Else steel protector plate (Fig 12-30)", "note_fa": "اگر آن 32 mm را نداری، باید صفحهٔ محافظِ فولادی بگذاری (Fig 12-30) تا میخ به کابل آسیب نزند."},
+      {"ref": "Rule 12-940", "stars": 4, "what": "Max bends between pull points", "what_fa": "بیشترین تعدادِ خمِ مجاز بینِ دو نقطهٔ کشش (Rule 12-940)", "note": "Equivalent of four 90° bends = 360° total", "note_fa": "سقفت معادلِ چهار خمِ 90 درجه است، یعنی رویِ‌هم 360 درجه — بیشتر شد، باید pull box بگذاری."},
+      {"ref": "Rule 12-552", "stars": 4, "what": "NMD90 / non-metallic sheathed cable max voltage", "what_fa": "بیشترین ولتاژِ NMD90 / کابلِ با روکشِ غیرفلزی (Rule 12-552)", "note": "300 V (with Table D1)", "note_fa": "سقفش 300 V است (با Table D1) — نه 600 V، اینجا گول نخور."},
+      {"ref": "Rule 12-510 / 12-520", "stars": 3, "what": "NMSC clearances & support spacing", "what_fa": "فاصله‌های مجاز و فاصلهٔ ساپورتِ کابلِ NMSC (Rule 12-510 / 12-520)", "note": "25 mm from heat pipe, 50 mm from chimney; within 300 mm of box then ≤1.5 m", "note_fa": "از لولهٔ گرمایش 25 mm و از دودکش 50 mm فاصله بده؛ اولین مهار را تا 300 mmِ باکس بزن و بعد هر ≤1.5 m یکی."},
+      {"ref": "Rule 12-108", "stars": 3, "what": "Parallel conductors", "what_fa": "هادی‌های موازی (Rule 12-108)", "note": "Permitted only for #1/0 AWG and larger", "note_fa": "موازی‌بستن فقط از #1/0 AWG به بالا اجازه دارد، نه کوچک‌تر."},
+      {"ref": "Rule 12-118", "stars": 3, "what": "Terminations", "what_fa": "بستنِ سرِ سیم و اتصالاتِ انتهایی (Rule 12-118)", "note": ">#10 needs a lug; #10 solid max under a binding screw; Belleville washer for Al lugs", "note_fa": "بزرگ‌تر از #10 حتماً lug می‌خواهد؛ #10 مفتولی نهایتِ چیزی است که زیرِ پیچِ گیره می‌رود؛ و برای lugِ آلومینیومی واشرِ Belleville لازم است."},
+      {"ref": "Rule 12-2100", "stars": 2, "what": "Wireway / auxiliary-gutter fill", "what_fa": "پر شدنِ wireway و auxiliary-gutter (Rule 12-2100)", "note": "Max 20% area, max 30 current-carrying conductors", "note_fa": "دو سقف را با هم نگه دار: حداکثر 20% از سطح، و حداکثر 30 هادیِ جریان‌دار."}
     ],
     "mustKnow": [
       "Fill %: 1 conductor→53%, 2→31%, 3 or more→40% (Table 8). Conduit-fill engine = Table 10 (areas) + Table 8 (fill %) + Table 6/9 (conduit size); bonding conductor IS counted in conduit fill.",
@@ -45,15 +45,15 @@
       "No splices inside conduit (12-912); PV conductors not in same raceway as other systems (12-904). Box set-back ≤6 mm in non-combustible surfaces, flush in combustible."
     ],
     "mustKnow_fa": [
-      "درصد پر کردن: ۱ هادی→53%، ۲→31%، ۳ یا بیشتر→40% (Table 8). موتور پر کردن کاندوییت = Table 10 (مساحت‌ها) + Table 8 (درصد) + Table 6/9 (سایز کاندوییت)؛ هادی bonding در پر کردن کاندوییت شمارش می‌شود.",
-      "Box fill (CEC ≠ NEC): هر دستگاه (پریز/کلید) به عنوان یک هادی از بزرگ‌ترین سایز شمرده می‌شود؛ هادی bonding/ground حجم جداگانه اضافه نمی‌کند؛ کانکتورهای سیم برخلاف NEC جداگانه شمرده نمی‌شوند.",
-      "Pull box (12-3036): کشش مستقیم = 8× trade size بزرگ‌ترین raceway؛ کشش زاویه‌ای یا U = 6× بزرگ‌ترین + مجموع سایر raceway هایی که از همان دیوار وارد می‌شوند.",
-      "حداکثر تعداد خم بین نقاط کشش = 4 × 90° = 360° (12-940). شعاع خم از Table 7 بر اساس trade size کاندوییت خوانده می‌شود، نه هادی.",
-      "عمق دفن زیرزمینی (Table 53): ≤750 V بدون محافظت = 600 mm بدون عبور خودرو / 900 mm با عبور خودرو؛ محافظت مکانیکی (plank/concrete) عمق را 150 mm کاهش می‌دهد.",
-      "عبور کابل از studs: 32 mm از لبه بیرونی فاصله نگه دارید (12-516) یا صفحه محافظ فولادی نصب کنید؛ حداقل 150 mm هادی آزاد در هر باکس (12-3014).",
-      "رتبه‌های ولتاژ: NMD90 = 300 V، AC90 ≤ 2000 V، TECK90 ≤ 5000 V. موازی فقط #1/0 و بزرگ‌تر (12-108).",
-      "نگه‌داری: تا 300 mm نزدیک باکس مهار کنید، سپس ≤1.5 m برای کابل/armoured (12-510/12-618). فواصل NMSC: 25 mm لوله گرمایش / 50 mm دودکش.",
-      "اتصال (splice) داخل کاندوییت ممنوع (12-912)؛ هادی‌های PV نباید با سایر سیستم‌ها در یک raceway باشند (12-904). فرورفتگی باکس ≤6 mm در سطوح غیرقابل‌اشتعال، هم‌سطح در سطوح قابل‌اشتعال."
+      "درصدِ پر شدن را مثلِ اسمِ خودت حفظ کن: یک هادی 53%، دو هادی 31%، سه‌تا و بیشتر 40% (Table 8). زنجیرهٔ محاسبه هم همیشه همین است: Table 10 (مساحت‌ها) + Table 8 (درصد) + Table 6/9 (سایزِ لوله). یک نکته که خیلی‌ها فراموش می‌کنند: هادیِ bonding در پر شدنِ لوله شمرده می‌شود.",
+      "Box fill در CEC با NEC فرق دارد، هواست باشد: هر دستگاه (پریز/کلید) را یک هادیِ هم‌اندازهٔ بزرگ‌ترین حساب کن؛ هادیِ bonding/ground حجمِ جداگانه نمی‌گیرد؛ و کانکتورهای سیم هم برخلافِ NEC جداگانه شمرده نمی‌شوند.",
+      "Pull box (12-3036): کششِ مستقیم = 8 برابرِ trade sizeِ بزرگ‌ترین raceway؛ کششِ زاویه‌ای یا U = 6 برابرِ بزرگ‌ترین + مجموعِ بقیهٔ racewayهایی که از همان دیوار وارد شده‌اند. دو حالت را قاطی نکن.",
+      "بیشترین خمِ بینِ دو نقطهٔ کشش = چهار خمِ 90 درجه یعنی 360 درجه (12-940). و یادت باشد شعاعِ خم را از Table 7 بر اساسِ trade sizeِ لوله می‌خوانی، نه از روی هادی.",
+      "عمقِ دفن (Table 53): تا 750 V و بدونِ محافظت = 600 mm جایی که خودرو رد نمی‌شود / 900 mm جایی که خودرو رد می‌شود؛ و محافظتِ مکانیکی (plank یا concrete) عمق را 150 mm کم می‌کند.",
+      "عبورِ کابل از studs: یا 32 mm از لبهٔ بیرونی فاصله بده (12-516) یا صفحهٔ محافظِ فولادی بگذار؛ و در هر باکس حداقل 150 mm هادیِ آزاد بگذار تا بشود کار کرد (12-3014).",
+      "ردهٔ ولتاژها را بسپار به ذهنت: NMD90 = 300 V، AC90 ≤ 2000 V، TECK90 ≤ 5000 V. و موازی‌بستن فقط از #1/0 به بالا (12-108).",
+      "ساپورت: اولین مهار را تا 300 mmِ باکس بزن، بعدش هر ≤1.5 m یکی برای کابل/armoured (12-510/12-618). فاصله‌های NMSC هم: 25 mm از لولهٔ گرمایش / 50 mm از دودکش.",
+      "هیچ اتصالی (splice) داخلِ لوله مجاز نیست (12-912)؛ هادی‌های PV نباید با سیستم‌های دیگر در یک raceway باشند (12-904). فرورفتگیِ باکس در سطحِ غیرقابل‌اشتعال ≤6 mm، و در سطحِ قابل‌اشتعال باید هم‌سطحِ رو باشد."
     ],
     "traps": [
       "Box fill: counting the bonding conductor as a separate volume (it is NOT in the CEC) or counting each wire connector as a conductor like the NEC — both inflate the answer.",
@@ -66,17 +66,17 @@
       "Conduit expansion: forgetting ΔT spans below zero (e.g. -50 to +25 = 75°C, not 25)."
     ],
     "traps_fa": [
-      "Box fill: شمردن هادی bonding به عنوان حجم جداگانه (در CEC این‌طور نیست) یا شمردن هر کانکتور سیم مثل NEC — هر دو پاسخ را بیش از حد بزرگ می‌کنند.",
-      "درصد پر کردن اشتباه: استفاده از 53% یا 31% وقتی ۳ یا بیشتر هادی هست — در سوالات واقعی تقریباً همیشه 40% است.",
-      "Pull box: اعمال 8× (مستقیم) وقتی ورودی‌ها زاویه‌ای/U هستند (باید 6× + مجموع بقیه باشد) یا برعکس — دیاگرام را با دقت بخوانید.",
-      "شعاع خم در Table 7 به trade size کاندوییت بستگی دارد، نه به هادی که کشیده می‌شود.",
-      "عمق دفن: فراموش کردن کاهش 150 mm با محافظت مکانیکی، یا اشتباه گرفتن آن با ضخامت 38 mm plank / 50 mm concrete.",
-      "ولتاژ: انتخاب 600 V برای NMD90 — مقدار درست 300 V است. عبارت 'EMT یک conduit نیست' می‌تواند پاسخ fill/bend را عوض کند.",
-      "شمردن نوترال متعادل یا هادی bonding هنگام سایزبندی برای fill — bond در conduit fill شمرده می‌شود اما در box fill نه (قوانین متضاد).",
-      "انبساط کاندوییت: فراموش کردن اینکه ΔT زیر صفر را در بر می‌گیرد (مثلاً -50 تا +25 = 75°C، نه 25)."
+      "Box fill: اینکه هادیِ bonding را حجمِ جداگانه بشماری (در CEC این‌طور نیست) یا هر کانکتورِ سیم را مثلِ NEC جدا بشماری — هر دو جوابت را بی‌خود بزرگ می‌کنند و می‌اندازندت.",
+      "درصدِ غلط: وقتی سه هادی یا بیشتر داری ولی باز 53% یا 31% می‌زنی — در سوال‌های واقعی تقریباً همیشه جواب 40% است، حواست باشد.",
+      "Pull box: وقتی ورودی‌ها زاویه‌ای/U هستند ولی تو 8× (مستقیم) می‌زنی، یا برعکس — باید 6× + مجموعِ بقیه باشد. دیاگرام را با دقت نگاه کن.",
+      "شعاعِ خم در Table 7 به trade sizeِ لوله بسته است، نه به هادی‌ای که داخلش کشیده می‌شود — این را زیاد اشتباه می‌گیرند.",
+      "عمقِ دفن: یا کاهشِ 150 mm با محافظتِ مکانیکی را یادت می‌رود، یا آن را با ضخامتِ 38 mm plank / 50 mm concrete قاطی می‌کنی. این دوتا را از هم جدا کن.",
+      "ولتاژ: زدنِ 600 V برای NMD90 در حالی که درستش 300 V است. و این جمله که «EMT یک conduit نیست» می‌تواند کلِ پاسخِ fill یا bend را برگرداند.",
+      "اینجا تله است: hادیِ bonding در conduit fill شمرده می‌شود اما در box fill نه — قانون این دو دقیقاً برعکسِ هم است؛ نوترالِ متعادل را هم درست بشمار.",
+      "انبساطِ لوله: فراموش‌نکن ΔT می‌تواند از زیرِ صفر شروع شود (مثلاً -50 تا +25 می‌شود 75°C، نه 25)."
     ],
     "mnemonic": "Fill counts down the road: 1-lane 53, 2-lane 31, 3+-lane 40. Pull boxes: STraight = 8 (eight letters in 'straight-ish'), angle/U = 6.",
-    "mnemonic_fa": "درصد پر کردن مثل خطوط جاده کم می‌شود: ۱-خط 53، ۲-خط 31، ۳+-خط 40. Pull box ها: STraight = 8، زاویه/U = 6.",
+    "mnemonic_fa": "درصدِ پر شدن را مثلِ باریک‌شدنِ خطوطِ جاده تصور کن، رو به پایین می‌رود: یک‌خط 53، دوخط 31، سه‌خط و بیشتر 40. و برای pull box: مستقیم (STraight) = 8، زاویه/U = 6.",
     "method": [
       "Conduit fill: (1) Table 10 → area of each conductor, sum all; (2) Table 8 → fill % by count (3+ = 40%); (3) Table 6/9 → smallest conduit whose allowable area ≥ total. Reverse for 'how many fit.'",
       "Box fill: count conductors entering + 1 per device (largest size) — ignore bond volume and connectors; multiply Table 22 mL × equivalents, or read Table 23 directly.",
@@ -85,39 +85,39 @@
       "Expansion: ΔT = max − min temp; expansion = Table 38 coeff × length (m) × ΔT."
     ],
     "method_fa": [
-      "پر کردن کاندوییت: (1) Table 10 ← مساحت هر هادی، همه را جمع کنید؛ (2) Table 8 ← درصد بر حسب تعداد (۳ یا بیشتر = 40%)؛ (3) Table 6/9 ← کوچک‌ترین کاندوییتی که مساحت مجازش ≥ مجموع است. برای 'چند تا جا می‌شود' معکوس عمل کنید.",
-      "Box fill: هادی‌های ورودی + ۱ به ازای هر دستگاه (بزرگ‌ترین سایز) را بشمارید — حجم bond و کانکتورها را نادیده بگیرید؛ mL از Table 22 × معادل‌ها، یا مستقیم از Table 23 بخوانید.",
-      "Pull box: کشش مستقیم در برابر زاویه/U را از روی دیاگرام تشخیص دهید؛ دیوار مستقیم = 8× بزرگ‌ترین، دیوار زاویه/U = 6× بزرگ‌ترین + مجموع سایر ورودی‌های همان دیوار.",
-      "عمق دفن/خم/ولتاژ/فاصله: صرفاً جستجو — مستقیم به Table 53 / Table 7 / Table D1 / Rule 12-510 بروید و ردیف منطبق را بخوانید.",
-      "انبساط: ΔT = دمای max − min؛ انبساط = ضریب Table 38 × طول (m) × ΔT."
+      "پر شدنِ لوله را سه‌قدمی برو: (1) از Table 10 مساحتِ هر هادی را بردار و همه را جمع کن؛ (2) از Table 8 درصد را بر اساسِ تعداد بگیر (سه‌تا و بیشتر = 40%)؛ (3) از Table 6/9 کوچک‌ترین لوله‌ای که سطحِ مجازش ≥ مجموعِ توست را بردار. اگر سوال «چندتا جا می‌شود» بود، همین مسیر را برعکس برو.",
+      "Box fill: هادی‌های ورودی را بشمار، به‌ازای هر دستگاه هم یکی (به اندازهٔ بزرگ‌ترین) اضافه کن — حجمِ bond و کانکتورها را اصلاً به حساب نیاور؛ بعد mLِ Table 22 را در تعدادِ معادل ضرب کن، یا کلاً مستقیم از Table 23 بخوان.",
+      "Pull box: اول از روی دیاگرام تشخیص بده کشش مستقیم است یا زاویه/U؛ دیوارِ مستقیم = 8× بزرگ‌ترین، دیوارِ زاویه/U = 6× بزرگ‌ترین + مجموعِ بقیهٔ ورودی‌های همان دیوار.",
+      "عمقِ دفن/خم/ولتاژ/فاصله: اینها صرفاً جستجوست — یک‌راست برو سراغِ Table 53 / Table 7 / Table D1 / Rule 12-510 و ردیفِ منطبق را بخوان، معطل نکن.",
+      "انبساط: اول ΔT = دمای max منهای min؛ بعد انبساط = ضریبِ Table 38 × طول (m) × ΔT."
     ],
     "examples": ["S12-002", "S12-004", "S12-005", "S12-009", "S12-019", "S12-021"],
     "keywords": [
-      {"kw": "\"conduit fill / minimum conduit size / how many conductors fit\"", "jump": "Rule 12-910 + Tables 6/8/9/10", "why": "1→53%, 2→31%, 3+→40%; sum Table 10 areas, pick smallest conduit", "why_fa": "۱→53%، ۲→31%، ۳+→40%؛ مساحت‌های Table 10 را جمع و کوچک‌ترین کاندوییت را انتخاب کنید", "stars": 5},
-      {"kw": "\"conductor cross-sectional area / area of conductor\"", "jump": "Table 10", "why": "Insulated area feeding every fill calc", "why_fa": "مساحت با عایق که ورودی هر محاسبه fill است", "stars": 5},
-      {"kw": "\"box fill / box volume / minimum size of box / how many in a box\"", "jump": "Rule 12-3034/12-3036 + Tables 22/23", "why": "Device = 1 largest conductor; bond adds NO volume", "why_fa": "هر دستگاه = ۱ هادی بزرگ‌ترین سایز؛ bond حجم اضافه نمی‌کند", "stars": 5},
-      {"kw": "\"pull box / junction box dimensions / straight vs angle pull\"", "jump": "Rule 12-3036", "why": "Straight = 8× largest raceway; angle/U = 6× + sum of others", "why_fa": "مستقیم = 8× بزرگ‌ترین raceway؛ زاویه/U = 6× + مجموع بقیه", "stars": 5},
-      {"kw": "\"minimum cover / buried depth / direct burial\"", "jump": "Rule 12-012 + Table 53", "why": "≤750 V: 600 mm non-veh / 900 mm veh; -150 mm with mech. protection", "why_fa": "≤750 V: 600 mm بدون خودرو / 900 mm با خودرو؛ با محافظت مکانیکی 150 mm کمتر", "stars": 5},
-      {"kw": "\"number of bends / 360 degrees / quarter bends between pulls\"", "jump": "Rule 12-940", "why": "Max equivalent of four 90° bends = 360°", "why_fa": "حداکثر معادل چهار خم 90° = 360°", "stars": 4},
-      {"kw": "\"bend radius / minimum radius of bend\"", "jump": "Table 7", "why": "Radius keyed to conduit trade size, NOT the conductor", "why_fa": "شعاع بر اساس trade size کاندوییت تعیین می‌شود، نه هادی", "stars": 4},
-      {"kw": "\"NMSC / NMD90 maximum voltage\"", "jump": "Rule 12-552 + Table D1", "why": "NMD90 = 300 V (not 600 V)", "why_fa": "NMD90 = 300 V (نه 600 V)", "stars": 4},
-      {"kw": "\"cable distance from stud / through joists / 32 mm\"", "jump": "Rule 12-516", "why": "32 mm from outer edge or steel protector plate", "why_fa": "32 mm از لبه بیرونی یا صفحه محافظ فولادی", "stars": 4},
-      {"kw": "\"free conductor length at outlet / box\"", "jump": "Rule 12-3014", "why": "Minimum 150 mm of free conductor at each box", "why_fa": "حداقل 150 mm هادی آزاد در هر باکس", "stars": 3},
-      {"kw": "\"cable type selection / dry-damp-wet / voltage rating of cable\"", "jump": "Table 19 + Table D1", "why": "NMD90=300V, AC90≤2000V, TECK90≤5000V", "why_fa": "NMD90=300V، AC90≤2000V، TECK90≤5000V", "stars": 3},
-      {"kw": "\"parallel conductors\"", "jump": "Rule 12-108", "why": "Permitted only #1/0 AWG and larger", "why_fa": "فقط برای #1/0 AWG و بزرگ‌تر مجاز است", "stars": 3},
-      {"kw": "\"general wiring method / installation requirements\"", "jump": "Rule 12-012 + Section 12 general", "why": "Catch-all for underground/general method rules", "why_fa": "پوشش‌دهنده قوانین کلی و زیرزمینی روش سیم‌کشی", "stars": 3},
-      {"kw": "\"support spacing / secured / fastening interval\"", "jump": "Rule 12-510/12-520/12-618 + Table 21", "why": "Within 300 mm of box then ≤1.5 m; Table 21 vertical raceways", "why_fa": "تا 300 mm نزدیک باکس سپس ≤1.5 m؛ Table 21 برای raceway عمودی", "stars": 4},
-      {"kw": "\"NMSC clearance / heat pipe / chimney\"", "jump": "Rule 12-510", "why": "25 mm from heating pipe, 50 mm from masonry chimney", "why_fa": "25 mm از لوله گرمایش، 50 mm از دودکش بنایی", "stars": 3},
-      {"kw": "\"termination / lug / binding screw / largest conductor without lug\"", "jump": "Rule 12-118", "why": ">#10 needs a lug; #10 solid max under a screw; Belleville washer for Al", "why_fa": "بزرگ‌تر از #10 به lug نیاز دارد؛ #10 مفتولی حداکثر زیر پیچ؛ واشر Belleville برای آلومینیوم", "stars": 3},
-      {"kw": "\"splices / joints in conduit\"", "jump": "Rule 12-912", "why": "No splices inside conduit — only in accessible boxes/fittings", "why_fa": "اتصال داخل کاندوییت ممنوع — فقط در باکس/فیتینگ قابل دسترس", "stars": 3},
-      {"kw": "\"wireway / auxiliary gutter fill\"", "jump": "Rule 12-2100 + Table 10", "why": "Max 20% area, max 30 current-carrying conductors", "why_fa": "حداکثر 20% مساحت، حداکثر 30 هادی جریان‌دار", "stars": 2},
-      {"kw": "\"cable tray clearance\"", "jump": "Rule 12-2202", "why": "300 mm above to ceiling/ducts; 150 mm at short obstructions", "why_fa": "300 mm فاصله بالا تا سقف/داکت؛ 150 mm نزد موانع کوتاه", "stars": 2},
-      {"kw": "\"conduit expansion / thermal movement\"", "jump": "Rule 12-1102 + Table 38", "why": "Expansion = coeff × length(m) × ΔT (ΔT spans below zero)", "why_fa": "انبساط = ضریب × طول (m) × ΔT (ΔT زیر صفر را هم در بر می‌گیرد)", "stars": 2},
-      {"kw": "\"box set-back / front edge of box / concrete wall\"", "jump": "Rule 12-3018", "why": "≤6 mm set-back in non-combustible; flush in combustible", "why_fa": "فرورفتگی ≤6 mm در غیرقابل‌اشتعال؛ هم‌سطح در قابل‌اشتعال", "stars": 2},
-      {"kw": "\"FCC / flat conductor cable / under-carpet\"", "jump": "Rule 12-806", "why": "Not in dwellings; 30 A max branch; carpet squares ≤750 mm", "why_fa": "در واحدهای مسکونی مجاز نیست؛ حداکثر مدار 30 A؛ موکت مربعی ≤750 mm", "stars": 2},
-      {"kw": "\"PV conductors in same raceway\"", "jump": "Rule 12-904", "why": "PV conductors must not share raceway with other systems", "why_fa": "هادی‌های PV نباید با سایر سیستم‌ها در یک raceway باشند", "stars": 2},
-      {"kw": "\"EMT in wet location\"", "jump": "Rule 12-1402", "why": "Permitted with wet-rated fittings; EMT is NOT a conduit", "why_fa": "با فیتینگ مناسب محیط مرطوب مجاز است؛ EMT یک conduit نیست", "stars": 2},
-      {"kw": "\"neutral-supported cable span\"", "jump": "Rule 12-310", "why": "Max span between supports (verify 38 vs 40 m in 2024)", "why_fa": "حداکثر دهانه بین نگه‌دارنده‌ها (مقدار 38 در برابر 40 m در نسخه 2024 را بررسی کنید)", "stars": 1}
+      {"kw": "\"conduit fill / minimum conduit size / how many conductors fit\"", "jump": "Rule 12-910 + Tables 6/8/9/10", "why": "1→53%, 2→31%, 3+→40%; sum Table 10 areas, pick smallest conduit", "why_fa": "درصدها را بسپار: 53% / 31% / 40%؛ مساحت‌های Table 10 را جمع کن و کوچک‌ترین لوله را بردار.", "stars": 5},
+      {"kw": "\"conductor cross-sectional area / area of conductor\"", "jump": "Table 10", "why": "Insulated area feeding every fill calc", "why_fa": "همان مساحتِ با عایق که پایهٔ هر محاسبهٔ fill است.", "stars": 5},
+      {"kw": "\"box fill / box volume / minimum size of box / how many in a box\"", "jump": "Rule 12-3034/12-3036 + Tables 22/23", "why": "Device = 1 largest conductor; bond adds NO volume", "why_fa": "هر دستگاه = یک هادیِ هم‌اندازهٔ بزرگ‌ترین؛ و bond اینجا حجم اضافه نمی‌کند.", "stars": 5},
+      {"kw": "\"pull box / junction box dimensions / straight vs angle pull\"", "jump": "Rule 12-3036", "why": "Straight = 8× largest raceway; angle/U = 6× + sum of others", "why_fa": "مستقیم = 8× بزرگ‌ترین raceway؛ زاویه/U = 6× + مجموعِ بقیه.", "stars": 5},
+      {"kw": "\"minimum cover / buried depth / direct burial\"", "jump": "Rule 12-012 + Table 53", "why": "≤750 V: 600 mm non-veh / 900 mm veh; -150 mm with mech. protection", "why_fa": "تا 750 V: 600 mm بی‌خودرو / 900 mm با خودرو؛ با محافظتِ مکانیکی 150 mm کمتر.", "stars": 5},
+      {"kw": "\"number of bends / 360 degrees / quarter bends between pulls\"", "jump": "Rule 12-940", "why": "Max equivalent of four 90° bends = 360°", "why_fa": "سقفت معادلِ چهار خمِ 90 درجه است، یعنی 360 درجه.", "stars": 4},
+      {"kw": "\"bend radius / minimum radius of bend\"", "jump": "Table 7", "why": "Radius keyed to conduit trade size, NOT the conductor", "why_fa": "شعاع را trade sizeِ لوله تعیین می‌کند، نه هادی.", "stars": 4},
+      {"kw": "\"NMSC / NMD90 maximum voltage\"", "jump": "Rule 12-552 + Table D1", "why": "NMD90 = 300 V (not 600 V)", "why_fa": "NMD90 سقفش 300 V است، نه 600 V — اینجا گول نخور.", "stars": 4},
+      {"kw": "\"cable distance from stud / through joists / 32 mm\"", "jump": "Rule 12-516", "why": "32 mm from outer edge or steel protector plate", "why_fa": "یا 32 mm از لبهٔ بیرونی، یا صفحهٔ محافظِ فولادی.", "stars": 4},
+      {"kw": "\"free conductor length at outlet / box\"", "jump": "Rule 12-3014", "why": "Minimum 150 mm of free conductor at each box", "why_fa": "در هر باکس حداقل 150 mm هادیِ آزاد بگذار تا بشود کار کرد.", "stars": 3},
+      {"kw": "\"cable type selection / dry-damp-wet / voltage rating of cable\"", "jump": "Table 19 + Table D1", "why": "NMD90=300V, AC90≤2000V, TECK90≤5000V", "why_fa": "NMD90=300V، AC90≤2000V، TECK90≤5000V.", "stars": 3},
+      {"kw": "\"parallel conductors\"", "jump": "Rule 12-108", "why": "Permitted only #1/0 AWG and larger", "why_fa": "موازی فقط از #1/0 AWG به بالا مجاز است.", "stars": 3},
+      {"kw": "\"general wiring method / installation requirements\"", "jump": "Rule 12-012 + Section 12 general", "why": "Catch-all for underground/general method rules", "why_fa": "سراغِ این برو وقتی سوال کلیِ روشِ سیم‌کشی یا زیرزمینی است.", "stars": 3},
+      {"kw": "\"support spacing / secured / fastening interval\"", "jump": "Rule 12-510/12-520/12-618 + Table 21", "why": "Within 300 mm of box then ≤1.5 m; Table 21 vertical raceways", "why_fa": "تا 300 mmِ باکس مهار کن، بعد هر ≤1.5 m؛ برای raceway عمودی Table 21.", "stars": 4},
+      {"kw": "\"NMSC clearance / heat pipe / chimney\"", "jump": "Rule 12-510", "why": "25 mm from heating pipe, 50 mm from masonry chimney", "why_fa": "25 mm از لولهٔ گرمایش، 50 mm از دودکشِ بنایی.", "stars": 3},
+      {"kw": "\"termination / lug / binding screw / largest conductor without lug\"", "jump": "Rule 12-118", "why": ">#10 needs a lug; #10 solid max under a screw; Belleville washer for Al", "why_fa": "بزرگ‌تر از #10 lug می‌خواهد؛ #10 مفتولی نهایتِ زیرِ پیچ؛ آلومینیوم واشرِ Belleville.", "stars": 3},
+      {"kw": "\"splices / joints in conduit\"", "jump": "Rule 12-912", "why": "No splices inside conduit — only in accessible boxes/fittings", "why_fa": "داخلِ لوله اتصال ممنوع — فقط در باکس/فیتینگِ قابل‌دسترس.", "stars": 3},
+      {"kw": "\"wireway / auxiliary gutter fill\"", "jump": "Rule 12-2100 + Table 10", "why": "Max 20% area, max 30 current-carrying conductors", "why_fa": "حداکثر 20% از سطح و حداکثر 30 هادیِ جریان‌دار.", "stars": 2},
+      {"kw": "\"cable tray clearance\"", "jump": "Rule 12-2202", "why": "300 mm above to ceiling/ducts; 150 mm at short obstructions", "why_fa": "300 mm فاصله از بالا تا سقف/داکت؛ 150 mm کنارِ موانعِ کوتاه.", "stars": 2},
+      {"kw": "\"conduit expansion / thermal movement\"", "jump": "Rule 12-1102 + Table 38", "why": "Expansion = coeff × length(m) × ΔT (ΔT spans below zero)", "why_fa": "انبساط = ضریب × طول (m) × ΔT (ΔT می‌تواند از زیرِ صفر شروع شود).", "stars": 2},
+      {"kw": "\"box set-back / front edge of box / concrete wall\"", "jump": "Rule 12-3018", "why": "≤6 mm set-back in non-combustible; flush in combustible", "why_fa": "فرورفتگی ≤6 mm در غیرقابل‌اشتعال؛ هم‌سطح در قابل‌اشتعال.", "stars": 2},
+      {"kw": "\"FCC / flat conductor cable / under-carpet\"", "jump": "Rule 12-806", "why": "Not in dwellings; 30 A max branch; carpet squares ≤750 mm", "why_fa": "در مسکونی مجاز نیست؛ مدار حداکثر 30 A؛ موکتِ مربعی ≤750 mm.", "stars": 2},
+      {"kw": "\"PV conductors in same raceway\"", "jump": "Rule 12-904", "why": "PV conductors must not share raceway with other systems", "why_fa": "هادی‌های PV نباید با سیستم‌های دیگر در یک raceway باشند.", "stars": 2},
+      {"kw": "\"EMT in wet location\"", "jump": "Rule 12-1402", "why": "Permitted with wet-rated fittings; EMT is NOT a conduit", "why_fa": "با فیتینگِ مخصوصِ محیطِ تر مجاز است؛ یادت باشد EMT یک conduit نیست.", "stars": 2},
+      {"kw": "\"neutral-supported cable span\"", "jump": "Rule 12-310", "why": "Max span between supports (verify 38 vs 40 m in 2024)", "why_fa": "بیشترین دهانهٔ بینِ ساپورت‌ها (مقدارِ 38 یا 40 m را در نسخهٔ 2024 چک کن).", "stars": 1}
     ]
   },
   {
@@ -127,20 +127,20 @@
     "qcount": 11,
     "importance": 3,
     "summary": "Fewer questions but high-value and predictable — the ground-fault-protection 'both conditions' rule and basic overcurrent sizing recur almost every exam. Most are one-step rule lookups, so these are easy marks if you know the two thresholds cold.",
-    "summary_fa": "سوالات کمتر اما باارزش و قابل پیش‌بینی — قانون 'هر دو شرط' محافظت در برابر خطای زمین (GFP) و سایزبندی پایه اضافه‌جریان تقریباً در هر آزمون تکرار می‌شوند. اغلب یک‌مرحله‌ای و جستجوی قانون هستند، پس اگر دو آستانه را خوب بدانید نمره‌های آسانی‌اند.",
+    "summary_fa": "اینجا سوال کمتر است اما هرکدام پرارزش و قابل‌پیش‌بینی‌اند — قانونِ «هر دو شرط» برای حفاظتِ اتصال‌زمینِ خطا (GFP) و سایزبندیِ پایهٔ اضافه‌جریان تقریباً در هر آزمون می‌آیند. بیشترشان یک‌مرحله‌ای و فقط جستجوی قانون‌اند؛ یعنی اگر آن دو آستانه را مثلِ کفِ دستت بلد باشی، اینها نمره‌های مفتیِ تو هستند.",
     "keyTables": [
-      {"ref": "Table 13", "stars": 4, "what": "Standard overcurrent device ratings", "what_fa": "رتبه‌های استاندارد دستگاه اضافه‌جریان (Table 13)", "use": "Pick the standard breaker/fuse size at or below conductor ampacity", "use_fa": "سایز استاندارد بریکر/فیوز برابر یا کمتر از ظرفیت جریان هادی را انتخاب کنید"},
-      {"ref": "Table 2", "stars": 3, "what": "Conductor ampacity (Cu in raceway)", "what_fa": "ظرفیت جریان هادی (مس در raceway) (Table 2)", "use": "Get ampacity first, then size the OCPD to it (14-104)", "use_fa": "ابتدا ظرفیت جریان را بگیرید، سپس OCPD را بر اساس آن سایز کنید (14-104)"}
+      {"ref": "Table 13", "stars": 4, "what": "Standard overcurrent device ratings", "what_fa": "ردهٔ استانداردِ دستگاه‌های اضافه‌جریان، یعنی همان سایزهای رسمیِ بریکر/فیوز (Table 13)", "use": "Pick the standard breaker/fuse size at or below conductor ampacity", "use_fa": "از این جدول سایزِ استانداردِ بریکر/فیوزی را بردار که برابر یا کمتر از ظرفیتِ جریانِ هادی باشد."},
+      {"ref": "Table 2", "stars": 3, "what": "Conductor ampacity (Cu in raceway)", "what_fa": "ظرفیتِ جریانِ هادی (مس داخلِ raceway) (Table 2)", "use": "Get ampacity first, then size the OCPD to it (14-104)", "use_fa": "اول ظرفیتِ جریان را از اینجا دربیاور، بعد OCPD را بر اساسِ همان سایز کن (14-104) — ترتیبش مهم است."}
     ],
     "keyRules": [
-      {"ref": "Rule 14-102", "stars": 5, "what": "Ground-fault protection of equipment", "what_fa": "محافظت تجهیزات در برابر خطای زمین (Rule 14-102)", "note": "Required ONLY if BOTH ≥1000 A AND >150 V to ground; must clear ≥3000 A within 1 s", "note_fa": "فقط زمانی الزامی که هر دو شرط: ≥1000 A و >150 V نسبت به زمین؛ باید ≥3000 A را ظرف 1 s قطع کند"},
-      {"ref": "Rule 14-104", "stars": 5, "what": "Overcurrent device rating for conductors", "what_fa": "رتبه دستگاه اضافه‌جریان برای هادی‌ها (Rule 14-104)", "note": "≤ conductor ampacity; if no standard size matches, next LOWER standard (with permitted exception to next higher)", "note_fa": "≤ ظرفیت جریان هادی؛ اگر سایز استانداردی منطبق نبود، سایز استاندارد پایین‌تر بعدی (با استثنای مجاز به سایز بالاتر)"},
-      {"ref": "Rule 14-100", "stars": 3, "what": "Overcurrent protection required for each conductor", "what_fa": "الزام محافظت اضافه‌جریان برای هر هادی (Rule 14-100)", "note": "Foundation rule — every ungrounded conductor protected", "note_fa": "قانون پایه — هر هادی بدون اتصال زمین محافظت می‌شود"},
-      {"ref": "Rule 14-012", "stars": 3, "what": "Interrupting / withstand rating", "what_fa": "رتبه قطع / تحمل (Rule 14-012)", "note": "Device must safely interrupt available fault current", "note_fa": "دستگاه باید جریان خطای موجود را به‌طور ایمن قطع کند"},
-      {"ref": "Rule 14-606", "stars": 3, "what": "Breaker interrupting rating", "what_fa": "رتبه قطع بریکر (Rule 14-606)", "note": "Default 10 000 A symmetrical unless marked higher", "note_fa": "پیش‌فرض 10 000 A متقارن مگر اینکه بالاتر علامت‌گذاری شده باشد"},
-      {"ref": "Rule 14-200", "stars": 2, "what": "Plug fuses", "what_fa": "فیوزهای plug (Rule 14-200)", "note": "Max 30 A (Type T / Type S)", "note_fa": "حداکثر 30 A (Type T / Type S)"},
-      {"ref": "Rule 14-212", "stars": 2, "what": "Fuse type for cyclic loads (heating)", "what_fa": "نوع فیوز برای بارهای چرخه‌ای (گرمایش) (Rule 14-212)", "note": "Time-delay / HRC type", "note_fa": "نوع time-delay / HRC"},
-      {"ref": "Rule 14-500/14-510", "stars": 2, "what": "Switch ratings", "what_fa": "رتبه‌های کلید (Rule 14-500/14-510)", "note": "Tungsten ('T') rated for incandescent; knife switch limits", "note_fa": "رتبه Tungsten ('T') برای لامپ رشته‌ای؛ محدودیت‌های knife switch"}
+      {"ref": "Rule 14-102", "stars": 5, "what": "Ground-fault protection of equipment", "what_fa": "حفاظتِ اتصال‌زمینِ خطا برای تجهیزات (Rule 14-102)", "note": "Required ONLY if BOTH ≥1000 A AND >150 V to ground; must clear ≥3000 A within 1 s", "note_fa": "فقط وقتی الزامی است که هر دو شرط با هم باشند: ≥1000 A و >150 V نسبت به زمین؛ و باید جریانِ ≥3000 A را ظرفِ 1 s قطع کند."},
+      {"ref": "Rule 14-104", "stars": 5, "what": "Overcurrent device rating for conductors", "what_fa": "ردهٔ دستگاهِ اضافه‌جریان برای هادی‌ها (Rule 14-104)", "note": "≤ conductor ampacity; if no standard size matches, next LOWER standard (with permitted exception to next higher)", "note_fa": "باید ≤ ظرفیتِ جریانِ هادی باشد؛ اگر سایزِ استاندارد دقیقاً جور نشد، برو سایزِ استانداردِ پایین‌تر (و در حالتِ استثناییِ مجاز، سایزِ بالاتر)."},
+      {"ref": "Rule 14-100", "stars": 3, "what": "Overcurrent protection required for each conductor", "what_fa": "الزامِ حفاظتِ اضافه‌جریان برای هر هادی (Rule 14-100)", "note": "Foundation rule — every ungrounded conductor protected", "note_fa": "قانونِ پایه است — هر هادیِ بدونِ اتصال‌زمین باید حفاظت شود، استثنا ندارد."},
+      {"ref": "Rule 14-012", "stars": 3, "what": "Interrupting / withstand rating", "what_fa": "ردهٔ قطع و تحملِ جریان (Rule 14-012)", "note": "Device must safely interrupt available fault current", "note_fa": "دستگاه باید بتواند جریانِ خطایِ موجودِ آن نقطه را سالم و بی‌خطر قطع کند."},
+      {"ref": "Rule 14-606", "stars": 3, "what": "Breaker interrupting rating", "what_fa": "ردهٔ قطعِ بریکر (Rule 14-606)", "note": "Default 10 000 A symmetrical unless marked higher", "note_fa": "پیش‌فرضش 10 000 A متقارن است، مگر روی خودش عددِ بالاتری زده باشند."},
+      {"ref": "Rule 14-200", "stars": 2, "what": "Plug fuses", "what_fa": "فیوزهای plug (Rule 14-200)", "note": "Max 30 A (Type T / Type S)", "note_fa": "سقفش 30 A است (Type T / Type S)."},
+      {"ref": "Rule 14-212", "stars": 2, "what": "Fuse type for cyclic loads (heating)", "what_fa": "نوعِ فیوز برای بارهای چرخه‌ای مثلِ گرمایش (Rule 14-212)", "note": "Time-delay / HRC type", "note_fa": "از نوعِ تأخیری (time-delay) یا HRC، تا با جریانِ رفت‌وبرگشتیِ بار نسوزد."},
+      {"ref": "Rule 14-500/14-510", "stars": 2, "what": "Switch ratings", "what_fa": "ردهٔ کلیدها (Rule 14-500/14-510)", "note": "Tungsten ('T') rated for incandescent; knife switch limits", "note_fa": "کلیدِ ردهٔ Tungsten («T») برای لامپِ رشته‌ای؛ و محدودیت‌های knife switch را هم همین‌جا ببین."}
     ],
     "mustKnow": [
       "GFP rule (14-102): equipment ground-fault protection required ONLY when BOTH conditions are true — service rated 1000 A or more AND more than 150 V to ground. 208Y/120 V (120 V to ground) never qualifies; 600/347 V qualifies only at ≥1000 A.",
@@ -150,11 +150,11 @@
       "Breaker default interrupting rating = 10 000 A symmetrical unless specifically marked otherwise (14-606); plug fuse max = 30 A (14-200)."
     ],
     "mustKnow_fa": [
-      "قانون GFP (14-102): محافظت تجهیزات در برابر خطای زمین فقط زمانی الزامی است که هر دو شرط برقرار باشد — سرویس با رتبه 1000 A یا بیشتر و بیش از 150 V نسبت به زمین. سیستم 208Y/120 V (120 V نسبت به زمین) هرگز مشمول نمی‌شود؛ 600/347 V فقط در ≥1000 A مشمول است.",
-      "زمان قطع GFP: جریان خطای زمین برابر 3000 A یا بیشتر باید ظرف حداکثر 1 second قطع شود (14-102).",
-      "اضافه‌جریان (overcurrent) در برابر اضافه‌بار (overload): اضافه‌جریان (فیوز/بریکر، Section 14) از هادی‌ها محافظت می‌کند؛ اضافه‌بار (حرارتی، Section 28) از موتور محافظت می‌کند — پرتکرارترین جفت اشتباه‌گرفته‌شده در آزمون.",
-      "سایزبندی OCPD (14-104): رتبه دستگاه ≤ ظرفیت جریان هادی؛ جایی که ظرفیت با یک سایز استاندارد برابر نیست، سایز استاندارد پایین‌تر بعدی از Table 13 را به کار ببرید (استثنای مجاز برای بارهای غیرپیوسته ≤ رتبه‌های مشخص، سایز بالاتر را اجازه می‌دهد).",
-      "رتبه قطع پیش‌فرض بریکر = 10 000 A متقارن مگر اینکه صراحتاً غیر از این علامت‌گذاری شده باشد (14-606)؛ حداکثر فیوز plug = 30 A (14-200)."
+      "قانونِ GFP (14-102) را این‌طور قفل کن: حفاظتِ اتصال‌زمینِ خطا فقط وقتی الزامی است که هر دو شرط با هم برقرار باشند — سرویسِ 1000 A یا بیشتر، و بیش از 150 V نسبت به زمین. سیستمِ 208Y/120 V (که 120 V نسبت به زمین است) هیچ‌وقت مشمول نمی‌شود؛ 600/347 V هم فقط وقتی به ≥1000 A برسد مشمول می‌شود.",
+      "زمانِ قطعِ GFP: هر جریانِ خطای زمینِ 3000 A یا بیشتر باید ظرفِ حداکثر 1 second قطع شود (14-102) — این عدد را همان‌طور حفظ کن.",
+      "اضافه‌جریان (overcurrent) در برابر اضافه‌بار (overload) را با هم اشتباه نگیر: اضافه‌جریان (فیوز/بریکر، Section 14) از هادی محافظت می‌کند؛ اضافه‌بار (حرارتی، Section 28) از موتور. این پرتکرارترین جفتِ اشتباهیِ کلِ آزمون است.",
+      "سایزبندیِ OCPD (14-104): ردهٔ دستگاه ≤ ظرفیتِ جریانِ هادی؛ هر جا ظرفیت دقیقاً به سایزِ استاندارد نخورد، سایزِ استانداردِ پایین‌ترِ بعدی از Table 13 را بردار (یک استثنای مجاز برای بارهای غیرپیوستهٔ زیرِ ردهٔ مشخص، اجازهٔ رفتن به سایزِ بالاتر را می‌دهد).",
+      "ردهٔ قطعِ پیش‌فرضِ بریکر = 10 000 A متقارن، مگر روی خودش صراحتاً عددِ دیگری زده باشند (14-606)؛ و سقفِ فیوزِ plug هم 30 A است (14-200)."
     ],
     "traps": [
       "GFP: answering 'Yes' when only ONE of the two conditions is met — high current at low voltage (2000 A, 208 V) or high voltage at low current (800 A, 347 V) both = NO.",
@@ -164,38 +164,38 @@
       "Treating 150 V to ground as exclusive — '>150 V' means 347 V qualifies but 150 V itself does not."
     ],
     "traps_fa": [
-      "GFP: پاسخ 'بله' وقتی فقط یکی از دو شرط برقرار است — جریان بالا با ولتاژ پایین (2000 A، 208 V) یا ولتاژ بالا با جریان پایین (800 A، 347 V) هر دو = خیر.",
-      "اشتباه گرفتن اضافه‌جریان (محافظ سیم) با اضافه‌بار (محافظ موتور) — بخش‌ها و مبناهای سایزبندی متفاوتی دارند.",
-      "سایز کردن بریکر بر اساس بار به جای ظرفیت جریان هادی، یا گرد کردن به بالا به سایز استاندارد بعدی وقتی 14-104 سایز پایین‌تر می‌خواهد.",
-      "فرض رتبه قطع بالاتر از پیش‌فرض 10 000 A فقط به این دلیل که ولتاژ/frame size بزرگ است.",
-      "تلقی 150 V نسبت به زمین به صورت شامل — '>150 V' یعنی 347 V مشمول است اما خود 150 V مشمول نیست."
+      "GFP: «بله» گفتن وقتی فقط یکی از دو شرط برقرار است — جریانِ بالا با ولتاژِ پایین (2000 A، 208 V) یا ولتاژِ بالا با جریانِ پایین (800 A، 347 V) هر دو جوابشان «خیر» است.",
+      "اضافه‌جریان (محافظِ سیم) را با اضافه‌بار (محافظِ موتور) قاطی کردن — اینها در دو Section جدا و با دو مبنای سایزبندیِ متفاوت‌اند.",
+      "بریکر را روی بار سایز کردن به جای ظرفیتِ جریانِ هادی، یا گرد کردن به بالا (سایزِ بعدی) در حالی که 14-104 سایزِ پایین‌تر را می‌خواهد.",
+      "فرضِ ردهٔ قطعِ بالاتر از پیش‌فرضِ 10 000 A، فقط چون ولتاژ یا frame size بزرگ به نظر می‌رسد.",
+      "150 V نسبت به زمین را شامل دانستن — «>150 V» یعنی 347 V مشمول است، ولی خودِ 150 V مشمول نیست؛ علامتِ «بزرگ‌تر از» را دست‌کم نگیر."
     ],
     "mnemonic": "GFP needs the GRAND SLAM: 1000 A AND 150 V — BOTH bases or you're OUT (no GFP).",
-    "mnemonic_fa": "GFP به یک GRAND SLAM نیاز دارد: 1000 A و 150 V — هر دو پایه وگرنه بازنده‌اید (بدون GFP).",
+    "mnemonic_fa": "GFP مثلِ GRAND SLAM است: هم 1000 A، هم 150 V — باید هر دو پایه را با هم بزنی، وگرنه بازی تمام است (GFP لازم نیست).",
     "method": [
       "Ground-fault protection: check BOTH gates — is it ≥1000 A? AND is it >150 V to ground? Only 'yes' to both → GFP required. Either 'no' → not required.",
       "Conductor overcurrent: (1) Table 2/4 → conductor ampacity; (2) Rule 14-104 → set OCPD ≤ that ampacity; (3) Table 13 → nearest standard size (next lower unless exception applies).",
       "Device rating questions (plug fuse, knife switch, interrupting rating): straight rule lookup — go to 14-200 / 14-510 / 14-606 and read the limit."
     ],
     "method_fa": [
-      "محافظت در برابر خطای زمین: هر دو دروازه را بررسی کنید — آیا ≥1000 A است؟ و آیا >150 V نسبت به زمین است؟ فقط 'بله' به هر دو ← GFP الزامی. هر 'خیر' ← الزامی نیست.",
-      "اضافه‌جریان هادی: (1) Table 2/4 ← ظرفیت جریان هادی؛ (2) Rule 14-104 ← OCPD را ≤ آن ظرفیت تنظیم کنید؛ (3) Table 13 ← نزدیک‌ترین سایز استاندارد (پایین‌تر بعدی مگر استثنا اعمال شود).",
-      "سوالات رتبه دستگاه (فیوز plug، knife switch، رتبه قطع): جستجوی مستقیم قانون — به 14-200 / 14-510 / 14-606 بروید و حد را بخوانید."
+      "حفاظتِ اتصال‌زمینِ خطا: دو دروازه را پشتِ‌سرِ هم چک کن — اول آیا ≥1000 A است؟ بعد آیا >150 V نسبت به زمین است؟ فقط اگر به هر دو «بله» گفتی ← GFP الزامی. کافی است یکی «خیر» شود ← لازم نیست.",
+      "اضافه‌جریانِ هادی را سه‌قدمی برو: (1) از Table 2/4 ظرفیتِ جریانِ هادی را بگیر؛ (2) با Rule 14-104 رده OCPD را ≤ همان ظرفیت بگذار؛ (3) از Table 13 نزدیک‌ترین سایزِ استاندارد را بردار (پایین‌ترِ بعدی، مگر استثنا اعمال شود).",
+      "سوال‌های ردهٔ دستگاه (فیوزِ plug، knife switch، ردهٔ قطع): اینها فقط جستجوی مستقیمِ قانون‌اند — برو 14-200 / 14-510 / 14-606 و عددِ حد را بخوان، تمام."
     ],
     "examples": ["S14-001", "S14-005", "S14-007", "S14-009", "S14-011"],
     "keywords": [
-      {"kw": "\"is ground-fault protection required / GFP service\"", "jump": "Rule 14-102", "why": "ONLY if BOTH ≥1000 A AND >150 V to ground", "why_fa": "فقط اگر هر دو: ≥1000 A و >150 V نسبت به زمین", "stars": 5},
-      {"kw": "\"overcurrent / breaker or fuse size for a conductor\"", "jump": "Rule 14-104 + Table 13", "why": "≤ conductor ampacity; next LOWER standard size", "why_fa": "≤ ظرفیت جریان هادی؛ سایز استاندارد پایین‌تر بعدی", "stars": 5},
-      {"kw": "\"ground-fault clearing time / 3000 A\"", "jump": "Rule 14-102", "why": "≥3000 A fault cleared within max 1 second", "why_fa": "خطای ≥3000 A ظرف حداکثر 1 second قطع شود", "stars": 4},
-      {"kw": "\"overcurrent vs overload / what protects the wire\"", "jump": "Rule 14-100 (vs Section 28)", "why": "Overcurrent protects conductors; overload protects the motor", "why_fa": "اضافه‌جریان از هادی‌ها محافظت می‌کند؛ اضافه‌بار از موتور", "stars": 4},
-      {"kw": "\"overcurrent protection required per conductor\"", "jump": "Rule 14-100", "why": "Every ungrounded conductor must be protected", "why_fa": "هر هادی بدون اتصال زمین باید محافظت شود", "stars": 3},
-      {"kw": "\"interrupting rating / available fault current / withstand\"", "jump": "Rule 14-012 + 14-606", "why": "Default 10 000 A symmetrical unless marked higher", "why_fa": "پیش‌فرض 10 000 A متقارن مگر بالاتر علامت‌گذاری شده باشد", "stars": 3},
-      {"kw": "\"maximum breaker for a load / non-continuous\"", "jump": "Rule 14-104 + Table 2 + Table 13", "why": "Size to conductor ampacity, then standard size", "why_fa": "بر اساس ظرفیت جریان هادی سایز کنید، سپس سایز استاندارد", "stars": 3},
-      {"kw": "\"plug fuse maximum rating\"", "jump": "Rule 14-200", "why": "Plug fuse max = 30 A (Type T / Type S)", "why_fa": "حداکثر فیوز plug = 30 A (Type T / Type S)", "stars": 2},
-      {"kw": "\"fuse type for heating / cyclic load\"", "jump": "Rule 14-212", "why": "Time-delay / HRC-type fuse (Type D or P)", "why_fa": "فیوز نوع time-delay / HRC (Type D یا P)", "stars": 2},
-      {"kw": "\"knife switch rating / general-use switch\"", "jump": "Rule 14-510", "why": "Knife switch max ~750 V / 600 A (verify)", "why_fa": "حداکثر knife switch حدود 750 V / 600 A (بررسی شود)", "stars": 2},
-      {"kw": "\"switch rating for incandescent / tungsten / T-rated\"", "jump": "Rule 14-500", "why": "Tungsten ('T') rated for high lamp inrush", "why_fa": "رتبه Tungsten ('T') برای جریان هجومی بالای لامپ", "stars": 2},
-      {"kw": "\"overcurrent for equipment wire / small conductor\"", "jump": "Rule 14-104 + Table 13", "why": "#16 equipment wire OCP per Table 13 limits", "why_fa": "محافظت اضافه‌جریان سیم تجهیزات #16 طبق حدود Table 13", "stars": 2}
+      {"kw": "\"is ground-fault protection required / GFP service\"", "jump": "Rule 14-102", "why": "ONLY if BOTH ≥1000 A AND >150 V to ground", "why_fa": "فقط اگر هر دو با هم: ≥1000 A و >150 V نسبت به زمین.", "stars": 5},
+      {"kw": "\"overcurrent / breaker or fuse size for a conductor\"", "jump": "Rule 14-104 + Table 13", "why": "≤ conductor ampacity; next LOWER standard size", "why_fa": "≤ ظرفیتِ جریانِ هادی؛ بعد سایزِ استانداردِ پایین‌ترِ بعدی.", "stars": 5},
+      {"kw": "\"ground-fault clearing time / 3000 A\"", "jump": "Rule 14-102", "why": "≥3000 A fault cleared within max 1 second", "why_fa": "خطای ≥3000 A باید ظرفِ حداکثر 1 second قطع شود.", "stars": 4},
+      {"kw": "\"overcurrent vs overload / what protects the wire\"", "jump": "Rule 14-100 (vs Section 28)", "why": "Overcurrent protects conductors; overload protects the motor", "why_fa": "اضافه‌جریان از هادی محافظت می‌کند، اضافه‌بار از موتور — قاطی نکن.", "stars": 4},
+      {"kw": "\"overcurrent protection required per conductor\"", "jump": "Rule 14-100", "why": "Every ungrounded conductor must be protected", "why_fa": "هر هادیِ بدونِ اتصال‌زمین باید حفاظت شود.", "stars": 3},
+      {"kw": "\"interrupting rating / available fault current / withstand\"", "jump": "Rule 14-012 + 14-606", "why": "Default 10 000 A symmetrical unless marked higher", "why_fa": "پیش‌فرض 10 000 A متقارن، مگر عددِ بالاتری رویش زده باشند.", "stars": 3},
+      {"kw": "\"maximum breaker for a load / non-continuous\"", "jump": "Rule 14-104 + Table 2 + Table 13", "why": "Size to conductor ampacity, then standard size", "why_fa": "اول روی ظرفیتِ جریانِ هادی سایز کن، بعد سایزِ استاندارد.", "stars": 3},
+      {"kw": "\"plug fuse maximum rating\"", "jump": "Rule 14-200", "why": "Plug fuse max = 30 A (Type T / Type S)", "why_fa": "سقفِ فیوزِ plug = 30 A (Type T / Type S).", "stars": 2},
+      {"kw": "\"fuse type for heating / cyclic load\"", "jump": "Rule 14-212", "why": "Time-delay / HRC-type fuse (Type D or P)", "why_fa": "فیوزِ تأخیری (time-delay) یا HRC (Type D یا P).", "stars": 2},
+      {"kw": "\"knife switch rating / general-use switch\"", "jump": "Rule 14-510", "why": "Knife switch max ~750 V / 600 A (verify)", "why_fa": "سقفِ knife switch حدودِ 750 V / 600 A (چک کن).", "stars": 2},
+      {"kw": "\"switch rating for incandescent / tungsten / T-rated\"", "jump": "Rule 14-500", "why": "Tungsten ('T') rated for high lamp inrush", "why_fa": "ردهٔ Tungsten («T») برای جریانِ هجومیِ بالای لامپِ رشته‌ای.", "stars": 2},
+      {"kw": "\"overcurrent for equipment wire / small conductor\"", "jump": "Rule 14-104 + Table 13", "why": "#16 equipment wire OCP per Table 13 limits", "why_fa": "حفاظتِ اضافه‌جریانِ سیمِ تجهیزاتِ #16 طبقِ حدودِ Table 13.", "stars": 2}
     ]
   }
 ]
