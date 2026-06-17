@@ -132,7 +132,7 @@
       "answer_key": "D",
       "references": [],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S28-012",
@@ -173,11 +173,11 @@
       "answer": "Feeder ampacity ≈ 189.6 A; maximum group time-delay fuse = 250 A.",
       "references": ["Rule 28-108 (feeder ampacity)", "Rule 28-204 (feeder OCPD)", "Table 27 (duty-cycle %)", "Table 29", "Table 44"],
       "solution_steps": [
-        "Table 44 FLCs: 100 hp = 124 A, 50 hp = 65 A.",
-        "Apply duty-cycle factors (Table 27): 100 hp intermittent 60 min = 90% → 124 × 0.90 = 111.6 A; 50 hp short-time 15 min = 120% → 65 × 1.20 = 78 A.",
-        "Feeder ampacity = 125% of largest motor + sum of the rest = (111.6 × 1.25 is built per Rule 28-108: largest motor at its branch value 124 × 1.25 = 155 A) + other motor 78 A... source states answer = 189.6 A; reconcile largest-motor treatment with class method.",
-        "Feeder time-delay fuse = OCPD of largest motor + FLC of remaining motors, rounded to next standard ≤ result → 250 A.",
-        "Stated answer: 189.6 A feeder, 250 A fuse."
+        "Table 44 FLCs (460 V, 3-phase): 100 hp = 124 A, 50 hp = 65 A.",
+        "Duty-cycle factors (Table 27): 100 hp intermittent 60 min = 90% → 124 × 0.90 = 111.6 A; 50 hp short-time 15 min = 120% → 65 × 1.20 = 78 A.",
+        "Rule 28-108 feeder ampacity = 125% of the largest motor's (duty-adjusted) current + the duty-adjusted currents of the remaining motors = (111.6 × 1.25) + 78 = 139.5 + 78 = 217.5 A. The source-stated 189.6 A uses a different largest-motor treatment.",
+        "Rule 28-204 feeder OCPD = branch OCPD of the largest motor + the FLCs of the remaining motors, to the next standard size not exceeding the total → 250 A.",
+        "Feeder ampacity and the 189.6 A figure could not be reconciled from the source; method shown, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -186,13 +186,13 @@
       "id": "S28-015",
       "section": 28, "block": "D", "topic": "feeder-and-fuse-group", "type": "calculation",
       "question": "Determine the minimum size needed for the feeder conductors and the maximum size of time-delay fuse that may be installed for the following group of 460 V, 3-phase, SCIM: one 5 HP motor (continuous duty) and four 1-1/2 HP motors (continuous duty).",
-      "answer": "Feeder ampacity ≈ 19.9 A; maximum group time-delay fuse = 20 A.",
+      "answer": "Feeder ampacity ≈ 18.9 A (source states 19.9 A); maximum group time-delay fuse = 20 A.",
       "references": ["Rule 28-108 (feeder ampacity)", "Rule 28-204 (feeder OCPD)", "Table 44"],
       "solution_steps": [
         "Table 44 FLCs (460 V, 3-phase): 5 hp = 6.8 A, 1-1/2 hp = 2.6 A each.",
-        "Feeder ampacity = 125% of largest motor FLC + sum of other FLCs = (6.8 × 1.25) + (4 × 2.6) = 8.5 + 10.4 = 18.9 A; source rounds to ≈ 19.9 A (verify FLC values used).",
-        "Feeder time-delay fuse = branch fuse of largest motor + FLC of remaining = next standard size ≤ total → 20 A.",
-        "Stated answer: 19.9 A feeder, 20 A fuse."
+        "Rule 28-108 feeder ampacity = 125% of largest motor FLC + sum of other FLCs = (6.8 × 1.25) + (4 × 2.6) = 8.5 + 10.4 = 18.9 A.",
+        "Rule 28-204 feeder OCPD = largest-motor branch fuse + remaining FLCs, to the next standard size not exceeding total → 20 A.",
+        "Calculated 18.9 A vs source-stated 19.9 A differ slightly (FLC rounding); fuse = 20 A. Flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -228,10 +228,10 @@
       "answer_key": "B",
       "references": ["Rule 28-300 (refrigeration/compressor)", "Table 29"],
       "solution_steps": [
-        "Compressor marked FLA (rated-load current) = 20 A.",
-        "Time-delay fuse max for a compressor branch = 175% × marked current = 20 × 1.75 = 35 A (next standard ≤). If the larger 225%/permitted value is used: 20 × 3 = 60 A for a non-time-delay basis.",
-        "Marked key = 60 A; reconcile with the compressor OCPD multiplier used in class notes.",
-        "Answer as marked: 60 A."
+        "Compressor marked rated-load current (FLA) = 20 A; branch OCPD is sized on this marked current (Rule 28-300 series).",
+        "Time-delay fuse at 175% = 20 × 1.75 = 35 A → next standard 35 A; at the higher permitted multiplier (~300%) = 60 A.",
+        "The marked key (60 A, B) implies the ~300% multiplier was applied; the time-delay-fuse 175% result would instead be 35 A.",
+        "The applicable compressor OCPD multiplier could not be confirmed; key retained, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -316,13 +316,14 @@
       "section": 28, "block": "D", "topic": "max-time-delay-fuse", "type": "calculation",
       "question": "What is the maximum size of time-delay fuse permitted for a three-phase 100 HP, 230 V SCIM?",
       "options": ["A) 325 A", "B) 400 A", "C) 450 A", "D) 500 A"],
-      "answer": "450 A (FLC 248 A × 1.75 = 434 A; next standard size not exceeding = 450 A).",
+      "answer": "Method gives 400 A (FLC ~248 A × 1.75 = 434 A → next standard NOT exceeding = 400 A); marked key C (450 A) requires the won't-start allowance",
       "answer_key": "C",
       "references": ["Rule 28-200", "Table 29 (time-delay fuse 175%)", "Table 44"],
       "solution_steps": [
-        "Table 44: 100 hp, 230 V, 3-phase FLC = 248 A.",
+        "Table 44: 100 hp, 230 V, 3-phase FLC ≈ 248 A.",
         "Time-delay fuse max = 175%: 248 × 1.75 = 434 A.",
-        "Standard fuse sizes: next size up is permitted when 175% does not correspond to a standard → 450 A → answer C."
+        "Default rule: use the next standard size NOT exceeding the calculated value → 400 A (B). The next-HIGHER size (450 A) is only permitted where the motor will not start, which this question does not state.",
+        "So the method points to 400 A, not the marked 450 A (C). FLC value and the marked key both flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -332,12 +333,13 @@
       "section": 28, "block": "D", "topic": "dc-motor-breaker", "type": "calculation",
       "question": "What is the maximum size of circuit breaker for a DC motor whose rating is 50 HP, 500 V?",
       "options": ["A) 175 A", "B) 125 A", "C) 100 A", "D) 110 A"],
-      "answer": "175 A (DC motor FLC from Table 46 × inverse-time breaker percentage from Table 29).",
+      "answer": "175 A (DC motor FLC from Table D2 × inverse-time breaker percentage from Table 29).",
       "answer_key": "A",
-      "references": ["Rule 28-200", "Table 29", "Table 46 (DC motor FLC)"],
+      "references": ["Rule 28-200", "Table 29", "Table D2 (DC motor FLC, Appendix D)"],
       "solution_steps": [
-        "Table 46: 50 hp, 500 V DC motor FLC ≈ 76 A.",
-        "Inverse-time breaker max for a DC motor (Table 29) = 250%: 76 × 2.5 = 190 A → next standard ≤ = 175 A → answer A."
+        "DC motor FLC comes from Table D2 (Appendix D), not the 3-phase Table 44. 50 hp, 500 V DC FLC ≈ 76 A.",
+        "Inverse-time breaker max for a DC motor (Table 29) = 250%: 76 × 2.5 = 190 A → next standard not exceeding = 175 A → answer A.",
+        "The exact Table D2 FLC could not be confirmed; method shown, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -390,13 +392,14 @@
       "section": 28, "block": "D", "topic": "feeder-group", "type": "calculation",
       "question": "Two continuous-duty 575 V, 3-phase induction motors, 15 HP and 20 HP respectively, are required to start together under no-load condition. What is the minimum ampacity required for the feeder conductor?",
       "options": ["A) 48.75 A", "B) 44.5 A", "C) 49 A", "D) 22 A"],
-      "answer": "48.75 A (125% of the largest motor FLC plus the FLC of the other motor: 20 hp FLC 21 A × 1.25 = 26.25 A, + 15 hp FLC 17 A... reconcile FLC; result ≈ 48.75 A).",
+      "answer": "Feeder = 125% of largest motor FLC + other motor FLC (marked key A = 48.75 A); exact value depends on Table 44 575 V FLCs",
       "answer_key": "A",
       "references": ["Rule 28-108", "Table 44 (575 V FLC)"],
       "solution_steps": [
-        "Table 44 (575 V, 3-phase): 20 hp = 22 A, 15 hp = 17 A (verify against class table).",
-        "Feeder ampacity = 125% of largest motor + sum of remaining motor FLCs = (22 × 1.25) + 17 = 27.5 + 17 = 44.5 A; using slightly different FLCs gives the marked 48.75 A.",
-        "Marked answer = 48.75 A; FLC values flagged for review."
+        "Rule 28-108 feeder ampacity = 125% of the largest motor FLC + the FLCs of the remaining motors (starting together under no load does not change conductor sizing).",
+        "With Table 44 (575 V) values of 20 hp ≈ 22 A and 15 hp ≈ 17 A: (22 × 1.25) + 17 = 44.5 A.",
+        "The marked key (48.75 A, A) implies different FLC values (e.g. 25 A largest: 25 × 1.25 + 17.5 = 48.75 A).",
+        "The 575 V Table 44 FLCs could not be confirmed; method shown, key not trusted, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -406,13 +409,14 @@
       "section": 28, "block": "D", "topic": "overload-sizing", "type": "calculation",
       "question": "What is the maximum calculated overload size for a 2 HP, 208 V, 60 Hz single-phase AC induction motor?",
       "options": ["A) 17.21 A", "B) 15.18 A", "C) 13.76 A", "D) 11.48 A"],
-      "answer": "15.18 A (nameplate FLA 12 A × duty factor 1.1 × 1.15 = 15.18 A).",
+      "answer": "15.18 A (source: nameplate FLA 12 A × 1.1 × 1.15 = 15.18 A).",
       "answer_key": "B",
-      "references": ["Rule 28-306", "Table 45"],
+      "references": ["Rule 28-306"],
       "solution_steps": [
-        "Same as S28-008: 2 hp, 208 V single-phase nameplate FLA = 12 A.",
-        "12 × 1.1 × 1.15 = 15.18 A → answer B.",
-        "Overload is sized from nameplate FLA, NOT the branch-circuit FLC."
+        "Same scenario as S28-008 (2 hp, 208 V single-phase, nameplate FLA 12 A).",
+        "Overload is sized from NAMEPLATE FLA (Rule 28-306), not the Table 44/45 FLC.",
+        "12 × 1.1 × 1.15 = 15.18 A → answer B (option B here; closest to 12 × 1.25 = 15 A).",
+        "The 1.1 factor and 12 A nameplate are source-supplied; flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -422,12 +426,13 @@
       "section": 28, "block": "D", "topic": "dc-motor-breaker", "type": "calculation",
       "question": "What is the maximum size circuit breaker required to protect a 5 HP, 120 V DC motor?",
       "options": ["A) 60 A", "B) 70 A", "C) 100 A", "D) 125 A"],
-      "answer": "100 A (DC FLC from Table 46 × inverse-time breaker % from Table 29).",
+      "answer": "100 A (DC FLC from Table D2 × inverse-time breaker % from Table 29).",
       "answer_key": "C",
-      "references": ["Rule 28-200", "Table 29", "Table 46 (DC motor FLC)"],
+      "references": ["Rule 28-200", "Table 29", "Table D2 (DC motor FLC, Appendix D)"],
       "solution_steps": [
-        "Table 46: 5 hp, 120 V DC motor FLC = 40 A.",
-        "Inverse-time breaker max (Table 29) = 250%: 40 × 2.5 = 100 A → answer C."
+        "DC motor FLC comes from Table D2 (Appendix D). 5 hp, 120 V DC FLC ≈ 40 A.",
+        "Inverse-time breaker max (Table 29) = 250%: 40 × 2.5 = 100 A → answer C.",
+        "The exact Table D2 FLC could not be confirmed; method shown, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true

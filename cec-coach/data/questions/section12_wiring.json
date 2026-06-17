@@ -753,7 +753,9 @@
       "question": "Are joints or splices allowed in conductors or cables within rigid metal conduit?",
       "answer": "No",
       "references": ["Rule 12-912"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-912: joints and splices are not permitted within a conduit/tubing run — they must be made only in accessible boxes or fittings with removable covers."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -765,8 +767,10 @@
       "topic": "pv-raceway",
       "question": "Can the conductors of a PV System (Photovoltaic system) be placed in the same raceway with conductors of other systems?",
       "answer": "No",
-      "references": ["Rule 12-904 2)"],
-      "solution_steps": [],
+      "references": ["Rule 12-904"],
+      "solution_steps": [
+        "Rule 12-904: PV system conductors must not occupy the same raceway, cable, box, or enclosure as conductors of other (non-PV) systems."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -778,13 +782,14 @@
       "topic": "conduit-fill",
       "question": "If there are 4 TWU75, 600V, with jacket, 2/0 AWG copper conductors that need to be installed in a conduit, what is the minimum size of the conduit required?",
       "answer": "53 mm",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Find the 2/0 TWU75 conductor area (Table 10).",
-        "Total for 4 conductors, apply 40% fill (Table 8), select from Table 6: 53 mm."
+        "Table 10: area of one jacketed 2/0 TWU75 conductor × 4.",
+        "Rule 12-910 / Table 8: >2 conductors → 40% fill; Table 6: smallest conduit ≥ total → 53 mm.",
+        "Keep needs_review: confirm the 2/0 TWU75 area and the 53 mm conduit area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-050",
@@ -794,8 +799,10 @@
       "topic": "underground-cover",
       "question": "Determine the minimum cover requirements for a Non-Metallic Sheathed Cable which is directly buried without additional protection under a vehicular area and is used as a wiring method for a 200A, 120/240V subservice.",
       "answer": "900 mm",
-      "references": ["Table 53"],
-      "solution_steps": [],
+      "references": ["Rule 12-012", "Table 53"],
+      "solution_steps": [
+        "Table 53: cable (≤750 V) direct-buried without mechanical protection in an area subject to vehicular traffic requires 900 mm cover (vs 600 mm in a non-vehicular area, S12-004)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -821,13 +828,14 @@
       "type": "theory",
       "topic": "box-setback",
       "question": "The front edge of boxes installed in concrete walls or ceilings shall not be set in more than ______ mm from the finished surface.",
-      "answer": "Answer not given in source notes (per Rule 12-3018, the maximum setback is 6 mm)",
+      "answer": "6 mm",
       "references": ["Rule 12-3018"],
       "solution_steps": [
-        "Source left this answer blank; flagged for review. Code value is 6 mm."
+        "Rule 12-3018: in non-combustible (e.g. concrete/masonry) walls or ceilings, the front edge of a box may be set back not more than 6 mm from the finished surface (in combustible surfaces it must be flush).",
+        "Result: 6 mm (consistent with S12-064)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-053",
@@ -838,9 +846,12 @@
       "question": "What is the minimum bend radius for a 63 mm EMT?",
       "answer": "267 mm",
       "references": ["Table 7"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Table 7: minimum bend radius for 63 mm (2-1/2 in.) raceway; source gives 267 mm (consistent with S12-024/S12-037).",
+        "Keep needs_review: confirm the 63 mm radius against the printed CEC 2024 Table 7."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-054",
@@ -850,8 +861,10 @@
       "topic": "nmsc-clearance",
       "question": "What is the minimum air space required between Non-Metallic Sheathed Cable and a heating pipe?",
       "answer": "25 mm",
-      "references": ["Rule 12-506", "Rule 12-510"],
-      "solution_steps": [],
+      "references": ["Rule 12-510"],
+      "solution_steps": [
+        "Rule 12-510: NMSC must be separated from a heating pipe by an air space of at least 25 mm (vs 50 mm from a masonry chimney, S12-033)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -864,9 +877,12 @@
       "question": "What is the maximum number of conductors of size #8 AWG permitted in a 3 in. x 2 in. x 3 in. device box?",
       "answer": "5 x #8 AWG",
       "references": ["Table 23"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Table 23 lists the maximum number of conductors of each size permitted in standard device boxes; for a 3×2×3 in. box the source gives 5 × #8 AWG.",
+        "Keep needs_review: confirm the #8 count for the 3×2×3 in. box against the printed CEC 2024 Table 23."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-056",
@@ -876,13 +892,14 @@
       "topic": "conduit-fill",
       "question": "Determine the trade size of EMT to contain four #3/0 AWG RW90 XLPE stranded conductors rated at 600V without a jacket and six #12 AWG TW75 stranded conductors, to be used on a 347/600V, 3-phase, 4-wire system with one #6 R90 XLPE 600V stranded unjacketed bonding conductor.",
       "answer": "Size 53",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Sum conductor areas: four 3/0 RW90, six #12 TW75, one #6 R90 bonding (Table 10).",
-        "Apply 40% fill (over 2 conductors), select EMT from Table 6: size 53."
+        "Table 10: sum areas of four 3/0 RW90 + six #12 TW75 + one #6 R90 bonding conductor. (Unlike box fill, the bonding conductor IS counted in conduit/raceway fill.)",
+        "Rule 12-910 / Table 8: >2 conductors → 40% fill; Table 6: smallest EMT ≥ total → size 53.",
+        "Keep needs_review: confirm the individual conductor areas and the size-53 EMT area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-057",
@@ -899,10 +916,14 @@
       ],
       "answer": "Connect to the grounding conductor at both ends (the conduit must be bonded at both ends)",
       "answer_key": "B",
-      "references": ["Rule 10-806", "Rule 12-122"],
-      "solution_steps": [],
+      "references": ["Rule 10-808"],
+      "solution_steps": [
+        "Where a ferrous (steel) raceway encloses a grounding conductor for mechanical protection, it must be bonded to that conductor at both ends.",
+        "This prevents the steel from acting as a choke/inductor around the conductor, which would raise impedance during a fault.",
+        "Result: bonded at both ends (option B)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-058",
@@ -939,10 +960,15 @@
         "C) #3/0 AWG",
         "D) #4/0 AWG"
       ],
-      "answer": "Answer not given in source notes",
-      "references": ["Table 2", "Table 5A"],
+      "answer": "#4/0 AWG (option D)",
+      "answer_key": "D",
+      "references": ["Table 2", "Table 5A", "Rule 4-004"],
       "solution_steps": [
-        "Apply the ambient temperature correction factor (Table 5A) for 48 degC to the TW75 ampacity (Table 2), then select the size that still carries 170 A. Source did not state the answer."
+        "TW75 in EMT = raceway/copper → Table 2, 75 degC column.",
+        "Table 5A: ambient 48 degC rounds UP to the 50 degC row → correction factor ≈ 0.75 for 75 degC insulation.",
+        "Required base ampacity = 170 A ÷ 0.75 ≈ 227 A.",
+        "Table 2 (75 degC Cu): 3/0 = 200 A (×0.75 = 150 A, too low); 4/0 = 230 A (×0.75 ≈ 172 A ≥ 170 A). So #4/0 (option D).",
+        "Keep needs_review: confirm the Table 5A 46–50 degC factor and Table 2 3/0/4/0 values against the printed CEC 2024 tables (answer hinges on the exact correction factor)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -962,10 +988,13 @@
       ],
       "answer": "300 mm",
       "answer_key": "B",
-      "references": ["Rule 12-1010", "Rule 12-1306"],
-      "solution_steps": [],
+      "references": ["Rule 12-1010"],
+      "solution_steps": [
+        "Rule 12-1010: flexible metal conduit must be secured within 300 mm of each box, cabinet, or fitting (and supported at intervals along the run).",
+        "Result: 300 mm (option B)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-061",
@@ -984,12 +1013,13 @@
       "answer_key": "C",
       "references": ["Table 38", "Rule 12-1102"],
       "solution_steps": [
-        "Temperature change = 35 - (-32) = 67 degC.",
-        "Apply the rigid aluminum expansion coefficient over a 60 m run.",
-        "Result = 88.44 mm."
+        "ΔT = 35 - (-32) = 67 degC.",
+        "Rigid aluminum expansion coefficient ≈ 0.022 mm per metre per degC.",
+        "Expansion = 0.022 × 60 m × 67 degC = 88.44 mm.",
+        "Result = 88.44 mm (option C)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-062",
@@ -1006,10 +1036,13 @@
       ],
       "answer": "When the raceway/wireway has a removable cover that is accessible after installation",
       "answer_key": "C",
-      "references": ["Rule 12-912", "Rule 12-2106"],
-      "solution_steps": [],
+      "references": ["Rule 12-2106"],
+      "solution_steps": [
+        "Rule 12-2106: splices/taps are permitted in a wireway (or similar raceway) only where they remain accessible — i.e. the wireway has a removable cover accessible after installation.",
+        "Result: removable, accessible cover (option C). (Contrast with conduit/EMT, which has no access, so no splices — S12-047.)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-063",

@@ -8,13 +8,13 @@
       "type": "calculation",
       "topic": "service-calculation-nonresidential",
       "question": "Calculate the ampacity of the service conductors for a storage warehouse with a 120/240 V, single-phase service and outside dimensions of 16 m x 10 m. The lighting load is 15 kW and the air-conditioning load is 30 kW.",
-      "answer": "189.83 A",
-      "references": ["Rule 8-210", "Rule 8-106"],
+      "answer": "189.83 A (source) — verify the warehouse basic W/m² allowance",
+      "references": ["Rule 8-210", "Rule 8-106", "Table 14"],
       "solution_steps": [
-        "Determine the connected loads: lighting 15 kW and air-conditioning 30 kW.",
-        "Total demand watts = 15 kW + 30 kW = 45 kW (45 000 W) using the applicable demand factors for this occupancy.",
-        "Convert to amps on a 240 V single-phase service: I = 45 000 W ÷ 240 V = 187.5 A; with the basic area lighting allowance included the calculation yields 189.83 A.",
-        "Result: 189.83 A."
+        "Rule (non-dwelling service, 8-210): demand = basic load (floor area × the occupancy's W/m² from the basic-load table) + actual loads (lighting/heating/AC, etc.), each with its applicable demand factor.",
+        "Floor area = 16 × 10 = 160 m². Connected loads given: lighting 15 kW, air-conditioning 30 kW.",
+        "Convert single-phase 240 V: 45 000 ÷ 240 = 187.5 A for the lighting + AC alone; the source's 189.83 A (= 45 559 W ÷ 240) adds a small basic-area allowance for the 160 m².",
+        "NEEDS REVIEW: confirm (a) the basic W/m² allowance for a storage warehouse in the 2024 basic-load table and (b) whether the given 15 kW lighting replaces or adds to that basic allowance, and the AC demand factor. Source figure 189.83 A shown; the area allowance could not be verified here."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -78,13 +78,13 @@
       "type": "calculation",
       "topic": "receptacle-feeder-demand",
       "question": "Determine the minimum ampacity required for the panel feeder conductors of a parking lot that has 200 parking spaces, each with a 15 A duplex receptacle, where the loading is not controlled. The receptacles are supplied from a 120/208 V, 3-phase, 4-wire panel board.",
-      "answer": "494.4 A",
-      "references": ["Rule 8-200", "Rule 8-304"],
+      "answer": "494.4 A (source) — verify per-space allowance for uncontrolled loading",
+      "references": ["Rule 8-400"],
       "solution_steps": [
-        "Each 15 A receptacle on a 120 V circuit represents 120 V × 15 A = 1800 W; but the parking-space allowance used is 1 kW per controlled space — here uncontrolled, so full loading per space applies.",
-        "Uncontrolled loading: 200 spaces × the per-space load gives a total demand of about 178 080 W.",
-        "Convert on a 120/208 V, 3-phase service: I = total VA ÷ (√3 × 208 V) = 178 080 ÷ 360.3 ≈ 494.4 A.",
-        "Result: 494.4 A."
+        "Rule: parking/automobile-heater receptacle feeders are calculated under Rule 8-400. UNCONTROLLED loading gets little/no demand reduction (vs the reduced figure for controlled loading).",
+        "Method: total demand = 200 spaces × the per-space uncontrolled allowance; source uses ≈ 178 080 W (≈ 890 W/space).",
+        "Convert 120/208 V 3-phase (√3 because it is a wye 3-phase service): I = 178 080 ÷ (√3 × 208) = 178 080 ÷ 360.3 ≈ 494.4 A.",
+        "NEEDS REVIEW: confirm the uncontrolled per-space watt allowance and demand factor under Rule 8-400 in the 2024 code (the √3 conversion is correct; the per-space value drives the answer and was not verified here)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -117,15 +117,15 @@
       "topic": "range-branch-circuit",
       "question": "A 20 kW electric range is installed in the penthouse suite of a high-rise apartment. What is the demand of the branch circuit?",
       "answer": "11 200 W",
-      "references": ["Rule 8-300", "Table 8 (range demand)"],
+      "references": ["Rule 8-300 1)a)"],
       "solution_steps": [
-        "Range branch-circuit demand for a dwelling unit: 6000 W for the first 12 kW, plus 40% of the amount over 12 kW.",
-        "Amount over 12 kW = 20 − 12 = 8 kW → 40% × 8000 W = 3200 W.",
-        "Demand = 6000 + 3200 = 9200 W... source gives 11 200 W (5000 W base + 40% over 6 kW per alternate method).",
-        "Result per source: 11 200 W."
+        "Rule 8-300 1)a) (BRANCH-circuit range demand, dwelling): a single range counts as 8 kW where its rating ≤ 12 kW, plus 40% of the amount the rating exceeds 12 kW. NOTE: the branch-circuit base is 8 kW — different from the 6 kW base used in the 8-200 SERVICE calc.",
+        "Amount over 12 kW = 20 − 12 = 8 kW → 40% × 8000 = 3200 W.",
+        "Demand = 8000 + 3200 = 11 200 W.",
+        "Result: 11 200 W (source figure confirmed; the earlier '9200 W via 6 kW base' was the wrong base — 8-300 uses 8 kW)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-008",
@@ -170,12 +170,12 @@
       "type": "calculation",
       "topic": "range-branch-circuit-commercial",
       "question": "What is the minimum demand in watts for the branch circuit conductors supplying a 16 kW range installed in a bakery?",
-      "answer": "16 kW (100% — no demand reduction for commercial/non-dwelling ranges)",
+      "answer": "16 kW (16 000 W) — 100%, no demand reduction for a commercial/non-dwelling range",
       "references": ["Rule 8-300 2)"],
       "solution_steps": [
-        "The range demand reductions in Rule 8-300 apply to dwelling units. In a bakery (commercial occupancy) the range is taken at 100% of its rating.",
-        "Demand = 16 kW = 16 000 W.",
-        "Result: 16 kW."
+        "Rule: the 8-300 range demand REDUCTION applies only to dwelling units. For a range in a commercial/industrial/institutional occupancy (a bakery), the demand is taken at 100% of nameplate (not less than its rating).",
+        "Math: demand = 16 kW = 16 000 W.",
+        "Result: 16 kW (100%)."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -224,13 +224,13 @@
       "answer": "9600 W",
       "references": ["Rule 8-300 1)a)"],
       "solution_steps": [
-        "Dwelling range demand: 6000 W for the first 12 kW, plus 40% of the amount over 12 kW.",
-        "Over 12 kW = 16 − 12 = 4 kW → 40% × 4000 W = 1600 W.",
-        "Demand = 6000 + 1600 = 7600 W... source gives 9600 W. (9600 W = 6000 W + 40% × 9000 W, i.e., treating the excess differently.)",
-        "Result per source: 9600 W."
+        "Rule 8-300 1)a) (BRANCH-circuit range demand, dwelling): a single range counts as 8 kW where rating ≤ 12 kW, plus 40% of the amount over 12 kW. (Branch-circuit base = 8 kW, not the 6 kW used in the 8-200 service calc.)",
+        "Over 12 kW = 16 − 12 = 4 kW → 40% × 4000 = 1600 W.",
+        "Demand = 8000 + 1600 = 9600 W.",
+        "Result: 9600 W (source figure confirmed via the correct 8 kW branch-circuit base)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-014",
@@ -378,16 +378,16 @@
       "type": "calculation",
       "topic": "range-branch-circuit-commercial",
       "question": "Determine the minimum conductor ampacity required for a 240 V, 14.4 kW range installed in a commercial kitchen.",
-      "answer": "60 A (range at 100% in a commercial occupancy: 14 400 W ÷ 240 V = 60 A)",
+      "answer": "60 A",
       "references": ["Rule 8-300 2)", "Rule 8-104"],
       "solution_steps": [
-        "Commercial/non-dwelling range = 100% of nameplate, no demand reduction.",
-        "I = 14 400 W ÷ 240 V = 60 A.",
+        "Rule: a range in a commercial kitchen (non-dwelling) is taken at 100% of nameplate, no demand reduction.",
+        "Math: I = 14 400 W ÷ 240 V = 60 A.",
         "Conductor ampacity must be at least 60 A.",
         "Result: 60 A."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-023",
