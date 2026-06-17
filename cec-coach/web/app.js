@@ -30,6 +30,37 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
+  // ---------- text-to-speech (Canadian English, slow) ----------
+  var _voices = [];
+  function loadVoices() { try { _voices = window.speechSynthesis ? (speechSynthesis.getVoices() || []) : []; } catch (e) { _voices = []; } }
+  if ("speechSynthesis" in window) { loadVoices(); try { speechSynthesis.onvoiceschanged = loadVoices; } catch (e) {} }
+  function pickVoice() {
+    if (!_voices.length) loadVoices();
+    function norm(l) { return (l || "").replace("_", "-").toLowerCase(); }
+    var pref = ["en-ca", "en-us", "en-gb", "en-au", "en"];
+    for (var p = 0; p < pref.length; p++) for (var i = 0; i < _voices.length; i++) if (norm(_voices[i].lang).indexOf(pref[p]) === 0) return _voices[i];
+    for (var j = 0; j < _voices.length; j++) if (/canad/i.test(_voices[j].name || "")) return _voices[j];
+    return null;
+  }
+  function speak(text) {
+    if (!text) return;
+    if (!("speechSynthesis" in window)) { alert("Read-aloud isn't supported on this browser."); return; }
+    try {
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(String(text));
+      u.lang = "en-CA"; u.rate = 0.7; u.pitch = 1;
+      var v = pickVoice(); if (v) u.voice = v;
+      speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+  var SPK = [];
+  function spkBtn(text) { var i = SPK.push(String(text)) - 1; return "<button class='spk' data-spk='" + i + "' title='Read aloud (slow, Canadian)'>🔊</button>"; }
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest("[data-spk]"); if (!b) return;
+    ev.stopPropagation(); ev.preventDefault();
+    speak(SPK[+b.getAttribute("data-spk")]);
+  });
+
   // ---------- markdown -> pretty HTML (tables, lists, hr, code, RTL-aware) ----------
   function mdInline(s) {
     s = esc(s);
@@ -308,7 +339,10 @@
     tags.appendChild(el("span", "tag", esc(SECTION_NAMES[q.section] || ("Section " + (q.section || "?")))));
     if (q.block) tags.appendChild(el("span", "tag block", "Block " + esc(q.block)));
     if (q.topic) tags.appendChild(el("span", "tag", esc(q.topic)));
-    $("qtext").innerHTML = esc(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "");
+    var qt = $("qtext"); qt.innerHTML = "";
+    qt.appendChild(el("span", "qen", esc(q.question)));
+    (function () { var sp = el("button", "spk", "🔊"); sp.title = "Read aloud (slow, Canadian)"; sp.onclick = function () { speak(q.question); }; qt.appendChild(sp); })();
+    if (q.question_fa) { var fad = el("div", "qfa", esc(q.question_fa)); fad.dir = "rtl"; qt.appendChild(fad); }
     var correctKey = (q.answer_key || "").toUpperCase();
     var opts = $("options"); opts.innerHTML = "";
     (q.options || []).forEach(function (optText, idx) {
@@ -327,7 +361,11 @@
       } else {
         b.onclick = function () { choose(keyLetter); };
       }
-      opts.appendChild(b);
+      var row = el("div", "optrow"); row.appendChild(b);
+      var sp = el("button", "spk", "🔊"); sp.title = "Read this option aloud";
+      sp.onclick = (function (t) { return function () { speak(t); }; })(label);
+      row.appendChild(sp);
+      opts.appendChild(row);
     });
     if (a) { showBanner(a.ok, correctKey); showExplain(q); $("teach").classList.remove("hidden"); }
     else { $("banner").classList.add("hidden"); $("explain").classList.add("hidden"); $("explain").innerHTML = ""; $("teach").classList.add("hidden"); }
@@ -353,7 +391,7 @@
     var ok = key === correctKey;
     Q.answers[Q.i] = { picked: key, ok: ok, timeMs: Date.now() - Q.qStartAt };
     record(q.id, ok); profileRecord(q, ok);
-    var btns = $("options").children;
+    var btns = $("options").querySelectorAll(".opt");
     for (var i = 0; i < btns.length; i++) {
       var btn = btns[i]; btn.disabled = true; btn.onclick = null;
       if (btn.dataset.key === correctKey) btn.classList.add("correct");
@@ -443,6 +481,7 @@
   function prevQ() { if (Q.i > 0) gotoQ(Q.i - 1); }
 
   function finish() {
+    SPK.length = 0;
     if (Q.totalTimer) { clearInterval(Q.totalTimer); Q.totalTimer = null; }
     var answered = Q.answers.filter(Boolean);
     var correct = answered.filter(function (a) { return a.ok; }).length;
@@ -468,7 +507,7 @@
       missed.forEach(function (m) {
         var q = m.q;
         h += "<div class='miss'>";
-        h += "<div class='missq'>" + esc(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
+        h += "<div class='missq'>" + esc(q.question) + spkBtn(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
         h += "<div class='missline'>You: <b class='bad'>" + esc(m.a.picked) + "</b> · Correct: <b class='ok'>" + esc((q.answer_key || "")) + " — " + esc(q.answer || "") + "</b></div>";
         if (q.solution_steps && q.solution_steps.length) {
           h += "<ol>"; q.solution_steps.forEach(function (s) { h += "<li>" + esc(s) + "</li>"; }); h += "</ol>";
@@ -814,7 +853,7 @@
     return h + "</div>";
   }
   function renderLesson(s) {
-    currentLesson = s;
+    currentLesson = s; SPK.length = 0;
     langBar("lessonLang", function () { renderLesson(currentLesson); });
     var fa = getLang() === "fa";
     var T = fa ? { tables: "📊 جدول‌های کلیدی — مهم‌ترین اول", rules: "📏 قوانین کلیدی", method: "🧭 روشِ سریع", must: "⭐ مقادیرِ حفظی", traps: "⚠️ تله‌های رایج", memo: "ترفندِ حافظه", ex: "📝 مثال‌های حل‌شده", tbl: "جدول", rule: "قانون", what: "چیست", how: "چطور/چرا", note: "نکته", inbank: " سؤال در بانک" }
@@ -835,7 +874,7 @@
     if (exQ.length) {
       h += "<h3>" + T.ex + "</h3>";
       exQ.forEach(function (q) {
-        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
+        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + spkBtn(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
         h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + (q.answer_fa ? "<div class='afa' dir='rtl'>" + esc(q.answer_fa) + "</div>" : "") + "</div>";
         if ((q.solution_steps || []).length) { h += "<ol>"; q.solution_steps.slice(0, 5).forEach(function (st) { h += "<li>" + esc(st) + "</li>"; }); h += "</ol>"; }
         if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";

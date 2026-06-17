@@ -119,6 +119,16 @@ h2{color:#fff; margin:6px 0 10px}
 .tag{background:#eef4f1; color:#2c5d4a; font-size:11px; padding:3px 9px; border-radius:99px; font-weight:600}
 .tag.block{background:#fff3d6; color:#8a6300}
 .qtext{font-size:17px; line-height:1.5; font-weight:600; margin-bottom:14px}
+.qen{font-weight:600}
+/* read-aloud speaker buttons */
+.spk{flex:0 0 auto; background:#eef4f1; border:1px solid var(--line); border-radius:10px; cursor:pointer;
+  font-size:18px; line-height:1; padding:0 12px; color:#2c5d4a}
+.spk:hover{background:#dcebe3}
+.spk:active{transform:scale(.92)}
+.qtext .spk{font-size:15px; padding:3px 9px; border-radius:8px; margin-inline-start:8px; vertical-align:middle}
+.exqq .spk,.missq .spk{font-size:14px; padding:2px 8px; margin-inline-start:6px}
+.optrow{display:flex; gap:8px; align-items:stretch}
+.optrow .opt{flex:1}
 /* Persian translations under English question / options / answer */
 .qfa{unicode-bidi:isolate; direction:rtl; text-align:right; font-size:14.5px; font-weight:500;
   color:#3a5c4e; margin-top:7px; padding-top:7px; border-top:1px dashed var(--line); line-height:1.7}
