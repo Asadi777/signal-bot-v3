@@ -558,29 +558,36 @@
   }
   function doGenerate(topic, count, secNum, statusEl, btn) {
     if (!getKey()) { gotoSettings("Add your API key first to generate questions."); return; }
-    statusEl.className = "status"; statusEl.textContent = "Generating " + count + " questions…";
     if (btn) btn.disabled = true;
+    var t0 = Date.now();
+    var iv = setInterval(function () { statusEl.className = "status"; statusEl.textContent = "⏳ Generating " + count + " questions… " + Math.round((Date.now() - t0) / 1000) + "s"; }, 250);
+    function stop() { clearInterval(iv); if (btn) btn.disabled = false; }
     var seeds = seedExamples(secNum);
     var prompt =
       "You are writing practice questions for the BC Construction Electrician (Red Seal) exam on CEC 2024.\n" +
       "STUDY these REAL exam questions the student gave me — learn their exact STYLE, difficulty, phrasing, the way options are written, and the reference/solution format:\n" +
       JSON.stringify(seeds, null, 1) + "\n\n" +
       "Now WRITE " + count + " BRAND-NEW questions (do NOT copy the examples) on: " + topic + ".\n" +
-      "Match that style and difficulty exactly. Return ONLY a JSON array, no prose. Each item:\n" +
+      "Match that style and difficulty exactly. Each item:\n" +
       '{"id":"GEN-<n>","section":<number>,"block":"A|B|C|D|E","topic":"short","question":"...",' +
       '"options":["A) ...","B) ...","C) ...","D) ..."],"answer":"correct answer text","answer_key":"A|B|C|D",' +
       '"references":["Rule/Table"],"solution_steps":["name the keyword + which Table/Rule to jump to","then the steps to the answer"]}\n' +
-      "Vary the correct letter. Be accurate with CEC 2024 references. Use plain text (no LaTeX).";
-    callClaude([{ role: "user", content: prompt }], { maxTokens: 4096 })
-      .then(function (full) {
-        var arr = parseJSONArray(full);
-        if (!arr || !arr.length) throw new Error("Could not parse generated questions.");
-        arr.forEach(function (q, i) { q.id = q.id || ("GEN-" + Date.now() + "-" + i); q._generated = true; if (secNum != null && q.section == null) q.section = secNum; });
-        statusEl.className = "status ok"; statusEl.textContent = "Made " + arr.length + " questions. Starting…";
-        if (btn) btn.disabled = false;
-        setTimeout(function () { startQuiz(arr, "generated", false); }, 400);
-      })
-      .catch(function (err) { statusEl.className = "status err"; statusEl.textContent = "⚠️ " + apiErr(err); if (btn) btn.disabled = false; });
+      "Vary the correct letter. Be accurate with CEC 2024 references. Use plain text (no LaTeX).\n" +
+      "OUTPUT FORMAT (critical): reply with ONLY the raw JSON array — start with [ and end with ] — no markdown, no ``` code fences, no commentary before or after.";
+    function attempt(extra, tries) {
+      callClaude([{ role: "user", content: prompt + (extra || "") }], { maxTokens: 8000 })
+        .then(function (full) {
+          var arr = parseJSONArray(full);
+          if ((!arr || !arr.length) && tries > 0) { attempt("\n\nYour previous reply could not be parsed as JSON. Output ONLY a valid raw JSON array, nothing else.", tries - 1); return; }
+          stop();
+          if (!arr || !arr.length) { statusEl.className = "status err"; statusEl.textContent = "⚠️ مدل جواب داد ولی فرمتش خوانده نشد. یک بار دیگر Generate بزن."; return; }
+          arr.forEach(function (q, i) { q.id = q.id || ("GEN-" + Date.now() + "-" + i); q._generated = true; if (secNum != null && q.section == null) q.section = secNum; });
+          statusEl.className = "status ok"; statusEl.textContent = "✅ " + arr.length + " سؤال ساخته شد — شروع…";
+          setTimeout(function () { startQuiz(shuffle(arr), "generated", false); }, 400);
+        })
+        .catch(function (err) { stop(); statusEl.className = "status err"; statusEl.textContent = "⚠️ " + apiErr(err); });
+    }
+    attempt("", 1);
   }
   function generate() {
     doGenerate($("genTopic").value.trim() || "mixed CEC 2024 topics", $("genCount").value, null, $("genStatus"), $("genGo"));
@@ -591,9 +598,18 @@
     doGenerate("CEC 2024 " + secLabel(s).replace(/—.*$/, "").trim() + " (" + (s.name || "") + ")", 5, s.section, $("lessonGenStatus"), $("lessonGen"));
   }
   function parseJSONArray(s) {
+    if (!s) return null;
+    s = s.replace(/```[a-zA-Z]*\s*/g, "").replace(/```/g, "");      // strip code fences
+    function fix(t) { return t.replace(/,\s*([\]}])/g, "$1"); }      // drop trailing commas
+    function tryP(t) { try { return JSON.parse(t); } catch (e) { try { return JSON.parse(fix(t)); } catch (e2) { return null; } } }
+    var d = tryP(s.trim());
+    if (Array.isArray(d)) return d;
+    if (d && Array.isArray(d.questions)) return d.questions;
     var a = s.indexOf("["), b = s.lastIndexOf("]");
-    if (a < 0 || b < 0) return null;
-    try { return JSON.parse(s.slice(a, b + 1)); } catch (e) { return null; }
+    if (a >= 0 && b > a) { var arr = tryP(s.slice(a, b + 1)); if (Array.isArray(arr)) return arr; }
+    var oa = s.indexOf("{"), ob = s.lastIndexOf("}");
+    if (oa >= 0 && ob > oa) { var obj = tryP(s.slice(oa, ob + 1)); if (obj && Array.isArray(obj.questions)) return obj.questions; }
+    return null;
   }
 
   // ---------- vision: pdf / image / camera ----------
