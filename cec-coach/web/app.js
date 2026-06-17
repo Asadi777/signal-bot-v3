@@ -72,6 +72,16 @@
     ev.stopPropagation(); ev.preventDefault();
     speak(SPK[+b.getAttribute("data-spk")]);
   });
+  // teach buttons registry (for innerHTML places: lessons, results)
+  var TEACHREG = [];
+  function teachBtn(q) { var i = TEACHREG.push(q) - 1; return "<button class='teachmini' data-teach='" + i + "'>🧑‍🏫 " + (getLang() === "fa" ? "آموزش قدم‌به‌قدم" : "Teach me") + "</button>"; }
+  document.addEventListener("click", function (ev) { var b = ev.target.closest("[data-teach]"); if (!b) return; ev.stopPropagation(); openTeachChat(TEACHREG[+b.getAttribute("data-teach")]); });
+  function openTeachChat(q) {
+    if (!q) return;
+    if (!getKey()) { gotoSettings("Add your API key to use the AI teacher."); return; }
+    show("tutor"); langBar("chatLang", function () {});
+    sendChat(teachPromptText(q, null), getLang() === "fa" ? "🧑‍🏫 این سؤال را قدم‌به‌قدم یادم بده" : "🧑‍🏫 Teach me this question step by step");
+  }
 
   // ---------- markdown -> pretty HTML (tables, lists, hr, code, RTL-aware) ----------
   function mdInline(s) {
@@ -431,23 +441,45 @@
     e.classList.remove("hidden");
   }
 
-  var teachConvo = [];
-  function teachThis() {
-    var q = Q.list[Q.i], a = Q.answers[Q.i];
-    if (!getKey()) { gotoSettings("Add your API key to get the bilingual teacher explanation."); return; }
-    var host = $("teachout"); if (!host) return;
-    teachConvo = [{ role: "user", content:
-      "Teach me this exam question like a patient teacher to a beginner, fully in BOTH English AND Persian. " +
-      "Name the keyword(s), which Table/Rule and why, then the fastest step-by-step path. Use plain readable math (NO LaTeX). " +
-      "At the very END, ask me ONE short multiple-choice check question to confirm I understood — give 4 options labelled A) B) C) D) — and tell me to reply with the letter. Then wait for my answer; when I answer, tell me if I'm right and why.\n\n" +
-      "Question: " + q.question + "\n" + (q.options || []).join("\n") +
+  // ---------- step-by-step teacher (one chosen language, our method) ----------
+  function teachPromptText(q, a) {
+    var fa = getLang() === "fa";
+    var sec = (q.section != null ? q.section : "occ");
+    var pg = secPage(sec);
+    var lang = fa
+      ? "Teach me ENTIRELY in Persian (فارسی), fluently, like a kind Iranian electrical-engineer teacher explaining to a COMPLETE BEGINNER. Keep CEC technical terms, Table/Rule/Appendix names, numbers and units in English inside the Persian."
+      : "Teach me ENTIRELY in simple English, patiently, like a teacher explaining to a COMPLETE BEGINNER.";
+    var pages = "KNOWN PAGE ANCHORS in the CEC 2024 book (the printed page number is at the bottom of each page) — use these and do NOT invent exact page numbers: Section start pages — Sec 0 p.53, Sec 2 p.68, Sec 4 p.76, Sec 6 p.83, Sec 8 p.90, Sec 10 p.98, Sec 12 p.108, Sec 14 p.157, Sec 16 p.166, Sec 26 p.211, Sec 28 p.232; the TABLES section starts at p.393; Appendix B (Notes on Rules) at p.556; the Index at p.930. If unsure of a table's exact page, say it is in the Tables section from p.393 and tell me to use the Index at p.930.";
+    var ctx = "QUESTION:\n" + q.question + "\n" + (q.options || []).join("\n") +
       "\nCorrect answer: " + (q.answer_key || "") + " — " + (q.answer || "") +
-      (a ? ("\nI answered: " + a.picked + " (" + (a.ok ? "correct" : "incorrect") + ").") : "") }];
+      (a ? ("\nThe student answered " + a.picked + " (" + (a.ok ? "correct" : "incorrect") + ").") : "") +
+      "\nReferences: " + ((q.references || []).join(", ") || "(none given)") +
+      "\nThis is CEC 2024 " + (sec === "occ" ? "occupational / safety skills (Block A)" : ("Section " + sec)) + (pg ? (" — that section starts on p." + pg + " of the book" ) : "") + ".";
+    return lang + "\n\nTeach me how to SOLVE this exam question, step by step, EXACTLY in this order:\n" +
+      "1) Find and quote the KEYWORD(S) in the question, and explain what each one means.\n" +
+      "2) From those keyword(s), tell me whether the question has ONE part or MULTIPLE parts — and how the wording shows it.\n" +
+      "3) Show how to USE the keyword(s) to decide where to look.\n" +
+      "4) Explain how the keyword(s) point to a specific Table, Rule, or Appendix, and WHY.\n" +
+      "5) Tell me WHERE that Table/Rule/Appendix is in the book — give the page number from the anchors below.\n" +
+      "6) Teach me clearly HOW TO READ/USE that table — which row and which column — slowly.\n" +
+      "7) If a calculation is needed: tell me the FORMULA, where to find it in the book, explain every symbol, then show the full worked calculation slowly.\n" +
+      "Finish with a one-line takeaway, then ask me ONE short A/B/C/D check question and wait for my answer. Use clear headings and plain-text math (NO LaTeX).\n\n" +
+      pages + "\n\n" + ctx;
+  }
+
+  var teachConvo = [], teachQ = null, teachA = null;
+  function teachThis() { teachQ = Q.list[Q.i]; teachA = Q.answers[Q.i]; startTeachPanel(); }
+  function startTeachPanel() {
+    if (!getKey()) { gotoSettings("Add your API key to use the AI teacher."); return; }
+    var host = $("teachout"); if (!host) return;
+    teachConvo = [{ role: "user", content: teachPromptText(teachQ, teachA) }];
     host.innerHTML =
+      "<div id='teachLang' class='langtoggle'></div>" +
       "<div id='teachthread' class='teachbox'></div>" +
       "<div class='composer teachcomposer'>" +
-      "<textarea id='teachinput' rows='1' placeholder='جواب چک‌سؤال را بنویس (مثلاً B) یا هر سؤال دیگری بپرس…'></textarea>" +
+      "<textarea id='teachinput' rows='1' placeholder='جواب چک‌سؤال یا هر سؤال دیگری بنویس… / type your answer or a question'></textarea>" +
       "<button id='teachsend' class='primary'>Send</button></div>";
+    langBar("teachLang", function () { startTeachPanel(); });
     $("teachsend").onclick = teachReply;
     $("teachinput").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); teachReply(); } });
     runTeach();
@@ -493,7 +525,7 @@
   function prevQ() { if (Q.i > 0) gotoQ(Q.i - 1); }
 
   function finish() {
-    SPK.length = 0;
+    SPK.length = 0; TEACHREG.length = 0;
     if (Q.totalTimer) { clearInterval(Q.totalTimer); Q.totalTimer = null; }
     var answered = Q.answers.filter(Boolean);
     var correct = answered.filter(function (a) { return a.ok; }).length;
@@ -525,6 +557,7 @@
           h += "<ol>"; q.solution_steps.forEach(function (s) { h += "<li>" + esc(s) + "</li>"; }); h += "</ol>";
         }
         if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";
+        h += "<div class='teachrow'>" + teachBtn(q) + "</div>";
         h += "</div>";
       });
     } else if (answered.length) {
@@ -578,13 +611,13 @@
     $("chat").scrollTop = $("chat").scrollHeight;
     return m;
   }
-  function sendChat(prefill) {
+  function sendChat(prefill, displayLabel) {
     var input = $("chatinput");
     var text = prefill || input.value.trim();
     if (!text) return;
     if (!getKey()) { gotoSettings("Add your API key first to use the AI tutor."); return; }
-    input.value = "";
-    addMsg("user", text);
+    if (!prefill) input.value = "";
+    addMsg("user", displayLabel || text);
     chatHistory.push({ role: "user", content: text });
     var bubble = addMsg("assistant", "");
     var wait = thinking(bubble, "msg ai");
@@ -865,7 +898,7 @@
     return h + "</div>";
   }
   function renderLesson(s) {
-    currentLesson = s; SPK.length = 0;
+    currentLesson = s; SPK.length = 0; TEACHREG.length = 0;
     langBar("lessonLang", function () { renderLesson(currentLesson); });
     var fa = getLang() === "fa";
     var T = fa ? { tables: "📊 جدول‌های کلیدی — مهم‌ترین اول", rules: "📏 قوانین کلیدی", method: "🧭 روشِ سریع", must: "⭐ مقادیرِ حفظی", traps: "⚠️ تله‌های رایج", memo: "ترفندِ حافظه", ex: "📝 مثال‌های حل‌شده", tbl: "جدول", rule: "قانون", what: "چیست", how: "چطور/چرا", note: "نکته", inbank: " سؤال در بانک" }
@@ -890,6 +923,7 @@
         h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + (q.answer_fa ? "<div class='afa' dir='rtl'>" + esc(q.answer_fa) + "</div>" : "") + "</div>";
         if ((q.solution_steps || []).length) { h += "<ol>"; q.solution_steps.slice(0, 5).forEach(function (st) { h += "<li>" + esc(st) + "</li>"; }); h += "</ol>"; }
         if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";
+        h += "<div class='teachrow'>" + teachBtn(q) + "</div>";
         h += "</div>";
       });
     }
@@ -1128,7 +1162,7 @@
     var go = ev.target.closest("[data-go]");
     if (go) {
       var g = go.getAttribute("data-go");
-      if (g === "tutor") show("tutor");
+      if (g === "tutor") { show("tutor"); langBar("chatLang", function () {}); }
       else if (g === "generate") show("generate");
       else if (g === "vision") show("vision");
       else if (g === "study") { buildStudyList(); show("study"); }

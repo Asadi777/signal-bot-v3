@@ -129,6 +129,11 @@ h2{color:#fff; margin:6px 0 10px}
 .exqq .spk,.missq .spk{font-size:14px; padding:2px 8px; margin-inline-start:6px}
 .optrow{display:flex; gap:8px; align-items:stretch}
 .optrow .opt{flex:1}
+/* per-question "Teach me" button (lessons, results) */
+.teachrow{margin-top:10px}
+.teachmini{background:#0b3d2e; color:#fff; border:0; border-radius:10px; font-weight:700; font-size:13px;
+  padding:8px 14px; cursor:pointer}
+.teachmini:active{transform:scale(.97)}
 /* Persian translations under English question / options / answer */
 .qfa{unicode-bidi:isolate; direction:rtl; text-align:right; font-size:14.5px; font-weight:500;
   color:#3a5c4e; margin-top:7px; padding-top:7px; border-top:1px dashed var(--line); line-height:1.7}
