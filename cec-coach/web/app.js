@@ -571,7 +571,9 @@
       "Match that style and difficulty exactly. Each item:\n" +
       '{"id":"GEN-<n>","section":<number>,"block":"A|B|C|D|E","topic":"short","question":"...",' +
       '"options":["A) ...","B) ...","C) ...","D) ..."],"answer":"correct answer text","answer_key":"A|B|C|D",' +
-      '"references":["Rule/Table"],"solution_steps":["name the keyword + which Table/Rule to jump to","then the steps to the answer"]}\n' +
+      '"references":["Rule/Table"],"solution_steps":["name the keyword + which Table/Rule to jump to","then the steps to the answer"],' +
+      '"question_fa":"professional Persian translation of question","options_fa":["Persian of each option, SAME order/length as options"],"answer_fa":"Persian of answer"}\n' +
+      "EVERY item MUST include question_fa, options_fa, and answer_fa — native, fluent Persian (electrical-engineer voice), KEEPING technical terms (Table/Rule names, copper/aluminum, units, numbers, %) in English inside the Persian.\n" +
       "Vary the correct letter. Be accurate with CEC 2024 references. Use plain text (no LaTeX).\n" +
       "OUTPUT FORMAT (critical): reply with ONLY the raw JSON array — start with [ and end with ] — no markdown, no ``` code fences, no commentary before or after.";
     function attempt(extra, tries) {
