@@ -8,13 +8,12 @@
       "options": ["A) 90 A", "B) 100 A", "C) 80 A", "D) 110 A"],
       "answer": "D) 110 A",
       "answer_key": "D",
-      "references": ["Rule 28-200", "Table 29 (time-delay fuse 225% when 175% won't start)", "Table 44 (3-phase FLC)"],
+      "references": ["Rule 28-200", "Table 29 (time-delay fuse 175%; up to 225% if motor won't start)", "Table 44 (3-phase FLC)"],
       "solution_steps": [
-        "Table 44: 40 hp, 575 V, 3-phase induction motor FLC = 41 A.",
-        "Time-delay fuse normal max = 175% (Table 29): 41 × 1.75 = 71.75 A → next lower standard = 70 A.",
-        "If the motor will not start, Rule 28-200 permits increasing to 225%: 41 × 2.25 = 92.25 A.",
-        "Take the next lower standard fuse not exceeding 92.25 A = 90 A; however the noisy options point to 110 A. Confirm Table 44 FLC and standard fuse step against class notes.",
-        "Using 90 A is the technically correct 225% answer; flagged for review against the marked key (D)."
+        "Method: branch-circuit OCPD from Table 29. Time-delay fuse normal max = 175% of FLC; if the motor will not start, Rule 28-200 permits raising to 225% of FLC, taken to the next-higher standard size as needed.",
+        "Using a 40 hp / 575 V Table 44 FLC of ~41 A: 225% = 41 x 2.25 = 92.25 A → nearest standard fuse ~90/100 A.",
+        "The marked key is D (110 A), which does not reconcile with a 41 A FLC at 225%. Either the source FLC differs or the key is mis-marked.",
+        "The exact 40 hp / 575 V Table 44 FLC could not be confirmed; method shown, key NOT trusted, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -90,13 +89,14 @@
       "section": 28, "block": "D", "topic": "overload-sizing", "type": "calculation",
       "question": "What is the maximum calculated overload size for a 2 horsepower, single-phase, 208 volt motor?",
       "options": ["A) 13.20 amps", "B) 13.80 amps", "C) 15.18 amps", "D) 16.50 amps"],
-      "answer": "15.18 A (nameplate FLA 12 A, with the duty/SF factors shown giving 12 × 1.1 × 1.15 = 15.18 A).",
+      "answer": "15.18 A (source: nameplate FLA 12 A × 1.1 × 1.15 = 15.18 A).",
       "answer_key": "C",
-      "references": ["Rule 28-306", "Table 45 (single-phase FLC)"],
+      "references": ["Rule 28-306"],
       "solution_steps": [
-        "Per the source: 12 A (Table 45, 2 hp 208 V single-phase) × 1.1 = 13.2 A, then × 1.15 = 15.18 A.",
-        "Overload sizing uses NAMEPLATE FLA, not the branch-circuit FLC. The 125% (1.15 as marked here) factor sets the maximum overload.",
-        "Result = 15.18 A → answer C."
+        "KEY POINT: overload is sized from the motor's NAMEPLATE FLA, not the Table 44/45 FLC.",
+        "Rule 28-306 max overload = nameplate FLA × 1.25 (SF ≥ 1.15 or temp-rise ≤ 40 °C) or × 1.15 otherwise.",
+        "Source uses nameplate 12 A with factors 1.1 × 1.15 = 15.18 A → answer C (closest to 12 × 1.25 = 15 A).",
+        "The intermediate 1.1 factor and the 12 A nameplate are source-supplied; flagged for review (the straight 28-306 result would be 12 × 1.25 = 15 A)."
       ],
       "code_edition": "2024",
       "needs_review": true

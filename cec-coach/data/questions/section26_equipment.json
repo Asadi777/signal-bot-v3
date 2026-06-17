@@ -511,14 +511,15 @@
       "options": ["A) 10 A", "B) 15 A", "C) 18 A", "D) 20 A"],
       "answer": "15 A",
       "answer_key": "B",
-      "references": ["Rule 26-250", "Table 13"],
+      "references": ["Rule 26-252", "Table 50", "Table 13"],
       "solution_steps": [
         "Primary current = 150000 / (12470 x 1.732) = 6.94 A.",
-        "With secondary protection, primary OCD may be up to 150% = 6.94 x 1.5 = 10.41 A.",
-        "Next standard fuse size up = 15 A."
+        "Primary is over 750 V (12 470 V), so the primary OCPD percentage comes from Table 50 (transformers over 750 V) rather than the <=750 V rule.",
+        "Applying the permitted primary multiplier gives a value between 6.94 A and the next standard fuse, and the next standard fuse size = 15 A → answer B.",
+        "The exact >750 V fuse multiplier (Table 50) could not be confirmed from the source; method shown, key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S26-030",
@@ -531,7 +532,10 @@
       "answer": "0.4 mm",
       "answer_key": "A",
       "references": ["Rule 26-700"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-700: the receptacle face shall project at least 0.4 mm beyond a metal faceplate.",
+        "Answer = 0.4 mm (A)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -546,9 +550,12 @@
       "answer": "5-20R GFCI",
       "answer_key": "B",
       "references": ["Rule 26-708", "Rule 26-714"],
-      "solution_steps": [],
+      "solution_steps": [
+        "A maintenance receptacle for rooftop heating/air-conditioning equipment is a 125 V 20 A device (CSA 5-20R).",
+        "It must be GFCI (Class A) protected for personnel servicing the equipment → 5-20R GFCI (B)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-032",
@@ -561,9 +568,12 @@
       "answer": "Yes",
       "answer_key": "a",
       "references": ["Rule 26-722"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-722 requires a dedicated (separate) branch circuit for a built-in/central vacuum system receptacle.",
+        "Answer = Yes (a)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-033",
@@ -576,9 +586,12 @@
       "answer": "1 m",
       "answer_key": "c",
       "references": ["Rule 26-302"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-302 requires a minimum separation of 1 m between a fence and an enclosure containing live parts (where the live parts are guarded by the enclosure rather than unguarded).",
+        "Answer = 1 m (c)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-034",
@@ -587,9 +600,14 @@
       "type": "theory",
       "topic": "branch-circuit",
       "question": "Is it true that on the same residential branch circuit as a refrigerator, an electric clock receptacle is permitted?",
+      "options": ["a. Yes", "b. No", "c. Only if GFCI", "d. Only for 240V"],
       "answer": "Yes",
+      "answer_key": "a",
       "references": ["Rule 26-722"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-722 permits an electric-clock receptacle to be supplied from the same branch circuit as the refrigerator (a recognized exception to the otherwise-dedicated refrigerator circuit).",
+        "Answer = Yes (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -603,10 +621,10 @@
       "options": ["a. 10,111 A", "b. 11,111 A", "c. 12,111 A", "d. 13,111 A"],
       "answer": "11,111 A",
       "answer_key": "b",
-      "references": ["Rule 26-250"],
+      "references": ["Available fault-current calculation"],
       "solution_steps": [
-        "Secondary full-load current = 100000 / 600 = 166.7 A.",
-        "Maximum fault current = 166.7 / 0.015 = 11,111 A."
+        "Single-phase secondary full-load current = 100000 / 600 = 166.7 A.",
+        "Available (maximum) fault current = secondary FLA / per-unit impedance = 166.7 / 0.015 = 11,111 A → answer b."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -623,7 +641,9 @@
       "answer_key": "b",
       "references": ["Rule 26-712"],
       "solution_steps": [
-        "Split-receptacle (T-slot) kitchen counter receptacles: each split duplex effectively uses one 2-pole branch circuit; 4 duplex receptacles are supplied by 2 branch circuits."
+        "Kitchen-counter receptacles are split duplexes supplied by 2-pole (multi-wire) branch circuits, and the code limits the number of counter receptacles per circuit.",
+        "Four duplex receptacles are supplied by 2 branch circuits (two split duplexes per 2-pole circuit) → 2 (b).",
+        "The exact 'receptacles per circuit' limit is a code value; method retained, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -639,7 +659,10 @@
       "answer": "3.6 m",
       "answer_key": "b",
       "references": ["Rule 26-712"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-712: receptacles in a dwelling living area are placed so no point along the floor line of any usable wall is more than 1.8 m from a receptacle.",
+        "Maximum distance between adjacent receptacles = 2 x 1.8 m = 3.6 m → answer b."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -651,10 +674,13 @@
       "topic": "gfci",
       "question": "What type of receptacle must be installed in a circuit supplying a sump pump located in a dwelling unit?",
       "options": ["1. AFCI", "2. GFCI", "3. 5-15R", "4. 5-30R"],
-      "answer": "Answer not explicitly marked in source notes (a single non-GFCI receptacle exception may apply for a sump pump)",
-      "references": ["Rule 26-714"],
+      "answer": "5-15R (single, non-GFCI)",
+      "answer_key": "3",
+      "references": ["Rule 26-700", "Rule 26-714"],
       "solution_steps": [
-        "Source did not clearly mark the selected option; flagged for review."
+        "A sump pump qualifies for the GFCI exception: a single receptacle dedicated to a cord-connected sump pump is permitted to be non-GFCI, because nuisance tripping could disable the pump and cause flooding.",
+        "So a single 5-15R is installed (not a GFCI device) → option 3.",
+        "Source did not mark the option; answer derived from the sump-pump GFCI exception, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -688,7 +714,10 @@
       "answer": "750 kcmil",
       "answer_key": "d",
       "references": ["Rule 12-2102"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-2102 limits the largest conductor permitted in a wireway; for aluminum the maximum is 750 kcmil.",
+        "Answer = 750 kcmil (d)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -703,7 +732,10 @@
       "answer": "#10 AWG",
       "answer_key": "b",
       "references": ["Rule 12-118"],
-      "solution_steps": [],
+      "solution_steps": [
+        "The largest conductor permitted to be terminated under a binding (wrap-around) screw on a wiring device is #10 AWG; larger conductors require pressure/clamp terminals.",
+        "Answer = #10 AWG (b)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -718,9 +750,12 @@
       "answer": "20 A",
       "answer_key": "b",
       "references": ["Rule 30-710"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 30-710 limits the overcurrent device for HID lighting branch circuits. At 120 V the maximum is 20 A.",
+        "Answer = 20 A (b)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-043",
@@ -734,7 +769,9 @@
       "answer_key": "d",
       "references": ["Rule 30-710"],
       "solution_steps": [
-        "Note: source numbered two questions '43'; this is the HID 240V branch circuit item."
+        "Rule 30-710 permits a larger HID lighting branch-circuit overcurrent device at higher voltage; the marked key for 240 V is 50 A (d).",
+        "Note: source numbered two questions '43'; this is the HID 240 V branch-circuit item, re-sequenced as S26-043.",
+        "The exact 240 V HID maximum could not be fully confirmed; key retained, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -751,10 +788,11 @@
       "answer_key": "b",
       "references": ["Rule 26-708"],
       "solution_steps": [
+        "The maintenance receptacle for rooftop HVAC equipment is a 125 V, 20 A device → CSA 5-20R (b).",
         "Note: source duplicated number 43 for this item; sequenced here as S26-044."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-045",
@@ -767,7 +805,10 @@
       "answer": "150 mm",
       "answer_key": "c",
       "references": ["Rule 26-244"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-244: a floor-mounted dry-type transformer requires 150 mm minimum separation from an adjacent (combustible plywood) wall for ventilation.",
+        "Answer = 150 mm (c)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -782,9 +823,12 @@
       "answer": "5-20R",
       "answer_key": "b",
       "references": ["Rule 26-708"],
-      "solution_steps": [],
+      "solution_steps": [
+        "A rooftop maintenance receptacle is a 125 V, 20 A device → CSA 5-20R (b).",
+        "(6-15R/6-20R are 250 V devices, not used for a 125 V maintenance receptacle.)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-047",
@@ -796,8 +840,11 @@
       "options": ["a. Provide a heat sink below", "b. Install in a separate vault", "c. Install with a metal pan below", "d. Provide an alarm indicating device"],
       "answer": "Install with a metal pan (curb/containment) below to contain the liquid",
       "answer_key": "c",
-      "references": ["Rule 26-012", "Rule 26-220"],
-      "solution_steps": [],
+      "references": ["Rule 26-012"],
+      "solution_steps": [
+        "For a dielectric liquid-filled capacitor with a small (20 L) tank installed indoors, the surroundings are protected by providing a containment curb/metal pan below to catch the liquid if the tank ruptures (a full vault is reserved for larger liquid quantities).",
+        "Answer = metal pan/containment below (c). The litre threshold dividing 'pan' vs 'vault' is a code value; key retained, flagged for review."
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -809,10 +856,11 @@
       "topic": "capacitor-liquid",
       "question": "A capacitor tank is located outside of a service room. What is the maximum allowable amount of flammable liquid?",
       "options": ["a. 14 L", "b. 23 L", "c. 46 L", "d. 69 L"],
-      "answer": "Answer not explicitly marked in source notes",
+      "answer": "Requires the Rule 26-012(4) flammable-liquid quantity value to confirm",
       "references": ["Rule 26-012 4)"],
       "solution_steps": [
-        "Source did not clearly mark the selected option; flagged for review."
+        "Rule 26-012(4) sets the maximum flammable (dielectric) liquid quantity for a capacitor located outside a service room (same item as S26-027).",
+        "The specific litre value could not be confirmed from the source; flagged for review (no value fabricated)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -830,7 +878,8 @@
       "references": ["Rule 26-210"],
       "solution_steps": [
         "Capacitor rated current = 45000 / (600 x 1.732) = 43.3 A.",
-        "Maximum overcurrent (up to 250-270% for non-time-delay fuses) = 43.3 x 2.5 = 108.3 A, rounded to the 110 A option."
+        "Maximum non-time-delay fuse ~250% of rated current = 43.3 x 2.5 = 108.3 A → nearest standard option = 110 A (d).",
+        "The exact capacitor OCPD multiplier in Rule 26-210 could not be confirmed from the source; key retained, flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -846,7 +895,10 @@
       "answer": "Transformer primary",
       "answer_key": "d",
       "references": ["Rule 30-1202"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Extra-low-voltage decorative lighting is supplied through an isolating transformer; grounding/bonding is applied on the transformer primary (supply) side, not on the ELV secondary or the bulbs.",
+        "Answer = transformer primary (d). Exact rule reference flagged for review."
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -861,7 +913,10 @@
       "answer": "The circuit must be GFCI protected",
       "answer_key": "b",
       "references": ["Rule 26-714"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-714: outdoor receptacles within 2.5 m of finished grade at a dwelling must be Class A GFCI protected.",
+        "Answer = the circuit must be GFCI protected (b)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -873,10 +928,11 @@
       "topic": "surge-protector",
       "question": "What is the minimum distance from combustible material that a line voltage surge protector shall be installed outdoors?",
       "options": ["a. 7.5 mm", "b. 12.5 mm", "c. 25.0 mm", "d. 37.5 mm"],
-      "answer": "Answer not explicitly marked in source notes",
+      "answer": "Requires the Rule 26-410 surge-protector clearance value to confirm",
       "references": ["Rule 26-410"],
       "solution_steps": [
-        "Source did not clearly mark the selected option; flagged for review."
+        "Rule 26-410 sets the minimum clearance of an outdoor line-voltage surge protector from combustible material.",
+        "The specific value (7.5 / 12.5 / 25.0 / 37.5 mm) could not be confirmed from the source; flagged for review (no value fabricated)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -891,8 +947,11 @@
       "options": ["A) Only when the substation is located indoors", "B) Only when the substation uses underground feeders", "C) When lightning occurs frequently in the area and no other adequate protection exists", "D) When the substation has more than one transformer"],
       "answer": "When lightning occurs frequently in the area and no other adequate protection exists",
       "answer_key": "C",
-      "references": ["Rule 26-300"],
-      "solution_steps": [],
+      "references": ["Section 26 (substation/surge-arrester provisions)"],
+      "solution_steps": [
+        "Lightning (surge) arresters are required at a distributing substation where lightning is frequent in the area and no other adequate surge protection is provided.",
+        "Answer = C. Exact rule reference flagged for review."
+      ],
       "code_edition": "2024",
       "needs_review": true
     }

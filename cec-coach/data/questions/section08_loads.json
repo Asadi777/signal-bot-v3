@@ -43,16 +43,16 @@
       "topic": "dwelling-service-calc",
       "question": "A single dwelling unit has a total area of 360 m². It contains a 12 kW electric range, a 6 kW electric dryer, and a 3 kW domestic hot water tank. The main service is 120/240 V, single-phase, 3-wire. Calculate the demand in amps for the main service.",
       "answer": "67.70 A",
-      "references": ["Rule 8-200 1)", "Rule 8-200 1)a)"],
+      "references": ["Rule 8-200 1)a)"],
       "solution_steps": [
-        "Basic load (Rule 8-200 1)a)): first 90 m² = 5000 W; remaining area 360 − 90 = 270 m², in 90 m² increments = 3 increments × 1000 W = 3000 W. Basic = 5000 + 3000 = 8000 W.",
-        "Range (Rule 8-200 1)a)(iv)): 6000 W for first 12 kW, plus 40% of any amount over 12 kW. Range is 12 kW → 6000 W.",
-        "Other loads at 25% where range present: dryer 6000 W and water heater 3000 W are added per the dwelling demand factors. Per the source the additional loads sum into the calculation giving total ≈ 16 250 W.",
-        "I = total demand W ÷ 240 V → 67.70 A.",
-        "Result: 67.70 A."
+        "Basic (8-200 1)a)(i)): first 90 m² = 5000 W; remaining 360 − 90 = 270 m² = exactly 3 increments × 1000 W = 3000 W. Basic = 5000 + 3000 = 8000 W.",
+        "Range (8-200 1)a)(iv)): 6000 W for first 12 kW + 40% of amount over 12 kW. Range = 12 kW → 6000 W.",
+        "Other loads >1500 W with a range present (8-200 1)a)(vii)): 25% of (dryer 6000 + water heater 3000) = 25% × 9000 = 2250 W.",
+        "Total = 8000 + 6000 + 2250 = 16 250 W → I = 16 250 ÷ 240 = 67.70 A.",
+        "Result: 67.70 A (source figure confirmed by the 2024 method)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-004",
@@ -97,17 +97,17 @@
       "topic": "dwelling-service-calc",
       "question": "Calculate the demand in amps of a single dwelling unit with 190 m² of total area. It contains a 16 kW electric range, a 5 kW electric dryer, a 4 kW domestic hot water tank, and 15 kW of electric baseboard heating. The main service is 120/240 V, single-phase, 3-wire.",
       "answer": "127.5 A",
-      "references": ["Rule 8-200 1)", "Rule 62-118"],
+      "references": ["Rule 8-200 1)a)", "Rule 62-118"],
       "solution_steps": [
-        "Basic load: first 90 m² = 5000 W; remaining 190 − 90 = 100 m² → 2 increments of 90 m² (round up) × 1000 W = 2000 W. Basic = 7000 W.",
-        "Range: 6000 W for first 12 kW + 40% of (16 − 12) kW = 6000 + 1600 = 7600 W.",
-        "Electric heating (Rule 8-200/62): 15 000 W added (heating demand factor as applicable).",
-        "Additional loads (dryer 5 kW + water heater 4 kW) added at the dwelling demand factor; summing the demand gives ≈ 30 600 W.",
-        "I = 30 600 W ÷ 240 V = 127.5 A.",
-        "Result: 127.5 A."
+        "Basic (8-200 1)a)(i)): first 90 m² = 5000 W; remaining 190 − 90 = 100 m² → 100/90 = 1.11, round UP to 2 increments × 1000 W = 2000 W. Basic = 7000 W.",
+        "Range (8-200 1)a)(iv)): 6000 W + 40% of (16 − 12) kW = 6000 + 1600 = 7600 W.",
+        "Electric heating (8-200 1)a)(v) → Section 62/62-118): 100% of first 10 kW + 75% of remainder = 10 000 + 0.75 × 5000 = 13 750 W. (Not 15 000 W at 100% — the heating demand factor applies.)",
+        "Other loads >1500 W with a range present (8-200 1)a)(vii)): 25% of (dryer 5000 + water heater 4000) = 25% × 9000 = 2250 W.",
+        "Total = 7000 + 7600 + 13 750 + 2250 = 30 600 W → I = 30 600 ÷ 240 = 127.5 A.",
+        "Result: 127.5 A (source figure confirmed; the original step text wrongly stated heating was added at 15 000 W — the 127.5 A answer already reflects the 13 750 W demand figure)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-007",
@@ -134,17 +134,18 @@
       "type": "calculation",
       "topic": "dwelling-service-calc",
       "question": "A single-family dwelling is supplied with 120/240 V, single-phase service. It has 250 m² of total area, a 16 kW range, a 4 kW dryer, a 4 kW hot water tank, and 24 kW of electric baseboard heating. Determine the ampacity of the service copper conductors required. Use R90 XLPE 600 V Cu conductors.",
-      "answer": "154.5 A",
-      "references": ["Rule 8-200 1)", "Rule 62-118", "Table 2"],
+      "answer": "≈154.6 A (source 154.5 A)",
+      "references": ["Rule 8-200 1)a)", "Rule 62-118", "Rule 4-006", "Table 2"],
       "solution_steps": [
-        "Basic load: first 90 m² = 5000 W; remaining 250 − 90 = 160 m² → 2 increments of 90 m² (round up) × 1000 W = 2000 W. Basic = 7000 W.",
-        "Range: 6000 W + 40% of (16 − 12) kW = 6000 + 1600 = 7600 W.",
-        "Electric heating 24 kW added per heating demand factor; additional loads (dryer 4 kW + water heater 4 kW) at applicable demand factor.",
-        "Total demand ≈ 37 080 W → I = 37 080 ÷ 240 = 154.5 A.",
-        "Select R90 copper conductor with ampacity ≥ 154.5 A. Result: 154.5 A."
+        "Basic (8-200 1)a)(i)): first 90 m² = 5000 W; remaining 250 − 90 = 160 m² → 160/90 = 1.78, round UP to 2 increments × 1000 W = 2000 W. Basic = 7000 W.",
+        "Range (8-200 1)a)(iv)): 6000 W + 40% of (16 − 12) kW = 7600 W.",
+        "Electric heating (Section 62/62-118): 100% of first 10 kW + 75% of remaining 14 kW = 10 000 + 10 500 = 20 500 W.",
+        "Other loads >1500 W with a range present (8-200 1)a)(vii)): 25% of (dryer 4000 + water heater 4000) = 25% × 8000 = 2000 W.",
+        "Total = 7000 + 7600 + 20 500 + 2000 = 37 100 W → I = 37 100 ÷ 240 = 154.6 A (source rounded to 37 080 W / 154.5 A).",
+        "Conductor (Table 2, R90 Cu, 75°C terminations per Rule 4-006): 1/0 = 150 A is too small; 2/0 (175 A at 75°C) carries the 154.6 A demand. Result: ≈154.6 A → 2/0 AWG copper."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S08-009",

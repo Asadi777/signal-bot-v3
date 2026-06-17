@@ -21,7 +21,7 @@
       "answer": "Both 15 A or 20 A (a #16 AWG equipment wire may be protected at 15 A or, under the permitted conditions, at 20 A)",
       "answer_key": "C",
       "references": ["Rule 14-104", "Table 13"],
-      "solution_steps": ["Overcurrent protection for small/equipment wire is set by Rule 14-104 and Table 13.", "For #16 AWG equipment wire the permitted overcurrent device is 15 A or 20 A."],
+      "solution_steps": ["Overcurrent protection for conductors is governed by Rule 14-104 / Table 13.", "The keyed answer treats #16 AWG equipment wire as permitted at 15 A or 20 A. Flagged: the exact OCP allowance for #16 equipment wire was not confirmed against Table 13 text."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -29,9 +29,9 @@
       "id": "S14-003",
       "section": 14, "block": "B", "type": "lookup", "topic": "fuse-type-heating",
       "question": "For space-heating installations, what type of fuses must be used?",
-      "answer": "Type D or Type P fuses (time-delay type fuses suitable for the inductive/seasonal load characteristics of space heating)",
-      "references": ["Rule 14-212", "Rule 62-114"],
-      "solution_steps": ["Space-heating circuits use time-delay fuses to handle inrush/cycling.", "The source specifies Type D or Type P fuses."],
+      "answer": "Type D or Type P fuses (time-delay/HRC-type fuses suited to the cycling load of space heating)",
+      "references": ["Rule 14-212", "Section 62"],
+      "solution_steps": ["Space-heating circuits use time-delay fuses to ride through cycling/inrush.", "The source specifies Type D or Type P fuses. Flagged: fuse class and rule reference not confirmed against the code text."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -41,7 +41,7 @@
       "question": "What is the maximum voltage and current rating of knife switches?",
       "answer": "750 V at 600 A",
       "references": ["Rule 14-510"],
-      "solution_steps": ["Knife switches are limited by the Code to a maximum rating of 750 V and 600 A."],
+      "solution_steps": ["Knife switches are limited to a maximum rating of 750 V and 600 A per the source. Flagged: exact rating/rule not confirmed against the code text."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -63,9 +63,9 @@
       "question": "What is the maximum interrupting rating of a 480 V, 125 A circuit breaker (unless specifically marked otherwise)?",
       "answer": "10,000 A symmetrical",
       "references": ["Rule 14-012", "Rule 14-606"],
-      "solution_steps": ["Unless marked with a higher interrupting capacity, a moulded-case circuit breaker is assumed to have a default interrupting rating of 10,000 A symmetrical."],
+      "solution_steps": ["Unless specifically marked with a higher interrupting capacity, a circuit breaker is taken to have a default interrupting rating of 10,000 A symmetrical (Rule 14-012/14-606).", "Voltage (480 V) and frame size (125 A) do not change this default."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S14-007",
@@ -75,9 +75,9 @@
       "answer": "No. The system voltage to ground (347 V) exceeds 150 V, but the service is rated 800 A — below the 1000 A threshold of Rule 14-102 — so equipment ground-fault protection is not required.",
       "answer_key": "B",
       "references": ["Rule 14-102"],
-      "solution_steps": ["Rule 14-102 requires GFP only where the service is 1000 A or more AND over 150 V to ground.", "347 V to ground exceeds 150 V, but 800 A is less than 1000 A, so GFP is not mandated."],
+      "solution_steps": ["Rule 14-102 requires GFP only where BOTH conditions hold: service rated 1000 A or more AND more than 150 V to ground.", "347 V to ground exceeds 150 V, but 800 A is less than 1000 A, so GFP is not mandated."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S14-008",
@@ -87,9 +87,9 @@
       "answer": "30 A",
       "answer_key": "D",
       "references": ["Rule 14-200"],
-      "solution_steps": ["Plug fuses (Type T / Type S) are limited to a maximum rating of 30 A."],
+      "solution_steps": ["Plug fuses (Type T / Type S) are limited to a maximum rating of 30 A.", "Of the options, 30 A is the maximum."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S14-009",
@@ -99,17 +99,17 @@
       "answer": "200 A. The 3/0 Cu TW75 conductor ampacity (Table 2) is 200 A; for a non-continuous load the overcurrent device is sized to the conductor ampacity, so the maximum breaker is 200 A.",
       "answer_key": "A",
       "references": ["Rule 14-104", "Rule 14-100", "Table 2"],
-      "solution_steps": ["From Table 2, 3/0 AWG copper at 75°C (TW75) has an ampacity of 200 A.", "For a non-continuous load, the overcurrent device may be sized at the conductor ampacity (Rule 14-104).", "Maximum permitted circuit breaker = 200 A."],
+      "solution_steps": ["From Table 2, 3/0 AWG copper at 75 degC (TW75) has an ampacity of 200 A.", "Rule 14-104 sizes the overcurrent device at the conductor ampacity, or where that does not correspond to a standard size, the next lower standard size; 200 A is itself a standard size (Table 13).", "Maximum permitted circuit breaker = 200 A."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S14-010",
       "section": 14, "block": "B", "type": "theory", "topic": "switch-rating",
       "question": "What must be the rating of general-use switches controlling incandescent lighting in public assembly areas?",
       "answer": "They must be \"T\"-rated (tungsten-rated) general-use switches, because incandescent (tungsten-filament) lamps draw high inrush current.",
-      "references": ["Rule 14-500", "Rule 30-602"],
-      "solution_steps": ["Incandescent/tungsten lamps have high inrush; switches controlling them must be rated for tungsten loads.", "Such switches carry a 'T' rating."],
+      "references": ["Rule 14-500"],
+      "solution_steps": ["Incandescent/tungsten lamps have high inrush, so general-use switches controlling them must be marked for tungsten ('T') loads.", "Flagged: the 'T'-rating requirement is correct in principle, but the exact rule reference was not confirmed against the code text."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -121,9 +121,9 @@
       "answer": "1.0 second (ground-fault protection must clear a ground-fault current of 3000 A or more within a maximum of 1 second)",
       "answer_key": "C",
       "references": ["Rule 14-102"],
-      "solution_steps": ["Equipment ground-fault protection systems have a maximum permitted clearing (operating) time.", "For a ground-fault current of 3000 A or higher, the maximum clearing time is 1.0 second."],
+      "solution_steps": ["Rule 14-102 sets a maximum operating (clearing) time for equipment ground-fault protection.", "For a ground-fault current of 3000 A or higher, the maximum clearing time is 1.0 second."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     }
   ]
 }

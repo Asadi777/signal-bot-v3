@@ -98,10 +98,10 @@
       "options": ["A) conductors are run in a 53 mm rigid steel pipe", "B) conductors are protected by a 5 mm steel plate", "C) conductors are embedded in 50 mm of concrete", "D) conductors are run in an attic with 1.2 m clearance"],
       "answer": "Conductors are embedded in not less than 50 mm of concrete (consumer's service conductors run inside a building must be encased in at least 50 mm of concrete or masonry)",
       "answer_key": "C",
-      "references": ["Rule 6-300", "Rule 6-302"],
-      "solution_steps": ["Consumer's service conductors are generally not permitted inside a building unless they are run underground, encased in at least 50 mm of concrete/masonry, or otherwise specified.", "Option C (embedded in 50 mm of concrete) satisfies this requirement."],
+      "references": ["Rule 6-300"],
+      "solution_steps": ["Consumer's service conductors are generally not permitted inside a building unless encased in at least 50 mm of concrete/masonry (or otherwise run as the Rule permits).", "Option C (embedded in 50 mm of concrete) satisfies this requirement; the other options do not."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S06-011",
@@ -111,9 +111,9 @@
       "answer": "3.5 m (minimum vertical clearance over areas accessible to pedestrians only)",
       "answer_key": "A",
       "references": ["Rule 6-112", "Table 32"],
-      "solution_steps": ["Areas accessible to pedestrians only have the lowest required overhead clearance.", "Minimum height for the point of attachment over pedestrian-only areas is 3.5 m."],
+      "solution_steps": ["Areas accessible to pedestrians only carry the lowest required overhead clearance (Table 32).", "Minimum height for the point of attachment over pedestrian-only areas is 3.5 m, increasing to 5.5 m over highways/vehicle areas."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S06-012",
@@ -122,8 +122,8 @@
       "options": ["A) conductors are run in a 53 mm rigid steel pipe", "B) conductors are protected by a 5 mm steel plate", "C) conductors are embedded in 50 mm of concrete", "D) conductors are run in an attic with 1.2 m clearance"],
       "answer": "Conductors are embedded in not less than 50 mm of concrete",
       "answer_key": "C",
-      "references": ["Rule 6-300", "Rule 6-302"],
-      "solution_steps": ["This is a duplicate of Q10 in the source (it appears in both the question set and the answer set).", "Consumer's service conductors inside a building must be encased in at least 50 mm of concrete/masonry → option C."],
+      "references": ["Rule 6-300"],
+      "solution_steps": ["This is a duplicate of S06-010 in the source (it appears in both the question set and the answer set).", "Consumer's service conductors inside a building must be encased in at least 50 mm of concrete/masonry -> option C."],
       "code_edition": "2024",
       "needs_review": false
     }

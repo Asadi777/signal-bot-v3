@@ -351,10 +351,10 @@
       "topic": "neutral-temp-rating",
       "question": "A line conductor in a conduit carrying three hot conductors and a bare neutral is rated at 75°C. What should be the temperature rating of the neutral conductor?",
       "answer": "75°C — the neutral must have a temperature rating not less than the line conductors.",
-      "references": ["Rule 4-018 4)"],
+      "references": ["Rule 4-016 2)"],
       "solution_steps": [
-        "Rule 4-018 4) requires the neutral conductor to have a temperature rating not less than that of the ungrounded (line) conductors.",
-        "Line conductors are 75°C, so the neutral must be at least 75°C.",
+        "Rule: the identified (neutral) conductor insulation must have a temperature rating not less than that of the ungrounded (line) conductors (same principle as Rule 4-016 2)).",
+        "The line conductors are 75°C, so the neutral must be at least 75°C.",
         "Result: 75°C."
       ],
       "code_edition": "2024",
@@ -370,9 +370,9 @@
       "answer": "65 A",
       "references": ["Rule 4-006 1)", "Table 2"],
       "solution_steps": [
-        "Rule 4-006 1) requires the ampacity to be based on the lowest temperature rating of any connected termination — here 75°C.",
-        "Read #6 copper at 75°C from Table 2 = 65 A.",
-        "Result: 65 A."
+        "Rule (termination): Rule 4-006 limits the ampacity to the lowest temperature rating of any connected termination — here the breaker is marked 75°C.",
+        "Table/value: Table 2, #6 copper at 75°C = 65 A.",
+        "Result: 65 A (the 90°C cable rating is not usable because the 75°C termination governs)."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -384,13 +384,13 @@
       "type": "calculation",
       "topic": "neutral-supported-ambient",
       "question": "What is the maximum ampacity of a #4 NS90 aluminum neutral-supported cable with 3 conductors in an ambient temperature of 35°C?",
-      "answer": "117.5 A",
-      "references": ["Rule 4-004 5)", "Table 36A"],
+      "answer": "117.5 A (source)",
+      "references": ["Rule 4-004 5)", "Table 36A", "Table 5A"],
       "solution_steps": [
-        "NS90 aluminum cable ampacity → Rule 4-004 5) sends you to Table 36A.",
-        "Read #4 aluminum NS90 from Table 36A for the base ampacity.",
-        "Apply the ambient correction for 35°C to the table value, giving 117.5 A.",
-        "Result: 117.5 A."
+        "Rule (selection): NS90 aluminum cable → Rule 4-004 5), Table 36A (aluminum NS).",
+        "Method: read the #4 aluminum NS90 base ampacity from Table 36A, then apply the 35°C ambient factor (Table 5A, 90°C column = 0.96).",
+        "Check: 117.5 ÷ 0.96 ≈ 122 A would be the implied Table 36A base; verify against the actual table.",
+        "NEEDS REVIEW: confirm the Table 36A base ampacity for #4 NS90 aluminum (3 conductors) and the applicable ambient factor in the 2024 code; source result 117.5 A not independently verified."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -405,9 +405,9 @@
       "answer": "70 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #3 copper at 75°C (TW75) from Table 2 = 100 A.",
-        "10 current-carrying conductors → Table 5C count factor = 0.70.",
-        "100 A × 0.70 = 70 A.",
+        "Rule (selection): raceway/cable + copper → Table 2; #3 copper at 75°C (TW75) = 100 A.",
+        "Count derate: 10 current-carrying conductors → Table 5C, 7–24 = 0.70.",
+        "Math: 100 × 0.70 = 70 A.",
         "Result: 70 A."
       ],
       "code_edition": "2024",
@@ -423,13 +423,13 @@
       "answer": "#4 AWG copper",
       "references": ["Rule 4-004 5)", "Table 36B"],
       "solution_steps": [
-        "NS copper cable → Rule 4-004 5) sends you to Table 36B (copper NS).",
-        "For a 150 A feeder read Table 36B.",
-        "Table 36B gives #4 AWG copper.",
-        "Result: #4 AWG copper."
+        "Rule (selection): NS copper cable → Rule 4-004 5), Table 36B (copper NS).",
+        "Method: for a 150 A feeder read down Table 36B (copper) to the minimum NS size rated ≥ 150 A.",
+        "Value: source gives #4 AWG copper.",
+        "NEEDS REVIEW: confirm #4 AWG copper for 150 A in Table 36B of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-025",
@@ -442,7 +442,7 @@
       "references": ["Rule 4-004 1)c)", "Table 5C"],
       "solution_steps": [
         "Count-adjustment for multiple current-carrying conductors comes from Table 5C.",
-        "For 7 to 24 conductors the factor is 0.70; 10 conductors falls in this range.",
+        "Table 5C ranges: 4–6 = 0.80, 7–24 = 0.70, 25–42 = 0.60. 10 conductors falls in the 7–24 range → 0.70.",
         "Result: 0.70."
       ],
       "code_edition": "2024",
@@ -458,13 +458,12 @@
       "answer": "303 A",
       "references": ["Rule 4-004 1)d)", "Diagram D11", "Table D11A detail 1"],
       "solution_steps": [
-        "Underground raceway, multi-conductor → Rule 4-004 1)d), Diagram D11 / Table D11A detail 1.",
-        "Read 4/0 copper at 90°C from Table D11A detail 1.",
-        "Value = 303 A.",
-        "Result: 303 A."
+        "Rule (selection): underground raceway, multi-conductor → Rule 4-004 1)d), Appendix D, Diagram D11 / Table D11A detail 1.",
+        "Method: read 4/0 copper (90°C) from Table D11A detail 1; source value = 303 A (> the 300 A load).",
+        "NEEDS REVIEW: confirm the 4/0 Cu value of 303 A in Table D11A detail 1 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-027",
@@ -476,10 +475,10 @@
       "answer": "25.48 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #10 copper at 90°C from Table 2 = 40 A.",
-        "10 current-carrying conductors → Table 5C count factor = 0.70.",
-        "Ambient 40°C for 90°C insulation → Table 5A factor = 0.91.",
-        "40 A × 0.70 × 0.91 = 25.48 A.",
+        "Rule (selection): raceway/cable + copper → Table 2; #10 copper at 90°C (R90) = 40 A.",
+        "Count derate: 10 current-carrying conductors → Table 5C, 7–24 = 0.70.",
+        "Ambient: 40°C, 90°C insulation column → Table 5A = 0.91.",
+        "Math: 40 × 0.70 × 0.91 = 25.48 A.",
         "Result: 25.48 A."
       ],
       "code_edition": "2024",
@@ -492,17 +491,16 @@
       "type": "calculation",
       "topic": "neutral-supported-ambient",
       "question": "What is the maximum ampacity allowed for a #6 AWG copper NS75 neutral-supported cable with 4 insulated conductors installed in an ambient temperature of 35°C?",
-      "answer": "82.8 A",
-      "references": ["Rule 4-004 5)", "Table 36B"],
+      "answer": "82.8 A (source) — see review note on the ambient factor",
+      "references": ["Rule 4-004 5)", "Table 36B", "Table 5A"],
       "solution_steps": [
-        "NS75 copper cable → Rule 4-004 5) sends you to Table 36B.",
-        "Base ampacity of #6 copper NS75 from Table 36B = 90 A.",
-        "Ambient 35°C correction factor = 0.92.",
-        "90 A × 0.92 = 82.8 A.",
-        "Result: 82.8 A."
+        "Rule (selection): NS75 copper cable → Rule 4-004 5), Table 36B; source base for #6 copper NS75 = 90 A.",
+        "Ambient: source uses 0.92 for 35°C → 90 × 0.92 = 82.8 A.",
+        "2024-method check: Table 5A at 35°C, 75°C insulation column = 0.94, which gives 90 × 0.94 = 84.6 A. The 0.92 figure does not match the standard 75°C-column factor.",
+        "NEEDS REVIEW: confirm (a) the Table 36B base ampacity for #6 NS75 copper and (b) the correct 35°C ambient factor. Source 82.8 A (×0.92) vs 2024-method 84.6 A (×0.94) shown for a human to decide."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-029",
@@ -514,10 +512,10 @@
       "answer": "51.87 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #4 copper at 90°C from Table 2 = 95 A.",
-        "28 current-carrying conductors → Table 5C count factor = 0.60.",
-        "Ambient 40°C for 90°C insulation → Table 5A factor = 0.91.",
-        "95 A × 0.60 × 0.91 = 51.87 A.",
+        "Rule (selection): raceway/cable + copper → Table 2; #4 copper at 90°C (R90) = 95 A.",
+        "Count derate: 28 current-carrying conductors → Table 5C, 25–42 = 0.60.",
+        "Ambient: 40°C, 90°C insulation column → Table 5A = 0.91.",
+        "Math: 95 × 0.60 × 0.91 = 51.87 A.",
         "Result: 51.87 A."
       ],
       "code_edition": "2024",
@@ -533,13 +531,13 @@
       "answer": "1/0 AWG",
       "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
       "solution_steps": [
-        "Direct-buried spaced single conductors → Rule 4-004 1)d), Diagram D8 / Table D8A detail 2.",
-        "If run as one conductor per phase, the conductor must carry the full 400 A.",
-        "From Table D8A detail 2, 1/0 AWG provides at least 400 A in the spaced direct-burial configuration.",
-        "Result: 1/0 AWG."
+        "Rule (selection): direct-buried spaced single conductors → Rule 4-004 1)d), Appendix D, Diagram D8 / Table D8A detail 2.",
+        "Method: one conductor per phase must carry the full 400 A; pick the size whose buried/spaced ampacity ≥ 400 A.",
+        "Value: source gives 1/0 AWG.",
+        "NEEDS REVIEW: confirm 1/0 AWG provides ≥ 400 A for single-conductor Teck, direct-buried, spaced 190 mm in Table D8A detail 2 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-031",
@@ -553,7 +551,7 @@
       "answer_key": "B",
       "references": ["Rule 4-038"],
       "solution_steps": [
-        "When conductors of different temperature ratings share a raceway, the ampacity adjustment is based on the conductor with the lowest temperature rating.",
+        "Rule 4-038: when conductors of different temperature ratings share a raceway, the ampacity is determined on the basis of the conductor with the LOWEST temperature rating.",
         "Result: Lowest (option B)."
       ],
       "code_edition": "2024",
@@ -569,9 +567,9 @@
       "options": ["A) Red, black, blue", "B) Red, black, white", "C) Blue, black, red", "D) Red, white, black"],
       "answer": "Red, black, blue",
       "answer_key": "A",
-      "references": ["Rule 4-032 1)c)"],
+      "references": ["Rule 4-036 (colour-coded circuits)"],
       "solution_steps": [
-        "Rule 4-032 specifies phase A = red, phase B = black, phase C = blue.",
+        "Where colour-coded, the CEC 3-phase sequence is phase A = red, phase B = black, phase C = blue.",
         "Result: Red, black, blue (option A)."
       ],
       "code_edition": "2024",
@@ -589,10 +587,10 @@
       "answer_key": "A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #8 copper at 60°C from Table 2 = 40 A.",
-        "8 current-carrying conductors → Table 5C count factor = 0.70.",
-        "Ambient 50°C for 60°C insulation → Table 5A factor = 0.58.",
-        "40 A × 0.70 × 0.58 = 16.24 A.",
+        "Rule (selection): raceway + copper → Table 2; #8 copper at 60°C = 40 A.",
+        "Count derate: 8 current-carrying conductors → Table 5C, 7–24 = 0.70.",
+        "Ambient: 50°C, 60°C insulation column → Table 5A = 0.58.",
+        "Math: 40 × 0.70 × 0.58 = 16.24 A.",
         "Result: 16.24 A (option A)."
       ],
       "code_edition": "2024",
@@ -608,12 +606,12 @@
       "options": ["A) #1/0 AWG", "B) #2/0 AWG", "C) #3/0 AWG", "D) #4/0 AWG"],
       "answer": "#4/0 AWG",
       "answer_key": "D",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A"],
+      "references": ["Rule 4-004 1)", "Table 2", "Table 5A"],
       "solution_steps": [
-        "Ambient 48°C for 75°C insulation → Table 5A correction factor ≈ 0.76.",
-        "Required base (table) ampacity = 170 A ÷ 0.76 ≈ 224 A.",
-        "From Table 2, the smallest 75°C copper conductor with ampacity ≥ 224 A is #4/0 (230 A).",
-        "Result: #4/0 AWG (option D)."
+        "Ambient: 48°C is not a listed row → Table 5A round-up rule uses the next-higher listed temperature, 50°C. At 50°C, 75°C insulation column → 0.75.",
+        "Required base (table) ampacity = 170 A ÷ 0.75 ≈ 226.7 A.",
+        "Table: smallest 75°C copper (Table 2) with ampacity ≥ 226.7 A is #4/0 (230 A).",
+        "Result: #4/0 AWG (option D). (Either the source's ≈0.76/224 A or the round-up 0.75/226.7 A lands on #4/0.)"
       ],
       "code_edition": "2024",
       "needs_review": false

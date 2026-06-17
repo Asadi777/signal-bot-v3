@@ -282,10 +282,10 @@
       "topic": "pull-box",
       "question": "Determine the minimum dimensions A, B and C required in a 'U pull' based on the diagram (2 in. conduit entries).",
       "answer": "A = 18 in., B = 14 in., C = 12 in.",
-      "references": ["Rule 12-3034 1)b)"],
+      "references": ["Rule 12-3036"],
       "solution_steps": [
-        "U pull sizing based on diagram with 2 in. conduit entries.",
-        "A = 18, B = 14, C = 12 inches. Diagram needed to verify."
+        "U-pull sizing per Rule 12-3036: 6× the largest raceway trade size (6 × 2 in. = 12 in.) for the angle/U dimension, plus additions where multiple raceways share a wall.",
+        "Keep needs_review: A, B, C depend on the entry layout in the diagram, which cannot be reconstructed here (C = 12 in. matches 6 × 2 in., but A = 18 and B = 14 need the figure)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -299,7 +299,9 @@
       "question": "How much can the minimum cover requirements be reduced if you provide acceptable mechanical protection?",
       "answer": "150 mm",
       "references": ["Table 53", "Rule 12-012"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Table 53 (and its notes, Rule 12-012): where supplementary mechanical protection (e.g. a treated plank or concrete slab) is added over a direct buried run, the tabulated minimum cover may be reduced by 150 mm."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -310,9 +312,12 @@
       "type": "theory",
       "topic": "underground-splices",
       "question": "Splices in an underground run of cable shall be permitted to be made in junction boxes ______ m above grade.",
-      "answer": "Answer not given in source notes (Rule 12-112 6a referenced)",
-      "references": ["Rule 12-112 6)a)"],
-      "solution_steps": [],
+      "answer": "Answer not given in source notes (Rule 12-112 6)a) referenced)",
+      "references": ["Rule 12-112"],
+      "solution_steps": [
+        "Rule 12-112 6)a) permits splices in an underground cable run to be made in a junction box located above grade.",
+        "Keep needs_review: the source left the numeric height blank and it cannot be confirmed without the printed CEC 2024 Rule 12-112 6)a) value."
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -326,8 +331,9 @@
       "answer": "58.5 mm",
       "references": ["Table 38", "Rule 12-1102"],
       "solution_steps": [
-        "Temperature change = 25 - (-50) = 75 degC.",
-        "Use the RPVC expansion coefficient (Table 38) per metre per degree, multiplied by 15 m run and 75 degC.",
+        "Temperature change ΔT = 25 - (-50) = 75 degC.",
+        "RPVC expansion coefficient ≈ 0.052 mm per metre per degC (Table 38).",
+        "Expansion = 0.052 × 15 m × 75 degC = 58.5 mm.",
         "Result = 58.5 mm."
       ],
       "code_edition": "2024",
@@ -342,7 +348,9 @@
       "question": "What is the minimum clearance needed between the top of a cable tray and all ceilings and heating ducts?",
       "answer": "300 mm",
       "references": ["Rule 12-2202"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-2202: a minimum 300 mm clearance is required above a cable tray to ceilings and heating ducts to permit heat dissipation and cable installation/removal."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -356,9 +364,10 @@
       "answer": "56 conductors",
       "references": ["Rule 12-2100", "Table 10"],
       "solution_steps": [
-        "Auxiliary gutter fill is limited to 20% of the cross-sectional area.",
-        "Gutter area = 50 x 50 = 2500 mm2; usable = 20% = 500 mm2.",
-        "Divide by the #14 conductor area (Table 10) to get 56 conductors."
+        "Rule 12-2100: auxiliary gutter fill is limited to 20% of the gutter cross-sectional area.",
+        "Gutter area = 50 × 50 = 2500 mm2; usable = 20% × 2500 = 500 mm2.",
+        "Table 10: #14 R90 area ≈ 8.9 mm2; 500 / 8.9 ≈ 56 conductors.",
+        "Result: 56 conductors."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -372,9 +381,12 @@
       "question": "What is the minimum bending radius permitted for the 2-1/2 in. RPVC conduit?",
       "answer": "267 mm",
       "references": ["Table 7"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Table 7: read the minimum bend radius for 2-1/2 in. (63 mm) conduit; the source gives 267 mm (consistent with the 63 mm EMT value in S12-053).",
+        "Keep needs_review: confirm the exact 2-1/2 in. radius against the printed CEC 2024 Table 7."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-025",
@@ -384,14 +396,15 @@
       "topic": "conduit-fill",
       "question": "What is the minimum conduit size required for an installation that has ten aluminum unjacketed conductors, type RW75 XLPE, 1000 volt, #8 AWG?",
       "answer": "Size 35 mm",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Find the #8 RW75 1000V conductor area (Table 10).",
-        "Total area for 10 conductors, apply 40% fill (over 2 conductors, Table 8).",
-        "Smallest conduit from Table 6 = size 35 mm."
+        "Table 10: area of one #8 RW75 1000 V aluminum conductor; total = 10 × that area.",
+        "Rule 12-910 / Table 8: >2 conductors → 40% fill limit.",
+        "Table 6: smallest conduit whose 40% area ≥ total → size 35.",
+        "Keep needs_review: confirm the #8 RW75 1000 V area and the size-35 40% area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-026",
@@ -401,14 +414,15 @@
       "topic": "conduit-fill",
       "question": "How many jacketed #6 AWG, 600V R90 XLPE, Cu conductors are allowed by the code to be drawn into a 2 inch conduit?",
       "answer": "15 conductors",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Determine the #6 R90 600V conductor area (Table 10).",
-        "Take the 2 in. conduit usable area at 40% fill (Table 6 / Table 8).",
-        "Number of conductors = 15."
+        "Table 10: area of one jacketed #6 R90 XLPE 600 V Cu conductor.",
+        "Table 6: 2 in. (53 mm) conduit internal area × 40% fill (Table 8, >2 conductors).",
+        "Number = 40%-area ÷ conductor area → 15.",
+        "Keep needs_review: confirm the #6 R90 area and the 2 in. conduit area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-027",
@@ -418,10 +432,14 @@
       "topic": "underground-cover",
       "question": "What is the minimum cover requirement permitted for a cable having a metal sheath crossing under a driveway to supply a 600V, 3-phase service?",
       "answer": "600 mm",
-      "references": ["Table 53"],
-      "solution_steps": [],
+      "references": ["Rule 12-012", "Table 53"],
+      "solution_steps": [
+        "Table 53: a cable with a metal sheath / armour (its own mechanical protection) under a driveway/vehicular area at ≤750 V takes a reduced cover relative to an unprotected direct-buried cable.",
+        "Source gives 600 mm; note this appears to conflict with S12-067 (metal-sheathed, vehicular, 900 mm) — the difference turns on whether the metal sheath itself counts as the mechanical protection that reduces the cover.",
+        "Keep needs_review: reconcile the metal-sheath cover value against the printed CEC 2024 Table 53 rows."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-028",
@@ -432,7 +450,9 @@
       "question": "What is the largest size of conductor that can be terminated without the use of a lug?",
       "answer": "#10 AWG",
       "references": ["Rule 12-118"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-118: conductors larger than #10 AWG must be terminated with a pressure connector/lug; #10 and smaller may be terminated directly (e.g. under a binding screw) without a lug."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -445,9 +465,13 @@
       "question": "What is the maximum distance permitted between supports for 250 kcmil copper conductors installed in a vertical raceway?",
       "answer": "18 m",
       "references": ["Table 21", "Rule 12-120"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-120 / Table 21: maximum spacing between supports for conductors in a vertical raceway, by conductor size — larger conductors (heavier) get shorter spacings.",
+        "Source gives 18 m for 250 kcmil copper.",
+        "Keep needs_review: confirm the 250 kcmil Cu vertical-support spacing against the printed CEC 2024 Table 21 (cross-check with S12-066 #3/0 Cu = 30 m)."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-030",
@@ -457,8 +481,10 @@
       "topic": "fcc-cable",
       "question": "Can type FCC cable be used in a dwelling unit?",
       "answer": "No",
-      "references": ["Rule 12-806 c)"],
-      "solution_steps": [],
+      "references": ["Rule 12-806"],
+      "solution_steps": [
+        "Rule 12-806: Type FCC (flat conductor cable) is not permitted in dwelling units (among other prohibited locations such as wet areas and outdoors)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -502,8 +528,10 @@
       "topic": "nmsc-clearance",
       "question": "What is the minimum clearance required between a NMSC and a concrete chimney?",
       "answer": "50 mm",
-      "references": ["Rule 12-506", "Rule 12-510"],
-      "solution_steps": [],
+      "references": ["Rule 12-510"],
+      "solution_steps": [
+        "Rule 12-510: NMSC must be kept at least 50 mm clear of a masonry/concrete chimney or fireplace (the larger separation, vs 25 mm air space from a heating pipe in S12-054)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -516,7 +544,9 @@
       "question": "What is the maximum distance between two supports in armoured cables?",
       "answer": "1.5 m",
       "references": ["Rule 12-618"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-618: armoured cable (e.g. AC90, TECK) must be supported at intervals not exceeding 1.5 m."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -528,8 +558,10 @@
       "topic": "nmsc-protection",
       "question": "What is the minimum height above a floor that an NMSC must be installed such that it does not necessarily require mechanical protection?",
       "answer": "1.5 m",
-      "references": ["Rule 12-516", "Rule 12-518"],
-      "solution_steps": [],
+      "references": ["Rule 12-518"],
+      "solution_steps": [
+        "Rule 12-518: NMSC run on the surface and exposed to mechanical injury must be protected; where installed at least 1.5 m above the floor it is generally considered out of reach and additional mechanical protection is not required."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -542,7 +574,9 @@
       "question": "In type FCC Cable, what is the maximum current permitted for branch circuits?",
       "answer": "30 A",
       "references": ["Rule 12-806"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-806: Type FCC cable branch circuits are limited to a maximum rating of 30 A."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -555,9 +589,12 @@
       "question": "What is the minimum bending radius for a 2.5 inch conduit in mm when 1/0 R90 XLPE conductors are pulled into this conduit?",
       "answer": "267 mm",
       "references": ["Table 7"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Table 7: minimum bend radius is set by the conduit trade size (not the conductor); for 2-1/2 in. the source gives 267 mm (same value as S12-024).",
+        "Keep needs_review: confirm the 2-1/2 in. radius against the printed CEC 2024 Table 7."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-038",
@@ -567,14 +604,15 @@
       "topic": "conduit-fill",
       "question": "Determine the minimum RPVC conduit size for the following conductors: Four 3/0 R90 XLPE conductors and one #6 R90 XLPE conductor. The conductors are stranded and rated at 600V unjacketed.",
       "answer": "Size 53",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Sum the areas of the four 3/0 and one #6 R90 conductors (Table 10).",
-        "Apply 40% fill (over 2 conductors) and select the RPVC conduit from Table 6.",
-        "Result = size 53."
+        "Table 10: sum the areas of four 3/0 R90 + one #6 R90 conductors.",
+        "Rule 12-910 / Table 8: >2 conductors → 40% fill.",
+        "Table 6: smallest RPVC whose 40% area ≥ total → size 53.",
+        "Keep needs_review: confirm the conductor areas and the size-53 RPVC area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-039",
@@ -585,7 +623,9 @@
       "question": "What is the minimum clearance required between cable tray and any short length obstructions?",
       "answer": "150 mm",
       "references": ["Rule 12-2202"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-2202: while 300 mm clearance is required above a cable tray generally (S12-022), a reduced 150 mm clearance is permitted at short-length obstructions."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -597,11 +637,12 @@
       "topic": "box-fill",
       "question": "How many more #12 AWG conductors are permitted in an FS 4-gang box if it contains 13 wire connectors, 3 three-way switches and 1 four-way switch?",
       "answer": "18 x #12 AWG",
-      "references": ["Table 23", "Table 22"],
+      "references": ["Rule 12-3034", "Table 22", "Table 23"],
       "solution_steps": [
-        "Determine the total volume of the FS 4-gang box and the volume allowance per #12 conductor.",
-        "Subtract the conductor equivalents already used by the connectors and switches.",
-        "Remaining capacity = 18 more #12 AWG conductors."
+        "Table 23: total volume of the FS 4-gang box; Table 22: mL per #12 conductor.",
+        "Rule 12-3034 (CEC method): each switch counts as one conductor of the largest size connected; wire connectors are not each counted as conductors as in the NEC; subtract these equivalents from the box capacity.",
+        "Remaining capacity ÷ #12 allowance = additional #12 conductors.",
+        "Keep needs_review: confirm the FS 4-gang box volume, #12 allowance, and the device/connector counting against the printed CEC 2024 Tables 22/23 before locking '18'."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -614,8 +655,10 @@
       "topic": "emt",
       "question": "Can EMT be used in a wet location?",
       "answer": "Yes",
-      "references": ["Rule 12-1402 c)"],
-      "solution_steps": [],
+      "references": ["Rule 12-1402"],
+      "solution_steps": [
+        "Rule 12-1402: EMT is permitted in wet locations provided the fittings used are suitable/approved for wet locations and the installation is protected against corrosion."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -627,13 +670,14 @@
       "topic": "conduit-fill",
       "question": "What is the minimum size of conduit required in order to run fifteen #8 AWG R90 XLPE, 600V, unjacketed, copper conductors?",
       "answer": "Size 41",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Total area = 15 x area of #8 R90 (Table 10).",
-        "Apply 40% fill and select from Table 6: size 41."
+        "Table 10: total area = 15 × area of one #8 R90 XLPE 600 V conductor.",
+        "Rule 12-910 / Table 8: >2 conductors → 40% fill; Table 6: smallest conduit whose 40% area ≥ total → size 41.",
+        "Keep needs_review: confirm the #8 R90 area and size-41 area against the printed CEC 2024 Tables 10 and 6 (cross-check with S12-001, which reaches size 41 with a comparable load)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-043",
@@ -644,9 +688,12 @@
       "question": "What are the maximum dimensions of carpet squares allowed to cover type FCC cable?",
       "answer": "750 mm x 750 mm",
       "references": ["Rule 12-806"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-806: Type FCC cable must be covered by carpet squares not exceeding a maximum size so the floor covering can be lifted in sections for access.",
+        "Keep needs_review: confirm the exact maximum carpet-square dimension against the printed CEC 2024 Rule 12-806 (commonly cited as ~1 m square; the stated 750 × 750 mm needs verification)."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-044",
@@ -656,14 +703,15 @@
       "topic": "conduit-fill",
       "question": "A 41 mm EMT contains 10 conductors, #8 R90 XLPE, Cu, 600V, unjacketed. How many more #10 of the same type and rating can be installed in the same raceway?",
       "answer": "14 x #10 R90 XLPE 600V unjacketed",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Determine 40% usable area of 41 mm EMT (Table 6).",
-        "Subtract area used by the existing 10 #8 conductors (Table 10).",
-        "Divide remaining area by the #10 conductor area = 14 more conductors."
+        "Table 6: 40% usable area of 41 mm EMT (>2 conductors, Table 8).",
+        "Table 10: subtract area of the existing 10 × #8 R90 conductors; divide the remainder by the #10 R90 area.",
+        "Result = 14 more #10 conductors.",
+        "Keep needs_review: confirm the 41 mm EMT area and the #8/#10 R90 areas against the printed CEC 2024 Tables 6 and 10."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-045",
@@ -673,8 +721,10 @@
       "topic": "nmsc-protection",
       "question": "Where NMSC is run through studs or joists, what is the minimum distance that the outer surface of the cable should be kept away in order to protect it from mechanical injury?",
       "answer": "32 mm",
-      "references": ["Rule 12-516", "Rule 12-518"],
-      "solution_steps": [],
+      "references": ["Rule 12-516"],
+      "solution_steps": [
+        "Rule 12-516: where NMSC passes through studs/joists, the outer surface of the cable must be kept at least 32 mm from the edge through which a nail/screw could be driven (or be protected by a steel plate)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -686,10 +736,10 @@
       "topic": "pull-box",
       "question": "Determine the minimum dimensions required according to the requirements of code rules for pull boxes (1.5 in. conduit entries as shown in the diagram).",
       "answer": "9 x 9 in.",
-      "references": ["Rule 12-3034 1)b)"],
+      "references": ["Rule 12-3036"],
       "solution_steps": [
-        "Angle/U pull: minimum = 6 x largest conduit = 6 x 1.5 in. = 9 in.",
-        "Box is 9 x 9 in. Diagram needed to confirm."
+        "Rule 12-3036 (angle/U pull): minimum wall-to-wall distance = 6 × largest raceway = 6 × 1.5 in. = 9 in., giving a 9 × 9 in. box.",
+        "Keep needs_review: the 6× (angle) vs 8× (straight) choice depends on the entry layout in the diagram, which cannot be reconstructed here."
       ],
       "code_edition": "2024",
       "needs_review": true
