@@ -65,8 +65,8 @@
       "answer": "1200 A",
       "references": ["Rule 8-104 3)", "Rule 14-104"],
       "solution_steps": [
-        "A switch not marked for 100% continuous operation may carry a continuous load up to 80% of its overcurrent device rating.",
-        "1500 A × 0.80 = 1200 A.",
+        "Rule 8-104: a switch not marked for 100% continuous operation may carry a continuous load up to 80% of its overcurrent-device rating.",
+        "Math: 1500 A × 0.80 = 1200 A.",
         "Result: 1200 A."
       ],
       "code_edition": "2024",
@@ -243,8 +243,8 @@
       "answer": "1500 A",
       "references": ["Rule 8-104 3)"],
       "solution_steps": [
-        "A breaker not rated for 100% continuous operation must be sized so the continuous load is ≤ 80% of its rating.",
-        "Required rating = 1200 A ÷ 0.80 = 1500 A.",
+        "Rule 8-104: a breaker not rated for 100% continuous operation must be sized so the continuous load is ≤ 80% of its rating.",
+        "Math: required rating = 1200 A ÷ 0.80 = 1500 A.",
         "Result: 1500 A."
       ],
       "code_edition": "2024",
@@ -366,9 +366,9 @@
       "answer": "1440 W (12 A continuous)",
       "references": ["Rule 8-104 3)", "Rule 62-114"],
       "solution_steps": [
-        "Continuous load limit = 80% of breaker rating: 15 A × 0.80 = 12 A.",
-        "Power = 120 V × 12 A = 1440 W.",
-        "Result: 1440 W (12 A)."
+        "Rule 8-104: continuous load limit = 80% of breaker rating → 15 A × 0.80 = 12 A.",
+        "Math: P = 120 V × 12 A = 1440 W.",
+        "Result: 1440 W (12 A continuous)."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -421,10 +421,10 @@
       "options": ["A) 14,400 W / 60 A", "B) 24,000 W / 100 A", "C) 30,000 W / 125 A", "D) 48,000 W / 200 A"],
       "answer": "24,000 W / 100 A",
       "answer_key": "B",
-      "references": ["Rule 8-200 1)", "Rule 8-200 3)"],
+      "references": ["Rule 8-200 1)b)"],
       "solution_steps": [
-        "A dwelling with floor area ≤ 80 m² has a minimum service of 14 400 W / 60 A; greater than 80 m² requires a minimum of 24 000 W / 100 A per Rule 8-200 3).",
-        "Area is 85 m² (> 80 m²), so the minimum service is 100 A.",
+        "Rule 8-200 1)b): a single dwelling with floor area (excl. basement) of 80 m² or more requires a minimum service of 24 000 W / 100 A; less than 80 m² → minimum 14 400 W / 60 A.",
+        "Area = 85 m² (≥ 80 m²) → minimum 100 A.",
         "Result: 24,000 W / 100 A (option B)."
       ],
       "code_edition": "2024",
