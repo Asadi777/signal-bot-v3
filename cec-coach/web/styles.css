@@ -224,6 +224,11 @@ textarea,input[type=text],input[type=password],select{
 .rich thead th{background:#0b3d2e; color:#fff; font-weight:700}
 .rich tbody tr:nth-child(even){background:#f3f7f5}
 .rich h1,.rich h2,.rich h3,.rich h4,.rich p,.rich li,.rich td,.rich th{unicode-bidi:plaintext}
+/* a whole rich block flagged Persian → proper RTL flow (Latin terms stay LTR inside) */
+.rich[dir="rtl"]{text-align:right}
+.rich[dir="rtl"] h1,.rich[dir="rtl"] h2,.rich[dir="rtl"] h3,.rich[dir="rtl"] h4,
+.rich[dir="rtl"] p,.rich[dir="rtl"] li,.rich[dir="rtl"] td,.rich[dir="rtl"] th{unicode-bidi:isolate; direction:rtl; text-align:right}
+.rich[dir="rtl"] ul,.rich[dir="rtl"] ol{padding-inline-start:0; padding-inline-end:22px}
 /* when a lesson is shown in Persian, force proper RTL flow (Latin terms stay LTR within it) */
 #lessonBody[dir="rtl"]{text-align:right}
 #lessonBody[dir="rtl"] h2,#lessonBody[dir="rtl"] h3,#lessonBody[dir="rtl"] p,

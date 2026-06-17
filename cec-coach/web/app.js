@@ -28,6 +28,8 @@
     window.scrollTo(0, 0);
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
+  function hasFa(t) { return /[؀-ۿ]/.test(t || ""); }
+  function dirFor(t) { return hasFa(t) ? "rtl" : "ltr"; }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   // ---------- text-to-speech (Canadian English, slow) ----------
@@ -496,8 +498,8 @@
     var html = "";
     teachConvo.forEach(function (m, i) {
       if (i === 0) return; // hide the long initial instruction
-      if (m.role === "user") html += "<div class='tmsg me'>" + esc(m.content) + "</div>";
-      else html += "<div class='tmsg ai rich'>" + mdToHtml(m.content) + "</div>";
+      if (m.role === "user") html += "<div class='tmsg me' dir='" + dirFor(m.content) + "'>" + esc(m.content) + "</div>";
+      else html += "<div class='tmsg ai rich' dir='" + dirFor(m.content) + "'>" + mdToHtml(m.content) + "</div>";
     });
     thr.innerHTML = html;
   }
@@ -512,10 +514,10 @@
     var started = false;
     callClaude(teachConvo, { system: tutorSystem(), maxTokens: 3500, onText: function (t) {
       if (!started) { started = true; clearInterval(iv); }
-      bubble.innerHTML = mdToHtml(t); thr.scrollTop = thr.scrollHeight;
+      bubble.dir = dirFor(t); bubble.innerHTML = mdToHtml(t); thr.scrollTop = thr.scrollHeight;
     } }).then(function (full) {
       clearInterval(iv); teachConvo.push({ role: "assistant", content: full });
-      bubble.innerHTML = mdToHtml(full);
+      bubble.dir = dirFor(full); bubble.innerHTML = mdToHtml(full);
       var inp = $("teachinput"); if (inp) inp.focus();
     }).catch(function (err) { clearInterval(iv); bubble.className = "status err"; bubble.textContent = "⚠️ " + apiErr(err); });
   }
@@ -629,11 +631,11 @@
     var bubble = addMsg("assistant", "");
     var wait = thinking(bubble, "msg ai");
     var started = false;
-    function paint(t) { if (!started) { started = true; wait.stop(); } bubble.className = "msg ai rich"; bubble.innerHTML = mdToHtml(t); $("chat").scrollTop = $("chat").scrollHeight; }
+    function paint(t) { if (!started) { started = true; wait.stop(); } bubble.className = "msg ai rich"; bubble.dir = dirFor(t); bubble.innerHTML = mdToHtml(t); $("chat").scrollTop = $("chat").scrollHeight; }
     callClaude(chatHistory, {
       system: tutorSystem(), maxTokens: 4096, onText: paint
     }).then(function (full) {
-      wait.stop(); bubble.className = "msg ai rich"; bubble.innerHTML = mdToHtml(full);
+      wait.stop(); bubble.className = "msg ai rich"; bubble.dir = dirFor(full); bubble.innerHTML = mdToHtml(full);
       chatHistory.push({ role: "assistant", content: full });
       $("chat").scrollTop = $("chat").scrollHeight;
     }).catch(function (err) { wait.stop(); bubble.className = "msg ai"; bubble.textContent = "⚠️ " + apiErr(err); });
@@ -736,14 +738,14 @@
     var out = $("visionOut"); out.classList.remove("hidden");
     var wait = thinking(out, "explain rich");
     var started = false;
-    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "explain rich"; out.innerHTML = mdToHtml(t); }
+    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "explain rich"; out.dir = dirFor(t); out.innerHTML = mdToHtml(t); }
     var block = attached.type === "document"
       ? { type: "document", source: { type: "base64", media_type: "application/pdf", data: attached.data } }
       : { type: "image", source: { type: "base64", media_type: attached.media, data: attached.data } };
     var content = [block, { type: "text", text: qtext }];
     callClaude([{ role: "user", content: content }], {
       system: tutorSystem(), maxTokens: 4096, onText: paint
-    }).then(function (full) { wait.stop(); out.className = "explain rich"; out.innerHTML = mdToHtml(full); })
+    }).then(function (full) { wait.stop(); out.className = "explain rich"; out.dir = dirFor(full); out.innerHTML = mdToHtml(full); })
       .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
 
@@ -948,11 +950,11 @@
     if (!getKey()) { gotoSettings("Add your API key to have the AI teach this section."); return; }
     var out = $("lessonTeachOut");
     var wait = thinking(out, "rich teachbox"); var started = false;
-    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "rich teachbox"; out.innerHTML = mdToHtml(t); }
+    function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "rich teachbox"; out.dir = dirFor(t); out.innerHTML = mdToHtml(t); }
     var msg = "Give me a fast, high-yield lesson on CEC 2024 " + secLabel(s) + " for the BC Construction Electrician exam, in BOTH English and full Persian. " +
       "Cover the most-tested tables/rules, the fastest keyword→table method, the common traps, and one short worked example. Keep it tight and exam-ready.";
     callClaude([{ role: "user", content: msg }], { system: tutorSystem(), maxTokens: 4096, onText: paint })
-      .then(function (full) { wait.stop(); out.className = "rich teachbox"; out.innerHTML = mdToHtml(full); })
+      .then(function (full) { wait.stop(); out.className = "rich teachbox"; out.dir = dirFor(full); out.innerHTML = mdToHtml(full); })
       .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
 
