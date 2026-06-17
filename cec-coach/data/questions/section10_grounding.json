@@ -11,9 +11,10 @@
       "answer": "a) #4; b) 2/0; c) #2; d) 3/0",
       "references": ["Rule 10-114", "Table 17"],
       "solution_steps": [
-        "Field-assembled grounding electrode conductor sizing is based on the service conductor size per Rule 10-114 / Table 17.",
-        "a) 150 A, 1/0 service → #4; b) 400 A, 600 kcmil → 2/0; c) 250 A, 350 kcmil → #2; d) 500 A, 750 kcmil → 3/0.",
-        "Result: a) #4, b) 2/0, c) #2, d) 3/0."
+        "Rule 10-114: the grounding conductor to a field-assembled grounding electrode is sized from the largest service/feeder conductor per Table 17 (copper service conductor size in left column → copper grounding conductor size).",
+        "Table 17 bands: service conductor up to #2 → grounding #8; #1 to 1/0 → #6; 2/0 to 3/0 → #4; over 3/0 to 350 kcmil → #2; over 350 to 600 kcmil → 1/0; over 600 to 1100 kcmil → 2/0.",
+        "Reconciling against Table 17: a) 1/0 service → #6 (not #4); b) 600 kcmil → 1/0 (not 2/0); c) 350 kcmil → #2; d) 750 kcmil → 2/0 (not 3/0). The original answer key does not match the current Table 17 bands; only (c) is confirmed.",
+        "Keep needs_review: requires confirmation against the printed CEC 2024 Table 17 values before changing the published answer key."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -26,9 +27,9 @@
       "topic": "electrode-spacing",
       "question": "The minimum spacing required between the two grounding electrodes installed in an electrical service is ........ m.",
       "answer": "3 m",
-      "references": ["Rule 10-700"],
+      "references": ["Rule 10-102", "Rule 10-104"],
       "solution_steps": [
-        "Where two grounding electrodes (rods/plates) are used, they must be spaced not less than 3 m apart.",
+        "Rule 10-104: where a grounding electrode consists of two or more rod/plate electrodes, they must be spaced not less than 3 m apart so their earth-resistance spheres do not overlap.",
         "Result: 3 m."
       ],
       "code_edition": "2024",
@@ -41,15 +42,16 @@
       "type": "theory",
       "topic": "bare-grounding-conductor-raceway",
       "question": "Could a bare system grounding conductor be run together with the other system conductors in a 15 m length of conduit that contains one 90° and three 45° bends?",
-      "answer": "No — the raceway exceeds the allowable amount of bends (equivalent to more than two 90° bends).",
-      "references": ["Rule 10-806", "Rule 12-936"],
+      "answer": "Yes — a 15 m run with 225° of bends is within both limits (≤15 m and ≤360° / four quarter-bends), so a bare system grounding conductor may share the raceway.",
+      "references": ["Rule 10-806", "Rule 12-940"],
       "solution_steps": [
-        "A bare grounding conductor may share a raceway with system conductors only where the raceway run is limited (treated as not exceeding two 90° bends total).",
-        "One 90° plus three 45° bends = 90° + 135° = 225°, which exceeds two 90° (180°).",
-        "Result: No — too many bends."
+        "Rule 10-806: a bare (non-insulated) system grounding conductor is permitted in the same raceway as the system conductors where the run does not exceed 15 m (see S10-014).",
+        "Rule 12-940: total bends between pull points must not exceed 360° (four quarter-bends). One 90° + three 45° = 90° + 135° = 225°, which is less than 360°.",
+        "Both conditions are met: 15 m = the limit and 225° < 360°. The original 'two 90° bends' premise is not a CEC limit; the governing bend limit is 360°.",
+        "Result: Yes — permitted."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S10-004",
@@ -59,13 +61,14 @@
       "topic": "equipotential-bonding",
       "question": "The size of an equipotential bonding conductor must not be less than ........ if aluminum and ........ if copper.",
       "answer": "#4 AWG if aluminum and #6 AWG if copper",
-      "references": ["Rule 10-406", "Rule 10-700"],
+      "references": ["Rule 10-406"],
       "solution_steps": [
-        "Equipotential bonding conductor minimum sizes: #4 AWG aluminum and #6 AWG copper.",
+        "Rule 10-406 (equipotential bonding) sets the minimum continuous bonding conductor size for equipotential bonding.",
+        "Minimum: #6 AWG copper, or #4 AWG aluminum (aluminum is one size larger to match copper conductance).",
         "Result: #4 (Al), #6 (Cu)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S10-005",
@@ -75,9 +78,9 @@
       "topic": "field-assembled-electrode",
       "question": "A field-assembled grounding electrode shall consist of a bare copper conductor of length ........ m.",
       "answer": "6 m",
-      "references": ["Rule 10-700"],
+      "references": ["Rule 10-102"],
       "solution_steps": [
-        "A field-assembled (concrete-encased / bare conductor) grounding electrode must be a bare copper conductor at least 6 m long.",
+        "Rule 10-102: a field-assembled (concrete-encased) grounding electrode consists of at least 6 m of bare copper conductor (not smaller than #4 AWG).",
         "Result: 6 m."
       ],
       "code_edition": "2024",
@@ -91,10 +94,10 @@
       "topic": "field-assembled-electrode",
       "question": "A field-assembled grounding electrode should be encased within the bottom ........ mm of a concrete foundation footing in direct contact with earth at not less than ........ mm below finished grade.",
       "answer": "50 mm of concrete; not less than 600 mm below finished grade",
-      "references": ["Rule 10-700"],
+      "references": ["Rule 10-102"],
       "solution_steps": [
-        "The bare copper electrode must be encased within the bottom 50 mm of the concrete footing, in direct contact with earth.",
-        "The footing/electrode must be not less than 600 mm below finished grade.",
+        "Rule 10-102: the bare copper conductor is encased within the bottom 50 mm of a concrete foundation footing that is in direct contact with earth.",
+        "The footing must be located not less than 600 mm below finished grade.",
         "Result: 50 mm; 600 mm."
       ],
       "code_edition": "2024",
@@ -110,9 +113,9 @@
       "answer": "#2 AWG copper",
       "references": ["Rule 10-114", "Table 17"],
       "solution_steps": [
-        "Field-assembled grounding electrode conductor is sized from the service conductor size per Rule 10-114 / Table 17.",
-        "For a 100 A service with #3 copper service conductors, the required electrode size is #2 AWG copper.",
-        "Result: #2 AWG copper."
+        "Rule 10-114 / Table 17: the grounding conductor to a field-assembled (concrete-encased) electrode is sized from the service conductor. A #3 Cu service conductor falls in the smallest Table 17 band, which gives a grounding conductor of #8 Cu, not #2.",
+        "The stated #2 answer does not match the Table 17 band for a #3 service conductor and is likely an error (possibly confusing it with a larger service).",
+        "Keep needs_review: confirm the correct value against the printed CEC 2024 Table 17 before changing the published answer."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -125,10 +128,10 @@
       "topic": "grounding-conductor-sizing",
       "question": "What is the smallest size copper ground wire connected to a manufactured grounding electrode required for a 200 A residential consumer service fed with #3/0 R90 copper conductors?",
       "answer": "#6 AWG copper",
-      "references": ["Rule 10-114 1)"],
+      "references": ["Rule 10-114"],
       "solution_steps": [
-        "For a manufactured grounding electrode, Rule 10-114 1) sets the minimum grounding conductor size.",
-        "For a 200 A residential service the minimum copper grounding conductor to a manufactured electrode is #6 AWG.",
+        "Rule 10-114: the grounding conductor run to a manufactured (rod/plate) grounding electrode need not be larger than #6 Cu, regardless of service size.",
+        "So for the 200 A / #3/0 Cu service, the grounding conductor to a manufactured electrode is #6 Cu (the capped maximum applies).",
         "Result: #6 AWG copper."
       ],
       "code_edition": "2024",
@@ -142,11 +145,11 @@
       "topic": "bonding-conductor-sizing",
       "question": "A branch circuit is protected with a 40 A circuit breaker using No. 8 T90 copper conductors. What minimum size field-installed copper bonding conductor would be used if one were required in the raceway?",
       "answer": "#10 AWG copper",
-      "references": ["Rule 10-616", "Table 16", "Appendix B"],
+      "references": ["Rule 10-614", "Rule 10-616", "Table 16"],
       "solution_steps": [
-        "Bonding conductor size is based on the rating of the overcurrent device per Rule 10-616 / Table 16.",
-        "For a 40 A overcurrent device, the minimum copper bonding conductor is #10 AWG.",
-        "Result: #10 AWG copper."
+        "Rule 10-614/10-616: a bonding conductor is sized from the rating of the overcurrent device ahead of it, using Table 16 (ampere rating of OCPD → minimum copper bond).",
+        "Table 16: a 40 A overcurrent device requires a #10 Cu bonding conductor.",
+        "Result: #10 AWG copper. (The #8 T90 circuit conductors are not what sizes the bond — the 40 A device is.)"
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -161,10 +164,11 @@
       "options": ["A) No conductors", "B) One conductor", "C) 2 conductors", "D) Common conductor"],
       "answer": "One conductor",
       "answer_key": "B",
-      "references": ["Rule 10-000", "Section 64 (PV)"],
+      "references": ["Section 64"],
       "solution_steps": [
-        "For a 2-wire PV DC supply circuit, one conductor is required to be grounded.",
-        "Result: One conductor (option B)."
+        "PV DC system grounding is governed by Section 64, not Section 10 — this question is mis-filed in the Section 10 set.",
+        "For a solidly-grounded 2-wire PV DC circuit, one conductor is grounded (option B).",
+        "Keep needs_review: CEC 2024 Section 64 widely permits functionally-grounded/ungrounded PV arrays, so the correct answer depends on the array type stated; verify against the specific Section 64 rule."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -179,13 +183,14 @@
       "options": ["A) No. 10 AWG", "B) No. 6 AWG", "C) No. 8 AWG", "D) No. 4 AWG"],
       "answer": "No. 6 AWG aluminum",
       "answer_key": "B",
-      "references": ["Rule 10-406", "Section 84"],
+      "references": ["Section 84", "Rule 10-406"],
       "solution_steps": [
-        "Bonding of a conductive raised floor requires a minimum bonding conductor; for aluminum the minimum is No. 6 AWG.",
-        "Result: No. 6 AWG (option B)."
+        "A conductive metal raised floor in a computer/data-processing room (Section 84) is bonded as equipotential bonding per Rule 10-406.",
+        "Minimum bonding conductor: #6 AWG aluminum (equivalent to #8 AWG copper — see S10-013).",
+        "Result: No. 6 AWG aluminum (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S10-012",
@@ -197,10 +202,11 @@
       "options": ["A) No conductors", "B) 1 conductor", "C) 2 conductors", "D) Common conductor"],
       "answer": "1 conductor",
       "answer_key": "B",
-      "references": ["Rule 10-000", "Section 64 (PV)"],
+      "references": ["Section 64"],
       "solution_steps": [
-        "For a 2-wire PV DC supply circuit, one conductor is required to be grounded.",
-        "Result: 1 conductor (option B)."
+        "Duplicate of S10-010 (PV DC 2-wire grounding). Governed by Section 64, not Section 10.",
+        "For a solidly-grounded 2-wire PV DC circuit, one conductor is grounded (option B).",
+        "Keep needs_review: CEC 2024 Section 64 widely permits functionally-grounded/ungrounded PV arrays; verify against the specific Section 64 rule."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -215,13 +221,14 @@
       "options": ["A) #10 AWG", "B) #8 AWG", "C) #6 AWG", "D) #4 AWG"],
       "answer": "#8 AWG copper",
       "answer_key": "B",
-      "references": ["Rule 10-406", "Section 84"],
+      "references": ["Section 84", "Rule 10-406"],
       "solution_steps": [
-        "For bonding a conductive raised floor, the minimum copper bonding conductor is #8 AWG (corresponding to the #6 AWG aluminum minimum).",
+        "Conductive raised floor (Section 84) bonded as equipotential bonding per Rule 10-406.",
+        "Minimum copper bonding conductor is #8 AWG, corresponding to the #6 AWG aluminum minimum in S10-011.",
         "Result: #8 AWG copper (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S10-014",
@@ -235,7 +242,7 @@
       "answer_key": "B",
       "references": ["Rule 10-806"],
       "solution_steps": [
-        "A bare/non-insulated grounding conductor may share a raceway with insulated conductors only where the run does not exceed 15 m (and bends are limited).",
+        "Rule 10-806: a non-insulated (bare) grounding conductor may share a raceway with insulated conductors only where the raceway run does not exceed 15 m.",
         "Result: 15 m (option B)."
       ],
       "code_edition": "2024",

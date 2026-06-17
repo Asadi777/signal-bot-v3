@@ -11,8 +11,11 @@
       "options": ["a. 1.5 m", "b. 2.7 m", "c. 1.7 m", "d. 2.1 m"],
       "answer": "1.7 m",
       "answer_key": "c",
-      "references": ["Rule 26-402"],
-      "solution_steps": [],
+      "references": ["Rule 26-400"],
+      "solution_steps": [
+        "Rule 26-400: a panelboard shall be installed so the operating handle of the highest overcurrent device is not more than 1.7 m above the finished floor.",
+        "Answer = 1.7 m (c)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -24,10 +27,12 @@
       "topic": "receptacle-config",
       "question": "What is the CSA configuration of a 600V, single-phase, 20A locking type receptacle?",
       "options": ["a. 5-20R", "b. 15-20R", "c. 24-20R", "d. 6-20R"],
-      "answer": "Answer not explicitly marked in source notes",
+      "answer": "Requires Diagram 1 lookup for the exact 600 V single-phase 20 A locking configuration",
       "references": ["Diagram 1 (receptacle configurations)"],
       "solution_steps": [
-        "Source did not mark the selected option; flagged for review."
+        "This is a Diagram 1 pictorial lookup. The trailing number is the rating (20 = 20 A) and the leading number identifies the voltage/poles class.",
+        "For a non-locking device: 5-20R = 125 V 2-pole 3-wire; 6-20R = 250 V 2-pole 3-wire. A 600 V locking device falls outside the 5-/6- (≤250 V) families, so neither 5-20R nor 6-20R is correct for 600 V.",
+        "The exact 600 V single-phase locking configuration number cannot be confirmed without Diagram 1; flagged for review."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -57,12 +62,13 @@
       "topic": "capacitor",
       "question": "What is the minimum conductor ampacity required for a 600V, 3-phase, 25 KVA capacitor bank?",
       "options": ["a. 25.5 A", "b. 32.5 A", "c. 30.1 A", "d. 33 A"],
-      "answer": "30.1 A",
-      "answer_key": "c",
-      "references": ["Rule 26-210"],
+      "answer": "32.5 A",
+      "answer_key": "b",
+      "references": ["Rule 26-210 1)"],
       "solution_steps": [
         "Capacitor rated current = 25000 / (600 x 1.732) = 24.06 A.",
-        "Conductor ampacity must be at least 125% of rated current = 24.06 x 1.25 = 30.1 A."
+        "Rule 26-210 1): conductors supplying a capacitor shall have an ampacity not less than 135% of the rated current of the capacitor.",
+        "24.06 x 1.35 = 32.5 A → answer b."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -80,10 +86,11 @@
       "references": ["Rule 26-210"],
       "solution_steps": [
         "Capacitor rated current = 25000 / (600 x 1.732) = 24.06 A.",
-        "Overcurrent device may be up to 270% of rated current per Rule 26-210; 24.06 x 2.7 = 64.96 A, so 65 A."
+        "The capacitor overcurrent device is set as low as practicable; the marked key corresponds to ~270% of rated current: 24.06 x 2.7 = 64.96 A → 65 A (c).",
+        "The exact CEC 26-210 capacitor OCPD multiplier could not be confirmed from the source; method shown, key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S26-006",
@@ -95,10 +102,13 @@
       "options": ["a. 1.5 m", "b. 2.7 m", "c. 3 m", "d. 2.1 m"],
       "answer": "3 m",
       "answer_key": "c",
-      "references": ["Rule 26-302", "Table 56"],
-      "solution_steps": [],
+      "references": ["Rule 26-302"],
+      "solution_steps": [
+        "Rule 26-302 sets the clearance from a fence to unguarded live parts based on the line voltage.",
+        "Marked key for 15 kV = 3 m (c). The exact 15 kV clearance value is a Table lookup that could not be confirmed from the source (Table 56 = working space, not applicable); reference corrected and flagged for review."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S26-007",
@@ -108,10 +118,11 @@
       "topic": "instrument-transformer",
       "question": "An instrument transformer is rated at 240V-120V. What is the maximum primary fuse size permitted?",
       "options": ["a. 3 A", "b. 10 A", "c. 6 A", "d. 7 A"],
-      "answer": "Answer not explicitly marked in source notes",
+      "answer": "Requires the instrument-transformer primary OCPD rule/table value to confirm",
       "references": ["Rule 26-208"],
       "solution_steps": [
-        "Source did not clearly mark the selected option; flagged for review."
+        "Primary overcurrent protection of an instrument (potential) transformer is governed by Rule 26-208.",
+        "The specific maximum primary fuse value (among 3 A / 6 A / 7 A / 10 A) is a code-value lookup that could not be confirmed from the source; flagged for review. No value fabricated."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -126,8 +137,11 @@
       "options": ["a. 23 L", "b. More than 23 L", "c. 64 L", "d. More than 64 L"],
       "answer": "More than 64 L",
       "answer_key": "d",
-      "references": ["Rule 26-008", "Rule 26-350"],
-      "solution_steps": [],
+      "references": ["Rule 26-350"],
+      "solution_steps": [
+        "Indoor dielectric liquid-filled equipment must be installed in an electrical (transformer) vault once the liquid quantity per tank exceeds the code threshold.",
+        "Marked key = more than 64 L (d). The exact litre threshold could not be confirmed from the source; flagged for review (no value fabricated)."
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -141,10 +155,13 @@
       "options": ["A) 1 m", "B) 1.5 m", "C) 2 m", "D) 3 m"],
       "answer": "1 m",
       "answer_key": "A",
-      "references": ["Rule 26-302", "Rule 2-308"],
-      "solution_steps": [],
+      "references": ["Rule 26-302"],
+      "solution_steps": [
+        "The minimum working space on the access (conductor entry/exit) side of a transformer is 1 m (teacher notes: 1 m horizontal working space required for transformers rated over 50 kVA, on the side where conductors enter/exit).",
+        "Answer = 1 m (A)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-010",
@@ -157,7 +174,10 @@
       "answer": "0.4 mm",
       "answer_key": "c",
       "references": ["Rule 26-700"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-700: a receptacle face shall project at least 0.4 mm beyond a metal faceplate so the metal plate cannot contact an inserted plug.",
+        "Answer = 0.4 mm (c)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -172,7 +192,10 @@
       "answer": "130 mm",
       "answer_key": "c",
       "references": ["Rule 26-744"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-744: the receptacle for an electric range in a dwelling unit shall be located so its centre is not more than 130 mm above the finished floor.",
+        "Answer = 130 mm (c)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -184,10 +207,11 @@
       "topic": "dry-transformer-clearance",
       "question": "What is the minimum clearance required between a wall and a dry-type transformer which is mounted on a wall when a non-combustible heat-insulating material is placed between the wall and the transformer?",
       "options": ["a. 10 mm", "b. 6 mm", "c. 6.5 mm", "d. 2.5 mm"],
-      "answer": "Answer not explicitly marked in source notes",
+      "answer": "Requires the Rule 26-244 wall-clearance value to confirm",
       "references": ["Rule 26-244"],
       "solution_steps": [
-        "Source did not clearly mark the selected option; flagged for review."
+        "Rule 26-244 governs the clearance between a wall-mounted dry-type transformer and the wall; a smaller clearance is permitted where non-combustible heat-insulating material is interposed.",
+        "Source did not mark the option, and the exact small-clearance value could not be confirmed; flagged for review (no value fabricated). Note: the teacher's '6 mm vs 6.5 mm' remark was an illustrative example, not a confirmed code value."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -202,8 +226,11 @@
       "options": ["a. Yes", "b. No", "c. Only for refrigerator", "d. For 240V"],
       "answer": "Yes",
       "answer_key": "a",
-      "references": ["Rule 26-724 f)"],
-      "solution_steps": [],
+      "references": ["Rule 26-722"],
+      "solution_steps": [
+        "Rule 26-722 requires branch circuits supplying 125 V receptacles rated 20 A or less in a dwelling unit to be protected by a combination-type arc-fault circuit interrupter (with limited exceptions).",
+        "Answer = Yes (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -232,8 +259,11 @@
       "options": ["a. Yes", "b. No", "c. Only for refrigerator", "d. Only for 240V"],
       "answer": "Yes",
       "answer_key": "a",
-      "references": ["Rule 26-712 g)"],
-      "solution_steps": [],
+      "references": ["Rule 26-700", "Rule 26-712"],
+      "solution_steps": [
+        "Receptacles within 1.5 m of a sink (measured to a wash basin/sink) in a dwelling require Class A GFCI protection.",
+        "A receptacle within 1 m of the sink is within the 1.5 m zone, so GFCI protection is required → Yes (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -247,8 +277,11 @@
       "options": ["a. 1", "b. 3", "c. 2", "d. 4"],
       "answer": "2",
       "answer_key": "c",
-      "references": ["Rule 26-724 g)"],
-      "solution_steps": [],
+      "references": ["Rule 26-724"],
+      "solution_steps": [
+        "Rule 26-724 requires a single dwelling to have a minimum of two outdoor duplex receptacles readily accessible from ground/grade level (one at the front and one at the back).",
+        "Answer = 2 (c)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -259,9 +292,14 @@
       "type": "theory",
       "topic": "receptacle-config",
       "question": "In a single dwelling unit, is it allowed to install a CSA configuration type 5-20RA receptacle?",
+      "options": ["a. Yes", "b. No", "c. Only in the kitchen", "d. Only outdoors"],
       "answer": "Yes",
+      "answer_key": "a",
       "references": ["Rule 26-700"],
-      "solution_steps": [],
+      "solution_steps": [
+        "A 5-20RA is a 125 V, 20 A 'A'-type (tamper-resistant/special) receptacle. Such configurations are permitted in dwelling units.",
+        "Answer = Yes (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -272,9 +310,14 @@
       "type": "theory",
       "topic": "gfci",
       "question": "Does the code require GFCI protection for a 5-15R receptacle that is located behind the washing machine and within 1 metre of the laundry sink?",
+      "options": ["a. Yes", "b. No", "c. Only if 20 A", "d. Only outdoors"],
       "answer": "No",
-      "references": ["Rule 26-712 g)"],
-      "solution_steps": [],
+      "answer_key": "b",
+      "references": ["Rule 26-700", "Rule 26-712"],
+      "solution_steps": [
+        "The within-1.5 m-of-sink GFCI requirement carries an exception for a single receptacle dedicated to and located behind a stationary appliance (e.g. a washing machine), which is not readily accessible for general use.",
+        "Therefore GFCI protection is not required for this dedicated washer receptacle → No (b)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -285,9 +328,14 @@
       "type": "theory",
       "topic": "gfci",
       "question": "Is it true that all receptacles installed outdoors for residential occupancies within 2.5 m of finished grade shall be protected with a GFCI of the Class A type?",
+      "options": ["a. Yes", "b. No", "c. Only above 2.5 m", "d. Only for 240 V"],
       "answer": "Yes",
+      "answer_key": "a",
       "references": ["Rule 26-714"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-714: outdoor receptacles for residential occupancies located within 2.5 m of finished grade and accessible must be protected by a Class A GFCI.",
+        "Answer = Yes (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -298,10 +346,13 @@
       "type": "theory",
       "topic": "kitchen-island-receptacle",
       "question": "Is a receptacle outlet required for a permanently fixed island counter with a long dimension of 800 mm and a short dimension of 400 mm?",
+      "options": ["a. Yes", "b. No", "c. Only if over 1 m", "d. Only if used for cooking"],
       "answer": "Yes",
-      "references": ["Rule 26-712 d)"],
+      "answer_key": "a",
+      "references": ["Rule 26-712"],
       "solution_steps": [
-        "An island counter space with a long dimension of 600 mm or more and a short dimension of 300 mm or more requires a receptacle. 800 x 400 mm exceeds both thresholds."
+        "A permanently fixed island/peninsula counter space requires a receptacle once it reaches the code's minimum long and short dimensions (commonly cited as 600 mm long x 300 mm short).",
+        "800 x 400 mm exceeds both thresholds, so a receptacle outlet is required → Yes (a)."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -313,12 +364,13 @@
       "type": "calculation",
       "topic": "transformer-conductor-sizing",
       "question": "Two single-phase 600-120/240 volt, 25 KVA dry-type transformers are connected in parallel. Determine the size of the primary and secondary conductors supplying these paralleled transformers. Use R90 XLPE Cu.",
-      "answer": "Answer not given in source notes (calculation required)",
-      "references": ["Rule 26-256", "Rule 26-258", "Table 2"],
+      "answer": "Method: primary ~104 A (size to ~#3 AWG Cu), secondary ~260 A (size to ~250 kcmil Cu); confirm AWG against Table 2",
+      "references": ["Rule 26-256", "Rule 8-104", "Table 2"],
       "solution_steps": [
-        "Combined rating = 2 x 25 = 50 KVA.",
-        "Primary current = 50000 / 600 = 83.3 A; size primary conductors and protection accordingly.",
-        "Secondary current = 50000 / 240 = 208.3 A; size secondary conductors per Table 2. Source left answer blank."
+        "Two single-phase 25 kVA units in parallel = 50 kVA total.",
+        "Primary (600 V): I = 50000 / 600 = 83.3 A; conductor ampacity = 125% = 83.3 x 1.25 = 104.2 A.",
+        "Secondary (240 V): I = 50000 / 240 = 208.3 A; conductor ampacity = 125% = 208.3 x 1.25 = 260.4 A.",
+        "Select R90 XLPE Cu from Table 2 (90 C column) for ampacities >= 104.2 A (primary) and >= 260.4 A (secondary). Exact AWG/kcmil could not be confirmed from the source without the Table 2 values; flagged for review (no table value fabricated)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -334,7 +386,10 @@
       "answer": "15 m",
       "answer_key": "a",
       "references": ["Rule 26-710"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-710: in public corridors of residential buildings, receptacles shall be spaced so the distance between adjacent duplex receptacles does not exceed 15 m.",
+        "Answer = 15 m (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -349,7 +404,10 @@
       "answer": "1",
       "answer_key": "a",
       "references": ["Rule 26-720"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-720 requires at least one receptacle in a carport of a single dwelling.",
+        "Answer = 1 (a)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -364,9 +422,12 @@
       "answer": "Yes",
       "answer_key": "a",
       "references": ["Rule 26-722"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-722 lists which dwelling loads require dedicated branch circuits. The laundry-area receptacle and a utility-room receptacle may be supplied by the same branch circuit (the laundry-area receptacle is permitted to also serve the adjacent utility space).",
+        "Answer = Yes (a). Note: the dedicated-circuit exceptions of 26-722 (e.g. central vacuum, fixed appliances) still apply separately."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S26-025",

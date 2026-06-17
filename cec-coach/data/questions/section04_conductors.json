@@ -8,13 +8,14 @@
       "type": "calculation",
       "topic": "ampacity-free-air",
       "question": "A single 2/0 R90 (90°C) aluminum-sheathed copper conductor is run in free air. What is its ampacity?",
-      "answer": "300 A",
-      "references": ["Rule 4-004 1)a)", "Table 3"],
+      "answer": "195 A",
+      "references": ["Rule 4-004 1)", "Table 1"],
       "solution_steps": [
-        "A single conductor in free air → Rule 4-004 1)a) directs you to the free-air ampacity table (Table 3).",
-        "Read the 90°C column for copper size 2/0 in free air.",
-        "Aluminum-sheathed cable is rated 90°C, so the 90°C column applies. No bundling and no ambient correction is stated.",
-        "Result: 300 A."
+        "Rule (selection): free air + copper conductor → Table 1 (free-air copper). Teacher grid: Tables 1 & 2 = copper, Tables 1 & 3 = free air, so free-air copper = Table 1, NOT Table 3 (Table 3 is free-air aluminum).",
+        "Table: the conductor is a copper conductor (aluminum-SHEATHED, but the current-carrying conductor is copper), so Table 1 applies; the sheath material does not change the table.",
+        "Value: Table 1, 2/0 copper, 90°C column = 195 A.",
+        "Math: single conductor in free air, no count derate and no ambient stated → 195 A.",
+        "Result: 195 A. (Source answer 300 A / Table 3 was incorrect — wrong table for a copper conductor.)"
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -44,16 +45,17 @@
       "type": "calculation",
       "topic": "mixed-temp-raceway",
       "question": "A rigid steel conduit contains three #4 R90 copper conductors and three #1 TW75 copper conductors. What is the maximum allowable ampacity of each conductor?",
-      "answer": "#4 R90 = 68 A, #1 TW75 = 104 A",
-      "references": ["Rule 4-402 1)c)", "Table 2"],
+      "answer": "#4 = 68 A, #1 = 104 A",
+      "references": ["Rule 4-004 1)c)", "Rule 4-038", "Table 2", "Table 5C"],
       "solution_steps": [
-        "All six conductors are current-carrying, so use Table 2 with each conductor read in its own temperature column.",
-        "#4 copper at 90°C (R90) from Table 2 = 95 A; #1 copper at 75°C (TW75) from Table 2 = 130 A.",
-        "Apply the Rule 4-402 1)c) basis along with the count-adjustment for the bundle of 6 conductors.",
-        "Result per source notes: #4 R90 = 68 A and #1 TW75 = 104 A."
+        "Rule (mixed temp ratings): Rule 4-038 — conductors of different temperature ratings in the same raceway are sized on the basis of the LOWEST temperature rating present, here 75°C. So the R90 conductors are read in the 75°C column too.",
+        "Table/value: Table 2 copper at 75°C — #4 = 85 A, #1 = 130 A.",
+        "Count derate: all 6 conductors are current-carrying (Rule 4-004) → Table 5C, 4–6 conductors = 0.80.",
+        "Math: #4 = 85 × 0.80 = 68 A; #1 = 130 × 0.80 = 104 A.",
+        "Result: #4 = 68 A, #1 = 104 A. (Confirms the source figures; the 68 A comes from applying Rule 4-038 lowest-rating, i.e. the #4 R90 is held to its 75°C value of 85 A, not its 90°C value of 95 A.)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S04-004",
@@ -63,11 +65,11 @@
       "topic": "bundling-derate",
       "question": "What is the maximum allowable ampacity of each conductor if there are 25 #4 R90 copper conductors installed in EMT?",
       "answer": "57 A",
-      "references": ["Rule 4-402 1)c)", "Table 2", "Table 5C"],
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #4 copper at 90°C from Table 2 = 95 A.",
-        "25 current-carrying conductors in the raceway → Table 5C count-derating factor 0.60.",
-        "95 A × 0.60 = 57 A.",
+        "Rule (selection): raceway + copper → Table 2; base value for #4 copper at 90°C (R90) = 95 A.",
+        "Count derate: 25 current-carrying conductors → Table 5C, 25–42 conductors = 0.60.",
+        "Math: 95 × 0.60 = 57 A.",
         "Result: 57 A."
       ],
       "code_edition": "2024",
@@ -83,13 +85,13 @@
       "answer": "250 kcmil (two conductors per phase in parallel, each ≈ 422 A)",
       "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
       "solution_steps": [
-        "Direct-buried spaced single conductors → Rule 4-004 1)d) sends you to the underground spaced configuration, Diagram D8 / Table D8A detail 2.",
-        "Running in parallel (two conductors per phase): each conductor carries 800 A ÷ 2 = 400 A.",
-        "From Table D8A detail 2 (90°C copper, spaced 190 mm), 250 kcmil provides about 422 A per conductor, exceeding 400 A.",
-        "Result: 250 kcmil, two in parallel per phase."
+        "Rule (selection): direct-buried spaced single conductors → Rule 4-004 1)d) sends you to the underground spaced configuration (Appendix D), Diagram D8 / Table D8A detail 2.",
+        "Method: two conductors per phase in parallel → each carries 800 A ÷ 2 = 400 A; pick a size whose underground ampacity ≥ 400 A.",
+        "Math: 250 kcmil at this spacing is stated to give ≈ 422 A per conductor (> 400 A) → 250 kcmil, two in parallel per phase.",
+        "NEEDS REVIEW: confirm the exact 250 kcmil ampacity for 90°C Cu, single-conductor Teck, direct-buried spaced 190 mm in Table D8A detail 2 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-006",
@@ -101,13 +103,13 @@
       "answer": "337 A",
       "references": ["Rule 4-004 1)d)", "Diagram D10", "Table D10A detail 1"],
       "solution_steps": [
-        "Direct-buried multi-conductor cable → Rule 4-004 1)d), Diagram D10 / Table D10A detail 1.",
-        "Select a conductor whose underground ampacity is at least 300 A.",
-        "From Table D10A detail 1 the chosen size gives 337 A, which covers the 300 A load.",
-        "Result: 337 A."
+        "Rule (selection): direct-buried multi-conductor cable → Rule 4-004 1)d), Appendix D, Diagram D10 / Table D10A detail 1.",
+        "Method: select a conductor whose underground (buried) ampacity is at least the 300 A load.",
+        "Value: source gives 337 A for the chosen size, which covers 300 A.",
+        "NEEDS REVIEW: confirm the conductor size and its 337 A value in Table D10A detail 1 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-007",
@@ -119,13 +121,13 @@
       "answer": "#1 AWG copper",
       "references": ["Rule 4-004 5)", "Table 36B"],
       "solution_steps": [
-        "Neutral-supported overhead service cable → Rule 4-004 5) directs you to Table 36B (NS conductors).",
-        "For a 200 A service, read Table 36B for the copper NS75 conductor.",
-        "Table 36B gives #1 AWG copper as the minimum size for 200 A.",
-        "Result: #1 AWG copper."
+        "Rule (selection): neutral-supported overhead service cable → Rule 4-004 5) directs you to the NS service-conductor table, Table 36B (copper NS).",
+        "Method: for a 200 A service read down Table 36B (copper) to the minimum NS conductor rated ≥ 200 A.",
+        "Value: source gives #1 AWG copper for 200 A.",
+        "NEEDS REVIEW: confirm #1 AWG copper for 200 A in Table 36B of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-008",
@@ -137,13 +139,13 @@
       "answer": "1/0 AWG",
       "references": ["Rule 4-034", "Table 12A"],
       "solution_steps": [
-        "Portable power cable ampacity → Rule 4-034 sends you to Table 12A.",
-        "Find the size whose ampacity is at least 200 A for a three-conductor portable power cable.",
-        "Table 12A gives 1/0 AWG.",
-        "Result: 1/0 AWG."
+        "Rule (selection): portable power cable ampacity → Rule 4-034 sends you to Table 12A.",
+        "Method: find the smallest three-conductor portable-power-cable size whose ampacity ≥ 200 A.",
+        "Value: source gives 1/0 AWG.",
+        "NEEDS REVIEW: confirm 1/0 AWG (≥ 200 A, 3-conductor, 2 kV non-shielded) in Table 12A of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-009",
@@ -153,15 +155,15 @@
       "topic": "free-air-aluminum",
       "question": "What is the maximum allowable ampacity of each conductor when there are two 2/0 R90 XLPE aluminum conductors installed in a free-air run?",
       "answer": "235 A",
-      "references": ["Rule 4-004 2)a)", "Table 3"],
+      "references": ["Rule 4-004 1)", "Table 3"],
       "solution_steps": [
-        "Aluminum conductors in free air → Rule 4-004 2)a) sends you to the free-air table (Table 3) for aluminum.",
-        "Read the 90°C column for aluminum size 2/0 in free air = 235 A.",
-        "Two conductors in free air do not require count derating.",
-        "Result: 235 A."
+        "Rule (selection): free air + aluminum → Table 3 (teacher grid: Tables 3 & 4 = aluminum, Tables 1 & 3 = free air).",
+        "Value: Table 3, 2/0 aluminum, 90°C column = 235 A (per source).",
+        "Count derate: for free-air single conductors, grouping (Table 5C) applies only where 2–4 conductors are spaced closer than 25% of the largest cable diameter (teacher: only if the spacing 'if' condition is stated). No spacing is given here → no derate.",
+        "NEEDS REVIEW: confirm the Table 3 (free-air aluminum) 90°C value for 2/0 = 235 A in the 2024 code (free-air aluminum value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-010",
@@ -187,12 +189,12 @@
       "topic": "derate-and-ambient",
       "question": "What is the maximum ampacity of each conductor when 10 #4 R90 copper conductors are installed in a run of EMT located in a 40°C ambient temperature?",
       "answer": "60.51 A",
-      "references": ["Rule 4-004 1)", "Rule 4-004 3)", "Table 2", "Table 5A", "Table 5C"],
+      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #4 copper at 90°C from Table 2 = 95 A.",
-        "10 current-carrying conductors → Table 5C count factor = 0.70.",
-        "Ambient 40°C for 90°C insulation → Table 5A correction factor = 0.91.",
-        "95 A × 0.70 × 0.91 = 60.5 A.",
+        "Rule (selection): raceway + copper → Table 2; #4 copper at 90°C (R90) = 95 A.",
+        "Count derate: 10 current-carrying conductors → Table 5C, 7–24 = 0.70.",
+        "Ambient: 40°C ambient, 90°C insulation column → Table 5A = 0.91.",
+        "Math: 95 × 0.70 × 0.91 = 60.51 A (order of the two factors does not matter).",
         "Result: ≈ 60.51 A."
       ],
       "code_edition": "2024",
@@ -205,13 +207,13 @@
       "type": "calculation",
       "topic": "equipment-wire",
       "question": "If 35 #10 TEW (equipment wire) conductors are to be installed in one conduit, what is the ampacity of each conductor?",
-      "answer": "16.8 A",
-      "references": ["Rule 4-014", "Rule 4-012", "Table 12"],
+      "answer": "16.8 A (source) — but the standard Table 5C count factor for 35 conductors is 0.60, which would give 18 A; verify",
+      "references": ["Rule 4-014", "Rule 4-012", "Table 12", "Table 5C"],
       "solution_steps": [
-        "Equipment wire (TEW) ampacity comes from Table 12 → Rule 4-014.",
-        "Base ampacity of #10 TEW from Table 12 = 30 A.",
-        "35 conductors in one conduit requires the count-adjustment per Rule 4-012; applying the derating factor 0.56 gives 30 A × 0.56 = 16.8 A.",
-        "Result: 16.8 A."
+        "Rule (selection): equipment wire (TEW) ampacity → Rule 4-014, Table 12; source base for #10 TEW = 30 A.",
+        "Count derate: source applies 0.56 for 35 conductors → 30 × 0.56 = 16.8 A.",
+        "2024-method check: Table 5C for 25–42 current-carrying conductors = 0.60, which gives 30 × 0.60 = 18 A — the 0.56 factor is not a standard Table 5C value.",
+        "NEEDS REVIEW: confirm (a) the #10 TEW base ampacity in Table 12 of the 2024 code, and (b) which count-derating basis applies to equipment wire. Source figure 16.8 A vs 2024-method figure 18 A shown for a human to decide; do not silently change."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -226,9 +228,9 @@
       "answer": "100 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of 1/0 copper at 60°C (TW) from Table 2 = 125 A.",
-        "Five current-carrying conductors → Table 5C count factor = 0.80.",
-        "125 A × 0.80 = 100 A.",
+        "Rule (selection): raceway + copper → Table 2; 1/0 copper at 60°C (TW) = 125 A.",
+        "Count derate: 5 current-carrying conductors → Table 5C, 4–6 = 0.80.",
+        "Math: 125 × 0.80 = 100 A.",
         "Result: 100 A."
       ],
       "code_edition": "2024",
@@ -244,9 +246,9 @@
       "answer": "42 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
-        "Base ampacity of #4 copper at 60°C (TW) from Table 2 = 70 A.",
-        "32 current-carrying conductors → Table 5C count factor = 0.60.",
-        "70 A × 0.60 = 42 A.",
+        "Rule (selection): raceway/cable + copper → Table 2; #4 copper at 60°C (TW) = 70 A.",
+        "Count derate: 32 current-carrying conductors → Table 5C, 25–42 = 0.60.",
+        "Math: 70 × 0.60 = 42 A.",
         "Result: 42 A."
       ],
       "code_edition": "2024",
@@ -259,16 +261,18 @@
       "type": "calculation",
       "topic": "mixed-temp-derate-ambient",
       "question": "What is the maximum ampacity of 7 conductors in a raceway located in 45°C ambient, containing four 2/0 R90 copper conductors and three 1/0 TW75 copper conductors?",
-      "answer": "2/0 R90 = 86.1 A, 1/0 TW75 = 100.45 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C", "Table 5A"],
+      "answer": "2/0 = 100.45 A, 1/0 = 86.1 A",
+      "references": ["Rule 4-004 1)c)", "Rule 4-038", "Table 2", "Table 5C", "Table 5A"],
       "solution_steps": [
-        "Base ampacities from Table 2: 2/0 copper at 90°C = 175 A; 1/0 copper at 75°C = 150 A.",
-        "7 current-carrying conductors → Table 5C count factor = 0.70.",
-        "Ambient 45°C corrections from Table 5A applied to each insulation rating.",
-        "Result per source: 2/0 R90 = 86.1 A, 1/0 TW75 = 100.45 A."
+        "Rule (mixed temp ratings): Rule 4-038 — different temperature ratings in one raceway are sized on the LOWEST rating present (75°C). So both the 2/0 R90 and the 1/0 TW75 are read in the 75°C column.",
+        "Table/value: Table 2 copper at 75°C — 2/0 = 175 A, 1/0 = 150 A.",
+        "Count derate: 7 current-carrying conductors → Table 5C, 7–24 = 0.70.",
+        "Ambient: 45°C, 75°C insulation column → Table 5A = 0.82.",
+        "Math: 2/0 = 175 × 0.70 × 0.82 = 100.45 A; 1/0 = 150 × 0.70 × 0.82 = 86.1 A.",
+        "Result: 2/0 = 100.45 A, 1/0 = 86.1 A. (Source had the two values SWAPPED — it labelled the 2/0 as 86.1 A and the 1/0 as 100.45 A; the larger conductor must have the larger ampacity.)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S04-016",
@@ -278,10 +282,10 @@
       "topic": "conductor-colors",
       "question": "What are the required colors of conductors installed in a 3-phase, 3-wire, 600 V circuit?",
       "answer": "Red (A), Black (B), Blue (C)",
-      "references": ["Rule 4-032 1)c)"],
+      "references": ["Rule 4-036"],
       "solution_steps": [
-        "Rule 4-032 specifies phase identification colours.",
-        "For a 3-phase circuit the phase conductors are Red (A), Black (B), Blue (C).",
+        "Rule (identification): Rule 4-036 governs conductor identification/colour for ungrounded conductors.",
+        "Standard 3-phase phase identification: phase A = red, phase B = black, phase C = blue.",
         "Result: Red, Black, Blue."
       ],
       "code_edition": "2024",

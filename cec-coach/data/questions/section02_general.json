@@ -8,10 +8,10 @@
       "options": ["A) Type 1", "B) Type 2", "C) Type 3", "D) Type 3X"],
       "answer": "Type 3X (the 'X' suffix denotes added corrosion resistance)",
       "answer_key": "D",
-      "references": ["Rule 2-400", "Table 65"],
-      "solution_steps": ["Enclosure 'Type' selection is governed by the conditions of use (Rule 2-400 and Table 65).", "The 'X' suffix on a NEMA/CSA enclosure type designates additional corrosion resistance.", "Of the options, Type 3X is the only corrosion-rated enclosure."],
+      "references": ["Table 65"],
+      "solution_steps": ["Enclosure 'Type' selection is governed by the conditions of use and Table 65 (enclosure selection table in Section 2).", "The 'X' suffix on a CSA/NEMA enclosure type designates additional corrosion resistance.", "Of the options, Type 3X is the only corrosion-rated enclosure."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-002",
@@ -20,10 +20,10 @@
       "options": ["A) 0.5 meters (1.5 feet)", "B) 0.75 meters (2.5 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.2 meters (4 feet)"],
       "answer": "1.0 meter (3.3 feet) of working space in front of equipment likely to require examination/adjustment while energized",
       "answer_key": "C",
-      "references": ["Rule 2-308"],
-      "solution_steps": ["Rule 2-308 requires a working space of not less than 1 m in front of electrical equipment that may need to be worked on while energized.", "A 120/240 V panelboard falls in the low-voltage category → 1.0 m."],
+      "references": ["Rule 2-308 1)"],
+      "solution_steps": ["Rule 2-308 1) requires a minimum working space of 1 m with secure footing about electrical equipment containing renewable parts/disconnecting/operating means or requiring examination, adjustment, operation, or maintenance.", "A 120/240 V panelboard takes the general 1 m working space."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-003",
@@ -32,8 +32,8 @@
       "options": ["A) 0.3 meters (1 foot)", "B) 0.6 meters (2 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.5 meters (5 feet)"],
       "answer": "1.0 meter (3.3 feet)",
       "answer_key": "C",
-      "references": ["Rule 2-320"],
-      "solution_steps": ["Rule 2-320 sets clearances from gas metering/regulating equipment.", "Non-arcing electrical equipment such as a receptacle must be a minimum of 1.0 m from a gas meter."],
+      "references": ["Rule 2-328", "Appendix B"],
+      "solution_steps": ["Clearances of electrical equipment from gas pressure-relief/metering devices are addressed by Rule 2-328 with the numeric values in Appendix B (NOT Rule 2-320, which is 'Illumination of equipment').", "The keyed answer treats a receptacle as non-arcing equipment requiring a minimum 1.0 m clearance from the gas meter."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -44,22 +44,22 @@
       "options": ["A) 120 volts", "B) 240 volts", "C) 277 volts", "D) 150 volts"],
       "answer": "150 volts to ground",
       "answer_key": "D",
-      "references": ["Rule 2-130"],
-      "solution_steps": ["Rule 2-130 limits the voltage between any two conductors and between any conductor and ground for premises wiring in dwelling units.", "Maximum nominal voltage to ground in a dwelling unit is 150 V (e.g., a 120/240 V single-phase system has 120 V to ground, which complies)."],
+      "references": ["Rule 2-110"],
+      "solution_steps": ["Rule 2-110 (Circuit voltage-to-ground — Dwelling units) states branch circuits in dwelling units shall not have a voltage exceeding 150 volts-to-ground.", "A 120/240 V single-phase system has 120 V to ground, which complies. (Note: the dwelling 150 V rule is Rule 2-110, not 2-130; Rule 2-130 is flame-spread requirements.)"],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-005",
       "section": 2, "block": "A", "type": "theory", "topic": "disconnecting-means",
       "question": "Is it permissible to use a three-way switch to disconnect electrical equipment?",
       "options": ["A) Yes, always", "B) Yes, but only for specific equipment", "C) No, it is not permissible", "D) Yes, if it is a double-pole switch"],
-      "answer": "No, it is not permissible. A three-way (3-way) switch does not provide a positive, identifiable open/disconnected position and cannot serve as a disconnecting means.",
+      "answer": "No, it is not permissible. A three-way (3-way) switch has no fixed/marked open (OFF) position, so it cannot positively indicate the disconnected state required of a disconnecting means.",
       "answer_key": "C",
-      "references": ["Rule 2-308", "Rule 14-500 series (disconnecting means)"],
-      "solution_steps": ["A disconnecting means must clearly indicate the open (off) position. A three-way switch has no fixed on/off marking, so it cannot be used to disconnect equipment."],
+      "references": ["Rule 14-500 series (disconnecting means — indication of open position)"],
+      "solution_steps": ["A disconnecting means must clearly and positively indicate the open (OFF) position.", "A three-way switch has no fixed ON/OFF marking (its position depends on the companion switch), so it cannot serve as a disconnecting means."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-006",
@@ -68,8 +68,8 @@
       "options": ["A) 0.3 meters (1 foot)", "B) 0.6 meters (2 feet)", "C) 0.9 meters (3 feet)", "D) 1.5 meters (5 feet)"],
       "answer": "0.9 meters (3 feet)",
       "answer_key": "C",
-      "references": ["Rule 2-310", "Rule 36-xxx (high-voltage installations)"],
-      "solution_steps": ["For metal-enclosed (dead-front) high-voltage equipment, the minimum rear/side clearance to a wall is taken from the high-voltage working-space requirements.", "For this voltage class the answer keyed is 0.9 m."],
+      "references": ["Rule 2-308 4)", "Table 56"],
+      "solution_steps": ["Working space around equipment with exposed/dead-front high-voltage parts is set by Rule 2-308 4) using Table 56 (which is keyed to voltage and to the type of facing surface, e.g. a wall).", "For metal-enclosed equipment at this voltage class against a wall the keyed value is 0.9 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -80,10 +80,10 @@
       "options": ["A) 1.8 meters (6 feet)", "B) 2.0 meters (6.5 feet)", "C) 2.1 meters (7 feet)", "D) 2.2 meters (8 feet)"],
       "answer": "2.2 meters (the CEC requires a minimum headroom of 2.2 m in working space about exposed live parts of switchboards/MCCs)",
       "answer_key": "D",
-      "references": ["Rule 2-308 4)"],
-      "solution_steps": ["Rule 2-308 requires minimum headroom of working space about switchboards or motor control centres having exposed live parts to be 2.2 m.", "Note option D is mislabeled '(8 feet)' in the source; 2.2 m is approximately 7.2 feet."],
+      "references": ["Rule 2-308 5)"],
+      "solution_steps": ["Rule 2-308 5) requires the minimum headroom of working spaces around switchboards or motor control centres where bare live parts are exposed to be 2.2 m.", "Note option D is mislabeled '(8 feet)' in the source; 2.2 m is approximately 7.2 feet."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-008",
@@ -92,10 +92,10 @@
       "options": ["A) Type 2", "B) Type 3", "C) Type 4X", "D) Type 4"],
       "answer": "Type 4X (watertight/dust-tight with added corrosion resistance)",
       "answer_key": "C",
-      "references": ["Rule 2-400", "Table 65"],
-      "solution_steps": ["Type 4 provides protection against splashing/hose-directed water. The 'X' suffix adds corrosion resistance.", "Corrosive material + water splash → Type 4X."],
+      "references": ["Table 65"],
+      "solution_steps": ["Type 4 provides protection against splashing/hose-directed water; the 'X' suffix adds corrosion resistance.", "Corrosive material + water splash → Type 4X (per Table 65 enclosure selection)."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-009",
@@ -104,20 +104,20 @@
       "options": ["A) FT1", "B) FT2", "C) FT3", "D) FT4"],
       "answer": "FT1",
       "answer_key": "A",
-      "references": ["Rule 2-126", "Appendix B (flame test ratings)"],
-      "solution_steps": ["FT1 is the basic vertical-flame rating acceptable for cables in combustible construction.", "Higher ratings (FT4/FT6) are required for non-combustible construction, plenums, and risers."],
+      "references": ["Rule 2-130", "Appendix B"],
+      "solution_steps": ["Flame-spread requirements for insulated conductors/cables in buildings are set by Rule 2-130 (referring to the NBC), with FT flame-test ratings explained in Appendix B. (Note: Rule 2-126 is 'Use of thermal insulation', not flame rating.)", "FT1 is the basic vertical-flame rating acceptable for cables in combustible construction; higher ratings (FT4/FT6) are required for non-combustible construction, plenums, and risers."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-010",
       "section": 2, "block": "A", "type": "lookup", "topic": "working-space-mv",
       "question": "What is the minimum working space required for the switchboard with exposed live parts that is used to supply a 4 kV, 3-phase, 4-wire system?",
       "options": ["A) 1.0 meter (3.3 feet)", "B) 1.2 meters (4 feet)", "C) 2.0 meters (6.5 feet)", "D) 2.5 meters (8 feet)"],
-      "answer": "1.2 meters (for exposed live parts in the 751 V to 7.5 kV range, Rule 2-308 requires not less than 1.2 m of working space in front)",
+      "answer": "1.2 meters (working space in front of exposed live parts at this high-voltage class, from Table 56)",
       "answer_key": "B",
-      "references": ["Rule 2-308 2)"],
-      "solution_steps": ["4 kV (4000 V to ground/phase) is above 750 V, so the high-voltage working-space requirement of Rule 2-308 2) applies.", "Minimum working space in front for this voltage class = 1.2 m."],
+      "references": ["Rule 2-308 4)", "Table 56"],
+      "solution_steps": ["4 kV is above 750 V; working space for switchboards with exposed live parts is set by Rule 2-308 4) using Table 56 (which is keyed to voltage and facing-surface condition).", "The keyed value for this voltage class in front is 1.2 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -129,9 +129,9 @@
       "answer": "Drip Proof",
       "answer_key": "C",
       "references": [],
-      "solution_steps": ["'D.P.' on a motor enclosure rating means Drip Proof (the enclosure resists dripping liquids falling at up to 15° from vertical)."],
+      "solution_steps": ["'D.P.' on a motor nameplate/enclosure rating means Drip Proof (the enclosure resists liquids/solids falling at up to 15° from vertical). This is a general motor-marking fact, not a numbered CEC rule."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-012",
@@ -140,8 +140,8 @@
       "options": ["A) 0.3 meters (1 foot)", "B) 0.6 meters (2 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.5 meters (5 feet)"],
       "answer": "1.5 meters (arc-producing equipment must be kept farther from a gas meter than non-arcing equipment)",
       "answer_key": "D",
-      "references": ["Rule 2-320"],
-      "solution_steps": ["Rule 2-320 distinguishes arcing from non-arcing equipment.", "Non-arcing equipment minimum is 1.0 m; arc-producing equipment must be located a minimum of 1.5 m from the gas meter."],
+      "references": ["Rule 2-328", "Appendix B"],
+      "solution_steps": ["Clearances of electrical equipment from gas metering/relief devices are addressed by Rule 2-328 with values in Appendix B (NOT Rule 2-320, which is 'Illumination of equipment').", "The keyed answer keeps arc-producing equipment farther than non-arcing: 1.5 m vs 1.0 m. (Exact distances are Appendix B values — flagged for confirmation.)"],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -152,20 +152,20 @@
       "options": ["A) Type 1", "B) Type 2", "C) Type 3", "D) Type 5"],
       "answer": "Type 3 (outdoor use; protects against rain, snow, and external ice formation)",
       "answer_key": "C",
-      "references": ["Rule 2-400", "Table 65"],
-      "solution_steps": ["Type 3 enclosures are rated for outdoor use providing protection against windblown dust, rain, sleet, and external ice formation.", "Type 1 is indoor general purpose; Type 5 is for dust (indoor)."],
+      "references": ["Table 65"],
+      "solution_steps": ["Type 3 enclosures are rated for outdoor use, providing protection against windblown dust, rain, sleet, and external ice formation (Table 65).", "Type 1 is indoor general purpose; Type 5 is for dust (indoor)."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-014",
       "section": 2, "block": "A", "type": "lookup", "topic": "working-space-mv",
       "question": "What is the minimum working space required in front of a panelboard with exposed live bus operating at a voltage of approximately 8.3/14.4 kV? (OCR gave '8.4/14.55 kV')",
       "options": ["A) 0.5 meters (1.5 feet)", "B) 0.75 meters (2.5 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.5 meters (5 feet)"],
-      "answer": "1.5 meters (for exposed live parts in the higher high-voltage range, Rule 2-308 increases the front working space)",
+      "answer": "1.5 meters (front working space for exposed live parts at this high-voltage class, from Table 56)",
       "answer_key": "D",
-      "references": ["Rule 2-308 2)"],
-      "solution_steps": ["At ~14.4 kV the equipment is well above 750 V, in the upper high-voltage working-space band of Rule 2-308.", "Required front working space for exposed live parts at this voltage = 1.5 m."],
+      "references": ["Rule 2-308 4)", "Table 56"],
+      "solution_steps": ["At ~14.4 kV the equipment is well above 750 V; working space for exposed live parts is set by Rule 2-308 4) via Table 56.", "The keyed front value for this upper high-voltage class is 1.5 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -176,10 +176,10 @@
       "options": ["A) 150 volts", "B) 240 volts", "C) 277 volts", "D) 480 volts"],
       "answer": "150 volts to ground",
       "answer_key": "A",
-      "references": ["Rule 2-130"],
-      "solution_steps": ["Rule 2-130 limits voltage to ground for dwelling-unit wiring to 150 V.", "This holds regardless of the 250 kVA building load reference in the question."],
+      "references": ["Rule 2-110"],
+      "solution_steps": ["Rule 2-110 limits dwelling-unit branch circuits to 150 V-to-ground.", "The higher-voltage exception (up to 600Y/347 V) only applies where the calculated load EXCEEDS 250 kV*A and qualified maintenance personnel are available. Since this load does not exceed 250 kVA, the 150 V limit stands. (Dwelling rule is 2-110, not 2-130.)"],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-016",
@@ -189,9 +189,9 @@
       "answer": "1.0 meter (3.3 feet) of working space in front of equipment that may require examination or adjustment while energized",
       "answer_key": "B",
       "references": ["Rule 2-308 1)"],
-      "solution_steps": ["The general minimum working space in front of electrical equipment (low voltage) under Rule 2-308 is 1.0 m."],
+      "solution_steps": ["Rule 2-308 1) sets the general minimum working space about electrical equipment at 1 m with secure footing."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-017",
@@ -200,10 +200,10 @@
       "options": ["A) Type 1", "B) Type 3R", "C) Type 4", "D) Type 5"],
       "answer": "Type 4 (watertight; protects against splashing and hose-directed water)",
       "answer_key": "C",
-      "references": ["Rule 2-400", "Table 65"],
-      "solution_steps": ["Type 4 enclosures are watertight and resist splashing and hose-directed water — suitable for a carwash.", "Type 3R only resists falling rain; Type 5 is for dust."],
+      "references": ["Table 65"],
+      "solution_steps": ["Type 4 enclosures are watertight and resist splashing and hose-directed water — suitable for a carwash (Table 65).", "Type 3R only resists falling rain; Type 5 is for dust. (If corrosive shampoo were also present, Type 4X would be required.)"],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S02-018",
@@ -212,10 +212,10 @@
       "options": ["A) Type 1", "B) Type 3R", "C) Type 5", "D) Type 12K"],
       "answer": "Type 3R (rainproof outdoor enclosure)",
       "answer_key": "B",
-      "references": ["Rule 2-400", "Table 65"],
-      "solution_steps": ["A rooftop fusible disconnect is outdoors and must resist falling rain/snow.", "Type 3R is the rainproof outdoor enclosure commonly used for this application."],
+      "references": ["Table 65"],
+      "solution_steps": ["A rooftop fusible disconnect is outdoors and must resist falling rain/snow.", "Type 3R is the rainproof outdoor enclosure commonly used for this application (Table 65)."],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     }
   ]
 }

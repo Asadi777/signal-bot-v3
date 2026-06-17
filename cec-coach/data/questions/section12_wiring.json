@@ -9,14 +9,15 @@
       "topic": "conduit-fill",
       "question": "There are seven R90 XLPE type #8 AWG 600V unjacketed copper conductors and four T90 Nylon type #4 AWG copper conductors that need to be installed in a rigid metal conduit. What is the minimum conduit size required for these conductors?",
       "answer": "Size 41 (trade size 41 mm / 1-1/2 in.)",
-      "references": ["Table 6", "Table 8", "Table 10"],
+      "references": ["Rule 12-910", "Table 6", "Table 8", "Table 10"],
       "solution_steps": [
-        "Look up the cross-sectional area of each conductor (Table 10 for the #8 R90 and #4 T90).",
-        "Sum the areas and apply the conduit fill percentage (Table 8, over 2 conductors = 40%).",
-        "Select the smallest conduit from Table 6 (RMC) that accommodates the total area: size 41."
+        "Rule 12-910: total conductor area must not exceed the Table 8 percentage of the conduit's internal area. For >2 conductors the fill limit is 40%.",
+        "Table 10: look up the area of each #8 R90 XLPE conductor (×7) and each #4 T90 Nylon conductor (×4); sum all 11 areas.",
+        "Table 6: select the smallest rigid metal conduit whose 40% usable area exceeds the total — gives size 41.",
+        "Keep needs_review: confirm the exact #8 R90 and #4 T90 areas and the size-41 RMC 40% area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-002",
@@ -27,7 +28,9 @@
       "question": "What is the largest size of solid conductor that can be permitted to be used as a termination means under a wire binding screw?",
       "answer": "#10 AWG",
       "references": ["Rule 12-118"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-118: a conductor terminated directly under a wire-binding screw or stud-and-nut is limited to solid conductors no larger than #10 AWG; larger conductors require a pressure connector/lug."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -39,14 +42,15 @@
       "topic": "box-fill",
       "question": "An outlet box contains three insulated wire connectors, a duplex receptacle and five #10 AWG insulated conductors. What is the minimum volume required for the outlet box?",
       "answer": "295.2 mL",
-      "references": ["Table 22", "Table 23", "Rule 12-3036"],
+      "references": ["Rule 12-3034", "Rule 12-3036", "Table 22", "Table 23"],
       "solution_steps": [
-        "Use the per-conductor volume allowance for #10 AWG from Table 22/23.",
-        "Count conductor equivalents: the five #10 conductors, plus allowances for the wire connectors and the duplex receptacle (device counts as based on the largest conductor).",
-        "Total required box volume = 295.2 mL."
+        "Rule 12-3034: box fill = sum of conductor-equivalent volume allowances, using the per-conductor allowance for the largest conductor (Table 22 gives mL per conductor by size).",
+        "CEC method (differs from NEC): count the five #10 conductors; a duplex receptacle counts as one conductor of the largest size; insulated wire connectors do not each add a separate count the way NEC does — and a bonding/ground conductor adds NO separate volume in the CEC.",
+        "Multiply the #10 per-conductor allowance (Table 22) by the total conductor equivalents to get the minimum box volume.",
+        "Keep needs_review: confirm the #10 per-conductor mL value and exactly how the three wire connectors are counted against the printed CEC 2024 Table 22 / Rule 12-3034 before locking the 295.2 mL figure."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-004",
@@ -56,10 +60,11 @@
       "topic": "underground-cover",
       "question": "Non-metallic sheathed cable, type NMWU, is used as the wiring method for a 60A, 120/240V subservice. The cable is direct burial without additional protection under a non-vehicular area. Determine the minimum cover requirements for the cable.",
       "answer": "600 mm",
-      "references": ["Table 53"],
+      "references": ["Rule 12-012", "Table 53"],
       "solution_steps": [
-        "Table 53 gives minimum cover for direct-buried cable without mechanical protection.",
-        "For this voltage/installation in a non-vehicular area the required cover is 600 mm."
+        "Rule 12-012 / Table 53: minimum cover for direct-buried cable (no mechanical protection) at this voltage in a location NOT subject to vehicular traffic.",
+        "Table 53 gives 600 mm for ≤750 V cable without mechanical protection in a non-vehicular area.",
+        "Result: 600 mm."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -72,8 +77,10 @@
       "topic": "conduit-bends",
       "question": "What is the maximum number of bends allowed between outlets or pull-in points when installing a conduit?",
       "answer": "The equivalent of four quarter bends (4 x 90 degrees = 360 degrees total)",
-      "references": ["Rule 12-940", "Rule 12-1118"],
-      "solution_steps": [],
+      "references": ["Rule 12-940"],
+      "solution_steps": [
+        "Rule 12-940: between pull points (outlets, boxes, fittings) a raceway may contain bends totalling not more than the equivalent of four quarter-bends (4 × 90° = 360°)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -101,11 +108,11 @@
       "topic": "pull-box",
       "question": "What is the minimum dimension for side A when the size of conductor used in this installation is 1/0 Cu, RW90 XLPE, 600 V, unjacketed? (Conduit entries are 41 mm and 35 mm as shown in the diagram.)",
       "answer": "A = 328 mm",
-      "references": ["Rule 12-3034", "Table 9", "Table 10"],
+      "references": ["Rule 12-3036", "Table 9", "Table 10"],
       "solution_steps": [
-        "Diagram-based pull box sizing for a straight/angle pull.",
-        "Apply the pull box rule multipliers to the conduit trade sizes shown (41 mm and 35 mm).",
-        "Result A = 328 mm. Diagram needed to fully verify the entry layout."
+        "Pull-box sizing per Rule 12-3036: straight pulls use 8× the largest raceway trade size; angle/U pulls use 6× the largest plus the sum of the other entries on the same wall.",
+        "Cannot reconstruct the entry layout (which wall is straight vs angle) without the referenced diagram, so the multiplier applied to the 41 mm and 35 mm entries cannot be confirmed.",
+        "Keep needs_review: diagram-dependent — the stated A = 328 mm cannot be verified without the figure."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -134,8 +141,10 @@
       "topic": "nmsc-support",
       "question": "How far away must non-metallic sheathed cable be installed from the outer edges of studs, joists, or similar wooden members through which it may be run?",
       "answer": "32 mm",
-      "references": ["Rule 12-516", "Rule 12-518"],
-      "solution_steps": [],
+      "references": ["Rule 12-516"],
+      "solution_steps": [
+        "Rule 12-516: where NMSC passes through wooden studs/joists, the cable must be kept at least 32 mm from the nearer (outer) edge, or be protected by a steel plate, to guard against nail/screw damage."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -148,7 +157,9 @@
       "question": "What is the minimum free length of conductors that shall be left at each outlet for connection purposes in outlet boxes?",
       "answer": "150 mm",
       "references": ["Rule 12-3014"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-3014: at each outlet box, not less than 150 mm of free conductor must be left for making up connections to devices."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -161,7 +172,9 @@
       "question": "Which table should be consulted to find information on minimum radii of bends required in a raceway?",
       "answer": "Table 7",
       "references": ["Table 7"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Table 7 lists the minimum radii of bends (to the inside of the conduit/raceway) by trade size."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -173,10 +186,10 @@
       "topic": "pull-box",
       "question": "Determine the minimum dimensions A, B and C required according to code rules for pull boxes. (Conduit entries 2.5 in., 1.5 in. and 1 in. as shown in the diagram.)",
       "answer": "A = 17.5 in., B = 18 in., C = 15 in.",
-      "references": ["Rule 12-3034"],
+      "references": ["Rule 12-3036"],
       "solution_steps": [
-        "Apply pull box sizing rules to the conduit trade sizes shown in the diagram.",
-        "A = 17.5, B = 18, C = 15 inches. Diagram needed to verify layout."
+        "Pull-box sizing per Rule 12-3036 (straight = 8× largest raceway; angle/U = 6× largest + sum of others on that wall) applied to the 2.5 in., 1.5 in. and 1 in. entries.",
+        "Keep needs_review: the diagram (which entries are straight vs angle, and on which walls) is required to verify A = 17.5, B = 18, C = 15 in."
       ],
       "code_edition": "2024",
       "needs_review": true

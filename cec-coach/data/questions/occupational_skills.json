@@ -148,10 +148,10 @@
       "section": null, "block": "D", "topic": "overload-heater", "type": "theory",
       "question": "An overload heater will not reset. What is the cause?",
       "options": ["A) control fuse has blown", "B) solder pot has cooled", "C) solder pot has melted", "D) control relay is open"],
-      "answer": "The solder pot has melted — a melted (ratchet) solder pot in a thermal overload prevents it from resetting until it cools/is replaced.",
+      "answer": "The solder pot has melted — in a thermal (eutectic) overload relay a melted solder pot will not re-solidify/latch, so it cannot be reset until cooled or replaced.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-016",
@@ -199,10 +199,10 @@
       "section": null, "block": "A", "topic": "gfci", "type": "theory",
       "question": "When performing regular testing of a GFCI receptacle on a pool deck, the receptacle fails to reset. What is the cause?",
       "options": ["A) faulty receptacle", "B) overvoltage to the receptacle", "C) receptacle is not grounded", "D) open ground"],
-      "answer": "Faulty receptacle — a GFCI that will not reset (with power present) indicates a defective device.",
+      "answer": "Faulty receptacle — with power present and no active ground fault, a GFCI that will not reset indicates a defective device. (A Class A GFCI trips at a 5 mA ground-fault current.)",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-021",
@@ -259,10 +259,10 @@
       "section": null, "block": "D", "topic": "vfd", "type": "theory",
       "question": "What is the procedure for an initial startup of a VFD?",
       "options": ["A) program relevant parameters, bump test, energize VFD, then run", "B) program relevant parameters, energize VFD, bump test, then run", "C) Energize VFD, bump test, program relevant parameters, then run", "D) energize VFD, program relevant parameters, bump test, then run"],
-      "answer": "Energize the VFD, program the relevant parameters, bump test (verify rotation), then run.",
+      "answer": "Energize the VFD, program the relevant parameters, bump test (verify rotation), then run. Parameters must be set before any rotation test.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-027",
@@ -335,10 +335,10 @@
       "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
       "question": "An occupancy sensor controls the heating system of a building; the internal temperature is 15°C while occupied. The occupied set-point temperature is programmed for 21°C. What is the cause?",
       "options": ["A) the thermostat is in heat only", "B) occupancy sensor is failed open", "C) sensitivity setting of sensor is set too high", "D) the thermostat is failed closed"],
-      "answer": "The occupancy sensor has failed open — the system reads the space as unoccupied (setback) and does not heat to the 21°C occupied set point.",
+      "answer": "The occupancy sensor has failed open — the system reads the space as unoccupied and holds the lower setback temperature instead of heating to the 21°C occupied set point.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-034",
@@ -360,7 +360,7 @@
       "section": null, "block": "A", "topic": "emergency-power", "type": "theory",
       "question": "An AC generator is installed to supply emergency power for a life safety system. What is the raceway installation requirement for the conductor supplying associated equipment?",
       "options": ["A) installed in a rigid metal conduit with mechanical protection", "B) installed in a rigid PVC conduit with mechanical protection", "C) embedded in concrete providing 30 min fire rating", "D) embedded in concrete providing 60 min fire rating"],
-      "answer": "Installed in rigid metal conduit with mechanical protection (emergency/life-safety wiring methods).",
+      "answer": "Installed in rigid metal conduit with mechanical protection — the standard wiring method for emergency/life-safety supply conductors. (Section 46 also permits other protected methods; the concrete fire-rating option is the alternative the question contrasts against, so the exact keyed answer should be confirmed against Section 46.)",
       "answer_key": "A",
       "references": ["Section 46 (emergency systems)"],
       "code_edition": "2024",
@@ -371,10 +371,10 @@
       "section": null, "block": "D", "topic": "overload-heater", "type": "theory",
       "question": "An overload heater will not reset. What is the cause?",
       "options": ["A) Control fuse has blown", "B) solder pot has cooled", "C) solder pot has melted", "D) control relay is open"],
-      "answer": "The solder pot has melted — a thermal (eutectic) overload whose solder pot has melted will not reset.",
+      "answer": "The solder pot has melted — a thermal (eutectic) overload relay whose solder pot has melted will not latch/reset until it cools or is replaced.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-037",
@@ -488,10 +488,10 @@
       "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
       "question": "What is the hazard when working on the primary of a transformer?",
       "options": ["A) Back-feed", "B) Arc-flash", "C) Hot surface", "D) Energized core"],
-      "answer": "Back-feed — a transformer can be back-fed/energized from the secondary side, presenting a hazard on the primary.",
+      "answer": "Back-feed — the primary can be energized from the secondary side (back-feed), so it may be live even when the primary supply is isolated. This pairs with the secondary-side hazard, which is arc flash.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-048",
@@ -528,10 +528,10 @@
       "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
       "question": "What is the sequence of a make-up air unit once it needs heating?",
       "options": ["A) Combustion blower, gas valve, damper open and supply blower energized", "B) Gas valve", "C) Damper open", "D) Supply blower"],
-      "answer": "Combustion blower, gas valve, damper open, and supply blower energized — the proper start sequence for a make-up air unit calling for heat.",
+      "answer": "Combustion blower, gas valve, damper open, and supply blower energized — purge the combustion chamber first, then open the gas valve to fire, then open the damper and energize the supply blower to deliver tempered air.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-052",
@@ -563,10 +563,10 @@
       "section": null, "block": "D", "topic": "vfd", "type": "theory",
       "question": "When a VFD is installed for the first time, what is the sequence?",
       "options": ["A) Check motor for jam, energize VFD, set control program, verify motor rotation", "B) Set control, check motor for jam, energize VFD", "C) Verify motor rotation, check motor for jam, energize VFD", "D) Energize VFD, check motor for jam, verify motor rotation"],
-      "answer": "Check motor for jam, energize VFD, set the control program, then verify motor rotation.",
+      "answer": "Check motor for jam, energize VFD, set the control program, then verify motor rotation — mechanically confirm the motor is free before energizing, program parameters, then bump for rotation.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-055",
@@ -608,10 +608,10 @@
         "C) Disconnect the battery bank from the AC charger, connect the AC inverter to the loads, then check inverter voltage.",
         "D) Disconnect the AC inverter from the loads, connect the battery bank to the AC charger, then check rectifier voltage."
       ],
-      "answer": "Disconnect AC charger, disconnect the AC inverter, then check battery voltage — isolate the battery bank from both charger and inverter before measuring battery voltage.",
+      "answer": "Disconnect AC charger, disconnect the AC inverter, then check battery voltage — the battery bank must be isolated from both the charger and the inverter so the measured voltage reflects the batteries alone.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-059",
@@ -623,17 +623,17 @@
         "C) Reactor, inverter, filter and motor",
         "D) Motor, filter, inverter and reactor"
       ],
-      "answer": "Inverter, reactor, filter, then motor — the output reactor and filter are placed between the inverter and the motor.",
+      "answer": "Inverter, reactor, filter, then motor — the output (load) reactor and the output filter are placed in that order between the inverter output and the motor to protect the motor from the PWM waveform.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-060",
       "section": null, "block": "E", "topic": "cable-types", "type": "theory",
       "question": "Which type of cable used in a nurse-call system can be used in a plenum?",
       "options": ["A) LVT", "B) CMR", "C) FAS-105", "D) RWU-75"],
-      "answer": "FAS-105 — a plenum-rated communication/signal cable suitable for use in plenum spaces.",
+      "answer": "FAS-105 — the plenum-rated signal cable among the choices (LVT, CMR-riser, and RWU-75 are not plenum-rated). Confirm the FAS-105 plenum listing against the manufacturer/Section 32 cable markings.",
       "answer_key": "C",
       "code_edition": "2024",
       "needs_review": true
@@ -643,10 +643,10 @@
       "section": null, "block": "A", "topic": "rough-in", "type": "theory",
       "question": "If there are three lighting fixtures to be installed and two three-way switches, how many boxes are used?",
       "options": ["A) 3", "B) 4", "C) 5", "D) 6"],
-      "answer": "5 boxes — three fixture (outlet) boxes plus two switch boxes = 5.",
+      "answer": "5 boxes — three lighting-fixture (outlet) boxes plus two three-way switch boxes = 5.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "OCC-062",
@@ -669,10 +669,10 @@
       "section": null, "block": "A", "topic": "rough-in", "type": "theory",
       "question": "How many screws are required for installing an outdoor receptacle cover plate?",
       "options": ["A) 6 screws", "B) 2 screws", "C) 3 screws", "D) 4 screws"],
-      "answer": "4 screws — a weatherproof outdoor receptacle cover plate is secured with 4 screws.",
+      "answer": "4 screws — a weatherproof outdoor receptacle cover plate is secured at its four corners with 4 screws.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     }
   ]
 }
