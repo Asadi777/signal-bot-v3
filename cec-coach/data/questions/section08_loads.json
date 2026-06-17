@@ -9,9 +9,18 @@
       "topic": "service-calculation-nonresidential",
       "question": "Calculate the ampacity of the service conductors for a storage warehouse with a 120/240 V, single-phase service and outside dimensions of 16 m x 10 m. The lighting load is 15 kW and the air-conditioning load is 30 kW.",
       "answer": "189.83 A (source) — verify the warehouse basic W/m² allowance",
-      "options": ["A) 156.25 A", "B) 187.5 A", "C) 189.83 A", "D) 234.79 A"],
+      "options": [
+        "A) 156.25 A",
+        "B) 187.5 A",
+        "C) 189.83 A",
+        "D) 234.79 A"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-210", "Rule 8-106", "Table 14"],
+      "references": [
+        "Rule 8-210",
+        "Rule 8-106",
+        "Table 14"
+      ],
       "solution_steps": [
         "Rule (non-dwelling service, 8-210): demand = basic load (floor area × the occupancy's W/m² from the basic-load table) + actual loads (lighting/heating/AC, etc.), each with its applicable demand factor.",
         "Floor area = 16 × 10 = 160 m². Connected loads given: lighting 15 kW, air-conditioning 30 kW.",
@@ -19,7 +28,15 @@
         "NEEDS REVIEW: confirm (a) the basic W/m² allowance for a storage warehouse in the 2024 basic-load table and (b) whether the given 15 kW lighting replaces or adds to that basic allowance, and the AC demand factor. Source figure 189.83 A shown; the area allowance could not be verified here."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "ampacity هادی‌های سرویس را برای یک انبار ذخیره‌سازی با سرویس تک‌فاز 120/240 V و ابعاد بیرونی 16 m × 10 m محاسبه کنید. lighting load برابر 15 kW و air-conditioning load برابر 30 kW است.",
+      "options_fa": [
+        "156.25 A",
+        "187.5 A",
+        "189.83 A",
+        "234.79 A"
+      ],
+      "answer_fa": "189.83 A (منبع) — مقدار پایه W/m² انبار را بررسی کنید"
     },
     {
       "id": "S08-002",
@@ -29,16 +46,32 @@
       "topic": "voltage-drop",
       "question": "Based on code, what is the maximum voltage drop permitted between the supply side of a consumer service and the point of utilization in any installation?",
       "answer": "5%",
-      "options": ["A) 5%", "B) 3%", "C) 1%", "D) 10%"],
+      "options": [
+        "A) 5%",
+        "B) 3%",
+        "C) 1%",
+        "D) 10%"
+      ],
       "answer_key": "A",
-      "references": ["Rule 8-102 1)", "Rule 8-102 2)"],
+      "references": [
+        "Rule 8-102 1)",
+        "Rule 8-102 2)"
+      ],
       "solution_steps": [
         "Rule 8-102: overall voltage drop from the supply side of the consumer's service to the point of utilization shall not exceed 5% of nominal.",
         "Companion limit (don't confuse): any single feeder OR branch circuit shall not exceed 3% — the 5% is the cumulative supply-to-utilization figure asked here.",
         "Result: 5%."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بر اساس code، حداکثر voltage drop مجاز بین سمت تغذیه consumer service و نقطه مصرف (point of utilization) در هر نصب چقدر است؟",
+      "options_fa": [
+        "5%",
+        "3%",
+        "1%",
+        "10%"
+      ],
+      "answer_fa": "5%"
     },
     {
       "id": "S08-003",
@@ -48,9 +81,16 @@
       "topic": "dwelling-service-calc",
       "question": "A single dwelling unit has a total area of 360 m². It contains a 12 kW electric range, a 6 kW electric dryer, and a 3 kW domestic hot water tank. The main service is 120/240 V, single-phase, 3-wire. Calculate the demand in amps for the main service.",
       "answer": "67.70 A",
-      "options": ["A) 58.33 A", "B) 67.70 A", "C) 75.00 A", "D) 84.38 A"],
+      "options": [
+        "A) 58.33 A",
+        "B) 67.70 A",
+        "C) 75.00 A",
+        "D) 84.38 A"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-200 1)a)"],
+      "references": [
+        "Rule 8-200 1)a)"
+      ],
       "solution_steps": [
         "Basic (8-200 1)a)(i)): first 90 m² = 5000 W; remaining 360 − 90 = 270 m² = exactly 3 increments × 1000 W = 3000 W. Basic = 5000 + 3000 = 8000 W.",
         "Range (8-200 1)a)(iv)): 6000 W for first 12 kW + 40% of amount over 12 kW. Range = 12 kW → 6000 W.",
@@ -59,7 +99,15 @@
         "Result: 67.70 A (source figure confirmed by the 2024 method)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک واحد مسکونی منفرد مساحت کل 360 m² دارد. شامل یک range برقی 12 kW، یک خشک‌کن برقی 6 kW و یک مخزن آب گرم خانگی 3 kW است. سرویس اصلی 120/240 V تک‌فاز سه‌سیمه است. demand سرویس اصلی را بر حسب آمپر محاسبه کنید.",
+      "options_fa": [
+        "58.33 A",
+        "67.70 A",
+        "75.00 A",
+        "84.38 A"
+      ],
+      "answer_fa": "67.70 A"
     },
     {
       "id": "S08-004",
@@ -69,16 +117,32 @@
       "topic": "continuous-load-switch-rating",
       "question": "What size of continuous load can a 1500 A fusible switch supply if the conductors to the load are run in a raceway and the switch is marked for continuous operation at 80% of the rating of its overcurrent devices?",
       "answer": "1200 A",
-      "options": ["A) 1875 A", "B) 1500 A", "C) 1200 A", "D) 1125 A"],
+      "options": [
+        "A) 1875 A",
+        "B) 1500 A",
+        "C) 1200 A",
+        "D) 1125 A"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-104 3)", "Rule 14-104"],
+      "references": [
+        "Rule 8-104 3)",
+        "Rule 14-104"
+      ],
       "solution_steps": [
         "Rule 8-104: a switch not marked for 100% continuous operation may carry a continuous load up to 80% of its overcurrent-device rating.",
         "Math: 1500 A × 0.80 = 1200 A.",
         "Result: 1200 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک fusible switch با rating برابر 1500 A چه میزان continuous load می‌تواند تأمین کند، اگر هادی‌های سمت load داخل یک raceway کشیده شوند و switch برای کارکرد پیوسته در 80% rating دستگاه‌های overcurrent خود علامت‌گذاری شده باشد؟",
+      "options_fa": [
+        "1875 A",
+        "1500 A",
+        "1200 A",
+        "1125 A"
+      ],
+      "answer_fa": "1200 A"
     },
     {
       "id": "S08-005",
@@ -88,9 +152,16 @@
       "topic": "receptacle-feeder-demand",
       "question": "Determine the minimum ampacity required for the panel feeder conductors of a parking lot that has 200 parking spaces, each with a 15 A duplex receptacle, where the loading is not controlled. The receptacles are supplied from a 120/208 V, 3-phase, 4-wire panel board.",
       "answer": "494.4 A (source) — verify per-space allowance for uncontrolled loading",
-      "options": ["A) 285.6 A", "B) 494.4 A", "C) 856.0 A", "D) 1041.7 A"],
+      "options": [
+        "A) 285.6 A",
+        "B) 494.4 A",
+        "C) 856.0 A",
+        "D) 1041.7 A"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-400"],
+      "references": [
+        "Rule 8-400"
+      ],
       "solution_steps": [
         "Rule: parking/automobile-heater receptacle feeders are calculated under Rule 8-400. UNCONTROLLED loading gets little/no demand reduction (vs the reduced figure for controlled loading).",
         "Method: total demand = 200 spaces × the per-space uncontrolled allowance; source uses ≈ 178 080 W (≈ 890 W/space).",
@@ -98,7 +169,15 @@
         "NEEDS REVIEW: confirm the uncontrolled per-space watt allowance and demand factor under Rule 8-400 in the 2024 code (the √3 conversion is correct; the per-space value drives the answer and was not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ampacity موردنیاز برای هادی‌های feeder تابلوی یک پارکینگ با 200 جای پارک را تعیین کنید، که هر جای پارک یک پریز duplex برابر 15 A دارد و loading آن کنترل‌نشده (uncontrolled) است. پریزها از یک تابلوی 120/208 V سه‌فاز چهارسیمه تغذیه می‌شوند.",
+      "options_fa": [
+        "285.6 A",
+        "494.4 A",
+        "856.0 A",
+        "1041.7 A"
+      ],
+      "answer_fa": "494.4 A (منبع) — سهم هر جای پارک برای loading کنترل‌نشده را بررسی کنید"
     },
     {
       "id": "S08-006",
@@ -108,9 +187,17 @@
       "topic": "dwelling-service-calc",
       "question": "Calculate the demand in amps of a single dwelling unit with 190 m² of total area. It contains a 16 kW electric range, a 5 kW electric dryer, a 4 kW domestic hot water tank, and 15 kW of electric baseboard heating. The main service is 120/240 V, single-phase, 3-wire.",
       "answer": "127.5 A",
-      "options": ["A) 112.5 A", "B) 120.2 A", "C) 127.5 A", "D) 132.7 A"],
+      "options": [
+        "A) 112.5 A",
+        "B) 120.2 A",
+        "C) 127.5 A",
+        "D) 132.7 A"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-200 1)a)", "Rule 62-118"],
+      "references": [
+        "Rule 8-200 1)a)",
+        "Rule 62-118"
+      ],
       "solution_steps": [
         "Basic (8-200 1)a)(i)): first 90 m² = 5000 W; remaining 190 − 90 = 100 m² → 100/90 = 1.11, round UP to 2 increments × 1000 W = 2000 W. Basic = 7000 W.",
         "Range (8-200 1)a)(iv)): 6000 W + 40% of (16 − 12) kW = 6000 + 1600 = 7600 W.",
@@ -120,7 +207,15 @@
         "Result: 127.5 A (source figure confirmed; the original step text wrongly stated heating was added at 15 000 W — the 127.5 A answer already reflects the 13 750 W demand figure)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "demand یک واحد مسکونی منفرد با مساحت کل 190 m² را بر حسب آمپر محاسبه کنید. شامل یک range برقی 16 kW، یک خشک‌کن برقی 5 kW، یک مخزن آب گرم خانگی 4 kW و 15 kW گرمایش baseboard برقی است. سرویس اصلی 120/240 V تک‌فاز سه‌سیمه است.",
+      "options_fa": [
+        "112.5 A",
+        "120.2 A",
+        "127.5 A",
+        "132.7 A"
+      ],
+      "answer_fa": "127.5 A"
     },
     {
       "id": "S08-007",
@@ -130,9 +225,16 @@
       "topic": "range-branch-circuit",
       "question": "A 20 kW electric range is installed in the penthouse suite of a high-rise apartment. What is the demand of the branch circuit?",
       "answer": "11 200 W",
-      "options": ["A) 8000 W", "B) 9200 W", "C) 11 200 W", "D) 20 000 W"],
+      "options": [
+        "A) 8000 W",
+        "B) 9200 W",
+        "C) 11 200 W",
+        "D) 20 000 W"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-300 1)a)"],
+      "references": [
+        "Rule 8-300 1)a)"
+      ],
       "solution_steps": [
         "Rule 8-300 1)a) (BRANCH-circuit range demand, dwelling): a single range counts as 8 kW where its rating ≤ 12 kW, plus 40% of the amount the rating exceeds 12 kW. NOTE: the branch-circuit base is 8 kW — different from the 6 kW base used in the 8-200 SERVICE calc.",
         "Amount over 12 kW = 20 − 12 = 8 kW → 40% × 8000 = 3200 W.",
@@ -140,7 +242,15 @@
         "Result: 11 200 W (source figure confirmed; the earlier '9200 W via 6 kW base' was the wrong base — 8-300 uses 8 kW)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک range برقی 20 kW در سوئیت penthouse یک آپارتمان بلندمرتبه نصب شده است. demand این branch circuit چقدر است؟",
+      "options_fa": [
+        "8000 W",
+        "9200 W",
+        "11 200 W",
+        "20 000 W"
+      ],
+      "answer_fa": "11 200 W"
     },
     {
       "id": "S08-008",
@@ -150,9 +260,19 @@
       "topic": "dwelling-service-calc",
       "question": "A single-family dwelling is supplied with 120/240 V, single-phase service. It has 250 m² of total area, a 16 kW range, a 4 kW dryer, a 4 kW hot water tank, and 24 kW of electric baseboard heating. Determine the ampacity of the service copper conductors required. Use R90 XLPE 600 V Cu conductors.",
       "answer": "≈154.6 A (source 154.5 A)",
-      "options": ["A) 137.5 A", "B) 154.6 A", "C) 169.6 A", "D) 187.5 A"],
+      "options": [
+        "A) 137.5 A",
+        "B) 154.6 A",
+        "C) 169.6 A",
+        "D) 187.5 A"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-200 1)a)", "Rule 62-118", "Rule 4-006", "Table 2"],
+      "references": [
+        "Rule 8-200 1)a)",
+        "Rule 62-118",
+        "Rule 4-006",
+        "Table 2"
+      ],
       "solution_steps": [
         "Basic (8-200 1)a)(i)): first 90 m² = 5000 W; remaining 250 − 90 = 160 m² → 160/90 = 1.78, round UP to 2 increments × 1000 W = 2000 W. Basic = 7000 W.",
         "Range (8-200 1)a)(iv)): 6000 W + 40% of (16 − 12) kW = 7600 W.",
@@ -162,7 +282,15 @@
         "Conductor (Table 2, R90 Cu, 75°C terminations per Rule 4-006): 1/0 = 150 A is too small; 2/0 (175 A at 75°C) carries the 154.6 A demand. Result: ≈154.6 A → 2/0 AWG copper."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک واحد مسکونی تک‌خانواری با سرویس 120/240 V تک‌فاز تغذیه می‌شود. مساحت کل 250 m²، یک range برابر 16 kW، یک خشک‌کن 4 kW، یک مخزن آب گرم 4 kW و 24 kW گرمایش baseboard برقی دارد. ampacity هادی‌های مسی سرویس موردنیاز را تعیین کنید. از هادی‌های مسی R90 XLPE 600 V استفاده کنید.",
+      "options_fa": [
+        "137.5 A",
+        "154.6 A",
+        "169.6 A",
+        "187.5 A"
+      ],
+      "answer_fa": "≈154.6 A (منبع 154.5 A)"
     },
     {
       "id": "S08-009",
@@ -172,15 +300,30 @@
       "topic": "show-window-lighting",
       "question": "Based on the Canadian Electrical Code, what is the minimum watts per metre demand load for a show-window lighting installation?",
       "answer": "650 W/m",
-      "options": ["A) 100 W/m", "B) 200 W/m", "C) 650 W/m", "D) 1000 W/m"],
+      "options": [
+        "A) 100 W/m",
+        "B) 200 W/m",
+        "C) 650 W/m",
+        "D) 1000 W/m"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-200 1)b)"],
+      "references": [
+        "Rule 8-200 1)b)"
+      ],
       "solution_steps": [
         "Rule 8-200 1)b): show-window lighting demand = 650 W per metre measured along the base of the window.",
         "Result: 650 W/m."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بر اساس Canadian Electrical Code، حداقل demand load بر حسب وات بر متر برای نصب روشنایی show-window چقدر است؟",
+      "options_fa": [
+        "100 W/m",
+        "200 W/m",
+        "650 W/m",
+        "1000 W/m"
+      ],
+      "answer_fa": "650 W/m"
     },
     {
       "id": "S08-010",
@@ -190,16 +333,31 @@
       "topic": "range-branch-circuit-commercial",
       "question": "What is the minimum demand in watts for the branch circuit conductors supplying a 16 kW range installed in a bakery?",
       "answer": "16 kW (16 000 W) — 100%, no demand reduction for a commercial/non-dwelling range",
-      "options": ["A) 16 000 W", "B) 8000 W", "C) 9600 W", "D) 11 200 W"],
+      "options": [
+        "A) 16 000 W",
+        "B) 8000 W",
+        "C) 9600 W",
+        "D) 11 200 W"
+      ],
       "answer_key": "A",
-      "references": ["Rule 8-300 2)"],
+      "references": [
+        "Rule 8-300 2)"
+      ],
       "solution_steps": [
         "Rule: the 8-300 range demand REDUCTION applies only to dwelling units. For a range in a commercial/industrial/institutional occupancy (a bakery), the demand is taken at 100% of nameplate (not less than its rating).",
         "Math: demand = 16 kW = 16 000 W.",
         "Result: 16 kW (100%)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل demand بر حسب وات برای هادی‌های branch circuit که یک range برابر 16 kW نصب‌شده در یک نانوایی را تغذیه می‌کنند چقدر است؟",
+      "options_fa": [
+        "16 000 W",
+        "8000 W",
+        "9600 W",
+        "11 200 W"
+      ],
+      "answer_fa": "16 kW (16 000 W) — 100%، بدون کاهش demand برای range در محل غیرمسکونی/تجاری"
     },
     {
       "id": "S08-011",
@@ -209,16 +367,31 @@
       "topic": "show-window-lighting",
       "question": "How much demand load would you provide for a show window in a department store that has a total length of 5 m measured along the base of each window?",
       "answer": "3250 W",
-      "options": ["A) 500 W", "B) 1000 W", "C) 3250 W", "D) 5000 W"],
+      "options": [
+        "A) 500 W",
+        "B) 1000 W",
+        "C) 3250 W",
+        "D) 5000 W"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-200 1)b)"],
+      "references": [
+        "Rule 8-200 1)b)"
+      ],
       "solution_steps": [
         "Rule 8-200 1)b): show-window lighting = 650 W per metre along the base of the window.",
         "Math: 5 m × 650 W/m = 3250 W.",
         "Result: 3250 W."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای یک show window در یک فروشگاه بزرگ که طول کل 5 m اندازه‌گیری‌شده در امتداد پایه هر پنجره دارد، چه میزان demand load در نظر می‌گیرید؟",
+      "options_fa": [
+        "500 W",
+        "1000 W",
+        "3250 W",
+        "5000 W"
+      ],
+      "answer_fa": "3250 W"
     },
     {
       "id": "S08-012",
@@ -228,16 +401,31 @@
       "topic": "noncoincident-loads",
       "question": "How would you calculate the demand from two loads, 83 kW and 105 kW, which are installed such that only one load at any given time will be connected to the source?",
       "answer": "105 kW — use only the larger of the two non-coincident loads.",
-      "options": ["A) 188 kW", "B) 105 kW", "C) 94 kW", "D) 83 kW"],
+      "options": [
+        "A) 188 kW",
+        "B) 105 kW",
+        "C) 94 kW",
+        "D) 83 kW"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-106 3)"],
+      "references": [
+        "Rule 8-106 3)"
+      ],
       "solution_steps": [
         "Rule 8-106 3): for two loads that cannot operate simultaneously (non-coincident), only the LARGER need be included in the calculation.",
         "Larger of 83 kW and 105 kW = 105 kW.",
         "Result: 105 kW."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "demand دو load برابر 83 kW و 105 kW را که طوری نصب شده‌اند که در هر لحظه فقط یک load به منبع متصل می‌شود، چگونه محاسبه می‌کنید؟",
+      "options_fa": [
+        "188 kW",
+        "105 kW",
+        "94 kW",
+        "83 kW"
+      ],
+      "answer_fa": "105 kW — فقط بزرگ‌ترِ این دو load غیرهم‌زمان (non-coincident) را در نظر بگیرید."
     },
     {
       "id": "S08-013",
@@ -247,9 +435,16 @@
       "topic": "range-branch-circuit",
       "question": "Determine the demand for the branch circuit conductors supplying a 16 kW range installed in a dwelling unit.",
       "answer": "9600 W",
-      "options": ["A) 6000 W", "B) 7600 W", "C) 8000 W", "D) 9600 W"],
+      "options": [
+        "A) 6000 W",
+        "B) 7600 W",
+        "C) 8000 W",
+        "D) 9600 W"
+      ],
       "answer_key": "D",
-      "references": ["Rule 8-300 1)a)"],
+      "references": [
+        "Rule 8-300 1)a)"
+      ],
       "solution_steps": [
         "Rule 8-300 1)a) (BRANCH-circuit range demand, dwelling): a single range counts as 8 kW where rating ≤ 12 kW, plus 40% of the amount over 12 kW. (Branch-circuit base = 8 kW, not the 6 kW used in the 8-200 service calc.)",
         "Over 12 kW = 16 − 12 = 4 kW → 40% × 4000 = 1600 W.",
@@ -257,7 +452,15 @@
         "Result: 9600 W (source figure confirmed via the correct 8 kW branch-circuit base)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "demand هادی‌های branch circuit که یک range برابر 16 kW نصب‌شده در یک واحد مسکونی را تغذیه می‌کنند، تعیین کنید.",
+      "options_fa": [
+        "6000 W",
+        "7600 W",
+        "8000 W",
+        "9600 W"
+      ],
+      "answer_fa": "9600 W"
     },
     {
       "id": "S08-014",
@@ -267,16 +470,31 @@
       "topic": "continuous-load-breaker-sizing",
       "question": "Teck90 cable is installed to supply a 1200 A continuous load. A circuit breaker rated at 80% operation provides overcurrent protection for the circuit. Determine the size of circuit breaker.",
       "answer": "1500 A",
-      "options": ["A) 960 A", "B) 1200 A", "C) 1500 A", "D) 1800 A"],
+      "options": [
+        "A) 960 A",
+        "B) 1200 A",
+        "C) 1500 A",
+        "D) 1800 A"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-104 3)"],
+      "references": [
+        "Rule 8-104 3)"
+      ],
       "solution_steps": [
         "Rule 8-104: a breaker not rated for 100% continuous operation must be sized so the continuous load is ≤ 80% of its rating.",
         "Math: required rating = 1200 A ÷ 0.80 = 1500 A.",
         "Result: 1500 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کابل Teck90 برای تغذیه یک continuous load برابر 1200 A نصب شده است. یک circuit breaker با rating کارکرد 80% حفاظت overcurrent مدار را تأمین می‌کند. اندازه circuit breaker را تعیین کنید.",
+      "options_fa": [
+        "960 A",
+        "1200 A",
+        "1500 A",
+        "1800 A"
+      ],
+      "answer_fa": "1500 A"
     },
     {
       "id": "S08-015",
@@ -286,16 +504,31 @@
       "topic": "range-demand-factor",
       "question": "What is the demand factor for branch circuit conductors supplying electric ranges in the cafeteria of an industrial plant?",
       "answer": "100% — the sum of the ratings of all the electric ranges (no reduction in a non-dwelling occupancy).",
-      "options": ["A) 100%", "B) 80%", "C) 75%", "D) 25%"],
+      "options": [
+        "A) 100%",
+        "B) 80%",
+        "C) 75%",
+        "D) 25%"
+      ],
       "answer_key": "A",
-      "references": ["Rule 8-300 2)"],
+      "references": [
+        "Rule 8-300 2)"
+      ],
       "solution_steps": [
         "Rule: the 8-300 range demand reduction applies only to dwelling units; in an industrial-plant cafeteria (non-dwelling) the ranges are taken at 100% of their combined ratings.",
         "Demand factor = 100% (sum of all range ratings).",
         "Result: 100%."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "demand factor برای هادی‌های branch circuit که range های برقی را در سلف‌سرویس یک کارخانه صنعتی تغذیه می‌کنند چقدر است؟",
+      "options_fa": [
+        "100%",
+        "80%",
+        "75%",
+        "25%"
+      ],
+      "answer_fa": "100% — مجموع rating تمام range های برقی (بدون کاهش در محل غیرمسکونی)."
     },
     {
       "id": "S08-016",
@@ -305,16 +538,32 @@
       "topic": "basic-load-allowance",
       "question": "What are the watts per square metre for the basic load when calculating demand for a theatre?",
       "answer": "30 W/m² (source) — verify against the 2024 basic-load table",
-      "options": ["A) 10 W/m²", "B) 20 W/m²", "C) 25 W/m²", "D) 30 W/m²"],
+      "options": [
+        "A) 10 W/m²",
+        "B) 20 W/m²",
+        "C) 25 W/m²",
+        "D) 30 W/m²"
+      ],
       "answer_key": "D",
-      "references": ["Rule 8-210", "Table 14"],
+      "references": [
+        "Rule 8-210",
+        "Table 14"
+      ],
       "solution_steps": [
         "Rule (non-dwelling basic load): the basic lighting/area allowance (W/m²) comes from the basic-load table referenced by Rule 8-210.",
         "Value: source gives 30 W/m² for a theatre occupancy.",
         "NEEDS REVIEW: confirm the theatre-occupancy basic W/m² in the 2024 basic-load table (table value not verified here; many occupancies are 30 W/m² but theatre should be checked)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "وات بر متر مربع برای basic load هنگام محاسبه demand یک تئاتر چقدر است؟",
+      "options_fa": [
+        "10 W/m²",
+        "20 W/m²",
+        "25 W/m²",
+        "30 W/m²"
+      ],
+      "answer_fa": "30 W/m² (منبع) — در برابر جدول basic-load سال 2024 بررسی شود"
     },
     {
       "id": "S08-017",
@@ -324,9 +573,16 @@
       "topic": "receptacle-feeder-demand",
       "question": "A parking garage contains 100 parking spaces, each with a 15 A duplex receptacle, where the loading is controlled. The garage is supplied from a 120/208 V, 3-phase, 4-wire feeder. What is the minimum ampacity required for the feeder conductors?",
       "answer": "54 000 W → 149.89 A (source) — verify per-space allowance for controlled loading",
-      "options": ["A) 149.89 A", "B) 259.62 A", "C) 86.54 A", "D) 449.67 A"],
+      "options": [
+        "A) 149.89 A",
+        "B) 259.62 A",
+        "C) 86.54 A",
+        "D) 449.67 A"
+      ],
       "answer_key": "A",
-      "references": ["Rule 8-400"],
+      "references": [
+        "Rule 8-400"
+      ],
       "solution_steps": [
         "Rule: parking/automobile-heater receptacle feeders → Rule 8-400. CONTROLLED loading permits a reduced demand per space.",
         "Method: source gives total controlled demand = 54 000 W for 100 spaces (= 540 W/space).",
@@ -334,7 +590,15 @@
         "NEEDS REVIEW: confirm the controlled per-space watt allowance / demand factor under Rule 8-400 in the 2024 code (the √3 conversion and 54 000 ÷ 360.3 math are correct; per-space value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک پارکینگ مسقف شامل 100 جای پارک است که هر کدام یک پریز duplex برابر 15 A دارد و loading آن کنترل‌شده (controlled) است. پارکینگ از یک feeder برابر 120/208 V سه‌فاز چهارسیمه تغذیه می‌شود. حداقل ampacity موردنیاز برای هادی‌های feeder چقدر است؟",
+      "options_fa": [
+        "149.89 A",
+        "259.62 A",
+        "86.54 A",
+        "449.67 A"
+      ],
+      "answer_fa": "54 000 W ← 149.89 A (منبع) — سهم هر جای پارک برای loading کنترل‌شده را بررسی کنید"
     },
     {
       "id": "S08-018",
@@ -344,9 +608,17 @@
       "topic": "service-calculation-nonresidential",
       "question": "A building 20 m x 100 m has one half used as a beauty salon and the other half as a bank. What is the minimum service demand for this building?",
       "answer": "Sum of each occupancy's area load at its own basic W/m² (each half = 1000 m²), then add.",
-      "options": ["A) Use 2000 m² at one (the larger) occupancy's W/m²", "B) Compute each half (1000 m²) at its own W/m² and add the two", "C) Average the two W/m² values and apply to 2000 m²", "D) Use 2000 m² at a fixed 30 W/m² regardless of occupancy"],
+      "options": [
+        "A) Use 2000 m² at one (the larger) occupancy's W/m²",
+        "B) Compute each half (1000 m²) at its own W/m² and add the two",
+        "C) Average the two W/m² values and apply to 2000 m²",
+        "D) Use 2000 m² at a fixed 30 W/m² regardless of occupancy"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-210", "Table 14"],
+      "references": [
+        "Rule 8-210",
+        "Table 14"
+      ],
       "solution_steps": [
         "Rule (non-dwelling, 8-210): basic demand = floor area × the occupancy's basic W/m² (from the Table-14 basic-load list); compute each occupancy separately because the W/m² differs.",
         "Area: 20 × 100 = 2000 m² total → beauty salon = 1000 m², bank = 1000 m².",
@@ -354,7 +626,15 @@
         "NEEDS REVIEW: needs the 2024 basic W/m² for 'beauty salon' and 'bank/office' from the basic-load table to produce a single number (table values not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک ساختمان 20 m × 100 m که نیمی از آن به‌عنوان آرایشگاه و نیم دیگر به‌عنوان بانک استفاده می‌شود. حداقل service demand این ساختمان چقدر است؟",
+      "options_fa": [
+        "استفاده از 2000 m² با W/m² یک occupancy (بزرگ‌تر)",
+        "محاسبه هر نیمه (1000 m²) با W/m² مخصوص خودش و جمع این دو",
+        "میانگین‌گیری دو مقدار W/m² و اعمال آن بر 2000 m²",
+        "استفاده از 2000 m² با مقدار ثابت 30 W/m² صرف‌نظر از occupancy"
+      ],
+      "answer_fa": "جمع area load هر occupancy با W/m² مخصوص خودش (هر نیمه = 1000 m²)، سپس جمع کردن آن‌ها."
     },
     {
       "id": "S08-019",
@@ -364,9 +644,17 @@
       "topic": "service-calculation-nonresidential",
       "question": "A two-story building 100 m x 20 m has a restaurant on the lower floor and a beauty salon on the second floor. The restaurant has a 28 kW power load and the beauty salon a 22 kW power load. What is the total service demand for this building?",
       "answer": "Sum of each floor's basic area load plus the 28 kW and 22 kW power loads (per occupancy, then add).",
-      "options": ["A) (2000 m² × restaurant W/m² + 28 kW) + (2000 m² × salon W/m² + 22 kW)", "B) 2000 m² × one W/m² + only the larger 28 kW power load", "C) 4000 m² × restaurant W/m² + 28 kW + 22 kW", "D) (2000 m² × restaurant W/m²) + (2000 m² × salon W/m²) only, omitting power loads"],
+      "options": [
+        "A) (2000 m² × restaurant W/m² + 28 kW) + (2000 m² × salon W/m² + 22 kW)",
+        "B) 2000 m² × one W/m² + only the larger 28 kW power load",
+        "C) 4000 m² × restaurant W/m² + 28 kW + 22 kW",
+        "D) (2000 m² × restaurant W/m²) + (2000 m² × salon W/m²) only, omitting power loads"
+      ],
       "answer_key": "A",
-      "references": ["Rule 8-210", "Table 14"],
+      "references": [
+        "Rule 8-210",
+        "Table 14"
+      ],
       "solution_steps": [
         "Rule (non-dwelling, 8-210): demand per occupancy = floor area × its basic W/m² (Table-14 basic-load list) + the connected power loads at their demand factors.",
         "Area: each floor = 100 × 20 = 2000 m².",
@@ -374,7 +662,15 @@
         "NEEDS REVIEW: needs the 2024 basic W/m² for 'restaurant' and 'beauty salon' to produce a single number (table values not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک ساختمان دوطبقه 100 m × 20 m که در طبقه پایین یک رستوران و در طبقه دوم یک آرایشگاه دارد. رستوران یک power load برابر 28 kW و آرایشگاه 22 kW دارد. service demand کل این ساختمان چقدر است؟",
+      "options_fa": [
+        "(2000 m² × W/m² رستوران + 28 kW) + (2000 m² × W/m² آرایشگاه + 22 kW)",
+        "2000 m² × یک W/m² به‌علاوه فقط بزرگ‌ترین power load یعنی 28 kW",
+        "4000 m² × W/m² رستوران + 28 kW + 22 kW",
+        "(2000 m² × W/m² رستوران) + (2000 m² × W/m² آرایشگاه) به‌تنهایی، با حذف power load ها"
+      ],
+      "answer_fa": "جمع basic area load هر طبقه به‌علاوه power load های 28 kW و 22 kW (به ازای هر occupancy، سپس جمع کردن)."
     },
     {
       "id": "S08-020",
@@ -384,9 +680,18 @@
       "topic": "industrial-service-calc",
       "question": "An industrial complex has a covered area of 3000 m². There is 500 kW of power loads plus a 500 kW electric space-heating load. The service is 600/347 V, 3-phase, 4-wire. Determine the calculated service demand in amps.",
       "answer": "I = total demand W ÷ (√3 × 600 V) — combine area load + 500 kW power + heating demand, then convert.",
-      "options": ["A) I = total demand W ÷ 600", "B) I = total demand W ÷ (√3 × 347)", "C) I = total demand W ÷ (√3 × 600)", "D) I = total demand W ÷ (3 × 600)"],
+      "options": [
+        "A) I = total demand W ÷ 600",
+        "B) I = total demand W ÷ (√3 × 347)",
+        "C) I = total demand W ÷ (√3 × 600)",
+        "D) I = total demand W ÷ (3 × 600)"
+      ],
       "answer_key": "C",
-      "references": ["Rule 8-210", "Rule 62-118", "Table 14"],
+      "references": [
+        "Rule 8-210",
+        "Rule 62-118",
+        "Table 14"
+      ],
       "solution_steps": [
         "Rule (non-dwelling, 8-210): basic area load = 3000 m² × the occupancy's basic W/m² (Table-14 basic-load list).",
         "Add: 500 kW power load (at 100% / its demand factor) + 500 kW electric space heating (Section 62/62-118: 100% of first 10 kW + 75% of remainder for the heating portion, as applicable).",
@@ -394,7 +699,15 @@
         "NEEDS REVIEW: needs the 2024 basic W/m² for the occupancy and confirmation of the industrial heating demand treatment to give a single number (the √3 × 600 conversion is correct; table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک مجتمع صنعتی مساحت سرپوشیده 3000 m² دارد. 500 kW power load به‌علاوه یک load گرمایش فضایی برقی 500 kW وجود دارد. سرویس 600/347 V سه‌فاز چهارسیمه است. service demand محاسبه‌شده را بر حسب آمپر تعیین کنید.",
+      "options_fa": [
+        "I = کل demand بر حسب W ÷ 600",
+        "I = کل demand بر حسب W ÷ (√3 × 347)",
+        "I = کل demand بر حسب W ÷ (√3 × 600)",
+        "I = کل demand بر حسب W ÷ (3 × 600)"
+      ],
+      "answer_fa": "I = کل demand بر حسب W ÷ (√3 × 600 V) — area load + 500 kW power + heating demand را با هم جمع کنید، سپس تبدیل کنید."
     },
     {
       "id": "S08-021",
@@ -404,16 +717,32 @@
       "topic": "continuous-load-breaker",
       "question": "What is the maximum amount of load when a 120 V baseboard heater is connected to a 15 A circuit breaker rated for 80% operation?",
       "answer": "1440 W (12 A continuous)",
-      "options": ["A) 1800 W", "B) 1440 W", "C) 1200 W", "D) 1500 W"],
+      "options": [
+        "A) 1800 W",
+        "B) 1440 W",
+        "C) 1200 W",
+        "D) 1500 W"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-104 3)", "Rule 62-114"],
+      "references": [
+        "Rule 8-104 3)",
+        "Rule 62-114"
+      ],
       "solution_steps": [
         "Rule 8-104: continuous load limit = 80% of breaker rating → 15 A × 0.80 = 12 A.",
         "Math: P = 120 V × 12 A = 1440 W.",
         "Result: 1440 W (12 A continuous)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر مقدار load وقتی یک گرم‌کن baseboard برابر 120 V به یک circuit breaker برابر 15 A با rating کارکرد 80% متصل شود چقدر است؟",
+      "options_fa": [
+        "1800 W",
+        "1440 W",
+        "1200 W",
+        "1500 W"
+      ],
+      "answer_fa": "1440 W (12 A پیوسته)"
     },
     {
       "id": "S08-022",
@@ -423,9 +752,17 @@
       "topic": "range-branch-circuit-commercial",
       "question": "Determine the minimum conductor ampacity required for a 240 V, 14.4 kW range installed in a commercial kitchen.",
       "answer": "60 A",
-      "options": ["A) 48 A", "B) 60 A", "C) 75 A", "D) 100 A"],
+      "options": [
+        "A) 48 A",
+        "B) 60 A",
+        "C) 75 A",
+        "D) 100 A"
+      ],
       "answer_key": "B",
-      "references": ["Rule 8-300 2)", "Rule 8-104"],
+      "references": [
+        "Rule 8-300 2)",
+        "Rule 8-104"
+      ],
       "solution_steps": [
         "Rule: a range in a commercial kitchen (non-dwelling) is taken at 100% of nameplate, no demand reduction.",
         "Math: I = 14 400 W ÷ 240 V = 60 A.",
@@ -433,7 +770,15 @@
         "Result: 60 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ampacity هادی موردنیاز برای یک range برابر 240 V و 14.4 kW نصب‌شده در یک آشپزخانه تجاری را تعیین کنید.",
+      "options_fa": [
+        "48 A",
+        "60 A",
+        "75 A",
+        "100 A"
+      ],
+      "answer_fa": "60 A"
     },
     {
       "id": "S08-023",
@@ -442,10 +787,18 @@
       "type": "calculation",
       "topic": "voltage-drop-conductor-sizing",
       "question": "When feeding a 240 V, 30 A load at a distance of 60 m, which size copper conductor is required to limit voltage drop to 2%?",
-      "options": ["A) #3 AWG", "B) #4 AWG", "C) #6 AWG", "D) #8 AWG"],
+      "options": [
+        "A) #3 AWG",
+        "B) #4 AWG",
+        "C) #6 AWG",
+        "D) #8 AWG"
+      ],
       "answer": "#4 AWG",
       "answer_key": "B",
-      "references": ["Rule 8-102", "Table D3"],
+      "references": [
+        "Rule 8-102",
+        "Table D3"
+      ],
       "solution_steps": [
         "2024 single-formula method (Appendix D): VD = K × I × L × F ÷ 1000, where K is from Table D3 (ohm/km), L is the one-way length in metres, and F is the system factor (default 2).",
         "Allowed drop = 2% × 240 V = 4.8 V. Load I = 30 A, one-way L = 60 m. No phase/PF/temperature stated, so defaults apply: copper, 75 °C, PF = 1, single-phase → F = 2.",
@@ -454,7 +807,15 @@
         "Smallest copper conductor meeting the 2% limit = #4 AWG (option B). Confirmed by the 2024 method; an earlier #6 figure used the old US cmil formula and does not satisfy the 2% drop."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام تغذیه یک load برابر 240 V و 30 A در فاصله 60 m، چه اندازه هادی مسی برای محدود کردن voltage drop به 2% لازم است؟",
+      "options_fa": [
+        "#3 AWG",
+        "#4 AWG",
+        "#6 AWG",
+        "#8 AWG"
+      ],
+      "answer_fa": "#4 AWG"
     },
     {
       "id": "S08-024",
@@ -463,17 +824,32 @@
       "type": "calculation",
       "topic": "dwelling-minimum-service",
       "question": "What minimum size consumer's service is required for a 120/240 V single-phase dwelling that has a floor area of 85 m²?",
-      "options": ["A) 14,400 W / 60 A", "B) 24,000 W / 100 A", "C) 30,000 W / 125 A", "D) 48,000 W / 200 A"],
+      "options": [
+        "A) 14,400 W / 60 A",
+        "B) 24,000 W / 100 A",
+        "C) 30,000 W / 125 A",
+        "D) 48,000 W / 200 A"
+      ],
       "answer": "24,000 W / 100 A",
       "answer_key": "B",
-      "references": ["Rule 8-200 1)b)"],
+      "references": [
+        "Rule 8-200 1)b)"
+      ],
       "solution_steps": [
         "Rule 8-200 1)b): a single dwelling with floor area (excl. basement) of 80 m² or more requires a minimum service of 24 000 W / 100 A; less than 80 m² → minimum 14 400 W / 60 A.",
         "Area = 85 m² (≥ 80 m²) → minimum 100 A.",
         "Result: 24,000 W / 100 A (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل اندازه consumer's service موردنیاز برای یک واحد مسکونی 120/240 V تک‌فاز با مساحت کف 85 m² چقدر است؟",
+      "options_fa": [
+        "14,400 W / 60 A",
+        "24,000 W / 100 A",
+        "30,000 W / 125 A",
+        "48,000 W / 200 A"
+      ],
+      "answer_fa": "24,000 W / 100 A"
     },
     {
       "id": "S08-025",
@@ -482,10 +858,18 @@
       "type": "calculation",
       "topic": "voltage-drop-extra-low-voltage",
       "question": "A 24 V DC branch circuit of remote lamps using #8 copper conductors has a connected load of 144 watts. What is the maximum distance permitted for a 5% voltage drop? (Hint: multiply 0.86 by k for extra-low voltage.)",
-      "options": ["A) 11.9 m", "B) 34.9 m", "C) 40.8 m", "D) 45.78 m"],
+      "options": [
+        "A) 11.9 m",
+        "B) 34.9 m",
+        "C) 40.8 m",
+        "D) 45.78 m"
+      ],
       "answer": "45.78 m",
       "answer_key": "D",
-      "references": ["Rule 8-102", "Table D3"],
+      "references": [
+        "Rule 8-102",
+        "Table D3"
+      ],
       "solution_steps": [
         "2024 single-formula method (Appendix D): VD = K × I × L × F ÷ 1000; rearranged for maximum length: L = (1000 × VD) ÷ (K × I × F).",
         "I = 144 W ÷ 24 V = 6 A; allowed drop = 5% × 24 V = 1.2 V. DC circuit → F = 2 (the √3 factor applies only to 3-phase AC).",
@@ -494,7 +878,15 @@
         "Result: ≈ 45.78 m (option D)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک branch circuit برابر 24 V DC از لامپ‌های remote با هادی‌های مسی #8 یک load متصل برابر 144 وات دارد. حداکثر فاصله مجاز برای voltage drop برابر 5% چقدر است؟ (راهنمایی: برای extra-low voltage مقدار k را در 0.86 ضرب کنید.)",
+      "options_fa": [
+        "11.9 m",
+        "34.9 m",
+        "40.8 m",
+        "45.78 m"
+      ],
+      "answer_fa": "45.78 m"
     },
     {
       "id": "S08-026",
@@ -503,10 +895,17 @@
       "type": "calculation",
       "topic": "voltage-drop-minimum-voltage",
       "question": "600 V is measured at the supply side of the consumer's service. What is the minimum allowable voltage at a HVAC unit rated for 600 V operation?",
-      "options": ["A) 558 V", "B) 570 V", "C) 582 V", "D) 600 V"],
+      "options": [
+        "A) 558 V",
+        "B) 570 V",
+        "C) 582 V",
+        "D) 600 V"
+      ],
       "answer": "570 V",
       "answer_key": "B",
-      "references": ["Rule 8-102 2)"],
+      "references": [
+        "Rule 8-102 2)"
+      ],
       "solution_steps": [
         "Rule 8-102 (2024): the overall voltage drop from the supply side of the consumer's service to the point of utilization shall not exceed 5% of nominal (with each single feeder or branch circuit ≤ 3%).",
         "This question asks the supply-to-load limit, so apply the 5% total: maximum drop = 5% × 600 V = 30 V.",
@@ -514,7 +913,15 @@
         "Result: 570 V (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "ولتاژ 600 V در سمت تغذیه consumer's service اندازه‌گیری شده است. حداقل ولتاژ مجاز در یک واحد HVAC با rating کارکرد 600 V چقدر است؟",
+      "options_fa": [
+        "558 V",
+        "570 V",
+        "582 V",
+        "600 V"
+      ],
+      "answer_fa": "570 V"
     },
     {
       "id": "S08-027",
@@ -523,10 +930,18 @@
       "type": "calculation",
       "topic": "voltage-drop-extra-low-voltage",
       "question": "Maximum distance from an emergency lamp given: 12 V, 100 W, cable #10 AWG, and maximum voltage drop 2%? (Hint: multiply 0.86 by k for extra-low voltage.)",
-      "options": ["A) 3.36 m", "B) 4.15 m", "C) 4.50 m", "D) 5.50 m"],
+      "options": [
+        "A) 3.36 m",
+        "B) 4.15 m",
+        "C) 4.50 m",
+        "D) 5.50 m"
+      ],
       "answer": "4.15 m",
       "answer_key": "B",
-      "references": ["Rule 8-102", "Table D3"],
+      "references": [
+        "Rule 8-102",
+        "Table D3"
+      ],
       "solution_steps": [
         "2024 single-formula method (Appendix D): VD = K × I × L × F ÷ 1000; rearranged for maximum length: L = (1000 × VD) ÷ (K × I × F).",
         "I = 100 W ÷ 12 V = 8.33 A; allowed drop = 2% × 12 V = 0.24 V. DC emergency lamp → F = 2.",
@@ -535,7 +950,15 @@
         "Result: ≈ 4.15 m (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله از یک لامپ emergency با مقادیر داده‌شده: 12 V، 100 W، کابل #10 AWG و حداکثر voltage drop برابر 2% چقدر است؟ (راهنمایی: برای extra-low voltage مقدار k را در 0.86 ضرب کنید.)",
+      "options_fa": [
+        "3.36 m",
+        "4.15 m",
+        "4.50 m",
+        "5.50 m"
+      ],
+      "answer_fa": "4.15 m"
     }
   ]
 }

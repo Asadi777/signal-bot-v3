@@ -3,219 +3,600 @@
   "questions": [
     {
       "id": "S02-001",
-      "section": 2, "block": "A", "type": "lookup", "topic": "enclosure-type",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "enclosure-type",
       "question": "When installing a light fixture in a corrosive area, what type of enclosure would you use?",
-      "options": ["A) Type 1", "B) Type 2", "C) Type 3", "D) Type 3X"],
+      "options": [
+        "A) Type 1",
+        "B) Type 2",
+        "C) Type 3",
+        "D) Type 3X"
+      ],
       "answer": "Type 3X (the 'X' suffix denotes added corrosion resistance)",
       "answer_key": "D",
-      "references": ["Table 65"],
-      "solution_steps": ["Enclosure 'Type' selection is governed by the conditions of use and Table 65 (enclosure selection table in Section 2).", "The 'X' suffix on a CSA/NEMA enclosure type designates additional corrosion resistance.", "Of the options, Type 3X is the only corrosion-rated enclosure."],
+      "references": [
+        "Table 65"
+      ],
+      "solution_steps": [
+        "Enclosure 'Type' selection is governed by the conditions of use and Table 65 (enclosure selection table in Section 2).",
+        "The 'X' suffix on a CSA/NEMA enclosure type designates additional corrosion resistance.",
+        "Of the options, Type 3X is the only corrosion-rated enclosure."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام نصب یک چراغ روشنایی در محیطی خورنده (corrosive)، از چه نوع enclosure باید استفاده کنید؟",
+      "options_fa": [
+        "Type 1",
+        "Type 2",
+        "Type 3",
+        "Type 3X"
+      ],
+      "answer_fa": "Type 3X (پسوند «X» نشان‌دهنده مقاومت بیشتر در برابر خوردگی است)"
     },
     {
       "id": "S02-002",
-      "section": 2, "block": "A", "type": "lookup", "topic": "working-space",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "working-space",
       "question": "What is the minimum working space required around a 120/240 V single-phase panelboard?",
-      "options": ["A) 0.5 meters (1.5 feet)", "B) 0.75 meters (2.5 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.2 meters (4 feet)"],
+      "options": [
+        "A) 0.5 meters (1.5 feet)",
+        "B) 0.75 meters (2.5 feet)",
+        "C) 1.0 meter (3.3 feet)",
+        "D) 1.2 meters (4 feet)"
+      ],
       "answer": "1.0 meter (3.3 feet) of working space in front of equipment likely to require examination/adjustment while energized",
       "answer_key": "C",
-      "references": ["Rule 2-308 1)"],
-      "solution_steps": ["Rule 2-308 1) requires a minimum working space of 1 m with secure footing about electrical equipment containing renewable parts/disconnecting/operating means or requiring examination, adjustment, operation, or maintenance.", "A 120/240 V panelboard takes the general 1 m working space."],
+      "references": [
+        "Rule 2-308 1)"
+      ],
+      "solution_steps": [
+        "Rule 2-308 1) requires a minimum working space of 1 m with secure footing about electrical equipment containing renewable parts/disconnecting/operating means or requiring examination, adjustment, operation, or maintenance.",
+        "A 120/240 V panelboard takes the general 1 m working space."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل working space لازم در اطراف یک panelboard تک‌فاز 120/240 V چقدر است؟",
+      "options_fa": [
+        "0.5 متر (1.5 فوت)",
+        "0.75 متر (2.5 فوت)",
+        "1.0 متر (3.3 فوت)",
+        "1.2 متر (4 فوت)"
+      ],
+      "answer_fa": "1.0 متر (3.3 فوت) working space در جلوی تجهیزاتی که احتمالاً در حالت برق‌دار نیاز به بازرسی/تنظیم دارند"
     },
     {
       "id": "S02-003",
-      "section": 2, "block": "A", "type": "lookup", "topic": "gas-meter-clearance",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "gas-meter-clearance",
       "question": "What is the minimum distance required between an outdoor receptacle and a natural gas meter?",
-      "options": ["A) 0.3 meters (1 foot)", "B) 0.6 meters (2 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.5 meters (5 feet)"],
+      "options": [
+        "A) 0.3 meters (1 foot)",
+        "B) 0.6 meters (2 feet)",
+        "C) 1.0 meter (3.3 feet)",
+        "D) 1.5 meters (5 feet)"
+      ],
       "answer": "1.0 meter (3.3 feet)",
       "answer_key": "C",
-      "references": ["Rule 2-328", "Appendix B"],
-      "solution_steps": ["Clearances of electrical equipment from gas pressure-relief/metering devices are addressed by Rule 2-328 with the numeric values in Appendix B (NOT Rule 2-320, which is 'Illumination of equipment').", "The keyed answer treats a receptacle as non-arcing equipment requiring a minimum 1.0 m clearance from the gas meter."],
+      "references": [
+        "Rule 2-328",
+        "Appendix B"
+      ],
+      "solution_steps": [
+        "Clearances of electrical equipment from gas pressure-relief/metering devices are addressed by Rule 2-328 with the numeric values in Appendix B (NOT Rule 2-320, which is 'Illumination of equipment').",
+        "The keyed answer treats a receptacle as non-arcing equipment requiring a minimum 1.0 m clearance from the gas meter."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل فاصله لازم بین یک پریز (receptacle) بیرونی و کنتور گاز طبیعی چقدر است؟",
+      "options_fa": [
+        "0.3 متر (1 فوت)",
+        "0.6 متر (2 فوت)",
+        "1.0 متر (3.3 فوت)",
+        "1.5 متر (5 فوت)"
+      ],
+      "answer_fa": "1.0 متر (3.3 فوت)"
     },
     {
       "id": "S02-004",
-      "section": 2, "block": "A", "type": "theory", "topic": "voltage-to-ground",
+      "section": 2,
+      "block": "A",
+      "type": "theory",
+      "topic": "voltage-to-ground",
       "question": "In a dwelling unit, what is the maximum circuit nominal voltage to ground permitted?",
-      "options": ["A) 120 volts", "B) 240 volts", "C) 277 volts", "D) 150 volts"],
+      "options": [
+        "A) 120 volts",
+        "B) 240 volts",
+        "C) 277 volts",
+        "D) 150 volts"
+      ],
       "answer": "150 volts to ground",
       "answer_key": "D",
-      "references": ["Rule 2-110"],
-      "solution_steps": ["Rule 2-110 (Circuit voltage-to-ground — Dwelling units) states branch circuits in dwelling units shall not have a voltage exceeding 150 volts-to-ground.", "A 120/240 V single-phase system has 120 V to ground, which complies. (Note: the dwelling 150 V rule is Rule 2-110, not 2-130; Rule 2-130 is flame-spread requirements.)"],
+      "references": [
+        "Rule 2-110"
+      ],
+      "solution_steps": [
+        "Rule 2-110 (Circuit voltage-to-ground — Dwelling units) states branch circuits in dwelling units shall not have a voltage exceeding 150 volts-to-ground.",
+        "A 120/240 V single-phase system has 120 V to ground, which complies. (Note: the dwelling 150 V rule is Rule 2-110, not 2-130; Rule 2-130 is flame-spread requirements.)"
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در یک واحد مسکونی (dwelling unit)، حداکثر ولتاژ نامی مدار نسبت به زمین (voltage to ground) مجاز چقدر است؟",
+      "options_fa": [
+        "120 ولت",
+        "240 ولت",
+        "277 ولت",
+        "150 ولت"
+      ],
+      "answer_fa": "150 ولت نسبت به زمین"
     },
     {
       "id": "S02-005",
-      "section": 2, "block": "A", "type": "theory", "topic": "disconnecting-means",
+      "section": 2,
+      "block": "A",
+      "type": "theory",
+      "topic": "disconnecting-means",
       "question": "Is it permissible to use a three-way switch to disconnect electrical equipment?",
-      "options": ["A) Yes, always", "B) Yes, but only for specific equipment", "C) No, it is not permissible", "D) Yes, if it is a double-pole switch"],
+      "options": [
+        "A) Yes, always",
+        "B) Yes, but only for specific equipment",
+        "C) No, it is not permissible",
+        "D) Yes, if it is a double-pole switch"
+      ],
       "answer": "No, it is not permissible. A three-way (3-way) switch has no fixed/marked open (OFF) position, so it cannot positively indicate the disconnected state required of a disconnecting means.",
       "answer_key": "C",
-      "references": ["Rule 14-500 series (disconnecting means — indication of open position)"],
-      "solution_steps": ["A disconnecting means must clearly and positively indicate the open (OFF) position.", "A three-way switch has no fixed ON/OFF marking (its position depends on the companion switch), so it cannot serve as a disconnecting means."],
+      "references": [
+        "Rule 14-500 series (disconnecting means — indication of open position)"
+      ],
+      "solution_steps": [
+        "A disconnecting means must clearly and positively indicate the open (OFF) position.",
+        "A three-way switch has no fixed ON/OFF marking (its position depends on the companion switch), so it cannot serve as a disconnecting means."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا استفاده از یک کلید سه‌راهه (three-way switch) برای قطع برق تجهیزات الکتریکی مجاز است؟",
+      "options_fa": [
+        "بله، همیشه",
+        "بله، اما فقط برای تجهیزات خاص",
+        "خیر، مجاز نیست",
+        "بله، اگر کلید دوپل (double-pole) باشد"
+      ],
+      "answer_fa": "خیر، مجاز نیست. یک کلید سه‌راهه (3-way) موقعیت باز (OFF) ثابت و مشخصی ندارد، بنابراین نمی‌تواند حالت قطع را آن‌گونه که از یک disconnecting means انتظار می‌رود به‌طور قطعی نشان دهد."
     },
     {
       "id": "S02-006",
-      "section": 2, "block": "A", "type": "lookup", "topic": "working-space-hv",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "working-space-hv",
       "question": "What is the minimum clearance required between the wall and metal-enclosed equipment, operating at approximately 14.4/8.3 kV, installed in an electrical room? (OCR gave '14.89/8.6 kV')",
-      "options": ["A) 0.3 meters (1 foot)", "B) 0.6 meters (2 feet)", "C) 0.9 meters (3 feet)", "D) 1.5 meters (5 feet)"],
+      "options": [
+        "A) 0.3 meters (1 foot)",
+        "B) 0.6 meters (2 feet)",
+        "C) 0.9 meters (3 feet)",
+        "D) 1.5 meters (5 feet)"
+      ],
       "answer": "0.9 meters (3 feet)",
       "answer_key": "C",
-      "references": ["Rule 2-308 4)", "Table 56"],
-      "solution_steps": ["Working space around equipment with exposed/dead-front high-voltage parts is set by Rule 2-308 4) using Table 56 (which is keyed to voltage and to the type of facing surface, e.g. a wall).", "For metal-enclosed equipment at this voltage class against a wall the keyed value is 0.9 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"],
+      "references": [
+        "Rule 2-308 4)",
+        "Table 56"
+      ],
+      "solution_steps": [
+        "Working space around equipment with exposed/dead-front high-voltage parts is set by Rule 2-308 4) using Table 56 (which is keyed to voltage and to the type of facing surface, e.g. a wall).",
+        "For metal-enclosed equipment at this voltage class against a wall the keyed value is 0.9 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل فاصله لازم بین دیوار و تجهیزات metal-enclosed که در حدود 14.4/8.3 kV کار می‌کنند و در یک اتاق برق نصب شده‌اند چقدر است؟ (OCR مقدار «14.89/8.6 kV» را داده است)",
+      "options_fa": [
+        "0.3 متر (1 فوت)",
+        "0.6 متر (2 فوت)",
+        "0.9 متر (3 فوت)",
+        "1.5 متر (5 فوت)"
+      ],
+      "answer_fa": "0.9 متر (3 فوت)"
     },
     {
       "id": "S02-007",
-      "section": 2, "block": "A", "type": "lookup", "topic": "headroom",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "headroom",
       "question": "What is the minimum headroom of working space required around switchboards or motor control centers where bare live parts are exposed?",
-      "options": ["A) 1.8 meters (6 feet)", "B) 2.0 meters (6.5 feet)", "C) 2.1 meters (7 feet)", "D) 2.2 meters (8 feet)"],
+      "options": [
+        "A) 1.8 meters (6 feet)",
+        "B) 2.0 meters (6.5 feet)",
+        "C) 2.1 meters (7 feet)",
+        "D) 2.2 meters (8 feet)"
+      ],
       "answer": "2.2 meters (the CEC requires a minimum headroom of 2.2 m in working space about exposed live parts of switchboards/MCCs)",
       "answer_key": "D",
-      "references": ["Rule 2-308 5)"],
-      "solution_steps": ["Rule 2-308 5) requires the minimum headroom of working spaces around switchboards or motor control centres where bare live parts are exposed to be 2.2 m.", "Note option D is mislabeled '(8 feet)' in the source; 2.2 m is approximately 7.2 feet."],
+      "references": [
+        "Rule 2-308 5)"
+      ],
+      "solution_steps": [
+        "Rule 2-308 5) requires the minimum headroom of working spaces around switchboards or motor control centres where bare live parts are exposed to be 2.2 m.",
+        "Note option D is mislabeled '(8 feet)' in the source; 2.2 m is approximately 7.2 feet."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ارتفاع سقف (headroom) working space لازم در اطراف switchboard ها یا motor control center ها در جایی که قطعات برق‌دار لخت (bare live parts) در معرض هستند چقدر است؟",
+      "options_fa": [
+        "1.8 متر (6 فوت)",
+        "2.0 متر (6.5 فوت)",
+        "2.1 متر (7 فوت)",
+        "2.2 متر (8 فوت)"
+      ],
+      "answer_fa": "2.2 متر (CEC حداقل headroom برابر 2.2 m را در working space اطراف قطعات برق‌دار لخت switchboard ها/MCC ها الزامی می‌کند)"
     },
     {
       "id": "S02-008",
-      "section": 2, "block": "A", "type": "lookup", "topic": "enclosure-type",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "enclosure-type",
       "question": "What type of enclosure is suitable for an installation in an area where the electrical equipment is in direct contact with corrosive material and splash of water?",
-      "options": ["A) Type 2", "B) Type 3", "C) Type 4X", "D) Type 4"],
+      "options": [
+        "A) Type 2",
+        "B) Type 3",
+        "C) Type 4X",
+        "D) Type 4"
+      ],
       "answer": "Type 4X (watertight/dust-tight with added corrosion resistance)",
       "answer_key": "C",
-      "references": ["Table 65"],
-      "solution_steps": ["Type 4 provides protection against splashing/hose-directed water; the 'X' suffix adds corrosion resistance.", "Corrosive material + water splash → Type 4X (per Table 65 enclosure selection)."],
+      "references": [
+        "Table 65"
+      ],
+      "solution_steps": [
+        "Type 4 provides protection against splashing/hose-directed water; the 'X' suffix adds corrosion resistance.",
+        "Corrosive material + water splash → Type 4X (per Table 65 enclosure selection)."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چه نوع enclosure برای نصب در محیطی مناسب است که تجهیزات الکتریکی در تماس مستقیم با ماده خورنده و پاشش آب قرار دارند؟",
+      "options_fa": [
+        "Type 2",
+        "Type 3",
+        "Type 4X",
+        "Type 4"
+      ],
+      "answer_fa": "Type 4X (آب‌بند/گردوغباربند با مقاومت بیشتر در برابر خوردگی)"
     },
     {
       "id": "S02-009",
-      "section": 2, "block": "A", "type": "lookup", "topic": "cable-flame-rating",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "cable-flame-rating",
       "question": "What is the flame rating requirement of a cable suitable for installation in buildings of combustible construction only?",
-      "options": ["A) FT1", "B) FT2", "C) FT3", "D) FT4"],
+      "options": [
+        "A) FT1",
+        "B) FT2",
+        "C) FT3",
+        "D) FT4"
+      ],
       "answer": "FT1",
       "answer_key": "A",
-      "references": ["Rule 2-130", "Appendix B"],
-      "solution_steps": ["Flame-spread requirements for insulated conductors/cables in buildings are set by Rule 2-130 (referring to the NBC), with FT flame-test ratings explained in Appendix B. (Note: Rule 2-126 is 'Use of thermal insulation', not flame rating.)", "FT1 is the basic vertical-flame rating acceptable for cables in combustible construction; higher ratings (FT4/FT6) are required for non-combustible construction, plenums, and risers."],
+      "references": [
+        "Rule 2-130",
+        "Appendix B"
+      ],
+      "solution_steps": [
+        "Flame-spread requirements for insulated conductors/cables in buildings are set by Rule 2-130 (referring to the NBC), with FT flame-test ratings explained in Appendix B. (Note: Rule 2-126 is 'Use of thermal insulation', not flame rating.)",
+        "FT1 is the basic vertical-flame rating acceptable for cables in combustible construction; higher ratings (FT4/FT6) are required for non-combustible construction, plenums, and risers."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "الزام flame rating یک کابل مناسب برای نصب فقط در ساختمان‌های با سازه قابل احتراق (combustible construction) چیست؟",
+      "options_fa": [
+        "FT1",
+        "FT2",
+        "FT3",
+        "FT4"
+      ],
+      "answer_fa": "FT1"
     },
     {
       "id": "S02-010",
-      "section": 2, "block": "A", "type": "lookup", "topic": "working-space-mv",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "working-space-mv",
       "question": "What is the minimum working space required for the switchboard with exposed live parts that is used to supply a 4 kV, 3-phase, 4-wire system?",
-      "options": ["A) 1.0 meter (3.3 feet)", "B) 1.2 meters (4 feet)", "C) 2.0 meters (6.5 feet)", "D) 2.5 meters (8 feet)"],
+      "options": [
+        "A) 1.0 meter (3.3 feet)",
+        "B) 1.2 meters (4 feet)",
+        "C) 2.0 meters (6.5 feet)",
+        "D) 2.5 meters (8 feet)"
+      ],
       "answer": "1.2 meters (working space in front of exposed live parts at this high-voltage class, from Table 56)",
       "answer_key": "B",
-      "references": ["Rule 2-308 4)", "Table 56"],
-      "solution_steps": ["4 kV is above 750 V; working space for switchboards with exposed live parts is set by Rule 2-308 4) using Table 56 (which is keyed to voltage and facing-surface condition).", "The keyed value for this voltage class in front is 1.2 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"],
+      "references": [
+        "Rule 2-308 4)",
+        "Table 56"
+      ],
+      "solution_steps": [
+        "4 kV is above 750 V; working space for switchboards with exposed live parts is set by Rule 2-308 4) using Table 56 (which is keyed to voltage and facing-surface condition).",
+        "The keyed value for this voltage class in front is 1.2 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل working space لازم برای یک switchboard با قطعات برق‌دار لخت که یک سیستم 4 kV، سه‌فاز، چهارسیمه را تغذیه می‌کند چقدر است؟",
+      "options_fa": [
+        "1.0 متر (3.3 فوت)",
+        "1.2 متر (4 فوت)",
+        "2.0 متر (6.5 فوت)",
+        "2.5 متر (8 فوت)"
+      ],
+      "answer_fa": "1.2 متر (working space در جلوی قطعات برق‌دار لخت در این کلاس ولتاژ بالا، از Table 56)"
     },
     {
       "id": "S02-011",
-      "section": 2, "block": "A", "type": "theory", "topic": "motor-nameplate",
+      "section": 2,
+      "block": "A",
+      "type": "theory",
+      "topic": "motor-nameplate",
       "question": "What does \"D.P.\" marking stand for as indicated on a motor nameplate?",
-      "options": ["A) Double Phase", "B) Dual Purpose", "C) Drip Proof", "D) Direct Power"],
+      "options": [
+        "A) Double Phase",
+        "B) Dual Purpose",
+        "C) Drip Proof",
+        "D) Direct Power"
+      ],
       "answer": "Drip Proof",
       "answer_key": "C",
       "references": [],
-      "solution_steps": ["'D.P.' on a motor nameplate/enclosure rating means Drip Proof (the enclosure resists liquids/solids falling at up to 15° from vertical). This is a general motor-marking fact, not a numbered CEC rule."],
+      "solution_steps": [
+        "'D.P.' on a motor nameplate/enclosure rating means Drip Proof (the enclosure resists liquids/solids falling at up to 15° from vertical). This is a general motor-marking fact, not a numbered CEC rule."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "علامت «D.P.» که روی nameplate موتور درج می‌شود به چه معناست؟",
+      "options_fa": [
+        "Double Phase",
+        "Dual Purpose",
+        "Drip Proof",
+        "Direct Power"
+      ],
+      "answer_fa": "Drip Proof"
     },
     {
       "id": "S02-012",
-      "section": 2, "block": "A", "type": "lookup", "topic": "gas-meter-clearance",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "gas-meter-clearance",
       "question": "What is the minimum distance permitted between arc-producing electrical equipment and a natural gas meter when installed outdoors?",
-      "options": ["A) 0.3 meters (1 foot)", "B) 0.6 meters (2 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.5 meters (5 feet)"],
+      "options": [
+        "A) 0.3 meters (1 foot)",
+        "B) 0.6 meters (2 feet)",
+        "C) 1.0 meter (3.3 feet)",
+        "D) 1.5 meters (5 feet)"
+      ],
       "answer": "1.5 meters (arc-producing equipment must be kept farther from a gas meter than non-arcing equipment)",
       "answer_key": "D",
-      "references": ["Rule 2-328", "Appendix B"],
-      "solution_steps": ["Clearances of electrical equipment from gas metering/relief devices are addressed by Rule 2-328 with values in Appendix B (NOT Rule 2-320, which is 'Illumination of equipment').", "The keyed answer keeps arc-producing equipment farther than non-arcing: 1.5 m vs 1.0 m. (Exact distances are Appendix B values — flagged for confirmation.)"],
+      "references": [
+        "Rule 2-328",
+        "Appendix B"
+      ],
+      "solution_steps": [
+        "Clearances of electrical equipment from gas metering/relief devices are addressed by Rule 2-328 with values in Appendix B (NOT Rule 2-320, which is 'Illumination of equipment').",
+        "The keyed answer keeps arc-producing equipment farther than non-arcing: 1.5 m vs 1.0 m. (Exact distances are Appendix B values — flagged for confirmation.)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل فاصله مجاز بین تجهیزات الکتریکی arc-producing و کنتور گاز طبیعی هنگام نصب در فضای باز چقدر است؟",
+      "options_fa": [
+        "0.3 متر (1 فوت)",
+        "0.6 متر (2 فوت)",
+        "1.0 متر (3.3 فوت)",
+        "1.5 متر (5 فوت)"
+      ],
+      "answer_fa": "1.5 متر (تجهیزات arc-producing باید نسبت به تجهیزات بدون جرقه فاصله بیشتری از کنتور گاز داشته باشند)"
     },
     {
       "id": "S02-013",
-      "section": 2, "block": "A", "type": "lookup", "topic": "enclosure-type",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "enclosure-type",
       "question": "What type of enclosure will be required to protect electrical equipment installed in a location where it is exposed to rain, snow and external formation of ice?",
-      "options": ["A) Type 1", "B) Type 2", "C) Type 3", "D) Type 5"],
+      "options": [
+        "A) Type 1",
+        "B) Type 2",
+        "C) Type 3",
+        "D) Type 5"
+      ],
       "answer": "Type 3 (outdoor use; protects against rain, snow, and external ice formation)",
       "answer_key": "C",
-      "references": ["Table 65"],
-      "solution_steps": ["Type 3 enclosures are rated for outdoor use, providing protection against windblown dust, rain, sleet, and external ice formation (Table 65).", "Type 1 is indoor general purpose; Type 5 is for dust (indoor)."],
+      "references": [
+        "Table 65"
+      ],
+      "solution_steps": [
+        "Type 3 enclosures are rated for outdoor use, providing protection against windblown dust, rain, sleet, and external ice formation (Table 65).",
+        "Type 1 is indoor general purpose; Type 5 is for dust (indoor)."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چه نوع enclosure برای محافظت از تجهیزات الکتریکی نصب‌شده در محلی که در معرض باران، برف و تشکیل یخ خارجی است لازم خواهد بود؟",
+      "options_fa": [
+        "Type 1",
+        "Type 2",
+        "Type 3",
+        "Type 5"
+      ],
+      "answer_fa": "Type 3 (استفاده بیرونی؛ محافظت در برابر باران، برف و تشکیل یخ خارجی)"
     },
     {
       "id": "S02-014",
-      "section": 2, "block": "A", "type": "lookup", "topic": "working-space-mv",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "working-space-mv",
       "question": "What is the minimum working space required in front of a panelboard with exposed live bus operating at a voltage of approximately 8.3/14.4 kV? (OCR gave '8.4/14.55 kV')",
-      "options": ["A) 0.5 meters (1.5 feet)", "B) 0.75 meters (2.5 feet)", "C) 1.0 meter (3.3 feet)", "D) 1.5 meters (5 feet)"],
+      "options": [
+        "A) 0.5 meters (1.5 feet)",
+        "B) 0.75 meters (2.5 feet)",
+        "C) 1.0 meter (3.3 feet)",
+        "D) 1.5 meters (5 feet)"
+      ],
       "answer": "1.5 meters (front working space for exposed live parts at this high-voltage class, from Table 56)",
       "answer_key": "D",
-      "references": ["Rule 2-308 4)", "Table 56"],
-      "solution_steps": ["At ~14.4 kV the equipment is well above 750 V; working space for exposed live parts is set by Rule 2-308 4) via Table 56.", "The keyed front value for this upper high-voltage class is 1.5 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"],
+      "references": [
+        "Rule 2-308 4)",
+        "Table 56"
+      ],
+      "solution_steps": [
+        "At ~14.4 kV the equipment is well above 750 V; working space for exposed live parts is set by Rule 2-308 4) via Table 56.",
+        "The keyed front value for this upper high-voltage class is 1.5 m. (Table 56 not in the verified excerpt — exact value flagged for confirmation against Table 56.)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل working space لازم در جلوی یک panelboard با bus برق‌دار لخت که در ولتاژی حدود 8.3/14.4 kV کار می‌کند چقدر است؟ (OCR مقدار «8.4/14.55 kV» را داده است)",
+      "options_fa": [
+        "0.5 متر (1.5 فوت)",
+        "0.75 متر (2.5 فوت)",
+        "1.0 متر (3.3 فوت)",
+        "1.5 متر (5 فوت)"
+      ],
+      "answer_fa": "1.5 متر (working space جلویی برای قطعات برق‌دار لخت در این کلاس ولتاژ بالا، از Table 56)"
     },
     {
       "id": "S02-015",
-      "section": 2, "block": "A", "type": "theory", "topic": "voltage-to-ground",
+      "section": 2,
+      "block": "A",
+      "type": "theory",
+      "topic": "voltage-to-ground",
       "question": "What is the maximum voltage to ground for branch circuits in a dwelling unit if the calculated load of the building will not exceed 250 kVA?",
-      "options": ["A) 150 volts", "B) 240 volts", "C) 277 volts", "D) 480 volts"],
+      "options": [
+        "A) 150 volts",
+        "B) 240 volts",
+        "C) 277 volts",
+        "D) 480 volts"
+      ],
       "answer": "150 volts to ground",
       "answer_key": "A",
-      "references": ["Rule 2-110"],
-      "solution_steps": ["Rule 2-110 limits dwelling-unit branch circuits to 150 V-to-ground.", "The higher-voltage exception (up to 600Y/347 V) only applies where the calculated load EXCEEDS 250 kV*A and qualified maintenance personnel are available. Since this load does not exceed 250 kVA, the 150 V limit stands. (Dwelling rule is 2-110, not 2-130.)"],
+      "references": [
+        "Rule 2-110"
+      ],
+      "solution_steps": [
+        "Rule 2-110 limits dwelling-unit branch circuits to 150 V-to-ground.",
+        "The higher-voltage exception (up to 600Y/347 V) only applies where the calculated load EXCEEDS 250 kV*A and qualified maintenance personnel are available. Since this load does not exceed 250 kVA, the 150 V limit stands. (Dwelling rule is 2-110, not 2-130.)"
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اگر بار محاسبه‌شده ساختمان از 250 kVA تجاوز نکند، حداکثر voltage to ground برای branch circuit ها در یک واحد مسکونی چقدر است؟",
+      "options_fa": [
+        "150 ولت",
+        "240 ولت",
+        "277 ولت",
+        "480 ولت"
+      ],
+      "answer_fa": "150 ولت نسبت به زمین"
     },
     {
       "id": "S02-016",
-      "section": 2, "block": "A", "type": "lookup", "topic": "working-space",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "working-space",
       "question": "What is the minimum working space around electrical equipment?",
-      "options": ["A) 0.5 meters (1.5 feet)", "B) 1.0 meter (3.3 feet)", "C) 1.5 meters (5 feet)", "D) 2.0 meters (6.5 feet)"],
+      "options": [
+        "A) 0.5 meters (1.5 feet)",
+        "B) 1.0 meter (3.3 feet)",
+        "C) 1.5 meters (5 feet)",
+        "D) 2.0 meters (6.5 feet)"
+      ],
       "answer": "1.0 meter (3.3 feet) of working space in front of equipment that may require examination or adjustment while energized",
       "answer_key": "B",
-      "references": ["Rule 2-308 1)"],
-      "solution_steps": ["Rule 2-308 1) sets the general minimum working space about electrical equipment at 1 m with secure footing."],
+      "references": [
+        "Rule 2-308 1)"
+      ],
+      "solution_steps": [
+        "Rule 2-308 1) sets the general minimum working space about electrical equipment at 1 m with secure footing."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل working space در اطراف تجهیزات الکتریکی چقدر است؟",
+      "options_fa": [
+        "0.5 متر (1.5 فوت)",
+        "1.0 متر (3.3 فوت)",
+        "1.5 متر (5 فوت)",
+        "2.0 متر (6.5 فوت)"
+      ],
+      "answer_fa": "1.0 متر (3.3 فوت) working space در جلوی تجهیزاتی که ممکن است در حالت برق‌دار نیاز به بازرسی یا تنظیم داشته باشند"
     },
     {
       "id": "S02-017",
-      "section": 2, "block": "A", "type": "lookup", "topic": "enclosure-type",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "enclosure-type",
       "question": "Which type of enclosure for electrical equipment should be used where the enclosure is in a carwash with splashing water?",
-      "options": ["A) Type 1", "B) Type 3R", "C) Type 4", "D) Type 5"],
+      "options": [
+        "A) Type 1",
+        "B) Type 3R",
+        "C) Type 4",
+        "D) Type 5"
+      ],
       "answer": "Type 4 (watertight; protects against splashing and hose-directed water)",
       "answer_key": "C",
-      "references": ["Table 65"],
-      "solution_steps": ["Type 4 enclosures are watertight and resist splashing and hose-directed water — suitable for a carwash (Table 65).", "Type 3R only resists falling rain; Type 5 is for dust. (If corrosive shampoo were also present, Type 4X would be required.)"],
+      "references": [
+        "Table 65"
+      ],
+      "solution_steps": [
+        "Type 4 enclosures are watertight and resist splashing and hose-directed water — suitable for a carwash (Table 65).",
+        "Type 3R only resists falling rain; Type 5 is for dust. (If corrosive shampoo were also present, Type 4X would be required.)"
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام نوع enclosure برای تجهیزات الکتریکی باید در کارواش با پاشش آب استفاده شود؟",
+      "options_fa": [
+        "Type 1",
+        "Type 3R",
+        "Type 4",
+        "Type 5"
+      ],
+      "answer_fa": "Type 4 (آب‌بند؛ محافظت در برابر پاشش و آب مستقیم شیلنگ)"
     },
     {
       "id": "S02-018",
-      "section": 2, "block": "A", "type": "lookup", "topic": "enclosure-type",
+      "section": 2,
+      "block": "A",
+      "type": "lookup",
+      "topic": "enclosure-type",
       "question": "Which type of fusible disconnect enclosure is used on a rooftop (outdoor, exposed to rain) location?",
-      "options": ["A) Type 1", "B) Type 3R", "C) Type 5", "D) Type 12K"],
+      "options": [
+        "A) Type 1",
+        "B) Type 3R",
+        "C) Type 5",
+        "D) Type 12K"
+      ],
       "answer": "Type 3R (rainproof outdoor enclosure)",
       "answer_key": "B",
-      "references": ["Table 65"],
-      "solution_steps": ["A rooftop fusible disconnect is outdoors and must resist falling rain/snow.", "Type 3R is the rainproof outdoor enclosure commonly used for this application (Table 65)."],
+      "references": [
+        "Table 65"
+      ],
+      "solution_steps": [
+        "A rooftop fusible disconnect is outdoors and must resist falling rain/snow.",
+        "Type 3R is the rainproof outdoor enclosure commonly used for this application (Table 65)."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام نوع enclosure برای fusible disconnect در محل پشت‌بام (بیرونی، در معرض باران) استفاده می‌شود؟",
+      "options_fa": [
+        "Type 1",
+        "Type 3R",
+        "Type 5",
+        "Type 12K"
+      ],
+      "answer_fa": "Type 3R (enclosure بیرونی ضدباران)"
     }
   ]
 }

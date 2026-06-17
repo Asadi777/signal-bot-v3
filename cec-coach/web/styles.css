@@ -119,6 +119,15 @@ h2{color:#fff; margin:6px 0 10px}
 .tag{background:#eef4f1; color:#2c5d4a; font-size:11px; padding:3px 9px; border-radius:99px; font-weight:600}
 .tag.block{background:#fff3d6; color:#8a6300}
 .qtext{font-size:17px; line-height:1.5; font-weight:600; margin-bottom:14px}
+/* Persian translations under English question / options / answer */
+.qfa{unicode-bidi:isolate; direction:rtl; text-align:right; font-size:14.5px; font-weight:500;
+  color:#3a5c4e; margin-top:7px; padding-top:7px; border-top:1px dashed var(--line); line-height:1.7}
+.opttext{display:block}
+.ofa{unicode-bidi:isolate; direction:rtl; text-align:right; font-size:13px; color:var(--muted);
+  margin-top:5px; line-height:1.6}
+.afa{unicode-bidi:isolate; direction:rtl; text-align:right; font-size:14px; color:#3a5c4e;
+  margin-top:6px; padding-top:6px; border-top:1px dashed var(--line); line-height:1.7; font-weight:500}
+.opt.correct .ofa,.opt.wrong .ofa{color:#3a5c4e}
 .options{display:grid; gap:10px}
 .opt{display:flex; gap:10px; align-items:flex-start; text-align:left; background:#f6f9f7; border:2px solid transparent;
   border-radius:12px; padding:13px 14px; cursor:pointer; font-size:15px; transition:.12s}

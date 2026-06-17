@@ -30,7 +30,15 @@
         "Keep needs_review: confirm the exact #8 R90 and #4 T90 areas (Table 6) and the size-41 RMC 40% area (Table 9) against the printed CEC 2024 tables."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "هفت رشته هادی مسی بدون روکش (unjacketed) از نوع R90 XLPE با سایز #8 AWG و ولتاژ 600V، به همراه چهار رشته هادی مسی از نوع T90 Nylon با سایز #4 AWG باید درون یک rigid metal conduit نصب شوند. حداقل اندازه conduit لازم برای این هادی‌ها چقدر است؟",
+      "options_fa": [
+        "Size 27 (اندازه تجاری 27 mm / 1 in.)",
+        "Size 35 (اندازه تجاری 35 mm / 1-1/4 in.)",
+        "Size 41 (اندازه تجاری 41 mm / 1-1/2 in.)",
+        "Size 53 (اندازه تجاری 53 mm / 2 in.)"
+      ],
+      "answer_fa": "Size 41 (اندازه تجاری 41 mm / 1-1/2 in.)"
     },
     {
       "id": "S12-002",
@@ -54,7 +62,15 @@
         "Rule 12-118: a conductor terminated directly under a wire-binding screw or stud-and-nut is limited to solid conductors no larger than #10 AWG; larger conductors require a pressure connector/lug."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بزرگ‌ترین سایز هادی مفتولی (solid) که مجاز است به‌عنوان وسیله اتصال (termination) زیر یک پیچ مهارکننده سیم (wire binding screw) استفاده شود چیست؟",
+      "options_fa": [
+        "#12 AWG",
+        "#10 AWG",
+        "#8 AWG",
+        "#6 AWG"
+      ],
+      "answer_fa": "#10 AWG"
     },
     {
       "id": "S12-003",
@@ -84,7 +100,15 @@
         "Keep needs_review: confirm the #10 per-conductor mL value and exactly how the three wire connectors are counted against the printed CEC 2024 Table 22 / Rule 12-3034 before locking the 295.2 mL figure."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک outlet box شامل سه insulated wire connector، یک پریز دوبل (duplex receptacle) و پنج رشته هادی عایق‌دار #10 AWG است. حداقل حجم لازم برای این outlet box چقدر است؟",
+      "options_fa": [
+        "196.8 mL",
+        "246.0 mL",
+        "270.6 mL",
+        "295.2 mL"
+      ],
+      "answer_fa": "295.2 mL"
     },
     {
       "id": "S12-004",
@@ -111,7 +135,15 @@
         "Result: 600 mm."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "از کابل non-metallic sheathed از نوع NMWU به‌عنوان روش سیم‌کشی برای یک ساب‌سرویس 60A و 120/240V استفاده می‌شود. کابل به‌صورت مستقیم در خاک دفن می‌شود (direct burial) بدون حفاظت اضافی، و در ناحیه‌ای که در معرض عبور خودرو نیست. حداقل عمق پوشش خاک (cover) لازم برای این کابل را تعیین کنید.",
+      "options_fa": [
+        "600 mm",
+        "450 mm",
+        "750 mm",
+        "900 mm"
+      ],
+      "answer_fa": "600 mm"
     },
     {
       "id": "S12-005",
@@ -135,7 +167,15 @@
         "Rule 12-940: between pull points (outlets, boxes, fittings) a raceway may contain bends totalling not more than the equivalent of four quarter-bends (4 × 90° = 360°)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام نصب یک conduit، حداکثر تعداد خم‌ها (bends) مجاز بین outlet‌ها یا نقاط کشش سیم (pull-in points) چقدر است؟",
+      "options_fa": [
+        "معادل دو خمِ یک‌چهارم (2 × 90 درجه = مجموعاً 180 درجه)",
+        "معادل سه خمِ یک‌چهارم (3 × 90 درجه = مجموعاً 270 درجه)",
+        "معادل پنج خمِ یک‌چهارم (5 × 90 درجه = مجموعاً 450 درجه)",
+        "معادل چهار خمِ یک‌چهارم (4 × 90 درجه = مجموعاً 360 درجه)"
+      ],
+      "answer_fa": "معادل چهار خمِ یک‌چهارم (4 × 90 درجه = مجموعاً 360 درجه)"
     },
     {
       "id": "S12-006",
@@ -162,7 +202,15 @@
         "Result: 300 V. (Confirmed for the 2024 code — NMD90's marked/maximum voltage is 300 V; this is not a 2021-only value.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ولتاژ مجاز توسط کُد بین هادی‌ها در یک نصب کابل non-metallic sheathed (نوع NMD90) چقدر است؟",
+      "options_fa": [
+        "150 V",
+        "300 V",
+        "600 V",
+        "750 V"
+      ],
+      "answer_fa": "300 V"
     },
     {
       "id": "S12-007",
@@ -190,7 +238,15 @@
         "Keep needs_review: diagram-dependent — the stated A = 328 mm cannot be verified without the figure."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "وقتی هادی به‌کاررفته در این نصب 1/0 Cu از نوع RW90 XLPE با ولتاژ 600V و بدون روکش است، حداقل ابعاد برای ضلع A چقدر است؟ (ورودی‌های conduit طبق نقشه 41 mm و 35 mm هستند.)",
+      "options_fa": [
+        "A = 246 mm",
+        "A = 287 mm",
+        "A = 328 mm",
+        "A = 410 mm"
+      ],
+      "answer_fa": "A = 328 mm"
     },
     {
       "id": "S12-008",
@@ -217,7 +273,15 @@
         "Result: 300 V (confirmed for the 2024 code)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ولتاژ مجاز توسط کُد بین هادی‌ها در یک نصب کابل non-metallic sheathed (NMSC) چقدر است؟",
+      "options_fa": [
+        "300 V",
+        "150 V",
+        "600 V",
+        "1000 V"
+      ],
+      "answer_fa": "300 V"
     },
     {
       "id": "S12-009",
@@ -241,7 +305,15 @@
         "Rule 12-516: where NMSC passes through wooden studs/joists, the cable must be kept at least 32 mm from the nearer (outer) edge, or be protected by a steel plate, to guard against nail/screw damage."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام عبور کابل non-metallic sheathed از میان stud‌ها، تیرها (joists) یا اعضای چوبی مشابه، این کابل باید چه فاصله‌ای از لبه بیرونی آن‌ها داشته باشد؟",
+      "options_fa": [
+        "19 mm",
+        "25 mm",
+        "30 mm",
+        "32 mm"
+      ],
+      "answer_fa": "32 mm"
     },
     {
       "id": "S12-010",
@@ -265,7 +337,15 @@
         "Rule 12-3014: at each outlet box, not less than 150 mm of free conductor must be left for making up connections to devices."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل طول آزاد هادی‌ها که باید در هر outlet برای اتصالات درون outlet box‌ها باقی گذاشته شود چقدر است؟",
+      "options_fa": [
+        "100 mm",
+        "150 mm",
+        "200 mm",
+        "300 mm"
+      ],
+      "answer_fa": "150 mm"
     },
     {
       "id": "S12-011",
@@ -289,7 +369,15 @@
         "Table 7 lists the minimum radii of bends (to the inside of the conduit/raceway) by trade size."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای یافتن اطلاعات مربوط به حداقل شعاع خم‌ها (radii of bends) در یک raceway باید به کدام جدول مراجعه کرد؟",
+      "options_fa": [
+        "Table 6",
+        "Table 9",
+        "Table 7",
+        "Table 10"
+      ],
+      "answer_fa": "Table 7"
     },
     {
       "id": "S12-012",
@@ -314,7 +402,15 @@
         "Keep needs_review: the diagram (which entries are straight vs angle, and on which walls) is required to verify A = 17.5, B = 18, C = 15 in."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ابعاد A، B و C موردنیاز برای pull box‌ها را طبق قواعد کُد تعیین کنید. (ورودی‌های conduit طبق نقشه 2.5 in.، 1.5 in. و 1 in. هستند.)",
+      "options_fa": [
+        "A = 17.5 in.، B = 18 in.، C = 15 in.",
+        "A = 15 in.، B = 17.5 in.، C = 12 in.",
+        "A = 20 in.، B = 18 in.، C = 15 in.",
+        "A = 17.5 in.، B = 15 in.، C = 18 in."
+      ],
+      "answer_fa": "A = 17.5 in.، B = 18 in.، C = 15 in."
     },
     {
       "id": "S12-013",
@@ -340,7 +436,15 @@
         "Keep needs_review: the 750 kcmil figure cannot be confirmed as a code-stated maximum for a wireway; verify the exact rule and value in CEC 2024 Section 12 (wireways)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "بزرگ‌ترین سایز هادی آلومینیومی که می‌توان در یک wireway نصب کرد چقدر است؟",
+      "options_fa": [
+        "500 kcmil",
+        "750 kcmil",
+        "1000 kcmil",
+        "250 kcmil"
+      ],
+      "answer_fa": "750 kcmil"
     },
     {
       "id": "S12-014",
@@ -365,7 +469,15 @@
         "6 × 2.5 in. = 15 in. With the two entries diagonal, both dimensions are governed → box is 15 × 15 in."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ابعاد لازم برای یک pull box را تعیین کنید که برای یک کشش زاویه‌دار (angle pull) در مسیری از conduit با سایز 2-1/2 in. نصب می‌شود. دو ورودی conduit با سایز 2-1/2 in. به‌صورت قطری نسبت به هم قرار دارند.",
+      "options_fa": [
+        "12 × 12 in.",
+        "13 × 13 in.",
+        "15 × 15 in.",
+        "20 × 20 in."
+      ],
+      "answer_fa": "15 × 15 in."
     },
     {
       "id": "S12-015",
@@ -389,7 +501,15 @@
         "Rule 12-118: field-assembled aluminum-lug-to-busbar connections must maintain contact pressure using a helical or conical (Belleville) spring washer to compensate for the cold flow/creep of aluminum."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اتصالات مونتاژشده در محل (field assembled) بین لاگ آلومینیومی (aluminum lug) و باسبار آلومینیومی یا مسی را می‌توان با استفاده از یک واشر فنری ______ انجام داد.",
+      "options_fa": [
+        "واشر فنری مارپیچ (helical) یا مخروطی (conical)",
+        "واشر تخت ساده (flat plain washer)",
+        "واشر قفلی ستاره‌ای/دندانه‌دار (star/toothed lock washer)",
+        "واشر صفحه‌ای مربعی (square plate washer)"
+      ],
+      "answer_fa": "واشر فنری مارپیچ (helical) یا مخروطی (conical)"
     },
     {
       "id": "S12-016",
@@ -415,7 +535,15 @@
         "Keep needs_review: the A = 386 / B = 374 mm dimensions depend on the conduit positions shown in the diagram, which cannot be reconstructed here."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "ابعاد ضلع A، ضلع B و حداقل فاصله بین دو conduit با سایز 53 mm را که با فلش دوسر نشان داده شده است بیابید. این pull box شامل هادی‌های مسی #6 AWG از نوع T90 NYLON است. (ورودی‌های conduit طبق نقشه 53 mm، 41 mm، 35 mm، 27 mm و 21 mm هستند.)",
+      "options_fa": [
+        "A = 374 mm، B = 386 mm، C = 318 mm",
+        "A = 386 mm، B = 374 mm، C = 424 mm",
+        "A = 318 mm، B = 374 mm، C = 386 mm",
+        "A = 386 mm، B = 374 mm، C = 318 mm"
+      ],
+      "answer_fa": "A = 386 mm، B = 374 mm، C (فاصله بین دو conduit با سایز 53 mm) = 318 mm"
     },
     {
       "id": "S12-017",
@@ -443,7 +571,15 @@
         "Keep needs_review: confirm the #12 capacity of the 3×2×3 in. box and the counting of the six connectors against the printed CEC 2024 Table 23 before locking the box size."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل سایز device box لازم برای نصبی که شامل سه هادی #12، شش wire connector و یک پریز دوبل (duplex receptacle) است چقدر می‌باشد؟",
+      "options_fa": [
+        "2 × 1-1/2 × 2 in.",
+        "3 × 2 × 3 in. (یا 4 × 2-1/8 × 1-7/8 in.)",
+        "3 × 2 × 2-1/4 in.",
+        "4 × 4 × 1-1/2 in."
+      ],
+      "answer_fa": "3 × 2 × 3 in. (یا 4 × 2-1/8 × 1-7/8 in.)"
     },
     {
       "id": "S12-018",
@@ -468,7 +604,15 @@
         "Keep needs_review: A, B, C depend on the entry layout in the diagram, which cannot be reconstructed here (C = 12 in. matches 6 × 2 in., but A = 18 and B = 14 need the figure)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ابعاد A، B و C موردنیاز در یک کشش U-شکل (U pull) را بر اساس نقشه تعیین کنید (ورودی‌های conduit با سایز 2 in.).",
+      "options_fa": [
+        "A = 18 in.، B = 14 in.، C = 12 in.",
+        "A = 16 in.، B = 12 in.، C = 10 in.",
+        "A = 14 in.، B = 18 in.، C = 12 in.",
+        "A = 18 in.، B = 12 in.، C = 14 in."
+      ],
+      "answer_fa": "A = 18 in.، B = 14 in.، C = 12 in."
     },
     {
       "id": "S12-019",
@@ -493,7 +637,15 @@
         "Table 53 (and its notes, Rule 12-012): where supplementary mechanical protection (e.g. a treated plank or concrete slab) is added over a direct buried run, the tabulated minimum cover may be reduced by 150 mm."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اگر حفاظت مکانیکی قابل‌قبول فراهم کنید، حداقل الزامات پوشش خاک (cover) چقدر می‌تواند کاهش یابد؟",
+      "options_fa": [
+        "50 mm",
+        "100 mm",
+        "150 mm",
+        "300 mm"
+      ],
+      "answer_fa": "150 mm"
     },
     {
       "id": "S12-020",
@@ -518,7 +670,15 @@
         "Keep needs_review: the source left the numeric height blank and it cannot be confirmed without the printed CEC 2024 Rule 12-112 6)a) value."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "اتصالات (splices) در یک مسیر زیرزمینی کابل مجاز است در junction box‌هایی که ______ متر بالاتر از سطح زمین (grade) قرار دارند انجام شود.",
+      "options_fa": [
+        "0.6 m",
+        "1 m",
+        "1.5 m",
+        "2 m"
+      ],
+      "answer_fa": "پاسخ در یادداشت‌های منبع داده نشده است (به Rule 12-112 6)a) ارجاع شده است)"
     },
     {
       "id": "S12-021",
@@ -546,7 +706,15 @@
         "Result = 58.5 mm."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای یک مسیر 15 m از conduit نوع RPVC که حداقل دمای موردانتظار -50 degC و حداکثر دمای موردانتظار +25 degC است، انبساط (expansion) در این conduit چقدر است؟",
+      "options_fa": [
+        "39 mm",
+        "46.8 mm",
+        "52 mm",
+        "58.5 mm"
+      ],
+      "answer_fa": "58.5 mm"
     },
     {
       "id": "S12-022",
@@ -570,7 +738,15 @@
         "Rule 12-2202: a minimum 300 mm clearance is required above a cable tray to ceilings and heating ducts to permit heat dissipation and cable installation/removal."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فاصله موردنیاز بین بالای یک cable tray و همه سقف‌ها و کانال‌های گرمایشی (heating ducts) چقدر است؟",
+      "options_fa": [
+        "150 mm",
+        "200 mm",
+        "300 mm",
+        "600 mm"
+      ],
+      "answer_fa": "300 mm"
     },
     {
       "id": "S12-023",
@@ -598,7 +774,15 @@
         "Result: 56 conductors."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چند رشته هادی قدرت مسی رشته‌ای (stranded) از نوع R90 XLPE با سایز #14، ولتاژ 600V و بدون روکش را می‌توان در یک auxiliary gutter با ابعاد 50 mm × 50 mm نصب کرد؟",
+      "options_fa": [
+        "56 هادی",
+        "44 هادی",
+        "62 هادی",
+        "28 هادی"
+      ],
+      "answer_fa": "56 هادی"
     },
     {
       "id": "S12-024",
@@ -623,7 +807,15 @@
         "Keep needs_review: confirm the exact 2-1/2 in. radius against the printed CEC 2024 Table 7."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل شعاع خم (bending radius) مجاز برای conduit نوع RPVC با سایز 2-1/2 in. چقدر است؟",
+      "options_fa": [
+        "241 mm",
+        "267 mm",
+        "330 mm",
+        "203 mm"
+      ],
+      "answer_fa": "267 mm"
     },
     {
       "id": "S12-025",
@@ -653,7 +845,15 @@
         "Keep needs_review: confirm the #8 RW75 1000 V area and the size-35 40% area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل سایز conduit لازم برای نصبی که شامل ده هادی آلومینیومی بدون روکش از نوع RW75 XLPE با ولتاژ 1000 ولت و سایز #8 AWG است چقدر می‌باشد؟",
+      "options_fa": [
+        "Size 27 mm",
+        "Size 41 mm",
+        "Size 35 mm",
+        "Size 53 mm"
+      ],
+      "answer_fa": "Size 35 mm"
     },
     {
       "id": "S12-026",
@@ -683,7 +883,15 @@
         "Keep needs_review: confirm the #6 R90 area and the 2 in. conduit area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "طبق کُد، چند رشته هادی مسی روکش‌دار (jacketed) با سایز #6 AWG، ولتاژ 600V و نوع R90 XLPE را می‌توان درون یک conduit با سایز 2 inch کشید؟",
+      "options_fa": [
+        "15 هادی",
+        "12 هادی",
+        "18 هادی",
+        "9 هادی"
+      ],
+      "answer_fa": "15 هادی"
     },
     {
       "id": "S12-027",
@@ -710,7 +918,15 @@
         "Keep needs_review: reconcile the metal-sheath cover value against the printed CEC 2024 Table 53 rows."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل الزام پوشش خاک (cover) مجاز برای کابلی که دارای غلاف فلزی (metal sheath) است و از زیر یک ورودی خودرو (driveway) برای تأمین یک سرویس 600V سه‌فاز عبور می‌کند چقدر است؟",
+      "options_fa": [
+        "450 mm",
+        "600 mm",
+        "750 mm",
+        "900 mm"
+      ],
+      "answer_fa": "600 mm"
     },
     {
       "id": "S12-028",
@@ -734,7 +950,15 @@
         "Rule 12-118: conductors larger than #10 AWG must be terminated with a pressure connector/lug; #10 and smaller may be terminated directly (e.g. under a binding screw) without a lug."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بزرگ‌ترین سایز هادی که می‌توان بدون استفاده از لاگ (lug) به آن اتصال (termination) داد چیست؟",
+      "options_fa": [
+        "#14 AWG",
+        "#6 AWG",
+        "#8 AWG",
+        "#10 AWG"
+      ],
+      "answer_fa": "#10 AWG"
     },
     {
       "id": "S12-029",
@@ -761,7 +985,15 @@
         "Keep needs_review: confirm the 250 kcmil Cu vertical-support spacing against the printed CEC 2024 Table 21 (cross-check with S12-066 #3/0 Cu = 30 m)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر فاصله مجاز بین نگه‌دارنده‌ها (supports) برای هادی‌های مسی 250 kcmil که در یک raceway عمودی نصب شده‌اند چقدر است؟",
+      "options_fa": [
+        "30 m",
+        "24 m",
+        "18 m",
+        "15 m"
+      ],
+      "answer_fa": "18 m"
     },
     {
       "id": "S12-030",
@@ -783,7 +1015,13 @@
         "Rule 12-806: Type FCC (flat conductor cable) is not permitted in dwelling units (among other prohibited locations such as wet areas and outdoors)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا کابل نوع FCC را می‌توان در یک واحد مسکونی (dwelling unit) استفاده کرد؟",
+      "options_fa": [
+        "بله",
+        "خیر"
+      ],
+      "answer_fa": "خیر"
     },
     {
       "id": "S12-031",
@@ -808,7 +1046,15 @@
         "2021 vs 2024 difference flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "کابل neutral supported باید در دهانه‌هایی (spans) با طول حداکثر ______ متر نگه‌داری شود.",
+      "options_fa": [
+        "30 m",
+        "38 m",
+        "45 m",
+        "40 m"
+      ],
+      "answer_fa": "40 m (منبع مقدار 38 m را برای کُد 2021 ذکر کرده است)"
     },
     {
       "id": "S12-032",
@@ -835,7 +1081,15 @@
         "Result: 300 V."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ولتاژ نامی کابل non-metallic sheathed چقدر است؟",
+      "options_fa": [
+        "300 V",
+        "150 V",
+        "600 V",
+        "250 V"
+      ],
+      "answer_fa": "300 V"
     },
     {
       "id": "S12-033",
@@ -859,7 +1113,15 @@
         "Rule 12-510: NMSC must be kept at least 50 mm clear of a masonry/concrete chimney or fireplace (the larger separation, vs 25 mm air space from a heating pipe in S12-054)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فاصله موردنیاز بین یک NMSC و یک دودکش بتنی (concrete chimney) چقدر است؟",
+      "options_fa": [
+        "25 mm",
+        "50 mm",
+        "75 mm",
+        "100 mm"
+      ],
+      "answer_fa": "50 mm"
     },
     {
       "id": "S12-034",
@@ -883,7 +1145,15 @@
         "Rule 12-618: armoured cable (e.g. AC90, TECK) must be supported at intervals not exceeding 1.5 m."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله بین دو نگه‌دارنده (support) در کابل‌های زره‌دار (armoured) چقدر است؟",
+      "options_fa": [
+        "1 m",
+        "1.2 m",
+        "1.5 m",
+        "2 m"
+      ],
+      "answer_fa": "1.5 m"
     },
     {
       "id": "S12-035",
@@ -907,7 +1177,15 @@
         "Rule 12-518: NMSC run on the surface and exposed to mechanical injury must be protected; where installed at least 1.5 m above the floor it is generally considered out of reach and additional mechanical protection is not required."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ارتفاع از کف که یک NMSC باید در آن نصب شود به‌گونه‌ای که الزاماً به حفاظت مکانیکی نیاز نداشته باشد چقدر است؟",
+      "options_fa": [
+        "1 m",
+        "1.2 m",
+        "2 m",
+        "1.5 m"
+      ],
+      "answer_fa": "1.5 m"
     },
     {
       "id": "S12-036",
@@ -931,7 +1209,15 @@
         "Rule 12-806: Type FCC cable branch circuits are limited to a maximum rating of 30 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در کابل نوع FCC، حداکثر جریان مجاز برای مدارهای انشعابی (branch circuits) چقدر است؟",
+      "options_fa": [
+        "30 A",
+        "20 A",
+        "15 A",
+        "40 A"
+      ],
+      "answer_fa": "30 A"
     },
     {
       "id": "S12-037",
@@ -956,7 +1242,15 @@
         "Keep needs_review: confirm the 2-1/2 in. radius against the printed CEC 2024 Table 7."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "وقتی هادی‌های 1/0 از نوع R90 XLPE درون یک conduit با سایز 2.5 inch کشیده می‌شوند، حداقل شعاع خم (bending radius) این conduit برحسب میلی‌متر چقدر است؟",
+      "options_fa": [
+        "203 mm",
+        "241 mm",
+        "267 mm",
+        "330 mm"
+      ],
+      "answer_fa": "267 mm"
     },
     {
       "id": "S12-038",
@@ -986,7 +1280,15 @@
         "Keep needs_review: confirm the conductor areas and the size-53 RPVC area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل سایز conduit نوع RPVC را برای هادی‌های زیر تعیین کنید: چهار هادی 3/0 از نوع R90 XLPE و یک هادی #6 از نوع R90 XLPE. هادی‌ها رشته‌ای (stranded)، با ولتاژ 600V و بدون روکش هستند.",
+      "options_fa": [
+        "Size 41",
+        "Size 53",
+        "Size 63",
+        "Size 35"
+      ],
+      "answer_fa": "Size 53"
     },
     {
       "id": "S12-039",
@@ -1010,7 +1312,15 @@
         "Rule 12-2202: while 300 mm clearance is required above a cable tray generally (S12-022), a reduced 150 mm clearance is permitted at short-length obstructions."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فاصله موردنیاز بین cable tray و هر مانع کوتاه (short length obstruction) چقدر است؟",
+      "options_fa": [
+        "150 mm",
+        "100 mm",
+        "300 mm",
+        "50 mm"
+      ],
+      "answer_fa": "150 mm"
     },
     {
       "id": "S12-040",
@@ -1039,7 +1349,15 @@
         "Keep needs_review: confirm the FS 4-gang box volume, #12 allowance, and the device/connector counting against the printed CEC 2024 Tables 22/23 before locking '18'."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "اگر یک FS 4-gang box شامل 13 wire connector، 3 کلید سه‌راهه (three-way switch) و 1 کلید چهارراهه (four-way switch) باشد، چند هادی #12 AWG دیگر در آن مجاز است؟",
+      "options_fa": [
+        "12 عدد #12 AWG",
+        "15 عدد #12 AWG",
+        "16 عدد #12 AWG",
+        "18 عدد #12 AWG"
+      ],
+      "answer_fa": "18 عدد #12 AWG"
     },
     {
       "id": "S12-041",
@@ -1061,7 +1379,13 @@
         "Rule 12-1402: EMT is permitted in wet locations provided the fittings used are suitable/approved for wet locations and the installation is protected against corrosion."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا EMT را می‌توان در یک محل مرطوب (wet location) استفاده کرد؟",
+      "options_fa": [
+        "بله",
+        "خیر"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S12-042",
@@ -1090,7 +1414,15 @@
         "Keep needs_review: confirm the #8 R90 area and size-41 area against the printed CEC 2024 Tables 10 and 6 (cross-check with S12-001, which reaches size 41 with a comparable load)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل سایز conduit لازم برای کشیدن پانزده هادی مسی بدون روکش از نوع R90 XLPE با سایز #8 AWG و ولتاژ 600V چقدر است؟",
+      "options_fa": [
+        "Size 35",
+        "Size 41",
+        "Size 53",
+        "Size 27"
+      ],
+      "answer_fa": "Size 41"
     },
     {
       "id": "S12-043",
@@ -1116,7 +1448,15 @@
         "Result: 750 mm × 750 mm maximum."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ابعاد موکت‌های مربعی (carpet squares) که مجاز است روی کابل نوع FCC را بپوشاند چقدر است؟",
+      "options_fa": [
+        "600 mm × 600 mm",
+        "900 mm × 900 mm",
+        "750 mm × 750 mm",
+        "1000 mm × 1000 mm"
+      ],
+      "answer_fa": "750 mm × 750 mm"
     },
     {
       "id": "S12-044",
@@ -1146,7 +1486,15 @@
         "Keep needs_review: confirm the 41 mm EMT area and the #8/#10 R90 areas against the printed CEC 2024 Tables 6 and 10."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک EMT با سایز 41 mm شامل 10 هادی مسی بدون روکش از نوع #8 R90 XLPE با ولتاژ 600V است. چند هادی #10 دیگر از همان نوع و مشخصات را می‌توان در همان raceway نصب کرد؟",
+      "options_fa": [
+        "14 عدد #10 R90 XLPE 600V بدون روکش",
+        "10 عدد #10 R90 XLPE 600V بدون روکش",
+        "18 عدد #10 R90 XLPE 600V بدون روکش",
+        "12 عدد #10 R90 XLPE 600V بدون روکش"
+      ],
+      "answer_fa": "14 عدد #10 R90 XLPE 600V بدون روکش"
     },
     {
       "id": "S12-045",
@@ -1170,7 +1518,15 @@
         "Rule 12-516: where NMSC passes through studs/joists, the outer surface of the cable must be kept at least 32 mm from the edge through which a nail/screw could be driven (or be protected by a steel plate)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی NMSC از میان stud‌ها یا تیرها (joists) عبور می‌کند، سطح بیرونی کابل باید حداقل چه فاصله‌ای حفظ شود تا از آسیب مکانیکی محافظت شود؟",
+      "options_fa": [
+        "19 mm",
+        "25 mm",
+        "38 mm",
+        "32 mm"
+      ],
+      "answer_fa": "32 mm"
     },
     {
       "id": "S12-046",
@@ -1195,7 +1551,15 @@
         "Keep needs_review: the 6× (angle) vs 8× (straight) choice depends on the entry layout in the diagram, which cannot be reconstructed here."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ابعاد موردنیاز را طبق الزامات قواعد کُد برای pull box‌ها تعیین کنید (ورودی‌های conduit با سایز 1.5 in. طبق نقشه).",
+      "options_fa": [
+        "8 × 8 in.",
+        "9 × 9 in.",
+        "12 × 12 in.",
+        "10 × 10 in."
+      ],
+      "answer_fa": "9 × 9 in."
     },
     {
       "id": "S12-047",
@@ -1217,7 +1581,13 @@
         "Rule 12-912: joints and splices are not permitted within a conduit/tubing run — they must be made only in accessible boxes or fittings with removable covers."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا اتصالات یا splice‌ها در هادی‌ها یا کابل‌ها درون rigid metal conduit مجاز است؟",
+      "options_fa": [
+        "بله",
+        "خیر"
+      ],
+      "answer_fa": "خیر"
     },
     {
       "id": "S12-048",
@@ -1239,7 +1609,13 @@
         "Rule 12-904: PV system conductors must not occupy the same raceway, cable, box, or enclosure as conductors of other (non-PV) systems."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا هادی‌های یک سیستم PV (سیستم فتوولتائیک) را می‌توان در همان raceway با هادی‌های سیستم‌های دیگر قرار داد؟",
+      "options_fa": [
+        "بله",
+        "خیر"
+      ],
+      "answer_fa": "خیر"
     },
     {
       "id": "S12-049",
@@ -1268,7 +1644,15 @@
         "Keep needs_review: confirm the 2/0 TWU75 area and the 53 mm conduit area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "اگر چهار هادی مسی 2/0 AWG روکش‌دار از نوع TWU75 با ولتاژ 600V باید درون یک conduit نصب شوند، حداقل سایز conduit موردنیاز چقدر است؟",
+      "options_fa": [
+        "35 mm",
+        "41 mm",
+        "53 mm",
+        "63 mm"
+      ],
+      "answer_fa": "53 mm"
     },
     {
       "id": "S12-050",
@@ -1293,7 +1677,15 @@
         "Table 53: cable (≤750 V) direct-buried without mechanical protection in an area subject to vehicular traffic requires 900 mm cover (vs 600 mm in a non-vehicular area, S12-004)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل الزامات پوشش خاک (cover) را برای یک کابل non-metallic sheathed تعیین کنید که به‌صورت مستقیم در خاک دفن شده (directly buried) بدون حفاظت اضافی، در ناحیه عبور خودرو، و به‌عنوان روش سیم‌کشی برای یک ساب‌سرویس 200A و 120/240V استفاده می‌شود.",
+      "options_fa": [
+        "450 mm",
+        "600 mm",
+        "750 mm",
+        "900 mm"
+      ],
+      "answer_fa": "900 mm"
     },
     {
       "id": "S12-051",
@@ -1319,7 +1711,15 @@
         "Result: 300 V (confirmed for the 2024 code)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ولتاژ بین هادی‌ها که یک کابل non-metallic sheathed می‌تواند به آن متصل شود چقدر است؟",
+      "options_fa": [
+        "300 V",
+        "150 V",
+        "600 V",
+        "250 V"
+      ],
+      "answer_fa": "300 V"
     },
     {
       "id": "S12-052",
@@ -1344,7 +1744,15 @@
         "Result: 6 mm (consistent with S12-064)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "لبه جلویی box‌هایی که در دیوارها یا سقف‌های بتنی نصب می‌شوند نباید بیش از ______ mm از سطح نهایی (finished surface) فرورفته باشد.",
+      "options_fa": [
+        "0 mm",
+        "3 mm",
+        "6 mm",
+        "9 mm"
+      ],
+      "answer_fa": "6 mm"
     },
     {
       "id": "S12-053",
@@ -1369,7 +1777,15 @@
         "Keep needs_review: confirm the 63 mm radius against the printed CEC 2024 Table 7."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل شعاع خم (bend radius) برای یک EMT با سایز 63 mm چقدر است؟",
+      "options_fa": [
+        "241 mm",
+        "267 mm",
+        "305 mm",
+        "330 mm"
+      ],
+      "answer_fa": "267 mm"
     },
     {
       "id": "S12-054",
@@ -1393,7 +1809,15 @@
         "Rule 12-510: NMSC must be separated from a heating pipe by an air space of at least 25 mm (vs 50 mm from a masonry chimney, S12-033)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فاصله هوایی (air space) موردنیاز بین کابل non-metallic sheathed و یک لوله گرمایشی (heating pipe) چقدر است؟",
+      "options_fa": [
+        "25 mm",
+        "50 mm",
+        "12 mm",
+        "75 mm"
+      ],
+      "answer_fa": "25 mm"
     },
     {
       "id": "S12-055",
@@ -1418,7 +1842,15 @@
         "Keep needs_review: confirm the #8 count for the 3×2×3 in. box against the printed CEC 2024 Table 23."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر تعداد هادی‌های با سایز #8 AWG که در یک device box با ابعاد 3 in. × 2 in. × 3 in. مجاز است چقدر می‌باشد؟",
+      "options_fa": [
+        "3 عدد #8 AWG",
+        "4 عدد #8 AWG",
+        "6 عدد #8 AWG",
+        "5 عدد #8 AWG"
+      ],
+      "answer_fa": "5 عدد #8 AWG"
     },
     {
       "id": "S12-056",
@@ -1447,7 +1879,15 @@
         "Keep needs_review: confirm the individual conductor areas and the size-53 EMT area against the printed CEC 2024 Tables 10 and 6."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "اندازه تجاری EMT را برای نگه‌داری چهار هادی رشته‌ای #3/0 AWG از نوع RW90 XLPE با ولتاژ 600V و بدون روکش، و شش هادی رشته‌ای #12 AWG از نوع TW75 تعیین کنید؛ که قرار است در یک سیستم 347/600V سه‌فاز چهارسیمه به‌کار رود، به‌همراه یک هادی پیوندی (bonding conductor) رشته‌ای #6 از نوع R90 XLPE با ولتاژ 600V و بدون روکش.",
+      "options_fa": [
+        "Size 35",
+        "Size 41",
+        "Size 53",
+        "Size 63"
+      ],
+      "answer_fa": "Size 53"
     },
     {
       "id": "S12-057",
@@ -1473,7 +1913,15 @@
         "Result: bonded at both ends (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "از یک rigid steel conduit به‌عنوان حفاظت مکانیکی برای یک هادی زمین (grounding conductor) از نوع AC استفاده می‌شود. با خود conduit چه کاری انجام می‌شود؟",
+      "options_fa": [
+        "اتصال به grounding conductor فقط در یک انتها",
+        "اتصال به grounding conductor در هر دو انتها",
+        "اتصال به bonding conductor در محل سرویس",
+        "اتصال به سمت بالادست (upstream) هادی زمین"
+      ],
+      "answer_fa": "اتصال به grounding conductor در هر دو انتها (conduit باید در هر دو انتها bond شود)"
     },
     {
       "id": "S12-058",
@@ -1499,7 +1947,15 @@
         "Result: 300 V (option C)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام استفاده از کابل non-metallic sheathed، حداکثر ولتاژ مجاز بین دو هادی چقدر است؟",
+      "options_fa": [
+        "120 ولت",
+        "150 ولت",
+        "300 ولت",
+        "600 ولت"
+      ],
+      "answer_fa": "300 ولت"
     },
     {
       "id": "S12-059",
@@ -1529,7 +1985,15 @@
         "Keep needs_review: confirm the Table 5A 46–50 degC factor and Table 2 3/0/4/0 values against the printed CEC 2024 tables (answer hinges on the exact correction factor)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "در اتاقی که دمای محیط (ambient temperature) به 48 degC می‌رسد، حداقل سایز هادی مسی از نوع TW75 درون EMT که مجاز است جریان 170 آمپر را حمل کند چقدر است؟",
+      "options_fa": [
+        "#1/0 AWG",
+        "#2/0 AWG",
+        "#3/0 AWG",
+        "#4/0 AWG"
+      ],
+      "answer_fa": "#4/0 AWG (گزینه D)"
     },
     {
       "id": "S12-060",
@@ -1554,7 +2018,15 @@
         "Result: 300 mm (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام نصب flexible metal conduit، حداکثر فاصله‌ای که باید از یک outlet box مهار (secure) شود چقدر است؟",
+      "options_fa": [
+        "150 mm",
+        "300 mm",
+        "600 mm",
+        "900 mm"
+      ],
+      "answer_fa": "300 mm"
     },
     {
       "id": "S12-061",
@@ -1582,7 +2054,15 @@
         "Result = 88.44 mm (option C)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "انبساط (expansion) برای یک مسیر 60 m از rigid aluminum conduit وقتی دما از -32 degC تا +35 degC تغییر می‌کند چقدر است؟",
+      "options_fa": [
+        "3.96 mm",
+        "45.83 mm",
+        "88.44 mm",
+        "209.04 mm"
+      ],
+      "answer_fa": "88.44 mm"
     },
     {
       "id": "S12-062",
@@ -1607,7 +2087,15 @@
         "Result: removable, accessible cover (option C). (Contrast with conduit/EMT, which has no access, so no splices — S12-047.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "تحت چه شرایطی اتصالات و splice‌ها (در یک raceway/wireway) مجاز است؟",
+      "options_fa": [
+        "یک raceway آب‌بندی‌شده (sealed) باشد",
+        "ولتاژ کاری زیر 300 ولت باشد",
+        "دارای دربِ قابل‌برداشتن (removable cover) باشد",
+        "میزان پُرشدگی (fill) از یک درصد مشخص فراتر نرود"
+      ],
+      "answer_fa": "زمانی که raceway/wireway دارای دربِ قابل‌برداشتن (removable cover) باشد که پس از نصب قابل‌دسترسی است"
     },
     {
       "id": "S12-063",
@@ -1635,7 +2123,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "A"
+      "answer_key": "A",
+      "question_fa": "با توجه به اطلاعات زیر: سه جفت هادی #14 از نوع RW90 که با wire connector به هم متصل شده‌اند، و دو هادی #12 از نوع RW90 که با wire connector متصل شده‌اند. حداقل سایز box برای این نصب چقدر است؟",
+      "options_fa": [
+        "245 mL",
+        "344 mL",
+        "491 mL",
+        "686 mL"
+      ],
+      "answer_fa": "پاسخ به‌صراحت در یادداشت‌های منبع ذکر نشده است"
     },
     {
       "id": "S12-064",
@@ -1660,7 +2156,15 @@
         "Result: 6 mm (option C). Consistent with S12-052."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر عمق مجاز بین سطح نهایی (finished surface) و لبه جلویی یک outlet box چقدر است (دیوار غیرقابل‌احتراق / non-combustible)؟",
+      "options_fa": [
+        "0 mm",
+        "3 mm",
+        "6 mm",
+        "9 mm"
+      ],
+      "answer_fa": "6 mm"
     },
     {
       "id": "S12-065",
@@ -1687,7 +2191,15 @@
         "Keep needs_review: confirm the masonry/concrete-encasement row of the printed CEC 2024 Table 53."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک کابل زره‌دار (armoured) برای دفن مستقیم در بنایی (masonry) یا بتن استفاده می‌شود. حداقل پوشش (cover) موردنیاز در محفظه (encasement) چقدر است؟",
+      "options_fa": [
+        "25 mm",
+        "50 mm",
+        "425 mm",
+        "450 mm"
+      ],
+      "answer_fa": "50 mm (گزینه B)"
     },
     {
       "id": "S12-066",
@@ -1713,7 +2225,15 @@
         "Result: 30 m (option d). (Larger conductors get shorter spacings — cf. S12-029, 250 kcmil Cu = 18 m.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک واحد HVAC پشت‌بامی با فیدرهای مسی #3/0 AWG در یک conduit عمودی تغذیه می‌شود. حداکثر فاصله بین نگه‌دارنده‌های هادی (conductor supports) چقدر است؟",
+      "options_fa": [
+        "15 m",
+        "18 m",
+        "24 m",
+        "30 m"
+      ],
+      "answer_fa": "30 m"
     },
     {
       "id": "S12-067",
@@ -1740,7 +2260,15 @@
         "Keep needs_review: this conflicts with S12-027 (metal-sheath cable under a driveway = 600 mm). Reconcile whether the metal sheath alone counts as the mechanical protection that would reduce cover, against the printed CEC 2024 Table 53."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک کابل 600V با غلاف فلزی (metal-sheathed) که مستقیماً در خاک دفن شده، در معرض عبور خودرو قرار دارد. حداقل الزام پوشش خاک (cover) چقدر است؟",
+      "options_fa": [
+        "450 mm",
+        "600 mm",
+        "900 mm",
+        "1000 mm"
+      ],
+      "answer_fa": "900 mm"
     },
     {
       "id": "S12-068",
@@ -1765,7 +2293,15 @@
         "Keep needs_review: confirm the exact 0.4 mm value against the printed CEC 2024 Rule 12-3008 (an obscure, edition-specific figure)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک faceplate فلزی روی یک box که شامل یک پریز (receptacle) است نصب می‌شود. حداقل فاصله مجاز بین رویه پریز و faceplate فلزی چقدر است؟",
+      "options_fa": [
+        "0.4 mm",
+        "0.675 mm",
+        "4.0 mm",
+        "6.750 mm"
+      ],
+      "answer_fa": "0.4 mm"
     },
     {
       "id": "S12-069",
@@ -1790,7 +2326,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "C"
+      "answer_key": "C",
+      "question_fa": "یک کابل ارتباطی (communication) نوع CMP در فضای سقفی که به‌عنوان plenum تهویه هوا استفاده می‌شود نصب می‌گردد. وقتی این کابل یک سیستم پیجینگ عمومی (public address) را تغذیه می‌کند، حداکثر دمای نامی هادی چقدر است؟",
+      "options_fa": [
+        "60 درجه سلسیوس",
+        "75 درجه سلسیوس",
+        "90 درجه سلسیوس",
+        "105 درجه سلسیوس"
+      ],
+      "answer_fa": "پاسخ به‌صراحت در یادداشت‌های منبع ذکر نشده است"
     },
     {
       "id": "S12-070",
@@ -1815,7 +2359,15 @@
         "The cable counts and 750 kcmil TECK details are distractors. Result: 300 mm (option c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک cable tray جدید با 18 کابل سه‌رشته‌ای 12 AWG از نوع TC و 2 کابل سه‌رشته‌ای 750 kcmil از نوع TECK90 به قطر 75 mm داده شده است. این tray به‌صورت موازی و در زیر یک cable tray موجود نصب می‌شود. چه میزان فاصله عمودی بین tray‌ها لازم است؟",
+      "options_fa": [
+        "50 mm",
+        "150 mm",
+        "300 mm",
+        "600 mm"
+      ],
+      "answer_fa": "300 mm"
     },
     {
       "id": "S12-071",
@@ -1840,7 +2392,15 @@
         "OCR garbled the option layout; verify against Table 21."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر فاصله نگه‌دارنده (support distance) برای یک هادی آلومینیومی 250 kcmil در یک مسیر عمودی چقدر است؟",
+      "options_fa": [
+        "25 m",
+        "35 m",
+        "15 m",
+        "40 m"
+      ],
+      "answer_fa": "تقریباً 25 m (طبق Table 21 برای آلومینیوم 250 kcmil)"
     },
     {
       "id": "S12-072",
@@ -1865,7 +2425,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "B"
+      "answer_key": "B",
+      "question_fa": "حداقل شعاع خم (radius of bending) یک EMT با سایز 3 in. چقدر است (کابل بدون غلاف سربی / non-lead sheathed)؟",
+      "options_fa": [
+        "241 mm",
+        "330 mm",
+        "610 mm",
+        "762 mm"
+      ],
+      "answer_fa": "طبق Table 7 — به‌احتمال زیاد 330 mm (گزینه b)؛ در منبع به‌وضوح مشخص نشده است"
     },
     {
       "id": "S12-073",
@@ -1891,7 +2459,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "B"
+      "answer_key": "B",
+      "question_fa": "یک سیستم raceway متشکل از مسیرهای 30 m از conduit نوع PVC با سایز 103 mm و conduit نوع PVC با سایز 53 mm بین pull box‌ها نصب می‌شود. وقتی این‌ها روی یک رک (rack) مشترک نصب شوند، چند نگه‌دارنده (support) لازم است؟",
+      "options_fa": [
+        "9",
+        "14",
+        "19",
+        "20"
+      ],
+      "answer_fa": "پاسخ به‌صراحت در یادداشت‌های منبع مشخص نشده است"
     },
     {
       "id": "S12-074",
@@ -1916,7 +2492,15 @@
         "Result: 15 m (option C)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام کاهش سایز یک busway، حفاظت اضافه‌جریان (overcurrent protection) را می‌توان فقط در صورتی حذف کرد که بخش کوچک‌ترِ busway کدام شرط را برآورده کند؟",
+      "options_fa": [
+        "طول آن از 5 m فراتر نرود",
+        "طول آن از 10 m فراتر نرود",
+        "طول آن از 15 m فراتر نرود",
+        "طول آن از 25 m فراتر نرود"
+      ],
+      "answer_fa": "طول آن از 15 m فراتر نرود"
     }
   ]
 }

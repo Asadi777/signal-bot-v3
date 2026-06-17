@@ -3,302 +3,780 @@
   "questions": [
     {
       "id": "OCC-001",
-      "section": null, "block": "A", "topic": "ppe-safety", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "ppe-safety",
+      "type": "theory",
       "question": "When cutting an aluminum cable tray with an angle grinder, what additional PPE is required?",
-      "options": ["A) flame retardant coveralls", "B) face shield", "C) double hearing protection", "D) respirator"],
+      "options": [
+        "A) flame retardant coveralls",
+        "B) face shield",
+        "C) double hearing protection",
+        "D) respirator"
+      ],
       "answer": "Face shield — to protect against flying metal particles and sparks from grinding.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام برش یک aluminum cable tray با angle grinder، چه PPE اضافه‌ای لازم است؟",
+      "options_fa": [
+        "coverall ضد شعله (flame retardant)",
+        "face shield",
+        "double hearing protection",
+        "respirator"
+      ],
+      "answer_fa": "Face shield — برای محافظت در برابر ذرات فلزی پرتاب‌شده و جرقه‌های ناشی از grinding."
     },
     {
       "id": "OCC-002",
-      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-hazard",
+      "type": "theory",
       "question": "When working on the secondary circuit of a transformer, which hazard is present for the available fault current?",
-      "options": ["A) pinch points", "B) arc flash", "C) toxic fumes", "D) hot surfaces"],
+      "options": [
+        "A) pinch points",
+        "B) arc flash",
+        "C) toxic fumes",
+        "D) hot surfaces"
+      ],
       "answer": "Arc flash — the high available fault current on the secondary presents an arc-flash hazard.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام کار روی مدار secondary یک transformer، با توجه به available fault current کدام خطر وجود دارد؟",
+      "options_fa": [
+        "pinch points",
+        "arc flash",
+        "گازهای سمی (toxic fumes)",
+        "سطوح داغ (hot surfaces)"
+      ],
+      "answer_fa": "Arc flash — available fault current بالا در طرف secondary یک خطر arc-flash ایجاد می‌کند."
     },
     {
       "id": "OCC-003",
-      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "lockout",
+      "type": "theory",
       "question": "What is the first step when performing a group lockout procedure?",
-      "options": ["A) Install a lockout hasp", "B) identify the potential energy source", "C) demonstrate zero energy potential", "D) complete the lockout log"],
+      "options": [
+        "A) Install a lockout hasp",
+        "B) identify the potential energy source",
+        "C) demonstrate zero energy potential",
+        "D) complete the lockout log"
+      ],
       "answer": "Identify the potential energy source(s) — the first step before isolating and locking out.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اولین گام هنگام اجرای یک group lockout چیست؟",
+      "options_fa": [
+        "نصب lockout hasp",
+        "شناسایی منبع انرژی بالقوه",
+        "اثبات نبودن انرژی (zero energy potential)",
+        "تکمیل lockout log"
+      ],
+      "answer_fa": "شناسایی منبع (منابع) انرژی بالقوه — اولین گام پیش از isolate و lockout کردن."
     },
     {
       "id": "OCC-004",
-      "section": null, "block": "A", "topic": "test-instruments", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "test-instruments",
+      "type": "theory",
       "question": "What is used to identify hotspots in electrical connections?",
-      "options": ["A) Megohmmeter", "B) hi-pot tester", "C) non-contact voltage detector", "D) infrared camera"],
+      "options": [
+        "A) Megohmmeter",
+        "B) hi-pot tester",
+        "C) non-contact voltage detector",
+        "D) infrared camera"
+      ],
       "answer": "Infrared (thermal imaging) camera — detects heat from loose or high-resistance connections.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای شناسایی hotspot در اتصالات الکتریکی از چه چیزی استفاده می‌شود؟",
+      "options_fa": [
+        "Megohmmeter",
+        "hi-pot tester",
+        "non-contact voltage detector",
+        "infrared camera"
+      ],
+      "answer_fa": "Infrared camera (دوربین thermal imaging) — گرمای ناشی از اتصالات شل یا high-resistance را تشخیص می‌دهد."
     },
     {
       "id": "OCC-005",
-      "section": null, "block": "A", "topic": "site-coordination", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "site-coordination",
+      "type": "theory",
       "question": "Who coordinates the schedule of sub trades on a job site?",
-      "options": ["A) inspector", "B) design engineer", "C) Foreman", "D) general contractor"],
+      "options": [
+        "A) inspector",
+        "B) design engineer",
+        "C) Foreman",
+        "D) general contractor"
+      ],
       "answer": "General contractor — responsible for coordinating the schedule of all sub trades on site.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چه کسی برنامه زمان‌بندی sub trade ها را در یک job site هماهنگ می‌کند؟",
+      "options_fa": [
+        "inspector",
+        "design engineer",
+        "Foreman",
+        "general contractor"
+      ],
+      "answer_fa": "General contractor — مسئول هماهنگی زمان‌بندی همه sub trade ها در site است."
     },
     {
       "id": "OCC-006",
-      "section": null, "block": "A", "topic": "fasteners", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "fasteners",
+      "type": "theory",
       "question": "What anchor is used to attach a surface-mounted electrical panel to a concrete wall?",
-      "options": ["A) drop-in insert", "B) toggle bolt", "C) drywall fastener", "D) leg bolt"],
+      "options": [
+        "A) drop-in insert",
+        "B) toggle bolt",
+        "C) drywall fastener",
+        "D) leg bolt"
+      ],
       "answer": "Drop-in insert (drop-in anchor) — set into concrete to accept a machine screw for the panel.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای نصب یک surface-mounted electrical panel روی دیوار بتنی از کدام anchor استفاده می‌شود؟",
+      "options_fa": [
+        "drop-in insert",
+        "toggle bolt",
+        "drywall fastener",
+        "leg bolt"
+      ],
+      "answer_fa": "Drop-in insert (drop-in anchor) — داخل بتن کار گذاشته می‌شود تا machine screw مربوط به panel را بپذیرد."
     },
     {
       "id": "OCC-007",
-      "section": null, "block": "A", "topic": "fasteners", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "fasteners",
+      "type": "theory",
       "question": "What is used to attach a 60 amp disconnect to a strut channel?",
-      "options": ["A) self-tapping screws and washers", "B) leg bolts and spring nuts", "C) threaded rods and nylon nuts", "D) bolts and spring nuts"],
+      "options": [
+        "A) self-tapping screws and washers",
+        "B) leg bolts and spring nuts",
+        "C) threaded rods and nylon nuts",
+        "D) bolts and spring nuts"
+      ],
       "answer": "Bolts and spring nuts (channel/strut spring nuts) — the standard method to fasten equipment to strut channel.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای نصب یک disconnect ۶۰ amp روی strut channel از چه چیزی استفاده می‌شود؟",
+      "options_fa": [
+        "self-tapping screw و washer",
+        "leg bolt و spring nut",
+        "threaded rod و nylon nut",
+        "bolt و spring nut"
+      ],
+      "answer_fa": "Bolt و spring nut (channel/strut spring nut) — روش استاندارد برای بستن تجهیزات به strut channel."
     },
     {
       "id": "OCC-008",
-      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "torque-spec",
+      "type": "lookup",
       "question": "When verifying bus bar torque specifications before energizing, what is the tightening torque for 1/2-in connecting hardware?",
-      "options": ["A) 26 N·m", "B) 41 N·m", "C) 54 N·m", "D) 75 N·m"],
+      "options": [
+        "A) 26 N·m",
+        "B) 41 N·m",
+        "C) 54 N·m",
+        "D) 75 N·m"
+      ],
       "answer": "54 N·m for 1/2-in connecting hardware (per Table D7).",
       "answer_key": "C",
-      "references": ["Table D7"],
+      "references": [
+        "Table D7"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "هنگام بررسی torque specification های bus bar پیش از energize کردن، tightening torque برای connecting hardware سایز 1/2-in چقدر است؟",
+      "options_fa": [
+        "26 N·m",
+        "41 N·m",
+        "54 N·m",
+        "75 N·m"
+      ],
+      "answer_fa": "54 N·m برای connecting hardware سایز 1/2-in (طبق Table D7)."
     },
     {
       "id": "OCC-009",
-      "section": null, "block": "A", "topic": "troubleshooting", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "troubleshooting",
+      "type": "theory",
       "question": "Following an installation, the insulation on one conductor in a three-phase system is melted on a service breaker and shows signs of burning. What is the cause?",
-      "options": ["A) improper phase sequencing", "B) loose connection", "C) unbalanced load", "D) increased load on the panel"],
+      "options": [
+        "A) improper phase sequencing",
+        "B) loose connection",
+        "C) unbalanced load",
+        "D) increased load on the panel"
+      ],
       "answer": "Loose connection — a high-resistance loose termination generates heat that melts and burns the insulation on that conductor.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "پس از یک نصب، insulation یکی از conductor ها در یک سیستم three-phase روی یک service breaker ذوب شده و نشانه‌های سوختگی دارد. علت چیست؟",
+      "options_fa": [
+        "phase sequencing نادرست",
+        "اتصال شل (loose connection)",
+        "بار نامتعادل (unbalanced load)",
+        "افزایش load روی panel"
+      ],
+      "answer_fa": "اتصال شل (loose connection) — یک termination شل با high-resistance گرما تولید می‌کند که insulation همان conductor را ذوب و می‌سوزاند."
     },
     {
       "id": "OCC-010",
-      "section": null, "block": "A", "topic": "photovoltaic", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "photovoltaic",
+      "type": "theory",
       "question": "When installing a back-fed breaker from a photovoltaic inverter into a residential panel, where is the breaker located in the panel?",
-      "options": ["A) at the adjacent side to the incoming feeder", "B) at the opposite end from the incoming feeder", "C) at any available space in the panel", "D) at a dedicated sub panel"],
+      "options": [
+        "A) at the adjacent side to the incoming feeder",
+        "B) at the opposite end from the incoming feeder",
+        "C) at any available space in the panel",
+        "D) at a dedicated sub panel"
+      ],
       "answer": "At the opposite end from the incoming feeder (the busbar end farthest from the main supply), per the 120% / backfeed connection rule.",
       "answer_key": "B",
-      "references": ["Rule 64 (renewable energy / PV)"],
+      "references": [
+        "Rule 64 (renewable energy / PV)"
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام نصب یک back-fed breaker از یک photovoltaic inverter داخل یک residential panel، این breaker در کجای panel قرار می‌گیرد؟",
+      "options_fa": [
+        "در سمت مجاور incoming feeder",
+        "در انتهای مقابل incoming feeder",
+        "در هر فضای خالی panel",
+        "در یک sub panel اختصاصی"
+      ],
+      "answer_fa": "در انتهای مقابل incoming feeder (انتهای busbar که دورترین فاصله را با main supply دارد)، طبق قانون 120% / backfeed connection."
     },
     {
       "id": "OCC-011",
-      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "generator",
+      "type": "theory",
       "question": "During the initial startup of an AC generator, the phase sequence of the output voltage is incorrect. What is done to achieve the proper phase sequence?",
-      "options": ["A) reverse the position of the pole pieces", "B) Rewind the generator", "C) reverse the polarity of the exciter", "D) interchange any two leads"],
+      "options": [
+        "A) reverse the position of the pole pieces",
+        "B) Rewind the generator",
+        "C) reverse the polarity of the exciter",
+        "D) interchange any two leads"
+      ],
       "answer": "Interchange any two of the output leads to correct the phase sequence.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در startup اولیه یک AC generator، phase sequence ولتاژ خروجی نادرست است. برای رسیدن به phase sequence درست چه کاری انجام می‌شود؟",
+      "options_fa": [
+        "معکوس کردن موقعیت pole piece ها",
+        "rewind کردن generator",
+        "معکوس کردن polarity مربوط به exciter",
+        "جابه‌جا کردن هر دو lead دلخواه"
+      ],
+      "answer_fa": "جابه‌جا کردن هر دو lead خروجی برای اصلاح phase sequence."
     },
     {
       "id": "OCC-012",
-      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "generator",
+      "type": "theory",
       "question": "In cold weather the prime-mover engine will not start on the AC generator. What is the cause?",
-      "options": ["A) The bypass switch is in the test mode", "B) The oil viscosity in the engine is too low", "C) The radiator damper did not open", "D) The battery case heater failed"],
+      "options": [
+        "A) The bypass switch is in the test mode",
+        "B) The oil viscosity in the engine is too low",
+        "C) The radiator damper did not open",
+        "D) The battery case heater failed"
+      ],
       "answer": "The battery case heater failed — cold batteries lose cranking capacity, so the engine will not start in cold weather.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در هوای سرد، prime-mover engine روی AC generator روشن نمی‌شود. علت چیست؟",
+      "options_fa": [
+        "bypass switch در حالت test mode است",
+        "viscosity روغن engine بیش از حد پایین است",
+        "radiator damper باز نشده است",
+        "battery case heater خراب شده است"
+      ],
+      "answer_fa": "battery case heater خراب شده است — battery های سرد ظرفیت cranking خود را از دست می‌دهند، بنابراین engine در هوای سرد روشن نمی‌شود."
     },
     {
       "id": "OCC-013",
-      "section": null, "block": "A", "topic": "photovoltaic", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "photovoltaic",
+      "type": "theory",
       "question": "A rooftop-mounted photovoltaic system is to be designed. After determining the demand load, what is the next step?",
-      "options": ["A) install rooftop mounting rails", "B) determine conductor lengths", "C) perform shading calculations", "D) Mount combiner box and charge controller"],
+      "options": [
+        "A) install rooftop mounting rails",
+        "B) determine conductor lengths",
+        "C) perform shading calculations",
+        "D) Mount combiner box and charge controller"
+      ],
       "answer": "Perform shading calculations — analysis follows load determination, before any physical installation.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "قرار است یک سیستم photovoltaic نصب‌شده روی پشت‌بام طراحی شود. پس از تعیین demand load، گام بعدی چیست؟",
+      "options_fa": [
+        "نصب mounting rail های پشت‌بام",
+        "تعیین طول conductor ها",
+        "انجام shading calculation ها",
+        "نصب combiner box و charge controller"
+      ],
+      "answer_fa": "انجام shading calculation ها — تحلیل پس از تعیین load و پیش از هر نصب فیزیکی انجام می‌شود."
     },
     {
       "id": "OCC-014",
-      "section": null, "block": "A", "topic": "heating-cable", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "heating-cable",
+      "type": "theory",
       "question": "During the installation of an in-floor heating cable set, the cable was tested on the reel and then tested after installation. Before energizing it was noted that the cable resistance is significantly lower than the pre-installation test. What is the cause?",
-      "options": ["A) The in-floor sensor has failed open", "B) The in-floor sensor has failed closed", "C) a staple has penetrated the heating cable", "D) The heating cable spacing is incorrect"],
+      "options": [
+        "A) The in-floor sensor has failed open",
+        "B) The in-floor sensor has failed closed",
+        "C) a staple has penetrated the heating cable",
+        "D) The heating cable spacing is incorrect"
+      ],
       "answer": "A staple has penetrated the heating cable — damaging the insulation and creating a fault that lowers the measured (insulation) resistance.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام نصب یک in-floor heating cable، کابل روی reel تست شد و سپس پس از نصب نیز تست شد. پیش از energize کردن مشخص شد که resistance کابل به طور قابل توجهی کمتر از تست پیش از نصب است. علت چیست؟",
+      "options_fa": [
+        "in-floor sensor به صورت open خراب شده است",
+        "in-floor sensor به صورت closed خراب شده است",
+        "یک staple وارد heating cable شده است",
+        "spacing مربوط به heating cable نادرست است"
+      ],
+      "answer_fa": "یک staple وارد heating cable شده است — به insulation آسیب زده و یک fault ایجاد کرده که insulation resistance اندازه‌گیری‌شده را کاهش می‌دهد."
     },
     {
       "id": "OCC-015",
-      "section": null, "block": "D", "topic": "overload-heater", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "overload-heater",
+      "type": "theory",
       "question": "An overload heater will not reset. What is the cause?",
-      "options": ["A) control fuse has blown", "B) solder pot has cooled", "C) solder pot has melted", "D) control relay is open"],
+      "options": [
+        "A) control fuse has blown",
+        "B) solder pot has cooled",
+        "C) solder pot has melted",
+        "D) control relay is open"
+      ],
       "answer": "The solder pot has melted — in a thermal (eutectic) overload relay a melted solder pot will not re-solidify/latch, so it cannot be reset until cooled or replaced.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک overload heater reset نمی‌شود. علت چیست؟",
+      "options_fa": [
+        "control fuse سوخته است",
+        "solder pot سرد شده است",
+        "solder pot ذوب شده است",
+        "control relay در حالت open است"
+      ],
+      "answer_fa": "solder pot ذوب شده است — در یک thermal (eutectic) overload relay، solder pot ذوب‌شده دوباره جامد/latch نمی‌شود، بنابراین تا سرد یا تعویض نشود قابل reset نیست."
     },
     {
       "id": "OCC-016",
-      "section": null, "block": "A", "topic": "code-authority", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "code-authority",
+      "type": "theory",
       "question": "Which authority presides over the requirements of exit signs?",
-      "options": ["A) Canadian Electrical Code", "B) local electrical inspection department", "C) Canadian Standards Association", "D) National Building Code of Canada"],
+      "options": [
+        "A) Canadian Electrical Code",
+        "B) local electrical inspection department",
+        "C) Canadian Standards Association",
+        "D) National Building Code of Canada"
+      ],
       "answer": "National Building Code of Canada — governs exit sign requirements.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام authority بر الزامات exit sign ها نظارت دارد؟",
+      "options_fa": [
+        "Canadian Electrical Code",
+        "اداره محلی electrical inspection",
+        "Canadian Standards Association",
+        "National Building Code of Canada"
+      ],
+      "answer_fa": "National Building Code of Canada — الزامات exit sign ها را تعیین می‌کند."
     },
     {
       "id": "OCC-017",
-      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "torque-spec",
+      "type": "lookup",
       "question": "When verifying bus bar torque specifications before energizing, what is the tightening torque of 1/2-inch connecting hardware?",
-      "options": ["A) 26 N·m", "B) 41 N·m", "C) 54 N·m", "D) 75 N·m"],
+      "options": [
+        "A) 26 N·m",
+        "B) 41 N·m",
+        "C) 54 N·m",
+        "D) 75 N·m"
+      ],
       "answer": "54 N·m for 1/2-inch connecting hardware (Table D7).",
       "answer_key": "C",
-      "references": ["Table D7"],
+      "references": [
+        "Table D7"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "هنگام بررسی torque specification های bus bar پیش از energize کردن، tightening torque مربوط به connecting hardware سایز 1/2-inch چقدر است؟",
+      "options_fa": [
+        "26 N·m",
+        "41 N·m",
+        "54 N·m",
+        "75 N·m"
+      ],
+      "answer_fa": "54 N·m برای connecting hardware سایز 1/2-inch (Table D7)."
     },
     {
       "id": "OCC-018",
-      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-hazard",
+      "type": "theory",
       "question": "When working on the secondary circuit of a transformer, which hazard is present for the available fault current?",
-      "options": ["A) pinch points", "B) arc flash", "C) toxic fumes", "D) hot surfaces"],
+      "options": [
+        "A) pinch points",
+        "B) arc flash",
+        "C) toxic fumes",
+        "D) hot surfaces"
+      ],
       "answer": "Arc flash — high available fault current on the secondary.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام کار روی مدار secondary یک transformer، با توجه به available fault current کدام خطر وجود دارد؟",
+      "options_fa": [
+        "pinch points",
+        "arc flash",
+        "گازهای سمی (toxic fumes)",
+        "سطوح داغ (hot surfaces)"
+      ],
+      "answer_fa": "Arc flash — available fault current بالا در طرف secondary."
     },
     {
       "id": "OCC-019",
-      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "lockout",
+      "type": "theory",
       "question": "When performing a lock-out procedure, what must be verified to work on the equipment?",
-      "options": ["A) emergency stops have been activated", "B) source of energy has been isolated", "C) supervisor has been given a lock-out key", "D) circuits have been turned off"],
+      "options": [
+        "A) emergency stops have been activated",
+        "B) source of energy has been isolated",
+        "C) supervisor has been given a lock-out key",
+        "D) circuits have been turned off"
+      ],
       "answer": "The source of energy has been isolated — verified before working on the equipment.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام اجرای یک lock-out، برای کار روی تجهیزات چه چیزی باید verify شود؟",
+      "options_fa": [
+        "emergency stop ها فعال شده‌اند",
+        "منبع انرژی isolate شده است",
+        "یک lock-out key به supervisor داده شده است",
+        "مدارها خاموش شده‌اند"
+      ],
+      "answer_fa": "منبع انرژی isolate شده است — پیش از کار روی تجهیزات verify می‌شود."
     },
     {
       "id": "OCC-020",
-      "section": null, "block": "A", "topic": "gfci", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "gfci",
+      "type": "theory",
       "question": "When performing regular testing of a GFCI receptacle on a pool deck, the receptacle fails to reset. What is the cause?",
-      "options": ["A) faulty receptacle", "B) overvoltage to the receptacle", "C) receptacle is not grounded", "D) open ground"],
+      "options": [
+        "A) faulty receptacle",
+        "B) overvoltage to the receptacle",
+        "C) receptacle is not grounded",
+        "D) open ground"
+      ],
       "answer": "Faulty receptacle — with power present and no active ground fault, a GFCI that will not reset indicates a defective device. (A Class A GFCI trips at a 5 mA ground-fault current.)",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام تست منظم یک GFCI receptacle روی pool deck، این receptacle reset نمی‌شود. علت چیست؟",
+      "options_fa": [
+        "receptacle معیوب",
+        "overvoltage به receptacle",
+        "receptacle ground نشده است",
+        "open ground"
+      ],
+      "answer_fa": "receptacle معیوب — وقتی power وجود دارد و هیچ ground fault فعالی نیست، GFCI ای که reset نمی‌شود نشان‌دهنده یک device معیوب است. (یک Class A GFCI در ground-fault current معادل 5 mA trip می‌کند.)"
     },
     {
       "id": "OCC-021",
-      "section": null, "block": "A", "topic": "inspection", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "inspection",
+      "type": "theory",
       "question": "When is a rough-in inspection required?",
-      "options": ["A) before any portion of work is concealed", "B) before the main service is installed", "C) after the devices are installed", "D) after the grounding is completed"],
+      "options": [
+        "A) before any portion of work is concealed",
+        "B) before the main service is installed",
+        "C) after the devices are installed",
+        "D) after the grounding is completed"
+      ],
       "answer": "Before any portion of the work is concealed (covered by drywall, concrete, etc.).",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "rough-in inspection چه زمانی لازم است؟",
+      "options_fa": [
+        "پیش از پوشانده شدن هر بخشی از کار",
+        "پیش از نصب main service",
+        "پس از نصب device ها",
+        "پس از تکمیل grounding"
+      ],
+      "answer_fa": "پیش از پوشانده شدن هر بخشی از کار (با drywall، بتن و غیره)."
     },
     {
       "id": "OCC-022",
-      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "torque-spec",
+      "type": "lookup",
       "question": "When installing HVAC equipment, what is the torque setting for 1/4-inch bolts?",
-      "options": ["A) 8 N·m", "B) 9 N·m", "C) 12 N·m", "D) 22.6 N·m"],
+      "options": [
+        "A) 8 N·m",
+        "B) 9 N·m",
+        "C) 12 N·m",
+        "D) 22.6 N·m"
+      ],
       "answer": "8 N·m for 1/4-inch bolts (per the manufacturer/HVAC torque table).",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "هنگام نصب تجهیزات HVAC، torque setting برای bolt های سایز 1/4-inch چقدر است؟",
+      "options_fa": [
+        "8 N·m",
+        "9 N·m",
+        "12 N·m",
+        "22.6 N·m"
+      ],
+      "answer_fa": "8 N·m برای bolt های سایز 1/4-inch (طبق torque table سازنده/HVAC)."
     },
     {
       "id": "OCC-023",
-      "section": null, "block": "A", "topic": "ppe-safety", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "ppe-safety",
+      "type": "theory",
       "question": "When cutting aluminum cable tray with an angle grinder, what additional PPE is required?",
-      "options": ["A) flame retardant coveralls", "B) face shield", "C) double hearing protection", "D) respirator"],
+      "options": [
+        "A) flame retardant coveralls",
+        "B) face shield",
+        "C) double hearing protection",
+        "D) respirator"
+      ],
       "answer": "Face shield — protection from flying particles and sparks.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام برش aluminum cable tray با angle grinder، چه PPE اضافه‌ای لازم است؟",
+      "options_fa": [
+        "coverall ضد شعله (flame retardant)",
+        "face shield",
+        "double hearing protection",
+        "respirator"
+      ],
+      "answer_fa": "Face shield — محافظت در برابر ذرات پرتاب‌شده و جرقه‌ها."
     },
     {
       "id": "OCC-024",
-      "section": null, "block": "A", "topic": "troubleshooting", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "troubleshooting",
+      "type": "theory",
       "question": "When commissioning a 15 A countertop split receptacle, the circuit breaker trips instantly. What is done?",
-      "options": ["A) verify if the tab is broken on the neutral side of the receptacle", "B) verify if the tab is broken on the ungrounded side of the receptacle", "C) verify if the receptacle is bonded", "D) verify the phasing of the breaker in the panel"],
+      "options": [
+        "A) verify if the tab is broken on the neutral side of the receptacle",
+        "B) verify if the tab is broken on the ungrounded side of the receptacle",
+        "C) verify if the receptacle is bonded",
+        "D) verify the phasing of the breaker in the panel"
+      ],
       "answer": "Verify whether the tab on the ungrounded (hot) side of the receptacle is broken — a split receptacle requires the hot tab removed; if intact it shorts the two phases and trips the breaker.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام commissioning یک split receptacle رومیزی 15 A، circuit breaker بلافاصله trip می‌کند. چه کاری انجام می‌شود؟",
+      "options_fa": [
+        "بررسی اینکه آیا tab در سمت neutral مربوط به receptacle شکسته شده است",
+        "بررسی اینکه آیا tab در سمت ungrounded مربوط به receptacle شکسته شده است",
+        "بررسی اینکه آیا receptacle bond شده است",
+        "بررسی phasing مربوط به breaker در panel"
+      ],
+      "answer_fa": "بررسی اینکه آیا tab در سمت ungrounded (hot) مربوط به receptacle شکسته شده است — یک split receptacle نیاز دارد که hot tab برداشته شود؛ اگر سالم بماند دو phase را به هم short می‌کند و breaker را trip می‌کند."
     },
     {
       "id": "OCC-025",
-      "section": null, "block": "D", "topic": "control-circuit", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "control-circuit",
+      "type": "theory",
       "question": "When a magnetic starter is installed with a holding contact connected in parallel with the start button, which type of protection is provided?",
-      "options": ["A) low voltage protection", "B) overvoltage protection", "C) low current protection", "D) overcurrent protection"],
+      "options": [
+        "A) low voltage protection",
+        "B) overvoltage protection",
+        "C) low current protection",
+        "D) overcurrent protection"
+      ],
       "answer": "Low-voltage protection — on voltage loss the coil drops out and the holding contact opens, requiring a manual restart (three-wire control).",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی یک magnetic starter با یک holding contact به صورت parallel با start button نصب می‌شود، چه نوع protection ای فراهم می‌شود؟",
+      "options_fa": [
+        "low voltage protection",
+        "overvoltage protection",
+        "low current protection",
+        "overcurrent protection"
+      ],
+      "answer_fa": "Low-voltage protection — با از دست رفتن ولتاژ، coil قطع می‌شود و holding contact باز می‌شود و نیاز به restart دستی دارد (three-wire control)."
     },
     {
       "id": "OCC-026",
-      "section": null, "block": "D", "topic": "vfd", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "vfd",
+      "type": "theory",
       "question": "What is the procedure for an initial startup of a VFD?",
-      "options": ["A) program relevant parameters, bump test, energize VFD, then run", "B) program relevant parameters, energize VFD, bump test, then run", "C) Energize VFD, bump test, program relevant parameters, then run", "D) energize VFD, program relevant parameters, bump test, then run"],
+      "options": [
+        "A) program relevant parameters, bump test, energize VFD, then run",
+        "B) program relevant parameters, energize VFD, bump test, then run",
+        "C) Energize VFD, bump test, program relevant parameters, then run",
+        "D) energize VFD, program relevant parameters, bump test, then run"
+      ],
       "answer": "Energize the VFD, program the relevant parameters, bump test (verify rotation), then run. Parameters must be set before any rotation test.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "روال startup اولیه یک VFD چیست؟",
+      "options_fa": [
+        "program کردن parameter های مربوطه، bump test، energize کردن VFD، سپس run",
+        "program کردن parameter های مربوطه، energize کردن VFD، bump test، سپس run",
+        "energize کردن VFD، bump test، program کردن parameter های مربوطه، سپس run",
+        "energize کردن VFD، program کردن parameter های مربوطه، bump test، سپس run"
+      ],
+      "answer_fa": "energize کردن VFD، program کردن parameter های مربوطه، bump test (تأیید جهت چرخش)، سپس run. parameter ها باید پیش از هر rotation test تنظیم شوند."
     },
     {
       "id": "OCC-027",
-      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "torque-spec",
+      "type": "lookup",
       "question": "What is the minimum torque required to secure a connection between two 2/0 AWG conductors with a hex-headed lug (split-bolt)?",
-      "options": ["A) 5.6 N·m", "B) 20.3 N·m", "C) 31.1 N·m", "D) 43.5 N·m"],
+      "options": [
+        "A) 5.6 N·m",
+        "B) 20.3 N·m",
+        "C) 31.1 N·m",
+        "D) 43.5 N·m"
+      ],
       "answer": "31.1 N·m for 2/0 AWG in a hex-head split-bolt connector (per the connector torque table).",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل torque لازم برای محکم کردن اتصال بین دو conductor سایز 2/0 AWG با یک hex-headed lug (split-bolt) چقدر است؟",
+      "options_fa": [
+        "5.6 N·m",
+        "20.3 N·m",
+        "31.1 N·m",
+        "43.5 N·m"
+      ],
+      "answer_fa": "31.1 N·m برای 2/0 AWG در یک hex-head split-bolt connector (طبق torque table مربوط به connector)."
     },
     {
       "id": "OCC-028",
-      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "lockout",
+      "type": "theory",
       "question": "What is the first step when performing a group lock-out procedure?",
-      "options": ["A) install a lock-out hasp", "B) identify the potential energy sources", "C) demonstrate zero energy potential", "D) complete the lock-out log"],
+      "options": [
+        "A) install a lock-out hasp",
+        "B) identify the potential energy sources",
+        "C) demonstrate zero energy potential",
+        "D) complete the lock-out log"
+      ],
       "answer": "Identify the potential energy sources.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اولین گام هنگام اجرای یک group lock-out چیست؟",
+      "options_fa": [
+        "نصب lock-out hasp",
+        "شناسایی منابع انرژی بالقوه",
+        "اثبات نبودن انرژی (zero energy potential)",
+        "تکمیل lock-out log"
+      ],
+      "answer_fa": "شناسایی منابع انرژی بالقوه."
     },
     {
       "id": "OCC-029",
-      "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "hvac-controls",
+      "type": "theory",
       "question": "The thermostat controlling a central heater is calling for heat. What happens if the circulating fan fails to start?",
-      "options": ["A) the high limit switch opens and the solenoid de-energizes", "B) the high limit switch remains closed and the solenoid remains energized", "C) the high limit switch opens and the solenoid remains energized", "D) the high limit switch remains closed and the solenoid de-energizes"],
+      "options": [
+        "A) the high limit switch opens and the solenoid de-energizes",
+        "B) the high limit switch remains closed and the solenoid remains energized",
+        "C) the high limit switch opens and the solenoid remains energized",
+        "D) the high limit switch remains closed and the solenoid de-energizes"
+      ],
       "answer": "The high-limit switch opens and the gas-valve solenoid de-energizes — without airflow the heat exchanger overheats, the high-limit opens and shuts off the heat source.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "thermostat کنترل‌کننده یک central heater در حال call for heat است. اگر circulating fan روشن نشود چه اتفاقی می‌افتد؟",
+      "options_fa": [
+        "high limit switch باز می‌شود و solenoid de-energize می‌شود",
+        "high limit switch closed می‌ماند و solenoid energize می‌ماند",
+        "high limit switch باز می‌شود و solenoid energize می‌ماند",
+        "high limit switch closed می‌ماند و solenoid de-energize می‌شود"
+      ],
+      "answer_fa": "high-limit switch باز می‌شود و solenoid مربوط به gas-valve نیز de-energize می‌شود — بدون airflow، heat exchanger بیش از حد گرم می‌شود، high-limit باز می‌شود و منبع گرما را قطع می‌کند."
     },
     {
       "id": "OCC-030",
-      "section": null, "block": "A", "topic": "transformer-fault-current", "type": "calculation",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-fault-current",
+      "type": "calculation",
       "question": "The percentage impedance of a 225 kVA, 600-120/208 V, 3-phase transformer is 2.5%. When replacing the overcurrent protection on the secondary, what is the minimum short-circuit rating required?",
-      "options": ["A) 625 A", "B) 1,083 A", "C) 18,872 A", "D) 24,982 A"],
+      "options": [
+        "A) 625 A",
+        "B) 1,083 A",
+        "C) 18,872 A",
+        "D) 24,982 A"
+      ],
       "answer": "24,982 A (secondary FLC ÷ %Z: 225 kVA at 208 V 3-phase = 624.6 A; 624.6 ÷ 0.025 = 24,984 A).",
       "answer_key": "D",
       "references": [],
@@ -308,43 +786,107 @@
         "The interrupting rating of the OCPD must equal or exceed the available short-circuit current."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "percentage impedance یک transformer سه‌فاز 225 kVA با 600-120/208 V برابر 2.5% است. هنگام تعویض overcurrent protection روی secondary، حداقل short-circuit rating لازم چقدر است؟",
+      "options_fa": [
+        "625 A",
+        "1,083 A",
+        "18,872 A",
+        "24,982 A"
+      ],
+      "answer_fa": "24,982 A (secondary FLC ÷ %Z: 225 kVA در 208 V سه‌فاز = 624.6 A؛ 624.6 ÷ 0.025 = 24,984 A)."
     },
     {
       "id": "OCC-031",
-      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "generator",
+      "type": "theory",
       "question": "In cold weather, the prime-mover engine will not start on an AC generator. What is the cause?",
-      "options": ["A) the bypass switch is in test mode", "B) the oil viscosity in the engine is too low", "C) the radiator damper did not open", "D) the battery case heater failed"],
+      "options": [
+        "A) the bypass switch is in test mode",
+        "B) the oil viscosity in the engine is too low",
+        "C) the radiator damper did not open",
+        "D) the battery case heater failed"
+      ],
       "answer": "The battery case heater failed — cold batteries cannot crank the engine.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در هوای سرد، prime-mover engine روی یک AC generator روشن نمی‌شود. علت چیست؟",
+      "options_fa": [
+        "bypass switch در test mode است",
+        "viscosity روغن engine بیش از حد پایین است",
+        "radiator damper باز نشده است",
+        "battery case heater خراب شده است"
+      ],
+      "answer_fa": "battery case heater خراب شده است — battery های سرد نمی‌توانند engine را crank کنند."
     },
     {
       "id": "OCC-032",
-      "section": null, "block": "D", "topic": "control-circuit", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "control-circuit",
+      "type": "theory",
       "question": "In a 3-wire motor control circuit, the start button energizes the coil, but it drops out when the start button is released. What is the cause?",
-      "options": ["A) Faulty holding contact", "B) tripped overload contact", "C) faulty magnetic coil", "D) incorrect coil voltage"],
+      "options": [
+        "A) Faulty holding contact",
+        "B) tripped overload contact",
+        "C) faulty magnetic coil",
+        "D) incorrect coil voltage"
+      ],
       "answer": "Faulty holding (seal-in) contact — it fails to maintain the coil circuit after the start button is released.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در یک مدار 3-wire motor control، start button، coil را energize می‌کند، اما با رها کردن start button قطع می‌شود. علت چیست؟",
+      "options_fa": [
+        "holding contact معیوب",
+        "overload contact مربوط trip شده",
+        "magnetic coil معیوب",
+        "coil voltage نادرست"
+      ],
+      "answer_fa": "holding (seal-in) contact معیوب — پس از رها کردن start button نمی‌تواند مدار coil را برقرار نگه دارد."
     },
     {
       "id": "OCC-033",
-      "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "hvac-controls",
+      "type": "theory",
       "question": "An occupancy sensor controls the heating system of a building; the internal temperature is 15°C while occupied. The occupied set-point temperature is programmed for 21°C. What is the cause?",
-      "options": ["A) the thermostat is in heat only", "B) occupancy sensor is failed open", "C) sensitivity setting of sensor is set too high", "D) the thermostat is failed closed"],
+      "options": [
+        "A) the thermostat is in heat only",
+        "B) occupancy sensor is failed open",
+        "C) sensitivity setting of sensor is set too high",
+        "D) the thermostat is failed closed"
+      ],
       "answer": "The occupancy sensor has failed open — the system reads the space as unoccupied and holds the lower setback temperature instead of heating to the 21°C occupied set point.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک occupancy sensor سیستم heating یک ساختمان را کنترل می‌کند؛ دمای داخلی هنگام occupied برابر 15°C است. set-point دمای occupied روی 21°C program شده است. علت چیست؟",
+      "options_fa": [
+        "thermostat در حالت heat only است",
+        "occupancy sensor به صورت open خراب شده است",
+        "تنظیم sensitivity مربوط به sensor بیش از حد بالا است",
+        "thermostat به صورت closed خراب شده است"
+      ],
+      "answer_fa": "occupancy sensor به صورت open خراب شده است — سیستم فضا را به عنوان unoccupied می‌خواند و دمای پایین‌تر setback را نگه می‌دارد، به جای آنکه تا set point مربوط به occupied یعنی 21°C گرم کند."
     },
     {
       "id": "OCC-034",
-      "section": null, "block": "A", "topic": "controls-signal", "type": "calculation",
+      "section": null,
+      "block": "A",
+      "topic": "controls-signal",
+      "type": "calculation",
       "question": "An outdoor air damper has an 85% open command on the 4-20 mA signal. What is the output amperage?",
-      "options": ["A) 13.6 mA", "B) 17.0 mA", "C) 17.6 mA", "D) 18.8 mA"],
+      "options": [
+        "A) 13.6 mA",
+        "B) 17.0 mA",
+        "C) 17.6 mA",
+        "D) 18.8 mA"
+      ],
       "answer": "17.6 mA (4 mA + 0.85 × 16 mA span = 4 + 13.6 = 17.6 mA).",
       "answer_key": "C",
       "references": [],
@@ -353,34 +895,84 @@
         "Output = 4 mA + (85% × 16 mA) = 4 + 13.6 = 17.6 mA → answer C."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک outdoor air damper یک command معادل 85% باز روی signal مربوط به 4-20 mA دارد. amperage خروجی چقدر است؟",
+      "options_fa": [
+        "13.6 mA",
+        "17.0 mA",
+        "17.6 mA",
+        "18.8 mA"
+      ],
+      "answer_fa": "17.6 mA (4 mA + 0.85 × 16 mA span = 4 + 13.6 = 17.6 mA)."
     },
     {
       "id": "OCC-035",
-      "section": null, "block": "A", "topic": "emergency-power", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "emergency-power",
+      "type": "theory",
       "question": "An AC generator is installed to supply emergency power for a life safety system. What is the raceway installation requirement for the conductor supplying associated equipment?",
-      "options": ["A) installed in a rigid metal conduit with mechanical protection", "B) installed in a rigid PVC conduit with mechanical protection", "C) embedded in concrete providing 30 min fire rating", "D) embedded in concrete providing 60 min fire rating"],
+      "options": [
+        "A) installed in a rigid metal conduit with mechanical protection",
+        "B) installed in a rigid PVC conduit with mechanical protection",
+        "C) embedded in concrete providing 30 min fire rating",
+        "D) embedded in concrete providing 60 min fire rating"
+      ],
       "answer": "Installed in rigid metal conduit with mechanical protection — the standard wiring method for emergency/life-safety supply conductors. (Section 46 also permits other protected methods; the concrete fire-rating option is the alternative the question contrasts against, so the exact keyed answer should be confirmed against Section 46.)",
       "answer_key": "A",
-      "references": ["Section 46 (emergency systems)"],
+      "references": [
+        "Section 46 (emergency systems)"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک AC generator برای تأمین emergency power یک life safety system نصب شده است. الزام نصب raceway برای conductor تأمین‌کننده تجهیزات مرتبط چیست؟",
+      "options_fa": [
+        "نصب در یک rigid metal conduit با mechanical protection",
+        "نصب در یک rigid PVC conduit با mechanical protection",
+        "embed شده در بتن با fire rating معادل 30 min",
+        "embed شده در بتن با fire rating معادل 60 min"
+      ],
+      "answer_fa": "نصب در rigid metal conduit با mechanical protection — روش استاندارد wiring برای conductor های تأمین emergency/life-safety. (Section 46 روش‌های protected دیگری را نیز مجاز می‌داند؛ گزینه fire-rating بتنی، جایگزینی است که سؤال آن را مقابل قرار می‌دهد، بنابراین پاسخ keyed دقیق باید با Section 46 تأیید شود.)"
     },
     {
       "id": "OCC-036",
-      "section": null, "block": "D", "topic": "overload-heater", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "overload-heater",
+      "type": "theory",
       "question": "An overload heater will not reset. What is the cause?",
-      "options": ["A) Control fuse has blown", "B) solder pot has cooled", "C) solder pot has melted", "D) control relay is open"],
+      "options": [
+        "A) Control fuse has blown",
+        "B) solder pot has cooled",
+        "C) solder pot has melted",
+        "D) control relay is open"
+      ],
       "answer": "The solder pot has melted — a thermal (eutectic) overload relay whose solder pot has melted will not latch/reset until it cools or is replaced.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک overload heater reset نمی‌شود. علت چیست؟",
+      "options_fa": [
+        "control fuse سوخته است",
+        "solder pot سرد شده است",
+        "solder pot ذوب شده است",
+        "control relay در حالت open است"
+      ],
+      "answer_fa": "solder pot ذوب شده است — یک thermal (eutectic) overload relay که solder pot آن ذوب شده تا سرد یا تعویض نشود latch/reset نمی‌شود."
     },
     {
       "id": "OCC-037",
-      "section": null, "block": "A", "topic": "transformer-theory", "type": "calculation",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-theory",
+      "type": "calculation",
       "question": "An autotransformer with 300 turns is connected to a 600 V line. Which turn number is used to tap the secondary for a 120 V output?",
-      "options": ["A) 60", "B) 80", "C) 120", "D) 240"],
+      "options": [
+        "A) 60",
+        "B) 80",
+        "C) 120",
+        "D) 240"
+      ],
       "answer": "60 turns (turns-per-volt = 300 ÷ 600 = 0.5; 120 V × 0.5 = 60 turns).",
       "answer_key": "A",
       "references": [],
@@ -389,155 +981,399 @@
         "For 120 V output: 120 × 0.5 = 60 turns → tap at turn 60 → answer A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک autotransformer با 300 turns به یک خط 600 V متصل است. برای tap کردن secondary جهت خروجی 120 V از کدام شماره turn استفاده می‌شود؟",
+      "options_fa": [
+        "60",
+        "80",
+        "120",
+        "240"
+      ],
+      "answer_fa": "60 turns (turns-per-volt = 300 ÷ 600 = 0.5؛ 120 V × 0.5 = 60 turns)."
     },
     {
       "id": "OCC-038",
-      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "generator",
+      "type": "theory",
       "question": "An AC generator in a plant did not start during a power outage. What is the cause?",
-      "options": ["A) the utility breaker is open", "B) the output breaker is open", "C) the transfer switch was left in the auto position", "D) the battery charger failed to charge the batteries"],
+      "options": [
+        "A) the utility breaker is open",
+        "B) the output breaker is open",
+        "C) the transfer switch was left in the auto position",
+        "D) the battery charger failed to charge the batteries"
+      ],
       "answer": "The battery charger failed to charge the batteries — dead/undercharged starting batteries prevent the generator from starting on an outage.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک AC generator در یک کارخانه در حین یک power outage روشن نشد. علت چیست؟",
+      "options_fa": [
+        "utility breaker در حالت open است",
+        "output breaker در حالت open است",
+        "transfer switch در موقعیت auto رها شده است",
+        "battery charger نتوانست battery ها را شارژ کند"
+      ],
+      "answer_fa": "battery charger نتوانست battery ها را شارژ کند — battery های starting خالی/کم‌شارژ مانع روشن شدن generator در outage می‌شوند."
     },
     {
       "id": "OCC-039",
-      "section": null, "block": "A", "topic": "photovoltaic", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "photovoltaic",
+      "type": "theory",
       "question": "A rooftop-mounted photovoltaic system is to be installed. After determining demand load, what is the next step?",
-      "options": ["A) install rooftop mounting rails", "B) determine conductor lengths", "C) perform shading calculations", "D) mount combiner box and charge controller"],
+      "options": [
+        "A) install rooftop mounting rails",
+        "B) determine conductor lengths",
+        "C) perform shading calculations",
+        "D) mount combiner box and charge controller"
+      ],
       "answer": "Perform shading calculations.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "قرار است یک سیستم photovoltaic نصب‌شده روی پشت‌بام نصب شود. پس از تعیین demand load، گام بعدی چیست؟",
+      "options_fa": [
+        "نصب mounting rail های پشت‌بام",
+        "تعیین طول conductor ها",
+        "انجام shading calculation ها",
+        "نصب combiner box و charge controller"
+      ],
+      "answer_fa": "انجام shading calculation ها."
     },
     {
       "id": "OCC-040",
-      "section": null, "block": "D", "topic": "motor-testing", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "motor-testing",
+      "type": "theory",
       "question": "After installing a three-phase motor, your foreman asks you to \"bump\" the motor. What will the test indicate?",
-      "options": ["A) Inrush current", "B) Direction of rotation", "C) Resistance of winding", "D) Stability of motor"],
+      "options": [
+        "A) Inrush current",
+        "B) Direction of rotation",
+        "C) Resistance of winding",
+        "D) Stability of motor"
+      ],
       "answer": "Direction of rotation — a bump test momentarily energizes the motor to confirm correct rotation.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "پس از نصب یک موتور three-phase، foreman شما از شما می‌خواهد موتور را «bump» کنید. این test چه چیزی را نشان می‌دهد؟",
+      "options_fa": [
+        "Inrush current",
+        "جهت چرخش (Direction of rotation)",
+        "resistance مربوط به winding",
+        "پایداری موتور (Stability)"
+      ],
+      "answer_fa": "جهت چرخش (Direction of rotation) — یک bump test موتور را لحظه‌ای energize می‌کند تا چرخش درست تأیید شود."
     },
     {
       "id": "OCC-041",
-      "section": null, "block": "A", "topic": "drawings", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "drawings",
+      "type": "theory",
       "question": "For information about a building footing, which drawing is needed?",
-      "options": ["A) Electrical", "B) Structural", "C) Mechanical", "D) Layout"],
+      "options": [
+        "A) Electrical",
+        "B) Structural",
+        "C) Mechanical",
+        "D) Layout"
+      ],
       "answer": "Structural drawing — footings are shown on the structural drawings.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای کسب اطلاعات درباره footing یک ساختمان، کدام drawing لازم است؟",
+      "options_fa": [
+        "Electrical",
+        "Structural",
+        "Mechanical",
+        "Layout"
+      ],
+      "answer_fa": "Structural drawing — footing ها روی structural drawing ها نشان داده می‌شوند."
     },
     {
       "id": "OCC-042",
-      "section": null, "block": "A", "topic": "conductor-identification", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "conductor-identification",
+      "type": "theory",
       "question": "How do you identify a neutral conductor when the size of the wire is #2 AWG or smaller?",
-      "options": ["A) Green", "B) Pink", "C) Marking end (both sides)", "D) White"],
+      "options": [
+        "A) Green",
+        "B) Pink",
+        "C) Marking end (both sides)",
+        "D) White"
+      ],
       "answer": "White — neutral (identified) conductors #2 AWG and smaller are identified by continuous white (or grey) insulation.",
       "answer_key": "D",
-      "references": ["Rule 4-024 / 4-036 (identified conductors)"],
+      "references": [
+        "Rule 4-024 / 4-036 (identified conductors)"
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "زمانی که سایز سیم #2 AWG یا کوچک‌تر باشد، چگونه یک neutral conductor را شناسایی می‌کنید؟",
+      "options_fa": [
+        "Green",
+        "Pink",
+        "علامت‌گذاری انتها (هر دو طرف)",
+        "White"
+      ],
+      "answer_fa": "White — neutral conductor های (identified) سایز #2 AWG و کوچک‌تر با insulation یکپارچه سفید (یا خاکستری) شناسایی می‌شوند."
     },
     {
       "id": "OCC-043",
-      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "lockout",
+      "type": "theory",
       "question": "What is the first thing for a group lock-out?",
-      "options": ["A) Shut down equipment", "B) Meeting", "C) Isolate equipment", "D) Identify all energy sources"],
+      "options": [
+        "A) Shut down equipment",
+        "B) Meeting",
+        "C) Isolate equipment",
+        "D) Identify all energy sources"
+      ],
       "answer": "Identify all energy sources — the first step of a group lock-out.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اولین کار برای یک group lock-out چیست؟",
+      "options_fa": [
+        "خاموش کردن تجهیزات (Shut down)",
+        "Meeting",
+        "Isolate کردن تجهیزات",
+        "شناسایی همه منابع انرژی"
+      ],
+      "answer_fa": "شناسایی همه منابع انرژی — اولین گام یک group lock-out."
     },
     {
       "id": "OCC-044",
-      "section": null, "block": "E", "topic": "plc-drawings", "type": "theory",
+      "section": null,
+      "block": "E",
+      "topic": "plc-drawings",
+      "type": "theory",
       "question": "What drawing shows the programming of a PLC?",
-      "options": ["A) Logic", "B) Layout", "C) Single line", "D) Schematic"],
+      "options": [
+        "A) Logic",
+        "B) Layout",
+        "C) Single line",
+        "D) Schematic"
+      ],
       "answer": "Logic (ladder logic) diagram shows the PLC programming.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام drawing برنامه‌نویسی یک PLC را نشان می‌دهد؟",
+      "options_fa": [
+        "Logic",
+        "Layout",
+        "Single line",
+        "Schematic"
+      ],
+      "answer_fa": "Logic (ladder logic) diagram برنامه‌نویسی PLC را نشان می‌دهد."
     },
     {
       "id": "OCC-045",
-      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "torque-spec",
+      "type": "lookup",
       "question": "What is the amount of torque when using 1/2-inch connection hardware?",
-      "options": ["A) 54 N·m", "B) 41 N·m", "C) 37.5 N·m", "D) 45 N·m"],
+      "options": [
+        "A) 54 N·m",
+        "B) 41 N·m",
+        "C) 37.5 N·m",
+        "D) 45 N·m"
+      ],
       "answer": "54 N·m for 1/2-inch connection hardware (Table D7).",
       "answer_key": "A",
-      "references": ["Table D7"],
+      "references": [
+        "Table D7"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "هنگام استفاده از connection hardware سایز 1/2-inch مقدار torque چقدر است؟",
+      "options_fa": [
+        "54 N·m",
+        "41 N·m",
+        "37.5 N·m",
+        "45 N·m"
+      ],
+      "answer_fa": "54 N·m برای connection hardware سایز 1/2-inch (Table D7)."
     },
     {
       "id": "OCC-046",
-      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "torque-spec",
+      "type": "lookup",
       "question": "What is the amount of torque for HVAC when using 1/4-inch bolt hardware?",
-      "options": ["A) 8 N·m", "B) 3 N·m", "C) 15 N·m", "D) 26 N·m"],
+      "options": [
+        "A) 8 N·m",
+        "B) 3 N·m",
+        "C) 15 N·m",
+        "D) 26 N·m"
+      ],
       "answer": "8 N·m for 1/4-inch HVAC hardware.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "برای HVAC هنگام استفاده از bolt hardware سایز 1/4-inch مقدار torque چقدر است؟",
+      "options_fa": [
+        "8 N·m",
+        "3 N·m",
+        "15 N·m",
+        "26 N·m"
+      ],
+      "answer_fa": "8 N·m برای hardware سایز 1/4-inch مربوط به HVAC."
     },
     {
       "id": "OCC-047",
-      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-hazard",
+      "type": "theory",
       "question": "What is the hazard when working on the primary of a transformer?",
-      "options": ["A) Back-feed", "B) Arc-flash", "C) Hot surface", "D) Energized core"],
+      "options": [
+        "A) Back-feed",
+        "B) Arc-flash",
+        "C) Hot surface",
+        "D) Energized core"
+      ],
       "answer": "Back-feed — the primary can be energized from the secondary side (back-feed), so it may be live even when the primary supply is isolated. This pairs with the secondary-side hazard, which is arc flash.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام کار روی primary یک transformer چه خطری وجود دارد؟",
+      "options_fa": [
+        "Back-feed",
+        "Arc-flash",
+        "سطح داغ (Hot surface)",
+        "هسته energize‌شده (Energized core)"
+      ],
+      "answer_fa": "Back-feed — primary می‌تواند از طرف secondary انرژی بگیرد (back-feed)، بنابراین حتی وقتی primary supply نیز isolate شده باشد ممکن است برق‌دار باشد. این موضوع همتای خطر طرف secondary است که arc flash می‌باشد."
     },
     {
       "id": "OCC-048",
-      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-hazard",
+      "type": "theory",
       "question": "What is the hazard when working on the secondary of a transformer?",
-      "options": ["A) Back-feed", "B) Hot surface", "C) Energized core", "D) Arc flash"],
+      "options": [
+        "A) Back-feed",
+        "B) Hot surface",
+        "C) Energized core",
+        "D) Arc flash"
+      ],
       "answer": "Arc flash — the high available fault current on the secondary presents an arc-flash hazard.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام کار روی secondary یک transformer چه خطری وجود دارد؟",
+      "options_fa": [
+        "Back-feed",
+        "سطح داغ (Hot surface)",
+        "هسته energize‌شده (Energized core)",
+        "Arc flash"
+      ],
+      "answer_fa": "Arc flash — available fault current بالا در طرف secondary یک خطر arc-flash ایجاد می‌کند."
     },
     {
       "id": "OCC-049",
-      "section": null, "block": "A", "topic": "ppe-safety", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "ppe-safety",
+      "type": "lookup",
       "question": "What is the periodic test time for high-voltage gloves in storage?",
-      "options": ["A) 365 days", "B) 180 days", "C) 90 days", "D) 270 days"],
+      "options": [
+        "A) 365 days",
+        "B) 180 days",
+        "C) 90 days",
+        "D) 270 days"
+      ],
       "answer": "365 days — rubber insulating gloves in storage (not issued for use) must be retested within 12 months.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "زمان test دوره‌ای برای high-voltage glove هایی که در storage هستند چقدر است؟",
+      "options_fa": [
+        "365 days",
+        "180 days",
+        "90 days",
+        "270 days"
+      ],
+      "answer_fa": "365 days — rubber insulating glove هایی که در storage هستند (برای استفاده issue نشده‌اند) باید ظرف 12 ماه دوباره test شوند."
     },
     {
       "id": "OCC-050",
-      "section": null, "block": "A", "topic": "ppe-safety", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "ppe-safety",
+      "type": "lookup",
       "question": "What is the periodic test time for high-voltage gloves in use?",
-      "options": ["A) 90 days", "B) 360 days", "C) 270 days", "D) 180 days"],
+      "options": [
+        "A) 90 days",
+        "B) 360 days",
+        "C) 270 days",
+        "D) 180 days"
+      ],
       "answer": "180 days — rubber insulating gloves in service must be retested at 6-month intervals.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "زمان test دوره‌ای برای high-voltage glove هایی که in use هستند چقدر است؟",
+      "options_fa": [
+        "90 days",
+        "360 days",
+        "270 days",
+        "180 days"
+      ],
+      "answer_fa": "180 days — rubber insulating glove هایی که in service هستند باید در فواصل 6 ماهه دوباره test شوند."
     },
     {
       "id": "OCC-051",
-      "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "hvac-controls",
+      "type": "theory",
       "question": "What is the sequence of a make-up air unit once it needs heating?",
-      "options": ["A) Combustion blower, gas valve, damper open and supply blower energized", "B) Gas valve", "C) Damper open", "D) Supply blower"],
+      "options": [
+        "A) Combustion blower, gas valve, damper open and supply blower energized",
+        "B) Gas valve",
+        "C) Damper open",
+        "D) Supply blower"
+      ],
       "answer": "Combustion blower, gas valve, damper open, and supply blower energized — purge the combustion chamber first, then open the gas valve to fire, then open the damper and energize the supply blower to deliver tempered air.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "sequence یک make-up air unit وقتی نیاز به heating پیدا می‌کند چیست؟",
+      "options_fa": [
+        "Combustion blower، gas valve، باز شدن damper و energize شدن supply blower",
+        "Gas valve",
+        "باز شدن Damper",
+        "Supply blower"
+      ],
+      "answer_fa": "Combustion blower، gas valve، باز شدن damper و energize شدن supply blower — ابتدا combustion chamber را purge می‌کند، سپس gas valve را برای fire باز می‌کند، سپس damper را باز کرده و supply blower را energize می‌کند تا هوای tempered را تحویل دهد."
     },
     {
       "id": "OCC-052",
-      "section": null, "block": "A", "topic": "transformer-fault-current", "type": "calculation",
+      "section": null,
+      "block": "A",
+      "topic": "transformer-fault-current",
+      "type": "calculation",
       "question": "What is the short-circuit current for a 100 kVA, 2400/120 V transformer if the impedance Z is 3%?",
-      "options": ["A) 52 kA", "B) 120 kA", "C) 13.50 kA", "D) 27.8 kA"],
+      "options": [
+        "A) 52 kA",
+        "B) 120 kA",
+        "C) 13.50 kA",
+        "D) 27.8 kA"
+      ],
       "answer": "27.8 kA (secondary FLC 833 A ÷ 0.03 = 27,778 A ≈ 27.8 kA).",
       "answer_key": "D",
       "references": [],
@@ -546,61 +1382,152 @@
         "Available short-circuit current = FLC ÷ %Z = 833.3 ÷ 0.03 = 27,778 A ≈ 27.8 kA → answer D."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "short-circuit current برای یک transformer با 100 kVA و 2400/120 V اگر impedance Z برابر 3% باشد چقدر است؟",
+      "options_fa": [
+        "52 kA",
+        "120 kA",
+        "13.50 kA",
+        "27.8 kA"
+      ],
+      "answer_fa": "27.8 kA (secondary FLC برابر 833 A ÷ 0.03 = 27,778 A ≈ 27.8 kA)."
     },
     {
       "id": "OCC-053",
-      "section": null, "block": "D", "topic": "motor-types", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "motor-types",
+      "type": "theory",
       "question": "What kind of motor has excellent speed regulation?",
-      "options": ["A) Squirrel cage", "B) Universal", "C) Series", "D) Shunt"],
+      "options": [
+        "A) Squirrel cage",
+        "B) Universal",
+        "C) Series",
+        "D) Shunt"
+      ],
       "answer": "Shunt motor — provides good/constant speed regulation under load.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام نوع موتور speed regulation عالی دارد؟",
+      "options_fa": [
+        "Squirrel cage",
+        "Universal",
+        "Series",
+        "Shunt"
+      ],
+      "answer_fa": "موتور Shunt — speed regulation خوب/ثابت تحت load فراهم می‌کند."
     },
     {
       "id": "OCC-054",
-      "section": null, "block": "D", "topic": "vfd", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "vfd",
+      "type": "theory",
       "question": "When a VFD is installed for the first time, what is the sequence?",
-      "options": ["A) Check motor for jam, energize VFD, set control program, verify motor rotation", "B) Set control, check motor for jam, energize VFD", "C) Verify motor rotation, check motor for jam, energize VFD", "D) Energize VFD, check motor for jam, verify motor rotation"],
+      "options": [
+        "A) Check motor for jam, energize VFD, set control program, verify motor rotation",
+        "B) Set control, check motor for jam, energize VFD",
+        "C) Verify motor rotation, check motor for jam, energize VFD",
+        "D) Energize VFD, check motor for jam, verify motor rotation"
+      ],
       "answer": "Check motor for jam, energize VFD, set the control program, then verify motor rotation — mechanically confirm the motor is free before energizing, program parameters, then bump for rotation.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی یک VFD برای اولین بار نصب می‌شود، sequence چیست؟",
+      "options_fa": [
+        "بررسی jam بودن موتور، energize کردن VFD، set کردن control program، تأیید جهت چرخش موتور",
+        "set کردن control، بررسی jam بودن موتور، energize کردن VFD",
+        "تأیید جهت چرخش موتور، بررسی jam بودن موتور، energize کردن VFD",
+        "energize کردن VFD، بررسی jam بودن موتور، تأیید جهت چرخش موتور"
+      ],
+      "answer_fa": "بررسی jam بودن موتور، energize کردن VFD، set کردن control program، سپس تأیید جهت چرخش موتور — ابتدا به صورت مکانیکی مطمئن شوید موتور آزاد است، سپس parameter ها را program کنید، سپس برای جهت چرخش bump بزنید."
     },
     {
       "id": "OCC-055",
-      "section": null, "block": "A", "topic": "site-coordination", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "site-coordination",
+      "type": "theory",
       "question": "Who coordinates the schedule for the site?",
-      "options": ["A) City planning department", "B) Foreman", "C) Supervisor", "D) General Contractor"],
+      "options": [
+        "A) City planning department",
+        "B) Foreman",
+        "C) Supervisor",
+        "D) General Contractor"
+      ],
       "answer": "General Contractor — coordinates the overall site schedule.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چه کسی schedule مربوط به site را هماهنگ می‌کند؟",
+      "options_fa": [
+        "اداره City planning",
+        "Foreman",
+        "Supervisor",
+        "General Contractor"
+      ],
+      "answer_fa": "General Contractor — schedule کلی site را هماهنگ می‌کند."
     },
     {
       "id": "OCC-056",
-      "section": null, "block": "A", "topic": "gfci", "type": "lookup",
+      "section": null,
+      "block": "A",
+      "topic": "gfci",
+      "type": "lookup",
       "question": "A Class A ground-fault circuit interrupter will interrupt the circuit to the load, within a predetermined time, when the ground-fault current is ___ mA or more?",
-      "options": ["A) 3", "B) 4", "C) 5", "D) 6"],
+      "options": [
+        "A) 3",
+        "B) 4",
+        "C) 5",
+        "D) 6"
+      ],
       "answer": "5 mA — a Class A GFCI trips at a ground-fault current of 5 mA (±1 mA).",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک Class A ground-fault circuit interrupter زمانی که ground-fault current برابر ___ mA یا بیشتر باشد، در یک زمان از پیش تعیین‌شده مدار را به سمت load قطع می‌کند؟",
+      "options_fa": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer_fa": "5 mA — یک Class A GFCI در ground-fault current معادل 5 mA (±1 mA) trip می‌کند."
     },
     {
       "id": "OCC-057",
-      "section": null, "block": "E", "topic": "controls-timer", "type": "theory",
+      "section": null,
+      "block": "E",
+      "topic": "controls-timer",
+      "type": "theory",
       "question": "Your customer has a machine that needs a cooling fan for 20 seconds after motor shutdown. Which component is needed for the control circuit?",
-      "options": ["A) On-delay timer", "B) Off-delay timer", "C) Normally open timer", "D) Normally closed timer"],
+      "options": [
+        "A) On-delay timer",
+        "B) Off-delay timer",
+        "C) Normally open timer",
+        "D) Normally closed timer"
+      ],
       "answer": "Off-delay timer — keeps the fan running for a set time after the motor is switched off.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "مشتری شما دستگاهی دارد که پس از خاموش شدن موتور به یک cooling fan به مدت 20 ثانیه نیاز دارد. کدام component برای control circuit لازم است؟",
+      "options_fa": [
+        "On-delay timer",
+        "Off-delay timer",
+        "Normally open timer",
+        "Normally closed timer"
+      ],
+      "answer_fa": "Off-delay timer — fan را پس از خاموش شدن موتور به مدت یک زمان مشخص روشن نگه می‌دارد."
     },
     {
       "id": "OCC-058",
-      "section": null, "block": "A", "topic": "ups", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "ups",
+      "type": "theory",
       "question": "What is the procedure to troubleshoot the battery bank of a UPS system?",
       "options": [
         "A) Disconnect AC charger, disconnect the AC inverter, then check battery voltage.",
@@ -611,11 +1538,22 @@
       "answer": "Disconnect AC charger, disconnect the AC inverter, then check battery voltage — the battery bank must be isolated from both the charger and the inverter so the measured voltage reflects the batteries alone.",
       "answer_key": "A",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "روال troubleshoot کردن battery bank یک سیستم UPS چیست؟",
+      "options_fa": [
+        "قطع AC charger، قطع AC inverter، سپس بررسی battery voltage.",
+        "قطع DC power، isolate کردن battery bank از AC bus، سپس بررسی rectifier voltage.",
+        "قطع battery bank از AC charger، اتصال AC inverter به load ها، سپس بررسی inverter voltage.",
+        "قطع AC inverter از load ها، اتصال battery bank به AC charger، سپس بررسی rectifier voltage."
+      ],
+      "answer_fa": "قطع AC charger، قطع AC inverter، سپس بررسی battery voltage — battery bank باید هم از charger و هم از inverter isolate شود تا ولتاژ اندازه‌گیری‌شده فقط منعکس‌کننده خود battery ها باشد."
     },
     {
       "id": "OCC-059",
-      "section": null, "block": "D", "topic": "vfd", "type": "theory",
+      "section": null,
+      "block": "D",
+      "topic": "vfd",
+      "type": "theory",
       "question": "What is the proper sequence to connect a motor to an inverter (VFD output)?",
       "options": [
         "A) Filter, inverter, reactor and motor",
@@ -626,31 +1564,74 @@
       "answer": "Inverter, reactor, filter, then motor — the output (load) reactor and the output filter are placed in that order between the inverter output and the motor to protect the motor from the PWM waveform.",
       "answer_key": "B",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "sequence درست برای اتصال یک موتور به یک inverter (خروجی VFD) چیست؟",
+      "options_fa": [
+        "Filter، inverter، reactor و motor",
+        "Inverter، reactor، filter و motor",
+        "Reactor، inverter، filter و motor",
+        "Motor، filter، inverter و reactor"
+      ],
+      "answer_fa": "Inverter، reactor، filter، سپس motor — output (load) reactor و output filter به همین ترتیب بین خروجی inverter و موتور قرار می‌گیرند تا موتور را در برابر waveform مربوط به PWM محافظت کنند."
     },
     {
       "id": "OCC-060",
-      "section": null, "block": "E", "topic": "cable-types", "type": "theory",
+      "section": null,
+      "block": "E",
+      "topic": "cable-types",
+      "type": "theory",
       "question": "Which type of cable used in a nurse-call system can be used in a plenum?",
-      "options": ["A) LVT", "B) CMR", "C) FAS-105", "D) RWU-75"],
+      "options": [
+        "A) LVT",
+        "B) CMR",
+        "C) FAS-105",
+        "D) RWU-75"
+      ],
       "answer": "FAS-105 — the plenum-rated signal cable among the choices (LVT, CMR-riser, and RWU-75 are not plenum-rated). Confirm the FAS-105 plenum listing against the manufacturer/Section 32 cable markings.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "کدام نوع cable استفاده‌شده در یک nurse-call system را می‌توان در یک plenum به کار برد؟",
+      "options_fa": [
+        "LVT",
+        "CMR",
+        "FAS-105",
+        "RWU-75"
+      ],
+      "answer_fa": "FAS-105 — تنها signal cable مجاز برای plenum در میان گزینه‌ها (LVT، CMR-riser و RWU-75 برای plenum مجاز نیستند). plenum listing مربوط به FAS-105 را با علائم cable سازنده/Section 32 تأیید کنید."
     },
     {
       "id": "OCC-061",
-      "section": null, "block": "A", "topic": "rough-in", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "rough-in",
+      "type": "theory",
       "question": "If there are three lighting fixtures to be installed and two three-way switches, how many boxes are used?",
-      "options": ["A) 3", "B) 4", "C) 5", "D) 6"],
+      "options": [
+        "A) 3",
+        "B) 4",
+        "C) 5",
+        "D) 6"
+      ],
       "answer": "5 boxes — three lighting-fixture (outlet) boxes plus two three-way switch boxes = 5.",
       "answer_key": "C",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اگر سه lighting fixture باید نصب شوند و دو three-way switch، چند box استفاده می‌شود؟",
+      "options_fa": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer_fa": "5 box — سه box مربوط به lighting-fixture (outlet) به اضافه دو box مربوط به three-way switch = 5."
     },
     {
       "id": "OCC-062",
-      "section": 28, "block": "D", "topic": "duty-cycle-definition", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "duty-cycle-definition",
+      "type": "theory",
       "question": "What kind of regularity is periodic duty? (Section 0 & 28)",
       "options": [
         "A) A type of intermittent duty in which the load conditions are regularly recurrent",
@@ -660,19 +1641,45 @@
       ],
       "answer": "A type of intermittent duty in which the load conditions are regularly recurrent — the CEC Section 0 definition of periodic duty.",
       "answer_key": "A",
-      "references": ["Section 0 (definitions)"],
+      "references": [
+        "Section 0 (definitions)"
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "periodic duty چه نوع regularity ای دارد؟ (Section 0 و 28)",
+      "options_fa": [
+        "نوعی از intermittent duty که در آن شرایط load به طور منظم تکرار می‌شوند",
+        "الزامی از service که عملیات را برای فواصل متناوب مشخص و معین می‌طلبد",
+        "الزامی از service که عملیات در load اساساً ثابت را برای زمانی نامحدود می‌طلبد",
+        "الزامی از service که عملیات در load اساساً ثابت را برای زمانی کوتاه و نامحدود مشخص می‌طلبد"
+      ],
+      "answer_fa": "نوعی از intermittent duty که در آن شرایط load به طور منظم تکرار می‌شوند — تعریف CEC Section 0 برای periodic duty."
     },
     {
       "id": "OCC-063",
-      "section": null, "block": "A", "topic": "rough-in", "type": "theory",
+      "section": null,
+      "block": "A",
+      "topic": "rough-in",
+      "type": "theory",
       "question": "How many screws are required for installing an outdoor receptacle cover plate?",
-      "options": ["A) 6 screws", "B) 2 screws", "C) 3 screws", "D) 4 screws"],
+      "options": [
+        "A) 6 screws",
+        "B) 2 screws",
+        "C) 3 screws",
+        "D) 4 screws"
+      ],
       "answer": "4 screws — a weatherproof outdoor receptacle cover plate is secured at its four corners with 4 screws.",
       "answer_key": "D",
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای نصب cover plate یک outdoor receptacle چند screw لازم است؟",
+      "options_fa": [
+        "6 screw",
+        "2 screw",
+        "3 screw",
+        "4 screw"
+      ],
+      "answer_fa": "4 screw — یک cover plate ضدآب مربوط به outdoor receptacle در چهار گوشه‌اش با 4 screw محکم می‌شود."
     }
   ]
 }

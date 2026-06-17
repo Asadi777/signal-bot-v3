@@ -308,15 +308,16 @@
     tags.appendChild(el("span", "tag", esc(SECTION_NAMES[q.section] || ("Section " + (q.section || "?")))));
     if (q.block) tags.appendChild(el("span", "tag block", "Block " + esc(q.block)));
     if (q.topic) tags.appendChild(el("span", "tag", esc(q.topic)));
-    $("qtext").textContent = q.question;
+    $("qtext").innerHTML = esc(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "");
     var correctKey = (q.answer_key || "").toUpperCase();
     var opts = $("options"); opts.innerHTML = "";
     (q.options || []).forEach(function (optText, idx) {
       var keyLetter = ((optText.match(/^([A-Da-d])\)/) || [])[1] || String.fromCharCode(65 + idx)).toUpperCase();
       var label = optText.replace(/^([A-Da-d])\)\s*/, "");
+      var ofa = (q.options_fa && q.options_fa[idx]) ? q.options_fa[idx] : "";
       var b = el("button", "opt");
       b.appendChild(el("span", "k", esc(keyLetter)));
-      b.appendChild(el("span", null, esc(label)));
+      b.appendChild(el("span", "opttext", esc(label) + (ofa ? "<div class='ofa' dir='rtl'>" + esc(ofa) + "</div>" : "")));
       b.dataset.key = keyLetter;
       if (a) {
         b.disabled = true;
@@ -367,7 +368,8 @@
   function showExplain(q) {
     var e = $("explain");
     var refs = (q.references || []).join(" · ");
-    var html = "<h4>✅ Answer</h4><p>" + esc(q.answer || ("Option " + (q.answer_key || ""))) + "</p>";
+    var html = "<h4>✅ Answer</h4><p>" + esc(q.answer || ("Option " + (q.answer_key || ""))) +
+      (q.answer_fa ? "<div class='afa' dir='rtl'>" + esc(q.answer_fa) + "</div>" : "") + "</p>";
     if (q.solution_steps && q.solution_steps.length) {
       html += "<h4>🧭 Fastest path (English)</h4><ol>";
       q.solution_steps.forEach(function (s) { html += "<li>" + esc(s) + "</li>"; });
@@ -466,7 +468,7 @@
       missed.forEach(function (m) {
         var q = m.q;
         h += "<div class='miss'>";
-        h += "<div class='missq'>" + esc(q.question) + "</div>";
+        h += "<div class='missq'>" + esc(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
         h += "<div class='missline'>You: <b class='bad'>" + esc(m.a.picked) + "</b> · Correct: <b class='ok'>" + esc((q.answer_key || "")) + " — " + esc(q.answer || "") + "</b></div>";
         if (q.solution_steps && q.solution_steps.length) {
           h += "<ol>"; q.solution_steps.forEach(function (s) { h += "<li>" + esc(s) + "</li>"; }); h += "</ol>";
@@ -815,8 +817,8 @@
     if (exQ.length) {
       h += "<h3>" + T.ex + "</h3>";
       exQ.forEach(function (q) {
-        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + "</div>";
-        h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + "</div>";
+        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
+        h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + (q.answer_fa ? "<div class='afa' dir='rtl'>" + esc(q.answer_fa) + "</div>" : "") + "</div>";
         if ((q.solution_steps || []).length) { h += "<ol>"; q.solution_steps.slice(0, 5).forEach(function (st) { h += "<li>" + esc(st) + "</li>"; }); h += "</ol>"; }
         if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";
         h += "</div>";

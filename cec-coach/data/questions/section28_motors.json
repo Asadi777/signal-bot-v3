@@ -28,7 +28,15 @@
         "The exact 40 hp / 575 V Table 44 FLC could not be confirmed; method shown, key NOT trusted, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "موتور زیر با حداکثر استاندارد time-delay fuse استارت نمی‌شود. حداکثر rating یک time-delay fuse که می‌توان برای یک موتور پمپ هیدرولیک 40 hp، 575 V، سه‌فاز با service factor برابر 1.15 استفاده کرد چقدر است؟",
+      "options_fa": [
+        "90 A",
+        "100 A",
+        "80 A",
+        "110 A"
+      ],
+      "answer_fa": "110 A"
     },
     {
       "id": "S28-002",
@@ -50,7 +58,15 @@
         "Table 14 (number of overload devices)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای محافظت از هادی یک موتور تک‌فاز 1/3 HP، 230 V چند دستگاه overload لازم است؟",
+      "options_fa": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer_fa": "1 — برای یک موتور تک‌فاز در این اندازه یک دستگاه overload لازم است."
     },
     {
       "id": "S28-003",
@@ -72,7 +88,15 @@
         "Table 29 (instantaneous-trip / magnetic-only = 1300%)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک circuit breaker از نوع magnetic-only (instantaneous-trip) برای یک branch circuit موتور AC نصب شده است. حداکثر درصد full-load amps که برای تعیین ampere trip rating مجاز است چقدر است؟",
+      "options_fa": [
+        "215%",
+        "250%",
+        "300%",
+        "1300%"
+      ],
+      "answer_fa": "1300% از full-load current."
     },
     {
       "id": "S28-004",
@@ -91,7 +115,15 @@
       "answer_key": "C",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک موتور سه‌فاز که از قبل در سرویس بوده تحت شرایط full-load به‌طور عادی کار می‌کرده است. اکنون موتور هنگام نزدیک شدن به شرایط full-load متوقف می‌شود. علت چیست؟",
+      "options_fa": [
+        "overload ها undersized هستند",
+        "کنتاکت‌های holding غیرفعال شده‌اند",
+        "overload ها معیوب شده‌اند",
+        "starter undersized است"
+      ],
+      "answer_fa": "overload ها معیوب شده‌اند (با افزایش بار زودتر از موعد trip می‌کنند، هرچند موتور و sizing قبلاً درست بوده‌اند)."
     },
     {
       "id": "S28-005",
@@ -110,7 +142,15 @@
       "answer_key": "A",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در یک مدار کنترل موتور سه‌سیمه، دکمه start کویل را برق‌دار می‌کند، اما با رها کردن دکمه start، کویل قطع می‌شود. علت چیست؟",
+      "options_fa": [
+        "کنتاکت holding معیوب",
+        "کنتاکت overload عمل‌کرده (tripped)",
+        "کویل مغناطیسی معیوب",
+        "ولتاژ نادرست کویل"
+      ],
+      "answer_fa": "کنتاکت holding (maintaining/seal-in) معیوب — کنتاکت holding موازی پس از رها شدن دکمه start کویل را برق‌دار نگه نمی‌دارد."
     },
     {
       "id": "S28-006",
@@ -129,7 +169,15 @@
       "answer_key": "D",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در یک مدار کنترل interlocking برای یک magnetic starter رفت/برگشت (forward/reversing)، از چه نوع push button استفاده می‌شود؟",
+      "options_fa": [
+        "normally open",
+        "normally closed",
+        "single acting",
+        "double acting"
+      ],
+      "answer_fa": "push button از نوع double-acting (یک مجموعه NO و یک مجموعه NC که interlock الکتریکی بین forward و reverse را فراهم می‌کند)."
     },
     {
       "id": "S28-007",
@@ -148,7 +196,15 @@
       "answer_key": "B",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک مدار کنترل چگونه سیم‌کشی می‌شود تا پس از قطع برق، مدار به‌طور خودکار دوباره راه‌اندازی (automatic restarting) شود؟",
+      "options_fa": [
+        "با کنتاکت‌های holding",
+        "با low voltage release",
+        "با low voltage protection",
+        "با یک push button لحظه‌ای"
+      ],
+      "answer_fa": "با low-voltage release — مدار هنگام قطع برق قطع می‌شود و با بازگشت برق به‌طور خودکار دوباره راه می‌افتد (معمولاً یک کنترل دوسیمه با دستگاه maintained-contact)."
     },
     {
       "id": "S28-008",
@@ -175,7 +231,15 @@
         "The intermediate 1.1 factor and the 12 A nameplate are source-supplied; flagged for review (the straight 28-306 result would be 12 × 1.25 = 15 A)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه محاسبه‌شده overload برای یک موتور 2 horsepower، تک‌فاز، 208 ولت چقدر است؟",
+      "options_fa": [
+        "13.20 amps",
+        "13.80 amps",
+        "15.18 amps",
+        "16.50 amps"
+      ],
+      "answer_fa": "15.18 A (منبع: nameplate FLA 12 A × 1.1 × 1.15 = 15.18 A)."
     },
     {
       "id": "S28-009",
@@ -194,7 +258,15 @@
       "answer_key": "A",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک capacitor در یک موتور capacitor-start از کار افتاده است. نتیجه چیست؟",
+      "options_fa": [
+        "موتور هوم (hum) می‌کند سپس روی overload trip می‌کند",
+        "موتور هوم می‌کند سپس روی overcurrent trip می‌کند",
+        "موتور با راندمان کمتری کار می‌کند",
+        "موتور به‌طور مداوم کار می‌کند"
+      ],
+      "answer_fa": "موتور هوم (hum) می‌کند (بدون گشتاور استارت، نمی‌تواند استارت شود)، جریان locked-rotor می‌کشد، سپس روی overload trip می‌کند."
     },
     {
       "id": "S28-010",
@@ -213,7 +285,15 @@
       "answer_key": "A",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چرخش یک موتور سه‌فاز چگونه معکوس می‌شود؟",
+      "options_fa": [
+        "با معکوس کردن فازهای A و C",
+        "با معکوس کردن فازهای A، B و C",
+        "با معکوس کردن سیم‌های کنترل در push button",
+        "با معکوس کردن فاز A و neutral"
+      ],
+      "answer_fa": "با جابه‌جا کردن هر دو فاز از سه فاز خط (مثلاً فازهای A و C)."
     },
     {
       "id": "S28-011",
@@ -232,7 +312,15 @@
       "answer_key": "D",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اولین گام برای ساختن یک برنامه برای یک PLC چیست؟",
+      "options_fa": [
+        "تست هر کلید به‌صورت جداگانه برای عملکرد صحیح",
+        "تبدیل یک line diagram به یک programming diagram",
+        "تبدیل wiring diagram به یک line diagram",
+        "توسعه منطق مدار به یک line diagram"
+      ],
+      "answer_fa": "ابتدا منطق مدار را به یک line (ladder) diagram توسعه دهید، پیش از تبدیل آن به برنامه‌نویسی PLC."
     },
     {
       "id": "S28-012",
@@ -258,7 +346,15 @@
         "Continuous duty: conductor ampacity = FLC × 1.25 = 6.8 × 1.25 = 8.5 A → answer C."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه هادی (ampacity) لازم برای تغذیه یک موتور القایی squirrel-cage سه‌فاز 5 HP، 460 V با سرویس continuous-duty را تعیین کنید.",
+      "options_fa": [
+        "9.5 A",
+        "10.0 A",
+        "8.5 A",
+        "11.0 A"
+      ],
+      "answer_fa": "8.5 A (FLC برابر 6.8 A × 1.25 = 8.5 A)."
     },
     {
       "id": "S28-013",
@@ -287,7 +383,15 @@
         "Note: duty-cycle service uses the Table 27 percentage instead of the 125% continuous factor."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "ampacity هادی لازم برای تغذیه یک موتور القایی squirrel-cage سه‌فاز 100 HP، 460 V با سرویس intermittent duty (rating برابر 60 دقیقه) را تعیین کنید.",
+      "options_fa": [
+        "111.6 A",
+        "120.6 A",
+        "80.6 A",
+        "110.6 A"
+      ],
+      "answer_fa": "111.6 A (FLC برابر 124 A × ضریب duty-cycle برابر 0.90 برای intermittent duty 60 دقیقه = 111.6 A)."
     },
     {
       "id": "S28-014",
@@ -319,7 +423,15 @@
         "Feeder ampacity and the 189.6 A figure could not be reconciled from the source; method shown, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه لازم برای هادی‌های feeder و حداکثر اندازه time-delay fuse قابل نصب را برای گروه زیر از موتورهای SCIM سه‌فاز 460 V تعیین کنید: یک موتور 100 HP برای intermittent duty (rating برابر 60 دقیقه) و یک موتور 50 HP برای short-time duty (rating برابر 15 دقیقه).",
+      "options_fa": [
+        "Feeder ≈ 189.6 A، fuse 250 A",
+        "Feeder ≈ 189.6 A، fuse 200 A",
+        "Feeder ≈ 217.5 A، fuse 250 A",
+        "Feeder ≈ 124 A، fuse 175 A"
+      ],
+      "answer_fa": "ampacity feeder ≈ 189.6 A؛ حداکثر group time-delay fuse = 250 A."
     },
     {
       "id": "S28-015",
@@ -348,7 +460,15 @@
         "Calculated 18.9 A vs source-stated 19.9 A differ slightly (FLC rounding); fuse = 20 A. Flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه لازم برای هادی‌های feeder و حداکثر اندازه time-delay fuse قابل نصب را برای گروه زیر از موتورهای SCIM سه‌فاز 460 V تعیین کنید: یک موتور 5 HP (continuous duty) و چهار موتور 1-1/2 HP (continuous duty).",
+      "options_fa": [
+        "Feeder ≈ 17.2 A، fuse 15 A",
+        "Feeder ≈ 21.2 A، fuse 25 A",
+        "Feeder ≈ 18.9 A، fuse 30 A",
+        "Feeder ≈ 18.9 A، fuse 20 A"
+      ],
+      "answer_fa": "ampacity feeder ≈ 18.9 A (منبع 19.9 A را بیان می‌کند)؛ حداکثر group time-delay fuse = 20 A."
     },
     {
       "id": "S28-016",
@@ -370,7 +490,15 @@
         "Table 29 (instantaneous-trip = 1300%)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگامی که یک circuit breaker از نوع instantaneous-trip برای محافظت branch-circuit استفاده می‌شود، حداکثر درصد rating نسبت به locked-rotor current موتور چقدر است؟",
+      "options_fa": [
+        "215%",
+        "250%",
+        "300%",
+        "1300%"
+      ],
+      "answer_fa": "1300% از full-load current (تنظیم instantaneous-trip breaker در Table 29)."
     },
     {
       "id": "S28-017",
@@ -392,7 +520,15 @@
         "Table 37"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "برای هادی‌های تغذیه‌ای که وارد یک motor enclosure تهویه‌شده (ventilated) با rating عایق Class F می‌شوند، چه insulation temperature rating لازم است؟",
+      "options_fa": [
+        "75°C",
+        "90°C",
+        "100°C",
+        "110°C"
+      ],
+      "answer_fa": "75°C — برای یک موتور ventilated (باز) با عایق Class F، هادی‌های 75°C قابل‌قبول هستند."
     },
     {
       "id": "S28-018",
@@ -420,7 +556,15 @@
         "The applicable compressor OCPD multiplier could not be confirmed; key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه time-delay fuse مجاز برای یک motor compressor با FLA نشان‌گذاری‌شده برابر 20 A را محاسبه کنید.",
+      "options_fa": [
+        "75 A",
+        "60 A",
+        "80 A",
+        "110 A"
+      ],
+      "answer_fa": "60 A — برای یک کمپرسور hermetic/refrigerant، branch OCPD بر اساس rated-load current نشان‌گذاری‌شده تعیین می‌شود."
     },
     {
       "id": "S28-019",
@@ -442,7 +586,15 @@
         "Table 14"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "تعداد دستگاه‌های overload لازم برای یک موتور تک‌فاز متصل به 240 V عبارت است از:",
+      "options_fa": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer_fa": "1 دستگاه overload برای یک موتور تک‌فاز."
     },
     {
       "id": "S28-020",
@@ -470,7 +622,15 @@
         "30.8 × 1.10 = 33.88 A → answer B."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ampacity branch circuit برای یک موتور SCIM سه‌فاز 10 HP، 208 V با short-time duty (rating برابر 5 دقیقه) چقدر است؟",
+      "options_fa": [
+        "35.2 A",
+        "33.88 A",
+        "37.9 A",
+        "40.5 A"
+      ],
+      "answer_fa": "33.88 A (FLC برابر 30.8 A × ضریب 1.10 برای short-time 5 دقیقه)."
     },
     {
       "id": "S28-021",
@@ -501,7 +661,15 @@
         "Stated answer: 391 A feeder, 400 A fuse."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ampacity لازم برای هادی‌های feeder و حداکثر اندازه time-delay fuse مجاز را برای گروه زیر از موتورهای SCIM سه‌فاز 230 V تعیین کنید: 1 × 50 HP short-time (30 دقیقه)، 1 × 30 HP intermittent (60 دقیقه)، 1 × 30 HP periodic duty (5 دقیقه)، 1 × 10 HP varying (continuous).",
+      "options_fa": [
+        "Feeder ≈ 391 A، fuse 350 A",
+        "Feeder ≈ 391 A، fuse 400 A",
+        "Feeder ≈ 391 A، fuse 450 A",
+        "Feeder ≈ 313 A، fuse 350 A"
+      ],
+      "answer_fa": "ampacity feeder ≈ 391 A؛ حداکثر time-delay fuse = 400 A."
     },
     {
       "id": "S28-022",
@@ -522,7 +690,15 @@
         "Rule 28-604"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "disconnecting means مربوط به branch-circuit موتور تا چه فاصله‌ای می‌تواند از موتور قرار گیرد؟",
+      "options_fa": [
+        "2 m",
+        "9 m",
+        "3 m",
+        "10 m"
+      ],
+      "answer_fa": "9 m — disconnecting means باید within sight موتور و نه بیشتر از 9 m از آن باشد."
     },
     {
       "id": "S28-023",
@@ -543,7 +719,15 @@
         "Table 28 (locked-rotor current)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "locked-rotor current rating برای یک موتور SCIM سه‌فاز 30 HP، 460 V چقدر است؟",
+      "options_fa": [
+        "175 A",
+        "240 A",
+        "100 A",
+        "110 A"
+      ],
+      "answer_fa": "240 A (از جدول locked-rotor current برای یک موتور سه‌فاز 30 hp، 460 V)."
     },
     {
       "id": "S28-024",
@@ -568,7 +752,15 @@
         "Answer = 9 m (B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "disconnecting means برای یک واحد refrigeration باید تا چه فاصله‌ای از تجهیزات قرار گیرد؟",
+      "options_fa": [
+        "2 m",
+        "9 m",
+        "3 m",
+        "10 m"
+      ],
+      "answer_fa": "9 m — within sight تجهیزات refrigeration و نه بیشتر از 9 m از آن."
     },
     {
       "id": "S28-025",
@@ -597,7 +789,15 @@
         "So the method points to 400 A, not the marked 450 A (C). FLC value and the marked key both flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه time-delay fuse مجاز برای یک موتور SCIM سه‌فاز 100 HP، 230 V چقدر است؟",
+      "options_fa": [
+        "325 A",
+        "400 A",
+        "450 A",
+        "500 A"
+      ],
+      "answer_fa": "روش، 400 A می‌دهد (FLC ~248 A × 1.75 = 434 A → بزرگ‌ترین اندازه استاندارد که از آن تجاوز نکند = 400 A)؛ key علامت‌گذاری‌شده C (450 A) نیازمند مجوز won't-start است"
     },
     {
       "id": "S28-026",
@@ -625,7 +825,15 @@
         "The exact Table D2 FLC could not be confirmed; method shown, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه circuit breaker برای یک موتور DC با rating برابر 50 HP، 500 V چقدر است؟",
+      "options_fa": [
+        "175 A",
+        "125 A",
+        "100 A",
+        "110 A"
+      ],
+      "answer_fa": "175 A (FLC موتور DC از Table D2 × درصد inverse-time breaker از Table 29)."
     },
     {
       "id": "S28-027",
@@ -647,7 +855,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "A"
+      "answer_key": "A",
+      "question_fa": "گروه زیر از موتورهای سه‌فاز wound-rotor، 208 V توسط یک feeder مشترک تغذیه می‌شوند. همه موتورها از نوع Class A هستند. حداقل ampacity feeder را تعیین کنید.",
+      "options_fa": [
+        "175.65 A",
+        "167.97 A",
+        "170.89 A",
+        "189.98 A"
+      ],
+      "answer_fa": "نمی‌توان مقدار دقیق را تعیین کرد — منبع فهرست horsepower موتورهای این گروه را ثبت نکرده است."
     },
     {
       "id": "S28-028",
@@ -677,7 +893,15 @@
         "Stated answer: 190.1 A → #3/0 AWG."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "گروه زیر از موتورهای تک‌فاز با rating برابر 115 V توسط یک feeder مشترک تغذیه می‌شوند: 1 × 1 HP intermittent duty (rating برابر 5 دقیقه)، 1 × 2 HP continuous duty، 1 × 3 HP continuous duty، 1 × 10 HP short-time duty (rating برابر 5 دقیقه). حداقل اندازه feeder مسی چقدر است؟",
+      "options_fa": [
+        "#1 AWG",
+        "#2/0 AWG",
+        "#3/0 AWG",
+        "#4/0 AWG"
+      ],
+      "answer_fa": "ampacity feeder ≈ 190.1 A → #3/0 AWG مسی (Table 2، ستون 75°C)."
     },
     {
       "id": "S28-029",
@@ -707,7 +931,15 @@
         "Minimum = No. 4 AWG → answer B."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه AWG کابل TECK 90 لازم برای تغذیه یک fire pump سه‌فاز 50 HP، 460 V چقدر است؟ همه تجهیزات دارای termination temperature rating برابر 75°C هستند.",
+      "options_fa": [
+        "No. 3 AWG",
+        "No. 4 AWG",
+        "No. 6 AWG",
+        "No. 8 AWG"
+      ],
+      "answer_fa": "No. 4 AWG (FLC برابر 65 A × 1.25 = 81.25 A؛ #4 مسی در 75°C = 85 A)."
     },
     {
       "id": "S28-030",
@@ -735,7 +967,15 @@
         "The 575 V Table 44 FLCs could not be confirmed; method shown, key not trusted, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "دو موتور القایی continuous-duty سه‌فاز 575 V، به‌ترتیب 15 HP و 20 HP، باید با هم تحت شرایط no-load استارت شوند. حداقل ampacity لازم برای هادی feeder چقدر است؟",
+      "options_fa": [
+        "48.75 A",
+        "44.5 A",
+        "49 A",
+        "22 A"
+      ],
+      "answer_fa": "Feeder = 125% از FLC بزرگ‌ترین موتور + FLC موتور دیگر (key علامت‌گذاری‌شده A = 48.75 A)؛ مقدار دقیق به FLC های Table 44 در 575 V بستگی دارد"
     },
     {
       "id": "S28-031",
@@ -762,7 +1002,15 @@
         "The 1.1 factor and 12 A nameplate are source-supplied; flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه محاسبه‌شده overload برای یک موتور القایی AC تک‌فاز 2 HP، 208 V، 60 Hz چقدر است؟",
+      "options_fa": [
+        "17.21 A",
+        "15.18 A",
+        "13.76 A",
+        "11.48 A"
+      ],
+      "answer_fa": "15.18 A (منبع: nameplate FLA 12 A × 1.1 × 1.15 = 15.18 A)."
     },
     {
       "id": "S28-032",
@@ -790,7 +1038,15 @@
         "The exact Table D2 FLC could not be confirmed; method shown, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه circuit breaker لازم برای محافظت از یک موتور DC 5 HP، 120 V چقدر است؟",
+      "options_fa": [
+        "60 A",
+        "70 A",
+        "100 A",
+        "125 A"
+      ],
+      "answer_fa": "100 A (FLC موتور DC از Table D2 × درصد inverse-time breaker از Table 29)."
     },
     {
       "id": "S28-033",
@@ -818,7 +1074,15 @@
         "VFD input conductors are sized at 125% of the rated input (motor FLC) current."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل ampacity هادی لازم برای تغذیه یک موتور squirrel-cage سه‌فاز 25 HP، 600 V که توسط یک VFD کنترل می‌شود چقدر است؟",
+      "options_fa": [
+        "27 A",
+        "31.25 A",
+        "33.75 A",
+        "36.45 A"
+      ],
+      "answer_fa": "33.75 A (FLC برابر 27 A × 1.25 = 33.75 A)."
     },
     {
       "id": "S28-034",
@@ -839,7 +1103,15 @@
         "Rule 28-604"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله مجاز بین یک disconnect و تجهیزات تهویه مطبوع (air-conditioning) چقدر است؟",
+      "options_fa": [
+        "1 m",
+        "3 m",
+        "6 m",
+        "9 m"
+      ],
+      "answer_fa": "9 m — within sight تجهیزات و نه بیشتر از 9 m از آن."
     },
     {
       "id": "S28-035",
@@ -861,7 +1133,15 @@
         "Table 14"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای محافظت از یک موتور تک‌فاز 1/3 HP، 230 V چند دستگاه overload لازم است؟",
+      "options_fa": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer_fa": "1 دستگاه overload برای یک موتور تک‌فاز."
     },
     {
       "id": "S28-036",
@@ -888,7 +1168,15 @@
         "Motor not required to start under load, so use the next standard breaker size NOT exceeding 42.5 A = 40 A → answer B."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک موتور تک‌فاز لازم نیست تحت بار استارت شود. با full-load amperage برابر 17 A، حداکثر اندازه circuit breaker چقدر است؟",
+      "options_fa": [
+        "30 A",
+        "40 A",
+        "50 A",
+        "60 A"
+      ],
+      "answer_fa": "40 A (inverse-time breaker 250% × 17 A = 42.5 A؛ بزرگ‌ترین اندازه استاندارد که از آن تجاوز نکند = 40 A)."
     },
     {
       "id": "S28-037",
@@ -910,7 +1198,15 @@
         "Table 37"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک موتور Class F از نوع totally enclosed و non-ventilated در دمای محیط 40°C کار می‌کند. temperature rating هادی‌های تغذیه موتور چقدر است؟",
+      "options_fa": [
+        "90°C",
+        "100°C",
+        "110°C",
+        "120°C"
+      ],
+      "answer_fa": "90°C — یک موتور totally enclosed non-ventilated (TENV) از نوع Class F به هادی‌هایی با temperature rating بالاتر (90°C) در ترمینال‌ها نیاز دارد."
     },
     {
       "id": "S28-038",
@@ -937,7 +1233,15 @@
         "100 A is the largest offered option and matches the 175% result → answer D. (Rule 28-200 would allow up to 225% = 135 A only if the motor still won't start.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک موتور دارای FLC برابر 60 A و service factor برابر 1.15 است. اگر overload protection اجازه حرکت مداوم موتور را ندهد، کدام time-delay fuse مناسب است؟",
+      "options_fa": [
+        "60 A",
+        "70 A",
+        "80 A",
+        "100 A"
+      ],
+      "answer_fa": "100 A (time-delay fuse 175% × 60 A = 105 A → بزرگ‌ترین اندازه استاندارد که از آن تجاوز نکند = 100 A)."
     },
     {
       "id": "S28-039",
@@ -958,7 +1262,15 @@
         "Rule 28-604"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله بین disconnecting means و یک کمپرسور refrigeration سه‌فاز 50 HP، 575 V چقدر است؟",
+      "options_fa": [
+        "9 m",
+        "7.5 m",
+        "3 m",
+        "1 m"
+      ],
+      "answer_fa": "9 m — disconnect باید within sight تجهیزات و نه بیشتر از 9 m از آن باشد."
     },
     {
       "id": "S28-040",
@@ -977,7 +1289,15 @@
       "answer_key": "D",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "چه نوع موتوری speed regulation عالی دارد؟",
+      "options_fa": [
+        "Squirrel cage",
+        "Universal",
+        "Series",
+        "Shunt"
+      ],
+      "answer_fa": "موتور Shunt (DC) — تحت بار متغیر، speed regulation خوب/ثابتی فراهم می‌کند."
     },
     {
       "id": "S28-041",
@@ -1002,7 +1322,15 @@
         "Answer = 6 (D)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در تجهیزات HVAC، هنگامی که locked-rotor current rating برای تجهیزات horsepower-rated مشخص نشده باشد، ضریب full-load current (FLC) چقدر است؟",
+      "options_fa": [
+        "1.25",
+        "1.5",
+        "3",
+        "6"
+      ],
+      "answer_fa": "6 — وقتی locked-rotor current به‌گونه دیگری نشان‌گذاری نشده باشد، برابر 6 برابر full-load current در نظر گرفته می‌شود."
     },
     {
       "id": "S28-042",
@@ -1023,7 +1351,15 @@
         "Section 36 (high-voltage installations)"
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل الزام phase spacing برای یک نصب high-voltage در 69 kV برای یک کلید از نوع enclosed horn-gap چقدر است؟",
+      "options_fa": [
+        "1520 mm",
+        "2130 mm",
+        "3050 mm",
+        "4270 mm"
+      ],
+      "answer_fa": "مقدار وابسته به جدول منبع — برای راستی‌آزمایی در برابر جدول phase-spacing فشار قوی flagged شده است."
     },
     {
       "id": "S28-043",
@@ -1044,7 +1380,15 @@
         "Rule 28-306"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام محاسبه اندازه overload protection برای یک موتور سه‌فاز، وقتی service factor نشان‌گذاری نشده باشد، چه ضریبی باید در FLA ضرب شود؟",
+      "options_fa": [
+        "overload protection موازی",
+        "115% از rated current",
+        "125% از rated current",
+        "نیازی به overload protection نیست"
+      ],
+      "answer_fa": "115% از rated current — وقتی service factor (و temperature rise) نشان‌گذاری نشده باشد، حداکثر overload برابر 115% از nameplate FLA است."
     },
     {
       "id": "S28-044",
@@ -1063,7 +1407,15 @@
       "answer_key": "C",
       "references": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام دستگاه در یک مدار کنترل موتور به‌صورت موازی با دکمه start سیم‌کشی می‌شود؟",
+      "options_fa": [
+        "کویل",
+        "دکمه stop",
+        "کنتاکت maintaining",
+        "کنتاکت overload"
+      ],
+      "answer_fa": "کنتاکت maintaining (holding/seal-in) — به‌صورت موازی با دکمه start سیم‌کشی می‌شود تا پس از رها شدن دکمه، کویل برق‌دار بماند."
     }
   ]
 }

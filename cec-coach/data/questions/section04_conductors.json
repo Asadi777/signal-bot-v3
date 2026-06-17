@@ -8,10 +8,18 @@
       "type": "calculation",
       "topic": "ampacity-free-air",
       "question": "A single 2/0 R90 (90°C) aluminum-sheathed copper conductor is run in free air. What is its ampacity?",
-      "options": ["A) 175 A", "B) 235 A", "C) 195 A", "D) 300 A"],
+      "options": [
+        "A) 175 A",
+        "B) 235 A",
+        "C) 195 A",
+        "D) 300 A"
+      ],
       "answer_key": "C",
       "answer": "195 A",
-      "references": ["Rule 4-004 1)", "Table 1"],
+      "references": [
+        "Rule 4-004 1)",
+        "Table 1"
+      ],
       "solution_steps": [
         "Rule (selection): free air + copper conductor → Table 1 (free-air copper). Teacher grid: Tables 1 & 2 = copper, Tables 1 & 3 = free air, so free-air copper = Table 1, NOT Table 3 (Table 3 is free-air aluminum).",
         "Table: the conductor is a copper conductor (aluminum-SHEATHED, but the current-carrying conductor is copper), so Table 1 applies; the sheath material does not change the table.",
@@ -20,7 +28,15 @@
         "Result: 195 A. (Source answer 300 A / Table 3 was incorrect — wrong table for a copper conductor.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک هادی مسی منفرد 2/0 نوع R90 (دمای 90°C) با غلاف آلومینیومی به صورت free air (در هوای آزاد) کشیده شده است. ampacity آن چقدر است؟",
+      "options_fa": [
+        "175 A",
+        "235 A",
+        "195 A",
+        "300 A"
+      ],
+      "answer_fa": "195 A"
     },
     {
       "id": "S04-002",
@@ -29,16 +45,27 @@
       "type": "theory",
       "topic": "neutral-temp-rating",
       "question": "The insulation on the neutral conductors should have a temperature rating less than the temperature rating of the insulation on the ungrounded conductors. True or False?",
-      "options": ["A) True", "B) False"],
+      "options": [
+        "A) True",
+        "B) False"
+      ],
       "answer": "False — the neutral (identified) conductor insulation must have a temperature rating not less than that of the ungrounded conductors.",
       "answer_key": "B",
-      "references": ["Rule 4-016 2)"],
+      "references": [
+        "Rule 4-016 2)"
+      ],
       "solution_steps": [
         "Rule 4-016 2) requires the insulation of the identified (neutral) conductor to have a temperature rating not less than that of the ungrounded conductors.",
         "Therefore the statement is False."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "عایق هادی‌های neutral باید temperature rating کمتری نسبت به عایق هادی‌های ungrounded داشته باشد. درست است یا نادرست؟",
+      "options_fa": [
+        "درست",
+        "نادرست"
+      ],
+      "answer_fa": "نادرست — عایق هادی neutral (identified) باید temperature rating ای کمتر از هادی‌های ungrounded نداشته باشد."
     },
     {
       "id": "S04-003",
@@ -47,10 +74,20 @@
       "type": "calculation",
       "topic": "mixed-temp-raceway",
       "question": "A rigid steel conduit contains three #4 R90 copper conductors and three #1 TW75 copper conductors. What is the maximum allowable ampacity of each conductor?",
-      "options": ["A) #4 = 76 A, #1 = 104 A", "B) #4 = 68 A, #1 = 104 A", "C) #4 = 85 A, #1 = 130 A", "D) #4 = 68 A, #1 = 117 A"],
+      "options": [
+        "A) #4 = 76 A, #1 = 104 A",
+        "B) #4 = 68 A, #1 = 104 A",
+        "C) #4 = 85 A, #1 = 130 A",
+        "D) #4 = 68 A, #1 = 117 A"
+      ],
       "answer_key": "B",
       "answer": "#4 = 68 A, #1 = 104 A",
-      "references": ["Rule 4-004 1)c)", "Rule 4-038", "Table 2", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Rule 4-038",
+        "Table 2",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (mixed temp ratings): Rule 4-038 — conductors of different temperature ratings in the same raceway are sized on the basis of the LOWEST temperature rating present, here 75°C. So the R90 conductors are read in the 75°C column too.",
         "Table/value: Table 2 copper at 75°C — #4 = 85 A, #1 = 130 A.",
@@ -59,7 +96,15 @@
         "Result: #4 = 68 A, #1 = 104 A. (Confirms the source figures; the 68 A comes from applying Rule 4-038 lowest-rating, i.e. the #4 R90 is held to its 75°C value of 85 A, not its 90°C value of 95 A.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک rigid steel conduit شامل سه هادی مسی #4 نوع R90 و سه هادی مسی #1 نوع TW75 است. حداکثر ampacity مجاز هر هادی چقدر است؟",
+      "options_fa": [
+        "#4 = 76 A، #1 = 104 A",
+        "#4 = 68 A، #1 = 104 A",
+        "#4 = 85 A، #1 = 130 A",
+        "#4 = 68 A، #1 = 117 A"
+      ],
+      "answer_fa": "#4 = 68 A، #1 = 104 A"
     },
     {
       "id": "S04-004",
@@ -68,10 +113,19 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "What is the maximum allowable ampacity of each conductor if there are 25 #4 R90 copper conductors installed in EMT?",
-      "options": ["A) 76 A", "B) 66.5 A", "C) 57 A", "D) 47.5 A"],
+      "options": [
+        "A) 76 A",
+        "B) 66.5 A",
+        "C) 57 A",
+        "D) 47.5 A"
+      ],
       "answer_key": "C",
       "answer": "57 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway + copper → Table 2; base value for #4 copper at 90°C (R90) = 95 A.",
         "Count derate: 25 current-carrying conductors → Table 5C, 25–42 conductors = 0.60.",
@@ -79,7 +133,15 @@
         "Result: 57 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اگر 25 هادی مسی #4 نوع R90 داخل EMT نصب شده باشد، حداکثر ampacity مجاز هر هادی چقدر است؟",
+      "options_fa": [
+        "76 A",
+        "66.5 A",
+        "57 A",
+        "47.5 A"
+      ],
+      "answer_fa": "57 A"
     },
     {
       "id": "S04-005",
@@ -88,10 +150,19 @@
       "type": "calculation",
       "topic": "parallel-direct-burial",
       "question": "An 800 A non-continuous load is supplied by paralleling single-conductor Teck cable, type RW90 copper. The cable is direct-buried and spaced 190 mm apart. What is the minimum conductor size required?",
-      "options": ["A) 250 kcmil (two conductors per phase in parallel, each ≈ 422 A)", "B) 4/0 AWG (two conductors per phase in parallel)", "C) 350 kcmil (two conductors per phase in parallel)", "D) 500 kcmil (single conductor per phase)"],
+      "options": [
+        "A) 250 kcmil (two conductors per phase in parallel, each ≈ 422 A)",
+        "B) 4/0 AWG (two conductors per phase in parallel)",
+        "C) 350 kcmil (two conductors per phase in parallel)",
+        "D) 500 kcmil (single conductor per phase)"
+      ],
       "answer_key": "A",
       "answer": "250 kcmil (two conductors per phase in parallel, each ≈ 422 A)",
-      "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
+      "references": [
+        "Rule 4-004 1)d)",
+        "Diagram D8",
+        "Table D8A detail 2"
+      ],
       "solution_steps": [
         "Rule (selection): direct-buried spaced single conductors → Rule 4-004 1)d) sends you to the underground spaced configuration (Appendix D), Diagram D8 / Table D8A detail 2.",
         "Method: two conductors per phase in parallel → each carries 800 A ÷ 2 = 400 A; pick a size whose underground ampacity ≥ 400 A.",
@@ -99,7 +170,15 @@
         "NEEDS REVIEW: confirm the exact 250 kcmil ampacity for 90°C Cu, single-conductor Teck, direct-buried spaced 190 mm in Table D8A detail 2 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک load غیرپیوسته 800 A توسط کابل Teck تک‌رشته نوع RW90 مسی به صورت parallel تغذیه می‌شود. کابل به صورت direct-buried و با فاصله 190 mm از هم نصب شده است. حداقل اندازه هادی موردنیاز چقدر است؟",
+      "options_fa": [
+        "250 kcmil (دو هادی به ازای هر فاز به صورت parallel، هر کدام ≈ 422 A)",
+        "4/0 AWG (دو هادی به ازای هر فاز به صورت parallel)",
+        "350 kcmil (دو هادی به ازای هر فاز به صورت parallel)",
+        "500 kcmil (یک هادی به ازای هر فاز)"
+      ],
+      "answer_fa": "250 kcmil (دو هادی به ازای هر فاز به صورت parallel، هر کدام ≈ 422 A)"
     },
     {
       "id": "S04-006",
@@ -108,10 +187,19 @@
       "type": "calculation",
       "topic": "underground-multiconductor",
       "question": "A 3-phase, multi-conductor copper cable is directly buried in an underground installation supplying a load of 300 A. What is the ampacity of this cable?",
-      "options": ["A) 300 A", "B) 285 A", "C) 350 A", "D) 337 A"],
+      "options": [
+        "A) 300 A",
+        "B) 285 A",
+        "C) 350 A",
+        "D) 337 A"
+      ],
       "answer_key": "D",
       "answer": "337 A",
-      "references": ["Rule 4-004 1)d)", "Diagram D10", "Table D10A detail 1"],
+      "references": [
+        "Rule 4-004 1)d)",
+        "Diagram D10",
+        "Table D10A detail 1"
+      ],
       "solution_steps": [
         "Rule (selection): direct-buried multi-conductor cable → Rule 4-004 1)d), Appendix D, Diagram D10 / Table D10A detail 1.",
         "Method: select a conductor whose underground (buried) ampacity is at least the 300 A load.",
@@ -119,7 +207,15 @@
         "NEEDS REVIEW: confirm the conductor size and its 337 A value in Table D10A detail 1 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک کابل مسی multi-conductor سه‌فاز به صورت direct-buried در یک نصب underground قرار دارد و load معادل 300 A را تغذیه می‌کند. ampacity این کابل چقدر است؟",
+      "options_fa": [
+        "300 A",
+        "285 A",
+        "350 A",
+        "337 A"
+      ],
+      "answer_fa": "337 A"
     },
     {
       "id": "S04-007",
@@ -128,10 +224,18 @@
       "type": "calculation",
       "topic": "service-neutral-supported",
       "question": "Determine the minimum size of copper conductor (NS75 neutral-supported cable) required for a 200 A, 120/240 V, single-phase overhead service.",
-      "options": ["A) #2 AWG copper", "B) #1 AWG copper", "C) #1/0 AWG copper", "D) #3 AWG copper"],
+      "options": [
+        "A) #2 AWG copper",
+        "B) #1 AWG copper",
+        "C) #1/0 AWG copper",
+        "D) #3 AWG copper"
+      ],
       "answer_key": "B",
       "answer": "#1 AWG copper",
-      "references": ["Rule 4-004 5)", "Table 36B"],
+      "references": [
+        "Rule 4-004 5)",
+        "Table 36B"
+      ],
       "solution_steps": [
         "Rule (selection): neutral-supported overhead service cable → Rule 4-004 5) directs you to the NS service-conductor table, Table 36B (copper NS).",
         "Method: for a 200 A service read down Table 36B (copper) to the minimum NS conductor rated ≥ 200 A.",
@@ -139,7 +243,15 @@
         "NEEDS REVIEW: confirm #1 AWG copper for 200 A in Table 36B of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه هادی مسی (کابل neutral-supported نوع NS75) موردنیاز برای یک سرویس هوایی (overhead) تک‌فاز 200 A با ولتاژ 120/240 V را تعیین کنید.",
+      "options_fa": [
+        "#2 AWG مسی",
+        "#1 AWG مسی",
+        "#1/0 AWG مسی",
+        "#3 AWG مسی"
+      ],
+      "answer_fa": "#1 AWG مسی"
     },
     {
       "id": "S04-008",
@@ -148,10 +260,18 @@
       "type": "calculation",
       "topic": "portable-power-cable",
       "question": "A 2 kV non-shielded, three-conductor, portable power cable supplies a non-continuous load that requires 200 A. Determine the minimum conductor size required.",
-      "options": ["A) #1 AWG", "B) #2 AWG", "C) 1/0 AWG", "D) 2/0 AWG"],
+      "options": [
+        "A) #1 AWG",
+        "B) #2 AWG",
+        "C) 1/0 AWG",
+        "D) 2/0 AWG"
+      ],
       "answer_key": "C",
       "answer": "1/0 AWG",
-      "references": ["Rule 4-034", "Table 12A"],
+      "references": [
+        "Rule 4-034",
+        "Table 12A"
+      ],
       "solution_steps": [
         "Rule (selection): portable power cable ampacity → Rule 4-034 sends you to Table 12A.",
         "Method: find the smallest three-conductor portable-power-cable size whose ampacity ≥ 200 A.",
@@ -159,7 +279,15 @@
         "NEEDS REVIEW: confirm 1/0 AWG (≥ 200 A, 3-conductor, 2 kV non-shielded) in Table 12A of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک کابل قدرت portable سه‌رشته non-shielded با ولتاژ 2 kV یک load غیرپیوسته با نیاز 200 A را تغذیه می‌کند. حداقل اندازه هادی موردنیاز را تعیین کنید.",
+      "options_fa": [
+        "#1 AWG",
+        "#2 AWG",
+        "1/0 AWG",
+        "2/0 AWG"
+      ],
+      "answer_fa": "1/0 AWG"
     },
     {
       "id": "S04-009",
@@ -168,10 +296,18 @@
       "type": "calculation",
       "topic": "free-air-aluminum",
       "question": "What is the maximum allowable ampacity of each conductor when there are two 2/0 R90 XLPE aluminum conductors installed in a free-air run?",
-      "options": ["A) 195 A", "B) 235 A", "C) 188 A", "D) 300 A"],
+      "options": [
+        "A) 195 A",
+        "B) 235 A",
+        "C) 188 A",
+        "D) 300 A"
+      ],
       "answer_key": "B",
       "answer": "235 A",
-      "references": ["Rule 4-004 1)", "Table 3"],
+      "references": [
+        "Rule 4-004 1)",
+        "Table 3"
+      ],
       "solution_steps": [
         "Rule (selection): free air + aluminum → Table 3 (teacher grid: Tables 3 & 4 = aluminum, Tables 1 & 3 = free air).",
         "Value: Table 3, 2/0 aluminum, 90°C column = 235 A (per source).",
@@ -179,7 +315,15 @@
         "NEEDS REVIEW: confirm the Table 3 (free-air aluminum) 90°C value for 2/0 = 235 A in the 2024 code (free-air aluminum value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "وقتی دو هادی آلومینیومی 2/0 نوع R90 با عایق XLPE به صورت free air (در هوای آزاد) نصب شده‌اند، حداکثر ampacity مجاز هر هادی چقدر است؟",
+      "options_fa": [
+        "195 A",
+        "235 A",
+        "188 A",
+        "300 A"
+      ],
+      "answer_fa": "235 A"
     },
     {
       "id": "S04-010",
@@ -188,16 +332,31 @@
       "type": "theory",
       "topic": "bonding-conductor-count",
       "question": "Does an electrician need to count bonding conductors when determining the ampacities of conductors in raceways?",
-      "options": ["A) Yes — all conductors in the raceway are counted.", "B) No — bonding conductors are not counted as current-carrying conductors.", "C) Yes — but only bonding conductors larger than #6.", "D) Only when more than 3 current-carrying conductors are present."],
+      "options": [
+        "A) Yes — all conductors in the raceway are counted.",
+        "B) No — bonding conductors are not counted as current-carrying conductors.",
+        "C) Yes — but only bonding conductors larger than #6.",
+        "D) Only when more than 3 current-carrying conductors are present."
+      ],
       "answer_key": "B",
       "answer": "No — bonding conductors are not counted as current-carrying conductors.",
-      "references": ["Rule 4-004 6)"],
+      "references": [
+        "Rule 4-004 6)"
+      ],
       "solution_steps": [
         "Rule 4-004 6) states that bonding (and certain other non current-carrying) conductors are not counted when determining the count-derating of conductors in a raceway.",
         "Result: No."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا یک برق‌کار باید هنگام تعیین ampacity هادی‌های داخل raceway، هادی‌های bonding را هم بشمارد؟",
+      "options_fa": [
+        "بله — همه هادی‌های داخل raceway شمرده می‌شوند.",
+        "خیر — هادی‌های bonding به‌عنوان هادی current-carrying شمرده نمی‌شوند.",
+        "بله — اما فقط هادی‌های bonding بزرگ‌تر از #6.",
+        "فقط زمانی که بیش از 3 هادی current-carrying وجود داشته باشد."
+      ],
+      "answer_fa": "خیر — هادی‌های bonding به‌عنوان هادی current-carrying شمرده نمی‌شوند."
     },
     {
       "id": "S04-011",
@@ -206,10 +365,20 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "What is the maximum ampacity of each conductor when 10 #4 R90 copper conductors are installed in a run of EMT located in a 40°C ambient temperature?",
-      "options": ["A) 66.5 A", "B) 60.51 A", "C) 86.45 A", "D) 53.2 A"],
+      "options": [
+        "A) 66.5 A",
+        "B) 60.51 A",
+        "C) 86.45 A",
+        "D) 53.2 A"
+      ],
       "answer_key": "B",
       "answer": "60.51 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5A",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway + copper → Table 2; #4 copper at 90°C (R90) = 95 A.",
         "Count derate: 10 current-carrying conductors → Table 5C, 7–24 = 0.70.",
@@ -218,7 +387,15 @@
         "Result: ≈ 60.51 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی 10 هادی مسی #4 نوع R90 داخل یک مسیر EMT در ambient temperature برابر 40°C نصب شده‌اند، حداکثر ampacity هر هادی چقدر است؟",
+      "options_fa": [
+        "66.5 A",
+        "60.51 A",
+        "86.45 A",
+        "53.2 A"
+      ],
+      "answer_fa": "60.51 A"
     },
     {
       "id": "S04-012",
@@ -227,10 +404,20 @@
       "type": "calculation",
       "topic": "equipment-wire",
       "question": "If 35 #10 TEW (equipment wire) conductors are to be installed in one conduit, what is the ampacity of each conductor?",
-      "options": ["A) 16.8 A (source) — but the standard Table 5C count factor for 35 conductors is 0.60, which would give 18 A; verify", "B) 18 A", "C) 21 A", "D) 30 A"],
+      "options": [
+        "A) 16.8 A (source) — but the standard Table 5C count factor for 35 conductors is 0.60, which would give 18 A; verify",
+        "B) 18 A",
+        "C) 21 A",
+        "D) 30 A"
+      ],
       "answer_key": "A",
       "answer": "16.8 A (source) — but the standard Table 5C count factor for 35 conductors is 0.60, which would give 18 A; verify",
-      "references": ["Rule 4-014", "Rule 4-012", "Table 12", "Table 5C"],
+      "references": [
+        "Rule 4-014",
+        "Rule 4-012",
+        "Table 12",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): equipment wire (TEW) ampacity → Rule 4-014, Table 12; source base for #10 TEW = 30 A.",
         "Count derate: source applies 0.56 for 35 conductors → 30 × 0.56 = 16.8 A.",
@@ -238,7 +425,15 @@
         "NEEDS REVIEW: confirm (a) the #10 TEW base ampacity in Table 12 of the 2024 code, and (b) which count-derating basis applies to equipment wire. Source figure 16.8 A vs 2024-method figure 18 A shown for a human to decide; do not silently change."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "اگر قرار باشد 35 هادی #10 نوع TEW (equipment wire) داخل یک conduit نصب شوند، ampacity هر هادی چقدر است؟",
+      "options_fa": [
+        "16.8 A (منبع) — اما ضریب شمارش استاندارد Table 5C برای 35 هادی برابر 0.60 است که 18 A می‌دهد؛ بررسی شود",
+        "18 A",
+        "21 A",
+        "30 A"
+      ],
+      "answer_fa": "16.8 A (منبع) — اما ضریب شمارش استاندارد Table 5C برای 35 هادی برابر 0.60 است که 18 A می‌دهد؛ بررسی شود"
     },
     {
       "id": "S04-013",
@@ -247,10 +442,19 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "What is the maximum allowable ampacity of each conductor when five conductors type TW rated at 60°C, 1/0 copper, are installed in a rigid steel conduit?",
-      "options": ["A) 125 A", "B) 100 A", "C) 87.5 A", "D) 120 A"],
+      "options": [
+        "A) 125 A",
+        "B) 100 A",
+        "C) 87.5 A",
+        "D) 120 A"
+      ],
       "answer_key": "B",
       "answer": "100 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway + copper → Table 2; 1/0 copper at 60°C (TW) = 125 A.",
         "Count derate: 5 current-carrying conductors → Table 5C, 4–6 = 0.80.",
@@ -258,7 +462,15 @@
         "Result: 100 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی پنج هادی مسی 1/0 نوع TW با rating دمایی 60°C داخل یک rigid steel conduit نصب شده‌اند، حداکثر ampacity مجاز هر هادی چقدر است؟",
+      "options_fa": [
+        "125 A",
+        "100 A",
+        "87.5 A",
+        "120 A"
+      ],
+      "answer_fa": "100 A"
     },
     {
       "id": "S04-014",
@@ -267,10 +479,19 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "What is the maximum current each conductor can carry, for a cable or raceway that contains 32 #4 copper conductors, type TW rated at 60°C?",
-      "options": ["A) 70 A", "B) 49 A", "C) 42 A", "D) 56 A"],
+      "options": [
+        "A) 70 A",
+        "B) 49 A",
+        "C) 42 A",
+        "D) 56 A"
+      ],
       "answer_key": "C",
       "answer": "42 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway/cable + copper → Table 2; #4 copper at 60°C (TW) = 70 A.",
         "Count derate: 32 current-carrying conductors → Table 5C, 25–42 = 0.60.",
@@ -278,7 +499,15 @@
         "Result: 42 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای یک کابل یا raceway که شامل 32 هادی مسی #4 نوع TW با rating دمایی 60°C است، حداکثر current ای که هر هادی می‌تواند حمل کند چقدر است؟",
+      "options_fa": [
+        "70 A",
+        "49 A",
+        "42 A",
+        "56 A"
+      ],
+      "answer_fa": "42 A"
     },
     {
       "id": "S04-015",
@@ -287,10 +516,21 @@
       "type": "calculation",
       "topic": "mixed-temp-derate-ambient",
       "question": "What is the maximum ampacity of 7 conductors in a raceway located in 45°C ambient, containing four 2/0 R90 copper conductors and three 1/0 TW75 copper conductors?",
-      "options": ["A) 2/0 = 86.1 A, 1/0 = 100.45 A", "B) 2/0 = 100.45 A, 1/0 = 86.1 A", "C) 2/0 = 122.5 A, 1/0 = 105 A", "D) 2/0 = 112 A, 1/0 = 96 A"],
+      "options": [
+        "A) 2/0 = 86.1 A, 1/0 = 100.45 A",
+        "B) 2/0 = 100.45 A, 1/0 = 86.1 A",
+        "C) 2/0 = 122.5 A, 1/0 = 105 A",
+        "D) 2/0 = 112 A, 1/0 = 96 A"
+      ],
       "answer_key": "B",
       "answer": "2/0 = 100.45 A, 1/0 = 86.1 A",
-      "references": ["Rule 4-004 1)c)", "Rule 4-038", "Table 2", "Table 5C", "Table 5A"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Rule 4-038",
+        "Table 2",
+        "Table 5C",
+        "Table 5A"
+      ],
       "solution_steps": [
         "Rule (mixed temp ratings): Rule 4-038 — different temperature ratings in one raceway are sized on the LOWEST rating present (75°C). So both the 2/0 R90 and the 1/0 TW75 are read in the 75°C column.",
         "Table/value: Table 2 copper at 75°C — 2/0 = 175 A, 1/0 = 150 A.",
@@ -300,7 +540,15 @@
         "Result: 2/0 = 100.45 A, 1/0 = 86.1 A. (Source had the two values SWAPPED — it labelled the 2/0 as 86.1 A and the 1/0 as 100.45 A; the larger conductor must have the larger ampacity.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ampacity برای 7 هادی داخل یک raceway در ambient برابر 45°C، که شامل چهار هادی مسی 2/0 نوع R90 و سه هادی مسی 1/0 نوع TW75 است، چقدر است؟",
+      "options_fa": [
+        "2/0 = 86.1 A، 1/0 = 100.45 A",
+        "2/0 = 100.45 A، 1/0 = 86.1 A",
+        "2/0 = 122.5 A، 1/0 = 105 A",
+        "2/0 = 112 A، 1/0 = 96 A"
+      ],
+      "answer_fa": "2/0 = 100.45 A، 1/0 = 86.1 A"
     },
     {
       "id": "S04-016",
@@ -309,17 +557,32 @@
       "type": "lookup",
       "topic": "conductor-colors",
       "question": "What are the required colors of conductors installed in a 3-phase, 3-wire, 600 V circuit?",
-      "options": ["A) Red (A), Black (B), Blue (C)", "B) Red (A), White (B), Black (C)", "C) Brown (A), Orange (B), Yellow (C)", "D) Black (A), Red (B), Blue (C)"],
+      "options": [
+        "A) Red (A), Black (B), Blue (C)",
+        "B) Red (A), White (B), Black (C)",
+        "C) Brown (A), Orange (B), Yellow (C)",
+        "D) Black (A), Red (B), Blue (C)"
+      ],
       "answer_key": "A",
       "answer": "Red (A), Black (B), Blue (C)",
-      "references": ["Rule 4-036 (colour-coded circuits)"],
+      "references": [
+        "Rule 4-036 (colour-coded circuits)"
+      ],
       "solution_steps": [
         "Rule (identification): where phase conductors are colour-coded, the CEC sequence is phase A = red, phase B = black, phase C = blue.",
         "Value: Red (A), Black (B), Blue (C).",
         "Result: Red, Black, Blue. (Colours are the standard CEC sequence; confirm the exact subrule citation — the source's '4-032 1)c)' was replaced with the colour-coding rule.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "رنگ‌های لازم برای هادی‌های نصب‌شده در یک مدار سه‌فاز سه‌سیمه 600 V چیست؟",
+      "options_fa": [
+        "قرمز (A)، مشکی (B)، آبی (C)",
+        "قرمز (A)، سفید (B)، مشکی (C)",
+        "قهوه‌ای (A)، نارنجی (B)، زرد (C)",
+        "مشکی (A)، قرمز (B)، آبی (C)"
+      ],
+      "answer_fa": "قرمز (A)، مشکی (B)، آبی (C)"
     },
     {
       "id": "S04-017",
@@ -328,17 +591,33 @@
       "type": "lookup",
       "topic": "elevator-cable",
       "question": "What is the maximum current that elevator cable wire type ETP No. 14 can carry?",
-      "options": ["A) 10 A", "B) 20 A", "C) 15 A", "D) 25 A"],
+      "options": [
+        "A) 10 A",
+        "B) 20 A",
+        "C) 15 A",
+        "D) 25 A"
+      ],
       "answer_key": "C",
       "answer": "15 A",
-      "references": ["Rule 4-014", "Table 12"],
+      "references": [
+        "Rule 4-014",
+        "Table 12"
+      ],
       "solution_steps": [
         "Rule (selection): elevator/flexible-cord ampacity → Rule 4-014, Table 12.",
         "Value: source reads #14 ETP elevator cable = 15 A.",
         "NEEDS REVIEW: confirm the #14 ETP elevator-cable ampacity in Table 12 of the 2024 code (flexible-cord table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر current ای که سیم کابل آسانسور نوع ETP شماره 14 می‌تواند حمل کند چقدر است؟",
+      "options_fa": [
+        "10 A",
+        "20 A",
+        "15 A",
+        "25 A"
+      ],
+      "answer_fa": "15 A"
     },
     {
       "id": "S04-018",
@@ -347,17 +626,33 @@
       "type": "lookup",
       "topic": "equipment-wire",
       "question": "What is the ampacity of #8 AWG equipment wire, type GTF?",
-      "options": ["A) 40 A", "B) 35 A", "C) 45 A", "D) 55 A"],
+      "options": [
+        "A) 40 A",
+        "B) 35 A",
+        "C) 45 A",
+        "D) 55 A"
+      ],
       "answer_key": "A",
       "answer": "40 A",
-      "references": ["Rule 4-014", "Table 12"],
+      "references": [
+        "Rule 4-014",
+        "Table 12"
+      ],
       "solution_steps": [
         "Rule (selection): equipment-wire (GTF) ampacity → Rule 4-014, Table 12.",
         "Value: source reads #8 GTF = 40 A.",
         "NEEDS REVIEW: confirm the #8 GTF ampacity in Table 12 of the 2024 code (equipment-wire table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "ampacity سیم equipment wire نوع GTF با اندازه #8 AWG چقدر است؟",
+      "options_fa": [
+        "40 A",
+        "35 A",
+        "45 A",
+        "55 A"
+      ],
+      "answer_fa": "40 A"
     },
     {
       "id": "S04-019",
@@ -366,10 +661,18 @@
       "type": "calculation",
       "topic": "service-quadruplex",
       "question": "For a 250 A, 3-phase, 4-wire, 600 V overhead service, what size of NS90 aluminum quadruplex cable is required?",
-      "options": ["A) 2/0 AWG aluminum", "B) 4/0 AWG aluminum", "C) 3/0 AWG aluminum", "D) 250 kcmil aluminum"],
+      "options": [
+        "A) 2/0 AWG aluminum",
+        "B) 4/0 AWG aluminum",
+        "C) 3/0 AWG aluminum",
+        "D) 250 kcmil aluminum"
+      ],
       "answer_key": "C",
       "answer": "3/0 AWG aluminum",
-      "references": ["Rule 4-004 5)", "Table 36A"],
+      "references": [
+        "Rule 4-004 5)",
+        "Table 36A"
+      ],
       "solution_steps": [
         "Rule (selection): overhead service neutral-supported (NS) aluminum cable → Rule 4-004 5), Table 36A (aluminum NS).",
         "Method: for a 250 A service read down Table 36A (aluminum) to the minimum NS size rated ≥ 250 A.",
@@ -377,7 +680,15 @@
         "NEEDS REVIEW: confirm 3/0 AWG aluminum for 250 A in Table 36A of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "برای یک سرویس هوایی (overhead) سه‌فاز چهارسیمه 600 V با جریان 250 A، چه اندازه‌ای از کابل quadruplex آلومینیومی نوع NS90 لازم است؟",
+      "options_fa": [
+        "2/0 AWG آلومینیومی",
+        "4/0 AWG آلومینیومی",
+        "3/0 AWG آلومینیومی",
+        "250 kcmil آلومینیومی"
+      ],
+      "answer_fa": "3/0 AWG آلومینیومی"
     },
     {
       "id": "S04-020",
@@ -386,17 +697,32 @@
       "type": "theory",
       "topic": "neutral-temp-rating",
       "question": "A line conductor in a conduit carrying three hot conductors and a bare neutral is rated at 75°C. What should be the temperature rating of the neutral conductor?",
-      "options": ["A) 60°C", "B) 75°C — the neutral must have a temperature rating not less than the line conductors.", "C) 90°C", "D) The neutral has no temperature-rating requirement."],
+      "options": [
+        "A) 60°C",
+        "B) 75°C — the neutral must have a temperature rating not less than the line conductors.",
+        "C) 90°C",
+        "D) The neutral has no temperature-rating requirement."
+      ],
       "answer_key": "B",
       "answer": "75°C — the neutral must have a temperature rating not less than the line conductors.",
-      "references": ["Rule 4-016 2)"],
+      "references": [
+        "Rule 4-016 2)"
+      ],
       "solution_steps": [
         "Rule: the identified (neutral) conductor insulation must have a temperature rating not less than that of the ungrounded (line) conductors (same principle as Rule 4-016 2)).",
         "The line conductors are 75°C, so the neutral must be at least 75°C.",
         "Result: 75°C."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک هادی line داخل یک conduit که سه هادی hot و یک neutral لخت را حمل می‌کند، rating دمایی 75°C دارد. temperature rating هادی neutral باید چقدر باشد؟",
+      "options_fa": [
+        "60°C",
+        "75°C — هادی neutral باید temperature rating ای کمتر از هادی‌های line نداشته باشد.",
+        "90°C",
+        "هادی neutral هیچ الزام temperature rating ای ندارد."
+      ],
+      "answer_fa": "75°C — هادی neutral باید temperature rating ای کمتر از هادی‌های line نداشته باشد."
     },
     {
       "id": "S04-021",
@@ -405,17 +731,33 @@
       "type": "calculation",
       "topic": "termination-temperature",
       "question": "If a #6 Teck 90 cable is terminated at a circuit breaker marked maximum 75°C, what is the maximum current this cable can carry?",
-      "options": ["A) 75 A", "B) 55 A", "C) 65 A", "D) 70 A"],
+      "options": [
+        "A) 75 A",
+        "B) 55 A",
+        "C) 65 A",
+        "D) 70 A"
+      ],
       "answer_key": "C",
       "answer": "65 A",
-      "references": ["Rule 4-006 1)", "Table 2"],
+      "references": [
+        "Rule 4-006 1)",
+        "Table 2"
+      ],
       "solution_steps": [
         "Rule (termination): Rule 4-006 limits the ampacity to the lowest temperature rating of any connected termination — here the breaker is marked 75°C.",
         "Table/value: Table 2, #6 copper at 75°C = 65 A.",
         "Result: 65 A (the 90°C cable rating is not usable because the 75°C termination governs)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "اگر یک کابل #6 نوع Teck 90 به یک circuit breaker با حداکثر علامت‌گذاری 75°C terminate شود، حداکثر current ای که این کابل می‌تواند حمل کند چقدر است؟",
+      "options_fa": [
+        "75 A",
+        "55 A",
+        "65 A",
+        "70 A"
+      ],
+      "answer_fa": "65 A"
     },
     {
       "id": "S04-022",
@@ -424,10 +766,19 @@
       "type": "calculation",
       "topic": "neutral-supported-ambient",
       "question": "What is the maximum ampacity of a #4 NS90 aluminum neutral-supported cable with 3 conductors in an ambient temperature of 35°C?",
-      "options": ["A) 122 A", "B) 117.5 A (source)", "C) 110 A", "D) 105 A"],
+      "options": [
+        "A) 122 A",
+        "B) 117.5 A (source)",
+        "C) 110 A",
+        "D) 105 A"
+      ],
       "answer_key": "B",
       "answer": "117.5 A (source)",
-      "references": ["Rule 4-004 5)", "Table 36A", "Table 5A"],
+      "references": [
+        "Rule 4-004 5)",
+        "Table 36A",
+        "Table 5A"
+      ],
       "solution_steps": [
         "Rule (selection): NS90 aluminum cable → Rule 4-004 5), Table 36A (aluminum NS).",
         "Method: read the #4 aluminum NS90 base ampacity from Table 36A, then apply the 35°C ambient factor (Table 5A, 90°C column = 0.96).",
@@ -435,7 +786,15 @@
         "NEEDS REVIEW: confirm the Table 36A base ampacity for #4 NS90 aluminum (3 conductors) and the applicable ambient factor in the 2024 code; source result 117.5 A not independently verified."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر ampacity یک کابل آلومینیومی neutral-supported نوع #4 NS90 با 3 هادی در ambient temperature برابر 35°C چقدر است؟",
+      "options_fa": [
+        "122 A",
+        "117.5 A (منبع)",
+        "110 A",
+        "105 A"
+      ],
+      "answer_fa": "117.5 A (منبع)"
     },
     {
       "id": "S04-023",
@@ -444,10 +803,19 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "There are 10 #3 copper TW75 conductors running in a raceway or cable. What is the maximum current each conductor can carry?",
-      "options": ["A) 100 A", "B) 80 A", "C) 60 A", "D) 70 A"],
+      "options": [
+        "A) 100 A",
+        "B) 80 A",
+        "C) 60 A",
+        "D) 70 A"
+      ],
       "answer_key": "D",
       "answer": "70 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway/cable + copper → Table 2; #3 copper at 75°C (TW75) = 100 A.",
         "Count derate: 10 current-carrying conductors → Table 5C, 7–24 = 0.70.",
@@ -455,7 +823,15 @@
         "Result: 70 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "تعداد 10 هادی مسی #3 نوع TW75 داخل یک raceway یا کابل کشیده شده‌اند. حداکثر current ای که هر هادی می‌تواند حمل کند چقدر است؟",
+      "options_fa": [
+        "100 A",
+        "80 A",
+        "60 A",
+        "70 A"
+      ],
+      "answer_fa": "70 A"
     },
     {
       "id": "S04-024",
@@ -464,10 +840,18 @@
       "type": "calculation",
       "topic": "service-neutral-supported",
       "question": "In order to supply 150 A to an outbuilding with voltage requirements of 120/240 V, what size of NS90 copper neutral-supported cable would be required?",
-      "options": ["A) #6 AWG copper", "B) #4 AWG copper", "C) #3 AWG copper", "D) #2 AWG copper"],
+      "options": [
+        "A) #6 AWG copper",
+        "B) #4 AWG copper",
+        "C) #3 AWG copper",
+        "D) #2 AWG copper"
+      ],
       "answer_key": "B",
       "answer": "#4 AWG copper",
-      "references": ["Rule 4-004 5)", "Table 36B"],
+      "references": [
+        "Rule 4-004 5)",
+        "Table 36B"
+      ],
       "solution_steps": [
         "Rule (selection): NS copper cable → Rule 4-004 5), Table 36B (copper NS).",
         "Method: for a 150 A feeder read down Table 36B (copper) to the minimum NS size rated ≥ 150 A.",
@@ -475,7 +859,15 @@
         "NEEDS REVIEW: confirm #4 AWG copper for 150 A in Table 36B of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "برای تغذیه 150 A به یک ساختمان جانبی با نیاز ولتاژی 120/240 V، چه اندازه‌ای از کابل مسی neutral-supported نوع NS90 لازم است؟",
+      "options_fa": [
+        "#6 AWG مسی",
+        "#4 AWG مسی",
+        "#3 AWG مسی",
+        "#2 AWG مسی"
+      ],
+      "answer_fa": "#4 AWG مسی"
     },
     {
       "id": "S04-025",
@@ -484,17 +876,33 @@
       "type": "calculation",
       "topic": "derating-factor",
       "question": "In order to calculate the ampacity of 10 conductors type TW75 installed in one conduit, what is the correction (count-adjustment) factor?",
-      "options": ["A) 0.80", "B) 0.70", "C) 0.60", "D) 0.50"],
+      "options": [
+        "A) 0.80",
+        "B) 0.70",
+        "C) 0.60",
+        "D) 0.50"
+      ],
       "answer_key": "B",
       "answer": "0.70",
-      "references": ["Rule 4-004 1)c)", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Count-adjustment for multiple current-carrying conductors comes from Table 5C.",
         "Table 5C ranges: 4–6 = 0.80, 7–24 = 0.70, 25–42 = 0.60. 10 conductors falls in the 7–24 range → 0.70.",
         "Result: 0.70."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای محاسبه ampacity ده هادی نوع TW75 نصب‌شده در یک conduit، ضریب اصلاح (count-adjustment) چقدر است؟",
+      "options_fa": [
+        "0.80",
+        "0.70",
+        "0.60",
+        "0.50"
+      ],
+      "answer_fa": "0.70"
     },
     {
       "id": "S04-026",
@@ -503,17 +911,34 @@
       "type": "calculation",
       "topic": "underground-multiconductor",
       "question": "An underground raceway contains three 4/0 RW90 copper conductors in a multi-conductor cable that supply a non-continuous load. What is the maximum current each conductor can supply?",
-      "options": ["A) 230 A", "B) 260 A", "C) 303 A", "D) 337 A"],
+      "options": [
+        "A) 230 A",
+        "B) 260 A",
+        "C) 303 A",
+        "D) 337 A"
+      ],
       "answer_key": "C",
       "answer": "303 A",
-      "references": ["Rule 4-004 1)d)", "Diagram D11", "Table D11A detail 1"],
+      "references": [
+        "Rule 4-004 1)d)",
+        "Diagram D11",
+        "Table D11A detail 1"
+      ],
       "solution_steps": [
         "Rule (selection): underground raceway, multi-conductor → Rule 4-004 1)d), Appendix D, Diagram D11 / Table D11A detail 1.",
         "Method: read 4/0 copper (90°C) from Table D11A detail 1; source value = 303 A (> the 300 A load).",
         "NEEDS REVIEW: confirm the 4/0 Cu value of 303 A in Table D11A detail 1 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک raceway underground شامل سه هادی مسی 4/0 نوع RW90 در یک کابل multi-conductor است که یک load غیرپیوسته را تغذیه می‌کنند. حداکثر current ای که هر هادی می‌تواند تأمین کند چقدر است؟",
+      "options_fa": [
+        "230 A",
+        "260 A",
+        "303 A",
+        "337 A"
+      ],
+      "answer_fa": "303 A"
     },
     {
       "id": "S04-027",
@@ -522,10 +947,20 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "Ten #10 AWG R90 copper conductors are installed in a conduit in an ambient temperature of 40°C. What is the maximum ampacity of the conductors under this condition?",
-      "options": ["A) 28 A", "B) 25.48 A", "C) 21.84 A", "D) 36.4 A"],
+      "options": [
+        "A) 28 A",
+        "B) 25.48 A",
+        "C) 21.84 A",
+        "D) 36.4 A"
+      ],
       "answer_key": "B",
       "answer": "25.48 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5A",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway/cable + copper → Table 2; #10 copper at 90°C (R90) = 40 A.",
         "Count derate: 10 current-carrying conductors → Table 5C, 7–24 = 0.70.",
@@ -534,7 +969,15 @@
         "Result: 25.48 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "ده هادی مسی #10 AWG نوع R90 داخل یک conduit در ambient temperature برابر 40°C نصب شده‌اند. حداکثر ampacity هادی‌ها در این شرایط چقدر است؟",
+      "options_fa": [
+        "28 A",
+        "25.48 A",
+        "21.84 A",
+        "36.4 A"
+      ],
+      "answer_fa": "25.48 A"
     },
     {
       "id": "S04-028",
@@ -543,10 +986,19 @@
       "type": "calculation",
       "topic": "neutral-supported-ambient",
       "question": "What is the maximum ampacity allowed for a #6 AWG copper NS75 neutral-supported cable with 4 insulated conductors installed in an ambient temperature of 35°C?",
-      "options": ["A) 90 A", "B) 84.6 A", "C) 82.8 A (source) — see review note on the ambient factor", "D) 75 A"],
+      "options": [
+        "A) 90 A",
+        "B) 84.6 A",
+        "C) 82.8 A (source) — see review note on the ambient factor",
+        "D) 75 A"
+      ],
       "answer_key": "C",
       "answer": "82.8 A (source) — see review note on the ambient factor",
-      "references": ["Rule 4-004 5)", "Table 36B", "Table 5A"],
+      "references": [
+        "Rule 4-004 5)",
+        "Table 36B",
+        "Table 5A"
+      ],
       "solution_steps": [
         "Rule (selection): NS75 copper cable → Rule 4-004 5), Table 36B; source base for #6 copper NS75 = 90 A.",
         "Ambient: source uses 0.92 for 35°C → 90 × 0.92 = 82.8 A.",
@@ -554,7 +1006,15 @@
         "NEEDS REVIEW: confirm (a) the Table 36B base ampacity for #6 NS75 copper and (b) the correct 35°C ambient factor. Source 82.8 A (×0.92) vs 2024-method 84.6 A (×0.94) shown for a human to decide."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر ampacity مجاز برای یک کابل مسی neutral-supported نوع #6 AWG NS75 با 4 هادی عایق‌دار نصب‌شده در ambient temperature برابر 35°C چقدر است؟",
+      "options_fa": [
+        "90 A",
+        "84.6 A",
+        "82.8 A (منبع) — یادداشت بررسی درباره ضریب ambient را ببینید",
+        "75 A"
+      ],
+      "answer_fa": "82.8 A (منبع) — یادداشت بررسی درباره ضریب ambient را ببینید"
     },
     {
       "id": "S04-029",
@@ -563,10 +1023,20 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "What is the ampacity of each conductor installed in a conduit that contains 28 copper R90 #4 conductors placed in an ambient temperature of 40°C?",
-      "options": ["A) 57 A", "B) 60.51 A", "C) 51.87 A", "D) 47.5 A"],
+      "options": [
+        "A) 57 A",
+        "B) 60.51 A",
+        "C) 51.87 A",
+        "D) 47.5 A"
+      ],
       "answer_key": "C",
       "answer": "51.87 A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5A",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway/cable + copper → Table 2; #4 copper at 90°C (R90) = 95 A.",
         "Count derate: 28 current-carrying conductors → Table 5C, 25–42 = 0.60.",
@@ -575,7 +1045,15 @@
         "Result: 51.87 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "ampacity هر هادی نصب‌شده در یک conduit که شامل 28 هادی مسی #4 نوع R90 در ambient temperature برابر 40°C است، چقدر است؟",
+      "options_fa": [
+        "57 A",
+        "60.51 A",
+        "51.87 A",
+        "47.5 A"
+      ],
+      "answer_fa": "51.87 A"
     },
     {
       "id": "S04-030",
@@ -584,10 +1062,19 @@
       "type": "calculation",
       "topic": "parallel-direct-burial",
       "question": "Calculate the minimum conductor size required where single-conductor Teck cables are run in parallel to supply a 400 A non-continuous load, are directly buried, and spaced 190 mm apart.",
-      "options": ["A) #1 AWG", "B) 1/0 AWG", "C) 2/0 AWG", "D) 4/0 AWG"],
+      "options": [
+        "A) #1 AWG",
+        "B) 1/0 AWG",
+        "C) 2/0 AWG",
+        "D) 4/0 AWG"
+      ],
       "answer_key": "B",
       "answer": "1/0 AWG",
-      "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
+      "references": [
+        "Rule 4-004 1)d)",
+        "Diagram D8",
+        "Table D8A detail 2"
+      ],
       "solution_steps": [
         "Rule (selection): direct-buried spaced single conductors → Rule 4-004 1)d), Appendix D, Diagram D8 / Table D8A detail 2.",
         "Method: one conductor per phase must carry the full 400 A; pick the size whose buried/spaced ampacity ≥ 400 A.",
@@ -595,7 +1082,15 @@
         "NEEDS REVIEW: confirm 1/0 AWG provides ≥ 400 A for single-conductor Teck, direct-buried, spaced 190 mm in Table D8A detail 2 of the 2024 code (Appendix D table not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه هادی موردنیاز را در حالتی محاسبه کنید که کابل‌های Teck تک‌رشته به صورت parallel برای تغذیه یک load غیرپیوسته 400 A کشیده شده‌اند، به صورت direct-buried و با فاصله 190 mm از هم.",
+      "options_fa": [
+        "#1 AWG",
+        "1/0 AWG",
+        "2/0 AWG",
+        "4/0 AWG"
+      ],
+      "answer_fa": "1/0 AWG"
     },
     {
       "id": "S04-031",
@@ -604,16 +1099,31 @@
       "type": "theory",
       "topic": "mixed-temp-basis",
       "question": "The ampacity of conductors of different temperature ratings installed in the same raceway shall be determined on the basis of the conductor having the .......... temperature rating.",
-      "options": ["A) Highest", "B) Lowest", "C) More than 75°C", "D) 90°C"],
+      "options": [
+        "A) Highest",
+        "B) Lowest",
+        "C) More than 75°C",
+        "D) 90°C"
+      ],
       "answer": "Lowest",
       "answer_key": "B",
-      "references": ["Rule 4-038"],
+      "references": [
+        "Rule 4-038"
+      ],
       "solution_steps": [
         "Rule 4-038: when conductors of different temperature ratings share a raceway, the ampacity is determined on the basis of the conductor with the LOWEST temperature rating.",
         "Result: Lowest (option B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "ampacity هادی‌هایی با temperature rating های متفاوت که در یک raceway مشترک نصب شده‌اند، باید بر اساس هادی با .......... temperature rating تعیین شود.",
+      "options_fa": [
+        "بالاترین",
+        "پایین‌ترین",
+        "بیش از 75°C",
+        "90°C"
+      ],
+      "answer_fa": "پایین‌ترین"
     },
     {
       "id": "S04-032",
@@ -622,16 +1132,31 @@
       "type": "lookup",
       "topic": "conductor-colors",
       "question": "What is the color code for phase conductors of a three-phase system?",
-      "options": ["A) Red, black, blue", "B) Red, black, white", "C) Blue, black, red", "D) Red, white, black"],
+      "options": [
+        "A) Red, black, blue",
+        "B) Red, black, white",
+        "C) Blue, black, red",
+        "D) Red, white, black"
+      ],
       "answer": "Red, black, blue",
       "answer_key": "A",
-      "references": ["Rule 4-036 (colour-coded circuits)"],
+      "references": [
+        "Rule 4-036 (colour-coded circuits)"
+      ],
       "solution_steps": [
         "Where colour-coded, the CEC 3-phase sequence is phase A = red, phase B = black, phase C = blue.",
         "Result: Red, black, blue (option A)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کد رنگ هادی‌های فاز در یک سیستم سه‌فاز چیست؟",
+      "options_fa": [
+        "قرمز، مشکی، آبی",
+        "قرمز، مشکی، سفید",
+        "آبی، مشکی، قرمز",
+        "قرمز، سفید، مشکی"
+      ],
+      "answer_fa": "قرمز، مشکی، آبی"
     },
     {
       "id": "S04-033",
@@ -640,10 +1165,20 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "Given eight current-carrying conductors in a raceway, ambient temperature of 50°C, #8 AWG 60°C copper conductor — what is the maximum allowable ampacity of the conductor?",
-      "options": ["A) 16.24 A", "B) 23.20 A", "C) 28.00 A", "D) 40.00 A"],
+      "options": [
+        "A) 16.24 A",
+        "B) 23.20 A",
+        "C) 28.00 A",
+        "D) 40.00 A"
+      ],
       "answer": "16.24 A",
       "answer_key": "A",
-      "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
+      "references": [
+        "Rule 4-004 1)c)",
+        "Table 2",
+        "Table 5A",
+        "Table 5C"
+      ],
       "solution_steps": [
         "Rule (selection): raceway + copper → Table 2; #8 copper at 60°C = 40 A.",
         "Count derate: 8 current-carrying conductors → Table 5C, 7–24 = 0.70.",
@@ -652,7 +1187,15 @@
         "Result: 16.24 A (option A)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "با فرض هشت هادی current-carrying در یک raceway، ambient temperature برابر 50°C و هادی مسی #8 AWG با عایق 60°C — حداکثر ampacity مجاز هادی چقدر است؟",
+      "options_fa": [
+        "16.24 A",
+        "23.20 A",
+        "28.00 A",
+        "40.00 A"
+      ],
+      "answer_fa": "16.24 A"
     },
     {
       "id": "S04-034",
@@ -661,10 +1204,19 @@
       "type": "calculation",
       "topic": "sizing-from-derated-ampacity",
       "question": "In a room where the ambient temperature reaches 48°C, what is the minimum size TW75 copper conductor in EMT that is allowed to carry 170 A?",
-      "options": ["A) #1/0 AWG", "B) #2/0 AWG", "C) #3/0 AWG", "D) #4/0 AWG"],
+      "options": [
+        "A) #1/0 AWG",
+        "B) #2/0 AWG",
+        "C) #3/0 AWG",
+        "D) #4/0 AWG"
+      ],
       "answer": "#4/0 AWG",
       "answer_key": "D",
-      "references": ["Rule 4-004 1)", "Table 2", "Table 5A"],
+      "references": [
+        "Rule 4-004 1)",
+        "Table 2",
+        "Table 5A"
+      ],
       "solution_steps": [
         "Ambient: 48°C is not a listed row → Table 5A round-up rule uses the next-higher listed temperature, 50°C. At 50°C, 75°C insulation column → 0.75.",
         "Required base (table) ampacity = 170 A ÷ 0.75 ≈ 226.7 A.",
@@ -672,7 +1224,15 @@
         "Result: #4/0 AWG (option D). (Either the source's ≈0.76/224 A or the round-up 0.75/226.7 A lands on #4/0.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در اتاقی که ambient temperature به 48°C می‌رسد، حداقل اندازه هادی مسی نوع TW75 داخل EMT که مجاز به حمل 170 A باشد، چقدر است؟",
+      "options_fa": [
+        "#1/0 AWG",
+        "#2/0 AWG",
+        "#3/0 AWG",
+        "#4/0 AWG"
+      ],
+      "answer_fa": "#4/0 AWG"
     }
   ]
 }

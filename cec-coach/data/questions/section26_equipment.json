@@ -24,7 +24,15 @@
         "Answer = 1.7 m (c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی یک panelboard در یک واحد مسکونی نصب می‌شود، حداکثر ارتفاع دسته فرمان (operating handle) بالاترین circuit breaker نسبت به کف تمام‌شده باید چقدر باشد؟",
+      "options_fa": [
+        "1.5 m",
+        "2.7 m",
+        "1.7 m",
+        "2.1 m"
+      ],
+      "answer_fa": "1.7 m"
     },
     {
       "id": "S26-002",
@@ -50,7 +58,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "C"
+      "answer_key": "C",
+      "question_fa": "پیکربندی CSA یک receptacle قفل‌شونده (locking type) با مشخصات ۶۰۰ولت، تک‌فاز و ۲۰آمپر چیست؟",
+      "options_fa": [
+        "5-20R",
+        "15-20R",
+        "24-20R",
+        "6-20R"
+      ],
+      "answer_fa": "برای پیکربندی دقیق قفل‌شونده ۶۰۰ ولت تک‌فاز ۲۰ آمپر باید به Diagram 1 مراجعه شود"
     },
     {
       "id": "S26-003",
@@ -74,7 +90,15 @@
         "Rule 26-712: receptacles placed so no point along the floor line is more than 1.8 m from a receptacle, i.e. maximum spacing 3.6 m."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله مجاز بین receptacleهای نصب‌شده روی دیوار واحدهای مسکونی چقدر است؟",
+      "options_fa": [
+        "1.8 m",
+        "2.7 m",
+        "3.6 m",
+        "2.1 m"
+      ],
+      "answer_fa": "3.6 m"
     },
     {
       "id": "S26-004",
@@ -100,7 +124,15 @@
         "24.06 x 1.35 = 32.5 A → answer b."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ظرفیت جریان (ampacity) هادی موردنیاز برای یک capacitor bank سه‌فاز ۶۰۰ولت با توان ۲۵ KVA چقدر است؟",
+      "options_fa": [
+        "25.5 A",
+        "32.5 A",
+        "30.1 A",
+        "33 A"
+      ],
+      "answer_fa": "32.5 A"
     },
     {
       "id": "S26-005",
@@ -126,7 +158,15 @@
         "The exact CEC 26-210 capacitor OCPD multiplier could not be confirmed from the source; method shown, key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه fuse مجاز برای capacitor سؤال قبل (سه‌فاز ۶۰۰ولت، ۲۵ KVA) چقدر است؟",
+      "options_fa": [
+        "50 A",
+        "60 A",
+        "65 A",
+        "70 A"
+      ],
+      "answer_fa": "65 A"
     },
     {
       "id": "S26-006",
@@ -151,7 +191,15 @@
         "Marked key for 15 kV = 3 m (c). The exact 15 kV clearance value is a Table lookup that could not be confirmed from the source (Table 56 = working space, not applicable); reference corrected and flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "وقتی ولتاژ خط ۱۵ KV است، حداقل فاصله (clearance) بین یک حصار (fence) و یک قسمت برق‌دار محافظت‌نشده (unguarded live part) چقدر باید باشد؟",
+      "options_fa": [
+        "1.5 m",
+        "2.7 m",
+        "3 m",
+        "2.1 m"
+      ],
+      "answer_fa": "3 m"
     },
     {
       "id": "S26-007",
@@ -176,7 +224,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "A"
+      "answer_key": "A",
+      "question_fa": "یک instrument transformer با مشخصات ۲۴۰ولت-۱۲۰ولت داریم. حداکثر اندازه fuse مجاز در سمت اولیه (primary) چقدر است؟",
+      "options_fa": [
+        "3 A",
+        "10 A",
+        "6 A",
+        "7 A"
+      ],
+      "answer_fa": "برای تأیید، باید مقدار rule/table مربوط به OCPD اولیه instrument transformer بررسی شود"
     },
     {
       "id": "S26-008",
@@ -201,7 +257,15 @@
         "Marked key = more than 64 L (d). The exact litre threshold could not be confirmed from the source; flagged for review (no value fabricated)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل مقدار مایع در هر مخزن نصب‌شده در فضای داخلی که از آن به بعد تجهیزات برقی پر از مایع دی‌الکتریک (dielectric liquid-filled) باید در یک electrical vault نصب شوند، چقدر است؟",
+      "options_fa": [
+        "23 L",
+        "بیش از 23 L",
+        "64 L",
+        "بیش از 64 L"
+      ],
+      "answer_fa": "بیش از 64 L"
     },
     {
       "id": "S26-009",
@@ -226,7 +290,15 @@
         "Answer = 1 m (A)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فضای کاری (working space) موردنیاز در سمت دسترسی یک transformer که دارای fuse داخلی محدودکننده جریان (current-limiting) و یک دستگاه تخلیه فشار (pressure-relief) است، چقدر است؟",
+      "options_fa": [
+        "1 m",
+        "1.5 m",
+        "2 m",
+        "3 m"
+      ],
+      "answer_fa": "1 m"
     },
     {
       "id": "S26-010",
@@ -251,7 +323,15 @@
         "Answer = 0.4 mm (c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فاصله موردنیاز برای بیرون‌زدگی سطح receptacle نسبت به یک faceplate فلزی چقدر است؟",
+      "options_fa": [
+        "0.5 mm",
+        "0.7 mm",
+        "0.4 mm",
+        "0.1 mm"
+      ],
+      "answer_fa": "0.4 mm"
     },
     {
       "id": "S26-011",
@@ -276,7 +356,15 @@
         "Answer = 130 mm (c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ارتفاع مجاز برای نصب receptacle تغذیه‌کننده یک اجاق برقی (electric range) چقدر است؟",
+      "options_fa": [
+        "150 mm",
+        "210 mm",
+        "130 mm",
+        "230 mm"
+      ],
+      "answer_fa": "130 mm"
     },
     {
       "id": "S26-012",
@@ -301,7 +389,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "B"
+      "answer_key": "B",
+      "question_fa": "وقتی یک ماده عایق حرارتی غیرقابل‌اشتعال (non-combustible heat-insulating) بین دیوار و transformer قرار می‌گیرد، حداقل فاصله موردنیاز بین دیوار و یک dry-type transformer نصب‌شده روی دیوار چقدر است؟",
+      "options_fa": [
+        "10 mm",
+        "6 mm",
+        "6.5 mm",
+        "2.5 mm"
+      ],
+      "answer_fa": "برای تأیید، باید مقدار فاصله از دیوار طبق Rule 26-244 بررسی شود"
     },
     {
       "id": "S26-013",
@@ -326,7 +422,15 @@
         "Answer = Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بر اساس Canadian Electrical Code، آیا الزامی است که هر branch circuit تغذیه‌کننده receptacleهای ۱۲۵ولت با رِیتینگ ۲۰آمپر یا کمتر در یک واحد مسکونی توسط یک AFCI از نوع combination محافظت شود؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط برای یخچال",
+        "برای ۲۴۰ولت"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-014",
@@ -348,7 +452,15 @@
       ],
       "solution_steps": [],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر ارتفاع مجاز خط مرکزی receptacle اجاق (range) در یک واحد مسکونی تک‌خانواری نسبت به کف تمام‌شده چقدر است؟",
+      "options_fa": [
+        "150 mm",
+        "210 mm",
+        "130 mm",
+        "230 mm"
+      ],
+      "answer_fa": "130 mm"
     },
     {
       "id": "S26-015",
@@ -374,7 +486,15 @@
         "A receptacle within 1 m of the sink is within the 1.5 m zone, so GFCI protection is required → Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا code برای یک receptacle نوع 5-15R که در فاصله کمتر از ۱ متری یک سینک (sink) نصب شده، محافظت GFCI را الزامی می‌کند؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط برای یخچال",
+        "فقط برای ۲۴۰ولت"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-016",
@@ -399,7 +519,15 @@
         "Answer = 2 (c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در یک واحد مسکونی تک‌خانواری، حداقل تعداد receptacleهای دوبل (duplex) که باید در فضای بیرون نصب شوند تا از سطح زمین یا گرِید به‌راحتی قابل‌دسترس باشند، چند عدد است؟",
+      "options_fa": [
+        "1",
+        "3",
+        "2",
+        "4"
+      ],
+      "answer_fa": "2"
     },
     {
       "id": "S26-017",
@@ -424,7 +552,15 @@
         "Answer = Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "در یک واحد مسکونی تک‌خانواری، آیا نصب یک receptacle با پیکربندی CSA نوع 5-20RA مجاز است؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط در آشپزخانه",
+        "فقط در فضای بیرون"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-018",
@@ -450,7 +586,15 @@
         "Therefore GFCI protection is not required for this dedicated washer receptacle → No (b)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا code برای یک receptacle نوع 5-15R که پشت ماشین لباسشویی و در فاصله کمتر از ۱ متری سینک لباسشویی (laundry sink) قرار دارد، محافظت GFCI را الزامی می‌کند؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط اگر ۲۰ آمپر باشد",
+        "فقط در فضای بیرون"
+      ],
+      "answer_fa": "خیر"
     },
     {
       "id": "S26-019",
@@ -475,7 +619,15 @@
         "Answer = Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا این درست است که تمام receptacleهای نصب‌شده در فضای بیرون برای کاربری‌های مسکونی که در فاصله کمتر از ۲.۵ متری گرِید تمام‌شده قرار دارند، باید با یک GFCI از نوع Class A محافظت شوند؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط بالاتر از 2.5 m",
+        "فقط برای ۲۴۰ ولت"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-020",
@@ -500,7 +652,15 @@
         "800 x 400 mm exceeds both thresholds, so a receptacle outlet is required → Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا برای یک پیشخوان جزیره (island counter) به‌طور دائم ثابت‌شده با بُعد بلند ۸۰۰ میلی‌متر و بُعد کوتاه ۴۰۰ میلی‌متر، یک خروجی receptacle لازم است؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط اگر بیش از 1 m باشد",
+        "فقط اگر برای پخت‌وپز استفاده شود"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-021",
@@ -529,7 +689,15 @@
         "Select R90 XLPE Cu from Table 2 (90 C column) for ampacities >= 104.2 A (primary) and >= 260.4 A (secondary). Exact AWG/kcmil could not be confirmed from the source without the Table 2 values; flagged for review (no table value fabricated)."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "دو transformer تک‌فاز خشک (dry-type) با مشخصات ۶۰۰-۱۲۰/۲۴۰ ولت و ۲۵ KVA به‌صورت موازی به هم متصل شده‌اند. اندازه هادی‌های اولیه (primary) و ثانویه (secondary) تغذیه‌کننده این transformerهای موازی را تعیین کنید. از R90 XLPE مسی (Cu) استفاده کنید.",
+      "options_fa": [
+        "اولیه ‎#3 AWG، ثانویه 250 kcmil",
+        "اولیه ‎#4 AWG، ثانویه 4/0 AWG",
+        "اولیه ‎#3 AWG، ثانویه 4/0 AWG",
+        "اولیه ‎#6 AWG، ثانویه 3/0 AWG"
+      ],
+      "answer_fa": "روش: اولیه حدود ۱۰۴ آمپر (اندازه تقریبی ‎#3 AWG مسی)، ثانویه حدود ۲۶۰ آمپر (اندازه تقریبی 250 kcmil مسی)؛ AWG را با Table 2 تأیید کنید"
     },
     {
       "id": "S26-022",
@@ -554,7 +722,15 @@
         "Answer = 15 m (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله مجاز بین receptacleهای دوبل (duplex) نصب‌شده در راهروهای عمومی (public corridors) کاربری‌های مسکونی چقدر است؟",
+      "options_fa": [
+        "15 m",
+        "6 m",
+        "10 m",
+        "2.5 m"
+      ],
+      "answer_fa": "15 m"
     },
     {
       "id": "S26-023",
@@ -579,7 +755,15 @@
         "Answer = 1 (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "code حداقل چند receptacle دوبل (duplex) را در یک carport یک واحد مسکونی تک‌خانواری الزامی می‌کند؟",
+      "options_fa": [
+        "1",
+        "3",
+        "هیچ",
+        "4"
+      ],
+      "answer_fa": "1"
     },
     {
       "id": "S26-024",
@@ -604,7 +788,15 @@
         "Answer = Yes (a). Note: the dedicated-circuit exceptions of 26-722 (e.g. central vacuum, fixed appliances) still apply separately."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا تغذیه اتاق لباسشویی و اتاق تأسیسات (utility room) با یک branch circuit مشترک در کاربری‌های مسکونی مجاز است؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط برای یخچال",
+        "فقط برای ۲۴۰ولت"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-025",
@@ -633,7 +825,15 @@
         "Note: the over-750 V multiplier (Table 50) is what permits 300%; for primary <=750 V without secondary protection the limit would be 125%/next size up. Verify the Table 50 percentage against the code."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "برای محافظت از اولیه (primary) یک transformer قدرت سه‌فاز با مشخصات ۱۵۰ KVA و ۱۰۰۰ولت، چه اندازه circuit breaker موردنیاز است؟",
+      "options_fa": [
+        "100 A",
+        "110 A",
+        "250 A",
+        "300 A"
+      ],
+      "answer_fa": "250 A"
     },
     {
       "id": "S26-026",
@@ -659,7 +859,15 @@
         "The replacement OCPD must have an interrupting rating of at least 24,982 A → answer D."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "امپدانس یک transformer سه‌فاز ۲۲۵ KVA با مشخصات ۶۰۰-۱۲۰/۲۰۸ برابر ۲.۵٪ است. هنگام تعویض دستگاه اضافه‌جریان (overcurrent device) روی ثانویه، حداقل رِیتینگ جریان اتصال‌کوتاه (short-circuit current rating) موردنیاز چقدر است؟",
+      "options_fa": [
+        "625 amps",
+        "1082 amps",
+        "18 872 amps",
+        "24,982 amps"
+      ],
+      "answer_fa": "24,982 amps"
     },
     {
       "id": "S26-027",
@@ -684,7 +892,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "C"
+      "answer_key": "C",
+      "question_fa": "یک مخزن capacitor در خارج از اتاق سرویس (service room) قرار دارد. حداکثر مقدار مجاز مایع قابل‌اشتعال (flammable liquid) چقدر است؟",
+      "options_fa": [
+        "14 L",
+        "23 L",
+        "48 L",
+        "69 L"
+      ],
+      "answer_fa": "برای تأیید، باید مقدار مایع قابل‌اشتعال طبق Rule 26-012(4) بررسی شود"
     },
     {
       "id": "S26-028",
@@ -709,7 +925,15 @@
         "Answer = 150 mm (C)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک transformer خشک از نوع باز و تهویه‌دار (open ventilated) روی کف و در نزدیکی یک دیوار قرار دارد. حداقل فاصله جدایش بین transformer و دیوار چقدر است؟",
+      "options_fa": [
+        "6 mm",
+        "50 mm",
+        "150 mm",
+        "300 mm"
+      ],
+      "answer_fa": "150 mm"
     },
     {
       "id": "S26-029",
@@ -738,7 +962,15 @@
         "The exact >750 V fuse multiplier (Table 50) could not be confirmed from the source; method shown, key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "با فرض یک transformer خشک (dry-type) سه‌فاز ۱۵۰ KVA، ولتاژ اولیه ۱۲،۴۷۰ولت، امپدانس ۷.۵٪، با OCD تعبیه‌شده در ثانویه، حداکثر اندازه fuse که می‌توان در فیدر اولیه نصب کرد چقدر است؟",
+      "options_fa": [
+        "10 A",
+        "15 A",
+        "18 A",
+        "20 A"
+      ],
+      "answer_fa": "15 A"
     },
     {
       "id": "S26-030",
@@ -763,7 +995,15 @@
         "Answer = 0.4 mm (A)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک faceplate فلزی روی یک box حاوی receptacle نصب شده است. حداقل فاصله مجاز بین سطح receptacle و faceplate فلزی چقدر است؟",
+      "options_fa": [
+        "0.4 mm",
+        "0.575 mm",
+        "4.0 mm",
+        "6.750 mm"
+      ],
+      "answer_fa": "0.4 mm"
     },
     {
       "id": "S26-031",
@@ -789,7 +1029,15 @@
         "It must be GFCI (Class A) protected for personnel servicing the equipment → 5-20R GFCI (B)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "پیکربندی CSA برای receptacleهای موردنیاز جهت نگهداری (maintenance) یک واحد HVAC روی پشت‌بام چیست؟",
+      "options_fa": [
+        "5-15R AFCI",
+        "5-20R GFCI",
+        "5-30R AFCI",
+        "5-50R GFCI"
+      ],
+      "answer_fa": "5-20R GFCI"
     },
     {
       "id": "S26-032",
@@ -814,7 +1062,15 @@
         "Answer = Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "برای یک receptacle که برای سیستم جاروبرقی مرکزی (central vacuum) خانگی نصب شده است، آیا تأمین یک branch circuit جداگانه لازم است؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط برای یخچال",
+        "فقط برای ۲۴۰ولت"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-033",
@@ -839,7 +1095,15 @@
         "Answer = 1 m (c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل فاصله جدایش موردنیاز بین یک حصار (fence) و یک enclosure حاوی قسمت‌های برق‌دار (live parts) چقدر است؟",
+      "options_fa": [
+        "1.5 m",
+        "1.6 m",
+        "1 m",
+        "2 m"
+      ],
+      "answer_fa": "1 m"
     },
     {
       "id": "S26-034",
@@ -864,7 +1128,15 @@
         "Answer = Yes (a)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "آیا این درست است که روی همان branch circuit مسکونی مربوط به یخچال، نصب یک receptacle برای ساعت برقی (electric clock) مجاز است؟",
+      "options_fa": [
+        "بله",
+        "خیر",
+        "فقط اگر GFCI باشد",
+        "فقط برای ۲۴۰ولت"
+      ],
+      "answer_fa": "بله"
     },
     {
       "id": "S26-035",
@@ -889,7 +1161,15 @@
         "Available (maximum) fault current = secondary FLA / per-unit impedance = 166.7 / 0.015 = 11,111 A → answer b."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک transformer تک‌فاز ۱۰۰ KVA برای تأمین یک سرویس ۶۰۰ولت استفاده می‌شود. این transformer درصد امپدانس ۱.۵٪ دارد. با فرض ظرفیت اولیه بی‌نهایت، حداکثر جریان اتصال‌کوتاه (fault current) چقدر است؟",
+      "options_fa": [
+        "10,111 A",
+        "11,111 A",
+        "12,111 A",
+        "13,111 A"
+      ],
+      "answer_fa": "11,111 A"
     },
     {
       "id": "S26-036",
@@ -915,7 +1195,15 @@
         "The exact 'receptacles per circuit' limit is a code value; method retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "برای یک پیشخوان آشپزخانه مسکونی که به ۴ receptacle دوبل (duplex) نیاز دارد، چند branch circuit موردنیاز خواهد بود؟",
+      "options_fa": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer_fa": "2"
     },
     {
       "id": "S26-037",
@@ -940,7 +1228,15 @@
         "Maximum distance between adjacent receptacles = 2 x 1.8 m = 3.6 m → answer b."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداکثر فاصله مجاز بین receptacleها در اتاق نشیمن (living room) یک واحد مسکونی چقدر است؟",
+      "options_fa": [
+        "1.8 m",
+        "3.6 m",
+        "2.5 m",
+        "3.9 m"
+      ],
+      "answer_fa": "3.6 m"
     },
     {
       "id": "S26-038",
@@ -967,7 +1263,15 @@
         "Source did not mark the option; answer derived from the sump-pump GFCI exception, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "در یک مداری که یک پمپ چاهک (sump pump) واقع در یک واحد مسکونی را تغذیه می‌کند، چه نوع receptacle باید نصب شود؟",
+      "options_fa": [
+        "AFCI",
+        "GFCI",
+        "5-15R",
+        "5-30R"
+      ],
+      "answer_fa": "5-15R (تکی و بدون GFCI)"
     },
     {
       "id": "S26-039",
@@ -992,7 +1296,15 @@
         "Maximum fault current = 624.6 / 0.025 = 24,982 A."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "درصد امپدانس یک transformer سه‌فاز ۲۲۵ KVA با مشخصات ۶۰۰ به ۱۲۰/۲۰۸ برابر ۲.۵٪ است. هنگام تعویض محافظت اضافه‌جریان (overcurrent protection) روی ثانویه، حداقل رِیتینگ جریان اتصال‌کوتاه موردنیاز چقدر است؟",
+      "options_fa": [
+        "625A",
+        "1082A",
+        "24982A",
+        "43301A"
+      ],
+      "answer_fa": "24,982 A"
     },
     {
       "id": "S26-040",
@@ -1017,7 +1329,15 @@
         "Answer = 750 kcmil (d)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "هنگام نصب wireway، بزرگ‌ترین اندازه مجاز هادی آلومینیومی چقدر است؟",
+      "options_fa": [
+        "500 kcmil",
+        "600 kcmil",
+        "700 kcmil",
+        "750 kcmil"
+      ],
+      "answer_fa": "750 kcmil"
     },
     {
       "id": "S26-041",
@@ -1042,7 +1362,15 @@
         "Answer = #10 AWG (b)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بزرگ‌ترین اندازه هادی که می‌توان روی یک کلید (switch) با ترمینال‌های پیچ بست‌شونده (binding-screw) بست، چقدر است؟",
+      "options_fa": [
+        "#8 AWG",
+        "#10 AWG",
+        "#12 AWG",
+        "#14 AWG"
+      ],
+      "answer_fa": "#10 AWG"
     },
     {
       "id": "S26-042",
@@ -1067,7 +1395,15 @@
         "Answer = 20 A (b)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بزرگ‌ترین circuit breaker مجاز برای یک branch circuit روشنایی HID با ولتاژ ۱۲۰ولت در یک فضای تجاری چقدر است؟",
+      "options_fa": [
+        "15 A",
+        "20 A",
+        "40 A",
+        "50 A"
+      ],
+      "answer_fa": "20 A"
     },
     {
       "id": "S26-043",
@@ -1093,7 +1429,15 @@
         "The exact 240 V HID maximum could not be fully confirmed; key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "بزرگ‌ترین circuit breaker مجاز برای یک branch circuit روشنایی HID با ولتاژ ۲۴۰ولت در یک فضای تجاری چقدر است؟",
+      "options_fa": [
+        "15 A",
+        "20 A",
+        "40 A",
+        "50 A"
+      ],
+      "answer_fa": "50 A"
     },
     {
       "id": "S26-044",
@@ -1118,7 +1462,15 @@
         "Note: source duplicated number 43 for this item; sequenced here as S26-044."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "پیکربندی CSA برای یک receptacle موردنیاز جهت نگهداری (maintenance) یک واحد HVAC روی پشت‌بام چیست؟",
+      "options_fa": [
+        "5-15R",
+        "5-20R",
+        "5-30R",
+        "5-50R"
+      ],
+      "answer_fa": "5-20R"
     },
     {
       "id": "S26-045",
@@ -1143,7 +1495,15 @@
         "Answer = 150 mm (c)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک transformer با هسته خشک (dry-core) روی کف و در نزدیکی یک دیوار تخته‌چندلایی (plywood) قرار دارد. حداقل فاصله جدایش بین transformer و دیوار چقدر است؟",
+      "options_fa": [
+        "6 mm",
+        "50 mm",
+        "150 mm",
+        "300 mm"
+      ],
+      "answer_fa": "150 mm"
     },
     {
       "id": "S26-046",
@@ -1168,7 +1528,15 @@
         "(6-15R/6-20R are 250 V devices, not used for a 125 V maintenance receptacle.)"
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "یک receptacle نگهداری (maintenance) روی پشت‌بام یک ساختمان نصب شده است. کدام پیکربندی CSA موردنیاز است؟",
+      "options_fa": [
+        "5-15R",
+        "5-20R",
+        "6-15R",
+        "6-20R"
+      ],
+      "answer_fa": "5-20R"
     },
     {
       "id": "S26-047",
@@ -1193,7 +1561,15 @@
         "Answer = metal pan/containment below (c). The litre threshold dividing 'pan' vs 'vault' is a code value; key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "یک capacitor پر از مایع دی‌الکتریک (dielectric liquid-filled) با مخزن ۲۰ لیتری در فضای داخلی نصب شده است. برای محافظت از محیط اطراف در صورت ترکیدن مخزن چه کاری انجام می‌شود؟",
+      "options_fa": [
+        "تعبیه یک هیت‌سینک (heat sink) در زیر",
+        "نصب در یک vault جداگانه",
+        "نصب با یک سینی فلزی (metal pan) در زیر",
+        "تعبیه یک دستگاه نشانگر هشدار"
+      ],
+      "answer_fa": "نصب با یک سینی فلزی (metal pan) با لبه مهارکننده (containment) در زیر برای نگه‌داشتن مایع"
     },
     {
       "id": "S26-048",
@@ -1218,7 +1594,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "C"
+      "answer_key": "C",
+      "question_fa": "یک مخزن capacitor در خارج از یک اتاق سرویس (service room) قرار دارد. حداکثر مقدار مجاز مایع قابل‌اشتعال (flammable liquid) چقدر است؟",
+      "options_fa": [
+        "14 L",
+        "23 L",
+        "46 L",
+        "69 L"
+      ],
+      "answer_fa": "برای تأیید، باید مقدار مایع قابل‌اشتعال طبق Rule 26-012(4) بررسی شود"
     },
     {
       "id": "S26-049",
@@ -1244,7 +1628,15 @@
         "The exact capacitor OCPD multiplier in Rule 26-210 could not be confirmed from the source; key retained, flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداکثر اندازه fuse بدون تأخیر زمانی (non-time-delay) برای یک capacitor با مشخصات سه‌فاز ۶۰۰ولت و ۴۵ KVA چقدر است؟",
+      "options_fa": [
+        "60 A",
+        "90 A",
+        "100 A",
+        "110 A"
+      ],
+      "answer_fa": "110 A"
     },
     {
       "id": "S26-050",
@@ -1269,7 +1661,15 @@
         "Answer = transformer primary (d). Exact rule reference flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "روشنایی تزئینی با ولتاژ بسیار پایین (extra-low-voltage) باید در کجا زمین (ground) شود؟",
+      "options_fa": [
+        "تمام لامپ‌ها",
+        "چراغ روشنایی (lighting fixture)",
+        "بدنه transformer",
+        "اولیه transformer (transformer primary)"
+      ],
+      "answer_fa": "اولیه transformer (transformer primary)"
     },
     {
       "id": "S26-051",
@@ -1294,7 +1694,15 @@
         "Answer = the circuit must be GFCI protected (b)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "وقتی receptacleهای بیرونی در فاصله کمتر از ۲.۵ متری سطح گرِید روی یک واحد مسکونی تک‌خانواری نصب می‌شوند، چه چیزی الزامی است؟",
+      "options_fa": [
+        "باید یک درپوش توپُر (solid cover) تعبیه شود",
+        "مدار باید با GFCI محافظت شود",
+        "باید از یک هادی زمین (ground) عایق‌دار استفاده شود",
+        "enclosureها باید با سوراخ‌های تخلیه (drain holes) تجهیز شوند"
+      ],
+      "answer_fa": "مدار باید با GFCI محافظت شود"
     },
     {
       "id": "S26-052",
@@ -1319,7 +1727,15 @@
       ],
       "code_edition": "2024",
       "needs_review": true,
-      "answer_key": "C"
+      "answer_key": "C",
+      "question_fa": "حداقل فاصله از مواد قابل‌اشتعال (combustible material) که یک surge protector ولتاژ خط باید در فضای بیرون نصب شود، چقدر است؟",
+      "options_fa": [
+        "7.5 mm",
+        "12.5 mm",
+        "25.0 mm",
+        "37.5 mm"
+      ],
+      "answer_fa": "برای تأیید، باید مقدار فاصله surge protector طبق Rule 26-410 بررسی شود"
     },
     {
       "id": "S26-053",
@@ -1344,7 +1760,15 @@
         "Answer = C. Exact rule reference flagged for review."
       ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "بر اساس الزامات نصب، در یک پست توزیع (distributing substation) چه زمانی باید برق‌گیر (lightning arrester) نصب شود؟",
+      "options_fa": [
+        "فقط وقتی پست در فضای داخلی واقع شده باشد",
+        "فقط وقتی پست از فیدرهای زیرزمینی استفاده می‌کند",
+        "وقتی رعدوبرق در منطقه به‌طور مکرر رخ می‌دهد و هیچ محافظت کافی دیگری وجود ندارد",
+        "وقتی پست بیش از یک transformer دارد"
+      ],
+      "answer_fa": "وقتی رعدوبرق در منطقه به‌طور مکرر رخ می‌دهد و هیچ محافظت کافی دیگری وجود ندارد"
     }
   ]
 }

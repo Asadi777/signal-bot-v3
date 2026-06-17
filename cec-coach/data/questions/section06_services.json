@@ -3,147 +3,399 @@
   "questions": [
     {
       "id": "S06-001",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-mast",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-mast",
       "question": "Rigid steel conduit of a minimum nominal size of ______ shall be permitted for use as a service mast.",
-      "options": ["A) 35 mm (trade size 1-1/4)", "B) 41 mm (trade size 1-1/2)", "C) 53 mm (trade size 2)", "D) 63 mm (trade size 2-1/2)"],
+      "options": [
+        "A) 35 mm (trade size 1-1/4)",
+        "B) 41 mm (trade size 1-1/2)",
+        "C) 53 mm (trade size 2)",
+        "D) 63 mm (trade size 2-1/2)"
+      ],
       "answer_key": "C",
       "answer": "53 mm (rigid metal conduit, trade size 2). The source 'of 63' reads as an OCR slip; the commonly taught CEC service-mast minimum is 53 mm.",
-      "references": ["Rule 6-112"],
-      "solution_steps": ["Rule 6-112 governs service masts.", "The minimum rigid metal conduit nominal size taught for a service mast is 53 mm (trade size 2). Flagged: OCR shows '63' and the exact value could not be confirmed against the Section 6 code text."],
+      "references": [
+        "Rule 6-112"
+      ],
+      "solution_steps": [
+        "Rule 6-112 governs service masts.",
+        "The minimum rigid metal conduit nominal size taught for a service mast is 53 mm (trade size 2). Flagged: OCR shows '63' and the exact value could not be confirmed against the Section 6 code text."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه اسمی rigid steel conduit که برای استفاده به‌عنوان service mast مجاز است، ______ می‌باشد.",
+      "options_fa": [
+        "35 mm (trade size 1-1/4)",
+        "41 mm (trade size 1-1/2)",
+        "53 mm (trade size 2)",
+        "63 mm (trade size 2-1/2)"
+      ],
+      "answer_fa": "53 mm (rigid metal conduit، trade size 2). عبارت «of 63» در منبع به‌نظر یک خطای OCR است؛ حداقل متداولی که برای service mast در CEC آموزش داده می‌شود 53 mm است."
     },
     {
       "id": "S06-002",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-clearance",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-clearance",
       "question": "Service conductors shall be at a distance of ______ from porches, doors and windows.",
-      "options": ["A) 1.0 m", "B) 1.5 m", "C) 2.0 m", "D) 2.5 m"],
+      "options": [
+        "A) 1.0 m",
+        "B) 1.5 m",
+        "C) 2.0 m",
+        "D) 2.5 m"
+      ],
       "answer_key": "A",
       "answer": "1.0 m",
-      "references": ["Rule 6-116", "Rule 12-310"],
-      "solution_steps": ["Open service conductors must be kept clear of building openings.", "Required minimum clearance from porches, doors, and windows is 1.0 m."],
+      "references": [
+        "Rule 6-116",
+        "Rule 12-310"
+      ],
+      "solution_steps": [
+        "Open service conductors must be kept clear of building openings.",
+        "Required minimum clearance from porches, doors, and windows is 1.0 m."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "service conductorها باید در فاصله ______ از ایوان‌ها، درها و پنجره‌ها نصب شوند.",
+      "options_fa": [
+        "1.0 m",
+        "1.5 m",
+        "2.0 m",
+        "2.5 m"
+      ],
+      "answer_fa": "1.0 m"
     },
     {
       "id": "S06-003",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-raceway",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-raceway",
       "question": "The minimum rigid conduit size for installation as a consumer's service raceway is ______.",
-      "options": ["A) 16 mm (trade size 1/2)", "B) 21 mm (trade size 3/4)", "C) 27 mm (trade size 1)", "D) 35 mm (trade size 1-1/4)"],
+      "options": [
+        "A) 16 mm (trade size 1/2)",
+        "B) 21 mm (trade size 3/4)",
+        "C) 27 mm (trade size 1)",
+        "D) 35 mm (trade size 1-1/4)"
+      ],
       "answer_key": "B",
       "answer": "21 mm (trade size 3/4)",
-      "references": ["Rule 6-110"],
-      "solution_steps": ["The minimum rigid conduit for a consumer's service raceway is 21 mm (trade size 3/4), consistent with the source answer '21'. Flagged: exact value not confirmed against the Section 6 code text."],
+      "references": [
+        "Rule 6-110"
+      ],
+      "solution_steps": [
+        "The minimum rigid conduit for a consumer's service raceway is 21 mm (trade size 3/4), consistent with the source answer '21'. Flagged: exact value not confirmed against the Section 6 code text."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "حداقل اندازه rigid conduit برای نصب به‌عنوان service raceway مصرف‌کننده ______ است.",
+      "options_fa": [
+        "16 mm (trade size 1/2)",
+        "21 mm (trade size 3/4)",
+        "27 mm (trade size 1)",
+        "35 mm (trade size 1-1/4)"
+      ],
+      "answer_fa": "21 mm (trade size 3/4)"
     },
     {
       "id": "S06-004",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-height",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-height",
       "question": "What is the minimum height required for service conductors crossing a highway?",
-      "options": ["A) 3.5 m", "B) 4.5 m", "C) 5.0 m", "D) 5.5 m"],
+      "options": [
+        "A) 3.5 m",
+        "B) 4.5 m",
+        "C) 5.0 m",
+        "D) 5.5 m"
+      ],
       "answer_key": "D",
       "answer": "5.5 m",
-      "references": ["Rule 6-112", "Rule 12-310", "Table 32"],
-      "solution_steps": ["Overhead conductors crossing a roadway/highway require a minimum vertical clearance.", "For conductors crossing a highway the minimum height is 5.5 m."],
+      "references": [
+        "Rule 6-112",
+        "Rule 12-310",
+        "Table 32"
+      ],
+      "solution_steps": [
+        "Overhead conductors crossing a roadway/highway require a minimum vertical clearance.",
+        "For conductors crossing a highway the minimum height is 5.5 m."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ارتفاع لازم برای service conductorهایی که از روی یک highway عبور می‌کنند چقدر است؟",
+      "options_fa": [
+        "3.5 m",
+        "4.5 m",
+        "5.0 m",
+        "5.5 m"
+      ],
+      "answer_fa": "5.5 m"
     },
     {
       "id": "S06-005",
-      "section": 6, "block": "B", "type": "lookup", "topic": "min-conductor-size",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "min-conductor-size",
       "question": "The minimum wire size allowed by the CEC for consumer's service conductors is ______ Cu and ______ Al.",
-      "options": ["A) No. 14 AWG copper and No. 12 AWG aluminum", "B) No. 12 AWG copper and No. 10 AWG aluminum", "C) No. 10 AWG copper and No. 8 AWG aluminum", "D) No. 8 AWG copper and No. 6 AWG aluminum"],
+      "options": [
+        "A) No. 14 AWG copper and No. 12 AWG aluminum",
+        "B) No. 12 AWG copper and No. 10 AWG aluminum",
+        "C) No. 10 AWG copper and No. 8 AWG aluminum",
+        "D) No. 8 AWG copper and No. 6 AWG aluminum"
+      ],
       "answer_key": "C",
       "answer": "No. 10 AWG copper and No. 8 AWG aluminum",
-      "references": ["Rule 6-302"],
-      "solution_steps": ["Minimum consumer's service conductor sizes are No. 10 AWG for copper and No. 8 AWG for aluminum."],
+      "references": [
+        "Rule 6-302"
+      ],
+      "solution_steps": [
+        "Minimum consumer's service conductor sizes are No. 10 AWG for copper and No. 8 AWG for aluminum."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کوچک‌ترین اندازه سیمی که CEC برای service conductorهای مصرف‌کننده مجاز می‌داند ______ Cu و ______ Al است.",
+      "options_fa": [
+        "No. 14 AWG copper و No. 12 AWG aluminum",
+        "No. 12 AWG copper و No. 10 AWG aluminum",
+        "No. 10 AWG copper و No. 8 AWG aluminum",
+        "No. 8 AWG copper و No. 6 AWG aluminum"
+      ],
+      "answer_fa": "No. 10 AWG copper و No. 8 AWG aluminum"
     },
     {
       "id": "S06-006",
-      "section": 6, "block": "B", "type": "lookup", "topic": "point-of-attachment",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "point-of-attachment",
       "question": "What is the maximum height allowed by the code for the point of attachment for supply service conductors?",
-      "options": ["A) 5.5 m", "B) 7 m", "C) 9 m", "D) 12 m"],
+      "options": [
+        "A) 5.5 m",
+        "B) 7 m",
+        "C) 9 m",
+        "D) 12 m"
+      ],
       "answer_key": "C",
       "answer": "9 m",
-      "references": ["Rule 6-112"],
-      "solution_steps": ["The maximum height of the point of attachment for overhead supply service conductors is 9 m."],
+      "references": [
+        "Rule 6-112"
+      ],
+      "solution_steps": [
+        "The maximum height of the point of attachment for overhead supply service conductors is 9 m."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "بیشترین ارتفاعی که code برای point of attachment مربوط به supply service conductorها مجاز می‌داند چقدر است؟",
+      "options_fa": [
+        "5.5 m",
+        "7 m",
+        "9 m",
+        "12 m"
+      ],
+      "answer_fa": "9 m"
     },
     {
       "id": "S06-007",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-equipment-location",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-equipment-location",
       "question": "Service box or other consumer's service equipment shall be placed within the building being served as close as possible to the point where consumer's service conductors enter the building, and shall not be located where headroom clearance is less than ______ m.",
-      "options": ["A) 1.5 m", "B) 1.8 m", "C) 2 m", "D) 2.5 m"],
+      "options": [
+        "A) 1.5 m",
+        "B) 1.8 m",
+        "C) 2 m",
+        "D) 2.5 m"
+      ],
       "answer_key": "C",
       "answer": "2 m",
-      "references": ["Rule 6-206"],
-      "solution_steps": ["Consumer's service equipment must not be installed where headroom clearance is less than 2 m."],
+      "references": [
+        "Rule 6-206"
+      ],
+      "solution_steps": [
+        "Consumer's service equipment must not be installed where headroom clearance is less than 2 m."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "service box یا سایر تجهیزات service مصرف‌کننده باید داخل ساختمانِ تحت تغذیه و تا حد ممکن نزدیک به نقطه ورود service conductorهای مصرف‌کننده نصب شود و نباید در جایی قرار گیرد که فضای headroom کمتر از ______ m باشد.",
+      "options_fa": [
+        "1.5 m",
+        "1.8 m",
+        "2 m",
+        "2.5 m"
+      ],
+      "answer_fa": "2 m"
     },
     {
       "id": "S06-008",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-height",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-height",
       "question": "What is the minimum height for service conductors that are crossing an alley?",
-      "options": ["A) 3.5 m", "B) 4.5 m", "C) 5.5 m", "D) 6.0 m"],
+      "options": [
+        "A) 3.5 m",
+        "B) 4.5 m",
+        "C) 5.5 m",
+        "D) 6.0 m"
+      ],
       "answer_key": "C",
       "answer": "5.5 m",
-      "references": ["Rule 6-112", "Table 32"],
-      "solution_steps": ["For service conductors crossing an alley (vehicular access) the minimum vertical clearance is 5.5 m."],
+      "references": [
+        "Rule 6-112",
+        "Table 32"
+      ],
+      "solution_steps": [
+        "For service conductors crossing an alley (vehicular access) the minimum vertical clearance is 5.5 m."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ارتفاع برای service conductorهایی که از روی یک کوچه (alley) عبور می‌کنند چقدر است؟",
+      "options_fa": [
+        "3.5 m",
+        "4.5 m",
+        "5.5 m",
+        "6.0 m"
+      ],
+      "answer_fa": "5.5 m"
     },
     {
       "id": "S06-009",
-      "section": 6, "block": "B", "type": "lookup", "topic": "service-mast",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "service-mast",
       "question": "When installing a service mast, an assembly is considered to be installed in an acceptable manner where the maximum unguyed projection of support members does not exceed ______ m.",
-      "options": ["A) 1.0 m", "B) 1.5 m", "C) 2.0 m", "D) 2.5 m"],
+      "options": [
+        "A) 1.0 m",
+        "B) 1.5 m",
+        "C) 2.0 m",
+        "D) 2.5 m"
+      ],
       "answer_key": "B",
       "answer": "Approximately 1.5 m (typical maximum unguyed projection of a service mast above its topmost support). Flagged: the source omitted the answer and the value is not confirmed against the Section 6 code text.",
-      "references": ["Rule 6-112"],
-      "solution_steps": ["The OCR 'Answers' section omits this item.", "Rule 6-112 limits the unguyed projection of a service mast; the commonly cited maximum unguyed projection is about 1.5 m before guying/additional support is required. Genuinely uncertain — verify against the Code."],
+      "references": [
+        "Rule 6-112"
+      ],
+      "solution_steps": [
+        "The OCR 'Answers' section omits this item.",
+        "Rule 6-112 limits the unguyed projection of a service mast; the commonly cited maximum unguyed projection is about 1.5 m before guying/additional support is required. Genuinely uncertain — verify against the Code."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "question_fa": "هنگام نصب service mast، مجموعه در صورتی به‌شکل قابل‌قبول نصب‌شده تلقی می‌شود که بیشترین بیرون‌زدگیِ مهارنشده (unguyed projection) اعضای نگه‌دارنده از ______ m تجاوز نکند.",
+      "options_fa": [
+        "1.0 m",
+        "1.5 m",
+        "2.0 m",
+        "2.5 m"
+      ],
+      "answer_fa": "تقریباً 1.5 m (بیشترین unguyed projection متداول یک service mast بالای بالاترین نقطه اتکای آن). توجه: منبع پاسخ را ذکر نکرده و این مقدار در برابر متن code بخش 6 تأیید نشده است."
     },
     {
       "id": "S06-010",
-      "section": 6, "block": "B", "type": "lookup", "topic": "conductors-inside-building",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "conductors-inside-building",
       "question": "Which condition allows for consumer's service conductors to be located inside a building?",
-      "options": ["A) conductors are run in a 53 mm rigid steel pipe", "B) conductors are protected by a 5 mm steel plate", "C) conductors are embedded in 50 mm of concrete", "D) conductors are run in an attic with 1.2 m clearance"],
+      "options": [
+        "A) conductors are run in a 53 mm rigid steel pipe",
+        "B) conductors are protected by a 5 mm steel plate",
+        "C) conductors are embedded in 50 mm of concrete",
+        "D) conductors are run in an attic with 1.2 m clearance"
+      ],
       "answer": "Conductors are embedded in not less than 50 mm of concrete (consumer's service conductors run inside a building must be encased in at least 50 mm of concrete or masonry)",
       "answer_key": "C",
-      "references": ["Rule 6-300"],
-      "solution_steps": ["Consumer's service conductors are generally not permitted inside a building unless encased in at least 50 mm of concrete/masonry (or otherwise run as the Rule permits).", "Option C (embedded in 50 mm of concrete) satisfies this requirement; the other options do not."],
+      "references": [
+        "Rule 6-300"
+      ],
+      "solution_steps": [
+        "Consumer's service conductors are generally not permitted inside a building unless encased in at least 50 mm of concrete/masonry (or otherwise run as the Rule permits).",
+        "Option C (embedded in 50 mm of concrete) satisfies this requirement; the other options do not."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام شرط اجازه می‌دهد service conductorهای مصرف‌کننده در داخل ساختمان قرار گیرند؟",
+      "options_fa": [
+        "هادی‌ها در یک 53 mm rigid steel pipe کشیده شوند",
+        "هادی‌ها با یک steel plate به ضخامت 5 mm محافظت شوند",
+        "هادی‌ها در 50 mm بتن مدفون شوند",
+        "هادی‌ها در یک اتاق زیرشیروانی با 1.2 m فاصله کشیده شوند"
+      ],
+      "answer_fa": "هادی‌ها در دست‌کم 50 mm بتن مدفون شوند (service conductorهای مصرف‌کننده‌ای که داخل ساختمان کشیده می‌شوند باید در حداقل 50 mm بتن یا مصالح بنایی محصور شوند)"
     },
     {
       "id": "S06-011",
-      "section": 6, "block": "B", "type": "lookup", "topic": "point-of-attachment",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "point-of-attachment",
       "question": "What is the minimum height for the point of attachment where conductors are run above areas accessible only to pedestrians?",
-      "options": ["A) 3.5 m", "B) 4.5 m", "C) 5.0 m", "D) 5.5 m"],
+      "options": [
+        "A) 3.5 m",
+        "B) 4.5 m",
+        "C) 5.0 m",
+        "D) 5.5 m"
+      ],
       "answer": "3.5 m (minimum vertical clearance over areas accessible to pedestrians only)",
       "answer_key": "A",
-      "references": ["Rule 6-112", "Table 32"],
-      "solution_steps": ["Areas accessible to pedestrians only carry the lowest required overhead clearance (Table 32).", "Minimum height for the point of attachment over pedestrian-only areas is 3.5 m, increasing to 5.5 m over highways/vehicle areas."],
+      "references": [
+        "Rule 6-112",
+        "Table 32"
+      ],
+      "solution_steps": [
+        "Areas accessible to pedestrians only carry the lowest required overhead clearance (Table 32).",
+        "Minimum height for the point of attachment over pedestrian-only areas is 3.5 m, increasing to 5.5 m over highways/vehicle areas."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "حداقل ارتفاع point of attachment در جایی که هادی‌ها از روی محوطه‌هایی که فقط برای عابران پیاده قابل‌دسترسی است عبور می‌کنند چقدر است؟",
+      "options_fa": [
+        "3.5 m",
+        "4.5 m",
+        "5.0 m",
+        "5.5 m"
+      ],
+      "answer_fa": "3.5 m (حداقل فاصله عمودی روی محوطه‌هایی که فقط برای عابران پیاده قابل‌دسترسی‌اند)"
     },
     {
       "id": "S06-012",
-      "section": 6, "block": "B", "type": "lookup", "topic": "conductors-inside-building",
+      "section": 6,
+      "block": "B",
+      "type": "lookup",
+      "topic": "conductors-inside-building",
       "question": "Which condition allows consumer's service conductors to be located inside a building?",
-      "options": ["A) conductors are run in a 53 mm rigid steel pipe", "B) conductors are protected by a 5 mm steel plate", "C) conductors are embedded in 50 mm of concrete", "D) conductors are run in an attic with 1.2 m clearance"],
+      "options": [
+        "A) conductors are run in a 53 mm rigid steel pipe",
+        "B) conductors are protected by a 5 mm steel plate",
+        "C) conductors are embedded in 50 mm of concrete",
+        "D) conductors are run in an attic with 1.2 m clearance"
+      ],
       "answer": "Conductors are embedded in not less than 50 mm of concrete",
       "answer_key": "C",
-      "references": ["Rule 6-300"],
-      "solution_steps": ["This is a duplicate of S06-010 in the source (it appears in both the question set and the answer set).", "Consumer's service conductors inside a building must be encased in at least 50 mm of concrete/masonry -> option C."],
+      "references": [
+        "Rule 6-300"
+      ],
+      "solution_steps": [
+        "This is a duplicate of S06-010 in the source (it appears in both the question set and the answer set).",
+        "Consumer's service conductors inside a building must be encased in at least 50 mm of concrete/masonry -> option C."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": false,
+      "question_fa": "کدام شرط اجازه می‌دهد service conductorهای مصرف‌کننده در داخل ساختمان قرار گیرند؟",
+      "options_fa": [
+        "هادی‌ها در یک 53 mm rigid steel pipe کشیده شوند",
+        "هادی‌ها با یک steel plate به ضخامت 5 mm محافظت شوند",
+        "هادی‌ها در 50 mm بتن مدفون شوند",
+        "هادی‌ها در یک اتاق زیرشیروانی با 1.2 m فاصله کشیده شوند"
+      ],
+      "answer_fa": "هادی‌ها در دست‌کم 50 mm بتن مدفون شوند"
     }
   ]
 }
