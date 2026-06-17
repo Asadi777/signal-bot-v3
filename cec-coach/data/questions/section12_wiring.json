@@ -202,10 +202,13 @@
       "topic": "wireway",
       "question": "What is the largest size of aluminum conductor that may be installed in a wireway?",
       "answer": "750 kcmil",
-      "references": ["Rule 12-2102"],
-      "solution_steps": [],
+      "references": ["Rule 12-2100", "Rule 12-2102"],
+      "solution_steps": [
+        "Wireway/auxiliary-gutter rules (Rule 12-2100 series) limit fill (max ~20% area, max 30 current-carrying conductors) rather than stating a single 'largest conductor' size.",
+        "Keep needs_review: the 750 kcmil figure cannot be confirmed as a code-stated maximum for a wireway; verify the exact rule and value in CEC 2024 Section 12 (wireways)."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-014",
@@ -215,10 +218,10 @@
       "topic": "pull-box",
       "question": "Determine the minimum dimensions required for a pull box that is installed for an angle pull in a run of 2-1/2 in. conduit. The two 2-1/2 in. conduit entries are located diagonally to each other.",
       "answer": "15 x 15 in.",
-      "references": ["Rule 12-3034 1)b)"],
+      "references": ["Rule 12-3036"],
       "solution_steps": [
-        "Angle pull: minimum distance = 6 x the largest conduit trade size = 6 x 2.5 in. = 15 in.",
-        "Box is 15 x 15 in."
+        "Rule 12-3036 (angle pull): the wall-to-opposite-wall distance must be at least 6× the largest raceway trade size.",
+        "6 × 2.5 in. = 15 in. With the two entries diagonal, both dimensions are governed → box is 15 × 15 in."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -232,7 +235,9 @@
       "question": "Field assembled connections between aluminum lug and aluminum or copper busbar can be made by using a ______ spring washer.",
       "answer": "Helical or conical spring washer",
       "references": ["Rule 12-118"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-118: field-assembled aluminum-lug-to-busbar connections must maintain contact pressure using a helical or conical (Belleville) spring washer to compensate for the cold flow/creep of aluminum."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
@@ -244,10 +249,10 @@
       "topic": "pull-box",
       "question": "Find the dimensions for side A, side B, and minimum distance between two 53 mm conduits as shown by the double-headed arrow. This pull box contains #6 AWG, T90 NYLON, Cu conductors. (Conduit entries 53 mm, 41 mm, 35 mm, 27 mm and 21 mm as shown.)",
       "answer": "A = 386 mm, B = 374 mm, C (distance between the two 53 mm conduits) = 318 mm",
-      "references": ["Rule 12-3034", "Table 9"],
+      "references": ["Rule 12-3036", "Table 9"],
       "solution_steps": [
-        "Diagram-based pull box sizing combining straight and angle pulls.",
-        "A = 386, B = 374, C = 318 mm. Diagram needed to confirm conduit positions."
+        "Pull-box sizing per Rule 12-3036 combining straight (8×) and angle (6× + sum of others) pulls; the 318 mm spacing between the two 53 mm conduits is the 6× angle distance (6 × 53 = 318 mm), which checks out.",
+        "Keep needs_review: the A = 386 / B = 374 mm dimensions depend on the conduit positions shown in the diagram, which cannot be reconstructed here."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -260,13 +265,14 @@
       "topic": "box-fill",
       "question": "What is the minimum size of device box required for an installation that has three #12 conductors, six wire connectors and one duplex receptacle outlet?",
       "answer": "3 x 2 x 3 in. (or 4 x 2-1/8 x 1-7/8 in.)",
-      "references": ["Table 23"],
+      "references": ["Rule 12-3034", "Table 22", "Table 23"],
       "solution_steps": [
-        "Count conductor equivalents for the #12 conductors, connectors and the duplex receptacle.",
-        "Select a device box from Table 23 with adequate capacity: 3x2x3 in. (or 4x2-1/8x1-7/8 in.)."
+        "Rule 12-3034 / Table 22: count conductor-equivalents for the three #12 conductors plus the duplex receptacle (one conductor of the largest size); per the CEC, the bonding conductor adds no separate volume, and wire connectors are not each counted as a conductor the way NEC counts them.",
+        "Table 23: pick the smallest listed device box whose capacity (in #12 equivalents) meets the total.",
+        "Keep needs_review: confirm the #12 capacity of the 3×2×3 in. box and the counting of the six connectors against the printed CEC 2024 Table 23 before locking the box size."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-018",

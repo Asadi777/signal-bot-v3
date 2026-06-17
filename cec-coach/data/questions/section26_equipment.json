@@ -436,15 +436,16 @@
       "type": "calculation",
       "topic": "transformer-protection",
       "question": "What is the circuit breaker size needed to protect the primary of a 3-phase power transformer rated at 150 KVA, 1000V?",
-      "answer": "250 A (from Table 13)",
-      "references": ["Rule 26-250", "Table 13"],
+      "answer": "250 A",
+      "references": ["Rule 26-252", "Table 50", "Table 13"],
       "solution_steps": [
         "Primary current = 150000 / (1000 x 1.732) = 86.6 A.",
-        "Maximum overcurrent = 300% (no secondary protection) = 86.6 x 3 = 259.8 A.",
-        "Use next standard size down per Table 13 = 250 A."
+        "Primary >750 V (1000 V): for a transformer over 750 V with a circuit breaker on the primary, Table 50 permits up to 300% of rated primary current = 86.6 x 3 = 259.8 A.",
+        "Next standard size not exceeding 259.8 A (Table 13) = 250 A.",
+        "Note: the over-750 V multiplier (Table 50) is what permits 300%; for primary <=750 V without secondary protection the limit would be 125%/next size up. Verify the Table 50 percentage against the code."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S26-026",
@@ -456,10 +457,11 @@
       "options": ["A) 625 amps", "B) 1082 amps", "C) 18 872 amps", "D) 24,982 amps"],
       "answer": "24,982 amps",
       "answer_key": "D",
-      "references": ["Rule 26-250"],
+      "references": ["Rule 26-250 (interrupting rating)"],
       "solution_steps": [
         "Secondary full-load current = 225000 / (208 x 1.732) = 624.6 A.",
-        "Maximum fault current = full-load current / impedance = 624.6 / 0.025 = 24,982 A."
+        "Available (maximum) fault current = secondary FLA / per-unit impedance = 624.6 / 0.025 = 24,982 A.",
+        "The replacement OCPD must have an interrupting rating of at least 24,982 A → answer D."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -472,10 +474,11 @@
       "topic": "capacitor-liquid",
       "question": "A capacitor tank is located outside of the service room. What is the maximum allowable amount of flammable liquid?",
       "options": ["A) 14 L", "B) 23 L", "C) 48 L", "D) 69 L"],
-      "answer": "Answer not explicitly marked in source notes",
+      "answer": "Requires the Rule 26-012(4) flammable-liquid quantity value to confirm",
       "references": ["Rule 26-012 4)"],
       "solution_steps": [
-        "Source referenced Rule 26-012(4) but did not clearly mark the selected option; flagged for review."
+        "Rule 26-012(4) limits the quantity of flammable (dielectric) liquid for a capacitor located outside a service room.",
+        "The specific litre value could not be confirmed from the source; flagged for review (no value fabricated)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -491,7 +494,10 @@
       "answer": "150 mm",
       "answer_key": "C",
       "references": ["Rule 26-244"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 26-244: a floor-mounted dry-type (open ventilated) transformer requires a minimum separation of 150 mm between the transformer and an adjacent wall to allow ventilation.",
+        "Answer = 150 mm (C)."
+      ],
       "code_edition": "2024",
       "needs_review": false
     },

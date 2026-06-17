@@ -282,11 +282,11 @@
       "topic": "conductor-colors",
       "question": "What are the required colors of conductors installed in a 3-phase, 3-wire, 600 V circuit?",
       "answer": "Red (A), Black (B), Blue (C)",
-      "references": ["Rule 4-036"],
+      "references": ["Rule 4-036 (colour-coded circuits)"],
       "solution_steps": [
-        "Rule (identification): Rule 4-036 governs conductor identification/colour for ungrounded conductors.",
-        "Standard 3-phase phase identification: phase A = red, phase B = black, phase C = blue.",
-        "Result: Red, Black, Blue."
+        "Rule (identification): where phase conductors are colour-coded, the CEC sequence is phase A = red, phase B = black, phase C = blue.",
+        "Value: Red (A), Black (B), Blue (C).",
+        "Result: Red, Black, Blue. (Colours are the standard CEC sequence; confirm the exact subrule citation — the source's '4-032 1)c)' was replaced with the colour-coding rule.)"
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -301,12 +301,12 @@
       "answer": "15 A",
       "references": ["Rule 4-014", "Table 12"],
       "solution_steps": [
-        "Elevator/flexible cable ampacity → Rule 4-014 sends you to Table 12.",
-        "Read #14 ETP elevator cable in Table 12 = 15 A.",
-        "Result: 15 A."
+        "Rule (selection): elevator/flexible-cord ampacity → Rule 4-014, Table 12.",
+        "Value: source reads #14 ETP elevator cable = 15 A.",
+        "NEEDS REVIEW: confirm the #14 ETP elevator-cable ampacity in Table 12 of the 2024 code (flexible-cord table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-018",
@@ -318,12 +318,12 @@
       "answer": "40 A",
       "references": ["Rule 4-014", "Table 12"],
       "solution_steps": [
-        "Equipment wire (GTF) ampacity → Rule 4-014 sends you to Table 12.",
-        "Read #8 GTF in Table 12 = 40 A.",
-        "Result: 40 A."
+        "Rule (selection): equipment-wire (GTF) ampacity → Rule 4-014, Table 12.",
+        "Value: source reads #8 GTF = 40 A.",
+        "NEEDS REVIEW: confirm the #8 GTF ampacity in Table 12 of the 2024 code (equipment-wire table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-019",
@@ -335,13 +335,13 @@
       "answer": "3/0 AWG aluminum",
       "references": ["Rule 4-004 5)", "Table 36A"],
       "solution_steps": [
-        "Overhead service neutral-supported (NS) aluminum cable → Rule 4-004 5) sends you to Table 36A (aluminum NS).",
-        "For a 250 A service read Table 36A.",
-        "Table 36A gives 3/0 AWG aluminum.",
-        "Result: 3/0 AWG."
+        "Rule (selection): overhead service neutral-supported (NS) aluminum cable → Rule 4-004 5), Table 36A (aluminum NS).",
+        "Method: for a 250 A service read down Table 36A (aluminum) to the minimum NS size rated ≥ 250 A.",
+        "Value: source gives 3/0 AWG aluminum.",
+        "NEEDS REVIEW: confirm 3/0 AWG aluminum for 250 A in Table 36A of the 2024 code (table value not verified here)."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S04-020",

@@ -5,9 +5,9 @@
       "id": "S06-001",
       "section": 6, "block": "B", "type": "lookup", "topic": "service-mast",
       "question": "Rigid steel conduit of a minimum nominal size of ______ shall be permitted for use as a service mast.",
-      "answer": "53 mm (the source answer 'of 63' appears to be an OCR error for trade size 2 in., i.e. 53 mm metric designator; CEC requires a minimum 53 mm rigid metal conduit for a service mast)",
+      "answer": "53 mm (rigid metal conduit, trade size 2). The source 'of 63' reads as an OCR slip; the commonly taught CEC service-mast minimum is 53 mm.",
       "references": ["Rule 6-112"],
-      "solution_steps": ["Rule 6-112 governs service masts.", "Minimum rigid metal conduit nominal size for a service mast is 53 mm (trade size 2)."],
+      "solution_steps": ["Rule 6-112 governs service masts.", "The minimum rigid metal conduit nominal size taught for a service mast is 53 mm (trade size 2). Flagged: OCR shows '63' and the exact value could not be confirmed against the Section 6 code text."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -27,7 +27,7 @@
       "question": "The minimum rigid conduit size for installation as a consumer's service raceway is ______.",
       "answer": "21 mm (trade size 3/4)",
       "references": ["Rule 6-110"],
-      "solution_steps": ["The source answer reads '21', corresponding to 21 mm rigid conduit (trade size 3/4) as the minimum for a consumer's service raceway."],
+      "solution_steps": ["The minimum rigid conduit for a consumer's service raceway is 21 mm (trade size 3/4), consistent with the source answer '21'. Flagged: exact value not confirmed against the Section 6 code text."],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -85,9 +85,9 @@
       "id": "S06-009",
       "section": 6, "block": "B", "type": "lookup", "topic": "service-mast",
       "question": "When installing a service mast, an assembly is considered to be installed in an acceptable manner where the maximum unguyed projection of support members does not exceed ______ m.",
-      "answer": "Source did not provide the answer. Per CEC Rule 6-112, the maximum unguyed projection (height of mast above the topmost support/roof) is commonly taken as 1.5 m before guying or additional support is required.",
+      "answer": "Approximately 1.5 m (typical maximum unguyed projection of a service mast above its topmost support). Flagged: the source omitted the answer and the value is not confirmed against the Section 6 code text.",
       "references": ["Rule 6-112"],
-      "solution_steps": ["The OCR 'Answers' section omits this item.", "Rule 6-112 limits the unguyed projection of a service mast; a typical maximum unguyed projection is 1.5 m. Verify against the source/Code."],
+      "solution_steps": ["The OCR 'Answers' section omits this item.", "Rule 6-112 limits the unguyed projection of a service mast; the commonly cited maximum unguyed projection is about 1.5 m before guying/additional support is required. Genuinely uncertain — verify against the Code."],
       "code_edition": "2024",
       "needs_review": true
     },
