@@ -280,8 +280,10 @@ textarea,input[type=text],input[type=password],select{
 .nowtask .ntlbl{color:#9fe0b8; font-size:13px; font-weight:700}
 .nowtask .nttask{color:#fff; font-size:17px; font-weight:800; margin:6px 0 12px}
 .planlist{display:grid; gap:10px}
-.planweek{background:var(--card); border-radius:12px; padding:12px 14px}
+.planweek{background:var(--card); border-radius:12px; padding:12px 14px; cursor:pointer; transition:transform .12s}
+.planweek:active{transform:scale(.99)}
 .planweek.cur{outline:2px solid var(--accent)}
+.pwopen{color:var(--accent2); font-size:12px; font-weight:800; margin-top:8px}
 .pwtop{display:flex; justify-content:space-between; font-size:14px; margin-bottom:7px}
 .pwtop span{color:var(--accent2); font-weight:800}
 .pwsecs{color:var(--muted); font-size:12px; margin-top:6px}

@@ -946,9 +946,18 @@
       var cur = TIME.total >= p.start && TIME.total < p.end;
       h += "<div class='planweek" + (cur ? " cur" : "") + "'><div class='pwtop'><b>" + esc(wk.title) + "</b><span>" + pct + "%</span></div>" +
         "<div class='trackbar'><div class='trackfill' style='width:" + pct + "%'></div></div>" +
-        "<div class='pwsecs'>" + esc(T.secs) + " " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div></div>";
+        "<div class='pwsecs'>" + esc(T.secs) + " " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div>" +
+        "<div class='pwopen'>" + (rtl ? "بازکردنِ درسِ این هفته →" : "Open this week's lesson →") + "</div></div>";
     });
     $("planList").innerHTML = h;
+    var cards = $("planList").querySelectorAll(".planweek");
+    PLAN_CUR.forEach(function (wk, wi) { if (cards[wi]) cards[wi].onclick = function () { openWeek(wk); }; });
+  }
+  function openWeek(wk) {
+    if (!TIME.running) timeStart();
+    var sec = null;
+    for (var i = 0; i < wk.secs.length; i++) { var f = STUDY.filter(function (s) { return String(s.section) === wk.secs[i]; })[0]; if (f) { sec = f; break; } }
+    if (sec) renderLesson(sec); else { buildStudyList(); show("study"); }
   }
 
   // ===== Code-Hunt drills (bilingual) =====
