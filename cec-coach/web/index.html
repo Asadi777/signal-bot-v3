@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — PBR Holding · BC Construction Electrician (CEC 2024)</title>
-  <link rel="manifest" href="manifest.webmanifest?v=30" />
-  <link rel="icon" type="image/png" href="favicon.png?v=30" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=30" />
+  <link rel="manifest" href="manifest.webmanifest?v=31" />
+  <link rel="icon" type="image/png" href="favicon.png?v=31" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=31" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="CEC Coach" />
-  <link rel="stylesheet" href="styles.css?v=30" />
+  <link rel="stylesheet" href="styles.css?v=31" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand" data-home>
-      <img src="logo.png?v=30" class="brandlogo" alt="PBR Holding" />
+      <img src="logo.png?v=31" class="brandlogo" alt="PBR Holding" />
       <span class="brandtxt">PBR Holding<small>CEC Coach</small></span>
     </div>
     <div class="topright">
@@ -293,17 +293,26 @@
       </label>
       <button id="saveKey" class="primary">Save</button>
       <div id="keyStatus" class="status"></div>
-      <p class="foot">Get a key at console.anthropic.com → API Keys. Your key is stored only in this browser (localStorage) and sent directly to Anthropic. کلید فقط روی همین دستگاه ذخیره می‌شود.</p>
+
+      <h3 style="color:#fff;margin-top:22px">🔊 Read-aloud</h3>
+      <label class="fld">Voice (choose the most natural one on your device)
+        <select id="ttsVoice"></select>
+      </label>
+      <label class="fld">Speed: <span id="ttsRateVal">0.55×</span>
+        <input id="ttsRate" type="range" min="0.4" max="1" step="0.05" value="0.55" />
+      </label>
+      <button id="ttsTest" class="ghost">🔊 Test the voice</button>
+      <p class="foot">Tip: on Android, “Google” voices sound the most natural; on iPhone use Settings → Accessibility → Spoken Content → Voices to download an Enhanced/Canada English voice. کلید فقط روی همین دستگاه ذخیره می‌شود.</p>
     </section>
   </main>
 
   <footer class="copyright">
-    <img src="logo.png?v=30" class="cpright-logo" alt="" />
+    <img src="logo.png?v=31" class="cpright-logo" alt="" />
     © 2026 PBR Holding — All rights reserved. · CEC Coach
   </footer>
 
-  <script src="questions.js?v=30"></script>
-  <script src="study.js?v=30"></script>
-  <script src="app.js?v=30"></script>
+  <script src="questions.js?v=31"></script>
+  <script src="study.js?v=31"></script>
+  <script src="app.js?v=31"></script>
 </body>
 </html>

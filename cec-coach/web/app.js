@@ -33,23 +33,35 @@
   // ---------- text-to-speech (Canadian English, slow) ----------
   var _voices = [];
   function loadVoices() { try { _voices = window.speechSynthesis ? (speechSynthesis.getVoices() || []) : []; } catch (e) { _voices = []; } }
-  if ("speechSynthesis" in window) { loadVoices(); try { speechSynthesis.onvoiceschanged = loadVoices; } catch (e) {} }
+  if ("speechSynthesis" in window) { loadVoices(); try { speechSynthesis.onvoiceschanged = function () { loadVoices(); if ($("settings") && !$("settings").classList.contains("hidden")) populateTts(); }; } catch (e) {} }
   function pickVoice() {
     if (!_voices.length) loadVoices();
     function norm(l) { return (l || "").replace("_", "-").toLowerCase(); }
-    var pref = ["en-ca", "en-us", "en-gb", "en-au", "en"];
-    for (var p = 0; p < pref.length; p++) for (var i = 0; i < _voices.length; i++) if (norm(_voices[i].lang).indexOf(pref[p]) === 0) return _voices[i];
-    for (var j = 0; j < _voices.length; j++) if (/canad/i.test(_voices[j].name || "")) return _voices[j];
-    return null;
+    var saved = localStorage.getItem("cec_tts_voice");
+    if (saved) { for (var i = 0; i < _voices.length; i++) if (_voices[i].voiceURI === saved) return _voices[i]; }
+    var en = _voices.filter(function (v) { return norm(v.lang).indexOf("en") === 0; });
+    if (!en.length) return null;
+    function score(v) {
+      var s = 0, n = (v.name || "") + " " + (v.voiceURI || "");
+      if (/google/i.test(n)) s += 6;
+      if (/natural|neural|premium|enhanced|siri/i.test(n)) s += 6;
+      var l = norm(v.lang);
+      if (l.indexOf("en-ca") === 0) s += 3; else if (l.indexOf("en-us") === 0) s += 2; else if (l.indexOf("en-gb") === 0) s += 1;
+      if (v.localService === false) s += 1;
+      return s;
+    }
+    en.sort(function (a, b) { return score(b) - score(a); });
+    return en[0];
   }
+  function getRate() { var r = parseFloat(localStorage.getItem("cec_tts_rate")); return (r >= 0.3 && r <= 1.5) ? r : 0.55; }
   function speak(text) {
     if (!text) return;
     if (!("speechSynthesis" in window)) { alert("Read-aloud isn't supported on this browser."); return; }
     try {
       speechSynthesis.cancel();
       var u = new SpeechSynthesisUtterance(String(text));
-      u.lang = "en-CA"; u.rate = 0.7; u.pitch = 1;
-      var v = pickVoice(); if (v) u.voice = v;
+      var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = "en-CA";
+      u.rate = getRate(); u.pitch = 1;
       speechSynthesis.speak(u);
     } catch (e) {}
   }
@@ -1070,10 +1082,22 @@
   function chMark(ok) { CH.total++; if (ok) CH.found++; CH.i++; chNext(); }
 
   // ---------- nav ----------
+  function populateTts() {
+    var sel = $("ttsVoice"); if (!sel) return;
+    if (!_voices.length) loadVoices();
+    var saved = localStorage.getItem("cec_tts_voice");
+    var en = _voices.filter(function (v) { return (v.lang || "").toLowerCase().indexOf("en") === 0; });
+    if (!en.length) en = _voices;
+    sel.innerHTML = "<option value=''>Auto — best available</option>" + en.map(function (v) {
+      return "<option value='" + esc(v.voiceURI) + "'" + (v.voiceURI === saved ? " selected" : "") + ">" + esc(v.name + " (" + v.lang + ")") + "</option>";
+    }).join("");
+    var r = getRate(); $("ttsRate").value = r; $("ttsRateVal").textContent = r.toFixed(2) + "×";
+  }
   function gotoSettings(note) {
     show("settings");
     $("apiKey").value = getKey();
     $("model").value = getModel();
+    populateTts();
     if (note) { var st = $("keyStatus"); st.className = "status err"; st.textContent = note; }
   }
   function homeStats() {
@@ -1159,6 +1183,9 @@
     localStorage.setItem("cec_model", $("model").value);
     var st = $("keyStatus"); st.className = "status ok"; st.textContent = "Saved on this device. ✅";
   };
+  $("ttsVoice").onchange = function () { var v = $("ttsVoice").value; if (v) localStorage.setItem("cec_tts_voice", v); else localStorage.removeItem("cec_tts_voice"); speak("Read-aloud test. The minimum cover for a direct-buried cable."); };
+  $("ttsRate").oninput = function () { var r = parseFloat($("ttsRate").value); localStorage.setItem("cec_tts_rate", r); $("ttsRateVal").textContent = r.toFixed(2) + "×"; };
+  $("ttsTest").onclick = function () { speak("Calculate the minimum size of the bonding conductor for a two hundred ampere service."); };
 
   // ---------- boot ----------
   homeStats();
