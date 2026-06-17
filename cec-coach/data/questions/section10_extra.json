@@ -1,0 +1,275 @@
+{
+  "section": 10,
+  "questions": [
+    {
+      "id": "S10-201",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "grounding-electrode-conductor-sizing",
+      "question": "A consumer service is supplied by 4/0 RW90XLPE copper service conductors taken at 75 °C (230 A ampacity). What minimum size copper grounding electrode conductor is required where it runs to a field-assembled (concrete-encased) electrode?",
+      "options": ["A) #4 Cu", "B) #3 Cu", "C) #2 Cu", "D) #1/0 Cu"],
+      "answer": "#2 Cu",
+      "answer_key": "C",
+      "references": ["Rule 10-114", "Table 43", "Table 2"],
+      "solution_steps": [
+        "Table 43 keyed to AMPACITY of largest service conductor (not breaker): 4/0 Cu @75 °C = 230 A.",
+        "230 A is above 200 A band; the worked CEC value gives size 2. Answer #2 Cu."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-202",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "grounding-electrode-conductor-sizing",
+      "question": "A 150 A service uses 1/0 RW75 copper conductors (150 A ampacity). The grounding electrode conductor runs to a field-assembled electrode. What minimum size copper conductor is required?",
+      "options": ["A) #4 Cu", "B) #3 Cu", "C) #2 Cu", "D) #6 Cu"],
+      "answer": "#4 Cu",
+      "answer_key": "A",
+      "references": ["Rule 10-114", "Table 43", "Table 2"],
+      "solution_steps": [
+        "Table 43 by service-conductor ampacity: 1/0 Cu @75 °C = 150 A.",
+        "150 A is in the lowest band (ampacity ≤165 A → size 4). Answer #4 Cu."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-203",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "manufactured-electrode-cap",
+      "question": "A 400 A service is supplied with 600 kcmil R90 copper conductors. The grounding conductor connects to a manufactured (rod) electrode. What is the minimum required copper grounding conductor size?",
+      "options": ["A) #8 Cu", "B) #6 Cu", "C) #4 Cu", "D) #2 Cu"],
+      "answer": "#6 Cu",
+      "answer_key": "B",
+      "references": ["Rule 10-114"],
+      "solution_steps": [
+        "Rule 10-114: to a MANUFACTURED (rod/plate) electrode the grounding conductor need not exceed #6 Cu, regardless of service size.",
+        "Cap applies even though Table 43 would give larger. Answer #6 Cu."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-204",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "bonding-conductor-sizing",
+      "question": "A feeder is protected by a 100 A overcurrent device. What is the minimum size copper bonding conductor for the raceway, per Table 16?",
+      "options": ["A) #10 Cu", "B) #8 Cu", "C) #6 Cu", "D) #4 Cu"],
+      "answer": "#8 Cu",
+      "answer_key": "B",
+      "references": ["Rule 10-614", "Rule 10-616", "Table 16"],
+      "solution_steps": [
+        "Bonding conductor sized from OCPD rating via Table 16 (not from conductor ampacity directly).",
+        "Table 16: 100 A device → #8 Cu bond. Answer #8 Cu."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-205",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "bonding-conductor-sizing",
+      "question": "A 200 A overcurrent device protects a feeder. What is the minimum size copper bonding conductor required per Table 16?",
+      "options": ["A) #10 Cu", "B) #8 Cu", "C) #4 Cu", "D) #6 Cu"],
+      "answer": "#6 Cu",
+      "answer_key": "D",
+      "references": ["Rule 10-614", "Rule 10-616", "Table 16"],
+      "solution_steps": [
+        "Bonding = Table 16, keyed to overcurrent device rating (\"16 to the BOX\").",
+        "Table 16: 200 A device → #6 Cu bonding conductor. Answer #6 Cu."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S10-206",
+      "section": 10,
+      "block": "B",
+      "type": "theory",
+      "topic": "table-43-vs-table-16",
+      "question": "Which statement correctly distinguishes how grounding (electrode) conductors and bonding conductors are sized in the CEC?",
+      "options": ["A) Both are sized from Table 16 by the breaker rating", "B) Grounding electrode conductor = Table 43 (service-conductor ampacity); bonding conductor = Table 16 (overcurrent device rating)", "C) Grounding electrode conductor = Table 16; bonding conductor = Table 43", "D) Both are sized from Table 2 by the load current"],
+      "answer": "Grounding electrode conductor = Table 43 (service-conductor ampacity); bonding conductor = Table 16 (overcurrent device rating)",
+      "answer_key": "B",
+      "references": ["Rule 10-114", "Rule 10-614", "Table 43", "Table 16"],
+      "solution_steps": [
+        "Mnemonic: \"43 to the EARTH, 16 to the BOX.\"",
+        "Electrode conductor keyed to service-conductor AMPACITY; bonding keyed to OCPD. Answer B."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-207",
+      "section": 10,
+      "block": "B",
+      "type": "theory",
+      "topic": "grounding-vs-bonding-definitions",
+      "question": "In CEC terminology, which best describes the purpose of BONDING (as opposed to grounding)?",
+      "options": ["A) Connecting a current-carrying conductor to the neutral", "B) A permanent low-impedance path joining non-current-carrying metal parts together", "C) Driving a rod electrode into the earth", "D) Limiting the system voltage to ground during normal operation"],
+      "answer": "A permanent low-impedance path joining non-current-carrying metal parts together",
+      "answer_key": "B",
+      "references": ["Rule 10-002", "Section 0"],
+      "solution_steps": [
+        "Bonding = low-impedance path for non-current-carrying metal so fault current can return and trip the OCPD.",
+        "Grounding is the connection of the system/equipment to earth. Answer B."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-208",
+      "section": 10,
+      "block": "B",
+      "type": "theory",
+      "topic": "grounded-vs-bonding-conductor-identification",
+      "question": "Which conductor is the system GROUNDED circuit conductor (the one normally carrying current and identified white or grey), as distinguished from a bonding conductor?",
+      "options": ["A) The equipment bonding conductor", "B) The grounding electrode conductor", "C) The identified neutral / grounded circuit conductor", "D) The bare bonding jumper"],
+      "answer": "The identified neutral / grounded circuit conductor",
+      "answer_key": "C",
+      "references": ["Rule 4-030", "Section 0"],
+      "solution_steps": [
+        "The grounded conductor is a normally current-carrying circuit conductor (neutral), identified white/grey.",
+        "Bonding/grounding-electrode conductors are non-current-carrying (green/bare). Answer C."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-209",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "equipotential-bonding",
+      "question": "The minimum equipotential bonding conductor size for a swimming pool per Rule 10-406 is which of the following?",
+      "options": ["A) #6 Cu or #4 Al", "B) #8 Cu or #6 Al", "C) #4 Cu or #2 Al", "D) #10 Cu or #8 Al"],
+      "answer": "#6 Cu or #4 Al",
+      "answer_key": "A",
+      "references": ["Rule 10-406"],
+      "solution_steps": [
+        "Rule 10-406 equipotential bonding minimum: #6 Cu / #4 Al (Al one size larger).",
+        "Answer #6 Cu or #4 Al."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-210",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "field-assembled-electrode",
+      "question": "A field-assembled (concrete-encased) grounding electrode must consist of bare copper conductor not smaller than which size?",
+      "options": ["A) #6 AWG", "B) #4 AWG", "C) #2 AWG", "D) #1/0 AWG"],
+      "answer": "#4 AWG",
+      "answer_key": "B",
+      "references": ["Rule 10-102"],
+      "solution_steps": [
+        "Rule 10-102: field-assembled electrode = ≥6 m bare Cu, not smaller than #4 AWG.",
+        "Answer #4 AWG."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-211",
+      "section": 10,
+      "block": "B",
+      "type": "theory",
+      "topic": "manufactured-vs-field-assembled-electrode",
+      "question": "Which of the following is a MANUFACTURED grounding electrode rather than a field-assembled one?",
+      "options": ["A) 6 m of bare #4 Cu encased in a concrete footing", "B) A driven rod electrode", "C) Reinforcing steel within a foundation footing", "D) A bare copper ring buried below grade"],
+      "answer": "A driven rod electrode",
+      "answer_key": "B",
+      "references": ["Rule 10-102", "Rule 10-108"],
+      "solution_steps": [
+        "Manufactured electrode = factory-made rod or plate (Rule 10-108).",
+        "Concrete-encased / ring conductors are field-assembled (Rule 10-102). Answer B."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-212",
+      "section": 10,
+      "block": "B",
+      "type": "lookup",
+      "topic": "electrode-spacing",
+      "question": "Where two manufactured rod electrodes are used to form the grounding electrode, what is the minimum spacing required between them?",
+      "options": ["A) 1.5 m", "B) 2 m", "C) 3 m", "D) 6 m"],
+      "answer": "3 m",
+      "answer_key": "C",
+      "references": ["Rule 10-104"],
+      "solution_steps": [
+        "Rule 10-104: two or more rod/plate electrodes spaced ≥3 m apart so resistance spheres don't overlap.",
+        "Answer 3 m."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-213",
+      "section": 10,
+      "block": "B",
+      "type": "theory",
+      "topic": "water-pipe-electrode",
+      "question": "Per CEC 2024, how may a metal underground water pipe be used in the grounding system?",
+      "options": ["A) As the sole grounding electrode without any supplement", "B) It must never be connected to the grounding system", "C) Only if it is plastic", "D) Only as a supplement to, or bonded in addition to, a recognized grounding electrode"],
+      "answer": "Only as a supplement to, or bonded in addition to, a recognized grounding electrode",
+      "answer_key": "D",
+      "references": ["Rule 10-102", "Rule 10-700"],
+      "solution_steps": [
+        "Interior metal water piping is bonded, but a water pipe is not accepted as the sole grounding electrode in CEC 2024.",
+        "It supplements a recognized electrode (rod/plate/concrete-encased). Answer B."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "S10-214",
+      "section": 10,
+      "block": "B",
+      "type": "theory",
+      "topic": "where-to-bond",
+      "question": "At a service with a solidly grounded supply, where is the system grounding (bonding of neutral to enclosure) made?",
+      "options": ["A) At every downstream subpanel", "B) At each branch-circuit outlet box", "C) At the service box / main switchboard only", "D) Nowhere — neutral and ground are never bonded"],
+      "answer": "At the service box / main switchboard only",
+      "answer_key": "C",
+      "references": ["Rule 10-210", "Rule 10-204"],
+      "solution_steps": [
+        "Neutral-to-enclosure bond (main bonding jumper) is made at the service only; downstream the neutral is isolated from ground.",
+        "Bonding everywhere would create parallel neutral paths. Answer B."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "S10-215",
+      "section": 10,
+      "block": "B",
+      "type": "calculation",
+      "topic": "bonding-conductor-sizing",
+      "question": "A branch circuit is protected by a 60 A breaker. Using Table 16, what minimum size copper bonding conductor is required if one is installed in the raceway?",
+      "options": ["A) #12 Cu", "B) #10 Cu", "C) #8 Cu", "D) #6 Cu"],
+      "answer": "#10 Cu",
+      "answer_key": "B",
+      "references": ["Rule 10-614", "Rule 10-616", "Table 16"],
+      "solution_steps": [
+        "Bonding = Table 16 by OCPD rating. The 60 A breaker (not the conductor) governs.",
+        "Table 16: up to 60 A → #10 Cu bond. Answer #10 Cu."
+      ],
+      "code_edition": "2024",
+      "needs_review": true
+    }
+  ]
+}
