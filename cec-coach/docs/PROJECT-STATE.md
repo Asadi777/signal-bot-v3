@@ -15,6 +15,13 @@ has ~6 weeks, gets a **clean (un-tabbed) code book** at the test centre, 100
 MC questions, 70% to pass, 5 hours. Run it: `cd cec-coach && python3 main.py`.
 
 ## Current inventory (what's already in knowledge)
+- **`web/`** — responsive single-page app (phone + computer). Offline quiz
+  (mock/section/weak/random) reading `web/questions.js` (built by
+  `build_web.py`), PLUS AI features that call the Claude API directly from the
+  browser with the user's own key (stored in localStorage): AI Tutor chat,
+  question generator, and PDF/image/camera vision. Deployed by
+  `.github/workflows/cec-pages.yml` (uploads ONLY `cec-coach/web`). Rebuild the
+  data bundle after adding questions: `python3 build_web.py`.
 - **`data/questions/`** — 365 real practice questions, digitised + verified
   twice. ~123 still `needs_review` (depend on exact 2024 table values).
 - **`docs/class-notes/`** — full detailed notes for **7 class sessions**
