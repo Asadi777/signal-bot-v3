@@ -199,6 +199,13 @@ textarea,input[type=text],input[type=password],select{
 .rich thead th{background:#0b3d2e; color:#fff; font-weight:700}
 .rich tbody tr:nth-child(even){background:#f3f7f5}
 .rich h1,.rich h2,.rich h3,.rich h4,.rich p,.rich li,.rich td,.rich th{unicode-bidi:plaintext}
+/* when a lesson is shown in Persian, force proper RTL flow (Latin terms stay LTR within it) */
+#lessonBody[dir="rtl"]{text-align:right}
+#lessonBody[dir="rtl"] h2,#lessonBody[dir="rtl"] h3,#lessonBody[dir="rtl"] p,
+#lessonBody[dir="rtl"] li,#lessonBody[dir="rtl"] .lsum,#lessonBody[dir="rtl"] .ltc,
+#lessonBody[dir="rtl"] .exqq,#lessonBody[dir="rtl"] .mnemo{unicode-bidi:isolate; direction:rtl; text-align:right}
+#lessonBody[dir="rtl"] ul,#lessonBody[dir="rtl"] ol{padding-inline-start:0; padding-inline-end:22px}
+#lessonBody[dir="rtl"] .ltable .ltr{direction:rtl}
 .waiting{color:var(--muted); font-weight:600}
 .chat .msg.ai.rich{max-width:100%; overflow-x:auto}
 
@@ -253,6 +260,47 @@ textarea,input[type=text],input[type=password],select{
 .exq .exqa{color:var(--good); font-weight:700; margin-bottom:6px}
 .exq ol{margin:6px 0; padding-inline-start:20px}
 .exq .refs{font-size:12px; color:var(--muted); margin-top:6px}
+
+/* study plan + timer */
+.studying{color:#ffd36b; font-size:12px; font-weight:700; animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.35}}
+.timecard{background:var(--card); border-radius:16px; padding:18px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,.18); margin-bottom:14px}
+.timerbig{font-size:40px; font-weight:900; color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:1px}
+.timerbig.live{color:var(--accent2)}
+.timerbtns{display:flex; gap:10px; justify-content:center; margin-top:12px}
+.timerbtns .primary,.timerbtns .ghost{flex:1; max-width:220px}
+.timerbtns .ghost{border-color:#cfe3d8; color:#2c5d4a}
+.trackgrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:16px}
+.track{background:rgba(255,255,255,.08); border-radius:12px; padding:11px}
+.tracklbl{color:#cfe6db; font-size:12px; font-weight:700}
+.trackval{color:#fff; font-size:16px; font-weight:800; margin:3px 0 7px; font-variant-numeric:tabular-nums}
+.trackbar{height:7px; background:rgba(255,255,255,.15); border-radius:99px; overflow:hidden}
+.trackfill{height:100%; width:0; background:var(--accent); transition:width .4s}
+.nowtask{background:linear-gradient(160deg,#13402e,#0b3d2e); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px; margin-bottom:16px}
+.nowtask .ntlbl{color:#9fe0b8; font-size:13px; font-weight:700}
+.nowtask .nttask{color:#fff; font-size:17px; font-weight:800; margin:6px 0 12px}
+.planlist{display:grid; gap:10px}
+.planweek{background:var(--card); border-radius:12px; padding:12px 14px}
+.planweek.cur{outline:2px solid var(--accent)}
+.pwtop{display:flex; justify-content:space-between; font-size:14px; margin-bottom:7px}
+.pwtop span{color:var(--accent2); font-weight:800}
+.pwsecs{color:var(--muted); font-size:12px; margin-top:6px}
+
+/* code-hunt */
+.chscore{color:#cfe6db; font-weight:700; margin-bottom:10px}
+.chprompt{font-size:17px; line-height:1.5; text-align:center}
+.chprompt b{display:inline-block; margin-top:6px; font-size:19px}
+.chprompt .chsec{color:var(--muted); font-size:13px; margin-top:6px; font-weight:600}
+.chtimer{text-align:center; font-size:34px; font-weight:900; color:var(--accent2); font-variant-numeric:tabular-nums; margin:14px 0}
+.chtimer.warn{color:var(--bad)}
+.chrevealbox{background:#e9f7ee; border:1px solid #9be0b5; border-radius:12px; padding:13px; text-align:center; font-size:17px}
+.chrevealbox .chwhy{color:var(--muted); font-size:14px; margin-top:6px; font-weight:500}
+
+/* page-number chip + flag */
+.pagechip{background:#eef4f1; color:#2c5d4a; border:1px dashed #b9d3c7; border-radius:8px; font-size:11px;
+  font-weight:800; padding:2px 7px; cursor:pointer; vertical-align:middle}
+.pagechip.set{background:#fff3d6; color:#8a6300; border-style:solid; border-color:#e8c97a}
+#flag.on{background:#fdecea; border-color:#f3b6ad; color:#9a2a1d}
 
 /* keyword map */
 #kmSearch{margin-bottom:14px; position:sticky; top:60px; z-index:5}

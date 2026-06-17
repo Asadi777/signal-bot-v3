@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — PBR Holding · BC Construction Electrician (CEC 2024)</title>
-  <link rel="manifest" href="manifest.webmanifest?v=21" />
-  <link rel="icon" type="image/png" href="favicon.png?v=21" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=21" />
+  <link rel="manifest" href="manifest.webmanifest?v=22" />
+  <link rel="icon" type="image/png" href="favicon.png?v=22" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=22" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="CEC Coach" />
-  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="stylesheet" href="styles.css?v=22" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand" data-home>
-      <img src="logo.png?v=21" class="brandlogo" alt="PBR Holding" />
+      <img src="logo.png?v=22" class="brandlogo" alt="PBR Holding" />
       <span class="brandtxt">PBR Holding<small>CEC Coach</small></span>
     </div>
     <div class="topright">
@@ -33,6 +33,11 @@
         Learn <b>keyword → Rule/Table</b> and beat the clock.</p>
 
       <div class="cards">
+        <button class="card" data-go="plan">
+          <div class="card-ic">📅</div>
+          <div class="card-t">Study Plan</div>
+          <div class="card-d">Your 6-week · 3h/day plan with a live timer — tells you what to study now</div>
+        </button>
         <button class="card" data-go="study">
           <div class="card-ic">📘</div>
           <div class="card-t">Study Program</div>
@@ -46,7 +51,7 @@
         <button class="card" data-mode="mock">
           <div class="card-ic">📝</div>
           <div class="card-t">Mock Exam</div>
-          <div class="card-d">100 questions, timed, weighted like the real exam</div>
+          <div class="card-d">100 questions, timed, flag &amp; 3-pass like the real exam</div>
         </button>
         <button class="card" data-mode="random">
           <div class="card-ic">🎲</div>
@@ -62,6 +67,11 @@
           <div class="card-ic">🔑</div>
           <div class="card-t">Keyword → Table Map</div>
           <div class="card-d">Every keyword → exact Rule/Table, ranked by importance — searchable</div>
+        </button>
+        <button class="card" data-go="codehunt">
+          <div class="card-ic">🧭</div>
+          <div class="card-t">Code-Hunt Drills</div>
+          <div class="card-d">Race a 90-second timer to find the right Rule/Table — clean-book skill</div>
         </button>
       </div>
 
@@ -121,8 +131,11 @@
 
       <div class="rowbtns navbtns">
         <button id="prev" class="ghost">← Prev</button>
-        <button id="teach" class="primary teachbtn hidden">🧑‍🏫 Teach me · فارسی + English</button>
+        <button id="flag" class="ghost">🚩 Flag</button>
         <button id="next" class="ghost">Next →</button>
+      </div>
+      <div class="rowbtns">
+        <button id="teach" class="primary teachbtn hidden">🧑‍🏫 Teach me · فارسی + English</button>
       </div>
       <div class="rowbtns">
         <button id="finish" class="primary finishbtn">Finish &amp; see score ✓</button>
@@ -137,6 +150,45 @@
       <div id="resultActions" class="rowbtns"></div>
       <div id="rdetail" class="rdetail"></div>
       <div id="resultActions2" class="rowbtns"></div>
+    </section>
+
+    <!-- STUDY PLAN -->
+    <section id="plan" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>📅 Study Plan — 6 weeks · 3h/day</h2>
+      <div class="timecard">
+        <div id="timerBig" class="timerbig">0:00</div>
+        <div class="timerbtns">
+          <button id="timerToggle" class="primary">▶ Start studying</button>
+          <button id="timerReset" class="ghost">Reset day</button>
+        </div>
+      </div>
+      <div class="trackgrid">
+        <div class="track"><div class="tracklbl">Today</div><div id="trkToday" class="trackval">0h / 3h</div><div class="trackbar"><div id="barToday" class="trackfill"></div></div></div>
+        <div class="track"><div class="tracklbl">This week</div><div id="trkWeek" class="trackval">0h / 18h</div><div class="trackbar"><div id="barWeek" class="trackfill"></div></div></div>
+        <div class="track"><div class="tracklbl">Total</div><div id="trkTotal" class="trackval">0h / 108h</div><div class="trackbar"><div id="barTotal" class="trackfill"></div></div></div>
+      </div>
+      <div id="nowTask" class="nowtask"></div>
+      <div id="planList" class="planlist"></div>
+    </section>
+
+    <!-- CODE-HUNT DRILLS -->
+    <section id="codehunt" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>🧭 Code-Hunt Drills</h2>
+      <p class="sub">A scenario appears + a 90-second timer. Race to find the governing
+        Rule/Table in your code book, then reveal to check. Builds clean-book speed.</p>
+      <div id="chScore" class="chscore"></div>
+      <div class="qcard">
+        <div id="chPrompt" class="chprompt"></div>
+        <div id="chTimer" class="chtimer">1:30</div>
+        <div id="chReveal" class="chrevealbox hidden"></div>
+      </div>
+      <div class="rowbtns">
+        <button id="chShow" class="primary">Reveal location</button>
+        <button id="chFound" class="ghost hidden">✅ Found in time</button>
+        <button id="chMiss" class="ghost hidden">❌ Missed</button>
+      </div>
     </section>
 
     <!-- STUDY PROGRAM -->
@@ -244,12 +296,12 @@
   </main>
 
   <footer class="copyright">
-    <img src="logo.png?v=21" class="cpright-logo" alt="" />
+    <img src="logo.png?v=22" class="cpright-logo" alt="" />
     © 2026 PBR Holding — All rights reserved. · CEC Coach
   </footer>
 
-  <script src="questions.js?v=21"></script>
-  <script src="study.js?v=21"></script>
-  <script src="app.js?v=21"></script>
+  <script src="questions.js?v=22"></script>
+  <script src="study.js?v=22"></script>
+  <script src="app.js?v=22"></script>
 </body>
 </html>

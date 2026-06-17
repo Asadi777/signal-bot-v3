@@ -269,7 +269,7 @@
     list = (list || []).filter(function (q) { return (q.options || []).length >= 2 && q.answer_key; });
     if (!list.length) { alert("No answerable questions in that selection yet."); return; }
     if (Q.totalTimer) clearInterval(Q.totalTimer);
-    Q = { list: list, i: 0, mode: mode, answers: list.map(function () { return null; }),
+    Q = { list: list, i: 0, mode: mode, answers: list.map(function () { return null; }), flags: {},
       totalTimer: null, endAt: 0, budget: 0, startedAt: Date.now(), qStartAt: Date.now() };
     if (timed || mode === "mock") {
       var mins = list.length >= 100 ? (BP.time_minutes_standard || 240) : Math.max(1, Math.round(list.length * 1.2));
@@ -332,7 +332,10 @@
     else { $("banner").classList.add("hidden"); $("explain").classList.add("hidden"); $("explain").innerHTML = ""; $("teach").classList.add("hidden"); }
     $("prev").disabled = (Q.i === 0);
     $("next").disabled = (Q.i >= Q.list.length - 1);
+    updateFlagBtn();
   }
+  function updateFlagBtn() { var b = $("flag"); if (!b) return; var on = !!Q.flags[Q.i]; b.classList.toggle("on", on); b.textContent = on ? "🚩 Flagged" : "🚩 Flag"; }
+  function toggleFlag() { if (Q.flags[Q.i]) delete Q.flags[Q.i]; else Q.flags[Q.i] = true; updateFlagBtn(); }
 
   function showBanner(ok, correctKey) {
     var b = $("banner");
@@ -473,6 +476,16 @@
       });
     } else if (answered.length) {
       h += "<p class='pass'>No misses — excellent! 🌟</p>";
+    }
+    var flagged = [];
+    Q.list.forEach(function (q, i) { if (Q.flags[i]) flagged.push(q); });
+    if (flagged.length) {
+      h += "<h3 style='color:#fff'>🚩 You flagged (" + flagged.length + ")</h3>";
+      flagged.forEach(function (q) {
+        h += "<div class='miss'><div class='missq'>" + esc(q.question) + "</div>" +
+          "<div class='missline'>Correct: <b class='ok'>" + esc((q.answer_key || "") + " — " + (q.answer || "")) + "</b></div>" +
+          ((q.references || []).length ? "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>" : "") + "</div>";
+      });
     }
     d.innerHTML = h;
     // buttons
@@ -744,7 +757,7 @@
         var row = el("div", "kmrow");
         row.innerHTML =
           "<div class='kmkw'>" + hl(r.kw || "", q) + "</div>" +
-          "<div class='kmjump'><span class='kmlbl'>Jump to</span><span class='arrow'>→</span> <b>" + hl(r.jump || "", q) + "</b></div>" +
+          "<div class='kmjump'><span class='kmlbl'>Jump to</span><span class='arrow'>→</span> <b>" + hl(r.jump || "", q) + "</b> " + pageChip(r.jump || "") + "</div>" +
           "<div class='kmwhy'>" + (r.why ? "<span class='kmlbl'>Why</span>" + hl(r.why, q) + " " : "") + stars(r.stars) + "</div>";
         box.appendChild(row);
       });
@@ -762,7 +775,7 @@
       card.innerHTML =
         "<div class='sctop'><b>" + esc(secLabel(s)) + "</b>" + stars(s.importance) + "</div>" +
         "<div class='scsum'>" + esc(pick(s, "summary")) + "</div>" +
-        "<div class='scmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + (fa ? " سؤال · " : " questions · ") + ((s.keywords || []).length) + (fa ? " کلیدواژه" : " keywords") + "</div>";
+        "<div class='scmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + (fa ? " سؤال" : " questions") + (secPage(s.section) ? " · 📖 p." + secPage(s.section) : "") + "</div>";
       card.onclick = function () { renderLesson(s); };
       host.appendChild(card);
     });
@@ -773,7 +786,7 @@
     var h = "<div class='ltable'>";
     items.forEach(function (it) {
       h += "<div class='ltr'>" +
-        "<div class='ltc ref'><span class='ltlbl'>" + refLbl + "</span><b>" + esc(it.ref) + "</b> " + stars(it.stars) + "</div>" +
+        "<div class='ltc ref'><span class='ltlbl'>" + refLbl + "</span><b>" + esc(it.ref) + "</b> " + stars(it.stars) + " " + pageChip(it.ref) + "</div>" +
         "<div class='ltc'><span class='ltlbl'>" + col2 + "</span>" + esc(pick(it, base2)) + "</div>" +
         "<div class='ltc'><span class='ltlbl'>" + col3 + "</span>" + esc(pick(it, base3)) + "</div>" +
         "</div>";
@@ -788,7 +801,10 @@
       : { tables: "📊 Key tables — most important first", rules: "📏 Key rules", method: "🧭 The fast method", must: "⭐ Must-know values", traps: "⚠️ Common traps", memo: "Memory aid", ex: "📝 Worked examples", tbl: "Table", rule: "Rule", what: "What", how: "How / why", note: "Note", inbank: " questions in the bank" };
     var h = "<h2 style='margin-top:0'>" + esc(secLabel(s)) + " " + stars(s.importance) + "</h2>";
     h += "<p class='lsum'>" + esc(pick(s, "summary")) + "</p>";
-    h += "<div class='lmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + esc(T.inbank) + "</div>";
+    var pg = secPage(s.section);
+    h += "<div class='lmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + esc(T.inbank) +
+      (pg ? " · 📖 " + (fa ? "این Section از صفحهٔ " : "starts on p. ") + "<b>" + pg + "</b>" + (fa ? " کتاب شروع می‌شود" : "") : "") + "</div>";
+    h += "<div class='lmeta'>📚 Tables → p." + BOOK_ANCHORS.tables + " · Appendix B → p." + BOOK_ANCHORS.appendixB + " · Index → p." + BOOK_ANCHORS.index + "</div>";
     if ((s.keyTables || []).length) { h += "<h3>" + T.tables + "</h3>" + ltable(s.keyTables, T.tbl, T.what, T.how, "what", "use"); }
     if ((s.keyRules || []).length) { h += "<h3>" + T.rules + "</h3>" + ltable(s.keyRules, T.rule, T.what, T.note, "what", "note"); }
     if ((s.method || []).length) { h += "<h3>" + T.method + "</h3><ol>"; pickArr(s, "method").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ol>"; }
@@ -827,6 +843,126 @@
       .then(function (full) { wait.stop(); out.className = "rich teachbox"; out.innerHTML = mdToHtml(full); })
       .catch(function (err) { wait.stop(); out.className = "status err"; out.textContent = "⚠️ " + apiErr(err); });
   }
+
+  // ===== page numbers from the real CEC 2024 book (section starts are exact) =====
+  var SECTION_PAGES = { 0: 53, 2: 68, 4: 76, 6: 83, 8: 90, 10: 98, 12: 108, 14: 157, 16: 166, 26: 211, 28: 232 };
+  var BOOK_ANCHORS = { tables: 393, diagrams: 515, appendixB: 556, index: 930 };
+  function secPage(sec) { return SECTION_PAGES[sec]; }
+  var PAGES = JSON.parse(localStorage.getItem("cec_pagenums") || "{}"); // exact ref -> page (user-filled)
+  function savePages() { localStorage.setItem("cec_pagenums", JSON.stringify(PAGES)); }
+  function pageChip(ref) {
+    var v = PAGES[ref];
+    return "<button class='pagechip" + (v ? " set" : "") + "' data-pageref='" + esc(ref) + "' title='page in your CEC 2024 book'>" + (v ? ("p." + esc(v)) : "+p") + "</button>";
+  }
+  document.addEventListener("click", function (ev) {
+    var pc = ev.target.closest("[data-pageref]"); if (!pc) return;
+    ev.stopPropagation();
+    var ref = pc.getAttribute("data-pageref");
+    var v = prompt("Page number in your CEC 2024 book for:\n" + ref, PAGES[ref] || "");
+    if (v === null) return; v = v.trim();
+    if (v) PAGES[ref] = v; else delete PAGES[ref];
+    savePages();
+    if (!$("keymap").classList.contains("hidden")) renderKeymap($("kmSearch").value);
+    else if (!$("lesson").classList.contains("hidden") && currentLesson) renderLesson(currentLesson);
+    else if (!$("codehunt").classList.contains("hidden")) chShowAns();
+  });
+
+  // ===== Study Plan: 6 weeks x 3h/day, live timer with pause/resume =====
+  var PLAN_DAY = 180, PLAN_DAYS_WK = 6, PLAN_WKS = 6, PLAN_TOTAL = PLAN_DAY * PLAN_DAYS_WK * PLAN_WKS;
+  var PLAN_CUR = [
+    { title: "Week 1 — Foundations + Section 4 (ampacity)", secs: ["0", "2", "4"] },
+    { title: "Week 2 — Section 8 (loads & demand)", secs: ["8"] },
+    { title: "Week 3 — Section 10 (grounding & bonding)", secs: ["10"] },
+    { title: "Week 4 — Section 12 (wiring methods, part 1)", secs: ["12"] },
+    { title: "Week 5 — Section 12 part 2 + 14 + 6 + 26 + 16", secs: ["12", "14", "6", "26", "16"] },
+    { title: "Week 6 — Section 28 (motors) + full mocks", secs: ["28"] }
+  ];
+  var PLAN_BLK = [
+    { min: 25, label: "Code-hunt / keyword drills", go: "codehunt" },
+    { min: 70, label: "Study the day's lesson(s)", go: "study" },
+    { min: 55, label: "Timed practice quiz", go: "practice" },
+    { min: 30, label: "Review your misses", go: "weak" }
+  ];
+  var TIME = JSON.parse(localStorage.getItem("cec_time") || "null") || { total: 0, days: {}, start: null, running: false };
+  function saveTime() { localStorage.setItem("cec_time", JSON.stringify(TIME)); }
+  function dkey(d) { d = d || new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  var _tick = null;
+  function timeCredit() { if (!TIME.running || _tick == null) return; var now = Date.now(); var add = (now - _tick) / 60000; _tick = now; if (add <= 0) return; TIME.total += add; var k = dkey(); TIME.days[k] = (TIME.days[k] || 0) + add; saveTime(); }
+  function timeStart() { if (TIME.running) return; if (!TIME.start) TIME.start = Date.now(); TIME.running = true; _tick = Date.now(); saveTime(); planUI(); }
+  function timePause() { if (!TIME.running) return; timeCredit(); TIME.running = false; _tick = null; saveTime(); planUI(); }
+  function timeHeartbeat() { if (TIME.running) { timeCredit(); planUI(); } }
+  function fmtH(m) { return (m / 60).toFixed(1) + "h"; }
+  function weekMin() { var s = 0; for (var i = 0; i <= PLAN_DAYS_WK; i++) { var d = new Date(); d.setDate(d.getDate() - i); s += TIME.days[dkey(d)] || 0; } return s; }
+  function planSegs() { var segs = [], cum = 0; PLAN_CUR.forEach(function (wk, wi) { for (var d = 0; d < PLAN_DAYS_WK; d++) PLAN_BLK.forEach(function (b) { segs.push({ wi: wi, day: d + 1, b: b, start: cum }); cum += b.min; }); }); return segs; }
+  function curSeg() { var s = planSegs(); for (var i = 0; i < s.length; i++) if (TIME.total < s[i].start + s[i].b.min) return s[i]; return null; }
+  function planGoTask(go, wk) {
+    if (go === "practice") { var pool = ALL.filter(function (q) { return wk.secs.indexOf(String(q.section != null ? q.section : "occ")) >= 0; }); startQuiz(shuffle(pool.length ? pool : ALL).slice(0, 25), "section", false); }
+    else if (go === "study") { buildStudyList(); show("study"); }
+    else if (go === "weak") { var w = ALL.filter(function (q) { return PROG[q.id] && PROG[q.id].wrong > 0; }); if (w.length) startQuiz(shuffle(w), "weak", false); else { buildStudyList(); show("study"); } }
+    else if (go === "codehunt") { startCodeHunt(); show("codehunt"); }
+  }
+  function planUI() {
+    if (!$("trkToday")) { var hud0 = $("hud"); if (hud0) hud0.innerHTML = TIME.running ? "<span class='studying'>⏺ studying</span>" : ""; return; }
+    var today = TIME.days[dkey()] || 0, wk = weekMin(), total = TIME.total;
+    $("trkToday").textContent = fmtH(today) + " / 3h";
+    $("trkWeek").textContent = fmtH(wk) + " / 18h";
+    $("trkTotal").textContent = fmtH(total) + " / 108h";
+    $("barToday").style.width = Math.min(100, today / PLAN_DAY * 100) + "%";
+    $("barWeek").style.width = Math.min(100, wk / (PLAN_DAY * PLAN_DAYS_WK) * 100) + "%";
+    $("barTotal").style.width = Math.min(100, total / PLAN_TOTAL * 100) + "%";
+    var bt = $("timerToggle"); if (bt) bt.textContent = TIME.running ? "⏸ Pause" : "▶ Start studying";
+    var big = $("timerBig"); if (big) { var s = Math.floor(today * 60); big.textContent = Math.floor(s / 3600) + ":" + ("0" + Math.floor(s % 3600 / 60)).slice(-2) + ":" + ("0" + Math.floor(s % 60)).slice(-2); big.classList.toggle("live", TIME.running); }
+    var hud = $("hud"); if (hud) hud.innerHTML = TIME.running ? "<span class='studying'>⏺ studying</span>" : "";
+  }
+  function renderPlan() {
+    planUI();
+    var seg = curSeg(), nt = $("nowTask");
+    if (seg) {
+      var wk = PLAN_CUR[seg.wi];
+      nt.innerHTML = "<div class='ntlbl'>Right now · " + esc(wk.title) + " · Day " + seg.day + "</div>" +
+        "<div class='nttask'>" + esc(seg.b.label) + " · " + seg.b.min + " min</div>" +
+        "<button class='primary' id='nowGo'>Start this task →</button>";
+      $("nowGo").onclick = function () { if (!TIME.running) timeStart(); planGoTask(seg.b.go, wk); };
+    } else { nt.innerHTML = "<div class='nttask'>🎉 Plan complete — " + fmtH(TIME.total) + " logged. Keep running full timed mocks.</div>"; }
+    var segs = planSegs(), pw = {};
+    segs.forEach(function (s) { var p = pw[s.wi] = pw[s.wi] || { total: 0, start: 1e9, end: 0 }; p.total += s.b.min; p.start = Math.min(p.start, s.start); p.end = Math.max(p.end, s.start + s.b.min); });
+    var h = "";
+    PLAN_CUR.forEach(function (wk, wi) {
+      var p = pw[wi], done = Math.max(0, Math.min(p.total, TIME.total - p.start)), pct = Math.round(done / p.total * 100);
+      var cur = TIME.total >= p.start && TIME.total < p.end;
+      h += "<div class='planweek" + (cur ? " cur" : "") + "'><div class='pwtop'><b>" + esc(wk.title) + "</b><span>" + pct + "%</span></div>" +
+        "<div class='trackbar'><div class='trackfill' style='width:" + pct + "%'></div></div>" +
+        "<div class='pwsecs'>Sections: " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div></div>";
+    });
+    $("planList").innerHTML = h;
+  }
+
+  // ===== Code-Hunt drills =====
+  var CH = { pool: [], i: 0, timer: null, end: 0, found: 0, total: 0 };
+  function startCodeHunt() {
+    var rows = [];
+    STUDY.forEach(function (s) { (s.keywords || []).forEach(function (k) { rows.push({ sec: secLabel(s), kw: k.kw, jump: k.jump, why: k.why }); }); });
+    CH = { pool: shuffle(rows), i: 0, timer: null, end: 0, found: 0, total: 0 };
+    chNext();
+  }
+  function chNext() {
+    if (CH.timer) clearInterval(CH.timer);
+    var r = CH.pool[CH.i % CH.pool.length];
+    $("chPrompt").innerHTML = "Find where this lives:<br><b>" + esc(r.kw) + "</b><div class='chsec'>" + esc(r.sec) + "</div>";
+    $("chReveal").classList.add("hidden"); $("chReveal").innerHTML = "";
+    $("chShow").classList.remove("hidden"); $("chFound").classList.add("hidden"); $("chMiss").classList.add("hidden");
+    CH.end = Date.now() + 90000; chTick(); CH.timer = setInterval(chTick, 250);
+    $("chScore").textContent = "Found in time: " + CH.found + " / " + CH.total;
+  }
+  function chTick() { var ms = CH.end - Date.now(); if (ms < 0) ms = 0; var t = $("chTimer"); t.textContent = fmt(ms); t.classList.toggle("warn", ms < 20000); if (ms <= 0) { clearInterval(CH.timer); chShowAns(); } }
+  function chShowAns() {
+    if (CH.timer) clearInterval(CH.timer);
+    var r = CH.pool[CH.i % CH.pool.length];
+    $("chReveal").classList.remove("hidden");
+    $("chReveal").innerHTML = "<b>→ " + esc(r.jump) + "</b> " + pageChip(r.jump) + (r.why ? ("<div class='chwhy'>" + esc(r.why) + "</div>") : "");
+    $("chShow").classList.add("hidden"); $("chFound").classList.remove("hidden"); $("chMiss").classList.remove("hidden");
+  }
+  function chMark(ok) { CH.total++; if (ok) CH.found++; CH.i++; chNext(); }
 
   // ---------- nav ----------
   function gotoSettings(note) {
@@ -868,6 +1004,8 @@
       else if (g === "vision") show("vision");
       else if (g === "study") { buildStudyList(); show("study"); }
       else if (g === "keymap") { show("keymap"); renderKeymap($("kmSearch").value); }
+      else if (g === "plan") { show("plan"); renderPlan(); }
+      else if (g === "codehunt") { startCodeHunt(); show("codehunt"); }
       return;
     }
   });
@@ -897,6 +1035,16 @@
   $("lessonDrill").onclick = lessonDrill;
   $("lessonGen").onclick = lessonGen;
   $("lessonTeach").onclick = lessonTeach;
+  $("flag").onclick = toggleFlag;
+  $("timerToggle").onclick = function () { if (TIME.running) timePause(); else timeStart(); };
+  $("timerReset").onclick = function () { if (!confirm("Reset today's studied time?")) return; if (TIME.running) timePause(); var k = dkey(); TIME.total = Math.max(0, TIME.total - (TIME.days[k] || 0)); delete TIME.days[k]; saveTime(); planUI(); };
+  $("chShow").onclick = chShowAns;
+  $("chFound").onclick = function () { chMark(true); };
+  $("chMiss").onclick = function () { chMark(false); };
+  setInterval(timeHeartbeat, 5000);
+  document.addEventListener("visibilitychange", function () { if (document.hidden) timeCredit(); });
+  if (TIME.running) { _tick = Date.now(); }
+  planUI();
   $("genGo").onclick = generate;
   $("visionGo").onclick = askVision;
   $("fileInput").onchange = function (e) { handleFile(e.target.files[0]); };
