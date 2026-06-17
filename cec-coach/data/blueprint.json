@@ -1,0 +1,28 @@
+{
+  "exam": "BC Construction Electrician (Red Seal / Certificate of Qualification)",
+  "code_edition": "CEC 2024 (CSA C22.1:24)",
+  "total_questions": 100,
+  "pass_mark_percent": 70,
+  "time_minutes_standard": 240,
+  "time_minutes_with_language_accommodation": 300,
+  "open_book": true,
+  "book_provided_clean": true,
+  "block_weights": {
+    "A": 11,
+    "B": 29,
+    "C": 30,
+    "D": 20,
+    "E": 10
+  },
+  "blocks": {
+    "A": "Performs common occupational skills (safety, tools, organising, support components, commissioning, communication)",
+    "B": "Installs/services/maintains generating, distribution and service systems (services & metering, protection devices, distribution, UPS/surge, bonding & grounding, generation, renewables, high-voltage, transformers)",
+    "C": "Installs/services/maintains wiring systems (raceways/cables/enclosures, branch circuitry, HVAC, electric heating, exit/emergency lighting, cathodic protection)",
+    "D": "Installs/services/maintains motor and control systems (starters & controls, drives, motors, automated control)",
+    "E": "Installs/services/maintains signalling and communication systems (signalling, communication, integrated control)"
+  },
+  "section_to_block_hint": {
+    "0": "A", "2": "A", "4": "C", "6": "B", "8": "B", "10": "B",
+    "12": "C", "14": "B", "16": "E", "26": "B", "28": "D", "30": "C", "62": "C"
+  }
+}
