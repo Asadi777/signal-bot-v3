@@ -76,10 +76,13 @@
   var TEACHREG = [];
   function teachBtn(q) { var i = TEACHREG.push(q) - 1; return "<button class='teachmini' data-teach='" + i + "'>🧑‍🏫 " + (getLang() === "fa" ? "آموزش قدم‌به‌قدم" : "Teach me") + "</button>"; }
   document.addEventListener("click", function (ev) { var b = ev.target.closest("[data-teach]"); if (!b) return; ev.stopPropagation(); openTeachChat(TEACHREG[+b.getAttribute("data-teach")]); });
+  var lastTeachQ = null;
   function openTeachChat(q) {
     if (!q) return;
     if (!getKey()) { gotoSettings("Add your API key to use the AI teacher."); return; }
-    show("tutor"); langBar("chatLang", function () {});
+    lastTeachQ = q;
+    show("tutor");
+    langBar("chatLang", function () { if (lastTeachQ) { chatHistory = []; $("chat").innerHTML = ""; openTeachChat(lastTeachQ); } });
     var head = getLang() === "fa" ? "🧑‍🏫 آموزشِ این سؤال:" : "🧑‍🏫 Teach me this question:";
     var label = head + "\n\n" + q.question + "\n" + (q.options || []).join("\n") +
       (q.question_fa ? "\n\n" + q.question_fa : "");
