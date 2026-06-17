@@ -1,0 +1,678 @@
+{
+  "exam_set": "occupational-skills-no-codebook",
+  "questions": [
+    {
+      "id": "OCC-001",
+      "section": null, "block": "A", "topic": "ppe-safety", "type": "theory",
+      "question": "When cutting an aluminum cable tray with an angle grinder, what additional PPE is required?",
+      "options": ["A) flame retardant coveralls", "B) face shield", "C) double hearing protection", "D) respirator"],
+      "answer": "Face shield — to protect against flying metal particles and sparks from grinding.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-002",
+      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "question": "When working on the secondary circuit of a transformer, which hazard is present for the available fault current?",
+      "options": ["A) pinch points", "B) arc flash", "C) toxic fumes", "D) hot surfaces"],
+      "answer": "Arc flash — the high available fault current on the secondary presents an arc-flash hazard.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-003",
+      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "question": "What is the first step when performing a group lockout procedure?",
+      "options": ["A) Install a lockout hasp", "B) identify the potential energy source", "C) demonstrate zero energy potential", "D) complete the lockout log"],
+      "answer": "Identify the potential energy source(s) — the first step before isolating and locking out.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-004",
+      "section": null, "block": "A", "topic": "test-instruments", "type": "theory",
+      "question": "What is used to identify hotspots in electrical connections?",
+      "options": ["A) Megohmmeter", "B) hi-pot tester", "C) non-contact voltage detector", "D) infrared camera"],
+      "answer": "Infrared (thermal imaging) camera — detects heat from loose or high-resistance connections.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-005",
+      "section": null, "block": "A", "topic": "site-coordination", "type": "theory",
+      "question": "Who coordinates the schedule of sub trades on a job site?",
+      "options": ["A) inspector", "B) design engineer", "C) Foreman", "D) general contractor"],
+      "answer": "General contractor — responsible for coordinating the schedule of all sub trades on site.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-006",
+      "section": null, "block": "A", "topic": "fasteners", "type": "theory",
+      "question": "What anchor is used to attach a surface-mounted electrical panel to a concrete wall?",
+      "options": ["A) drop-in insert", "B) toggle bolt", "C) drywall fastener", "D) leg bolt"],
+      "answer": "Drop-in insert (drop-in anchor) — set into concrete to accept a machine screw for the panel.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-007",
+      "section": null, "block": "A", "topic": "fasteners", "type": "theory",
+      "question": "What is used to attach a 60 amp disconnect to a strut channel?",
+      "options": ["A) self-tapping screws and washers", "B) leg bolts and spring nuts", "C) threaded rods and nylon nuts", "D) bolts and spring nuts"],
+      "answer": "Bolts and spring nuts (channel/strut spring nuts) — the standard method to fasten equipment to strut channel.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-008",
+      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "question": "When verifying bus bar torque specifications before energizing, what is the tightening torque for 1/2-in connecting hardware?",
+      "options": ["A) 26 N·m", "B) 41 N·m", "C) 54 N·m", "D) 75 N·m"],
+      "answer": "54 N·m for 1/2-in connecting hardware (per Table D7).",
+      "answer_key": "C",
+      "references": ["Table D7"],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-009",
+      "section": null, "block": "A", "topic": "troubleshooting", "type": "theory",
+      "question": "Following an installation, the insulation on one conductor in a three-phase system is melted on a service breaker and shows signs of burning. What is the cause?",
+      "options": ["A) improper phase sequencing", "B) loose connection", "C) unbalanced load", "D) increased load on the panel"],
+      "answer": "Loose connection — a high-resistance loose termination generates heat that melts and burns the insulation on that conductor.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-010",
+      "section": null, "block": "A", "topic": "photovoltaic", "type": "theory",
+      "question": "When installing a back-fed breaker from a photovoltaic inverter into a residential panel, where is the breaker located in the panel?",
+      "options": ["A) at the adjacent side to the incoming feeder", "B) at the opposite end from the incoming feeder", "C) at any available space in the panel", "D) at a dedicated sub panel"],
+      "answer": "At the opposite end from the incoming feeder (the busbar end farthest from the main supply), per the 120% / backfeed connection rule.",
+      "answer_key": "B",
+      "references": ["Rule 64 (renewable energy / PV)"],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-011",
+      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "question": "During the initial startup of an AC generator, the phase sequence of the output voltage is incorrect. What is done to achieve the proper phase sequence?",
+      "options": ["A) reverse the position of the pole pieces", "B) Rewind the generator", "C) reverse the polarity of the exciter", "D) interchange any two leads"],
+      "answer": "Interchange any two of the output leads to correct the phase sequence.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-012",
+      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "question": "In cold weather the prime-mover engine will not start on the AC generator. What is the cause?",
+      "options": ["A) The bypass switch is in the test mode", "B) The oil viscosity in the engine is too low", "C) The radiator damper did not open", "D) The battery case heater failed"],
+      "answer": "The battery case heater failed — cold batteries lose cranking capacity, so the engine will not start in cold weather.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-013",
+      "section": null, "block": "A", "topic": "photovoltaic", "type": "theory",
+      "question": "A rooftop-mounted photovoltaic system is to be designed. After determining the demand load, what is the next step?",
+      "options": ["A) install rooftop mounting rails", "B) determine conductor lengths", "C) perform shading calculations", "D) Mount combiner box and charge controller"],
+      "answer": "Perform shading calculations — analysis follows load determination, before any physical installation.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-014",
+      "section": null, "block": "A", "topic": "heating-cable", "type": "theory",
+      "question": "During the installation of an in-floor heating cable set, the cable was tested on the reel and then tested after installation. Before energizing it was noted that the cable resistance is significantly lower than the pre-installation test. What is the cause?",
+      "options": ["A) The in-floor sensor has failed open", "B) The in-floor sensor has failed closed", "C) a staple has penetrated the heating cable", "D) The heating cable spacing is incorrect"],
+      "answer": "A staple has penetrated the heating cable — damaging the insulation and creating a fault that lowers the measured (insulation) resistance.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-015",
+      "section": null, "block": "D", "topic": "overload-heater", "type": "theory",
+      "question": "An overload heater will not reset. What is the cause?",
+      "options": ["A) control fuse has blown", "B) solder pot has cooled", "C) solder pot has melted", "D) control relay is open"],
+      "answer": "The solder pot has melted — a melted (ratchet) solder pot in a thermal overload prevents it from resetting until it cools/is replaced.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-016",
+      "section": null, "block": "A", "topic": "code-authority", "type": "theory",
+      "question": "Which authority presides over the requirements of exit signs?",
+      "options": ["A) Canadian Electrical Code", "B) local electrical inspection department", "C) Canadian Standards Association", "D) National Building Code of Canada"],
+      "answer": "National Building Code of Canada — governs exit sign requirements.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-017",
+      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "question": "When verifying bus bar torque specifications before energizing, what is the tightening torque of 1/2-inch connecting hardware?",
+      "options": ["A) 26 N·m", "B) 41 N·m", "C) 54 N·m", "D) 75 N·m"],
+      "answer": "54 N·m for 1/2-inch connecting hardware (Table D7).",
+      "answer_key": "C",
+      "references": ["Table D7"],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-018",
+      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "question": "When working on the secondary circuit of a transformer, which hazard is present for the available fault current?",
+      "options": ["A) pinch points", "B) arc flash", "C) toxic fumes", "D) hot surfaces"],
+      "answer": "Arc flash — high available fault current on the secondary.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-019",
+      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "question": "When performing a lock-out procedure, what must be verified to work on the equipment?",
+      "options": ["A) emergency stops have been activated", "B) source of energy has been isolated", "C) supervisor has been given a lock-out key", "D) circuits have been turned off"],
+      "answer": "The source of energy has been isolated — verified before working on the equipment.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-020",
+      "section": null, "block": "A", "topic": "gfci", "type": "theory",
+      "question": "When performing regular testing of a GFCI receptacle on a pool deck, the receptacle fails to reset. What is the cause?",
+      "options": ["A) faulty receptacle", "B) overvoltage to the receptacle", "C) receptacle is not grounded", "D) open ground"],
+      "answer": "Faulty receptacle — a GFCI that will not reset (with power present) indicates a defective device.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-021",
+      "section": null, "block": "A", "topic": "inspection", "type": "theory",
+      "question": "When is a rough-in inspection required?",
+      "options": ["A) before any portion of work is concealed", "B) before the main service is installed", "C) after the devices are installed", "D) after the grounding is completed"],
+      "answer": "Before any portion of the work is concealed (covered by drywall, concrete, etc.).",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-022",
+      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "question": "When installing HVAC equipment, what is the torque setting for 1/4-inch bolts?",
+      "options": ["A) 8 N·m", "B) 9 N·m", "C) 12 N·m", "D) 22.6 N·m"],
+      "answer": "8 N·m for 1/4-inch bolts (per the manufacturer/HVAC torque table).",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-023",
+      "section": null, "block": "A", "topic": "ppe-safety", "type": "theory",
+      "question": "When cutting aluminum cable tray with an angle grinder, what additional PPE is required?",
+      "options": ["A) flame retardant coveralls", "B) face shield", "C) double hearing protection", "D) respirator"],
+      "answer": "Face shield — protection from flying particles and sparks.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-024",
+      "section": null, "block": "A", "topic": "troubleshooting", "type": "theory",
+      "question": "When commissioning a 15 A countertop split receptacle, the circuit breaker trips instantly. What is done?",
+      "options": ["A) verify if the tab is broken on the neutral side of the receptacle", "B) verify if the tab is broken on the ungrounded side of the receptacle", "C) verify if the receptacle is bonded", "D) verify the phasing of the breaker in the panel"],
+      "answer": "Verify whether the tab on the ungrounded (hot) side of the receptacle is broken — a split receptacle requires the hot tab removed; if intact it shorts the two phases and trips the breaker.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-025",
+      "section": null, "block": "D", "topic": "control-circuit", "type": "theory",
+      "question": "When a magnetic starter is installed with a holding contact connected in parallel with the start button, which type of protection is provided?",
+      "options": ["A) low voltage protection", "B) overvoltage protection", "C) low current protection", "D) overcurrent protection"],
+      "answer": "Low-voltage protection — on voltage loss the coil drops out and the holding contact opens, requiring a manual restart (three-wire control).",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-026",
+      "section": null, "block": "D", "topic": "vfd", "type": "theory",
+      "question": "What is the procedure for an initial startup of a VFD?",
+      "options": ["A) program relevant parameters, bump test, energize VFD, then run", "B) program relevant parameters, energize VFD, bump test, then run", "C) Energize VFD, bump test, program relevant parameters, then run", "D) energize VFD, program relevant parameters, bump test, then run"],
+      "answer": "Energize the VFD, program the relevant parameters, bump test (verify rotation), then run.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-027",
+      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "question": "What is the minimum torque required to secure a connection between two 2/0 AWG conductors with a hex-headed lug (split-bolt)?",
+      "options": ["A) 5.6 N·m", "B) 20.3 N·m", "C) 31.1 N·m", "D) 43.5 N·m"],
+      "answer": "31.1 N·m for 2/0 AWG in a hex-head split-bolt connector (per the connector torque table).",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-028",
+      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "question": "What is the first step when performing a group lock-out procedure?",
+      "options": ["A) install a lock-out hasp", "B) identify the potential energy sources", "C) demonstrate zero energy potential", "D) complete the lock-out log"],
+      "answer": "Identify the potential energy sources.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-029",
+      "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
+      "question": "The thermostat controlling a central heater is calling for heat. What happens if the circulating fan fails to start?",
+      "options": ["A) the high limit switch opens and the solenoid de-energizes", "B) the high limit switch remains closed and the solenoid remains energized", "C) the high limit switch opens and the solenoid remains energized", "D) the high limit switch remains closed and the solenoid de-energizes"],
+      "answer": "The high-limit switch opens and the gas-valve solenoid de-energizes — without airflow the heat exchanger overheats, the high-limit opens and shuts off the heat source.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-030",
+      "section": null, "block": "A", "topic": "transformer-fault-current", "type": "calculation",
+      "question": "The percentage impedance of a 225 kVA, 600-120/208 V, 3-phase transformer is 2.5%. When replacing the overcurrent protection on the secondary, what is the minimum short-circuit rating required?",
+      "options": ["A) 625 A", "B) 1,083 A", "C) 18,872 A", "D) 24,982 A"],
+      "answer": "24,982 A (secondary FLC ÷ %Z: 225 kVA at 208 V 3-phase = 624.6 A; 624.6 ÷ 0.025 = 24,984 A).",
+      "answer_key": "D",
+      "references": [],
+      "solution_steps": [
+        "Secondary full-load current = 225,000 ÷ (208 × 1.732) = 624.6 A.",
+        "Available short-circuit current = FLC ÷ %Z = 624.6 ÷ 0.025 = 24,984 A ≈ 24,982 A → answer D.",
+        "The interrupting rating of the OCPD must equal or exceed the available short-circuit current."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-031",
+      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "question": "In cold weather, the prime-mover engine will not start on an AC generator. What is the cause?",
+      "options": ["A) the bypass switch is in test mode", "B) the oil viscosity in the engine is too low", "C) the radiator damper did not open", "D) the battery case heater failed"],
+      "answer": "The battery case heater failed — cold batteries cannot crank the engine.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-032",
+      "section": null, "block": "D", "topic": "control-circuit", "type": "theory",
+      "question": "In a 3-wire motor control circuit, the start button energizes the coil, but it drops out when the start button is released. What is the cause?",
+      "options": ["A) Faulty holding contact", "B) tripped overload contact", "C) faulty magnetic coil", "D) incorrect coil voltage"],
+      "answer": "Faulty holding (seal-in) contact — it fails to maintain the coil circuit after the start button is released.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-033",
+      "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
+      "question": "An occupancy sensor controls the heating system of a building; the internal temperature is 15°C while occupied. The occupied set-point temperature is programmed for 21°C. What is the cause?",
+      "options": ["A) the thermostat is in heat only", "B) occupancy sensor is failed open", "C) sensitivity setting of sensor is set too high", "D) the thermostat is failed closed"],
+      "answer": "The occupancy sensor has failed open — the system reads the space as unoccupied (setback) and does not heat to the 21°C occupied set point.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-034",
+      "section": null, "block": "A", "topic": "controls-signal", "type": "calculation",
+      "question": "An outdoor air damper has an 85% open command on the 4-20 mA signal. What is the output amperage?",
+      "options": ["A) 13.6 mA", "B) 17.0 mA", "C) 17.6 mA", "D) 18.8 mA"],
+      "answer": "17.6 mA (4 mA + 0.85 × 16 mA span = 4 + 13.6 = 17.6 mA).",
+      "answer_key": "C",
+      "references": [],
+      "solution_steps": [
+        "Signal span = 20 - 4 = 16 mA.",
+        "Output = 4 mA + (85% × 16 mA) = 4 + 13.6 = 17.6 mA → answer C."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-035",
+      "section": null, "block": "A", "topic": "emergency-power", "type": "theory",
+      "question": "An AC generator is installed to supply emergency power for a life safety system. What is the raceway installation requirement for the conductor supplying associated equipment?",
+      "options": ["A) installed in a rigid metal conduit with mechanical protection", "B) installed in a rigid PVC conduit with mechanical protection", "C) embedded in concrete providing 30 min fire rating", "D) embedded in concrete providing 60 min fire rating"],
+      "answer": "Installed in rigid metal conduit with mechanical protection (emergency/life-safety wiring methods).",
+      "answer_key": "A",
+      "references": ["Section 46 (emergency systems)"],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-036",
+      "section": null, "block": "D", "topic": "overload-heater", "type": "theory",
+      "question": "An overload heater will not reset. What is the cause?",
+      "options": ["A) Control fuse has blown", "B) solder pot has cooled", "C) solder pot has melted", "D) control relay is open"],
+      "answer": "The solder pot has melted — a thermal (eutectic) overload whose solder pot has melted will not reset.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-037",
+      "section": null, "block": "A", "topic": "transformer-theory", "type": "calculation",
+      "question": "An autotransformer with 300 turns is connected to a 600 V line. Which turn number is used to tap the secondary for a 120 V output?",
+      "options": ["A) 60", "B) 80", "C) 120", "D) 240"],
+      "answer": "60 turns (turns-per-volt = 300 ÷ 600 = 0.5; 120 V × 0.5 = 60 turns).",
+      "answer_key": "A",
+      "references": [],
+      "solution_steps": [
+        "Turns per volt = 300 turns ÷ 600 V = 0.5 turns/volt.",
+        "For 120 V output: 120 × 0.5 = 60 turns → tap at turn 60 → answer A."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-038",
+      "section": null, "block": "A", "topic": "generator", "type": "theory",
+      "question": "An AC generator in a plant did not start during a power outage. What is the cause?",
+      "options": ["A) the utility breaker is open", "B) the output breaker is open", "C) the transfer switch was left in the auto position", "D) the battery charger failed to charge the batteries"],
+      "answer": "The battery charger failed to charge the batteries — dead/undercharged starting batteries prevent the generator from starting on an outage.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-039",
+      "section": null, "block": "A", "topic": "photovoltaic", "type": "theory",
+      "question": "A rooftop-mounted photovoltaic system is to be installed. After determining demand load, what is the next step?",
+      "options": ["A) install rooftop mounting rails", "B) determine conductor lengths", "C) perform shading calculations", "D) mount combiner box and charge controller"],
+      "answer": "Perform shading calculations.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-040",
+      "section": null, "block": "D", "topic": "motor-testing", "type": "theory",
+      "question": "After installing a three-phase motor, your foreman asks you to \"bump\" the motor. What will the test indicate?",
+      "options": ["A) Inrush current", "B) Direction of rotation", "C) Resistance of winding", "D) Stability of motor"],
+      "answer": "Direction of rotation — a bump test momentarily energizes the motor to confirm correct rotation.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-041",
+      "section": null, "block": "A", "topic": "drawings", "type": "theory",
+      "question": "For information about a building footing, which drawing is needed?",
+      "options": ["A) Electrical", "B) Structural", "C) Mechanical", "D) Layout"],
+      "answer": "Structural drawing — footings are shown on the structural drawings.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-042",
+      "section": null, "block": "A", "topic": "conductor-identification", "type": "theory",
+      "question": "How do you identify a neutral conductor when the size of the wire is #2 AWG or smaller?",
+      "options": ["A) Green", "B) Pink", "C) Marking end (both sides)", "D) White"],
+      "answer": "White — neutral (identified) conductors #2 AWG and smaller are identified by continuous white (or grey) insulation.",
+      "answer_key": "D",
+      "references": ["Rule 4-024 / 4-036 (identified conductors)"],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-043",
+      "section": null, "block": "A", "topic": "lockout", "type": "theory",
+      "question": "What is the first thing for a group lock-out?",
+      "options": ["A) Shut down equipment", "B) Meeting", "C) Isolate equipment", "D) Identify all energy sources"],
+      "answer": "Identify all energy sources — the first step of a group lock-out.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-044",
+      "section": null, "block": "E", "topic": "plc-drawings", "type": "theory",
+      "question": "What drawing shows the programming of a PLC?",
+      "options": ["A) Logic", "B) Layout", "C) Single line", "D) Schematic"],
+      "answer": "Logic (ladder logic) diagram shows the PLC programming.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-045",
+      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "question": "What is the amount of torque when using 1/2-inch connection hardware?",
+      "options": ["A) 54 N·m", "B) 41 N·m", "C) 37.5 N·m", "D) 45 N·m"],
+      "answer": "54 N·m for 1/2-inch connection hardware (Table D7).",
+      "answer_key": "A",
+      "references": ["Table D7"],
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-046",
+      "section": null, "block": "A", "topic": "torque-spec", "type": "lookup",
+      "question": "What is the amount of torque for HVAC when using 1/4-inch bolt hardware?",
+      "options": ["A) 8 N·m", "B) 3 N·m", "C) 15 N·m", "D) 26 N·m"],
+      "answer": "8 N·m for 1/4-inch HVAC hardware.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-047",
+      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "question": "What is the hazard when working on the primary of a transformer?",
+      "options": ["A) Back-feed", "B) Arc-flash", "C) Hot surface", "D) Energized core"],
+      "answer": "Back-feed — a transformer can be back-fed/energized from the secondary side, presenting a hazard on the primary.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-048",
+      "section": null, "block": "A", "topic": "transformer-hazard", "type": "theory",
+      "question": "What is the hazard when working on the secondary of a transformer?",
+      "options": ["A) Back-feed", "B) Hot surface", "C) Energized core", "D) Arc flash"],
+      "answer": "Arc flash — the high available fault current on the secondary presents an arc-flash hazard.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-049",
+      "section": null, "block": "A", "topic": "ppe-safety", "type": "lookup",
+      "question": "What is the periodic test time for high-voltage gloves in storage?",
+      "options": ["A) 365 days", "B) 180 days", "C) 90 days", "D) 270 days"],
+      "answer": "365 days — rubber insulating gloves in storage (not issued for use) must be retested within 12 months.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-050",
+      "section": null, "block": "A", "topic": "ppe-safety", "type": "lookup",
+      "question": "What is the periodic test time for high-voltage gloves in use?",
+      "options": ["A) 90 days", "B) 360 days", "C) 270 days", "D) 180 days"],
+      "answer": "180 days — rubber insulating gloves in service must be retested at 6-month intervals.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-051",
+      "section": null, "block": "A", "topic": "hvac-controls", "type": "theory",
+      "question": "What is the sequence of a make-up air unit once it needs heating?",
+      "options": ["A) Combustion blower, gas valve, damper open and supply blower energized", "B) Gas valve", "C) Damper open", "D) Supply blower"],
+      "answer": "Combustion blower, gas valve, damper open, and supply blower energized — the proper start sequence for a make-up air unit calling for heat.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-052",
+      "section": null, "block": "A", "topic": "transformer-fault-current", "type": "calculation",
+      "question": "What is the short-circuit current for a 100 kVA, 2400/120 V transformer if the impedance Z is 3%?",
+      "options": ["A) 52 kA", "B) 120 kA", "C) 13.50 kA", "D) 27.8 kA"],
+      "answer": "27.8 kA (secondary FLC 833 A ÷ 0.03 = 27,778 A ≈ 27.8 kA).",
+      "answer_key": "D",
+      "references": [],
+      "solution_steps": [
+        "Secondary full-load current = 100,000 ÷ 120 = 833.3 A (single-phase, 120 V secondary).",
+        "Available short-circuit current = FLC ÷ %Z = 833.3 ÷ 0.03 = 27,778 A ≈ 27.8 kA → answer D."
+      ],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-053",
+      "section": null, "block": "D", "topic": "motor-types", "type": "theory",
+      "question": "What kind of motor has excellent speed regulation?",
+      "options": ["A) Squirrel cage", "B) Universal", "C) Series", "D) Shunt"],
+      "answer": "Shunt motor — provides good/constant speed regulation under load.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-054",
+      "section": null, "block": "D", "topic": "vfd", "type": "theory",
+      "question": "When a VFD is installed for the first time, what is the sequence?",
+      "options": ["A) Check motor for jam, energize VFD, set control program, verify motor rotation", "B) Set control, check motor for jam, energize VFD", "C) Verify motor rotation, check motor for jam, energize VFD", "D) Energize VFD, check motor for jam, verify motor rotation"],
+      "answer": "Check motor for jam, energize VFD, set the control program, then verify motor rotation.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-055",
+      "section": null, "block": "A", "topic": "site-coordination", "type": "theory",
+      "question": "Who coordinates the schedule for the site?",
+      "options": ["A) City planning department", "B) Foreman", "C) Supervisor", "D) General Contractor"],
+      "answer": "General Contractor — coordinates the overall site schedule.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-056",
+      "section": null, "block": "A", "topic": "gfci", "type": "lookup",
+      "question": "A Class A ground-fault circuit interrupter will interrupt the circuit to the load, within a predetermined time, when the ground-fault current is ___ mA or more?",
+      "options": ["A) 3", "B) 4", "C) 5", "D) 6"],
+      "answer": "5 mA — a Class A GFCI trips at a ground-fault current of 5 mA (±1 mA).",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-057",
+      "section": null, "block": "E", "topic": "controls-timer", "type": "theory",
+      "question": "Your customer has a machine that needs a cooling fan for 20 seconds after motor shutdown. Which component is needed for the control circuit?",
+      "options": ["A) On-delay timer", "B) Off-delay timer", "C) Normally open timer", "D) Normally closed timer"],
+      "answer": "Off-delay timer — keeps the fan running for a set time after the motor is switched off.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-058",
+      "section": null, "block": "A", "topic": "ups", "type": "theory",
+      "question": "What is the procedure to troubleshoot the battery bank of a UPS system?",
+      "options": [
+        "A) Disconnect AC charger, disconnect the AC inverter, then check battery voltage.",
+        "B) Disconnect DC power, isolate the battery bank from the AC bus, then check the rectifier voltage.",
+        "C) Disconnect the battery bank from the AC charger, connect the AC inverter to the loads, then check inverter voltage.",
+        "D) Disconnect the AC inverter from the loads, connect the battery bank to the AC charger, then check rectifier voltage."
+      ],
+      "answer": "Disconnect AC charger, disconnect the AC inverter, then check battery voltage — isolate the battery bank from both charger and inverter before measuring battery voltage.",
+      "answer_key": "A",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-059",
+      "section": null, "block": "D", "topic": "vfd", "type": "theory",
+      "question": "What is the proper sequence to connect a motor to an inverter (VFD output)?",
+      "options": [
+        "A) Filter, inverter, reactor and motor",
+        "B) Inverter, reactor, filter and motor",
+        "C) Reactor, inverter, filter and motor",
+        "D) Motor, filter, inverter and reactor"
+      ],
+      "answer": "Inverter, reactor, filter, then motor — the output reactor and filter are placed between the inverter and the motor.",
+      "answer_key": "B",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-060",
+      "section": null, "block": "E", "topic": "cable-types", "type": "theory",
+      "question": "Which type of cable used in a nurse-call system can be used in a plenum?",
+      "options": ["A) LVT", "B) CMR", "C) FAS-105", "D) RWU-75"],
+      "answer": "FAS-105 — a plenum-rated communication/signal cable suitable for use in plenum spaces.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-061",
+      "section": null, "block": "A", "topic": "rough-in", "type": "theory",
+      "question": "If there are three lighting fixtures to be installed and two three-way switches, how many boxes are used?",
+      "options": ["A) 3", "B) 4", "C) 5", "D) 6"],
+      "answer": "5 boxes — three fixture (outlet) boxes plus two switch boxes = 5.",
+      "answer_key": "C",
+      "code_edition": "2024",
+      "needs_review": true
+    },
+    {
+      "id": "OCC-062",
+      "section": 28, "block": "D", "topic": "duty-cycle-definition", "type": "theory",
+      "question": "What kind of regularity is periodic duty? (Section 0 & 28)",
+      "options": [
+        "A) A type of intermittent duty in which the load conditions are regularly recurrent",
+        "B) A requirement of service that demands operation for definitely specified alternate intervals",
+        "C) A requirement of service that demands operation at substantially constant load for an indefinitely long time",
+        "D) A requirement of service that demands operation at substantially constant load for a short and indefinitely specified time"
+      ],
+      "answer": "A type of intermittent duty in which the load conditions are regularly recurrent — the CEC Section 0 definition of periodic duty.",
+      "answer_key": "A",
+      "references": ["Section 0 (definitions)"],
+      "code_edition": "2024",
+      "needs_review": false
+    },
+    {
+      "id": "OCC-063",
+      "section": null, "block": "A", "topic": "rough-in", "type": "theory",
+      "question": "How many screws are required for installing an outdoor receptacle cover plate?",
+      "options": ["A) 6 screws", "B) 2 screws", "C) 3 screws", "D) 4 screws"],
+      "answer": "4 screws — a weatherproof outdoor receptacle cover plate is secured with 4 screws.",
+      "answer_key": "D",
+      "code_edition": "2024",
+      "needs_review": true
+    }
+  ]
+}
