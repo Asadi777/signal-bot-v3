@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — BC Construction Electrician (CEC 2024)</title>
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
 </head>
 <body>
   <header class="topbar">
@@ -136,16 +136,19 @@
       <h2>📘 Study Program</h2>
       <p class="sub">One tight, high-yield lesson per section — ordered by how much it
         weighs on the exam. Tap a section to learn the fast way to the answer.</p>
+      <div id="studyLang" class="langtoggle"></div>
       <div id="studyList" class="studylist"></div>
     </section>
 
     <!-- STUDY LESSON -->
     <section id="lesson" class="screen hidden">
       <button class="back" data-study>← All sections</button>
+      <div id="lessonLang" class="langtoggle"></div>
       <div id="lessonBody" class="rich"></div>
-      <div class="rowbtns">
+      <div class="rowbtns lessonbtns">
         <button id="lessonDrill" class="primary">🎯 Drill this section</button>
-        <button id="lessonTeach" class="ghost">🧑‍🏫 Ask AI to teach this</button>
+        <button id="lessonGen" class="ghost">🧠 Make AI questions</button>
+        <button id="lessonTeach" class="ghost">🧑‍🏫 Teach me (AI)</button>
       </div>
       <div id="lessonTeachOut"></div>
     </section>
@@ -231,8 +234,8 @@
     </section>
   </main>
 
-  <script src="questions.js?v=15"></script>
-  <script src="study.js?v=15"></script>
-  <script src="app.js?v=15"></script>
+  <script src="questions.js?v=16"></script>
+  <script src="study.js?v=16"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>

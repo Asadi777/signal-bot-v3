@@ -1,4 +1,4 @@
-/* CEC Coach — web app  (v1.4.0 — Study Program + comprehensive ranked Keyword map)
+/* CEC Coach — web app  (v1.5.0 — bilingual study, mobile tables, seeded generator)
    Offline quiz bank + AI features (tutor / generator / vision) via the Claude API.
    The API key lives only in this browser (localStorage) and is sent straight to
    Anthropic with the direct-browser-access header — no backend needed. */
@@ -533,29 +533,46 @@
   }
 
   // ---------- generate questions ----------
-  function generate() {
-    var topic = $("genTopic").value.trim() || "mixed CEC 2024 topics";
-    var count = $("genCount").value;
+  function seedExamples(secNum) {
+    var pool = ALL.filter(function (q) { return (q.options || []).length >= 4 && q.answer_key && !q.needs_review; });
+    if (secNum != null) { var sp = pool.filter(function (q) { return (q.section != null ? q.section : "occ") == secNum; }); if (sp.length) pool = sp; }
+    return shuffle(pool).slice(0, 3).map(function (q) {
+      return { section: q.section, topic: q.topic, question: q.question, options: q.options, answer: q.answer, answer_key: q.answer_key, references: q.references, solution_steps: q.solution_steps };
+    });
+  }
+  function doGenerate(topic, count, secNum, statusEl, btn) {
     if (!getKey()) { gotoSettings("Add your API key first to generate questions."); return; }
-    var st = $("genStatus"); st.className = "status"; st.textContent = "Generating " + count + " questions…";
-    $("genGo").disabled = true;
+    statusEl.className = "status"; statusEl.textContent = "Generating " + count + " questions…";
+    if (btn) btn.disabled = true;
+    var seeds = seedExamples(secNum);
     var prompt =
-      "Write " + count + " NEW multiple-choice questions for the BC Construction Electrician exam (CEC 2024) on: " + topic + ".\n" +
-      "Return ONLY a JSON array, no prose. Each item:\n" +
+      "You are writing practice questions for the BC Construction Electrician (Red Seal) exam on CEC 2024.\n" +
+      "STUDY these REAL exam questions the student gave me — learn their exact STYLE, difficulty, phrasing, the way options are written, and the reference/solution format:\n" +
+      JSON.stringify(seeds, null, 1) + "\n\n" +
+      "Now WRITE " + count + " BRAND-NEW questions (do NOT copy the examples) on: " + topic + ".\n" +
+      "Match that style and difficulty exactly. Return ONLY a JSON array, no prose. Each item:\n" +
       '{"id":"GEN-<n>","section":<number>,"block":"A|B|C|D|E","topic":"short","question":"...",' +
-      '"options":["A) ...","B) ...","C) ...","D) ..."],"answer":"the correct answer text","answer_key":"A|B|C|D",' +
-      '"references":["Rule/Table"],"solution_steps":["name the keyword and which Table/Rule to jump to","then the steps to the answer"]}\n' +
-      "Make them realistic and open-book style. Be accurate with CEC 2024 references.";
-    callClaude([{ role: "user", content: prompt }], { maxTokens: 4000 })
+      '"options":["A) ...","B) ...","C) ...","D) ..."],"answer":"correct answer text","answer_key":"A|B|C|D",' +
+      '"references":["Rule/Table"],"solution_steps":["name the keyword + which Table/Rule to jump to","then the steps to the answer"]}\n' +
+      "Vary the correct letter. Be accurate with CEC 2024 references. Use plain text (no LaTeX).";
+    callClaude([{ role: "user", content: prompt }], { maxTokens: 4096 })
       .then(function (full) {
         var arr = parseJSONArray(full);
         if (!arr || !arr.length) throw new Error("Could not parse generated questions.");
-        arr.forEach(function (q, i) { q.id = q.id || ("GEN-" + Date.now() + "-" + i); q._generated = true; });
-        st.className = "status ok"; st.textContent = "Made " + arr.length + " questions. Starting…";
-        $("genGo").disabled = false;
-        setTimeout(function () { startQuiz(arr, "generated", false); }, 500);
+        arr.forEach(function (q, i) { q.id = q.id || ("GEN-" + Date.now() + "-" + i); q._generated = true; if (secNum != null && q.section == null) q.section = secNum; });
+        statusEl.className = "status ok"; statusEl.textContent = "Made " + arr.length + " questions. Starting…";
+        if (btn) btn.disabled = false;
+        setTimeout(function () { startQuiz(arr, "generated", false); }, 400);
       })
-      .catch(function (err) { st.className = "status err"; st.textContent = "⚠️ " + apiErr(err); $("genGo").disabled = false; });
+      .catch(function (err) { statusEl.className = "status err"; statusEl.textContent = "⚠️ " + apiErr(err); if (btn) btn.disabled = false; });
+  }
+  function generate() {
+    doGenerate($("genTopic").value.trim() || "mixed CEC 2024 topics", $("genCount").value, null, $("genStatus"), $("genGo"));
+  }
+  function lessonGen() {
+    var s = currentLesson; if (!s) return;
+    if (!$("lessonGenStatus")) { var d = el("div", "status"); d.id = "lessonGenStatus"; $("lessonTeachOut").appendChild(d); }
+    doGenerate("CEC 2024 " + secLabel(s).replace(/—.*$/, "").trim() + " (" + (s.name || "") + ")", 5, s.section, $("lessonGenStatus"), $("lessonGen"));
   }
   function parseJSONArray(s) {
     var a = s.indexOf("["), b = s.lastIndexOf("]");
@@ -684,6 +701,18 @@
   }
   // ===== Study program + comprehensive keyword map (data-driven from study.js) =====
   var STUDY = (window.CEC_STUDY && window.CEC_STUDY.sections) || [];
+  function getLang() { return localStorage.getItem("cec_lang") || "en"; }
+  function setLang(l) { localStorage.setItem("cec_lang", l); }
+  function pick(o, base) { if (getLang() === "fa") { var v = o[base + "_fa"]; if (v !== undefined && v !== "") return v; } return o[base] || ""; }
+  function pickArr(o, base) { if (getLang() === "fa") { var v = o[base + "_fa"]; if (Array.isArray(v) && v.length) return v; } return o[base] || []; }
+  function langBar(hostId, rerender) {
+    var host = $(hostId); if (!host) return;
+    var l = getLang();
+    host.innerHTML = "<button class='" + (l === "en" ? "on" : "") + "' data-setlang='en'>EN</button>" +
+      "<button class='" + (l === "fa" ? "on" : "") + "' data-setlang='fa'>فارسی</button>";
+    var bs = host.querySelectorAll("[data-setlang]");
+    for (var i = 0; i < bs.length; i++) (function (b) { b.onclick = function () { setLang(b.getAttribute("data-setlang")); rerender(); }; })(bs[i]);
+  }
   function stars(n) { n = Math.max(0, Math.min(5, n || 0)); return "<span class='stars' title='" + n + "/5'>" + "★★★★★".slice(0, n) + "<span class='stardim'>" + "★★★★★".slice(n) + "</span></span>"; }
   function secLabel(s) {
     var head = s.section === "occ" ? "Occupational / Safety" : (s.section === 0 ? "Section 0" : "Section " + s.section);
@@ -724,41 +753,50 @@
   }
 
   function buildStudyList() {
-    var host = $("studyList"); host.innerHTML = "";
+    langBar("studyLang", buildStudyList);
+    var fa = getLang() === "fa";
+    var host = $("studyList"); host.innerHTML = ""; host.dir = fa ? "rtl" : "ltr";
     STUDY.slice().sort(function (a, b) { return (b.importance || 0) - (a.importance || 0); }).forEach(function (s) {
       var card = el("button", "studycard");
       card.innerHTML =
         "<div class='sctop'><b>" + esc(secLabel(s)) + "</b>" + stars(s.importance) + "</div>" +
-        "<div class='scsum'>" + esc(s.summary || "") + "</div>" +
-        "<div class='scmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + " questions · " + ((s.keywords || []).length) + " keywords</div>";
+        "<div class='scsum'>" + esc(pick(s, "summary")) + "</div>" +
+        "<div class='scmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + (fa ? " سؤال · " : " questions · ") + ((s.keywords || []).length) + (fa ? " کلیدواژه" : " keywords") + "</div>";
       card.onclick = function () { renderLesson(s); };
       host.appendChild(card);
     });
   }
 
   var currentLesson = null;
+  function ltable(items, refLbl, col2, col3, base2, base3) {
+    var h = "<div class='ltable'>";
+    items.forEach(function (it) {
+      h += "<div class='ltr'>" +
+        "<div class='ltc ref'><span class='ltlbl'>" + refLbl + "</span><b>" + esc(it.ref) + "</b> " + stars(it.stars) + "</div>" +
+        "<div class='ltc'><span class='ltlbl'>" + col2 + "</span>" + esc(pick(it, base2)) + "</div>" +
+        "<div class='ltc'><span class='ltlbl'>" + col3 + "</span>" + esc(pick(it, base3)) + "</div>" +
+        "</div>";
+    });
+    return h + "</div>";
+  }
   function renderLesson(s) {
     currentLesson = s;
+    langBar("lessonLang", function () { renderLesson(currentLesson); });
+    var fa = getLang() === "fa";
+    var T = fa ? { tables: "📊 جدول‌های کلیدی — مهم‌ترین اول", rules: "📏 قوانین کلیدی", method: "🧭 روشِ سریع", must: "⭐ مقادیرِ حفظی", traps: "⚠️ تله‌های رایج", memo: "ترفندِ حافظه", ex: "📝 مثال‌های حل‌شده", tbl: "جدول", rule: "قانون", what: "چیست", how: "چطور/چرا", note: "نکته", inbank: " سؤال در بانک" }
+      : { tables: "📊 Key tables — most important first", rules: "📏 Key rules", method: "🧭 The fast method", must: "⭐ Must-know values", traps: "⚠️ Common traps", memo: "Memory aid", ex: "📝 Worked examples", tbl: "Table", rule: "Rule", what: "What", how: "How / why", note: "Note", inbank: " questions in the bank" };
     var h = "<h2 style='margin-top:0'>" + esc(secLabel(s)) + " " + stars(s.importance) + "</h2>";
-    h += "<p class='lsum'>" + esc(s.summary || "") + "</p>";
-    h += "<div class='lmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + " questions in the bank</div>";
-    if ((s.keyTables || []).length) {
-      h += "<h3>📊 Key tables — most important first</h3><table><thead><tr><th>Table</th><th>What</th><th>How / why</th><th>★</th></tr></thead><tbody>";
-      s.keyTables.forEach(function (t) { h += "<tr><td><b>" + esc(t.ref) + "</b></td><td>" + esc(t.what || "") + "</td><td>" + esc(t.use || "") + "</td><td>" + stars(t.stars) + "</td></tr>"; });
-      h += "</tbody></table>";
-    }
-    if ((s.keyRules || []).length) {
-      h += "<h3>📏 Key rules</h3><table><thead><tr><th>Rule</th><th>What</th><th>Note</th><th>★</th></tr></thead><tbody>";
-      s.keyRules.forEach(function (r) { h += "<tr><td><b>" + esc(r.ref) + "</b></td><td>" + esc(r.what || "") + "</td><td>" + esc(r.note || "") + "</td><td>" + stars(r.stars) + "</td></tr>"; });
-      h += "</tbody></table>";
-    }
-    if ((s.method || []).length) { h += "<h3>🧭 The fast method</h3><ol>"; s.method.forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ol>"; }
-    if ((s.mustKnow || []).length) { h += "<h3>⭐ Must-know values</h3><ul>"; s.mustKnow.forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
-    if ((s.traps || []).length) { h += "<h3>⚠️ Common traps</h3><ul class='traps'>"; s.traps.forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
-    if (s.mnemonic) h += "<div class='mnemo'>🧠 <b>Memory aid:</b> " + esc(s.mnemonic) + "</div>";
+    h += "<p class='lsum'>" + esc(pick(s, "summary")) + "</p>";
+    h += "<div class='lmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + esc(T.inbank) + "</div>";
+    if ((s.keyTables || []).length) { h += "<h3>" + T.tables + "</h3>" + ltable(s.keyTables, T.tbl, T.what, T.how, "what", "use"); }
+    if ((s.keyRules || []).length) { h += "<h3>" + T.rules + "</h3>" + ltable(s.keyRules, T.rule, T.what, T.note, "what", "note"); }
+    if ((s.method || []).length) { h += "<h3>" + T.method + "</h3><ol>"; pickArr(s, "method").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ol>"; }
+    if ((s.mustKnow || []).length) { h += "<h3>" + T.must + "</h3><ul>"; pickArr(s, "mustKnow").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
+    if ((s.traps || []).length) { h += "<h3>" + T.traps + "</h3><ul class='traps'>"; pickArr(s, "traps").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
+    if (pick(s, "mnemonic")) h += "<div class='mnemo'>🧠 <b>" + T.memo + ":</b> " + esc(pick(s, "mnemonic")) + "</div>";
     var exQ = (s.examples || []).map(function (id) { return ALL.filter(function (q) { return q.id === id; })[0]; }).filter(Boolean).slice(0, 4);
     if (exQ.length) {
-      h += "<h3>📝 Worked examples</h3>";
+      h += "<h3>" + T.ex + "</h3>";
       exQ.forEach(function (q) {
         h += "<div class='exq'><div class='exqq'>" + esc(q.question) + "</div>";
         h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + "</div>";
@@ -767,7 +805,7 @@
         h += "</div>";
       });
     }
-    $("lessonBody").innerHTML = h;
+    var body = $("lessonBody"); body.innerHTML = h; body.dir = fa ? "rtl" : "ltr";
     $("lessonTeachOut").innerHTML = "";
     show("lesson");
   }
@@ -856,6 +894,7 @@
   $("chatinput").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); } });
   $("kmSearch").addEventListener("input", function (e) { renderKeymap(e.target.value); });
   $("lessonDrill").onclick = lessonDrill;
+  $("lessonGen").onclick = lessonGen;
   $("lessonTeach").onclick = lessonTeach;
   $("genGo").onclick = generate;
   $("visionGo").onclick = askVision;

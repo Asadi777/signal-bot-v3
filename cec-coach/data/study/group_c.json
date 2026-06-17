@@ -6,20 +6,21 @@
     "qcount": 27,
     "importance": 5,
     "summary": "Calculate the CALCULATED (not connected) load for dwellings and non-dwellings, size ranges by service vs branch base, and apply the 2024 single-formula voltage drop method. Heavy math block that decides pass/fail.",
+    "summary_fa": "بار محاسبه‌شده (CALCULATED، نه بار متصل) را برای واحدهای مسکونی و غیرمسکونی حساب کن، اجاق‌ها را بر اساس پایه سرویس در برابر پایه شاخه (branch) اندازه‌گذاری کن، و روش تک‌فرمولی افت ولتاژ ۲۰۲۴ را اعمال کن. این یک بلوک پرمحاسبه و ریاضی است که قبولی یا ردی را تعیین می‌کند.",
     "keyTables": [
-      {"ref": "Table D3", "stars": 5, "what": "Voltage-drop K value (ohm/km) by size, material, temp, PF", "use": "2024 single formula VD=(K×I×L×F)/1000; defaults Cu, 75°C, PF=1"},
-      {"ref": "Table 14", "stars": 4, "what": "Basic load W/m² by occupancy (store, theatre, etc.)", "use": "Non-dwelling basic area load under Rule 8-210"},
-      {"ref": "Table 2", "stars": 3, "what": "Ampacity, raceway Cu", "use": "Convert calculated demand (A) to conductor size at the terminal temp"}
+      {"ref": "Table D3", "stars": 5, "what": "Voltage-drop K value (ohm/km) by size, material, temp, PF", "use": "2024 single formula VD=(K×I×L×F)/1000; defaults Cu, 75°C, PF=1", "what_fa": "مقدار K افت ولتاژ (Table D3) بر حسب ohm/km، بر پایه سطح مقطع، جنس هادی، دما و ضریب توان (PF)", "use_fa": "در فرمول واحد ۲۰۲۴ یعنی VD=(K×I×L×F)/1000 استفاده می‌شود؛ مقادیر پیش‌فرض: مس (Cu)، 75°C، PF=1"},
+      {"ref": "Table 14", "stars": 4, "what": "Basic load W/m² by occupancy (store, theatre, etc.)", "use": "Non-dwelling basic area load under Rule 8-210", "what_fa": "بار پایه بر حسب W/m² بر اساس نوع کاربری (فروشگاه، سالن تئاتر و غیره) در Table 14", "use_fa": "برای محاسبه بار پایه سطحی ساختمان غیرمسکونی طبق Rule 8-210 به کار می‌رود"},
+      {"ref": "Table 2", "stars": 3, "what": "Ampacity, raceway Cu", "use": "Convert calculated demand (A) to conductor size at the terminal temp", "what_fa": "جریان مجاز هادی مسی در داخل مجرا (raceway) طبق Table 2", "use_fa": "برای تبدیل بار محاسبه‌شده (بر حسب آمپر A) به سطح مقطع هادی، در ستون دمای پایانه (terminal) استفاده می‌شود"}
     ],
     "keyRules": [
-      {"ref": "Rule 8-102", "stars": 5, "what": "Voltage drop limits + 2024 method", "note": "3% branch, 3% feeder, 5% supply-to-utilization total; 3%+3%≠5%"},
-      {"ref": "Rule 8-200", "stars": 5, "what": "Single-dwelling SERVICE/feeder demand", "note": "5000 W first 90 m² + 1000 W/extra 90 m²; range base 6 kW; min 100 A if ≥80 m²"},
-      {"ref": "Rule 8-210", "stars": 4, "what": "Non-dwelling demand (basic + actual loads)", "note": "Area × Table 14 W/m² per occupancy + connected loads at demand factors"},
-      {"ref": "Rule 8-300", "stars": 4, "what": "Range BRANCH-circuit demand", "note": "Dwelling: 8 kW base +40% over 12 kW; non-dwelling = 100% nameplate"},
-      {"ref": "Rule 8-104", "stars": 4, "what": "Continuous load / 80% rule", "note": "Non-100% switch or breaker: continuous load ≤ 80% of rating"},
-      {"ref": "Rule 8-106", "stars": 3, "what": "Non-coincident loads / interlock", "note": "Use only the LARGER of two loads that can't run together (e.g. heat vs AC)"},
-      {"ref": "Rule 62-118", "stars": 3, "what": "Electric heating demand", "note": "Baseboard 100% first 10 kW + 75% remainder; electric furnace 100%; gas furnace not counted"},
-      {"ref": "Rule 8-400", "stars": 2, "what": "EV / parking-space receptacle feeder demand", "note": "Controlled loading reduced; uncontrolled little/no reduction"}
+      {"ref": "Rule 8-102", "stars": 5, "what": "Voltage drop limits + 2024 method", "note": "3% branch, 3% feeder, 5% supply-to-utilization total; 3%+3%≠5%", "what_fa": "حدود افت ولتاژ و روش ۲۰۲۴ (Rule 8-102)", "note_fa": "حداکثر ۳٪ روی شاخه، ۳٪ روی فیدر، و ۵٪ کل از تغذیه تا نقطه مصرف؛ توجه: ۳٪+۳٪ برابر ۵٪ نیست"},
+      {"ref": "Rule 8-200", "stars": 5, "what": "Single-dwelling SERVICE/feeder demand", "note": "5000 W first 90 m² + 1000 W/extra 90 m²; range base 6 kW; min 100 A if ≥80 m²", "what_fa": "بار تقاضای سرویس/فیدر برای واحد مسکونی منفرد (Rule 8-200)", "note_fa": "5000 W برای 90 m² اول + 1000 W به ازای هر 90 m² اضافی؛ پایه اجاق 6 kW؛ حداقل 100 A اگر مساحت ≥80 m² باشد"},
+      {"ref": "Rule 8-210", "stars": 4, "what": "Non-dwelling demand (basic + actual loads)", "note": "Area × Table 14 W/m² per occupancy + connected loads at demand factors", "what_fa": "بار تقاضای غیرمسکونی (بار پایه + بارهای واقعی) طبق Rule 8-210", "note_fa": "مساحت × مقدار W/m² از Table 14 بر اساس نوع کاربری + بارهای متصل با اعمال ضرایب تقاضا"},
+      {"ref": "Rule 8-300", "stars": 4, "what": "Range BRANCH-circuit demand", "note": "Dwelling: 8 kW base +40% over 12 kW; non-dwelling = 100% nameplate", "what_fa": "بار تقاضای مدار شاخه (branch) اجاق طبق Rule 8-300", "note_fa": "مسکونی: پایه 8 kW + ۴۰٪ مازاد بر 12 kW؛ غیرمسکونی = ۱۰۰٪ پلاک مشخصات (nameplate)"},
+      {"ref": "Rule 8-104", "stars": 4, "what": "Continuous load / 80% rule", "note": "Non-100% switch or breaker: continuous load ≤ 80% of rating", "what_fa": "بار پیوسته / قانون ۸۰٪ (Rule 8-104)", "note_fa": "برای کلید یا بریکر غیر-۱۰۰٪: بار پیوسته باید ≤ ۸۰٪ نامی دستگاه باشد"},
+      {"ref": "Rule 8-106", "stars": 3, "what": "Non-coincident loads / interlock", "note": "Use only the LARGER of two loads that can't run together (e.g. heat vs AC)", "what_fa": "بارهای غیرهم‌زمان / اینترلاک (Rule 8-106)", "note_fa": "فقط بار بزرگ‌تر از دو باری که نمی‌توانند هم‌زمان کار کنند را حساب کن (مثلاً گرمایش در برابر کولر)"},
+      {"ref": "Rule 62-118", "stars": 3, "what": "Electric heating demand", "note": "Baseboard 100% first 10 kW + 75% remainder; electric furnace 100%; gas furnace not counted", "what_fa": "بار تقاضای گرمایش برقی (Rule 62-118)", "note_fa": "رادیاتور برقی (baseboard): ۱۰۰٪ برای 10 kW اول + ۷۵٪ برای مازاد؛ کوره برقی ۱۰۰٪؛ کوره گازی محاسبه نمی‌شود"},
+      {"ref": "Rule 8-400", "stars": 2, "what": "EV / parking-space receptacle feeder demand", "note": "Controlled loading reduced; uncontrolled little/no reduction", "what_fa": "بار تقاضای فیدر پریز خودرو برقی (EV) / فضای پارکینگ (Rule 8-400)", "note_fa": "بارگذاری کنترل‌شده کاهش می‌یابد؛ بارگذاری کنترل‌نشده کاهش کم یا بدون کاهش دارد"}
     ],
     "mustKnow": [
       "VD limits: 3% branch / 3% feeder / 5% total supply-to-utilization (the #1 2021→2024 change)",
@@ -33,6 +34,18 @@
       "Non-dwelling range = 100% nameplate (no demand reduction)",
       "VD factor F = 2 default; F = 1.73 (√3) only for 3-phase AC"
     ],
+    "mustKnow_fa": [
+      "حدود افت ولتاژ (VD): ۳٪ شاخه / ۳٪ فیدر / ۵٪ کل از تغذیه تا مصرف (مهم‌ترین تغییر ۲۰۲۱ به ۲۰۲۴)",
+      "پایه اجاق: سرویس/فیدر (8-200) = 6 kW؛ شاخه مسکونی (8-300) = 8 kW؛ هر دو + ۴۰٪ مازاد بر 12 kW",
+      "بار پایه مسکونی: 5000 W برای 90 m² اول + 1000 W به ازای هر 90 m² اضافی (افزایش‌های ناقص را به بالا گرد کن)",
+      "حداقل سرویس مسکونی: ≥80 m² ← 24 000 W / 100 A؛ <80 m² ← 14 400 W / 60 A (مقدار بزرگ‌تر را بردار)",
+      "سایر بارهای >1500 W در حضور اجاق: با ۲۵٪ حساب می‌شوند (8-200 1)a)(vii))",
+      "گرمایش (62-118): ۱۰۰٪ برای 10 kW اول + ۷۵٪ برای مازاد در مورد baseboard",
+      "بار پیوسته (8-104): دستگاه غیر-۱۰۰٪ باری ≤ ۸۰٪ نامی را تحمل می‌کند (یا اندازه دستگاه = بار/0.80)",
+      "ویترین نمایش (show window) = 650 W/m در طول پایه؛ حداکثر ۱۲ پریز روی مدار 15 A",
+      "اجاق غیرمسکونی = ۱۰۰٪ پلاک مشخصات (بدون کاهش تقاضا)",
+      "ضریب VD یعنی F = 2 به‌صورت پیش‌فرض؛ F = 1.73 (√3) فقط برای AC سه‌فاز"
+    ],
     "traps": [
       "Connected load vs CALCULATED load: appliance wattages are bait — use the 8-200 method, don't sum everything",
       "Range base confusion: 6 kW for service (8-200), 8 kW for dwelling branch (8-300) — different bases",
@@ -43,7 +56,18 @@
       "3-phase wye service: divide by √3×line voltage when converting W to A; don't forget √3",
       "VD F-factor: F=2 for single-phase/DC; only true 3-phase AC uses 1.73"
     ],
+    "traps_fa": [
+      "بار متصل در برابر بار محاسبه‌شده (CALCULATED): وات‌های لوازم خانگی فریب‌اند — از روش 8-200 استفاده کن، همه را با هم جمع نکن",
+      "اشتباه در پایه اجاق: 6 kW برای سرویس (8-200) و 8 kW برای شاخه مسکونی (8-300) — پایه‌های متفاوت‌اند",
+      "۳٪ + ۳٪ برابر ۵٪ نیست: اگر شاخه کل ۳٪ را مصرف کند، فیدر فقط می‌تواند ۲٪ بگیرد تا کل ≤ ۵٪ بماند",
+      "اجاق غیرمسکونی هیچ کاهشی نمی‌گیرد (۱۰۰٪)؛ کاهش فقط مخصوص مسکونی است",
+      "افزایش‌های ناقص 90 m² را به بالا گرد کن (مثلاً 100 m² اضافی = ۲ افزایش = 2000 W)",
+      "گرمایش ۱۰۰٪ نیست: baseboard ۱۰۰٪ برای 10 kW اول + ۷۵٪ مازاد می‌گیرد، نه کل kW",
+      "سرویس ستاره (wye) سه‌فاز: هنگام تبدیل W به A بر √3×ولتاژ خط تقسیم کن؛ √3 را فراموش نکن",
+      "ضریب F افت ولتاژ: F=2 برای تک‌فاز/DC؛ فقط AC واقعاً سه‌فاز از 1.73 استفاده می‌کند"
+    ],
     "mnemonic": "VD = KILF/1000 (\"Kill over a thousand\"): K×I×L×F ÷ 1000.",
+    "mnemonic_fa": "VD = KILF/1000 («Kill over a thousand» یعنی کیل تقسیم بر هزار): K×I×L×F ÷ 1000.",
     "method": [
       "Voltage drop (2024 single formula): VD=(K×I×L×F)/1000. VD=system V×allowed%; K from Table D3 (defaults Cu/75°C/PF1); L=one-way metres; F=2 (1.73 only 3-ph AC).",
       "Find max length: L ≤ (1000×VD)/(K×I×F). Find min size: K ≤ (1000×VD)/(I×L×F), then read Table D3 for a size with K ≤ that.",
@@ -51,23 +75,30 @@
       "Dwelling service (8-200): basic area load + range (6 kW base) + heating (62-118) + 25% of other >1500 W loads → ÷240 V → amps.",
       "Continuous 80% rule (8-104): device rating = continuous load ÷ 0.80, or max load = rating × 0.80."
     ],
+    "method_fa": [
+      "افت ولتاژ (فرمول واحد 2024): VD=(K×I×L×F)/1000. مقدار VD = ولتاژ سیستم × درصد مجاز؛ K از Table D3 (پیش‌فرض Cu/75°C/PF1)؛ L = طول یک‌طرفه بر حسب متر؛ F=2 (مقدار 1.73 فقط برای AC سه‌فاز).",
+      "یافتن حداکثر طول: L ≤ (1000×VD)/(K×I×F). یافتن حداقل سطح مقطع: K ≤ (1000×VD)/(I×L×F)، سپس در Table D3 سطح مقطعی با K کمتر یا مساوی این مقدار را بخوان.",
+      "نکته دمای Table D3: پایه 75°C؛ ×0.95 اگر 60°C، ×1.35 اگر 90°C. راهنمای ELV/DC: ×0.86×K.",
+      "سرویس مسکونی (8-200): بار پایه سطحی + اجاق (پایه 6 kW) + گرمایش (62-118) + ۲۵٪ سایر بارهای >1500 W ← تقسیم بر 240 V ← آمپر.",
+      "قانون ۸۰٪ بار پیوسته (8-104): نامی دستگاه = بار پیوسته ÷ 0.80، یا حداکثر بار = نامی × 0.80."
+    ],
     "examples": ["S08-003", "S08-006", "S08-013", "S08-023", "S08-009", "S08-024"],
     "keywords": [
-      {"kw": "\"voltage drop\"", "jump": "Rule 8-102 + Table D3", "why": "2024: ONE formula VD=(K×I×L×F)/1000; 3%/3%/5%", "stars": 5},
-      {"kw": "\"single dwelling\" / \"calculate demand\"", "jump": "Rule 8-200", "why": "5000 W first 90 m² + 1000 W/extra; range base 6 kW", "stars": 5},
-      {"kw": "\"electric range\" / \"branch circuit\"", "jump": "Rule 8-300 1)a)", "why": "Dwelling branch base 8 kW +40% over 12 kW", "stars": 5},
-      {"kw": "\"basic load\" W/m² by occupancy", "jump": "Rule 8-210 + Table 14", "why": "Non-dwelling: area × occupancy W/m²", "stars": 4},
-      {"kw": "\"continuous load\" / 80% switch or breaker", "jump": "Rule 8-104", "why": "Non-100% device: load ≤ 80% of rating", "stars": 4},
-      {"kw": "\"electric heating\" / baseboard / furnace demand", "jump": "Rule 8-200 1)a)(v) + Rule 62-118", "why": "100% first 10 kW + 75% remainder; gas furnace not counted", "stars": 4},
-      {"kw": "\"minimum service\" for dwelling area", "jump": "Rule 8-200 1)b)", "why": "≥80 m² → 100 A; <80 m² → 60 A", "stars": 4},
-      {"kw": "\"show window\"", "jump": "Rule 8-200 1)b)", "why": "650 W per metre along base", "stars": 3},
-      {"kw": "\"apartment\" / multiple dwelling", "jump": "Rule 8-202", "why": "Multi-dwelling demand with reductions per # of units", "stars": 3},
-      {"kw": "\"non-coincident\" / two loads not together / heat vs AC interlock", "jump": "Rule 8-106 3)", "why": "Use only the LARGER load", "stars": 3},
-      {"kw": "\"range in commercial/industrial\" / non-dwelling range", "jump": "Rule 8-300 2)", "why": "100% nameplate, no reduction", "stars": 3},
-      {"kw": "\"how many receptacles\" on a circuit", "jump": "Rule 8-304 / 26-712", "why": "Max 12 outlets on a 15 A circuit", "stars": 3},
-      {"kw": "\"parking spaces\" / \"EV charger\" load", "jump": "Rule 8-400", "why": "Controlled = reduced; uncontrolled = little reduction", "stars": 2},
-      {"kw": "\"extra-low voltage\" VD / emergency lamp distance", "jump": "Rule 8-102 + Table D3", "why": "Same formula; ELV hint ×0.86×K; F=2 for DC", "stars": 2},
-      {"kw": "\"two occupancies\" in one building", "jump": "Rule 8-210 + Table 14", "why": "Compute each area at its own W/m², then add", "stars": 2}
+      {"kw": "\"voltage drop\"", "jump": "Rule 8-102 + Table D3", "why": "2024: ONE formula VD=(K×I×L×F)/1000; 3%/3%/5%", "stars": 5, "why_fa": "در ۲۰۲۴ یک فرمول واحد VD=(K×I×L×F)/1000؛ حدود ۳٪/۳٪/۵٪"},
+      {"kw": "\"single dwelling\" / \"calculate demand\"", "jump": "Rule 8-200", "why": "5000 W first 90 m² + 1000 W/extra; range base 6 kW", "stars": 5, "why_fa": "5000 W برای 90 m² اول + 1000 W به ازای هر اضافی؛ پایه اجاق 6 kW"},
+      {"kw": "\"electric range\" / \"branch circuit\"", "jump": "Rule 8-300 1)a)", "why": "Dwelling branch base 8 kW +40% over 12 kW", "stars": 5, "why_fa": "پایه شاخه مسکونی 8 kW + ۴۰٪ مازاد بر 12 kW"},
+      {"kw": "\"basic load\" W/m² by occupancy", "jump": "Rule 8-210 + Table 14", "why": "Non-dwelling: area × occupancy W/m²", "stars": 4, "why_fa": "غیرمسکونی: مساحت × مقدار W/m² کاربری"},
+      {"kw": "\"continuous load\" / 80% switch or breaker", "jump": "Rule 8-104", "why": "Non-100% device: load ≤ 80% of rating", "stars": 4, "why_fa": "دستگاه غیر-۱۰۰٪: بار ≤ ۸۰٪ نامی"},
+      {"kw": "\"electric heating\" / baseboard / furnace demand", "jump": "Rule 8-200 1)a)(v) + Rule 62-118", "why": "100% first 10 kW + 75% remainder; gas furnace not counted", "stars": 4, "why_fa": "۱۰۰٪ برای 10 kW اول + ۷۵٪ مازاد؛ کوره گازی محاسبه نمی‌شود"},
+      {"kw": "\"minimum service\" for dwelling area", "jump": "Rule 8-200 1)b)", "why": "≥80 m² → 100 A; <80 m² → 60 A", "stars": 4, "why_fa": "≥80 m² ← 100 A؛ <80 m² ← 60 A"},
+      {"kw": "\"show window\"", "jump": "Rule 8-200 1)b)", "why": "650 W per metre along base", "stars": 3, "why_fa": "650 W به ازای هر متر در طول پایه"},
+      {"kw": "\"apartment\" / multiple dwelling", "jump": "Rule 8-202", "why": "Multi-dwelling demand with reductions per # of units", "stars": 3, "why_fa": "بار تقاضای چندواحدی با کاهش بر اساس تعداد واحدها"},
+      {"kw": "\"non-coincident\" / two loads not together / heat vs AC interlock", "jump": "Rule 8-106 3)", "why": "Use only the LARGER load", "stars": 3, "why_fa": "فقط بار بزرگ‌تر را حساب کن"},
+      {"kw": "\"range in commercial/industrial\" / non-dwelling range", "jump": "Rule 8-300 2)", "why": "100% nameplate, no reduction", "stars": 3, "why_fa": "۱۰۰٪ پلاک مشخصات، بدون کاهش"},
+      {"kw": "\"how many receptacles\" on a circuit", "jump": "Rule 8-304 / 26-712", "why": "Max 12 outlets on a 15 A circuit", "stars": 3, "why_fa": "حداکثر ۱۲ خروجی روی مدار 15 A"},
+      {"kw": "\"parking spaces\" / \"EV charger\" load", "jump": "Rule 8-400", "why": "Controlled = reduced; uncontrolled = little reduction", "stars": 2, "why_fa": "کنترل‌شده = کاهش‌یافته؛ کنترل‌نشده = کاهش اندک"},
+      {"kw": "\"extra-low voltage\" VD / emergency lamp distance", "jump": "Rule 8-102 + Table D3", "why": "Same formula; ELV hint ×0.86×K; F=2 for DC", "stars": 2, "why_fa": "همان فرمول؛ راهنمای ELV یعنی ×0.86×K؛ F=2 برای DC"},
+      {"kw": "\"two occupancies\" in one building", "jump": "Rule 8-210 + Table 14", "why": "Compute each area at its own W/m², then add", "stars": 2, "why_fa": "هر مساحت را با W/m² مخصوص خودش حساب کن، سپس جمع کن"}
     ]
   },
   {
@@ -77,18 +108,19 @@
     "qcount": 14,
     "importance": 4,
     "summary": "Distinguish grounding (electrode conductor, Table 43, keyed to service-conductor ampacity) from bonding (Table 16, by overcurrent device). Know field-assembled electrode geometry, equipotential bonding sizes, and the bare-conductor-in-raceway limits.",
+    "summary_fa": "تفاوت زمین کردن (grounding) — هادی الکترود، Table 43، وابسته به جریان مجاز هادی سرویس — را از پیوند کردن (bonding) — Table 16، بر اساس دستگاه حفاظت اضافه‌جریان — تشخیص بده. هندسه الکترود مونتاژشده در محل، اندازه‌های پیوند هم‌پتانسیل (equipotential)، و محدودیت‌های هادی لخت در داخل مجرا (raceway) را بدان.",
     "keyTables": [
-      {"ref": "Table 43", "stars": 5, "what": "Grounding (electrode) conductor size", "use": "Keyed to AMPACITY of largest service conductor — NOT breaker, NOT load"},
-      {"ref": "Table 16", "stars": 4, "what": "Bonding conductor / jumper size", "use": "Sized by ampacity OR rating of the overcurrent device ahead of it"},
-      {"ref": "Table 2", "stars": 3, "what": "Ampacity, raceway Cu", "use": "Get service-conductor ampacity (at its temp column) before entering Table 43"}
+      {"ref": "Table 43", "stars": 5, "what": "Grounding (electrode) conductor size", "use": "Keyed to AMPACITY of largest service conductor — NOT breaker, NOT load", "what_fa": "اندازه هادی زمین (الکترود) طبق Table 43", "use_fa": "وابسته به جریان مجاز (AMPACITY) بزرگ‌ترین هادی سرویس است — نه بریکر، نه بار"},
+      {"ref": "Table 16", "stars": 4, "what": "Bonding conductor / jumper size", "use": "Sized by ampacity OR rating of the overcurrent device ahead of it", "what_fa": "اندازه هادی پیوند (bonding) / جامپر طبق Table 16", "use_fa": "بر اساس جریان مجاز یا نامی دستگاه حفاظت اضافه‌جریان جلوی آن اندازه‌گذاری می‌شود"},
+      {"ref": "Table 2", "stars": 3, "what": "Ampacity, raceway Cu", "use": "Get service-conductor ampacity (at its temp column) before entering Table 43", "what_fa": "جریان مجاز هادی مسی در داخل مجرا (raceway) طبق Table 2", "use_fa": "پیش از ورود به Table 43، جریان مجاز هادی سرویس را (در ستون دمای آن) به دست بیاور"}
     ],
     "keyRules": [
-      {"ref": "Rule 10-114", "stars": 5, "what": "Sizing grounding conductor to electrode", "note": "Table 43 by service-conductor ampacity; to a MANUFACTURED electrode need not exceed #6 Cu"},
-      {"ref": "Rule 10-102", "stars": 4, "what": "Field-assembled (concrete-encased) electrode", "note": "≥6 m bare Cu (≥#4), in bottom 50 mm of footing, ≥600 mm below grade"},
-      {"ref": "Rule 10-406", "stars": 4, "what": "Equipotential bonding", "note": "Min #6 Cu / #4 Al (pools, raised floors, etc.)"},
-      {"ref": "Rule 10-104", "stars": 3, "what": "Electrode spacing", "note": "Two+ rod/plate electrodes spaced ≥ 3 m apart"},
-      {"ref": "Rule 10-806", "stars": 3, "what": "Bare grounding conductor in raceway", "note": "Bare system grounding conductor in raceway only where run ≤ 15 m"},
-      {"ref": "Rule 10-614 / 10-616", "stars": 3, "what": "Bonding conductor sizing", "note": "Size from OCPD rating via Table 16 (e.g. 40 A → #10 Cu)"}
+      {"ref": "Rule 10-114", "stars": 5, "what": "Sizing grounding conductor to electrode", "note": "Table 43 by service-conductor ampacity; to a MANUFACTURED electrode need not exceed #6 Cu", "what_fa": "اندازه‌گذاری هادی زمین تا الکترود (Rule 10-114)", "note_fa": "از Table 43 بر اساس جریان مجاز هادی سرویس؛ برای الکترود ساخته‌شده (MANUFACTURED) لازم نیست از #6 Cu بزرگ‌تر باشد"},
+      {"ref": "Rule 10-102", "stars": 4, "what": "Field-assembled (concrete-encased) electrode", "note": "≥6 m bare Cu (≥#4), in bottom 50 mm of footing, ≥600 mm below grade", "what_fa": "الکترود مونتاژشده در محل (محصور در بتن) طبق Rule 10-102", "note_fa": "حداقل 6 m مس لخت (≥#4)، در 50 mm پایینی فونداسیون، حداقل 600 mm زیر سطح زمین"},
+      {"ref": "Rule 10-406", "stars": 4, "what": "Equipotential bonding", "note": "Min #6 Cu / #4 Al (pools, raised floors, etc.)", "what_fa": "پیوند هم‌پتانسیل (equipotential) طبق Rule 10-406", "note_fa": "حداقل #6 Cu / #4 Al (استخرها، کف‌های مرتفع و غیره)"},
+      {"ref": "Rule 10-104", "stars": 3, "what": "Electrode spacing", "note": "Two+ rod/plate electrodes spaced ≥ 3 m apart", "what_fa": "فاصله بین الکترودها (Rule 10-104)", "note_fa": "دو یا چند الکترود میله‌ای/صفحه‌ای باید با فاصله ≥ 3 m از هم قرار گیرند"},
+      {"ref": "Rule 10-806", "stars": 3, "what": "Bare grounding conductor in raceway", "note": "Bare system grounding conductor in raceway only where run ≤ 15 m", "what_fa": "هادی زمین لخت در داخل مجرا (Rule 10-806)", "note_fa": "هادی زمین سیستمِ لخت در داخل مجرا فقط در صورتی مجاز است که طول مسیر ≤ 15 m باشد"},
+      {"ref": "Rule 10-614 / 10-616", "stars": 3, "what": "Bonding conductor sizing", "note": "Size from OCPD rating via Table 16 (e.g. 40 A → #10 Cu)", "what_fa": "اندازه‌گذاری هادی پیوند (Rule 10-614 / 10-616)", "note_fa": "بر اساس نامی دستگاه حفاظت (OCPD) از طریق Table 16 اندازه بگیر (مثلاً 40 A ← #10 Cu)"}
     ],
     "mustKnow": [
       "Grounding ELECTRODE conductor = Table 43, keyed to SERVICE-CONDUCTOR AMPACITY (4/0 Cu @75°C=230 A → size 2)",
@@ -102,6 +134,18 @@
       "Table 43 lowest band: ampacity ≤165 A → size 4; 166–200 A → size 3; then 2,1,1/0...",
       "Raised metal floor (Section 84) bonded as equipotential: #8 Cu / #6 Al"
     ],
+    "mustKnow_fa": [
+      "هادی الکترود زمین = Table 43، وابسته به جریان مجاز هادی سرویس (4/0 Cu در 75°C=230 A ← size 2)",
+      "هادی/جامپر پیوند (BONDING) = Table 16، بر اساس جریان مجاز یا نامی دستگاه حفاظت اضافه‌جریان",
+      "برای الکترود ساخته‌شده (میله/صفحه)، هادی زمین لازم نیست از #6 Cu بزرگ‌تر باشد (10-114)",
+      "الکترود مونتاژشده در محل: حداقل 6 m مس لخت، نه کوچک‌تر از #4، در 50 mm پایینی فونداسیون، حداقل 600 mm زیر سطح زمین",
+      "فاصله الکترودها: ≥ 3 m بین الکترودهای میله‌ای/صفحه‌ای",
+      "پیوند هم‌پتانسیل (10-406): حداقل #6 Cu / #4 Al",
+      "هادی زمین لخت فقط در صورتی در مجرا قرار می‌گیرد که طول مسیر ≤ 15 m باشد (10-806)",
+      "حد خم در یک مسیر 360° است (چهار خم ربع‌دایره) طبق 12-940 — نه یک حد «180°» برای زمین",
+      "پایین‌ترین بازه Table 43: جریان مجاز ≤165 A ← size 4؛ 166–200 A ← size 3؛ سپس 2,1,1/0...",
+      "کف فلزی مرتفع (Section 84) به‌صورت هم‌پتانسیل پیوند می‌شود: #8 Cu / #6 Al"
+    ],
     "traps": [
       "Table 43 vs Table 16: ELECTRODE conductor uses ampacity ONLY (Table 43); BONDING uses ampacity OR device (Table 16)",
       "Table 43 is keyed to SERVICE-CONDUCTOR AMPACITY, never the breaker rating or the load current",
@@ -111,27 +155,43 @@
       "Read the temp column: a 60°C cable (TW) ampacity from Table 2's 60°C column before Table 43",
       "PV DC grounding is Section 64, not Section 10 (those questions are mis-filed)"
     ],
+    "traps_fa": [
+      "Table 43 در برابر Table 16: هادی الکترود فقط از جریان مجاز استفاده می‌کند (Table 43)؛ پیوند از جریان مجاز یا دستگاه استفاده می‌کند (Table 16)",
+      "Table 43 وابسته به جریان مجاز هادی سرویس است، هرگز نامی بریکر یا جریان بار نیست",
+      "سقف الکترود ساخته‌شده: هادی زمین لازم نیست از #6 Cu بزرگ‌تر باشد — از Table 43 بیش از حد بزرگ نگیر",
+      "حد هادی لخت در مجرا بر اساس طول 15 m است (10-806)؛ به‌طور جداگانه خم‌ها ≤ 360° (12-940) — افست‌ها و خم‌ها را جمع کن",
+      "جهت پیوند هم‌پتانسیل: Al یک سایز بزرگ‌تر از Cu است (#4 Al معادل #6 Cu)",
+      "ستون دما را بخوان: جریان مجاز کابل 60°C (TW) را از ستون 60°C در Table 2 پیش از Table 43 بردار",
+      "زمین DC پنل خورشیدی (PV) مربوط به Section 64 است، نه Section 10 (آن سؤال‌ها اشتباه دسته‌بندی شده‌اند)"
+    ],
     "mnemonic": "\"43 to the EARTH, 16 to the BOX\": Table 43 = electrode/ground; Table 16 = bonding.",
+    "mnemonic_fa": "«43 به زمین (EARTH)، 16 به جعبه (BOX)»: Table 43 = الکترود/زمین؛ Table 16 = پیوند (bonding).",
     "method": [
       "Grounding electrode conductor: get the LARGEST service conductor's ampacity from Table 2 (correct temp column) → enter Table 43 → read size. Cap at #6 Cu if going to a manufactured electrode (10-114).",
       "Bonding conductor: take the OCPD ampere rating → Table 16 → minimum Cu/Al bond (10-614/10-616).",
       "Field-assembled electrode check: ≥6 m bare Cu ≥#4, bottom 50 mm of footing, ≥600 mm below grade, electrodes ≥3 m apart.",
       "Bare conductor in raceway: confirm run ≤ 15 m (10-806) and total bends ≤ 360° (12-940)."
     ],
+    "method_fa": [
+      "هادی الکترود زمین: جریان مجاز بزرگ‌ترین هادی سرویس را از Table 2 (ستون دمای درست) بگیر ← به Table 43 وارد شو ← سایز را بخوان. اگر به الکترود ساخته‌شده می‌رود، سقف #6 Cu بگذار (10-114).",
+      "هادی پیوند (bonding): نامی آمپری دستگاه حفاظت (OCPD) را بردار ← Table 16 ← حداقل پیوند Cu/Al (10-614/10-616).",
+      "بررسی الکترود مونتاژشده در محل: حداقل 6 m مس لخت ≥#4، 50 mm پایینی فونداسیون، حداقل 600 mm زیر سطح زمین، الکترودها با فاصله ≥3 m.",
+      "هادی لخت در مجرا: تأیید کن طول مسیر ≤ 15 m (10-806) و مجموع خم‌ها ≤ 360° (12-940)."
+    ],
     "examples": ["S10-007", "S10-008", "S10-009", "S10-006", "S10-004", "S10-014"],
     "keywords": [
-      {"kw": "\"grounding electrode conductor\" / size of grounding conductor", "jump": "Rule 10-114 + Table 43", "why": "Keyed to service-conductor AMPACITY (not breaker)", "stars": 5},
-      {"kw": "\"bonding conductor\" / bonding jumper", "jump": "Rule 10-614/10-616 + Table 16", "why": "Sized by ampacity OR overcurrent device rating", "stars": 5},
-      {"kw": "\"field-assembled\" / concrete-encased electrode", "jump": "Rule 10-102", "why": "≥6 m bare Cu ≥#4, bottom 50 mm of footing, ≥600 mm deep", "stars": 4},
-      {"kw": "\"equipotential bonding\" (pool, raised floor, pipe)", "jump": "Rule 10-406", "why": "#6 Cu / #4 Al minimum", "stars": 4},
-      {"kw": "\"manufactured\" / rod / plate electrode conductor", "jump": "Rule 10-114", "why": "Need not exceed #6 Cu", "stars": 4},
-      {"kw": "\"electrode spacing\" / two electrodes apart", "jump": "Rule 10-104", "why": "≥ 3 m apart", "stars": 3},
-      {"kw": "\"bare grounding conductor\" in raceway / conduit length", "jump": "Rule 10-806", "why": "Bare allowed only if run ≤ 15 m", "stars": 3},
-      {"kw": "\"grounded vs bonding\" / definitions", "jump": "Rule 10-114 / Section 0", "why": "Bonding = low-impedance path for non-current-carrying metal; memorize the sentence", "stars": 3},
-      {"kw": "\"raised floor\" / computer room bonding", "jump": "Section 84 + Rule 10-406", "why": "Equipotential: #8 Cu / #6 Al", "stars": 2},
-      {"kw": "\"bonding jumper\" for a 40 A device", "jump": "Table 16", "why": "OCPD rating → #10 Cu", "stars": 2},
-      {"kw": "\"PV DC\" grounding / two-wire system", "jump": "Section 64 (not Section 10)", "why": "Functionally-grounded/ungrounded arrays permitted in 2024", "stars": 2},
-      {"kw": "\"service-conductor ampacity\" → electrode size", "jump": "Table 43", "why": "≤165 A → size 4; 166–200 A → size 3; then 2,1,1/0", "stars": 3}
+      {"kw": "\"grounding electrode conductor\" / size of grounding conductor", "jump": "Rule 10-114 + Table 43", "why": "Keyed to service-conductor AMPACITY (not breaker)", "stars": 5, "why_fa": "وابسته به جریان مجاز هادی سرویس (نه بریکر)"},
+      {"kw": "\"bonding conductor\" / bonding jumper", "jump": "Rule 10-614/10-616 + Table 16", "why": "Sized by ampacity OR overcurrent device rating", "stars": 5, "why_fa": "بر اساس جریان مجاز یا نامی دستگاه حفاظت اضافه‌جریان اندازه می‌شود"},
+      {"kw": "\"field-assembled\" / concrete-encased electrode", "jump": "Rule 10-102", "why": "≥6 m bare Cu ≥#4, bottom 50 mm of footing, ≥600 mm deep", "stars": 4, "why_fa": "حداقل 6 m مس لخت ≥#4، 50 mm پایینی فونداسیون، حداقل 600 mm عمق"},
+      {"kw": "\"equipotential bonding\" (pool, raised floor, pipe)", "jump": "Rule 10-406", "why": "#6 Cu / #4 Al minimum", "stars": 4, "why_fa": "حداقل #6 Cu / #4 Al"},
+      {"kw": "\"manufactured\" / rod / plate electrode conductor", "jump": "Rule 10-114", "why": "Need not exceed #6 Cu", "stars": 4, "why_fa": "لازم نیست از #6 Cu بزرگ‌تر باشد"},
+      {"kw": "\"electrode spacing\" / two electrodes apart", "jump": "Rule 10-104", "why": "≥ 3 m apart", "stars": 3, "why_fa": "با فاصله ≥ 3 m"},
+      {"kw": "\"bare grounding conductor\" in raceway / conduit length", "jump": "Rule 10-806", "why": "Bare allowed only if run ≤ 15 m", "stars": 3, "why_fa": "هادی لخت فقط در صورتی مجاز است که طول مسیر ≤ 15 m باشد"},
+      {"kw": "\"grounded vs bonding\" / definitions", "jump": "Rule 10-114 / Section 0", "why": "Bonding = low-impedance path for non-current-carrying metal; memorize the sentence", "stars": 3, "why_fa": "پیوند (bonding) = مسیر کم‌امپدانس برای فلز غیرحامل جریان؛ این جمله را حفظ کن"},
+      {"kw": "\"raised floor\" / computer room bonding", "jump": "Section 84 + Rule 10-406", "why": "Equipotential: #8 Cu / #6 Al", "stars": 2, "why_fa": "هم‌پتانسیل: #8 Cu / #6 Al"},
+      {"kw": "\"bonding jumper\" for a 40 A device", "jump": "Table 16", "why": "OCPD rating → #10 Cu", "stars": 2, "why_fa": "نامی دستگاه حفاظت (OCPD) ← #10 Cu"},
+      {"kw": "\"PV DC\" grounding / two-wire system", "jump": "Section 64 (not Section 10)", "why": "Functionally-grounded/ungrounded arrays permitted in 2024", "stars": 2, "why_fa": "آرایه‌های زمین‌شده عملکردی/زمین‌نشده در ۲۰۲۴ مجازند"},
+      {"kw": "\"service-conductor ampacity\" → electrode size", "jump": "Table 43", "why": "≤165 A → size 4; 166–200 A → size 3; then 2,1,1/0", "stars": 3, "why_fa": "≤165 A ← size 4؛ 166–200 A ← size 3؛ سپس 2,1,1/0"}
     ]
   }
 ]
