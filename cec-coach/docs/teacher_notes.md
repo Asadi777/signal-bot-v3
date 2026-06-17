@@ -673,3 +673,136 @@ New specific exam-answer facts the teacher states in Session 4 (use to fill bank
 - **"Only three sections you memorize by content: 2, 12, and 26 — the rest you find by their name."**
 - **"Grounding is a branch that runs through every section — expect it everywhere."**
 - **"Gas furnace? We don't calculate it. Electric furnace? A hundred percent."**
+
+---
+
+## Session 5 (جلسه ۵)
+
+Continuation of the same coaching series. The class had finished through **Section 8** last time. This session **covers Section 10 (Grounding & Bonding) end-to-end** — the three classes of grounding electrode, electrode conductor sizing (Table 43), insulated-grounding-conductor rules and the raceway exception, solidly-grounded vs impedance-grounded systems, bonding continuity, bonding-conductor/jumper sizing (Table 16), and equipotential ("occupational") bonding of non-electrical equipment — then **starts Section 12 (Wiring Methods)** with underground installation and the Table 53 minimum-cover rules. The recording opens and closes with personal/scheduling chatter (excluded here). The instructor teaches bonding from the **2024 book specifically** because a relevant rule changed there. Tags as before: **[teacher]** = his own assertion/method; **[standard CEC]** = matches the published code; numbers flagged *approx.* are transcription-noisy.
+
+### Concepts taught
+
+#### Section 10 — Grounding & Bonding (installation/execution)
+
+[teacher] Section 0 already covered *what* grounding and bonding do; Section 10 covers *how you install them*. He stresses **grounding and bonding are two completely separate topics** in this code (separate sub-sections), unlike the Iranian "system earthing" convention that lumps them together. He praises Section 10 as **well-organized and clean** — "if you don't score here, there's no excuse." He recommends the **small (handbook) companion book** only for browsing the pictures; it is **NOT tested** (the exam uses the large code book), so the PDF is enough.
+
+**Three classes of grounding electrode [standard CEC, his framing]:** the book groups grounding electrodes into three kinds:
+1. **Manufactured electrode** — bought ready-made and installed. Two forms:
+   - **Rod type** — a solid round rod ("like rebar") driven into the earth. Rule: **at least two rods**, **spaced not less than 3 m apart**, **interconnected** by the grounding conductor, and **fully driven** so the top sits flush with grade. [teacher caution] The rule here **doesn't state a voltage** — it just says "two rods"; the four-rod requirement for **high voltage is in Section 36**. He flags as approximate the "3 m" spacing and notes driving rods the last metre is physically hard, so plate electrodes are often preferred.
+   - **Plate type** — a metal plate with **minimum surface area 0.2 m²**, very heavy for its size; must be in **direct contact with earth at least 600 mm below grade**, OR cast into concrete (see encasement rule). The electrode conductor running from plate/rod to the panel is **min #6 copper / #4 aluminum**.
+2. **Field-assembled electrode** — used where you can't reach a store (remote/field). A **bare copper conductor**, length **not less than 6 m**, buried at least **600 mm** deep, sized per **Table 43**, acts as the electrode. [teacher] More commonly cast into concrete than dug in, because electricians dislike pick-and-shovel work. *(He cross-references "Table 43" for the conductor size; numbers approx.)*
+3. **In-situ electrode** ("part of existing infrastructure") — you **buy nothing and add nothing**; you use an **existing structural element**. Examples he gives: a **metal base-plate under steel/concrete equipment**, or a **metal water pipe** — usable as an electrode **if** it gives the needed contact surface AND is at least **600 mm below grade** (and, for the pipe, has the required buried length). [teacher] In-situ via metal water pipe is now rare because plumbing has gone non-metallic, but the rule remains.
+
+**Concrete-encasement rule (the "50 mm" exam point) [standard CEC, flagged red]:** an electrode (plate or the 6 m field-assembled conductor) may be **encased in concrete** instead of buried in soil — common when the building foundation/footing is being poured anyway, so the electrician coordinates with the concrete crew rather than digging. Requirement: the electrode must be within **the bottom 50 mm of the concrete foundation footing**, the footing in **direct contact with earth**, at **not less than 600 mm** below finished grade. [teacher] The **50 mm** figure is "a red exam question." Logic: within 50 mm of the bottom it still effectively contacts earth; deeper inside the concrete it loses earth contact and the grounding property.
+
+**Electrode conductor size — Table 43 [teacher, worked]:** the **field-assembled / electrode conductor** size comes from **Table 43**, indexed by the **ampacity of the largest service conductor** (NOT by the overcurrent device — he stresses this distinction):
+- He reads the steps (approx.): **service ampacity ≤165 A → size #4; 166–200 A → size #3; ~201–? → size #2**, then **1, 1/0, 2/0, 3/0**.
+- **Worked example [teacher]:** A panel with a **200 A** main breaker fed by a **4/0** service conductor (he notes building service conductors are taken at the **75 °C** column because breakers/lugs are 75 °C-rated). The student first answers "#3" off the 4/0 size, but the teacher corrects: you look up by the **service conductor's ampacity (≈200 A at 75 °C → e.g. 200–210 A band) → size #2**, NOT by the raw conductor size or the breaker rating. He warns the exam may give the two bands' edge values to bait you into picking #3.
+
+**Grounding-conductor minimum size — Rule 10-114 [standard CEC]:** the grounding conductor shall be **not smaller than #6 copper / #4 aluminum**. This is the recurring "6/4" pair for grounding electrode conductors.
+
+**Multiple grounding electrodes in one building — Rule 10-116 area [standard CEC]:** if you install **multiple grounding electrodes within a single building** (e.g. inspector requires a second system in a large building, or you add one during a renovation), each added electrode must be **separated ≥2 m** from the existing one and **all must be interconnected** by a grounding conductor. ("A building" = the *same* building, not a neighbour's.)
+
+**Insulated grounding conductor & the raceway exception — Rule 10-116 [standard CEC, worked exam point]:**
+- The grounding conductor is usually run **bare** (you exploit an exposed metal path). But the code says it **shall be insulated** where it is installed **in a raceway with the service conductors** — to protect it (and the service conductor's jacket) from abrasion at bends.
+- **Exception — an UN-insulated (bare) grounding conductor is permitted** if the raceway length is **not more than ~15 m** AND the raceway **does not contain more than the equivalent of two 90° bends**. [teacher] Because typical home runs are a 1–1.5 m conduit with no bends, "we get to use the bare wire" almost always.
+- **Exam trap [teacher, flagged]:** the "equivalent of two 90° bends" wording. Two 90° = **180° total**. The exam phrases an answer as e.g. *"one 90° bend plus three 30° offsets"* (= 90 + 90 = 180°, OK) vs *"two 90° bends plus three 15° offsets"* (>180°, NOT OK). Watch for the word **"offset."** Students wrongly read a >180° combination as compliant. *(Distractors compute to just over 180°.)*
+
+**Solidly grounded vs impedance grounded systems [teacher, simplified]:**
+- **Solidly grounded system** — the normal residential case: the grounding conductor connects to the electrode **directly via a clamp** (clamp is most common; weld or braze also used), **with nothing in between**. On a fault, a **large current** flows the low-resistance path to earth and **trips the breaker instantly** — which is *desirable* ("we welcome that current"); you just reset and the appliance works again.
+- **Impedance grounded system** — used where **sensitive electronics** (medical/ICU equipment, ICs, transistors) could be damaged by an uncontrolled fault surge. An **impedance device (a "choke" — a capacitor/inductor)** is inserted in the grounding path so fault current is **damped/limited**, letting the fuse clear it cleanly without a destructive spike reaching the equipment. He likens it to lights dimming when a high-draw appliance starts — a surge can reach the system even without direct current flow, so you dampen it.
+
+**Which conductor to ground (the two "easy" exam questions) [standard CEC]:**
+- **2-wire system (AC or DC):** ground the **identified conductor** — i.e. the **neutral** (no sane electrician grounds the hot).
+- **3-wire system (AC or DC) — Rule 10-208(1)(b):** ground the **common conductor** (the **centre-tap / mid-point** of the transformer, where voltage = 0). For DC 3-wire likewise the middle (common) conductor.
+
+**Impedance-grounding conductor size — Rule 10-318 [standard CEC, worked]:** the conductor of an **impedance grounding device** may be **smaller** than the normal 6/4 (the impedance device already limits fault current): **not smaller than #12 copper / #10 aluminum**. [teacher] The **aluminum = #10** version is the one that shows up on exams. He cites a student who answered **"8"** and got it wrong — the answer is **#10 Al** (the "no case smaller than 12 Cu / 10 Al" wording).
+
+#### Section 10 — Bonding
+
+**Continuity — the core bonding concept [standard CEC + teacher]:** a bonding system must have **continuity** (continuous, unbroken). Examples:
+- A motor fed from a panel through **metal conduit**: if the raceway is **non-metallic**, you **must** pull a separate bonding conductor to the motor frame (Section 12 repeats this for non-metallic raceways). If the raceway is **metal**, the code **permits** omitting the separate bond (the metal raceway itself bonds), but you may add a **jumper** to be sure both ends are bonded.
+- **Metal raceway / metal sheath / cable armour must be bonded at BOTH ENDS — Rule 10-2xx ("at both ends") [standard CEC, flagged].** [teacher] The phrase **"both ends"** was an actual exam answer he couldn't originally find in the 2021/2018 book; it is **explicit in the 2024 book**. Even an **armoured cable's armour** is bonded at both ends. The fittings used must be **locking** — **locknuts** ("self-locking nuts" that can't back out), like the lock-fasteners on bridges that flex constantly.
+- **Cable tray expansion joints:** a 30 m run made of three 10 m trays develops **expansion/contraction gaps** between sections; you must **bond across each joint with a jumper** so continuity is preserved through the middle sections.
+
+**Bonding conductor / jumper size — Rule 10-616 & Table 16 [standard CEC, worked, "the gift question"]:**
+- Min size of a **bonding jumper / bonding conductor** comes from **Table 16**.
+- **Key difference from Table 43:** Table 16 lets you size off **EITHER the ampacity of the conductor OR the rating of the overcurrent device** — your choice. (Table 43, by contrast, *only* allowed ampacity.)
+- The jumper/bond can be a **wire, a bus/bar (busbar), or another conductor**.
+- **Worked example [teacher]:** "A **30 A** circuit, using a **copper bus** — what size?" → read Table 16 → **3.5 mm² cross-section of bus** (or the equivalent **AWG** wire size). He cites a student who answered **4.5** and got it wrong. [teacher] He calls this "the question God gives you to pass you" — very simple.
+
+**Equipotential / "occupational" bonding of non-electrical equipment — Section 10-700 series [standard CEC, end-of-section, exam-guaranteed]:**
+- Located at the **very end of Section 10** (rules in the **700s**, ending ~10-708) — "the last page of the book section," so **expect questions here**.
+- **Occupational bonding = bonding of NON-electrical equipment** ("occupational bonding of non-electrical equipment"). Purpose = **equipotential** = **equal potential**: tie everything to the same potential so no voltage difference can develop across a person.
+- **Worked physics [teacher]:** if you simultaneously touch an energized appliance frame and a metal water pipe, current could split through your body. So you **bond the water pipe, gas pipe, etc. into the bonding system** — connecting them all to one terminal/group. Then if both points sit at the same voltage (e.g. both at 120 V), **no current flows through you** (the "bird on a wire" principle — shock needs a *voltage difference*).
+- **What gets equipotential-bonded [standard CEC]:** **metal water pipe, metal sewage/waste pipe, metal gas pipe, raised floor (if conductive), and other conductive metal parts** (e.g. a metal fence/enclosure of equipment). The rule **references Appendix B** for extra notes, but [teacher] the useful explanation is right in the section.
+- **"Raised floor" [standard CEC, flagged as a real exam item]:** a **raised (false) access floor** with **conductive material** — used in press/media rooms, computer rooms, hair salons, etc. where power/data/USB cables run underneath and emerge through the floor. If the floor surface is **conductive material**, it must be **equipotential-bonded**. The exam dresses this up ("a hair salon with an aluminum raised floor") to scare students — but the rule is generic: *if raised floor is conductive material, bond it.*
+- **Occupational/equipotential bonding conductor size [standard CEC]:** **minimum #6 copper / #4 aluminum** (the same 6/4 pair). [teacher] Watch the metal: aluminum floor does **not** mean aluminum conductor — read whether they ask for copper (#6) or aluminum (#4). A lesser-known follow-on rule: if the conductor is **concealed AND has adequate mechanical protection**, it may be reduced to **#10 copper / #8 aluminum** — rarely tested but worth knowing. [teacher] One reason ground/bond conductors are oversized is **mechanical protection**, not just fault current; where protection is assured the size can drop.
+
+#### Section 12 — Wiring Methods (begun)
+
+[teacher] **Section 12 = "Wiring Methods"** — a long section that may spill into the next class. Despite its length it boils down to **four topics**: (1) the **routing methods** (overhead / on-wall / in-wall / underground), (2) the **conductors** (you select conductor type here), (3) the **raceways** (all the raceway types), and (4) the **boxes** (box fill, "boxes and max"). Knowing those four buckets is enough to navigate the section.
+
+**"Wiring method is an address" [teacher — high-value navigation tip]:** Section 12 holds only the *general* wiring methods. **Every other section has its OWN "Wiring Methods" subsection** for its environment. So to answer "what conduit/box/conductor for a *corrosive area*," go to **Section 22** → its Wiring Methods; for a **fire pump**, go to **Section 32** → its Wiring Methods (e.g. metal raceway, or if non-metallic conduit then **50 mm of concrete cover**); for **photovoltaic / solar**, go to **Section 64** → Photovoltaic → Wiring Methods (e.g. **extra-hard-usage flexible cord, or type RPVU**). He frames "wiring methods" as a fast **address** to jump straight to the answer instead of hunting.
+
+**Underground installation — Table 53 minimum cover [standard CEC, worked]:**
+- For cable installed **direct-buried** OR **in a raceway** underground, the **minimum cover** comes from **Table 53** (values in **mm**).
+- **"Minimum cover" defined:** the distance from the **TOP surface of the cable/raceway to finished grade** — NOT the trench depth. [teacher] Read this carefully.
+- **Table 53 read [teacher]:** rows depend on **mechanical protection** and **traffic**:
+  - **No metal shield/armour** → deeper cover; **armoured OR in a raceway** → shallower (these two share one column, same number).
+  - **Non-vehicular area** → one (shallower) value; **vehicular area** (vehicles drive over) → deeper value.
+  - **High voltage** → a single value regardless of armour: **1000 mm (1 m).** [teacher] The 2024 book reorganized this column by voltage class (ELV/LV in one set, HV separate) — a change from prior editions.
+  - **Worked lookup [teacher]:** unarmoured cable, non-vehicular area, **240 V** → **600 mm** cover.
+- **Cover reduction by added mechanical protection — Table 53 Note [standard CEC, flagged "this question came up two weeks ago"]:** you may **reduce the Table 53 minimum by 150 mm** where **mechanical protection is installed in the trench over the installation**. Acceptable protection (one of):
+  - **Treated wooden planking ≥ 38 mm thick**, extending **≥ 50 mm beyond** each side of the cable/raceway;
+  - **Concrete slab ≥ 50 mm thick**, extending **≥ 50 mm beyond** (flat forms must overhang 50 mm each side);
+  - **Poured concrete ≥ 50 mm thick** over the run.
+  [teacher] Don't mix the numbers up: the **plank is 38 mm**, the **concrete is 50 mm**, and the **side overhang is 50 mm** for the flat forms — the exam gives "35/35/38" style distractors. The reduction is a flat **150 mm** off Table 53.
+- **Direct-buried cable laying & sand bedding — Rule 12-012 area [standard CEC, flagged exam trap]:** direct-buried cables (not in raceway) **shall be installed run adjacent to each other**, **shall not cross over each other**, and shall be bedded in **screened sand** (max particle size **4.75 mm**), **at least 75 mm deep BOTH above and below** the conductor.
+  - **The "both" exam trap [teacher, important]:** the exam drops the word **"both"** to make a wrong answer. The compliant statement is **"75 mm both above and below."** A distractor reading **"150 mm to the diameter of the cable"** is *also* arguably correct (75 above + 75 below = 150 around) — he cites a student who hit a question with **two correct-looking answers** and guessed right (passed at 83). Key teaching: read the exact wording; **"75 mm above and below"** is the canonical answer.
+
+### Answer clarifications for the question bank
+
+Specific exam-answer facts the teacher states (use to fill bank gaps); all in **Section 10 / Section 12** unless noted:
+
+- **Grounding electrode classes = 3: Manufactured, Field-assembled, In-situ** ("part of existing infrastructure"). [Section 10]
+- **Rod electrode: at least TWO rods, spaced ≥ ~3 m, interconnected, fully driven.** (Four rods is the **HV / Section 36** rule, not Section 10.) *(spacing approx.)*
+- **Plate electrode: minimum surface area 0.2 m²; ≥ 600 mm below grade (or concrete-encased).**
+- **Concrete-encased electrode: must be in the bottom 50 mm of the footing, footing in direct contact with earth, ≥ 600 mm below finished grade.** The **50 mm** is a flagged red exam answer.
+- **Grounding-electrode / grounding conductor minimum size = #6 copper / #4 aluminum** (Rule 10-114). This "6/4" pair recurs.
+- **Electrode (field-assembled) conductor sized from TABLE 43, by the ampacity of the LARGEST SERVICE CONDUCTOR (not the overcurrent device).** Worked: ~165 A → #4; 166–200 A → #3; ~200 A service (4/0 conductor, 75 °C) → **#2** (NOT #3 read off the conductor size). *(band edges approx.)*
+- **Multiple grounding electrodes in one building: separate ≥ 2 m, all interconnected.**
+- **Grounding conductor in a raceway with service conductors must be INSULATED — EXCEPT a bare one is allowed if raceway ≤ ~15 m AND ≤ equivalent of two 90° bends (= 180° total).** Watch "offset" wording; combos exceeding 180° are non-compliant.
+- **Ground the IDENTIFIED conductor (neutral) on a 2-wire system; ground the COMMON conductor (centre-tap) on a 3-wire system** (Rule 10-208(1)(b)), AC or DC.
+- **Impedance-grounding-device conductor minimum = #12 copper / #10 aluminum** (Rule 10-318). The **#10 aluminum** answer is the commonly-asked one (a student wrongly answered #8).
+- **Metal raceway / metal sheath / cable armour must be bonded at BOTH ENDS.** The phrase **"both ends"** is an actual exam answer; it's explicit in the **2024** book.
+- **Bonding fittings must be locking (locknuts).**
+- **Bonding jumper/conductor sized from TABLE 16 — and you may use EITHER the conductor ampacity OR the overcurrent-device rating** (unlike Table 43). Worked: **30 A circuit, copper bus → 3.5 mm²** (a student wrongly answered 4.5).
+- **Equipotential / occupational bonding = bonding of NON-electrical equipment** (Section 10-700 series, end of section — expect questions). Items bonded: **metal water pipe, metal sewage pipe, metal gas pipe, conductive raised floor, other conductive metal parts.** Goal = **equal potential**.
+- **"Raised floor" (conductive false/access floor) must be equipotential-bonded** — flagged real exam item (often disguised as a hair salon / aluminum floor).
+- **Occupational/equipotential bonding conductor minimum = #6 copper / #4 aluminum**; reduced to **#10 copper / #8 aluminum** only if **concealed AND adequately mechanically protected.** Read whether copper (#6) or aluminum (#4) is asked.
+- **Section 12 = Wiring Methods; reduces to 4 buckets: routing methods, conductors, raceways, boxes.** ~30 wiring-method questions overall.
+- **Underground minimum cover from TABLE 53 (mm); "cover" = top of cable/raceway to finished grade** (not trench depth). Unarmoured / non-vehicular / 240 V → **600 mm.** Armoured or in-raceway → shallower (shared column). **High voltage → 1000 mm regardless of armour.**
+- **Table 53 cover may be reduced by 150 mm** with added mechanical protection in the trench: **treated wood plank ≥ 38 mm thick**, **concrete slab ≥ 50 mm**, or **poured concrete ≥ 50 mm**, each extending **≥ 50 mm** beyond the run. (Distractors swap 38/50/35.)
+- **Direct-buried cables: run adjacent, do NOT cross over each other, bedded in screened sand (max particle 4.75 mm), ≥ 75 mm BOTH above and below the conductor.** The word **"both"** is the trap; "75 mm above and below" is the canonical answer.
+- [teacher cross-ref] **Fire pump (Section 32): metal raceway, or if non-metallic conduit then 50 mm concrete cover.** **PV/solar (Section 64): extra-hard-usage flexible cord or type RPVU.** (Reached via each section's own Wiring Methods subsection.)
+
+### Mnemonics / phrasings
+
+- **"Grounding and bonding are two completely separate topics — separate sub-sections — don't lump them like Iranian 'system earthing.'"**
+- **"Three electrodes: you buy one (manufactured), you build one (field-assembled), or you use what's already there (in-situ)."**
+- **"Bottom 50 millimetres of the footing — any deeper into the concrete and it's no longer touching earth."** (Concrete-encasement red question.)
+- **"Six copper, four aluminum"** — the grounding / equipotential-bonding conductor minimum (repeated like a refrain).
+- **"Two 90s equals one-eighty — once it's over one-eighty, the bare wire's out."** (Insulated-grounding exception; watch the word "offset.")
+- **"Two wire? Ground the identified (neutral). Three wire? Ground the common (the centre-tap, where the voltage is zero)."**
+- **"Impedance device is a choke — it damps the wild current so the fuse clears it without frying the electronics."**
+- **"Bond it at BOTH ENDS"** — metal raceway / sheath / armour (the missing-word exam answer).
+- **"Table 43 only lets you use ampacity; Table 16 lets you use ampacity OR the overcurrent device — your pick."**
+- **"Equipotential means equal potential — tie it all to one terminal and there's no voltage across you. Bird on a wire."**
+- **"If the raised floor is conductive, you bond it — don't panic that it says 'hair salon.'"**
+- **"Wiring Methods is an address — every section has its own; jump straight there instead of hunting."**
+- **"Minimum cover is top-of-cable to finished grade, not how deep you dug the trench."**
+- **"Plank's 38, concrete's 50, overhang's 50 — and you knock 150 off Table 53."**
+- **"Seventy-five millimetres of sand BOTH above and below — they steal the word 'both' to trick you."**
+- **"This is the question God gives you to pass you."** (The Table 16 / simple-lookup gift questions.)
+- [teacher meta] **"After 340 students you know exactly which corners they crash on, so you post a 'danger' sign there."** (Why he drills the same traps.)
