@@ -8,6 +8,8 @@
       "type": "calculation",
       "topic": "ampacity-free-air",
       "question": "A single 2/0 R90 (90°C) aluminum-sheathed copper conductor is run in free air. What is its ampacity?",
+      "options": ["A) 175 A", "B) 235 A", "C) 195 A", "D) 300 A"],
+      "answer_key": "C",
       "answer": "195 A",
       "references": ["Rule 4-004 1)", "Table 1"],
       "solution_steps": [
@@ -45,6 +47,8 @@
       "type": "calculation",
       "topic": "mixed-temp-raceway",
       "question": "A rigid steel conduit contains three #4 R90 copper conductors and three #1 TW75 copper conductors. What is the maximum allowable ampacity of each conductor?",
+      "options": ["A) #4 = 76 A, #1 = 104 A", "B) #4 = 68 A, #1 = 104 A", "C) #4 = 85 A, #1 = 130 A", "D) #4 = 68 A, #1 = 117 A"],
+      "answer_key": "B",
       "answer": "#4 = 68 A, #1 = 104 A",
       "references": ["Rule 4-004 1)c)", "Rule 4-038", "Table 2", "Table 5C"],
       "solution_steps": [
@@ -64,6 +68,8 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "What is the maximum allowable ampacity of each conductor if there are 25 #4 R90 copper conductors installed in EMT?",
+      "options": ["A) 76 A", "B) 66.5 A", "C) 57 A", "D) 47.5 A"],
+      "answer_key": "C",
       "answer": "57 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
@@ -82,6 +88,8 @@
       "type": "calculation",
       "topic": "parallel-direct-burial",
       "question": "An 800 A non-continuous load is supplied by paralleling single-conductor Teck cable, type RW90 copper. The cable is direct-buried and spaced 190 mm apart. What is the minimum conductor size required?",
+      "options": ["A) 250 kcmil (two conductors per phase in parallel, each ≈ 422 A)", "B) 4/0 AWG (two conductors per phase in parallel)", "C) 350 kcmil (two conductors per phase in parallel)", "D) 500 kcmil (single conductor per phase)"],
+      "answer_key": "A",
       "answer": "250 kcmil (two conductors per phase in parallel, each ≈ 422 A)",
       "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
       "solution_steps": [
@@ -100,6 +108,8 @@
       "type": "calculation",
       "topic": "underground-multiconductor",
       "question": "A 3-phase, multi-conductor copper cable is directly buried in an underground installation supplying a load of 300 A. What is the ampacity of this cable?",
+      "options": ["A) 300 A", "B) 285 A", "C) 350 A", "D) 337 A"],
+      "answer_key": "D",
       "answer": "337 A",
       "references": ["Rule 4-004 1)d)", "Diagram D10", "Table D10A detail 1"],
       "solution_steps": [
@@ -118,6 +128,8 @@
       "type": "calculation",
       "topic": "service-neutral-supported",
       "question": "Determine the minimum size of copper conductor (NS75 neutral-supported cable) required for a 200 A, 120/240 V, single-phase overhead service.",
+      "options": ["A) #2 AWG copper", "B) #1 AWG copper", "C) #1/0 AWG copper", "D) #3 AWG copper"],
+      "answer_key": "B",
       "answer": "#1 AWG copper",
       "references": ["Rule 4-004 5)", "Table 36B"],
       "solution_steps": [
@@ -136,6 +148,8 @@
       "type": "calculation",
       "topic": "portable-power-cable",
       "question": "A 2 kV non-shielded, three-conductor, portable power cable supplies a non-continuous load that requires 200 A. Determine the minimum conductor size required.",
+      "options": ["A) #1 AWG", "B) #2 AWG", "C) 1/0 AWG", "D) 2/0 AWG"],
+      "answer_key": "C",
       "answer": "1/0 AWG",
       "references": ["Rule 4-034", "Table 12A"],
       "solution_steps": [
@@ -154,6 +168,8 @@
       "type": "calculation",
       "topic": "free-air-aluminum",
       "question": "What is the maximum allowable ampacity of each conductor when there are two 2/0 R90 XLPE aluminum conductors installed in a free-air run?",
+      "options": ["A) 195 A", "B) 235 A", "C) 188 A", "D) 300 A"],
+      "answer_key": "B",
       "answer": "235 A",
       "references": ["Rule 4-004 1)", "Table 3"],
       "solution_steps": [
@@ -172,6 +188,8 @@
       "type": "theory",
       "topic": "bonding-conductor-count",
       "question": "Does an electrician need to count bonding conductors when determining the ampacities of conductors in raceways?",
+      "options": ["A) Yes — all conductors in the raceway are counted.", "B) No — bonding conductors are not counted as current-carrying conductors.", "C) Yes — but only bonding conductors larger than #6.", "D) Only when more than 3 current-carrying conductors are present."],
+      "answer_key": "B",
       "answer": "No — bonding conductors are not counted as current-carrying conductors.",
       "references": ["Rule 4-004 6)"],
       "solution_steps": [
@@ -188,6 +206,8 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "What is the maximum ampacity of each conductor when 10 #4 R90 copper conductors are installed in a run of EMT located in a 40°C ambient temperature?",
+      "options": ["A) 66.5 A", "B) 60.51 A", "C) 86.45 A", "D) 53.2 A"],
+      "answer_key": "B",
       "answer": "60.51 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
@@ -207,6 +227,8 @@
       "type": "calculation",
       "topic": "equipment-wire",
       "question": "If 35 #10 TEW (equipment wire) conductors are to be installed in one conduit, what is the ampacity of each conductor?",
+      "options": ["A) 16.8 A (source) — but the standard Table 5C count factor for 35 conductors is 0.60, which would give 18 A; verify", "B) 18 A", "C) 21 A", "D) 30 A"],
+      "answer_key": "A",
       "answer": "16.8 A (source) — but the standard Table 5C count factor for 35 conductors is 0.60, which would give 18 A; verify",
       "references": ["Rule 4-014", "Rule 4-012", "Table 12", "Table 5C"],
       "solution_steps": [
@@ -225,6 +247,8 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "What is the maximum allowable ampacity of each conductor when five conductors type TW rated at 60°C, 1/0 copper, are installed in a rigid steel conduit?",
+      "options": ["A) 125 A", "B) 100 A", "C) 87.5 A", "D) 120 A"],
+      "answer_key": "B",
       "answer": "100 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
@@ -243,6 +267,8 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "What is the maximum current each conductor can carry, for a cable or raceway that contains 32 #4 copper conductors, type TW rated at 60°C?",
+      "options": ["A) 70 A", "B) 49 A", "C) 42 A", "D) 56 A"],
+      "answer_key": "C",
       "answer": "42 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
@@ -261,6 +287,8 @@
       "type": "calculation",
       "topic": "mixed-temp-derate-ambient",
       "question": "What is the maximum ampacity of 7 conductors in a raceway located in 45°C ambient, containing four 2/0 R90 copper conductors and three 1/0 TW75 copper conductors?",
+      "options": ["A) 2/0 = 86.1 A, 1/0 = 100.45 A", "B) 2/0 = 100.45 A, 1/0 = 86.1 A", "C) 2/0 = 122.5 A, 1/0 = 105 A", "D) 2/0 = 112 A, 1/0 = 96 A"],
+      "answer_key": "B",
       "answer": "2/0 = 100.45 A, 1/0 = 86.1 A",
       "references": ["Rule 4-004 1)c)", "Rule 4-038", "Table 2", "Table 5C", "Table 5A"],
       "solution_steps": [
@@ -281,6 +309,8 @@
       "type": "lookup",
       "topic": "conductor-colors",
       "question": "What are the required colors of conductors installed in a 3-phase, 3-wire, 600 V circuit?",
+      "options": ["A) Red (A), Black (B), Blue (C)", "B) Red (A), White (B), Black (C)", "C) Brown (A), Orange (B), Yellow (C)", "D) Black (A), Red (B), Blue (C)"],
+      "answer_key": "A",
       "answer": "Red (A), Black (B), Blue (C)",
       "references": ["Rule 4-036 (colour-coded circuits)"],
       "solution_steps": [
@@ -298,6 +328,8 @@
       "type": "lookup",
       "topic": "elevator-cable",
       "question": "What is the maximum current that elevator cable wire type ETP No. 14 can carry?",
+      "options": ["A) 10 A", "B) 20 A", "C) 15 A", "D) 25 A"],
+      "answer_key": "C",
       "answer": "15 A",
       "references": ["Rule 4-014", "Table 12"],
       "solution_steps": [
@@ -315,6 +347,8 @@
       "type": "lookup",
       "topic": "equipment-wire",
       "question": "What is the ampacity of #8 AWG equipment wire, type GTF?",
+      "options": ["A) 40 A", "B) 35 A", "C) 45 A", "D) 55 A"],
+      "answer_key": "A",
       "answer": "40 A",
       "references": ["Rule 4-014", "Table 12"],
       "solution_steps": [
@@ -332,6 +366,8 @@
       "type": "calculation",
       "topic": "service-quadruplex",
       "question": "For a 250 A, 3-phase, 4-wire, 600 V overhead service, what size of NS90 aluminum quadruplex cable is required?",
+      "options": ["A) 2/0 AWG aluminum", "B) 4/0 AWG aluminum", "C) 3/0 AWG aluminum", "D) 250 kcmil aluminum"],
+      "answer_key": "C",
       "answer": "3/0 AWG aluminum",
       "references": ["Rule 4-004 5)", "Table 36A"],
       "solution_steps": [
@@ -350,6 +386,8 @@
       "type": "theory",
       "topic": "neutral-temp-rating",
       "question": "A line conductor in a conduit carrying three hot conductors and a bare neutral is rated at 75°C. What should be the temperature rating of the neutral conductor?",
+      "options": ["A) 60°C", "B) 75°C — the neutral must have a temperature rating not less than the line conductors.", "C) 90°C", "D) The neutral has no temperature-rating requirement."],
+      "answer_key": "B",
       "answer": "75°C — the neutral must have a temperature rating not less than the line conductors.",
       "references": ["Rule 4-016 2)"],
       "solution_steps": [
@@ -367,6 +405,8 @@
       "type": "calculation",
       "topic": "termination-temperature",
       "question": "If a #6 Teck 90 cable is terminated at a circuit breaker marked maximum 75°C, what is the maximum current this cable can carry?",
+      "options": ["A) 75 A", "B) 55 A", "C) 65 A", "D) 70 A"],
+      "answer_key": "C",
       "answer": "65 A",
       "references": ["Rule 4-006 1)", "Table 2"],
       "solution_steps": [
@@ -384,6 +424,8 @@
       "type": "calculation",
       "topic": "neutral-supported-ambient",
       "question": "What is the maximum ampacity of a #4 NS90 aluminum neutral-supported cable with 3 conductors in an ambient temperature of 35°C?",
+      "options": ["A) 122 A", "B) 117.5 A (source)", "C) 110 A", "D) 105 A"],
+      "answer_key": "B",
       "answer": "117.5 A (source)",
       "references": ["Rule 4-004 5)", "Table 36A", "Table 5A"],
       "solution_steps": [
@@ -402,6 +444,8 @@
       "type": "calculation",
       "topic": "bundling-derate",
       "question": "There are 10 #3 copper TW75 conductors running in a raceway or cable. What is the maximum current each conductor can carry?",
+      "options": ["A) 100 A", "B) 80 A", "C) 60 A", "D) 70 A"],
+      "answer_key": "D",
       "answer": "70 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5C"],
       "solution_steps": [
@@ -420,6 +464,8 @@
       "type": "calculation",
       "topic": "service-neutral-supported",
       "question": "In order to supply 150 A to an outbuilding with voltage requirements of 120/240 V, what size of NS90 copper neutral-supported cable would be required?",
+      "options": ["A) #6 AWG copper", "B) #4 AWG copper", "C) #3 AWG copper", "D) #2 AWG copper"],
+      "answer_key": "B",
       "answer": "#4 AWG copper",
       "references": ["Rule 4-004 5)", "Table 36B"],
       "solution_steps": [
@@ -438,6 +484,8 @@
       "type": "calculation",
       "topic": "derating-factor",
       "question": "In order to calculate the ampacity of 10 conductors type TW75 installed in one conduit, what is the correction (count-adjustment) factor?",
+      "options": ["A) 0.80", "B) 0.70", "C) 0.60", "D) 0.50"],
+      "answer_key": "B",
       "answer": "0.70",
       "references": ["Rule 4-004 1)c)", "Table 5C"],
       "solution_steps": [
@@ -455,6 +503,8 @@
       "type": "calculation",
       "topic": "underground-multiconductor",
       "question": "An underground raceway contains three 4/0 RW90 copper conductors in a multi-conductor cable that supply a non-continuous load. What is the maximum current each conductor can supply?",
+      "options": ["A) 230 A", "B) 260 A", "C) 303 A", "D) 337 A"],
+      "answer_key": "C",
       "answer": "303 A",
       "references": ["Rule 4-004 1)d)", "Diagram D11", "Table D11A detail 1"],
       "solution_steps": [
@@ -472,6 +522,8 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "Ten #10 AWG R90 copper conductors are installed in a conduit in an ambient temperature of 40°C. What is the maximum ampacity of the conductors under this condition?",
+      "options": ["A) 28 A", "B) 25.48 A", "C) 21.84 A", "D) 36.4 A"],
+      "answer_key": "B",
       "answer": "25.48 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
@@ -491,6 +543,8 @@
       "type": "calculation",
       "topic": "neutral-supported-ambient",
       "question": "What is the maximum ampacity allowed for a #6 AWG copper NS75 neutral-supported cable with 4 insulated conductors installed in an ambient temperature of 35°C?",
+      "options": ["A) 90 A", "B) 84.6 A", "C) 82.8 A (source) — see review note on the ambient factor", "D) 75 A"],
+      "answer_key": "C",
       "answer": "82.8 A (source) — see review note on the ambient factor",
       "references": ["Rule 4-004 5)", "Table 36B", "Table 5A"],
       "solution_steps": [
@@ -509,6 +563,8 @@
       "type": "calculation",
       "topic": "derate-and-ambient",
       "question": "What is the ampacity of each conductor installed in a conduit that contains 28 copper R90 #4 conductors placed in an ambient temperature of 40°C?",
+      "options": ["A) 57 A", "B) 60.51 A", "C) 51.87 A", "D) 47.5 A"],
+      "answer_key": "C",
       "answer": "51.87 A",
       "references": ["Rule 4-004 1)c)", "Table 2", "Table 5A", "Table 5C"],
       "solution_steps": [
@@ -528,6 +584,8 @@
       "type": "calculation",
       "topic": "parallel-direct-burial",
       "question": "Calculate the minimum conductor size required where single-conductor Teck cables are run in parallel to supply a 400 A non-continuous load, are directly buried, and spaced 190 mm apart.",
+      "options": ["A) #1 AWG", "B) 1/0 AWG", "C) 2/0 AWG", "D) 4/0 AWG"],
+      "answer_key": "B",
       "answer": "1/0 AWG",
       "references": ["Rule 4-004 1)d)", "Diagram D8", "Table D8A detail 2"],
       "solution_steps": [

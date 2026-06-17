@@ -3,12 +3,24 @@
   "questions": [
     {
       "id": "S28-001",
-      "section": 28, "block": "D", "topic": "max-time-delay-fuse", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "max-time-delay-fuse",
+      "type": "calculation",
       "question": "The following motor will not start using the maximum standard rated time-delay fuse. What is the maximum rating of time-delay fuse that may be used for a 40 hp, 575 V, 3-phase hydraulic pump motor with a service factor of 1.15?",
-      "options": ["A) 90 A", "B) 100 A", "C) 80 A", "D) 110 A"],
+      "options": [
+        "A) 90 A",
+        "B) 100 A",
+        "C) 80 A",
+        "D) 110 A"
+      ],
       "answer": "D) 110 A",
       "answer_key": "D",
-      "references": ["Rule 28-200", "Table 29 (time-delay fuse 175%; up to 225% if motor won't start)", "Table 44 (3-phase FLC)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29 (time-delay fuse 175%; up to 225% if motor won't start)",
+        "Table 44 (3-phase FLC)"
+      ],
       "solution_steps": [
         "Method: branch-circuit OCPD from Table 29. Time-delay fuse normal max = 175% of FLC; if the motor will not start, Rule 28-200 permits raising to 225% of FLC, taken to the next-higher standard size as needed.",
         "Using a 40 hp / 575 V Table 44 FLC of ~41 A: 225% = 41 x 2.25 = 92.25 A → nearest standard fuse ~90/100 A.",
@@ -20,31 +32,61 @@
     },
     {
       "id": "S28-002",
-      "section": 28, "block": "D", "topic": "overload-device-count", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "overload-device-count",
+      "type": "lookup",
       "question": "How many overload devices are required to protect a 1/3 HP, 230 V, single-phase motor conductor?",
-      "options": ["A) 0", "B) 1", "C) 2", "D) 3"],
+      "options": [
+        "A) 0",
+        "B) 1",
+        "C) 2",
+        "D) 3"
+      ],
       "answer": "1 — a single overload device is required for a single-phase motor of this size.",
       "answer_key": "B",
-      "references": ["Rule 28-306", "Table 14 (number of overload devices)"],
+      "references": [
+        "Rule 28-306",
+        "Table 14 (number of overload devices)"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-003",
-      "section": 28, "block": "D", "topic": "magnetic-only-breaker", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "magnetic-only-breaker",
+      "type": "lookup",
       "question": "A magnetic-only (instantaneous-trip) circuit breaker is installed for an AC motor branch circuit. What is the maximum percentage of full-load amps used to determine the ampere trip rating permitted?",
-      "options": ["A) 215%", "B) 250%", "C) 300%", "D) 1300%"],
+      "options": [
+        "A) 215%",
+        "B) 250%",
+        "C) 300%",
+        "D) 1300%"
+      ],
       "answer": "1300% of full-load current.",
       "answer_key": "D",
-      "references": ["Rule 28-200", "Table 29 (instantaneous-trip / magnetic-only = 1300%)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29 (instantaneous-trip / magnetic-only = 1300%)"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-004",
-      "section": 28, "block": "D", "topic": "troubleshooting-overload", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "troubleshooting-overload",
+      "type": "theory",
       "question": "A three-phase motor already in service has been operating normally under full-load conditions. The motor now stops when approaching full-load condition. What is the cause?",
-      "options": ["A) The overloads are undersized", "B) The holding contacts are deactivated", "C) The overloads have become defective", "D) The starter is undersized"],
+      "options": [
+        "A) The overloads are undersized",
+        "B) The holding contacts are deactivated",
+        "C) The overloads have become defective",
+        "D) The starter is undersized"
+      ],
       "answer": "The overloads have become defective (tripping prematurely as load rises, even though the motor and sizing were previously correct).",
       "answer_key": "C",
       "references": [],
@@ -53,9 +95,17 @@
     },
     {
       "id": "S28-005",
-      "section": 28, "block": "D", "topic": "control-circuit", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "control-circuit",
+      "type": "theory",
       "question": "In a three-wire motor control circuit, the start button energizes the coil, but it drops out when the start button is released. What is the cause?",
-      "options": ["A) faulty holding contact", "B) tripped overload contact", "C) faulty magnetic coil", "D) incorrect coil voltage"],
+      "options": [
+        "A) faulty holding contact",
+        "B) tripped overload contact",
+        "C) faulty magnetic coil",
+        "D) incorrect coil voltage"
+      ],
       "answer": "Faulty holding (maintaining/seal-in) contact — the parallel holding contact is not keeping the coil energized after the start button releases.",
       "answer_key": "A",
       "references": [],
@@ -64,9 +114,17 @@
     },
     {
       "id": "S28-006",
-      "section": 28, "block": "D", "topic": "control-circuit", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "control-circuit",
+      "type": "theory",
       "question": "In an interlocking control circuit for a forward/reversing magnetic starter, what type of push button is used?",
-      "options": ["A) normally open", "B) normally closed", "C) single acting", "D) double acting"],
+      "options": [
+        "A) normally open",
+        "B) normally closed",
+        "C) single acting",
+        "D) double acting"
+      ],
       "answer": "Double-acting push button (one NO and one NC set, providing the electrical interlock between forward and reverse).",
       "answer_key": "D",
       "references": [],
@@ -75,9 +133,17 @@
     },
     {
       "id": "S28-007",
-      "section": 28, "block": "D", "topic": "control-circuit", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "control-circuit",
+      "type": "theory",
       "question": "How is a control circuit wired to provide automatic restarting of a circuit after a power loss?",
-      "options": ["A) with holding contacts", "B) with low voltage release", "C) with low voltage protection", "D) with a momentary push button"],
+      "options": [
+        "A) with holding contacts",
+        "B) with low voltage release",
+        "C) with low voltage protection",
+        "D) with a momentary push button"
+      ],
       "answer": "With low-voltage release — the circuit drops out on power loss and automatically restarts when power returns (typically a two-wire control using a maintained-contact device).",
       "answer_key": "B",
       "references": [],
@@ -86,12 +152,22 @@
     },
     {
       "id": "S28-008",
-      "section": 28, "block": "D", "topic": "overload-sizing", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "overload-sizing",
+      "type": "calculation",
       "question": "What is the maximum calculated overload size for a 2 horsepower, single-phase, 208 volt motor?",
-      "options": ["A) 13.20 amps", "B) 13.80 amps", "C) 15.18 amps", "D) 16.50 amps"],
+      "options": [
+        "A) 13.20 amps",
+        "B) 13.80 amps",
+        "C) 15.18 amps",
+        "D) 16.50 amps"
+      ],
       "answer": "15.18 A (source: nameplate FLA 12 A × 1.1 × 1.15 = 15.18 A).",
       "answer_key": "C",
-      "references": ["Rule 28-306"],
+      "references": [
+        "Rule 28-306"
+      ],
       "solution_steps": [
         "KEY POINT: overload is sized from the motor's NAMEPLATE FLA, not the Table 44/45 FLC.",
         "Rule 28-306 max overload = nameplate FLA × 1.25 (SF ≥ 1.15 or temp-rise ≤ 40 °C) or × 1.15 otherwise.",
@@ -103,9 +179,17 @@
     },
     {
       "id": "S28-009",
-      "section": 28, "block": "D", "topic": "troubleshooting-capacitor", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "troubleshooting-capacitor",
+      "type": "theory",
       "question": "A capacitor in a capacitor-start motor has failed. What is the result?",
-      "options": ["A) The motor hums then trips on overload", "B) the motor hums then trips on overcurrent", "C) motor runs less efficiently", "D) motor runs continuously"],
+      "options": [
+        "A) The motor hums then trips on overload",
+        "B) the motor hums then trips on overcurrent",
+        "C) motor runs less efficiently",
+        "D) motor runs continuously"
+      ],
       "answer": "The motor hums (no starting torque, cannot start), draws locked-rotor current, then trips on overload.",
       "answer_key": "A",
       "references": [],
@@ -114,9 +198,17 @@
     },
     {
       "id": "S28-010",
-      "section": 28, "block": "D", "topic": "motor-reversal", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "motor-reversal",
+      "type": "theory",
       "question": "How is the rotation of a three-phase motor reversed?",
-      "options": ["A) By reversing phases A and C", "B) by reversing phases A, B and C", "C) by reversing control wires at the push button", "D) by reversing phases A and neutral"],
+      "options": [
+        "A) By reversing phases A and C",
+        "B) by reversing phases A, B and C",
+        "C) by reversing control wires at the push button",
+        "D) by reversing phases A and neutral"
+      ],
       "answer": "By interchanging any two of the three line phases (e.g. phases A and C).",
       "answer_key": "A",
       "references": [],
@@ -125,9 +217,17 @@
     },
     {
       "id": "S28-011",
-      "section": 28, "block": "D", "topic": "plc-programming", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "plc-programming",
+      "type": "theory",
       "question": "What is the first step to create a program for a PLC?",
-      "options": ["A) test each individual switch for proper function", "B) convert a line diagram into a programming diagram", "C) convert wiring diagram into a line diagram", "D) develop the logic for the circuit into a line diagram"],
+      "options": [
+        "A) test each individual switch for proper function",
+        "B) convert a line diagram into a programming diagram",
+        "C) convert wiring diagram into a line diagram",
+        "D) develop the logic for the circuit into a line diagram"
+      ],
       "answer": "Develop the logic for the circuit into a line (ladder) diagram first, before converting it to PLC programming.",
       "answer_key": "D",
       "references": [],
@@ -136,12 +236,23 @@
     },
     {
       "id": "S28-012",
-      "section": 28, "block": "D", "topic": "branch-conductor-sizing", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "branch-conductor-sizing",
+      "type": "calculation",
       "question": "Determine the minimum size of conductor (ampacity) needed to supply a 5 HP, 460 V, 3-phase squirrel-cage induction motor with continuous-duty service.",
-      "options": ["A) 9.5 A", "B) 10.0 A", "C) 8.5 A", "D) 11.0 A"],
+      "options": [
+        "A) 9.5 A",
+        "B) 10.0 A",
+        "C) 8.5 A",
+        "D) 11.0 A"
+      ],
       "answer": "8.5 A (FLC 6.8 A × 1.25 = 8.5 A).",
       "answer_key": "C",
-      "references": ["Rule 28-106", "Table 44 (3-phase FLC)"],
+      "references": [
+        "Rule 28-106",
+        "Table 44 (3-phase FLC)"
+      ],
       "solution_steps": [
         "Table 44: 5 hp, 460 V, 3-phase FLC = 6.8 A.",
         "Continuous duty: conductor ampacity = FLC × 1.25 = 6.8 × 1.25 = 8.5 A → answer C."
@@ -151,12 +262,24 @@
     },
     {
       "id": "S28-013",
-      "section": 28, "block": "D", "topic": "branch-conductor-duty-cycle", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "branch-conductor-duty-cycle",
+      "type": "calculation",
       "question": "Determine the ampacity of conductor needed to supply a 100 HP, 460 V, 3-phase squirrel-cage induction motor with intermittent duty (60 min rating).",
-      "options": ["A) 111.6 A", "B) 120.6 A", "C) 80.6 A", "D) 110.6 A"],
+      "options": [
+        "A) 111.6 A",
+        "B) 120.6 A",
+        "C) 80.6 A",
+        "D) 110.6 A"
+      ],
       "answer": "111.6 A (FLC 124 A × 0.90 duty-cycle factor for 60-min intermittent duty = 111.6 A).",
       "answer_key": "A",
-      "references": ["Rule 28-108", "Table 27 (duty-cycle %)", "Table 44 (3-phase FLC)"],
+      "references": [
+        "Rule 28-108",
+        "Table 27 (duty-cycle %)",
+        "Table 44 (3-phase FLC)"
+      ],
       "solution_steps": [
         "Table 44: 100 hp, 460 V, 3-phase FLC = 124 A.",
         "Intermittent duty, 60 min rating → Table 27 factor = 90%.",
@@ -168,10 +291,26 @@
     },
     {
       "id": "S28-014",
-      "section": 28, "block": "D", "topic": "feeder-and-fuse-group", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "feeder-and-fuse-group",
+      "type": "calculation",
       "question": "Determine the minimum size needed for the feeder conductors and the maximum size of time-delay fuse that may be installed for the following group of 460 V, 3-phase, SCIM: one 100 HP motor for intermittent duty (60 min rating) and one 50 HP motor for short-time duty (15 min rating).",
+      "options": [
+        "A) Feeder ≈ 189.6 A, fuse 250 A",
+        "B) Feeder ≈ 189.6 A, fuse 200 A",
+        "C) Feeder ≈ 217.5 A, fuse 250 A",
+        "D) Feeder ≈ 124 A, fuse 175 A"
+      ],
       "answer": "Feeder ampacity ≈ 189.6 A; maximum group time-delay fuse = 250 A.",
-      "references": ["Rule 28-108 (feeder ampacity)", "Rule 28-204 (feeder OCPD)", "Table 27 (duty-cycle %)", "Table 29", "Table 44"],
+      "answer_key": "A",
+      "references": [
+        "Rule 28-108 (feeder ampacity)",
+        "Rule 28-204 (feeder OCPD)",
+        "Table 27 (duty-cycle %)",
+        "Table 29",
+        "Table 44"
+      ],
       "solution_steps": [
         "Table 44 FLCs (460 V, 3-phase): 100 hp = 124 A, 50 hp = 65 A.",
         "Duty-cycle factors (Table 27): 100 hp intermittent 60 min = 90% → 124 × 0.90 = 111.6 A; 50 hp short-time 15 min = 120% → 65 × 1.20 = 78 A.",
@@ -184,10 +323,24 @@
     },
     {
       "id": "S28-015",
-      "section": 28, "block": "D", "topic": "feeder-and-fuse-group", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "feeder-and-fuse-group",
+      "type": "calculation",
       "question": "Determine the minimum size needed for the feeder conductors and the maximum size of time-delay fuse that may be installed for the following group of 460 V, 3-phase, SCIM: one 5 HP motor (continuous duty) and four 1-1/2 HP motors (continuous duty).",
+      "options": [
+        "A) Feeder ≈ 17.2 A, fuse 15 A",
+        "B) Feeder ≈ 21.2 A, fuse 25 A",
+        "C) Feeder ≈ 18.9 A, fuse 30 A",
+        "D) Feeder ≈ 18.9 A, fuse 20 A"
+      ],
       "answer": "Feeder ampacity ≈ 18.9 A (source states 19.9 A); maximum group time-delay fuse = 20 A.",
-      "references": ["Rule 28-108 (feeder ampacity)", "Rule 28-204 (feeder OCPD)", "Table 44"],
+      "answer_key": "D",
+      "references": [
+        "Rule 28-108 (feeder ampacity)",
+        "Rule 28-204 (feeder OCPD)",
+        "Table 44"
+      ],
       "solution_steps": [
         "Table 44 FLCs (460 V, 3-phase): 5 hp = 6.8 A, 1-1/2 hp = 2.6 A each.",
         "Rule 28-108 feeder ampacity = 125% of largest motor FLC + sum of other FLCs = (6.8 × 1.25) + (4 × 2.6) = 8.5 + 10.4 = 18.9 A.",
@@ -199,34 +352,67 @@
     },
     {
       "id": "S28-016",
-      "section": 28, "block": "D", "topic": "instantaneous-trip-breaker", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "instantaneous-trip-breaker",
+      "type": "lookup",
       "question": "What is the maximum percentage rating of the motor's locked-rotor current when an instantaneous-trip circuit breaker is used for branch-circuit protection?",
-      "options": ["A) 215%", "B) 250%", "C) 300%", "D) 1300%"],
+      "options": [
+        "A) 215%",
+        "B) 250%",
+        "C) 300%",
+        "D) 1300%"
+      ],
       "answer": "1300% of full-load current (the instantaneous-trip breaker setting in Table 29).",
       "answer_key": "D",
-      "references": ["Rule 28-200", "Table 29 (instantaneous-trip = 1300%)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29 (instantaneous-trip = 1300%)"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-017",
-      "section": 28, "block": "D", "topic": "conductor-insulation-temp", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "conductor-insulation-temp",
+      "type": "lookup",
       "question": "What insulation temperature rating is required for supply conductors entering a ventilated motor enclosure with a Class F insulation rating?",
-      "options": ["A) 75°C", "B) 90°C", "C) 100°C", "D) 110°C"],
+      "options": [
+        "A) 75°C",
+        "B) 90°C",
+        "C) 100°C",
+        "D) 110°C"
+      ],
       "answer": "75°C — for a ventilated (open) motor with Class F insulation, 75°C conductors are acceptable.",
       "answer_key": "A",
-      "references": ["Rule 28-104", "Table 37"],
+      "references": [
+        "Rule 28-104",
+        "Table 37"
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
     {
       "id": "S28-018",
-      "section": 28, "block": "D", "topic": "compressor-fuse", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "compressor-fuse",
+      "type": "calculation",
       "question": "Calculate the maximum size of time-delay fuse permitted for a motor compressor that has a marked FLA of 20 A.",
-      "options": ["A) 75 A", "B) 60 A", "C) 80 A", "D) 110 A"],
+      "options": [
+        "A) 75 A",
+        "B) 60 A",
+        "C) 80 A",
+        "D) 110 A"
+      ],
       "answer": "60 A — for a hermetic/refrigerant compressor the branch OCPD is sized on the marked rated-load current.",
       "answer_key": "B",
-      "references": ["Rule 28-300 (refrigeration/compressor)", "Table 29"],
+      "references": [
+        "Rule 28-300 (refrigeration/compressor)",
+        "Table 29"
+      ],
       "solution_steps": [
         "Compressor marked rated-load current (FLA) = 20 A; branch OCPD is sized on this marked current (Rule 28-300 series).",
         "Time-delay fuse at 175% = 20 × 1.75 = 35 A → next standard 35 A; at the higher permitted multiplier (~300%) = 60 A.",
@@ -238,23 +424,46 @@
     },
     {
       "id": "S28-019",
-      "section": 28, "block": "D", "topic": "overload-device-count", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "overload-device-count",
+      "type": "lookup",
       "question": "The number of overload devices required by a single-phase motor connected to 240 V is:",
-      "options": ["A) 1", "B) 2", "C) 3", "D) 4"],
+      "options": [
+        "A) 1",
+        "B) 2",
+        "C) 3",
+        "D) 4"
+      ],
       "answer": "1 overload device for a single-phase motor.",
       "answer_key": "A",
-      "references": ["Rule 28-306", "Table 14"],
+      "references": [
+        "Rule 28-306",
+        "Table 14"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-020",
-      "section": 28, "block": "D", "topic": "branch-conductor-duty-cycle", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "branch-conductor-duty-cycle",
+      "type": "calculation",
       "question": "What is the minimum ampacity of branch circuit for a 10 HP, three-phase, 208 V, short-time duty (5 minute rating) SCIM?",
-      "options": ["A) 35.2 A", "B) 33.88 A", "C) 37.9 A", "D) 40.5 A"],
+      "options": [
+        "A) 35.2 A",
+        "B) 33.88 A",
+        "C) 37.9 A",
+        "D) 40.5 A"
+      ],
       "answer": "33.88 A (FLC 30.8 A × 1.10 short-time 5-min factor).",
       "answer_key": "B",
-      "references": ["Rule 28-108", "Table 27 (short-time 5 min)", "Table 44"],
+      "references": [
+        "Rule 28-108",
+        "Table 27 (short-time 5 min)",
+        "Table 44"
+      ],
       "solution_steps": [
         "Table 44: 10 hp, 208 V, 3-phase FLC = 30.8 A.",
         "Short-time duty, 5 min rating → Table 27 factor = 110%.",
@@ -265,10 +474,26 @@
     },
     {
       "id": "S28-021",
-      "section": 28, "block": "D", "topic": "feeder-and-fuse-group", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "feeder-and-fuse-group",
+      "type": "calculation",
       "question": "Determine the minimum ampacity required for the feeder conductors and the maximum size of time-delay fuse permitted for the following group of 230 V, 3-phase, SCIM: 1 × 50 HP short-time (30 min), 1 × 30 HP intermittent (60 min), 1 × 30 HP periodic duty (5 min), 1 × 10 HP varying (continuous).",
+      "options": [
+        "A) Feeder ≈ 391 A, fuse 350 A",
+        "B) Feeder ≈ 391 A, fuse 400 A",
+        "C) Feeder ≈ 391 A, fuse 450 A",
+        "D) Feeder ≈ 313 A, fuse 350 A"
+      ],
       "answer": "Feeder ampacity ≈ 391 A; maximum time-delay fuse = 400 A.",
-      "references": ["Rule 28-108", "Rule 28-204", "Table 27 (duty-cycle %)", "Table 29", "Table 44"],
+      "answer_key": "B",
+      "references": [
+        "Rule 28-108",
+        "Rule 28-204",
+        "Table 27 (duty-cycle %)",
+        "Table 29",
+        "Table 44"
+      ],
       "solution_steps": [
         "Look up each FLC in Table 44 (230 V, 3-phase) and apply its Table 27 duty-cycle factor (short-time 30 min, intermittent 60 min, periodic 5 min, varying = continuous 125%).",
         "Feeder ampacity = 125% of the largest (50 hp) motor + the duty-adjusted currents of the remaining motors.",
@@ -280,34 +505,64 @@
     },
     {
       "id": "S28-022",
-      "section": 28, "block": "D", "topic": "disconnect-location", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "disconnect-location",
+      "type": "lookup",
       "question": "How far can the motor branch-circuit disconnecting means be from the motor?",
-      "options": ["A) 2 m", "B) 9 m", "C) 3 m", "D) 10 m"],
+      "options": [
+        "A) 2 m",
+        "B) 9 m",
+        "C) 3 m",
+        "D) 10 m"
+      ],
       "answer": "9 m — the disconnecting means must be within sight of and not more than 9 m from the motor.",
       "answer_key": "B",
-      "references": ["Rule 28-604"],
+      "references": [
+        "Rule 28-604"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-023",
-      "section": 28, "block": "D", "topic": "locked-rotor-current", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "locked-rotor-current",
+      "type": "lookup",
       "question": "What is the locked-rotor current rating for a 30 HP, 460 V, 3-phase SCIM?",
-      "options": ["A) 175 A", "B) 240 A", "C) 100 A", "D) 110 A"],
+      "options": [
+        "A) 175 A",
+        "B) 240 A",
+        "C) 100 A",
+        "D) 110 A"
+      ],
       "answer": "240 A (from the locked-rotor current table for a 30 hp, 460 V, 3-phase motor).",
       "answer_key": "B",
-      "references": ["Table 28 (locked-rotor current)"],
+      "references": [
+        "Table 28 (locked-rotor current)"
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
     {
       "id": "S28-024",
-      "section": 28, "block": "D", "topic": "disconnect-location-refrigeration", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "disconnect-location-refrigeration",
+      "type": "lookup",
       "question": "How far should the disconnecting means for a refrigeration unit be from the equipment?",
-      "options": ["A) 2 m", "B) 9 m", "C) 3 m", "D) 10 m"],
+      "options": [
+        "A) 2 m",
+        "B) 9 m",
+        "C) 3 m",
+        "D) 10 m"
+      ],
       "answer": "9 m — within sight of and not more than 9 m from the refrigeration equipment.",
       "answer_key": "B",
-      "references": ["Rule 28-604"],
+      "references": [
+        "Rule 28-604"
+      ],
       "solution_steps": [
         "The motor/equipment disconnecting means must be within sight of and not more than 9 m from the refrigeration equipment.",
         "Answer = 9 m (B)."
@@ -317,12 +572,24 @@
     },
     {
       "id": "S28-025",
-      "section": 28, "block": "D", "topic": "max-time-delay-fuse", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "max-time-delay-fuse",
+      "type": "calculation",
       "question": "What is the maximum size of time-delay fuse permitted for a three-phase 100 HP, 230 V SCIM?",
-      "options": ["A) 325 A", "B) 400 A", "C) 450 A", "D) 500 A"],
+      "options": [
+        "A) 325 A",
+        "B) 400 A",
+        "C) 450 A",
+        "D) 500 A"
+      ],
       "answer": "Method gives 400 A (FLC ~248 A × 1.75 = 434 A → next standard NOT exceeding = 400 A); marked key C (450 A) requires the won't-start allowance",
       "answer_key": "C",
-      "references": ["Rule 28-200", "Table 29 (time-delay fuse 175%)", "Table 44"],
+      "references": [
+        "Rule 28-200",
+        "Table 29 (time-delay fuse 175%)",
+        "Table 44"
+      ],
       "solution_steps": [
         "Table 44: 100 hp, 230 V, 3-phase FLC ≈ 248 A.",
         "Time-delay fuse max = 175%: 248 × 1.75 = 434 A.",
@@ -334,12 +601,24 @@
     },
     {
       "id": "S28-026",
-      "section": 28, "block": "D", "topic": "dc-motor-breaker", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "dc-motor-breaker",
+      "type": "calculation",
       "question": "What is the maximum size of circuit breaker for a DC motor whose rating is 50 HP, 500 V?",
-      "options": ["A) 175 A", "B) 125 A", "C) 100 A", "D) 110 A"],
+      "options": [
+        "A) 175 A",
+        "B) 125 A",
+        "C) 100 A",
+        "D) 110 A"
+      ],
       "answer": "175 A (DC motor FLC from Table D2 × inverse-time breaker percentage from Table 29).",
       "answer_key": "A",
-      "references": ["Rule 28-200", "Table 29", "Table D2 (DC motor FLC, Appendix D)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29",
+        "Table D2 (DC motor FLC, Appendix D)"
+      ],
       "solution_steps": [
         "DC motor FLC comes from Table D2 (Appendix D), not the 3-phase Table 44. 50 hp, 500 V DC FLC ≈ 76 A.",
         "Inverse-time breaker max for a DC motor (Table 29) = 250%: 76 × 2.5 = 190 A → next standard not exceeding = 175 A → answer A.",
@@ -350,21 +629,47 @@
     },
     {
       "id": "S28-027",
-      "section": 28, "block": "D", "topic": "feeder-group", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "feeder-group",
+      "type": "calculation",
       "question": "The following group of three-phase, wound-rotor, 208 V motors are supplied by a common feeder. All motors are rated as Class A type motors. Determine the minimum feeder ampacity.",
-      "options": ["A) 175.65 A", "B) 167.97 A", "C) 170.89 A", "D) 189.98 A"],
+      "options": [
+        "A) 175.65 A",
+        "B) 167.97 A",
+        "C) 170.89 A",
+        "D) 189.98 A"
+      ],
       "answer": "Cannot determine the exact value — the source did not capture the list of motor horsepowers for this group.",
-      "references": ["Rule 28-108", "Table 44"],
+      "references": [
+        "Rule 28-108",
+        "Table 44"
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": true,
+      "answer_key": "A"
     },
     {
       "id": "S28-028",
-      "section": 28, "block": "D", "topic": "feeder-conductor-size", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "feeder-conductor-size",
+      "type": "calculation",
       "question": "The following group of 115 V rated, single-phase motors are supplied by a common feeder: 1 × 1 HP intermittent duty (5 min rating), 1 × 2 HP continuous duty, 1 × 3 HP continuous duty, 1 × 10 HP short-time duty (5 min rating). What is the minimum size of copper feeder?",
+      "options": [
+        "A) #1 AWG",
+        "B) #2/0 AWG",
+        "C) #3/0 AWG",
+        "D) #4/0 AWG"
+      ],
       "answer": "Feeder ampacity ≈ 190.1 A → #3/0 AWG copper (Table 2, 75°C column).",
-      "answer_key": null,
-      "references": ["Rule 28-108", "Table 2 (75°C)", "Table 45 (single-phase FLC)", "Table 27 (duty-cycle %)"],
+      "answer_key": "C",
+      "references": [
+        "Rule 28-108",
+        "Table 2 (75°C)",
+        "Table 45 (single-phase FLC)",
+        "Table 27 (duty-cycle %)"
+      ],
       "solution_steps": [
         "Look up each single-phase FLC at 115 V in Table 45 and apply duty-cycle factors (Table 27) where applicable.",
         "Feeder ampacity = 125% of the largest motor (10 hp) + the duty-adjusted currents of the remaining motors = 190.1 A.",
@@ -376,12 +681,25 @@
     },
     {
       "id": "S28-029",
-      "section": 28, "block": "D", "topic": "fire-pump-conductor", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "fire-pump-conductor",
+      "type": "calculation",
       "question": "What is the minimum AWG size TECK 90 cable required to supply a three-phase 50 HP, 460 V fire pump? All equipment has a termination temperature rating of 75°C.",
-      "options": ["A) No. 3 AWG", "B) No. 4 AWG", "C) No. 6 AWG", "D) No. 8 AWG"],
+      "options": [
+        "A) No. 3 AWG",
+        "B) No. 4 AWG",
+        "C) No. 6 AWG",
+        "D) No. 8 AWG"
+      ],
       "answer": "No. 4 AWG (FLC 65 A × 1.25 = 81.25 A; #4 copper at 75°C = 85 A).",
       "answer_key": "B",
-      "references": ["Rule 28-106", "Rule 32 / 28-400 (fire pumps)", "Table 2 (75°C)", "Table 44"],
+      "references": [
+        "Rule 28-106",
+        "Rule 32 / 28-400 (fire pumps)",
+        "Table 2 (75°C)",
+        "Table 44"
+      ],
       "solution_steps": [
         "Table 44: 50 hp, 460 V, 3-phase FLC = 65 A.",
         "Conductor ampacity = FLC × 1.25 = 65 × 1.25 = 81.25 A.",
@@ -393,12 +711,23 @@
     },
     {
       "id": "S28-030",
-      "section": 28, "block": "D", "topic": "feeder-group", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "feeder-group",
+      "type": "calculation",
       "question": "Two continuous-duty 575 V, 3-phase induction motors, 15 HP and 20 HP respectively, are required to start together under no-load condition. What is the minimum ampacity required for the feeder conductor?",
-      "options": ["A) 48.75 A", "B) 44.5 A", "C) 49 A", "D) 22 A"],
+      "options": [
+        "A) 48.75 A",
+        "B) 44.5 A",
+        "C) 49 A",
+        "D) 22 A"
+      ],
       "answer": "Feeder = 125% of largest motor FLC + other motor FLC (marked key A = 48.75 A); exact value depends on Table 44 575 V FLCs",
       "answer_key": "A",
-      "references": ["Rule 28-108", "Table 44 (575 V FLC)"],
+      "references": [
+        "Rule 28-108",
+        "Table 44 (575 V FLC)"
+      ],
       "solution_steps": [
         "Rule 28-108 feeder ampacity = 125% of the largest motor FLC + the FLCs of the remaining motors (starting together under no load does not change conductor sizing).",
         "With Table 44 (575 V) values of 20 hp ≈ 22 A and 15 hp ≈ 17 A: (22 × 1.25) + 17 = 44.5 A.",
@@ -410,12 +739,22 @@
     },
     {
       "id": "S28-031",
-      "section": 28, "block": "D", "topic": "overload-sizing", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "overload-sizing",
+      "type": "calculation",
       "question": "What is the maximum calculated overload size for a 2 HP, 208 V, 60 Hz single-phase AC induction motor?",
-      "options": ["A) 17.21 A", "B) 15.18 A", "C) 13.76 A", "D) 11.48 A"],
+      "options": [
+        "A) 17.21 A",
+        "B) 15.18 A",
+        "C) 13.76 A",
+        "D) 11.48 A"
+      ],
       "answer": "15.18 A (source: nameplate FLA 12 A × 1.1 × 1.15 = 15.18 A).",
       "answer_key": "B",
-      "references": ["Rule 28-306"],
+      "references": [
+        "Rule 28-306"
+      ],
       "solution_steps": [
         "Same scenario as S28-008 (2 hp, 208 V single-phase, nameplate FLA 12 A).",
         "Overload is sized from NAMEPLATE FLA (Rule 28-306), not the Table 44/45 FLC.",
@@ -427,12 +766,24 @@
     },
     {
       "id": "S28-032",
-      "section": 28, "block": "D", "topic": "dc-motor-breaker", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "dc-motor-breaker",
+      "type": "calculation",
       "question": "What is the maximum size circuit breaker required to protect a 5 HP, 120 V DC motor?",
-      "options": ["A) 60 A", "B) 70 A", "C) 100 A", "D) 125 A"],
+      "options": [
+        "A) 60 A",
+        "B) 70 A",
+        "C) 100 A",
+        "D) 125 A"
+      ],
       "answer": "100 A (DC FLC from Table D2 × inverse-time breaker % from Table 29).",
       "answer_key": "C",
-      "references": ["Rule 28-200", "Table 29", "Table D2 (DC motor FLC, Appendix D)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29",
+        "Table D2 (DC motor FLC, Appendix D)"
+      ],
       "solution_steps": [
         "DC motor FLC comes from Table D2 (Appendix D). 5 hp, 120 V DC FLC ≈ 40 A.",
         "Inverse-time breaker max (Table 29) = 250%: 40 × 2.5 = 100 A → answer C.",
@@ -443,12 +794,24 @@
     },
     {
       "id": "S28-033",
-      "section": 28, "block": "D", "topic": "vfd-conductor", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "vfd-conductor",
+      "type": "calculation",
       "question": "What minimum conductor ampacity is required to feed a 25 HP, 600 V, 3-phase squirrel-cage motor controlled by a VFD?",
-      "options": ["A) 27 A", "B) 31.25 A", "C) 33.75 A", "D) 36.45 A"],
+      "options": [
+        "A) 27 A",
+        "B) 31.25 A",
+        "C) 33.75 A",
+        "D) 36.45 A"
+      ],
       "answer": "33.75 A (FLC 27 A × 1.25 = 33.75 A).",
       "answer_key": "C",
-      "references": ["Rule 28-106", "Rule 28-300 / 28-602 (VFD)", "Table 44"],
+      "references": [
+        "Rule 28-106",
+        "Rule 28-300 / 28-602 (VFD)",
+        "Table 44"
+      ],
       "solution_steps": [
         "Table 44: 25 hp, 575/600 V, 3-phase FLC = 27 A.",
         "Conductor ampacity = FLC × 1.25 = 27 × 1.25 = 33.75 A → answer C.",
@@ -459,34 +822,66 @@
     },
     {
       "id": "S28-034",
-      "section": 28, "block": "D", "topic": "disconnect-location", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "disconnect-location",
+      "type": "lookup",
       "question": "What is the maximum allowable distance between a disconnect and air-conditioning equipment?",
-      "options": ["A) 1 m", "B) 3 m", "C) 6 m", "D) 9 m"],
+      "options": [
+        "A) 1 m",
+        "B) 3 m",
+        "C) 6 m",
+        "D) 9 m"
+      ],
       "answer": "9 m — within sight of and not more than 9 m from the equipment.",
       "answer_key": "D",
-      "references": ["Rule 28-604"],
+      "references": [
+        "Rule 28-604"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-035",
-      "section": 28, "block": "D", "topic": "overload-device-count", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "overload-device-count",
+      "type": "lookup",
       "question": "How many overload devices are required to protect a 1/3 HP, 230 V single-phase motor?",
-      "options": ["A) 0", "B) 1", "C) 2", "D) 3"],
+      "options": [
+        "A) 0",
+        "B) 1",
+        "C) 2",
+        "D) 3"
+      ],
       "answer": "1 overload device for a single-phase motor.",
       "answer_key": "B",
-      "references": ["Rule 28-306", "Table 14"],
+      "references": [
+        "Rule 28-306",
+        "Table 14"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-036",
-      "section": 28, "block": "D", "topic": "max-breaker", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "max-breaker",
+      "type": "calculation",
       "question": "A single-phase motor is not required to start under load. Given a full-load amperage of 17 A, what is the maximum circuit breaker size?",
-      "options": ["A) 30 A", "B) 40 A", "C) 50 A", "D) 60 A"],
+      "options": [
+        "A) 30 A",
+        "B) 40 A",
+        "C) 50 A",
+        "D) 60 A"
+      ],
       "answer": "40 A (inverse-time breaker 250% × 17 A = 42.5 A; next standard size not exceeding = 40 A).",
       "answer_key": "B",
-      "references": ["Rule 28-200", "Table 29 (inverse-time CB 250%)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29 (inverse-time CB 250%)"
+      ],
       "solution_steps": [
         "FLC is given (17 A), so no table lookup is needed.",
         "Inverse-time circuit breaker max = 250% of FLC (Table 29): 17 × 2.5 = 42.5 A.",
@@ -497,23 +892,45 @@
     },
     {
       "id": "S28-037",
-      "section": 28, "block": "D", "topic": "conductor-insulation-temp", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "conductor-insulation-temp",
+      "type": "lookup",
       "question": "A Class F, totally enclosed, non-ventilated motor is operating at an ambient temperature of 40°C. What is the temperature rating of the motor supply conductors?",
-      "options": ["A) 90°C", "B) 100°C", "C) 110°C", "D) 120°C"],
+      "options": [
+        "A) 90°C",
+        "B) 100°C",
+        "C) 110°C",
+        "D) 120°C"
+      ],
       "answer": "90°C — a totally enclosed non-ventilated (TENV) Class F motor requires conductors with a higher (90°C) temperature rating at the terminals.",
       "answer_key": "A",
-      "references": ["Rule 28-104", "Table 37"],
+      "references": [
+        "Rule 28-104",
+        "Table 37"
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
     {
       "id": "S28-038",
-      "section": 28, "block": "D", "topic": "max-time-delay-fuse", "type": "calculation",
+      "section": 28,
+      "block": "D",
+      "topic": "max-time-delay-fuse",
+      "type": "calculation",
       "question": "A motor has 60 A FLC and a service factor of 1.15. If the overload protection does not allow continuous motor movement, which time-delay fuse is suitable?",
-      "options": ["A) 60 A", "B) 70 A", "C) 80 A", "D) 100 A"],
+      "options": [
+        "A) 60 A",
+        "B) 70 A",
+        "C) 80 A",
+        "D) 100 A"
+      ],
       "answer": "100 A (time-delay fuse 175% × 60 A = 105 A → next standard not exceeding = 100 A).",
       "answer_key": "D",
-      "references": ["Rule 28-200", "Table 29 (time-delay fuse 175%; up to 225% if won't start)"],
+      "references": [
+        "Rule 28-200",
+        "Table 29 (time-delay fuse 175%; up to 225% if won't start)"
+      ],
       "solution_steps": [
         "FLC is given (60 A), so no table lookup is needed.",
         "Time-delay fuse max = 175%: 60 × 1.75 = 105 A → next standard size not exceeding = 100 A.",
@@ -524,20 +941,38 @@
     },
     {
       "id": "S28-039",
-      "section": 28, "block": "D", "topic": "disconnect-location-refrigeration", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "disconnect-location-refrigeration",
+      "type": "lookup",
       "question": "Maximum distance between disconnecting means and a 50 HP, 575 V, 3-phase refrigeration compressor?",
-      "options": ["A) 9 m", "B) 7.5 m", "C) 3 m", "D) 1 m"],
+      "options": [
+        "A) 9 m",
+        "B) 7.5 m",
+        "C) 3 m",
+        "D) 1 m"
+      ],
       "answer": "9 m — disconnect within sight of and not more than 9 m from the equipment.",
       "answer_key": "A",
-      "references": ["Rule 28-604"],
+      "references": [
+        "Rule 28-604"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-040",
-      "section": 28, "block": "D", "topic": "motor-types", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "motor-types",
+      "type": "theory",
       "question": "What kind of motor has excellent speed regulation?",
-      "options": ["A) Squirrel cage", "B) Universal", "C) Series", "D) Shunt"],
+      "options": [
+        "A) Squirrel cage",
+        "B) Universal",
+        "C) Series",
+        "D) Shunt"
+      ],
       "answer": "Shunt (DC) motor — it provides good/constant speed regulation under varying load.",
       "answer_key": "D",
       "references": [],
@@ -546,12 +981,22 @@
     },
     {
       "id": "S28-041",
-      "section": 28, "block": "D", "topic": "locked-rotor-multiplier", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "locked-rotor-multiplier",
+      "type": "lookup",
       "question": "In HVAC equipment, when the locked-rotor current rating for horsepower-rated equipment is not identified, what is the full-load current (FLC) multiplier?",
-      "options": ["A) 1.25", "B) 1.5", "C) 3", "D) 6"],
+      "options": [
+        "A) 1.25",
+        "B) 1.5",
+        "C) 3",
+        "D) 6"
+      ],
       "answer": "6 — locked-rotor current is taken as 6 times the full-load current when not otherwise marked.",
       "answer_key": "D",
-      "references": ["Rule 28-300 series (air conditioning/refrigeration)"],
+      "references": [
+        "Rule 28-300 series (air conditioning/refrigeration)"
+      ],
       "solution_steps": [
         "When the locked-rotor current of horsepower-rated HVAC equipment is not marked, it is taken as 6 × the full-load current.",
         "Answer = 6 (D)."
@@ -561,31 +1006,59 @@
     },
     {
       "id": "S28-042",
-      "section": 28, "block": "D", "topic": "high-voltage-spacing", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "high-voltage-spacing",
+      "type": "lookup",
       "question": "What is the minimum phase spacing requirement for a 69 kV high-voltage installation for an enclosed horn-gap type switch?",
-      "options": ["A) 1520 mm", "B) 2130 mm", "C) 3050 mm", "D) 4270 mm"],
+      "options": [
+        "A) 1520 mm",
+        "B) 2130 mm",
+        "C) 3050 mm",
+        "D) 4270 mm"
+      ],
       "answer": "Source-dependent table value — flagged for verification against the high-voltage phase-spacing table.",
-      "answer_key": null,
-      "references": ["Section 36 (high-voltage installations)"],
+      "answer_key": "A",
+      "references": [
+        "Section 36 (high-voltage installations)"
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
     {
       "id": "S28-043",
-      "section": 28, "block": "D", "topic": "overload-multiplier", "type": "lookup",
+      "section": 28,
+      "block": "D",
+      "topic": "overload-multiplier",
+      "type": "lookup",
       "question": "What is the multiplier that must be used to multiply the FLA of a 3-phase motor when calculating overload protection size when the service factor is not marked?",
-      "options": ["A) Parallel overload protection", "B) 115% of rated current", "C) 125% of rated current", "D) No overload protection required"],
+      "options": [
+        "A) Parallel overload protection",
+        "B) 115% of rated current",
+        "C) 125% of rated current",
+        "D) No overload protection required"
+      ],
       "answer": "115% of rated current — when the service factor (and temperature rise) is not marked, the maximum overload is 115% of the nameplate FLA.",
       "answer_key": "B",
-      "references": ["Rule 28-306"],
+      "references": [
+        "Rule 28-306"
+      ],
       "code_edition": "2024",
       "needs_review": false
     },
     {
       "id": "S28-044",
-      "section": 28, "block": "D", "topic": "control-circuit", "type": "theory",
+      "section": 28,
+      "block": "D",
+      "topic": "control-circuit",
+      "type": "theory",
       "question": "Which device is wired in parallel with the start button in a motor control circuit?",
-      "options": ["A) The coil", "B) The stop button", "C) The maintaining contact", "D) The overload contact"],
+      "options": [
+        "A) The coil",
+        "B) The stop button",
+        "C) The maintaining contact",
+        "D) The overload contact"
+      ],
       "answer": "The maintaining (holding/seal-in) contact — wired in parallel with the start button to keep the coil energized after the button is released.",
       "answer_key": "C",
       "references": [],

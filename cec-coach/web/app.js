@@ -209,7 +209,9 @@
   }
 
   function startQuiz(list, mode, timed) {
-    if (!list.length) { alert("No questions available for that selection yet."); return; }
+    // safety: never show a card you can't answer
+    list = (list || []).filter(function (q) { return (q.options || []).length >= 2 && q.answer_key; });
+    if (!list.length) { alert("No answerable questions in that selection yet."); return; }
     Q = { list: list, i: 0, correct: 0, mode: mode, answered: false, timer: null, endAt: 0, answers: [] };
     show("quiz");
     if (timed) {

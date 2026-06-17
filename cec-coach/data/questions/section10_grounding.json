@@ -8,7 +8,9 @@
       "type": "lookup",
       "topic": "grounding-conductor-sizing",
       "question": "What is the minimum size of grounding conductor required where a field-assembled grounding electrode is used as the grounding means for the following services: a) 150 A, service conductor 1/0 RW75; b) 400 A, 600 kcmil R90; c) 250 A, 350 kcmil TW (60°C); d) 500 A, 750 kcmil R90?",
+      "options": ["A) #6 Cu", "B) #4 Cu", "C) #3 Cu", "D) #2 Cu"],
       "answer": "a) #4 (confirmed); b) c) d) require the full Table 43 bands above 200 A — see steps",
+      "answer_key": "B",
       "references": ["Rule 10-114", "Table 43", "Table 2"],
       "solution_steps": [
         "Correct method (per class notes): the grounding conductor to a field-assembled electrode is sized from Table 43, keyed to the AMPACITY OF THE LARGEST SERVICE CONDUCTOR — NOT the breaker rating and NOT the load current. The earlier 'Table 17' reference was wrong; electrode sizing is Table 43 (bonding is Table 16).",
@@ -28,7 +30,9 @@
       "type": "lookup",
       "topic": "electrode-spacing",
       "question": "The minimum spacing required between the two grounding electrodes installed in an electrical service is ........ m.",
+      "options": ["A) 1.5 m", "B) 2 m", "C) 3 m", "D) 6 m"],
       "answer": "3 m",
+      "answer_key": "C",
       "references": ["Rule 10-102", "Rule 10-104"],
       "solution_steps": [
         "Rule 10-104: where a grounding electrode consists of two or more rod/plate electrodes, they must be spaced not less than 3 m apart so their earth-resistance spheres do not overlap.",
@@ -44,7 +48,9 @@
       "type": "theory",
       "topic": "bare-grounding-conductor-raceway",
       "question": "Could a bare system grounding conductor be run together with the other system conductors in a 15 m length of conduit that contains one 90° and three 45° bends?",
+      "options": ["A) Yes — within both the 15 m and 360° limits", "B) No — exceeds the 15 m limit", "C) No — exceeds 360° of bends", "D) Only if the conductor is insulated"],
       "answer": "Yes — a 15 m run with 225° of bends is within both limits (≤15 m and ≤360° / four quarter-bends), so a bare system grounding conductor may share the raceway.",
+      "answer_key": "A",
       "references": ["Rule 10-806", "Rule 12-940"],
       "solution_steps": [
         "Rule 10-806: a bare (non-insulated) system grounding conductor is permitted in the same raceway as the system conductors where the run does not exceed 15 m (see S10-014).",
@@ -62,7 +68,9 @@
       "type": "lookup",
       "topic": "equipotential-bonding",
       "question": "The size of an equipotential bonding conductor must not be less than ........ if aluminum and ........ if copper.",
+      "options": ["A) #6 Al and #8 Cu", "B) #4 Al and #6 Cu", "C) #2 Al and #4 Cu", "D) #6 Al and #6 Cu"],
       "answer": "#4 AWG if aluminum and #6 AWG if copper",
+      "answer_key": "B",
       "references": ["Rule 10-406"],
       "solution_steps": [
         "Rule 10-406 (equipotential bonding) sets the minimum continuous bonding conductor size for equipotential bonding.",
@@ -79,7 +87,9 @@
       "type": "lookup",
       "topic": "field-assembled-electrode",
       "question": "A field-assembled grounding electrode shall consist of a bare copper conductor of length ........ m.",
+      "options": ["A) 3 m", "B) 6 m", "C) 9 m", "D) 12 m"],
       "answer": "6 m",
+      "answer_key": "B",
       "references": ["Rule 10-102"],
       "solution_steps": [
         "Rule 10-102: a field-assembled (concrete-encased) grounding electrode consists of at least 6 m of bare copper conductor (not smaller than #4 AWG).",
@@ -95,7 +105,9 @@
       "type": "lookup",
       "topic": "field-assembled-electrode",
       "question": "A field-assembled grounding electrode should be encased within the bottom ........ mm of a concrete foundation footing in direct contact with earth at not less than ........ mm below finished grade.",
+      "options": ["A) 25 mm of concrete; 300 mm below grade", "B) 50 mm of concrete; 450 mm below grade", "C) 50 mm of concrete; 600 mm below grade", "D) 75 mm of concrete; 600 mm below grade"],
       "answer": "50 mm of concrete; not less than 600 mm below finished grade",
+      "answer_key": "C",
       "references": ["Rule 10-102"],
       "solution_steps": [
         "Rule 10-102: the bare copper conductor is encased within the bottom 50 mm of a concrete foundation footing that is in direct contact with earth.",
@@ -112,7 +124,9 @@
       "type": "lookup",
       "topic": "grounding-conductor-sizing",
       "question": "What minimum size field-assembled copper grounding electrode would be required for a 100 A consumer service fed with #3 R90 copper conductors in a raceway?",
+      "options": ["A) #6 Cu", "B) #4 Cu", "C) #3 Cu", "D) #2 Cu"],
       "answer": "#4 AWG copper",
+      "answer_key": "B",
       "references": ["Rule 10-114", "Table 43", "Table 2"],
       "solution_steps": [
         "Electrode-conductor sizing is by Table 43, keyed to the AMPACITY OF THE SERVICE CONDUCTOR (not the breaker, not the load). The earlier 'Table 17' reference was wrong.",
@@ -130,7 +144,9 @@
       "type": "lookup",
       "topic": "grounding-conductor-sizing",
       "question": "What is the smallest size copper ground wire connected to a manufactured grounding electrode required for a 200 A residential consumer service fed with #3/0 R90 copper conductors?",
+      "options": ["A) #8 Cu", "B) #6 Cu", "C) #4 Cu", "D) #2 Cu"],
       "answer": "#6 AWG copper",
+      "answer_key": "B",
       "references": ["Rule 10-114"],
       "solution_steps": [
         "Rule 10-114: the grounding conductor run to a manufactured (rod/plate) grounding electrode need not be larger than #6 Cu, regardless of service size.",
@@ -147,7 +163,9 @@
       "type": "lookup",
       "topic": "bonding-conductor-sizing",
       "question": "A branch circuit is protected with a 40 A circuit breaker using No. 8 T90 copper conductors. What minimum size field-installed copper bonding conductor would be used if one were required in the raceway?",
+      "options": ["A) #12 Cu", "B) #10 Cu", "C) #8 Cu", "D) #6 Cu"],
       "answer": "#10 AWG copper",
+      "answer_key": "B",
       "references": ["Rule 10-614", "Rule 10-616", "Table 16"],
       "solution_steps": [
         "Rule 10-614/10-616: a bonding conductor is sized from the rating of the overcurrent device ahead of it, using Table 16 (ampere rating of OCPD → minimum copper bond).",
