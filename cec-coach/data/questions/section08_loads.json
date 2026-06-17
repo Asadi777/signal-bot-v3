@@ -399,17 +399,19 @@
       "topic": "voltage-drop-conductor-sizing",
       "question": "When feeding a 240 V, 30 A load at a distance of 60 m, which size copper conductor is required to limit voltage drop to 2%?",
       "options": ["A) #3 AWG", "B) #4 AWG", "C) #6 AWG", "D) #8 AWG"],
-      "answer": "#6 AWG",
-      "answer_key": "C",
+      "answer": "#4 AWG by calculation (source said #6 AWG — see note)",
+      "answer_key": "B",
       "references": ["Rule 8-102", "Table D3"],
       "solution_steps": [
-        "Allowed voltage drop = 2% × 240 V = 4.8 V.",
-        "Using the voltage-drop method (or Table D3) for 30 A over a one-way distance of 60 m (120 m total run), find the copper size keeping drop ≤ 4.8 V.",
-        "From Table D3 / Vd = (mV/A·m factor × A × length) ÷ 1000, #6 AWG copper meets the 2% limit while smaller sizes exceed it.",
-        "Result: #6 AWG (option C)."
+        "Allowed drop = 2% × 240 V = 4.8 V.",
+        "Vd = 2 × k × L × I ÷ cmil, with k ≈ 12.9 Ω·cmil/ft (copper), one-way L = 60 m = 196.85 ft, I = 30 A.",
+        "#6 (26 240 cmil): Vd = 2 × 12.9 × 196.85 × 30 ÷ 26 240 = 5.81 V → EXCEEDS 4.8 V (fails 2%).",
+        "#4 (41 740 cmil): Vd = 2 × 12.9 × 196.85 × 30 ÷ 41 740 = 3.65 V → within 4.8 V (passes).",
+        "Conclusion: the smallest copper conductor meeting the 2% limit is #4 AWG (option B), NOT #6. Source answer #6 (option C) gives 5.81 V and violates the 2% limit.",
+        "NEEDS REVIEW: confirm against the exact Table D3 mV/A·m coefficients in the 2024 code; both the source figure (#6) and the calculated figure (#4) are shown so a human can decide."
       ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S08-024",

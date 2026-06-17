@@ -1152,10 +1152,14 @@
       ],
       "answer": "900 mm",
       "answer_key": "c",
-      "references": ["Table 53"],
-      "solution_steps": [],
+      "references": ["Rule 12-012", "Table 53"],
+      "solution_steps": [
+        "Table 53: a direct-buried cable (≤750 V) in an area subject to vehicular traffic, without separate mechanical protection, requires 900 mm cover.",
+        "Result: 900 mm (option c).",
+        "Keep needs_review: this conflicts with S12-027 (metal-sheath cable under a driveway = 600 mm). Reconcile whether the metal sheath alone counts as the mechanical protection that would reduce cover, against the printed CEC 2024 Table 53."
+      ],
       "code_edition": "2024",
-      "needs_review": false
+      "needs_review": true
     },
     {
       "id": "S12-068",
@@ -1173,7 +1177,10 @@
       "answer": "0.4 mm",
       "answer_key": "a",
       "references": ["Rule 12-3008"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-3008 sets the minimum clearance between a metal faceplate and the energized/exposed parts of the device behind it.",
+        "Keep needs_review: confirm the exact 0.4 mm value against the printed CEC 2024 Rule 12-3008 (an obscure, edition-specific figure)."
+      ],
       "code_edition": "2024",
       "needs_review": true
     },
@@ -1191,9 +1198,10 @@
         "d. 105 degrees celsius"
       ],
       "answer": "Answer not explicitly stated in source notes",
-      "references": [],
+      "references": ["Section 60"],
       "solution_steps": [
-        "Source did not state which option. Flagged for review."
+        "CMP (plenum-rated communication) cable for a PA/audio system in an air-handling plenum is governed by the communications rules (Section 60), not the Section 12 wiring-method tables — this question is mis-filed in the Section 12 set.",
+        "Keep needs_review: source gave no answer and the conductor temperature rating cannot be determined without the specific Section 60 / product-listing requirement."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -1214,9 +1222,12 @@
       "answer": "300 mm",
       "answer_key": "c",
       "references": ["Rule 12-2202"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-2202: a minimum vertical clearance of 300 mm is required between stacked/parallel cable trays for heat dissipation and cable access.",
+        "The cable counts and 750 kcmil TECK details are distractors. Result: 300 mm (option c)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "S12-071",
@@ -1253,10 +1264,11 @@
         "c. 610 mm",
         "d. 762 mm"
       ],
-      "answer": "Per Table 7 (OCR did not clearly mark the selected option)",
+      "answer": "Per Table 7 — most likely 330 mm (option b); not clearly marked in source",
       "references": ["Table 7"],
       "solution_steps": [
-        "Read the minimum bend radius for 3 in. (78 mm) conduit from Table 7. Source flagged Table 7 but option not clearly marked."
+        "Table 7: minimum bend radius for 3 in. (78 mm) conduit. It must exceed the 2-1/2 in. value (267 mm, per S12-024/053), so among the options 330 mm (b) is the consistent choice.",
+        "Keep needs_review: confirm the 3 in. radius against the printed CEC 2024 Table 7 (source did not mark an option)."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -1275,9 +1287,10 @@
         "d. 20"
       ],
       "answer": "Answer not explicitly marked in source notes",
-      "references": ["Table 21", "Rule 12-1114"],
+      "references": ["Rule 12-1114", "Table 21"],
       "solution_steps": [
-        "Determine support spacing for the larger conduit from the rigid PVC support table, then count supports over the 30 m run. Source did not clearly mark the option."
+        "Rule 12-1114 / the rigid-PVC support-spacing table: find the maximum support spacing for the larger (103 mm) conduit, then count the supports needed over each 30 m run (and combine since both share the same rack).",
+        "Keep needs_review: source did not mark an option; the count depends on the exact RPVC support spacing in the printed CEC 2024 table."
       ],
       "code_edition": "2024",
       "needs_review": true
@@ -1298,9 +1311,12 @@
       "answer": "It does not exceed 15 m in length",
       "answer_key": "C",
       "references": ["Rule 12-2010"],
-      "solution_steps": [],
+      "solution_steps": [
+        "Rule 12-2010: where a busway is reduced in size, overcurrent protection at the reduction may be omitted if the smaller section does not exceed 15 m in length (and has adequate current rating relative to the upstream protection).",
+        "Result: 15 m (option C)."
+      ],
       "code_edition": "2024",
-      "needs_review": true
+      "needs_review": false
     }
   ]
 }
