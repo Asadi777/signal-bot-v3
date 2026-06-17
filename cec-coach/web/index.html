@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#0b3d2e" />
+  <title>CEC Coach — BC Construction Electrician (CEC 2024)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" data-home>⚡ CEC Coach</div>
+    <div class="topright">
+      <div id="hud" class="hud"></div>
+      <button id="gear" class="gear" title="Settings">⚙️</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- HOME -->
+    <section id="home" class="screen">
+      <h1>BC Construction Electrician <span>· CEC 2024</span></h1>
+      <p class="sub">Open-book practice. 100 Q · 70% to pass · clean code book.
+        Learn <b>keyword → Rule/Table</b> and beat the clock.</p>
+
+      <div class="cards">
+        <button class="card" data-mode="mock">
+          <div class="card-ic">📝</div>
+          <div class="card-t">Mock Exam</div>
+          <div class="card-d">100 questions, timed, weighted like the real exam</div>
+        </button>
+        <button class="card" data-mode="section">
+          <div class="card-ic">📚</div>
+          <div class="card-t">Practice by Section</div>
+          <div class="card-d">Drill one CEC section at a time</div>
+        </button>
+        <button class="card" data-mode="weak">
+          <div class="card-ic">🎯</div>
+          <div class="card-t">Weak Areas</div>
+          <div class="card-d">The questions you keep missing</div>
+        </button>
+        <button class="card" data-mode="random">
+          <div class="card-ic">🎲</div>
+          <div class="card-t">Quick Mix</div>
+          <div class="card-d">20 random questions</div>
+        </button>
+      </div>
+
+      <div class="ai-row">
+        <div class="ai-label">✨ AI (needs your API key — tap ⚙️)</div>
+        <div class="cards">
+          <button class="card ai" data-go="tutor">
+            <div class="card-ic">💬</div>
+            <div class="card-t">AI Tutor</div>
+            <div class="card-d">Ask anything in Persian/English — step-by-step answers</div>
+          </button>
+          <button class="card ai" data-go="generate">
+            <div class="card-ic">🧠</div>
+            <div class="card-t">Generate Questions</div>
+            <div class="card-d">AI makes fresh exam-style questions on any topic</div>
+          </button>
+          <button class="card ai" data-go="vision">
+            <div class="card-ic">📷</div>
+            <div class="card-t">PDF · Image · Camera</div>
+            <div class="card-d">Send a PDF/photo or use your camera and ask about it</div>
+          </button>
+        </div>
+      </div>
+
+      <div id="stats" class="stats"></div>
+      <p class="foot" id="libline"></p>
+    </section>
+
+    <!-- SECTION PICKER -->
+    <section id="picker" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>Choose a section</h2>
+      <div id="sectionList" class="seclist"></div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="screen hidden">
+      <div class="quizbar">
+        <button class="back" data-home>← Quit</button>
+        <div class="progress"><div id="bar" class="bar"></div></div>
+        <div id="qcount" class="qcount"></div>
+      </div>
+      <div id="timer" class="timer hidden"></div>
+
+      <div class="qcard">
+        <div id="qtags" class="qtags"></div>
+        <div id="qtext" class="qtext"></div>
+        <div id="options" class="options"></div>
+        <button id="reveal" class="primary hidden">Show answer</button>
+      </div>
+
+      <div id="explain" class="explain hidden"></div>
+      <div class="rowbtns">
+        <button id="askai" class="ghost hidden">💬 Ask AI about this</button>
+        <button id="next" class="primary hidden">Next →</button>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="screen hidden">
+      <h2>Session complete</h2>
+      <div id="score" class="score"></div>
+      <div id="rdetail" class="rdetail"></div>
+      <button class="primary" data-home>Home</button>
+    </section>
+
+    <!-- AI TUTOR -->
+    <section id="tutor" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>💬 AI Tutor</h2>
+      <p class="sub">Ask in Persian or English. The tutor knows CEC 2024 and your keyword→table map.</p>
+      <div id="chat" class="chat"></div>
+      <div class="composer">
+        <textarea id="chatinput" rows="2" placeholder="Type your question… مثلا: سایز کابل برای موتور ۱۰ اسب‌بخار؟"></textarea>
+        <button id="chatsend" class="primary">Send</button>
+      </div>
+    </section>
+
+    <!-- GENERATE -->
+    <section id="generate" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>🧠 Generate Questions</h2>
+      <p class="sub">AI writes fresh exam-style questions with full keyword→table explanations.</p>
+      <label class="fld">Topic / section
+        <input id="genTopic" type="text" placeholder="e.g. motor branch conductor sizing, Section 28" />
+      </label>
+      <label class="fld">How many
+        <select id="genCount">
+          <option>3</option><option selected>5</option><option>10</option>
+        </select>
+      </label>
+      <button id="genGo" class="primary">Generate &amp; start quiz</button>
+      <div id="genStatus" class="status"></div>
+    </section>
+
+    <!-- VISION: PDF / IMAGE / CAMERA -->
+    <section id="vision" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>📷 PDF · Image · Camera</h2>
+      <p class="sub">Attach a PDF or photo (or snap one with your camera), then ask a question about it.</p>
+      <div class="attachrow">
+        <label class="attachbtn">🖼️ Image / PDF
+          <input id="fileInput" type="file" accept="image/*,application/pdf" hidden />
+        </label>
+        <label class="attachbtn">📸 Camera
+          <input id="camInput" type="file" accept="image/*" capture="environment" hidden />
+        </label>
+      </div>
+      <div id="attachPreview" class="attachPreview"></div>
+      <label class="fld">Your question
+        <textarea id="visionQ" rows="3" placeholder="e.g. What does this table say the ampacity is? این جدول چی میگه؟"></textarea>
+      </label>
+      <button id="visionGo" class="primary">Ask</button>
+      <div id="visionOut" class="explain hidden"></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="screen hidden">
+      <button class="back" data-home>← Back</button>
+      <h2>⚙️ Settings</h2>
+      <label class="fld">Anthropic API key (stays on this device only)
+        <input id="apiKey" type="password" placeholder="sk-ant-…" />
+      </label>
+      <label class="fld">Model
+        <select id="model">
+          <option value="claude-opus-4-8">Opus 4.8 — smartest (recommended)</option>
+          <option value="claude-sonnet-4-6">Sonnet 4.6 — cheaper</option>
+          <option value="claude-haiku-4-5">Haiku 4.5 — cheapest</option>
+        </select>
+      </label>
+      <button id="saveKey" class="primary">Save</button>
+      <div id="keyStatus" class="status"></div>
+      <p class="foot">Get a key at console.anthropic.com → API Keys. Your key is stored only in this browser (localStorage) and sent directly to Anthropic. کلید فقط روی همین دستگاه ذخیره می‌شود.</p>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

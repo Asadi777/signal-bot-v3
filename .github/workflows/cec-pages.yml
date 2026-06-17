@@ -1,0 +1,33 @@
+# Publishes the CEC Coach web app (cec-coach/web) to GitHub Pages.
+# It ONLY uploads that folder — it does not touch signal_bot.py or anything else.
+name: Deploy CEC Coach web
+
+on:
+  push:
+    branches: ["claude/amazing-franklin-ojwgk7"]
+    paths: ["cec-coach/web/**", ".github/workflows/cec-pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: cec-coach/web
+      - id: deployment
+        uses: actions/deploy-pages@v4
