@@ -208,7 +208,7 @@
       "answer": "105 kW — use only the larger of the two non-coincident loads.",
       "references": ["Rule 8-106 3)"],
       "solution_steps": [
-        "Rule 8-106 3) permits using only the larger of two loads that cannot operate at the same time (non-coincident loads).",
+        "Rule 8-106 3): for two loads that cannot operate simultaneously (non-coincident), only the LARGER need be included in the calculation.",
         "Larger of 83 kW and 105 kW = 105 kW.",
         "Result: 105 kW."
       ],
@@ -444,11 +444,10 @@
       "answer_key": "D",
       "references": ["Rule 8-102", "Table D3"],
       "solution_steps": [
-        "Load current I = 144 W ÷ 24 V = 6 A.",
-        "Allowed voltage drop = 5% × 24 V = 1.2 V.",
-        "Use Vd = (2 × k × L × I) ÷ A with k adjusted by 0.86 for extra-low voltage; solve for L using the #8 AWG cmil area.",
-        "Solving for the maximum length gives ≈ 45.78 m.",
-        "Result: 45.78 m (option D)."
+        "I = 144 W ÷ 24 V = 6 A; allowed drop = 5% × 24 V = 1.2 V.",
+        "Vd = (2 × k × L × I) ÷ cmil; ELV adjustment multiplies k by 0.86 (k ≈ 0.86 × 12.9 ≈ 11.1). #8 = 16 510 cmil.",
+        "Solve for L: L = Vd × cmil ÷ (2 × k × I) = 1.2 × 16 510 ÷ (2 × 11.1 × 6) ≈ 149 ft ≈ 45–46 m.",
+        "Result: ≈ 45.78 m (option D) — matches the calculation."
       ],
       "code_edition": "2024",
       "needs_review": false
@@ -465,9 +464,8 @@
       "answer_key": "B",
       "references": ["Rule 8-102 2)"],
       "solution_steps": [
-        "Maximum permitted voltage drop = 5% of nominal (Rule 8-102 2)).",
-        "5% × 600 V = 30 V drop.",
-        "Minimum voltage at utilization = 600 − 30 = 570 V.",
+        "Rule 8-102: maximum overall voltage drop supply-to-utilization = 5% of nominal.",
+        "Math: 5% × 600 V = 30 V drop → minimum voltage at the unit = 600 − 30 = 570 V.",
         "Result: 570 V (option B)."
       ],
       "code_edition": "2024",
@@ -485,11 +483,10 @@
       "answer_key": "B",
       "references": ["Rule 8-102", "Table D3"],
       "solution_steps": [
-        "Load current I = 100 W ÷ 12 V = 8.33 A.",
-        "Allowed voltage drop = 2% × 12 V = 0.24 V.",
-        "Use Vd = (2 × k × L × I) ÷ A with k adjusted by 0.86 for extra-low voltage and the #10 AWG cmil area; solve for L.",
-        "Solving gives ≈ 4.15 m.",
-        "Result: 4.15 m (option B)."
+        "I = 100 W ÷ 12 V = 8.33 A; allowed drop = 2% × 12 V = 0.24 V.",
+        "Vd = (2 × k × L × I) ÷ cmil; ELV adjustment multiplies k by 0.86 (k ≈ 11.1). #10 ≈ 10 380 cmil.",
+        "Solve for L: L = Vd × cmil ÷ (2 × k × I) = 0.24 × 10 380 ÷ (2 × 11.1 × 8.33) ≈ 13.5 ft ≈ 4.1 m.",
+        "Result: ≈ 4.15 m (option B) — matches the calculation."
       ],
       "code_edition": "2024",
       "needs_review": false
