@@ -365,6 +365,7 @@
     qt.appendChild(el("span", "qen", esc(q.question)));
     (function () { var sp = el("button", "spk", "🔊"); sp.title = "Read aloud (slow, Canadian)"; sp.onclick = function () { speak(q.question); }; qt.appendChild(sp); })();
     if (q.question_fa) { var fad = el("div", "qfa", esc(q.question_fa)); fad.dir = "rtl"; qt.appendChild(fad); }
+    (function (qq) { var tb = el("button", "teachmini qteach", "🧑‍🏫 " + (getLang() === "fa" ? "آموزش قدم‌به‌قدم" : "Teach me step by step")); tb.onclick = function () { openTeachChat(qq); }; qt.appendChild(tb); })(q);
     var correctKey = (q.answer_key || "").toUpperCase();
     var opts = $("options"); opts.innerHTML = "";
     (q.options || []).forEach(function (optText, idx) {
