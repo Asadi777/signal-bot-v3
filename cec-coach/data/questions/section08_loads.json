@@ -260,8 +260,8 @@
       "answer": "100% — the sum of the ratings of all the electric ranges (no reduction in a non-dwelling occupancy).",
       "references": ["Rule 8-300 2)"],
       "solution_steps": [
-        "Range demand reductions apply to dwelling units; in an industrial cafeteria the ranges are taken at 100% of their combined ratings.",
-        "Demand = sum of all range ratings at 100%.",
+        "Rule: the 8-300 range demand reduction applies only to dwelling units; in an industrial-plant cafeteria (non-dwelling) the ranges are taken at 100% of their combined ratings.",
+        "Demand factor = 100% (sum of all range ratings).",
         "Result: 100%."
       ],
       "code_edition": "2024",
