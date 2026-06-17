@@ -503,3 +503,173 @@ New specific exam-answer facts the teacher states in Session 3:
 - **"One service in, up to four consumers out."** (Rules 6-102 / 6-104.)
 - **"Maximum services to a building? One. Everything else is an exception."**
 - **"Book the re-take within two weeks to a month — never longer — because the material is perishable."**
+
+---
+
+## Session 4 (جلسه ۴)
+
+Continuation of the same coaching series. The session opens with a long study-method / motivation pep-talk to the student (the "two Alis" anecdote, "study to *understand* not to pass," the question-bank stats — all already captured under Sessions 1–3 and **excluded here**), then does a **worked review of Table 56 (working space)** carried over from Section 2, and the **main body teaches Section 8 (Load Calculation / demand factor)** almost in full: basic vs special load, area determination, voltage drop, the interlock rule, the single-dwelling calculation method, electric-range demand, loads over 1500 W, Table 14 occupancy basic-load, show windows, the branch-circuit-vs-service range difference, max outlets per circuit, and electric-vehicle/block-heater parking loads. Off-topic stretches (family two-thermostat house chatter, BC Hydro = "water" joke, PDF-sharing logistics, re-exam/perlapp reminders, end-of-call goodbyes) are excluded. Tags as before: **[teacher]** = his own assertion/method; **[standard CEC]** = matches the published code; numbers flagged *approx.* are transcription-noisy.
+
+### Concepts taught
+
+#### Study-map reminder (which sections to memorize the *contents* of) [teacher]
+
+- He re-states his "know what lives where" rule: you do **not** need to memorize most sections by content — when a question is about motors you go to motors, about lighting you go to the lighting section, etc. **Only three "general/catch-all" sections must be memorized by their *contents*** because their titles don't reveal what's inside:
+  - **Section 2 — "General Rules"** (the worst/hardest: ~6 topic-headings hide inside — voltage rating, disconnection, working space, enclosures, etc.).
+  - **Section 12 — "Wiring Methods"** ("Various"/"وارایمتد").
+  - **Section 26.**
+- **Grounding/bonding appears in many sections** [teacher]: you study it generally in **Section 10**, but it recurs with special twists in airports (Section 74 area), film/TV/mobile environments (Section 66), high voltage (Section 36), etc. So "grounding is a *branch* that runs through everything — learn to expect it in each section."
+  - New-exam example he cites: **airport grounding requires the cables/grid laid in a ZIGZAG pattern** — a recently-added question. [teacher — flag as *approx.* wording]
+  - New-exam example: **Section 66** (film-set / radio-TV / mobile location wiring) asks the **maximum length of the grounding conductor** in a temporary film-shoot setup. [teacher]
+- **Cathodic protection** "is near the very end of the book" — guaranteed to appear; learn that a cathodic-protection section exists even if you forget its number. [teacher]
+
+#### Section 2 review — Table 56 working space, worked via line-to-ground voltage
+
+**Table 56 lookup uses the LINE-TO-GROUND voltage** [standard CEC + teacher, worked]:
+- **The left column of Table 56 is voltage-to-ground (line-to-ground), NOT line-to-line.** You must put the **line-to-ground** value into the table to read the minimum working-space clearance. (Ties back to the Session-1-2 rule: *bigger number = line-to-line, smaller = line-to-ground, related by √3*.)
+- **Worked Question (Section 2, ~Q6/Q10):** equipment is **4 kV, single-phase.**
+  - **Single-phase always quotes the LINE-TO-LINE voltage** [teacher's stated rule] — "when a single-phase device gives you one voltage, that voltage is line-to-line; it never gives you line-to-ground." So 4 kV here is L-L.
+  - To enter Table 56 you need L-G → **4 kV ÷ √3 ≈ 2.3 kV (≈ 2300 V).** Look that up → minimum working space **≈ 1.2 m.** [teacher]
+  - **Built-in wrong-answer trap:** a student who forgets to divide by √3 and looks up 4000 V (or mis-reads) lands on **1.5 m** — and he notes the exam deliberately *prints 1.5 m as a distractor* so a wrong method still "finds" an answer on the page. ("I wish I'd put the 1.5 m wrong-answer in my own practice set too.")
+- **Three-phase variant:** if the device is three-phase the question **must tell you it's three-phase** (or give you a number pair); if it states e.g. "14.8/8.6 kV" the smaller **8.6 kV is already line-to-ground** → use it directly, no √3 needed. If a three-phase device gives only one number, that number is L-L and you divide by √3 yourself. [teacher]
+- **120/240 single-phase variant:** for a 120/240 device, the **120 (the line-to-ground) goes into Table 56** — "whichever you use you reach the same row only if you pick the line-to-ground one; for 120/240 it's 120." [teacher]
+
+#### Section 8 — Load Calculation (Demand) — the main topic
+
+[teacher] He prefers the name **"Load Calculation"** over the book's title; **"demand factor" (دیماند فکتور) ≈ "load calculation"** in his usage. He stresses Section 8 is taught here only at the **single-dwelling** level (houses/townhouses); apartment/hotel methods exist but are **not on the challenger exam**, so he skips them (though a question *might* ask only the basic-load piece for an apartment/school/hospital).
+
+**Two load categories [teacher]:**
+- **Basic load** = the "base" every building has: **lighting + receptacles.** You do **not** count lamps/receptacles individually — **basic load is computed from FLOOR AREA.** [standard CEC]
+- **Special load** = loads that may or may not be present: electric range, EV charger, A/C, electric water heater, electric heating, dryer, sauna, etc. Compute each, then **add basic + special**, applying demand/diversity factors (you don't blindly sum special loads — e.g. you won't run the range, water heater, and EV charger all at full power simultaneously, so the code applies reduction factors). [teacher]
+
+**Area determination [standard CEC + teacher]:**
+- **Commercial occupancies (e.g. a bank with a 100 m² basement + 100 m² ground floor):** count **ALL floors at 100%** → area = **200 m².**
+- **Residential (single dwelling):** count **ground floor + any floors above at 100%**, but the **BASEMENT counts at 75%** (a basement's basic load is lower — pot-lights, a small bar fridge, storage — so 0.75 × basement area). [teacher worked: a 100 m² main + 100 m² basement → 100 + 75 = effectively a reduced basement contribution.] *(He framed a 300 m² example; treat the exact split as the concept: basement = 75%.)*
+
+**Voltage drop [standard CEC; teacher flags as the BIGGEST 2024-vs-2021 change]:**
+- Voltage drop = the volts lost over the conductor run between source and load; longer run / smaller conductor → more drop. The utility supplies a bit high at the nearest house (e.g. ~125 V) so the farthest house still gets ~120 V. Low voltage makes equipment misbehave or burn out (a motor under low voltage draws *more* current — **P = V·I**, constant power → current rises as voltage falls → windings overheat, varnish melts, motor shorts). [teacher]
+- **Limits [standard CEC]:** voltage drop **shall not exceed 3% for a branch circuit OR a feeder individually**, and **shall not exceed 5% overall** from the supply (service box) to the point of utilization.
+  - **Coordination trap [teacher]:** the 3% + 3% does NOT mean you may use 3% on both — the **total of feeder + branch must stay ≤ 5%.** So if the branch already uses 3%, the **feeder is limited to 2%** so the sum doesn't exceed 5%.
+- **You CONTROL voltage drop by conductor size** — bigger conductor = less drop. Method: size the conductor for ampacity first, then check voltage drop; if it exceeds the limit, **go up one conductor size and re-check.** [teacher]
+- **2024 vs 2021 [teacher]:** the **voltage-drop rule text changed AND the calculation method (which lives in Appendix D) changed completely** — this is the single most significant 2024 change. The old way needed **3 tables + 3 formulas** (look up a value in the first table, then apply formulas). The new way is **one simplified formula with 4 inputs** — **two values come from the exam question, two you look up in a fixed table** — much easier. [teacher] He made separate 2021 and 2024 videos for this because the change is real here.
+
+**Interlock rule — Rule 8-106 area (heating vs A/C) [standard CEC, worked]:**
+- *"Where interlocks are installed to prevent simultaneous operation"* of two loads, **only the LARGER of the two is used in the calculation** (the smaller is taken as zero). [standard CEC wording he reads: *"...whichever is greater shall be used in the calculation."*]
+- Classic case: a **thermostat with a COLD side and a HEAT side** mechanically prevents running A/C and electric heat at the same time → they are interlocked → use the larger.
+  - **Worked:** **15 kW heating + 10 kW A/C, interlocked → use 15 kW** (drop the 10 kW). [teacher]
+- **If NOT interlocked → you must SUM both.** [teacher]
+- **[teacher] field tip for hospitals:** in a hospital, treat heating/cooling as interlocked **even if the question doesn't say so** (they always are in practice) — but in a *house* they may not be, so read carefully.
+
+**Single-dwelling basic load — Rule 8-110 [standard CEC, worked]:**
+- **5000 W for the first 90 m²**, **+ 1000 W for each additional 90 m² (or portion thereof).**
+  - 90 m² → 5000 W; 95 m² → 6000 W (the extra 5 m² is a "portion," so a full 1000 W); 200 m² → 7000 W.
+- **[teacher mnemonic-of-method]** "round any partial 90 m² up to a full 1000 W."
+
+**Single-dwelling calculated load — Rule 8-200, two methods [standard CEC, worked]:**
+- **Method (b) — the floor (minimum) [8-200(1)(b)]:** if **living area > 80 m²** → take **24,000 W** (= 24000 ÷ 240 = **100 A**). If **≤ 80 m²** → **14,400 W** (= **60 A**). **Use the LARGER of the calculated-load result and this floor value** — effectively a *minimum* service of 100 A (or 60 A for small dwellings). [teacher: "it's really just saying minimum 24,000 W / 100 A."]
+- These minimums apply to **service and feeder calculations only — NOT to branch circuits** (branch circuits are sized to the actual connected load). [teacher]
+- **A/C: counted at 100%.** **Electric heating: 100% of the first 10 kW + 75% of the remainder** *when each room/heated-area has its own thermostat* (e.g. baseboard heaters with per-room thermostats). [standard CEC; teacher worked]
+  - Worked: heating total > 10 kW → first 10 kW at 100%, rest at 75%. (E.g. an 8 kW system that is under 10 kW → 100% of 8 kW = 8 kW; a system over 10 kW adds 75% of the excess.)
+  - **Furnace (single thermostat for the whole house) is treated differently** from per-room baseboard heat; an **electric furnace counts at 100%**, while a **gas furnace is NOT counted at all** (we don't calculate gas-furnace load). [teacher]
+
+**Electric range demand — Rule 8-200(1)(a) [standard CEC, worked]:**
+- **For SERVICE/FEEDER:** an electric range is taken at **6000 W for ratings up to 12 kW**, **plus 40% of the amount over 12 kW.**
+  - 6 kW, 8 kW, 10 kW, 12 kW range → all **6000 W.**
+  - **16 kW range → 6000 + 40%×(16−12=4 kW = 4000 W → 1600 W) = 7600 W.** [teacher, repeated]
+- **For the BRANCH CIRCUIT feeding the range in a dwelling unit — Rule 8-300 area [standard CEC; teacher flags as a commonly-forgotten distinction]:** the conductor of the **branch circuit supplying a range** uses **8000 W for the first 12 kW** (NOT 6000 W) plus 40% of the excess over 12 kW.
+  - Reason: the branch conductor feeds **only** the range, with no diversity from other loads, so it must be sized stronger. [teacher]
+  - **Worked:** 16 kW range, **branch circuit → 8000 + 40%×4000 = 8000 + 1600 = 9600 W** (vs **7600 W for the service**). This 2000 W difference is exactly what trips students up on a penthouse-range question. [teacher]
+- **Commercial/industrial cooking units — Rule 8-210:** a range/cooking unit in a **commercial or industrial** occupancy is taken at **not less than its rating = 100%** (no 6000 W reduction). [standard CEC]
+  - Worked: a **bakery oven of 15 kW** → counted at **100% = 15 kW** (and as a non-heating load it's 100% for service too). [teacher]
+
+**Loads over 1500 W — Rule 8-200(1)(a) [standard CEC, worked]:**
+- Special loads **rated over 1500 W** (e.g. dryer, tank-type/storage water heater) are handled by one of two methods:
+  - **Method (a) — when an electric range IS present:** take **25% of each such load** (or sum them and take 25% of the total). [teacher]
+  - **Method (b) — when NO range is present:** different (he points to the (b) path). [teacher]
+  - Worked: **dryer 4 kW + storage water heater 4 kW = 8000 W → 25% = 2000 W.** [teacher]
+- **Tankless (instantaneous) electric water heater = 100% demand** (it draws full power the instant a tap opens; no storage tank to buffer it), unlike a **tank/storage water heater** which is a "load over 1500 W" taken at the reduced factor. [teacher]
+
+**Worked full example — Section 8, Question 3 [teacher]:**
+- **360 m² single dwelling.**
+- Basic load (8-110): first 90 m² = **5000 W**; remaining 270 m² = **3 × 1000 W = 3000 W** → **basic load = 8000 W.**
+- Range present → **6000 W** (≤12 kW).
+- Over-1500 W loads (dryer + water heater etc.) → **25%** (e.g. 6000 W of such loads → 1500 W; he reads **750 W** for one pair).
+- Sum → divide by **240 V** → service amps. *(He runs it "in under 30 seconds, no book needed except the one table"; exact final amperage not cleanly transcribed.)*
+
+**Table 14 — basic load by occupancy ("wattage per square metre") [standard CEC, worked]:**
+- **Mark Table 14 in red.** [teacher] It gives **W/m²** of **basic load** for listed occupancy types — used for **"other than dwelling"** (commercial/assembly) buildings.
+- Occupancy types listed include: **industrial, church, garage, warehouse/storage, cinema, ARMOURY, bank, beauty salon, club, lodge, restaurant, hotel/motel.**
+  - **New-exam term: "ARMOURY"** (military barracks / where soldiers and equipment are kept) — students fail it because they don't know the English word and "can't find it in the list." Learn the whole occupancy list. [teacher]
+  - **Restaurant ≈ 30 W/m²**; **storage/warehouse = 5 W/m².** [teacher reading — *values approx. from transcript*]
+- **Critical note [teacher]:** Table 14 gives **BASIC LOAD ONLY** — it does **not** include ranges, water heaters, heating, etc. Don't just multiply area × W/m² and call it the total; **add the special loads separately.** ("Write 'basic load only' in the margin so you don't get tricked.")
+- **Demand factor on the Table-14 basic load [standard CEC; teacher — values approx.]:** for a **service/feeder** the occupancy basic load is multiplied by a demand factor (he reads e.g. **storage at 70%**); heating gets **75%**, other (non-heating) special loads **100%.** *(The "75% / 100% / 3%" figures he rattles off are transcription-noisy — treat the principle, not the exact percentages, as reliable.)*
+- **Worked single-phase service [teacher]:** a **16 m × 10 m = 160 m² storage** building, single-phase, 5 W/m² → 800 W basic load → ×70% (service) → **560 W**; add heating (he uses ~45 kW) → total ÷ 240 V ≈ **189.83 A.** *(Mid-numbers approx.)*
+
+**Show window — Rule 8-110 / 8-200 area [standard CEC]:**
+- A **show window** (storefront display window, e.g. a jeweller's lit display) is calculated at **not less than 650 W per LINEAR metre** of show window. [standard CEC]
+- **Exam form [teacher]:** straight multiple choice — *"how much per metre of show window: 550 / 650 / 750 / 850 W?"* → **650.** A harder variant gives a length (e.g. 3 m) and asks the total.
+
+**Maximum number of outlets per circuit — Section 26 / Rule 8-304 area [standard CEC, worked]:**
+- **Each outlet must be able to draw at least 1 A continuous**, so the number of outlets a circuit may feed = its **continuous (de-rated) ampacity in amps.** [teacher's formulation]
+- **Continuous = 80% of the breaker rating when the load is NOT marked continuous; 100% when marked continuous.** [teacher]
+  - **15 A breaker × 80% = 12 A → max 12 outlets.**
+  - **20 A breaker × 80% = 16 A → max 16 outlets.**
+  - If the breaker/load is **marked 100% continuous: 15 A → 15 outlets; 20 A → 20 outlets** (rare).
+- **A duplex receptacle counts as ONE outlet.** [teacher]
+- [teacher] In practice an electrician just eyeballs "four here, four there" and ties them to one breaker, but the exam wants the **calculated maximum (12 on a standard 15 A circuit).** "Old question, rarely appears now, but know it."
+
+**Electric-vehicle / block-heater parking loads — Rule 8-400 + tables [standard CEC, worked]:**
+- **Block heater** = the engine/cylinder-block heater plug used in cold provinces (Saskatoon, Calgary, Winnipeg — below −18 °C) so engine oil doesn't congeal; you plug the car in overnight. EV chargers in parking lots are calculated the same family of rule. (Vancouver/Toronto rarely use block heaters — context only.)
+- **Two table cases by control:**
+  - **Parking spaces that are NOT restricted or controlled** (any car can plug in anytime, e.g. an open mall lot) → use the **first table** (the usual case). [teacher]
+  - **Restricted OR controlled** spaces → use the **second table.** Learn **both** (exam may ask either). [teacher]
+- **Per-circuit current:** the exam may ask the **maximum circuit current** for a stall → **15 A or 20 A** (he says **20 A** when forced to pick; pick the smaller, 15 A, to keep load down in design). [teacher]
+- **Worked diversity calc [teacher, "per stall / per space"]:** a lot of **200 stalls** at **120 V**:
+  - **First ~60 stalls (his read): 1200 W each** (3000 ... he reads 1200 W per stall for the first block).
+  - **Each remaining stall (the other 140): 800 W each.**
+  - Sum the two blocks → total parking load. *(The 60-stall break and 1200/800 W figures are approx. from transcript; the concept — full value for the first block of stalls, a reduced value for the rest — is the takeaway.)*
+
+### Answer clarifications for the question bank
+
+New specific exam-answer facts the teacher states in Session 4 (use to fill bank gaps — especially the Section-8 worked demand calculations and the Table-56 / Table-14 lookups):
+
+- **Table 56 (working space) lookup uses the LINE-TO-GROUND voltage**, not line-to-line. For a **4 kV single-phase** device: 4 kV is line-to-line → ÷ √3 ≈ **2300 V** → working space **≈ 1.2 m.** (Wrong-answer trap printed on the exam = **1.5 m**, the value you get if you forget √3.)
+- **Single-phase voltage is always quoted line-to-line; for a 120/240 device the value entered into Table 56 is 120 (the line-to-ground).** A three-phase device that already gives a number-pair (e.g. 14.8/8.6 kV) → use the **smaller (8.6 kV)** directly as line-to-ground.
+- **Basic load = lighting + receptacles, computed by FLOOR AREA** (never counted per-fixture).
+- **Single-dwelling basic load (Rule 8-110): 5000 W for first 90 m² + 1000 W per additional 90 m² (round partials up).** (90 m²→5000; 95→6000; 200→7000; 360 m²→8000 W.)
+- **Area: commercial counts all floors 100%; single-dwelling BASEMENT counts at 75%.**
+- **Single-dwelling minimum service (Rule 8-200(1)(b)): 24,000 W (= 100 A) if living area > 80 m²; 14,400 W (= 60 A) if ≤ 80 m²** — take the larger of this and the calculated load. (Service/feeder only, not branch circuits.)
+- **Electric range, SERVICE/FEEDER (8-200(1)(a)): 6000 W for ≤12 kW, + 40% of the excess over 12 kW.** (16 kW → **7600 W.**)
+- **Electric range, BRANCH CIRCUIT in a dwelling (8-300): 8000 W for first 12 kW + 40% of excess.** (16 kW → **9600 W.**) The branch uses **8000**, the service uses **6000** — the classic penthouse-range trap (2000 W difference).
+- **Commercial/industrial cooking unit (8-210): at 100% of its rating** (no reduction). Bakery 15 kW oven → **15 kW.**
+- **Loads over 1500 W (dryer, storage water heater) WITH a range present: 25% of each (or 25% of their sum).** (4 kW dryer + 4 kW tank water heater = 8000 W → **2000 W.**)
+- **Tankless/instantaneous electric water heater = 100%; tank/storage water heater = a "load over 1500 W" at the reduced factor.**
+- **Electric heating with per-room thermostats: 100% of first 10 kW + 75% of remainder. Electric furnace = 100%. Gas furnace = NOT counted. A/C = 100%.**
+- **Interlocked loads (heating vs A/C via cold/heat thermostat) — Rule 8-106: use the LARGER only** (15 kW heat + 10 kW A/C interlocked → **15 kW**). **Not interlocked → sum both.** In hospitals treat as interlocked even if unstated.
+- **Voltage drop: ≤ 3% per branch circuit, ≤ 3% per feeder, and ≤ 5% total** (so if branch = 3%, feeder ≤ 2%). Controlled by **conductor size** (go up a size and re-check). **The voltage-drop method (Appendix D) is the biggest 2024-vs-2021 change** — now one formula (2 given values + 2 looked-up).
+- **Table 14 = W/m² basic-load by occupancy** ("other than dwelling"): includes **armoury, restaurant (~30 W/m²), warehouse/storage (5 W/m²), bank, garage, cinema, church, beauty salon, club, lodge, hotel/motel.** Table 14 is **BASIC LOAD ONLY** — add special loads separately. New term to learn: **"armoury."** *(W/m² figures approx.)*
+- **Show window (8-110/8-200): not less than 650 W per linear metre.** (MCQ answer = 650.)
+- **Maximum outlets per circuit: continuous ampacity = outlet count.** 15 A × 80% = **12 outlets**; 20 A × 80% = **16 outlets**; (100%-marked → 15 / 20). A **duplex = 1 outlet.**
+- **EV/block-heater parking loads (8-400): two tables — "not restricted/controlled" (usual, first table) vs "restricted or controlled" (second table).** Per-stall circuit current 15 A or 20 A; diversity reduces wattage per stall after the first block. *(Per-stall figures approx.)*
+- **Hospital basic load (Section 24 area): 20 W/m² everywhere, PLUS an additional 100 W for intensive-care / operating rooms** → an operating room = **20 + 100 = 120 W/m²** (the 20 W is NOT replaced by the 100 W — it's added on top). This is a **recently-pulled, "unfair," trick exam question** (the additive nature is not spelled out in the rule). [teacher — high value for any flagged hospital-load question]
+- **Airport grounding: cables laid in a ZIGZAG pattern** (new exam item). **Section 66 (film/TV/mobile): maximum grounding-conductor length** is asked. *(wording approx.)*
+- **Cathodic protection has its own section near the end of the book** (guaranteed exam appearance).
+
+### Mnemonics / phrasings
+
+- **"Table 56 takes the line-to-GROUND voltage — for 4 kV single-phase, divide by √3 first (≈2300 V → 1.2 m); 1.5 m is the trap."**
+- **"Single-phase always tells you line-to-line; it never gives you line-to-ground."**
+- **"Basic load = lighting + receptacles — and you get it from the AREA, not by counting fixtures."**
+- **"Basement counts at 75% — its basic load is lower than the living floors."**
+- **"5000 for the first 90 square metres, then 1000 for every 90 after — round the leftover up to a full 1000."**
+- **"Range on the SERVICE is 6000; range on its own BRANCH is 8000 — both add 40% above 12 kW."** (The penthouse-range trap.)
+- **"Interlocked? Take the bigger one. Not interlocked? Add them."**
+- **"3 percent on the branch, 3 percent on the feeder, but never more than 5 percent all the way through."**
+- **"Table 14 is basic load ONLY — don't multiply the area and walk away; the special loads are still coming."**
+- **"650 watts per metre of show window."**
+- **"On a 15-amp circuit you get 12 outlets — eighty percent, one amp per outlet."**
+- **"Tankless water heater is 100% — it fires the instant you open the tap; a tank heater you discount."**
+- **"In the operating room it's 20 plus 100 — the hundred is ADDED, not instead of."** (Hospital-load trick.)
+- **"Only three sections you memorize by content: 2, 12, and 26 — the rest you find by their name."**
+- **"Grounding is a branch that runs through every section — expect it everywhere."**
+- **"Gas furnace? We don't calculate it. Electric furnace? A hundred percent."**
