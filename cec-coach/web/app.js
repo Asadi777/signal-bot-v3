@@ -30,6 +30,23 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
   function hasFa(t) { return /[؀-ۿ]/.test(t || ""); }
   function dirFor(t) { return hasFa(t) ? "rtl" : "ltr"; }
+  // Bidi-safe escape: escapes HTML AND wraps every English/number "island"
+  // (e.g. "1500 A", "80%", "fusible switch") in an isolated LTR <bdi> so the
+  // browser's bidi algorithm can't split them inside right-to-left Persian text.
+  // For non-Persian text it behaves exactly like esc(), so it is a safe drop-in.
+  var ISLAND = /[A-Za-z0-9](?:[A-Za-z0-9 .,:;()\[\]\/\\\-–+=×÷·°ΩµμπΦ√≈≤≥≠±%#&@'"²³]*[A-Za-z0-9%)\]°Ω²³])?/g;
+  function iso(s) {
+    if (s == null) return "";
+    s = String(s);
+    if (!hasFa(s)) return esc(s);
+    ISLAND.lastIndex = 0;
+    var out = "", last = 0, m;
+    while ((m = ISLAND.exec(s))) {
+      out += esc(s.slice(last, m.index)) + "<bdi dir='ltr'>" + esc(m[0]) + "</bdi>";
+      last = m.index + m[0].length;
+    }
+    return out + esc(s.slice(last));
+  }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   // ---------- text-to-speech (Canadian English, slow) ----------
@@ -93,8 +110,13 @@
 
   // ---------- markdown -> pretty HTML (tables, lists, hr, code, RTL-aware) ----------
   function mdInline(s) {
-    s = esc(s);
-    s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+    // protect inline `code` spans (placeholders are PUA chars iso() won't touch)
+    var codes = [];
+    s = String(s == null ? "" : s).replace(/`([^`]+)`/g, function (_, c) {
+      codes.push(c); return "" + String.fromCharCode(0xE100 + codes.length - 1) + "";
+    });
+    s = iso(s); // escape + isolate English/number islands for correct RTL
+    s = s.replace(/([\s\S])/g, function (_, ch) { return "<code>" + esc(codes[ch.charCodeAt(0) - 0xE100]) + "</code>"; });
     s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     s = s.replace(/__([^_]+)__/g, "<strong>$1</strong>");
     s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>");
@@ -372,7 +394,7 @@
     var qt = $("qtext"); qt.innerHTML = "";
     qt.appendChild(el("span", "qen", esc(q.question)));
     (function () { var sp = el("button", "spk", "🔊"); sp.title = "Read aloud (slow, Canadian)"; sp.onclick = function () { speak(q.question); }; qt.appendChild(sp); })();
-    if (q.question_fa) { var fad = el("div", "qfa", esc(q.question_fa)); fad.dir = "rtl"; qt.appendChild(fad); }
+    if (q.question_fa) { var fad = el("div", "qfa", iso(q.question_fa)); fad.dir = "rtl"; qt.appendChild(fad); }
     (function (qq) { var tb = el("button", "teachmini qteach", "🧑‍🏫 " + (getLang() === "fa" ? "آموزش قدم‌به‌قدم" : "Teach me step by step")); tb.onclick = function () { openTeachChat(qq); }; qt.appendChild(tb); })(q);
     var correctKey = (q.answer_key || "").toUpperCase();
     var opts = $("options"); opts.innerHTML = "";
@@ -382,7 +404,7 @@
       var ofa = (q.options_fa && q.options_fa[idx]) ? q.options_fa[idx] : "";
       var b = el("button", "opt");
       b.appendChild(el("span", "k", esc(keyLetter)));
-      b.appendChild(el("span", "opttext", esc(label) + (ofa ? "<div class='ofa' dir='rtl'>" + esc(ofa) + "</div>" : "")));
+      b.appendChild(el("span", "opttext", iso(label) + (ofa ? "<div class='ofa' dir='rtl'>" + iso(ofa) + "</div>" : "")));
       b.dataset.key = keyLetter;
       if (a) {
         b.disabled = true;
@@ -438,7 +460,7 @@
     var e = $("explain");
     var refs = (q.references || []).join(" · ");
     var html = "<h4>✅ Answer</h4><p>" + esc(q.answer || ("Option " + (q.answer_key || ""))) +
-      (q.answer_fa ? "<div class='afa' dir='rtl'>" + esc(q.answer_fa) + "</div>" : "") + "</p>";
+      (q.answer_fa ? "<div class='afa' dir='rtl'>" + iso(q.answer_fa) + "</div>" : "") + "</p>";
     if (q.solution_steps && q.solution_steps.length) {
       html += "<h4>🧭 Fastest path (English)</h4><ol>";
       q.solution_steps.forEach(function (s) { html += "<li>" + esc(s) + "</li>"; });
@@ -498,7 +520,7 @@
     var html = "";
     teachConvo.forEach(function (m, i) {
       if (i === 0) return; // hide the long initial instruction
-      if (m.role === "user") html += "<div class='tmsg me' dir='" + dirFor(m.content) + "'>" + esc(m.content) + "</div>";
+      if (m.role === "user") html += "<div class='tmsg me' dir='" + dirFor(m.content) + "'>" + iso(m.content) + "</div>";
       else html += "<div class='tmsg ai rich' dir='" + dirFor(m.content) + "'>" + mdToHtml(m.content) + "</div>";
     });
     thr.innerHTML = html;
@@ -560,7 +582,7 @@
       missed.forEach(function (m) {
         var q = m.q;
         h += "<div class='miss'>";
-        h += "<div class='missq'>" + esc(q.question) + spkBtn(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
+        h += "<div class='missq'>" + esc(q.question) + spkBtn(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + iso(q.question_fa) + "</div>" : "") + "</div>";
         h += "<div class='missline'>You: <b class='bad'>" + esc(m.a.picked) + "</b> · Correct: <b class='ok'>" + esc((q.answer_key || "")) + " — " + esc(q.answer || "") + "</b></div>";
         if (q.solution_steps && q.solution_steps.length) {
           h += "<ol>"; q.solution_steps.forEach(function (s) { h += "<li>" + esc(s) + "</li>"; }); h += "</ol>";
@@ -615,7 +637,8 @@
   var chatHistory = [];
   function addMsg(role, text) {
     var m = el("div", "msg " + (role === "user" ? "me" : "ai"));
-    m.textContent = text;
+    if (role === "user") { m.dir = dirFor(text); m.innerHTML = iso(text); }
+    else m.textContent = text;
     $("chat").appendChild(m);
     $("chat").scrollTop = $("chat").scrollHeight;
     return m;
@@ -887,7 +910,7 @@
       var card = el("button", "studycard");
       card.innerHTML =
         "<div class='sctop'><b>" + esc(secLabel(s)) + "</b>" + stars(s.importance) + "</div>" +
-        "<div class='scsum'>" + esc(pick(s, "summary")) + "</div>" +
+        "<div class='scsum'>" + iso(pick(s, "summary")) + "</div>" +
         "<div class='scmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + (fa ? " سؤال" : " questions") + (secPage(s.section) ? " · 📖 p." + secPage(s.section) : "") + "</div>";
       card.onclick = function () { renderLesson(s); };
       host.appendChild(card);
@@ -900,8 +923,8 @@
     items.forEach(function (it) {
       h += "<div class='ltr'>" +
         "<div class='ltc ref'><span class='ltlbl'>" + refLbl + "</span><b>" + esc(it.ref) + "</b> " + stars(it.stars) + " " + pageChip(it.ref) + "</div>" +
-        "<div class='ltc'><span class='ltlbl'>" + col2 + "</span>" + esc(pick(it, base2)) + "</div>" +
-        "<div class='ltc'><span class='ltlbl'>" + col3 + "</span>" + esc(pick(it, base3)) + "</div>" +
+        "<div class='ltc'><span class='ltlbl'>" + col2 + "</span>" + iso(pick(it, base2)) + "</div>" +
+        "<div class='ltc'><span class='ltlbl'>" + col3 + "</span>" + iso(pick(it, base3)) + "</div>" +
         "</div>";
     });
     return h + "</div>";
@@ -913,23 +936,23 @@
     var T = fa ? { tables: "📊 جدول‌های کلیدی — مهم‌ترین اول", rules: "📏 قوانین کلیدی", method: "🧭 روشِ سریع", must: "⭐ مقادیرِ حفظی", traps: "⚠️ تله‌های رایج", memo: "ترفندِ حافظه", ex: "📝 مثال‌های حل‌شده", tbl: "جدول", rule: "قانون", what: "چیست", how: "چطور/چرا", note: "نکته", inbank: " سؤال در بانک" }
       : { tables: "📊 Key tables — most important first", rules: "📏 Key rules", method: "🧭 The fast method", must: "⭐ Must-know values", traps: "⚠️ Common traps", memo: "Memory aid", ex: "📝 Worked examples", tbl: "Table", rule: "Rule", what: "What", how: "How / why", note: "Note", inbank: " questions in the bank" };
     var h = "<h2 style='margin-top:0'>" + esc(secLabel(s)) + " " + stars(s.importance) + "</h2>";
-    h += "<p class='lsum'>" + esc(pick(s, "summary")) + "</p>";
+    h += "<p class='lsum'>" + iso(pick(s, "summary")) + "</p>";
     var pg = secPage(s.section);
     h += "<div class='lmeta'>Block " + esc(s.block || "?") + " · " + (s.qcount || 0) + esc(T.inbank) +
       (pg ? " · 📖 " + (fa ? "این Section از صفحهٔ " : "starts on p. ") + "<b>" + pg + "</b>" + (fa ? " کتاب شروع می‌شود" : "") : "") + "</div>";
     h += "<div class='lmeta'>📚 Tables → p." + BOOK_ANCHORS.tables + " · Appendix B → p." + BOOK_ANCHORS.appendixB + " · Index → p." + BOOK_ANCHORS.index + "</div>";
     if ((s.keyTables || []).length) { h += "<h3>" + T.tables + "</h3>" + ltable(s.keyTables, T.tbl, T.what, T.how, "what", "use"); }
     if ((s.keyRules || []).length) { h += "<h3>" + T.rules + "</h3>" + ltable(s.keyRules, T.rule, T.what, T.note, "what", "note"); }
-    if ((s.method || []).length) { h += "<h3>" + T.method + "</h3><ol>"; pickArr(s, "method").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ol>"; }
-    if ((s.mustKnow || []).length) { h += "<h3>" + T.must + "</h3><ul>"; pickArr(s, "mustKnow").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
-    if ((s.traps || []).length) { h += "<h3>" + T.traps + "</h3><ul class='traps'>"; pickArr(s, "traps").forEach(function (m) { h += "<li>" + esc(m) + "</li>"; }); h += "</ul>"; }
-    if (pick(s, "mnemonic")) h += "<div class='mnemo'>🧠 <b>" + T.memo + ":</b> " + esc(pick(s, "mnemonic")) + "</div>";
+    if ((s.method || []).length) { h += "<h3>" + T.method + "</h3><ol>"; pickArr(s, "method").forEach(function (m) { h += "<li>" + iso(m) + "</li>"; }); h += "</ol>"; }
+    if ((s.mustKnow || []).length) { h += "<h3>" + T.must + "</h3><ul>"; pickArr(s, "mustKnow").forEach(function (m) { h += "<li>" + iso(m) + "</li>"; }); h += "</ul>"; }
+    if ((s.traps || []).length) { h += "<h3>" + T.traps + "</h3><ul class='traps'>"; pickArr(s, "traps").forEach(function (m) { h += "<li>" + iso(m) + "</li>"; }); h += "</ul>"; }
+    if (pick(s, "mnemonic")) h += "<div class='mnemo'>🧠 <b>" + T.memo + ":</b> " + iso(pick(s, "mnemonic")) + "</div>";
     var exQ = (s.examples || []).map(function (id) { return ALL.filter(function (q) { return q.id === id; })[0]; }).filter(Boolean).slice(0, 4);
     if (exQ.length) {
       h += "<h3>" + T.ex + "</h3>";
       exQ.forEach(function (q) {
-        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + spkBtn(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + esc(q.question_fa) + "</div>" : "") + "</div>";
-        h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + (q.answer_fa ? "<div class='afa' dir='rtl'>" + esc(q.answer_fa) + "</div>" : "") + "</div>";
+        h += "<div class='exq'><div class='exqq'>" + esc(q.question) + spkBtn(q.question) + (q.question_fa ? "<div class='qfa' dir='rtl'>" + iso(q.question_fa) + "</div>" : "") + "</div>";
+        h += "<div class='exqa'>✅ " + esc((q.answer_key || "") + " — " + (q.answer || "")) + (q.answer_fa ? "<div class='afa' dir='rtl'>" + iso(q.answer_fa) + "</div>" : "") + "</div>";
         if ((q.solution_steps || []).length) { h += "<ol>"; q.solution_steps.slice(0, 5).forEach(function (st) { h += "<li>" + esc(st) + "</li>"; }); h += "</ol>"; }
         if ((q.references || []).length) h += "<div class='refs'>📖 " + esc(q.references.join(" · ")) + "</div>";
         h += "<div class='teachrow'>" + teachBtn(q) + "</div>";
@@ -1047,20 +1070,20 @@
     var seg = curSeg(), nt = $("nowTask");
     if (seg) {
       var wk = PLAN_CUR[seg.wi];
-      nt.innerHTML = "<div class='ntlbl'>" + esc(T.now) + " · " + esc(wk.title) + " · " + esc(T.day) + " " + seg.day + "</div>" +
-        "<div class='nttask'>" + esc(blockLabel(seg.b)) + " · " + seg.b.min + " min</div>" +
-        "<button class='primary' id='nowGo'>" + esc(T.startTask) + "</button>";
+      nt.innerHTML = "<div class='ntlbl'>" + iso(T.now) + " · " + iso(wk.title) + " · " + iso(T.day) + " " + seg.day + "</div>" +
+        "<div class='nttask'>" + iso(blockLabel(seg.b)) + " · " + seg.b.min + " min</div>" +
+        "<button class='primary' id='nowGo'>" + iso(T.startTask) + "</button>";
       $("nowGo").onclick = function () { if (!TIME.running) timeStart(); planGoTask(seg.b.go, wk); };
-    } else { nt.innerHTML = "<div class='nttask'>" + esc(T.doneA) + fmtH(TIME.total) + esc(T.doneB) + "</div>"; }
+    } else { nt.innerHTML = "<div class='nttask'>" + iso(T.doneA) + fmtH(TIME.total) + iso(T.doneB) + "</div>"; }
     var segs = planSegs(), pw = {};
     segs.forEach(function (s) { var p = pw[s.wi] = pw[s.wi] || { total: 0, start: 1e9, end: 0 }; p.total += s.b.min; p.start = Math.min(p.start, s.start); p.end = Math.max(p.end, s.start + s.b.min); });
     var h = "";
     PLAN_CUR.forEach(function (wk, wi) {
       var p = pw[wi], done = Math.max(0, Math.min(p.total, TIME.total - p.start)), pct = Math.round(done / p.total * 100);
       var cur = TIME.total >= p.start && TIME.total < p.end;
-      h += "<div class='planweek" + (cur ? " cur" : "") + "'><div class='pwtop'><b>" + esc(wk.title) + "</b><span>" + pct + "%</span></div>" +
+      h += "<div class='planweek" + (cur ? " cur" : "") + "'><div class='pwtop'><b>" + iso(wk.title) + "</b><span>" + pct + "%</span></div>" +
         "<div class='trackbar'><div class='trackfill' style='width:" + pct + "%'></div></div>" +
-        "<div class='pwsecs'>" + esc(T.secs) + " " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div>" +
+        "<div class='pwsecs'>" + iso(T.secs) + " " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div>" +
         "<div class='pwopen'>" + (rtl ? "بازکردنِ درسِ این هفته →" : "Open this week's lesson →") + "</div></div>";
     });
     $("planList").innerHTML = h;
@@ -1090,19 +1113,19 @@
   }
   function chRenderPrompt() {
     var T = chT(), r = CH.pool[CH.i % CH.pool.length]; if (!r) return;
-    $("chPrompt").innerHTML = esc(T.find) + "<br><b>" + esc(r.kw) + "</b><div class='chsec'>" + esc(r.sec) + "</div>";
+    $("chPrompt").innerHTML = iso(T.find) + "<br><b>" + iso(r.kw) + "</b><div class='chsec'>" + iso(r.sec) + "</div>";
   }
   function chRenderReveal() {
     var r = CH.pool[CH.i % CH.pool.length];
     var why = (getLang() === "fa" && r.why_fa) ? r.why_fa : r.why;
     $("chReveal").classList.remove("hidden");
-    $("chReveal").innerHTML = "<b>→ " + esc(r.jump) + "</b> " + pageChip(r.jump) + (why ? ("<div class='chwhy'>" + esc(why) + "</div>") : "");
+    $("chReveal").innerHTML = "<b>→ " + esc(r.jump) + "</b> " + pageChip(r.jump) + (why ? ("<div class='chwhy'>" + iso(why) + "</div>") : "");
   }
   function chLocalize() {
     var T = chT(), rtl = getLang() === "fa";
     ["chTitle", "chIntro", "chScore", "chPrompt", "chReveal"].forEach(function (id) { var e = $(id); if (e) e.dir = rtl ? "rtl" : "ltr"; });
-    if ($("chTitle")) $("chTitle").textContent = T.title;
-    if ($("chIntro")) $("chIntro").textContent = T.intro;
+    if ($("chTitle")) $("chTitle").innerHTML = iso(T.title);
+    if ($("chIntro")) $("chIntro").innerHTML = iso(T.intro);
     $("chScore").textContent = T.score + " " + CH.found + " / " + CH.total;
     $("chShow").textContent = T.show; $("chFound").textContent = T.found; $("chMiss").textContent = T.miss;
     chRenderPrompt();
