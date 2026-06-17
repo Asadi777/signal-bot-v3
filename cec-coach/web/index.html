@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — PBR Holding · BC Construction Electrician (CEC 2024)</title>
-  <link rel="manifest" href="manifest.webmanifest?v=22" />
-  <link rel="icon" type="image/png" href="favicon.png?v=22" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=22" />
+  <link rel="manifest" href="manifest.webmanifest?v=23" />
+  <link rel="icon" type="image/png" href="favicon.png?v=23" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=23" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="CEC Coach" />
-  <link rel="stylesheet" href="styles.css?v=22" />
+  <link rel="stylesheet" href="styles.css?v=23" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand" data-home>
-      <img src="logo.png?v=22" class="brandlogo" alt="PBR Holding" />
+      <img src="logo.png?v=23" class="brandlogo" alt="PBR Holding" />
       <span class="brandtxt">PBR Holding<small>CEC Coach</small></span>
     </div>
     <div class="topright">
@@ -155,7 +155,8 @@
     <!-- STUDY PLAN -->
     <section id="plan" class="screen hidden">
       <button class="back" data-home>← Back</button>
-      <h2>📅 Study Plan — 6 weeks · 3h/day</h2>
+      <h2 id="planTitle">📅 Study Plan — 6 weeks · 3h/day</h2>
+      <div id="planLang" class="langtoggle"></div>
       <div class="timecard">
         <div id="timerBig" class="timerbig">0:00</div>
         <div class="timerbtns">
@@ -175,8 +176,9 @@
     <!-- CODE-HUNT DRILLS -->
     <section id="codehunt" class="screen hidden">
       <button class="back" data-home>← Back</button>
-      <h2>🧭 Code-Hunt Drills</h2>
-      <p class="sub">A scenario appears + a 90-second timer. Race to find the governing
+      <h2 id="chTitle">🧭 Code-Hunt Drills</h2>
+      <div id="chLang" class="langtoggle"></div>
+      <p id="chIntro" class="sub">A scenario appears + a 90-second timer. Race to find the governing
         Rule/Table in your code book, then reveal to check. Builds clean-book speed.</p>
       <div id="chScore" class="chscore"></div>
       <div class="qcard">
@@ -296,12 +298,12 @@
   </main>
 
   <footer class="copyright">
-    <img src="logo.png?v=22" class="cpright-logo" alt="" />
+    <img src="logo.png?v=23" class="cpright-logo" alt="" />
     © 2026 PBR Holding — All rights reserved. · CEC Coach
   </footer>
 
-  <script src="questions.js?v=22"></script>
-  <script src="study.js?v=22"></script>
-  <script src="app.js?v=22"></script>
+  <script src="questions.js?v=23"></script>
+  <script src="study.js?v=23"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>

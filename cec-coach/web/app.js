@@ -730,7 +730,7 @@
   function stars(n) { n = Math.max(0, Math.min(5, n || 0)); return "<span class='stars' title='" + n + "/5'>" + "★★★★★".slice(0, n) + "<span class='stardim'>" + "★★★★★".slice(n) + "</span></span>"; }
   function secLabel(s) {
     var head = s.section === "occ" ? "Occupational / Safety" : (s.section === 0 ? "Section 0" : "Section " + s.section);
-    var nm = esc(s.name || "").replace(/^Section\s+\d+\s*[—-]\s*/, "");
+    var nm = (s.name || "").replace(/^Section\s+\d+\s*[—-]\s*/, "");
     return head + (nm ? " — " + nm : "");
   }
 
@@ -878,11 +878,17 @@
     { title: "Week 6 — Section 28 (motors) + full mocks", secs: ["28"] }
   ];
   var PLAN_BLK = [
-    { min: 25, label: "Code-hunt / keyword drills", go: "codehunt" },
-    { min: 70, label: "Study the day's lesson(s)", go: "study" },
-    { min: 55, label: "Timed practice quiz", go: "practice" },
-    { min: 30, label: "Review your misses", go: "weak" }
+    { min: 25, label: "Code-hunt / keyword drills", fa: "تمرینِ Code-Hunt و کلیدواژه‌ها", go: "codehunt" },
+    { min: 70, label: "Study the day's lesson(s)", fa: "خواندنِ درسِ امروز", go: "study" },
+    { min: 55, label: "Timed practice quiz", fa: "کوییزِ تمرینیِ زمان‌دار", go: "practice" },
+    { min: 30, label: "Review your misses", fa: "مرورِ غلط‌هایت", go: "weak" }
   ];
+  function blockLabel(b) { return (getLang() === "fa" && b.fa) ? b.fa : b.label; }
+  function planT() {
+    return getLang() === "fa"
+      ? { title: "📅 برنامهٔ درسی — ۶ هفته × ۳ ساعت/روز", today: "امروز", week: "این هفته", total: "کل", start: "▶ شروع مطالعه", pause: "⏸ توقف", reset: "ریستِ امروز", now: "همین الان", day: "روزِ", startTask: "این کار را شروع کن →", doneA: "🎉 برنامه تمام شد — ", doneB: " مطالعه ثبت شد. حالا Mockهای کاملِ زمان‌دار بزن.", secs: "بخش‌ها:" }
+      : { title: "📅 Study Plan — 6 weeks · 3h/day", today: "Today", week: "This week", total: "Total", start: "▶ Start studying", pause: "⏸ Pause", reset: "Reset day", now: "Right now", day: "Day", startTask: "Start this task →", doneA: "🎉 Plan complete — ", doneB: " logged. Keep running full timed mocks.", secs: "Sections:" };
+  }
   var TIME = JSON.parse(localStorage.getItem("cec_time") || "null") || { total: 0, days: {}, start: null, running: false };
   function saveTime() { localStorage.setItem("cec_time", JSON.stringify(TIME)); }
   function dkey(d) { d = d || new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
@@ -903,6 +909,7 @@
   }
   function planUI() {
     if (!$("trkToday")) { var hud0 = $("hud"); if (hud0) hud0.innerHTML = TIME.running ? "<span class='studying'>⏺ studying</span>" : ""; return; }
+    var T = planT();
     var today = TIME.days[dkey()] || 0, wk = weekMin(), total = TIME.total;
     $("trkToday").textContent = fmtH(today) + " / 3h";
     $("trkWeek").textContent = fmtH(wk) + " / 18h";
@@ -910,20 +917,26 @@
     $("barToday").style.width = Math.min(100, today / PLAN_DAY * 100) + "%";
     $("barWeek").style.width = Math.min(100, wk / (PLAN_DAY * PLAN_DAYS_WK) * 100) + "%";
     $("barTotal").style.width = Math.min(100, total / PLAN_TOTAL * 100) + "%";
-    var bt = $("timerToggle"); if (bt) bt.textContent = TIME.running ? "⏸ Pause" : "▶ Start studying";
+    if ($("planTitle")) $("planTitle").textContent = T.title;
+    var lbls = $("plan") ? $("plan").querySelectorAll(".tracklbl") : [];
+    if (lbls.length === 3) { lbls[0].textContent = T.today; lbls[1].textContent = T.week; lbls[2].textContent = T.total; }
+    var rb = $("timerReset"); if (rb) rb.textContent = T.reset;
+    var bt = $("timerToggle"); if (bt) bt.textContent = TIME.running ? T.pause : T.start;
     var big = $("timerBig"); if (big) { var s = Math.floor(today * 60); big.textContent = Math.floor(s / 3600) + ":" + ("0" + Math.floor(s % 3600 / 60)).slice(-2) + ":" + ("0" + Math.floor(s % 60)).slice(-2); big.classList.toggle("live", TIME.running); }
     var hud = $("hud"); if (hud) hud.innerHTML = TIME.running ? "<span class='studying'>⏺ studying</span>" : "";
   }
   function renderPlan() {
+    langBar("planLang", renderPlan);
     planUI();
+    var T = planT();
     var seg = curSeg(), nt = $("nowTask");
     if (seg) {
       var wk = PLAN_CUR[seg.wi];
-      nt.innerHTML = "<div class='ntlbl'>Right now · " + esc(wk.title) + " · Day " + seg.day + "</div>" +
-        "<div class='nttask'>" + esc(seg.b.label) + " · " + seg.b.min + " min</div>" +
-        "<button class='primary' id='nowGo'>Start this task →</button>";
+      nt.innerHTML = "<div class='ntlbl'>" + esc(T.now) + " · " + esc(wk.title) + " · " + esc(T.day) + " " + seg.day + "</div>" +
+        "<div class='nttask'>" + esc(blockLabel(seg.b)) + " · " + seg.b.min + " min</div>" +
+        "<button class='primary' id='nowGo'>" + esc(T.startTask) + "</button>";
       $("nowGo").onclick = function () { if (!TIME.running) timeStart(); planGoTask(seg.b.go, wk); };
-    } else { nt.innerHTML = "<div class='nttask'>🎉 Plan complete — " + fmtH(TIME.total) + " logged. Keep running full timed mocks.</div>"; }
+    } else { nt.innerHTML = "<div class='nttask'>" + esc(T.doneA) + fmtH(TIME.total) + esc(T.doneB) + "</div>"; }
     var segs = planSegs(), pw = {};
     segs.forEach(function (s) { var p = pw[s.wi] = pw[s.wi] || { total: 0, start: 1e9, end: 0 }; p.total += s.b.min; p.start = Math.min(p.start, s.start); p.end = Math.max(p.end, s.start + s.b.min); });
     var h = "";
@@ -932,34 +945,56 @@
       var cur = TIME.total >= p.start && TIME.total < p.end;
       h += "<div class='planweek" + (cur ? " cur" : "") + "'><div class='pwtop'><b>" + esc(wk.title) + "</b><span>" + pct + "%</span></div>" +
         "<div class='trackbar'><div class='trackfill' style='width:" + pct + "%'></div></div>" +
-        "<div class='pwsecs'>Sections: " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div></div>";
+        "<div class='pwsecs'>" + esc(T.secs) + " " + wk.secs.map(function (s) { var pg = secPage(s); return (s === "occ" ? "Occ" : "S" + s) + (pg ? (" · p." + pg) : ""); }).join("  ") + "</div></div>";
     });
     $("planList").innerHTML = h;
   }
 
-  // ===== Code-Hunt drills =====
-  var CH = { pool: [], i: 0, timer: null, end: 0, found: 0, total: 0 };
+  // ===== Code-Hunt drills (bilingual) =====
+  var CH = { pool: [], i: 0, timer: null, end: 0, found: 0, total: 0, revealed: false };
+  function chT() {
+    return getLang() === "fa"
+      ? { title: "🧭 تمرینِ Code-Hunt", intro: "یک سناریو + تایمرِ ۹۰ ثانیه. مسابقه بده تا Rule/Table مربوطه را در کتاب پیدا کنی، بعد «نمایش محل» را بزن. سرعتِ کار با کتابِ تمیز را می‌سازد.", find: "این کجای کتاب است؟", score: "به‌موقع پیدا شد:", show: "نمایش محل", found: "✅ به‌موقع پیدا کردم", miss: "❌ نشد" }
+      : { title: "🧭 Code-Hunt Drills", intro: "A scenario appears + a 90-second timer. Race to find the governing Rule/Table in your code book, then reveal to check. Builds clean-book speed.", find: "Find where this lives:", score: "Found in time:", show: "Reveal location", found: "✅ Found in time", miss: "❌ Missed" };
+  }
   function startCodeHunt() {
     var rows = [];
-    STUDY.forEach(function (s) { (s.keywords || []).forEach(function (k) { rows.push({ sec: secLabel(s), kw: k.kw, jump: k.jump, why: k.why }); }); });
-    CH = { pool: shuffle(rows), i: 0, timer: null, end: 0, found: 0, total: 0 };
+    STUDY.forEach(function (s) { (s.keywords || []).forEach(function (k) { rows.push({ sec: secLabel(s), kw: k.kw, jump: k.jump, why: k.why, why_fa: k.why_fa }); }); });
+    CH = { pool: shuffle(rows), i: 0, timer: null, end: 0, found: 0, total: 0, revealed: false };
+    langBar("chLang", chLocalize);
     chNext();
+  }
+  function chRenderPrompt() {
+    var T = chT(), r = CH.pool[CH.i % CH.pool.length]; if (!r) return;
+    $("chPrompt").innerHTML = esc(T.find) + "<br><b>" + esc(r.kw) + "</b><div class='chsec'>" + esc(r.sec) + "</div>";
+  }
+  function chRenderReveal() {
+    var r = CH.pool[CH.i % CH.pool.length];
+    var why = (getLang() === "fa" && r.why_fa) ? r.why_fa : r.why;
+    $("chReveal").classList.remove("hidden");
+    $("chReveal").innerHTML = "<b>→ " + esc(r.jump) + "</b> " + pageChip(r.jump) + (why ? ("<div class='chwhy'>" + esc(why) + "</div>") : "");
+  }
+  function chLocalize() {
+    var T = chT();
+    if ($("chTitle")) $("chTitle").textContent = T.title;
+    if ($("chIntro")) $("chIntro").textContent = T.intro;
+    $("chScore").textContent = T.score + " " + CH.found + " / " + CH.total;
+    $("chShow").textContent = T.show; $("chFound").textContent = T.found; $("chMiss").textContent = T.miss;
+    chRenderPrompt();
+    if (CH.revealed) chRenderReveal();
   }
   function chNext() {
     if (CH.timer) clearInterval(CH.timer);
-    var r = CH.pool[CH.i % CH.pool.length];
-    $("chPrompt").innerHTML = "Find where this lives:<br><b>" + esc(r.kw) + "</b><div class='chsec'>" + esc(r.sec) + "</div>";
+    CH.revealed = false;
     $("chReveal").classList.add("hidden"); $("chReveal").innerHTML = "";
     $("chShow").classList.remove("hidden"); $("chFound").classList.add("hidden"); $("chMiss").classList.add("hidden");
+    chLocalize();
     CH.end = Date.now() + 90000; chTick(); CH.timer = setInterval(chTick, 250);
-    $("chScore").textContent = "Found in time: " + CH.found + " / " + CH.total;
   }
   function chTick() { var ms = CH.end - Date.now(); if (ms < 0) ms = 0; var t = $("chTimer"); t.textContent = fmt(ms); t.classList.toggle("warn", ms < 20000); if (ms <= 0) { clearInterval(CH.timer); chShowAns(); } }
   function chShowAns() {
     if (CH.timer) clearInterval(CH.timer);
-    var r = CH.pool[CH.i % CH.pool.length];
-    $("chReveal").classList.remove("hidden");
-    $("chReveal").innerHTML = "<b>→ " + esc(r.jump) + "</b> " + pageChip(r.jump) + (r.why ? ("<div class='chwhy'>" + esc(r.why) + "</div>") : "");
+    CH.revealed = true; chRenderReveal();
     $("chShow").classList.add("hidden"); $("chFound").classList.remove("hidden"); $("chMiss").classList.remove("hidden");
   }
   function chMark(ok) { CH.total++; if (ok) CH.found++; CH.i++; chNext(); }
