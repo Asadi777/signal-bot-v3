@@ -6,17 +6,17 @@
     "qcount": 18,
     "importance": 4,
     "summary": "Section 2 sets the universal rules: working space, headroom, voltage-to-ground, enclosure selection and gas-meter clearance. Easy, high-frequency lookups that protect free marks across the whole exam.",
-    "summary_fa": "Section 2 همان قوانین پایه و عمومی است که همه‌جای Code به آن تکیه دارد: فضای کار، ارتفاع آزاد بالای تجهیزات (headroom)، ولتاژ نسبت به زمین، انتخاب نوع محفظه (enclosure) و فاصله از کنتور گاز. این‌ها سوال‌های ساده و پرتکرارند؛ کافی است جای جدول و قانون را بلد باشی تا نمره‌اش را مفت ببری.",
+    "summary_fa": "Section 2 همان قوانین پایه و عمومی است که همه‌جای Code به آن تکیه دارد: working space (فضای کار)، headroom (ارتفاع آزاد) بالای تجهیزات، voltage-to-ground، انتخاب نوع enclosure (محفظه) و فاصله از gas meter (کنتور گاز). این‌ها سوال‌های ساده و پرتکرارند؛ کافی است جای table و rule را بلد باشی تا نمره‌اش را مفت ببری.",
     "keyTables": [
-      {"ref": "Table 65", "stars": 5, "what": "Enclosure type selection (1, 3R, 4, 4X...)", "what_fa": "از روی این جدول نوع محفظه (enclosure) را انتخاب می‌کنی: 1، 3R، 4، 4X و غیره", "use": "match enclosure to the location: wet, corrosive, outdoor, dust", "use_fa": "اول شرایط محل را بسنج (مرطوب؟ خورنده؟ فضای باز؟ گردوغبار؟) بعد ارزان‌ترین Type که همه‌ی آن شرایط را پوشش بدهد انتخاب کن"},
-      {"ref": "Table 56", "stars": 4, "what": "Working space for exposed live parts >750 V", "what_fa": "فضای کار برای قطعات برقدارِ بدون پوشش در ولتاژ بالای 750 V", "use": "enter with line-to-ground voltage AND the facing-surface condition", "use_fa": "با دو ورودی وارد جدول شو: ولتاژ line-to-ground و وضعیت سطح روبه‌رو (مثلاً دیوارِ زمین‌شده یا قطعات برقدار). یادت باشد اول ولتاژ را به line-to-ground تبدیل کنی"}
+      {"ref": "Table 65", "stars": 5, "what": "Enclosure type selection (1, 3R, 4, 4X...)", "what_fa": "از روی این Table نوع enclosure (محفظه) را انتخاب می‌کنی: Type 1، 3R، 4، 4X و غیره", "use": "match enclosure to the location: wet, corrosive, outdoor, dust", "use_fa": "اول شرایط محل را بسنج (wet؟ corrosive؟ outdoor؟ dust؟) بعد ارزان‌ترین Type که همه‌ی آن شرایط را پوشش بدهد انتخاب کن"},
+      {"ref": "Table 56", "stars": 4, "what": "Working space for exposed live parts >750 V", "what_fa": "working space برای exposed live parts (قطعات برقدارِ بدون پوشش) در voltage بالای 750 V", "use": "enter with line-to-ground voltage AND the facing-surface condition", "use_fa": "با دو ورودی وارد Table شو: line-to-ground voltage و وضعیت facing surface (مثلاً grounded wall یا live parts). یادت باشد اول ولتاژ را به line-to-ground تبدیل کنی"}
     ],
     "keyRules": [
-      {"ref": "Rule 2-308", "stars": 5, "what": "Working space / clearance / headroom about equipment", "what_fa": "فضای کار، فاصله‌ی مجاز و ارتفاع آزاد اطراف تجهیزات", "note": "1 m front (2-308 1); 2.2 m headroom (2-308 5); HV via Table 56 (2-308 4) - guaranteed exam topic", "note_fa": "1 m جلوی تجهیزات (2-308 1)؛ 2.2 m ارتفاع آزاد بالای سر (2-308 5)؛ برای ولتاژ بالا برو سراغ Table 56 (2-308 4). این قانون تقریباً همیشه در آزمون می‌آید، حفظش کن"},
-      {"ref": "Rule 2-110", "stars": 4, "what": "Max voltage-to-ground in a dwelling = 150 V", "what_fa": "در واحد مسکونی، ولتاژ نسبت به زمین نباید از 150 V بیشتر شود", "note": "exception only if calc load >250 kVA AND qualified maintenance staff", "note_fa": "استثنایش فقط وقتی است که هم بار محاسبه‌شده بالای 250 kVA باشد و هم کارکنانِ نگهداریِ واجد شرایط حضور داشته باشند؛ هر دو شرط با هم لازم است"},
-      {"ref": "Rule 2-328", "stars": 3, "what": "Clearance of equipment from gas metering/relief devices", "what_fa": "فاصله‌ی مجاز تجهیزات برقی از کنتور گاز و شیرهای تخلیه‌ی فشار (relief)", "note": "numeric values live in Appendix B, not the rule body", "note_fa": "خودِ عددها در Appendix B هستند نه در متن قانون؛ این دقیقاً همان‌جایی است که خیلی‌ها گیر می‌کنند"},
-      {"ref": "Rule 2-130", "stars": 2, "what": "Flame-spread (FT) rating of cables in buildings", "what_fa": "رده‌ی گسترش شعله (FT) برای کابل‌های داخل ساختمان", "note": "FT ratings explained in Appendix B; references the NBC", "note_fa": "توضیح رده‌های FT در Appendix B آمده و خودِ قانون هم به NBC ارجاع می‌دهد"},
-      {"ref": "Appendix B", "stars": 3, "what": "Plain-language notes, gas-meter distances, FT ratings", "what_fa": "یادداشت‌های توضیحیِ ساده، فاصله‌های کنتور گاز و رده‌های FT", "note": "the 'note of the day' - 6-7 questions exam-wide live here", "note_fa": "همان پیوستِ طلاییِ امتحان؛ نزدیک 6 تا 7 سوالِ کل آزمون از همین‌جا درمی‌آید، پس دستِ‌کم نگیرش"}
+      {"ref": "Rule 2-308", "stars": 5, "what": "Working space / clearance / headroom about equipment", "what_fa": "working space، clearance (فاصله‌ی مجاز) و headroom اطراف تجهیزات", "note": "1 m front (2-308 1); 2.2 m headroom (2-308 5); HV via Table 56 (2-308 4) - guaranteed exam topic", "note_fa": "1 m جلوی تجهیزات (2-308 1)؛ 2.2 m headroom بالای سر (2-308 5)؛ برای high voltage برو سراغ Table 56 (2-308 4). این Rule تقریباً همیشه در آزمون می‌آید، حفظش کن"},
+      {"ref": "Rule 2-110", "stars": 4, "what": "Max voltage-to-ground in a dwelling = 150 V", "what_fa": "در dwelling، voltage-to-ground نباید از 150 V بیشتر شود", "note": "exception only if calc load >250 kVA AND qualified maintenance staff", "note_fa": "استثنایش فقط وقتی است که هم calculated load بالای 250 kVA باشد و هم qualified maintenance staff (کارکنانِ نگهداریِ واجد شرایط) حضور داشته باشند؛ هر دو شرط با هم لازم است"},
+      {"ref": "Rule 2-328", "stars": 3, "what": "Clearance of equipment from gas metering/relief devices", "what_fa": "clearance تجهیزات برقی از gas meter و pressure-relief devices (شیرهای تخلیه‌ی فشار)", "note": "numeric values live in Appendix B, not the rule body", "note_fa": "خودِ عددها در Appendix B هستند نه در متنِ rule؛ این دقیقاً همان‌جایی است که خیلی‌ها گیر می‌کنند"},
+      {"ref": "Rule 2-130", "stars": 2, "what": "Flame-spread (FT) rating of cables in buildings", "what_fa": "flame-spread (FT) rating برای cable‌های داخل ساختمان", "note": "FT ratings explained in Appendix B; references the NBC", "note_fa": "توضیح FT ratings در Appendix B آمده و خودِ rule هم به NBC ارجاع می‌دهد"},
+      {"ref": "Appendix B", "stars": 3, "what": "Plain-language notes, gas-meter distances, FT ratings", "what_fa": "notes توضیحیِ ساده، gas-meter distances و FT ratings", "note": "the 'note of the day' - 6-7 questions exam-wide live here", "note_fa": "همان Appendix طلاییِ امتحان؛ نزدیک 6 تا 7 سوالِ کل آزمون از همین‌جا درمی‌آید، پس دستِ‌کم نگیرش"}
     ],
     "mustKnow": [
       "General working space in front of equipment = 1.0 m with secure footing (Rule 2-308 1).",
@@ -27,12 +27,12 @@
       "Gas-meter clearance (Appendix B): natural gas ~1 m, propane ~3 m, 0.3 m with a listed regulator; arc-producing equipment kept farther."
     ],
     "mustKnow_fa": [
-      "فضای کارِ عمومیِ جلوی تجهیزات 1.0 m است، آن هم با جای پای محکم و مطمئن (Rule 2-308 1).",
-      "ارتفاع آزادِ بالای سر روی switchboard و MCC که قطعات برقدارِ بدون پوشش دارند حداقل 2.2 m است (2-308 5).",
-      "در واحد مسکونی، ولتاژ نسبت به زمین حداکثر 150 V است (2-110)؛ سیستم رایجِ 120/240 V نسبت به زمین فقط 120 V دارد، پس راحت در محدوده است.",
-      "رمزِ پسوندهای محفظه: 'X' یعنی مقاوم به خوردگی، '3R' یعنی ضدبارانِ فضای باز، '4' یعنی آب‌بند و مقاوم به شیلنگ، و '4X' یعنی آب‌بند به‌علاوه‌ی مقاوم به خوردگی.",
-      "فضای کار برای ترانسفورمر فقط وقتی لازم می‌شود که از 50 kVA بیشتر باشد؛ دقیقاً 50 kVA هنوز نیازی ندارد (مرز شامل خودِ عدد است).",
-      "فاصله از کنتور گاز (Appendix B): گاز طبیعی حدود 1 m، پروپان حدود 3 m، و با رگولاتورِ listed تا 0.3 m؛ تجهیزاتِ جرقه‌زا را باید دورتر هم نگه داری."
+      "working space عمومیِ جلوی تجهیزات 1.0 m است، آن هم با secure footing (جای پای محکم) (Rule 2-308 1).",
+      "headroom بالای سر روی switchboard و MCC که exposed live parts دارند حداقل 2.2 m است (2-308 5).",
+      "در dwelling، voltage-to-ground حداکثر 150 V است (2-110)؛ سیستم رایجِ 120/240 V نسبت به زمین فقط 120 V دارد، پس راحت در محدوده است.",
+      "رمزِ پسوندهای enclosure: 'X' یعنی corrosion resistant، '3R' یعنی rainproof outdoor، '4' یعنی watertight و مقاوم به hose، و '4X' یعنی watertight به‌علاوه‌ی corrosive.",
+      "working space برای transformer فقط وقتی لازم می‌شود که از 50 kVA بیشتر باشد؛ دقیقاً 50 kVA هنوز نیازی ندارد (مرز شامل خودِ عدد است).",
+      "gas-meter clearance (Appendix B): natural gas حدود 1 m، propane حدود 3 m، و با یک listed regulator تا 0.3 m؛ arc-producing equipment را باید دورتر هم نگه داری."
     ],
     "traps": [
       "Table 56 uses LINE-TO-GROUND voltage - convert first (divide 3-phase by root3); don't re-divide an already-converted value.",
@@ -42,14 +42,14 @@
       "Dwelling 150 V rule is 2-110, not 2-130 (2-130 is flame-spread)."
     ],
     "traps_fa": [
-      "Table 56 ورودی‌اش ولتاژِ line-to-ground است؛ اول تبدیل کن (ولتاژ سه‌فاز را تقسیم بر root3) ولی حواست باشد عددی را که قبلاً تبدیل شده دوباره تقسیم نکنی — این دامِ کلاسیکِ سرِ امتحان است.",
-      "مرزهای کلاس ولتاژ شاملِ خودِ عدد هم می‌شوند؛ 'not exceeding X' یعنی خودِ X هم داخلش است (ترانسفورمرِ دقیقاً 50 kVA هنوز فضای کار لازم ندارد).",
-      "عددِ فاصله‌ی کنتور گاز در Appendix B است نه در متنِ Rule 2-328؛ خیلی‌ها سرِ قانون می‌ایستند و پیوست را نمی‌بینند و سوال را می‌بازند.",
-      "Type 3R (فقط باران) را با Type 4 (پاشش و شیلنگ) یا 4X (پاشش به‌علاوه‌ی خوردگی) قاطی نکن؛ دقیقاً به کلماتِ توصیفِ محل در صورتِ سوال نگاه کن.",
-      "قانونِ 150 V مسکونی همان Rule 2-110 است نه 2-130؛ یادت باشد 2-130 مالِ گسترشِ شعله است."
+      "Table 56 ورودی‌اش line-to-ground voltage است؛ اول تبدیل کن (3-phase voltage را تقسیم بر root3) ولی حواست باشد عددی را که قبلاً تبدیل شده دوباره تقسیم نکنی — این دامِ کلاسیکِ سرِ امتحان است.",
+      "مرزهای voltage class شاملِ خودِ عدد هم می‌شوند؛ 'not exceeding X' یعنی خودِ X هم داخلش است (transformerِ دقیقاً 50 kVA هنوز working space لازم ندارد).",
+      "عددِ gas-meter distance در Appendix B است نه در متنِ Rule 2-328؛ خیلی‌ها سرِ rule می‌ایستند و Appendix را نمی‌بینند و سوال را می‌بازند.",
+      "Type 3R (فقط rain) را با Type 4 (splash و hose) یا 4X (splash به‌علاوه‌ی corrosive) قاطی نکن؛ دقیقاً به location words در صورتِ سوال نگاه کن.",
+      "Rule 150 V مسکونی همان Rule 2-110 است نه 2-130؛ یادت باشد 2-130 مالِ flame-spread است."
     ],
     "mnemonic": "Working space = ONE in front, TWO-point-TWO up. 'X' = corroXion; '3R' = Rain; '4' = wash (hose); '4X' = wash + corroXion.",
-    "mnemonic_fa": "فضای کار را این‌طوری حفظ کن: «یک متر جلو، 2.2 متر بالا». رمزِ محفظه‌ها هم: 'X' = خوردگی (corroXion)، '3R' = باران (Rain)، '4' = شست‌وشو با شیلنگ، و '4X' = شست‌وشو به‌علاوه‌ی خوردگی.",
+    "mnemonic_fa": "working space را این‌طوری حفظ کن: «یک متر جلو، 2.2 متر بالا». رمزِ enclosure‌ها هم: 'X' = corroXion، '3R' = Rain، '4' = wash با hose، و '4X' = wash به‌علاوه‌ی corroXion.",
     "method": [
       "Spot the keyword: working space -> Rule 2-308; enclosure -> Table 65; voltage-to-ground -> Rule 2-110; gas meter -> Rule 2-328 + Appendix B.",
       "For working space, first decide the voltage class: <=750 V uses the flat 1 m; >750 V goes to Table 56 with line-to-ground voltage.",
@@ -57,25 +57,25 @@
       "If the number isn't in the rule body, jump to Appendix B (gas clearances, FT ratings)."
     ],
     "method_fa": [
-      "اول از روی کلیدواژه مسیرت را پیدا کن: working space برو Rule 2-308؛ enclosure برو Table 65؛ ولتاژ نسبت به زمین برو Rule 2-110؛ کنتور گاز برو Rule 2-328 به‌علاوه‌ی Appendix B.",
-      "برای فضای کار اول کلاس ولتاژ را معلوم کن: 750 V و پایین‌تر همان 1 m ثابت است؛ بالای 750 V باید بروی Table 56 و با ولتاژ line-to-ground واردش شوی.",
-      "برای محفظه، شرایط محل را لیست کن (مرطوب؟ خورنده؟ فضای باز؟ گردوغبار؟) و پایین‌ترین Type در Table 65 را بردار که همه‌ی آن شرایط را پوشش بدهد — نه بیشتر، نه کمتر.",
-      "هر وقت عدد را در متن قانون پیدا نکردی، یک‌راست برو Appendix B (همان‌جا فاصله‌های گاز و رده‌های FT را پیدا می‌کنی)."
+      "اول از روی keyword مسیرت را پیدا کن: working space برو Rule 2-308؛ enclosure برو Table 65؛ voltage-to-ground برو Rule 2-110؛ gas meter برو Rule 2-328 به‌علاوه‌ی Appendix B.",
+      "برای working space اول voltage class را معلوم کن: 750 V و پایین‌تر همان 1 m ثابت است؛ بالای 750 V باید بروی Table 56 و با line-to-ground voltage واردش شوی.",
+      "برای enclosure، شرایط محل را لیست کن (wet؟ corrosive؟ outdoor؟ dust؟) و پایین‌ترین Type در Table 65 را بردار که همه‌ی آن شرایط را پوشش بدهد — نه بیشتر، نه کمتر.",
+      "هر وقت عدد را در متنِ rule پیدا نکردی، یک‌راست برو Appendix B (همان‌جا gas clearances و FT ratings را پیدا می‌کنی)."
     ],
     "examples": ["S02-002", "S02-004", "S02-007", "S02-013", "S02-017", "S02-018"],
     "keywords": [
-      {"kw": "\"enclosure type (3R, 4, 4X, 5)\"", "jump": "Table 65", "why": "selects enclosure by wet/corrosive/dust/outdoor conditions", "why_fa": "نوع محفظه را بر اساس شرایط محل (مرطوب، خورنده، گردوغبار، فضای باز) انتخاب می‌کنی", "stars": 5},
-      {"kw": "\"working space / clearance in front of\"", "jump": "Rule 2-308 1) + Table 56", "why": "1 m general; Table 56 (line-to-ground) above 750 V", "why_fa": "حالت عمومی 1 m است؛ ولی بالای 750 V باید بروی Table 56 و با ولتاژ line-to-ground واردش شوی", "stars": 5},
-      {"kw": "\"voltage to ground in a dwelling\"", "jump": "Rule 2-110", "why": "150 V max; exception >250 kVA + qualified staff", "why_fa": "سقفش 150 V است؛ استثنا فقط بالای 250 kVA و آن هم با کارکنان واجد شرایط", "stars": 4},
-      {"kw": "\"headroom of working space\"", "jump": "Rule 2-308 5)", "why": "2.2 m over switchboards/MCCs with exposed live parts", "why_fa": "بالای switchboard و MCC با قطعات برقدارِ بدون پوشش باید 2.2 m ارتفاع آزاد باشد", "stars": 4},
-      {"kw": "\"high-voltage / >750 V working space\"", "jump": "Rule 2-308 4) + Table 56", "why": "keyed to voltage class and facing surface", "why_fa": "اندازه‌اش به کلاس ولتاژ و وضعیت سطح روبه‌رو بستگی دارد، نه یک عدد ثابت", "stars": 4},
-      {"kw": "\"corrosive area / splash of water\"", "jump": "Table 65 (Type 4X / 3X)", "why": "'X' suffix = added corrosion resistance", "why_fa": "هر جا پسوند 'X' دیدی یعنی مقاومت اضافی در برابر خوردگی اضافه شده", "stars": 4},
-      {"kw": "\"gas meter clearance / pressure-relief device\"", "jump": "Rule 2-328 + Appendix B", "why": "numeric distances are in Appendix B", "why_fa": "خودِ عددِ فاصله‌ها در Appendix B است، در متنِ قانون پیدایش نمی‌کنی", "stars": 3},
-      {"kw": "\"transformer working space\"", "jump": "Rule 2-308", "why": "required only when transformer >50 kVA", "why_fa": "فقط وقتی لازم است که ترانسفورمر از 50 kVA بیشتر باشد", "stars": 3},
-      {"kw": "\"cable flame rating / FT1 FT4\"", "jump": "Rule 2-130 + Appendix B", "why": "combustible vs non-combustible construction", "why_fa": "بستگی دارد به اینکه سازه قابل‌اشتعال است یا غیرقابل‌اشتعال", "stars": 2},
-      {"kw": "\"deviation / special permission\"", "jump": "Rule 2-030", "why": "approved before work, that installation only", "why_fa": "مجوزِ ویژه که قبل از شروعِ کار گرفته می‌شود و فقط برای همان نصبِ خاص اعتبار دارد", "stars": 2},
-      {"kw": "\"disconnecting means / open position indication\"", "jump": "Rule 2-308 + 14-500 series", "why": "must positively indicate OFF (a 3-way switch cannot)", "why_fa": "باید قطعی و مطمئن وضعیت OFF را نشان بدهد؛ کلید 3-way از پسش برنمی‌آید", "stars": 2},
-      {"kw": "\"illumination of equipment\"", "jump": "Rule 2-320", "why": "lighting at electrical rooms - do not confuse with 2-328", "why_fa": "روشناییِ اتاق‌های برق است؛ مراقب باش با 2-328 (کنتور گاز) قاطی نکنی", "stars": 1}
+      {"kw": "\"enclosure type (3R, 4, 4X, 5)\"", "jump": "Table 65", "why": "selects enclosure by wet/corrosive/dust/outdoor conditions", "why_fa": "نوع enclosure را بر اساس شرایط محل (wet، corrosive، dust، outdoor) انتخاب می‌کنی", "stars": 5},
+      {"kw": "\"working space / clearance in front of\"", "jump": "Rule 2-308 1) + Table 56", "why": "1 m general; Table 56 (line-to-ground) above 750 V", "why_fa": "حالت عمومی 1 m است؛ ولی بالای 750 V باید بروی Table 56 و با line-to-ground voltage واردش شوی", "stars": 5},
+      {"kw": "\"voltage to ground in a dwelling\"", "jump": "Rule 2-110", "why": "150 V max; exception >250 kVA + qualified staff", "why_fa": "سقفش 150 V است؛ exception فقط بالای 250 kVA و آن هم با qualified staff", "stars": 4},
+      {"kw": "\"headroom of working space\"", "jump": "Rule 2-308 5)", "why": "2.2 m over switchboards/MCCs with exposed live parts", "why_fa": "بالای switchboard و MCC با exposed live parts باید 2.2 m headroom باشد", "stars": 4},
+      {"kw": "\"high-voltage / >750 V working space\"", "jump": "Rule 2-308 4) + Table 56", "why": "keyed to voltage class and facing surface", "why_fa": "اندازه‌اش به voltage class و facing surface بستگی دارد، نه یک عدد ثابت", "stars": 4},
+      {"kw": "\"corrosive area / splash of water\"", "jump": "Table 65 (Type 4X / 3X)", "why": "'X' suffix = added corrosion resistance", "why_fa": "هر جا suffix 'X' دیدی یعنی corrosion resistance اضافی اضافه شده", "stars": 4},
+      {"kw": "\"gas meter clearance / pressure-relief device\"", "jump": "Rule 2-328 + Appendix B", "why": "numeric distances are in Appendix B", "why_fa": "خودِ عددِ distances در Appendix B است، در متنِ rule پیدایش نمی‌کنی", "stars": 3},
+      {"kw": "\"transformer working space\"", "jump": "Rule 2-308", "why": "required only when transformer >50 kVA", "why_fa": "فقط وقتی لازم است که transformer از 50 kVA بیشتر باشد", "stars": 3},
+      {"kw": "\"cable flame rating / FT1 FT4\"", "jump": "Rule 2-130 + Appendix B", "why": "combustible vs non-combustible construction", "why_fa": "بستگی دارد به اینکه construction از نوع combustible است یا non-combustible", "stars": 2},
+      {"kw": "\"deviation / special permission\"", "jump": "Rule 2-030", "why": "approved before work, that installation only", "why_fa": "همان deviation؛ special permission که قبل از شروعِ کار approved می‌شود و فقط برای همان installation اعتبار دارد", "stars": 2},
+      {"kw": "\"disconnecting means / open position indication\"", "jump": "Rule 2-308 + 14-500 series", "why": "must positively indicate OFF (a 3-way switch cannot)", "why_fa": "disconnect باید قطعی و مطمئن وضعیت OFF را نشان بدهد؛ یک 3-way switch از پسش برنمی‌آید", "stars": 2},
+      {"kw": "\"illumination of equipment\"", "jump": "Rule 2-320", "why": "lighting at electrical rooms - do not confuse with 2-328", "why_fa": "illumination اتاق‌های برق است؛ مراقب باش با 2-328 (gas meter) قاطی نکنی", "stars": 1}
     ]
   },
   {
@@ -85,10 +85,10 @@
     "qcount": 0,
     "importance": 3,
     "summary": "Section 0 is the dictionary of the Code. Defined terms change how every rule applies, and the exam asks several straight definition questions - free marks if you know the exact wording.",
-    "summary_fa": "Section 0 فرهنگ لغتِ خودِ Code است. هر اصطلاحی که این‌جا تعریف شده، معنای دقیقِ همه‌ی قانون‌های بعدی را تعیین می‌کند؛ پس اگر تعریف را اشتباه بفهمی، کلِ جواب خراب می‌شود. آزمون هم چند سوالِ مستقیمِ تعریف دارد که اگر عبارتِ دقیق را بلد باشی، نمره‌اش مفت است.",
+    "summary_fa": "Section 0 فرهنگ لغتِ خودِ Code است. هر defined term که این‌جا تعریف شده، معنای دقیقِ همه‌ی rule‌های بعدی را تعیین می‌کند؛ پس اگر definition را اشتباه بفهمی، کلِ جواب خراب می‌شود. آزمون هم چند سوالِ مستقیمِ definition دارد که اگر عبارتِ دقیق را بلد باشی، نمره‌اش مفت است.",
     "keyTables": [],
     "keyRules": [
-      {"ref": "Section 0", "stars": 5, "what": "All CEC defined terms", "what_fa": "محلِ تعریفِ همه‌ی اصطلاحاتِ CEC", "note": "first move for any unfamiliar word; a wrong definition corrupts the whole answer", "note_fa": "سرِ هر کلمه‌ی ناآشنا اول این‌جا را باز کن؛ اگر تعریف را غلط بگیری، کلِ جواب از پایه خراب می‌شود"}
+      {"ref": "Section 0", "stars": 5, "what": "All CEC defined terms", "what_fa": "محلِ تعریفِ همه‌ی defined terms در CEC", "note": "first move for any unfamiliar word; a wrong definition corrupts the whole answer", "note_fa": "سرِ هر کلمه‌ی ناآشنا اول این‌جا را باز کن؛ اگر definition را غلط بگیری، کلِ جواب از پایه خراب می‌شود"}
     ],
     "mustKnow": [
       "Bonding: a low-impedance path, permanently and effectively established, to carry fault current and connect non-current-carrying metal parts (memorize the full sentence).",
@@ -116,11 +116,11 @@
       "A defined term may override your field/site meaning - always check Section 0 first."
     ],
     "traps_fa": [
-      "دامِ تعریفِ Bonding: گزینه‌ای که یک کلمه‌اش حذف شده (مثلاً 'permanently' یا 'low-impedance' نباشد) همان جوابِ غلط است؛ هر بند را با دقت چک کن.",
-      "Feeder و branch-circuit را قاطی نکن: فیدر دقیقاً سرِ branch OCPD تمام می‌شود و branch از همان‌جا شروع می‌شود؛ این تقریباً 90٪ برق‌کارها را گول می‌زند.",
-      "Overcurrent و overload را جابه‌جا نکن — یکی مالِ سیم‌هاست و دیگری مالِ موتور.",
-      "مرزهای ولتاژ شاملِ خودِ عدد هم می‌شوند: 30 V داخلِ Extra-Low است و 750 V سقفِ Low است نه شروعِ High؛ در نسخه‌های قدیمی‌تر '1000 V = Low' بوده، پس همیشه عددِ دقیقِ همان نسخه‌ی Code را بخوان.",
-      "یک اصطلاحِ تعریف‌شده ممکن است برداشتِ کارگاهی و میدانیِ تو را باطل کند؛ پس همیشه اول Section 0 را چک کن، بعد قضاوت."
+      "دامِ definition برای Bonding: گزینه‌ای که یک کلمه‌اش حذف شده (مثلاً 'permanently' یا 'low-impedance' نباشد) همان جوابِ غلط است؛ هر clause را با دقت چک کن.",
+      "Feeder و branch circuit را قاطی نکن: feeder دقیقاً سرِ branch OCPD تمام می‌شود و branch از همان‌جا شروع می‌شود؛ این تقریباً 90٪ برق‌کارها را گول می‌زند.",
+      "Overcurrent و overload را جابه‌جا نکن — یکی مالِ wires است و دیگری مالِ motor.",
+      "مرزهای voltage شاملِ خودِ عدد هم می‌شوند: 30 V داخلِ Extra-Low است و 750 V سقفِ Low است نه شروعِ High؛ در نسخه‌های قدیمی‌تر '1000 V = Low' بوده، پس همیشه عددِ دقیقِ همان نسخه‌ی Code را بخوان.",
+      "یک defined term ممکن است برداشتِ کارگاهی و میدانیِ تو را باطل کند؛ پس همیشه اول Section 0 را چک کن، بعد قضاوت."
     ],
     "mnemonic": "Bonding = Big Permanent Low-impedance path. OverCurrent = Conductors; overLoad = motor (Load).",
     "mnemonic_fa": "Bonding را با سه کلمه به‌خاطر بسپار: مسیرِ دائمیِ کم‌امپدانس (Big Permanent Low-impedance). و برای آن جفتِ گول‌زننده: OverCurrent مالِ هادی‌ها (Conductors) است، overLoad مالِ موتور (Load).",
@@ -130,23 +130,23 @@
       "Use the Index if the word could live in a specific section too."
     ],
     "method_fa": [
-      "سرِ هر اصطلاحِ ناآشنا یا کلیدی، قبل از اینکه قانون را بخوانی برو Section 0.",
-      "در سوالاتِ تعریف، تک‌تکِ بندهای گزینه را با جمله‌ی دقیقِ Code مقابله کن؛ دامش معمولاً یک کلمه‌ی حذف‌شده یا عوض‌شده است.",
+      "سرِ هر defined term ناآشنا یا کلیدی، قبل از اینکه rule را بخوانی برو Section 0.",
+      "در سوالاتِ definition، تک‌تکِ clause‌های گزینه را با جمله‌ی دقیقِ Code مقابله کن؛ دامش معمولاً یک کلمه‌ی حذف‌شده یا عوض‌شده است.",
       "اگر آن کلمه احتمالاً در یک Section خاص هم آمده، از Index کمک بگیر تا جای دومش را هم پیدا کنی."
     ],
     "examples": ["OCC-062"],
     "keywords": [
-      {"kw": "\"bonding\"", "jump": "Section 0 definitions", "why": "low-impedance permanent path - memorize verbatim", "why_fa": "مسیرِ دائمیِ کم‌امپدانس؛ این تعریف را کلمه‌به‌کلمه حفظ کن", "stars": 5},
-      {"kw": "\"feeder vs branch circuit\"", "jump": "Section 0 definitions", "why": "service box->branch OCPD vs final OCPD->outlet", "why_fa": "فیدر از service box تا branch OCPD؛ branch از همان آخرین OCPD تا پریز", "stars": 5},
-      {"kw": "\"overcurrent vs overload\"", "jump": "Section 0 definitions", "why": "protects wires vs protects motor", "why_fa": "یکی مراقبِ سیم‌هاست، دیگری مراقبِ موتور", "stars": 5},
-      {"kw": "\"ampacity\"", "jump": "Section 0 definitions", "why": "continuous current without exceeding temp rating", "why_fa": "جریانِ پیوسته بدون بالا زدن از رده‌ی دماییِ هادی", "stars": 4},
+      {"kw": "\"bonding\"", "jump": "Section 0 definitions", "why": "low-impedance permanent path - memorize verbatim", "why_fa": "low-impedance permanent path؛ این definition را کلمه‌به‌کلمه حفظ کن", "stars": 5},
+      {"kw": "\"feeder vs branch circuit\"", "jump": "Section 0 definitions", "why": "service box->branch OCPD vs final OCPD->outlet", "why_fa": "feeder از service box تا branch OCPD؛ branch از همان آخرین OCPD تا outlet", "stars": 5},
+      {"kw": "\"overcurrent vs overload\"", "jump": "Section 0 definitions", "why": "protects wires vs protects motor", "why_fa": "یکی مراقبِ wires است، دیگری مراقبِ motor", "stars": 5},
+      {"kw": "\"ampacity\"", "jump": "Section 0 definitions", "why": "continuous current without exceeding temp rating", "why_fa": "current پیوسته بدون بالا زدن از temperature rating یک conductor", "stars": 4},
       {"kw": "\"voltage / voltage-to-ground / voltage classes\"", "jump": "Section 0 definitions", "why": "Extra-Low/Low/High boundaries are inclusive", "why_fa": "مرزهای Extra-Low/Low/High شاملِ خودِ عدد هم می‌شوند", "stars": 4},
-      {"kw": "\"dwelling unit\"", "jump": "Section 0 definitions", "why": "controls Section 8 load calcs and Rule 2-110", "why_fa": "محاسباتِ بارِ Section 8 و قانونِ 2-110 را همین تعریف کنترل می‌کند", "stars": 4},
-      {"kw": "\"continuous load\"", "jump": "Section 0 definitions", "why": "triggers 125% sizing (Rule 8-104)", "why_fa": "اگر بار continuous باشد، سایزبندیِ 125٪ فعال می‌شود (Rule 8-104)", "stars": 4},
-      {"kw": "\"grounding\"", "jump": "Section 0 definitions", "why": "earth/conducting-body connection - distinct from bonding", "why_fa": "اتصال به زمین یا جسمِ رسانا؛ با bonding فرق دارد، قاطی نکن", "stars": 4},
-      {"kw": "\"duty cycle (continuous/intermittent/periodic/short-time)\"", "jump": "Section 0 definitions", "why": "periodic = intermittent duty, regularly recurrent", "why_fa": "periodic یعنی کارِ متناوب که به‌طور منظم تکرار می‌شود", "stars": 3},
-      {"kw": "\"approved / labelled / listed\"", "jump": "Section 0 definitions", "why": "acceptance terms that change a rule's force", "why_fa": "اصطلاحاتِ پذیرش‌اند که قوّتِ یک قانون را کم و زیاد می‌کنند", "stars": 2},
-      {"kw": "\"any unfamiliar defined term\"", "jump": "Section 0 definitions", "why": "golden first move before reading the rule", "why_fa": "بهترین حرکتِ اول، قبل از خواندنِ خودِ قانون", "stars": 5}
+      {"kw": "\"dwelling unit\"", "jump": "Section 0 definitions", "why": "controls Section 8 load calcs and Rule 2-110", "why_fa": "load calcs در Section 8 و Rule 2-110 را همین definition کنترل می‌کند", "stars": 4},
+      {"kw": "\"continuous load\"", "jump": "Section 0 definitions", "why": "triggers 125% sizing (Rule 8-104)", "why_fa": "اگر load از نوع continuous باشد، sizing با 125٪ فعال می‌شود (Rule 8-104)", "stars": 4},
+      {"kw": "\"grounding\"", "jump": "Section 0 definitions", "why": "earth/conducting-body connection - distinct from bonding", "why_fa": "connection به earth یا conducting body؛ با bonding فرق دارد، قاطی نکن", "stars": 4},
+      {"kw": "\"duty cycle (continuous/intermittent/periodic/short-time)\"", "jump": "Section 0 definitions", "why": "periodic = intermittent duty, regularly recurrent", "why_fa": "periodic یعنی intermittent duty که به‌طور منظم تکرار می‌شود", "stars": 3},
+      {"kw": "\"approved / labelled / listed\"", "jump": "Section 0 definitions", "why": "acceptance terms that change a rule's force", "why_fa": "acceptance terms هستند که قوّتِ یک rule را کم و زیاد می‌کنند", "stars": 2},
+      {"kw": "\"any unfamiliar defined term\"", "jump": "Section 0 definitions", "why": "golden first move before reading the rule", "why_fa": "بهترین حرکتِ اول، قبل از خواندنِ خودِ rule", "stars": 5}
     ]
   },
   {
@@ -158,13 +158,13 @@
     "summary": "Block A is the largest no-codebook block: PPE, lockout, transformer hazards, generators, PV, VFDs, HVAC controls, torque specs and troubleshooting. Mostly trade-knowledge recall with a few fault-current and signal calcs - lots of fast marks.",
     "summary_fa": "Block A بزرگ‌ترین بلوکی است که بدونِ کتابِ Code جواب می‌دهی: PPE، lockout، خطراتِ ترانسفورمر، ژنراتور، PV، VFD، کنترل‌های HVAC، مشخصاتِ گشتاور (torque) و عیب‌یابی. بیشترش یادآوریِ دانشِ فنیِ کار است با چند محاسبه‌ی fault-current و سیگنال — یعنی پر است از نمره‌های سریع، اگر سریع و مطمئن جواب بدهی.",
     "keyTables": [
-      {"ref": "Table D7", "stars": 3, "what": "Tightening torque for connecting hardware", "what_fa": "گشتاورِ سفت‌کردنِ (torque) پیچ‌ها و یراقِ اتصال", "use": "look up bolt size -> N.m (e.g. 1/2 in = 54 N.m)", "use_fa": "اندازه‌ی پیچ را پیدا کن، عددِ N.m را بردار (مثلاً 1/2 in می‌شود 54 N.m)"},
-      {"ref": "Appendix D", "stars": 2, "what": "Torque / reference engineering data", "what_fa": "داده‌های مهندسیِ مرجع، از جمله گشتاور (torque)", "use": "supports torque-spec and fault-current questions", "use_fa": "پشتوانه‌ی سوال‌های مربوط به مشخصاتِ گشتاور و fault-current است"}
+      {"ref": "Table D7", "stars": 3, "what": "Tightening torque for connecting hardware", "what_fa": "tightening torque (گشتاورِ سفت‌کردن) برای connecting hardware (یراقِ اتصال)", "use": "look up bolt size -> N.m (e.g. 1/2 in = 54 N.m)", "use_fa": "اندازه‌ی bolt را پیدا کن، عددِ N.m را بردار (مثلاً 1/2 in می‌شود 54 N.m)"},
+      {"ref": "Appendix D", "stars": 2, "what": "Torque / reference engineering data", "what_fa": "reference engineering data (داده‌های مهندسیِ مرجع)، از جمله torque", "use": "supports torque-spec and fault-current questions", "use_fa": "پشتوانه‌ی سوال‌های مربوط به torque spec و fault current است"}
     ],
     "keyRules": [
-      {"ref": "Rule 4-024 / 4-036", "stars": 2, "what": "Identified (neutral) conductor colour", "what_fa": "رنگِ هادیِ مشخص‌شده (همان neutral)", "note": "white/grey for #2 AWG and smaller - the one Section reference in this block's analysis", "note_fa": "برای #2 AWG و کوچک‌تر، رنگش سفید یا خاکستری است؛ این تنها ارجاعِ Section در کلِ این بلوک است"},
-      {"ref": "Section 64", "stars": 2, "what": "Renewable energy / PV backfeed breaker placement", "what_fa": "انرژیِ تجدیدپذیر؛ محلِ نصبِ breakerِ بازخورانِ (backfeed) سیستمِ PV", "note": "back-fed PV breaker at the opposite end from the main (120% rule)", "note_fa": "بریکرِ بازخورانِ PV را در سرِ مقابلِ main می‌گذاری، نه نزدیکش (همان قانونِ 120٪ busbar)"},
-      {"ref": "Section 46", "stars": 1, "what": "Emergency systems wiring methods", "what_fa": "روش‌های سیم‌کشیِ سیستم‌های اضطراری", "note": "life-safety supply conductors in protected raceway", "note_fa": "هادی‌های تغذیه‌ی سیستم‌های ایمنیِ جانی باید داخلِ racewayِ محافظت‌شده باشند"}
+      {"ref": "Rule 4-024 / 4-036", "stars": 2, "what": "Identified (neutral) conductor colour", "what_fa": "رنگِ identified conductor (همان neutral)", "note": "white/grey for #2 AWG and smaller - the one Section reference in this block's analysis", "note_fa": "برای #2 AWG و کوچک‌تر، رنگش white یا grey است؛ این تنها ارجاعِ Section در کلِ این بلوک است"},
+      {"ref": "Section 64", "stars": 2, "what": "Renewable energy / PV backfeed breaker placement", "what_fa": "renewable energy؛ محلِ نصبِ backfeed breaker سیستمِ PV", "note": "back-fed PV breaker at the opposite end from the main (120% rule)", "note_fa": "back-fed PV breaker را در opposite end از main می‌گذاری، نه نزدیکش (همان 120% busbar rule)"},
+      {"ref": "Section 46", "stars": 1, "what": "Emergency systems wiring methods", "what_fa": "wiring methods برای emergency systems", "note": "life-safety supply conductors in protected raceway", "note_fa": "life-safety supply conductors باید داخلِ protected raceway باشند"}
     ],
     "mustKnow": [
       "Lockout step 1 = IDENTIFY all potential energy sources; then isolate, lock, and verify zero energy.",
@@ -197,12 +197,12 @@
       "Exit-sign authority = NBC, not the CEC (read which document the question asks for)."
     ],
     "traps_fa": [
-      "در lockout گامِ اول شناساییِ منابعِ انرژی است، نه نصبِ hasp و نه پر کردنِ دفترِ ثبت؛ این جایی است که گزینه‌ی فریبنده می‌گذارند.",
-      "خطرِ سمتِ اولیه back-feed است و خطرِ سمتِ ثانویه arc flash؛ مراقب باش این دو را جابه‌جا نکنی.",
-      "پریزِ split که آنی قطع می‌کند: یعنی زبانه‌ی شکستنیِ (break-off tab) سمتِ UNGROUNDED (همان فاز) را نشکسته‌اند و همان فازها را به هم اتصال‌کوتاه کرده.",
-      "افتِ مقاومتِ کابلِ گرمایشی بعد از نصب یعنی یک منگنه (staple) رفته توی کابل و عایق را زده (خطا)، نه اینکه سنسور خراب شده باشد.",
-      "راه‌اندازیِ VFD: اول مطمئن شو موتور آزاد می‌چرخد، بعد پارامترها را برنامه‌ریزی کن، و فقط آن‌وقت تستِ چرخش یا bump بزن؛ ترتیبش مهم است.",
-      "مرجعِ تابلوی exit همان NBC است نه CEC؛ خوب بخوان که سوال سراغِ کدام سند را می‌گیرد."
+      "در lockout گامِ اول identify کردنِ energy sources است، نه نصبِ hasp و نه پر کردنِ log؛ این جایی است که گزینه‌ی فریبنده می‌گذارند.",
+      "خطرِ primary همان back-feed است و خطرِ secondary همان arc flash؛ مراقب باش این دو را جابه‌جا نکنی.",
+      "split receptacle که آنی trip می‌کند: یعنی break-off tab سمتِ UNGROUNDED (همان hot) را نشکسته‌اند و phase‌ها را به هم short کرده.",
+      "افتِ resistance یک heating cable بعد از نصب یعنی یک staple (منگنه) رفته توی cable و insulation را زده (fault)، نه اینکه sensor خراب شده باشد.",
+      "VFD startup: اول مطمئن شو motor آزاد می‌چرخد، بعد parameters را program کن، و فقط آن‌وقت rotation test یا bump test بزن؛ ترتیبش مهم است.",
+      "authority تابلوی exit همان NBC است نه CEC؛ خوب بخوان که سوال سراغِ کدام document را می‌گیرد."
     ],
     "mnemonic": "Lockout = I-I-V (Identify, Isolate, Verify). Transformer: Primary Pushes back (back-feed), Secondary Sparks (arc flash). 4-20 mA: '4 plus 16'.",
     "mnemonic_fa": "Lockout را با I-I-V بسپار: Identify، Isolate، Verify. ترانسفورمر هم: اولیه «فشار به عقب» می‌دهد (Primary Pushes back = back-feed)، ثانویه «جرقه می‌زند» (Secondary Sparks = arc flash). و برای سیگنال یادت باشد: «4 به‌علاوه‌ی 16».",
@@ -213,37 +213,37 @@
       "For the few calcs: fault current = FLC / %Z; 4-20 mA = 4 + (span x percent); torque = look up the bolt size."
     ],
     "method_fa": [
-      "بیشترِ سوالاتِ Block A یادآوریِ خالصِ فنی است؛ سریع جواب بده و علامت‌دار نگذار، تا وقتت برای بلوک‌های پرمحاسبه بماند.",
-      "در سوالاتِ خطر و ایمنی، نوعِ انرژی و نوعِ محافظت را با هم نام ببر (lockout، PPE، arc-flash یا back-feed).",
-      "در سوالاتِ کنترلی (VFD، توالیِ HVAC، تایمرها) گام‌ها را منطقی مرتب کن: اول ایمن و آزاد بودن را ثابت کن، بعد برنامه‌ریزی، آخر تست.",
-      "برای آن چند محاسبه‌ی انگشت‌شمار: fault current = FLC تقسیم بر %Z؛ سیگنالِ 4-20 mA = 4 به‌علاوه‌ی (گستره ضربدر درصد)؛ و torque را از روی اندازه‌ی پیچ پیدا کن."
+      "بیشترِ سوالاتِ Block A trade recall خالص است؛ سریع جواب بده و flag نگذار، تا وقتت برای بلوک‌های پرمحاسبه بماند.",
+      "در سوالاتِ hazard و safety، نوعِ energy و نوعِ protection را با هم نام ببر (lockout، PPE، arc-flash یا back-feed).",
+      "در سوالاتِ control (VFD، HVAC sequence، timers) گام‌ها را منطقی مرتب کن: اول safe و free بودن را ثابت کن، بعد program، آخر test.",
+      "برای آن چند محاسبه‌ی انگشت‌شمار: fault current = FLC تقسیم بر %Z؛ سیگنالِ 4-20 mA = 4 به‌علاوه‌ی (span ضربدر percent)؛ و torque را از روی اندازه‌ی bolt پیدا کن."
     ],
     "examples": ["OCC-001", "OCC-002", "OCC-003", "OCC-010", "OCC-026", "OCC-030"],
     "keywords": [
-      {"kw": "\"torque spec / N.m for hardware\"", "jump": "Table D7 (Appendix D)", "why": "1/2 in = 54 N.m, 1/4 in HVAC = 8 N.m", "why_fa": "این دو عددِ پرتکرار را حفظ کن: 1/2 in می‌شود 54 N.m، و 1/4 in در HVAC می‌شود 8 N.m", "stars": 4},
-      {"kw": "\"lock-out first step\"", "jump": "Identify energy sources (LOTO)", "why": "identify before isolate/lock/verify", "why_fa": "اول شناسایی، بعد جداسازی و قفل و تایید", "stars": 4},
-      {"kw": "\"transformer hazard primary vs secondary\"", "jump": "Back-feed (primary) / arc flash (secondary)", "why": "classic paired safety question", "why_fa": "همان سوالِ ایمنیِ جفتیِ کلاسیک: اولیه back-feed، ثانویه arc flash", "stars": 4},
-      {"kw": "\"PPE for grinding / cutting tray\"", "jump": "Face shield", "why": "flying metal particles and sparks", "why_fa": "به‌خاطرِ پرتابِ براده‌ی فلز و جرقه، سپرِ صورت لازم است", "stars": 3},
-      {"kw": "\"available fault / short-circuit current\"", "jump": "FLC / %Z", "why": "interrupting rating must exceed it", "why_fa": "رده‌ی قطعِ (interrupting) دستگاه باید از این جریان بیشتر باشد", "stars": 3},
-      {"kw": "\"back-fed PV breaker location\"", "jump": "Section 64 (opposite end from main)", "why": "120% busbar / backfeed rule", "why_fa": "به‌خاطرِ قانونِ 120٪ busbar، بریکرِ بازخوران در سرِ مقابلِ main می‌نشیند", "stars": 3},
-      {"kw": "\"VFD startup sequence\"", "jump": "Program params -> bump/rotation test", "why": "set parameters before any rotation", "why_fa": "اول پارامترها را تنظیم کن، بعد سراغِ هر چرخش برو", "stars": 3},
-      {"kw": "\"generator won't start (cold / outage)\"", "jump": "Battery heater / charger failure", "why": "cold or dead batteries can't crank", "why_fa": "باتریِ سرد یا خالی توانِ استارت زدن ندارد", "stars": 3},
-      {"kw": "\"4-20 mA control signal\"", "jump": "4 mA + percent x 16 mA span", "why": "85% open = 17.6 mA", "why_fa": "مثلاً 85٪ باز می‌شود 17.6 mA", "stars": 3},
-      {"kw": "\"overload heater won't reset\"", "jump": "Melted solder pot (eutectic relay)", "why": "won't latch until cooled/replaced", "why_fa": "تا وقتی خنک یا تعویض نشود، قفل نمی‌شود", "stars": 3},
-      {"kw": "\"split receptacle / breaker trips instantly\"", "jump": "Broken tab on ungrounded side", "why": "intact hot tab shorts the phases", "why_fa": "چون زبانه‌ی سمتِ فاز سالم مانده، فازها را اتصال‌کوتاه می‌کند", "stars": 3},
-      {"kw": "\"HVAC heating sequence / high-limit\"", "jump": "Purge -> gas valve -> damper/blower", "why": "no airflow -> high-limit opens, gas de-energizes", "why_fa": "اگر جریانِ هوا نباشد، high-limit باز می‌شود و گاز قطع می‌شود", "stars": 3},
-      {"kw": "\"GFCI trip current / pool deck\"", "jump": "Class A = 5 mA", "why": "won't reset with power & no fault = faulty device", "why_fa": "اگر با وجودِ برق و نبودِ خطا reset نشود، یعنی خودِ دستگاه معیوب است", "stars": 2},
-      {"kw": "\"bump test\"", "jump": "Direction of rotation", "why": "momentary energize to confirm rotation", "why_fa": "برق‌دار کردنِ لحظه‌ای فقط برای دیدنِ جهتِ چرخش", "stars": 2},
-      {"kw": "\"off-delay vs on-delay timer\"", "jump": "Off-delay = run after shutdown", "why": "20 s cooling fan after motor stops", "why_fa": "Off-delay یعنی فنِ خنک‌کننده مثلاً 20 s بعد از توقفِ موتور هم کار می‌کند", "stars": 2},
-      {"kw": "\"3-wire control / holding contact\"", "jump": "Low-voltage protection", "why": "coil drops out on voltage loss, needs restart", "why_fa": "با افتِ ولتاژ بوبین رها می‌شود و برای راه‌اندازی باید دوباره دکمه بزنی (حفاظتِ ولتاژِ پایین)", "stars": 2},
-      {"kw": "\"in-floor heating cable resistance drop\"", "jump": "Staple penetrated cable", "why": "insulation fault lowers resistance", "why_fa": "خطای عایق مقاومت را پایین می‌آورد", "stars": 2},
-      {"kw": "\"HV rubber glove retest interval\"", "jump": "12 mo storage / 6 mo in service", "why": "periodic dielectric retest", "why_fa": "تستِ دی‌الکتریکِ دوره‌ای: 12 ماه در انبار، 6 ماه در حالِ استفاده", "stars": 2},
-      {"kw": "\"who coordinates sub-trades / schedule\"", "jump": "General contractor", "why": "site coordination question", "why_fa": "سوالِ هماهنگیِ کارگاه؛ این کار با پیمانکارِ اصلی است", "stars": 2},
-      {"kw": "\"rough-in inspection timing\"", "jump": "Before any work is concealed", "why": "drywall/concrete cover-up trigger", "why_fa": "قبل از اینکه کار با drywall یا بتن پوشانده شود", "stars": 2},
-      {"kw": "\"exit signs / smoke alarm authority\"", "jump": "National Building Code (not CEC)", "why": "requirement vs electrical sizing", "why_fa": "الزامِ نصب با NBC است، سایزبندیِ برقی با CEC", "stars": 2},
-      {"kw": "\"hotspots in connections\"", "jump": "Infrared / thermal camera", "why": "detects loose/high-resistance heat", "why_fa": "گرمای اتصالاتِ شل و پرمقاومت را با دوربینِ حرارتی پیدا می‌کنی", "stars": 1},
-      {"kw": "\"fasteners (concrete / strut)\"", "jump": "Drop-in anchor / strut spring nuts", "why": "panel-to-concrete vs equipment-to-strut", "why_fa": "اتصالِ پنل به بتن در مقابلِ اتصالِ تجهیزات به strut", "stars": 1},
-      {"kw": "\"neutral conductor identification\"", "jump": "Rule 4-024/4-036 (white, <=#2 AWG)", "why": "identified-conductor colour", "why_fa": "رنگِ هادیِ مشخص‌شده (identified)", "stars": 1}
+      {"kw": "\"torque spec / N.m for hardware\"", "jump": "Table D7 (Appendix D)", "why": "1/2 in = 54 N.m, 1/4 in HVAC = 8 N.m", "why_fa": "این دو عددِ torque پرتکرار را حفظ کن: 1/2 in می‌شود 54 N.m، و 1/4 in در HVAC می‌شود 8 N.m", "stars": 4},
+      {"kw": "\"lock-out first step\"", "jump": "Identify energy sources (LOTO)", "why": "identify before isolate/lock/verify", "why_fa": "اول identify، بعد isolate و lock و verify", "stars": 4},
+      {"kw": "\"transformer hazard primary vs secondary\"", "jump": "Back-feed (primary) / arc flash (secondary)", "why": "classic paired safety question", "why_fa": "همان سوالِ safety جفتیِ کلاسیک: primary همان back-feed، secondary همان arc flash", "stars": 4},
+      {"kw": "\"PPE for grinding / cutting tray\"", "jump": "Face shield", "why": "flying metal particles and sparks", "why_fa": "به‌خاطرِ پرتابِ براده‌ی metal و sparks، یک face shield لازم است", "stars": 3},
+      {"kw": "\"available fault / short-circuit current\"", "jump": "FLC / %Z", "why": "interrupting rating must exceed it", "why_fa": "interrupting rating دستگاه باید از این جریان بیشتر باشد", "stars": 3},
+      {"kw": "\"back-fed PV breaker location\"", "jump": "Section 64 (opposite end from main)", "why": "120% busbar / backfeed rule", "why_fa": "به‌خاطرِ 120% busbar rule، back-fed breaker در opposite end از main می‌نشیند", "stars": 3},
+      {"kw": "\"VFD startup sequence\"", "jump": "Program params -> bump/rotation test", "why": "set parameters before any rotation", "why_fa": "اول parameters را program کن، بعد سراغِ هر rotation برو", "stars": 3},
+      {"kw": "\"generator won't start (cold / outage)\"", "jump": "Battery heater / charger failure", "why": "cold or dead batteries can't crank", "why_fa": "battery سرد یا خالی توانِ crank زدن ندارد", "stars": 3},
+      {"kw": "\"4-20 mA control signal\"", "jump": "4 mA + percent x 16 mA span", "why": "85% open = 17.6 mA", "why_fa": "مثلاً 85٪ open می‌شود 17.6 mA", "stars": 3},
+      {"kw": "\"overload heater won't reset\"", "jump": "Melted solder pot (eutectic relay)", "why": "won't latch until cooled/replaced", "why_fa": "تا وقتی این eutectic relay خنک یا تعویض نشود، latch نمی‌شود", "stars": 3},
+      {"kw": "\"split receptacle / breaker trips instantly\"", "jump": "Broken tab on ungrounded side", "why": "intact hot tab shorts the phases", "why_fa": "چون tab سمتِ hot سالم مانده، phase‌ها را short می‌کند", "stars": 3},
+      {"kw": "\"HVAC heating sequence / high-limit\"", "jump": "Purge -> gas valve -> damper/blower", "why": "no airflow -> high-limit opens, gas de-energizes", "why_fa": "اگر airflow نباشد، high-limit باز می‌شود و gas valve قطع می‌شود", "stars": 3},
+      {"kw": "\"GFCI trip current / pool deck\"", "jump": "Class A = 5 mA", "why": "won't reset with power & no fault = faulty device", "why_fa": "اگر با وجودِ power و نبودِ fault، GFCI ری‌ست نشود، یعنی خودِ device معیوب است", "stars": 2},
+      {"kw": "\"bump test\"", "jump": "Direction of rotation", "why": "momentary energize to confirm rotation", "why_fa": "energize لحظه‌ای فقط برای دیدنِ direction of rotation", "stars": 2},
+      {"kw": "\"off-delay vs on-delay timer\"", "jump": "Off-delay = run after shutdown", "why": "20 s cooling fan after motor stops", "why_fa": "Off-delay یعنی cooling fan مثلاً 20 s بعد از توقفِ motor هم کار می‌کند", "stars": 2},
+      {"kw": "\"3-wire control / holding contact\"", "jump": "Low-voltage protection", "why": "coil drops out on voltage loss, needs restart", "why_fa": "با افتِ voltage، coil رها می‌شود و برای restart باید دوباره دکمه بزنی (low-voltage protection)", "stars": 2},
+      {"kw": "\"in-floor heating cable resistance drop\"", "jump": "Staple penetrated cable", "why": "insulation fault lowers resistance", "why_fa": "یک insulation fault مقدارِ resistance را پایین می‌آورد", "stars": 2},
+      {"kw": "\"HV rubber glove retest interval\"", "jump": "12 mo storage / 6 mo in service", "why": "periodic dielectric retest", "why_fa": "dielectric retest دوره‌ای: 12 ماه در storage، 6 ماه در in service", "stars": 2},
+      {"kw": "\"who coordinates sub-trades / schedule\"", "jump": "General contractor", "why": "site coordination question", "why_fa": "سوالِ site coordination؛ این کار با general contractor است", "stars": 2},
+      {"kw": "\"rough-in inspection timing\"", "jump": "Before any work is concealed", "why": "drywall/concrete cover-up trigger", "why_fa": "قبل از اینکه کار با drywall یا concrete پوشانده شود (rough-in inspection)", "stars": 2},
+      {"kw": "\"exit signs / smoke alarm authority\"", "jump": "National Building Code (not CEC)", "why": "requirement vs electrical sizing", "why_fa": "requirement نصب با NBC است، electrical sizing با CEC", "stars": 2},
+      {"kw": "\"hotspots in connections\"", "jump": "Infrared / thermal camera", "why": "detects loose/high-resistance heat", "why_fa": "گرمای connectionهای loose و high-resistance را با یک thermal camera پیدا می‌کنی", "stars": 1},
+      {"kw": "\"fasteners (concrete / strut)\"", "jump": "Drop-in anchor / strut spring nuts", "why": "panel-to-concrete vs equipment-to-strut", "why_fa": "اتصالِ panel به concrete در مقابلِ اتصالِ equipment به strut", "stars": 1},
+      {"kw": "\"neutral conductor identification\"", "jump": "Rule 4-024/4-036 (white, <=#2 AWG)", "why": "identified-conductor colour", "why_fa": "رنگِ identified conductor", "stars": 1}
     ]
   }
 ]

@@ -12,8 +12,8 @@
         "stars": 3,
         "what": "ELC / LVT cable ampacity, derated by conductor count",
         "use": "look up base #16 AWG ampacity then derate for the number of conductors in the cable",
-        "what_fa": "جریان‌دهیِ مجازِ کابلِ ELC/LVT که با زیاد شدنِ تعدادِ هادی‌های داخلِ کابل کاهش (derate) پیدا می‌کند",
-        "use_fa": "اول جریان‌دهیِ پایهٔ #16 AWG را از Table 11 بخوان، بعد به نسبتِ تعدادِ هادی‌های داخلِ کابل آن را کم کن — هر چه هادی بیشتر، گرمای بیشتر، پس آمپرِ مجاز کمتر"
+        "what_fa": "ampacity (جریان‌دهیِ مجاز) کابلِ ELC/LVT که با زیاد شدنِ conductor count (تعدادِ هادی) داخلِ کابل، derate (کاهش) می‌شود",
+        "use_fa": "اول base ampacity برای #16 AWG را از Table 11 بخوان، بعد بر اساسِ conductor count داخلِ کابل آن را derate کن — هر چه conductor بیشتر، heat بیشتر، پس ampacity کمتر"
       }
     ],
     "keyRules": [
@@ -22,40 +22,40 @@
         "stars": 5,
         "what": "Class 1 / Class 2 power-source limits",
         "note": "ELV = max 30 V; Class 1 ELV power = 30 V / 1000 VA; Class 2 above 30 V limited to 100 VA (so fuse = 100 VA ÷ V)",
-        "what_fa": "سقفِ توانِ منبعِ تغذیهٔ مدارهای Class 1 و Class 2",
-        "note_fa": "ولتاژِ فوق‌کم (ELV) یعنی حداکثر ۳۰ V؛ مدارِ توانِ ELV از نوعِ Class 1 تا ۳۰ V و ۱۰۰۰ VA مجاز است؛ اما Class 2 بالای ۳۰ V را خودِ کُد به ۱۰۰ VA قفل می‌کند — پس حداکثرِ فیوز را از روی همین سقف بگیر: فیوز = ۱۰۰ VA ÷ V"
+        "what_fa": "power-source limit (سقفِ توانِ منبع) برای مدارهای Class 1 و Class 2",
+        "note_fa": "ELV (extra-low-voltage / ولتاژِ فوق‌کم) یعنی max 30 V؛ Class 1 ELV power circuit تا 30 V و 1000 VA مجاز است؛ اما Class 2 بالای 30 V را خودِ code به 100 VA قفل می‌کند — پس max fuse را از روی همین limit بگیر: fuse = 100 VA ÷ V"
       },
       {
         "ref": "Rule 16-210",
         "stars": 5,
         "what": "Class 2 conductor sizing, ELC use, small Class 1 conductor overcurrent",
         "note": "smallest Class 2 conductor = #30 AWG; #18 Class 1 conductor max 5 A, #16 max 7 A",
-        "what_fa": "سایزِ هادیِ Class 2، کاربردِ سیمِ ELC و حفاظتِ اضافه‌جریانِ هادی‌های نازکِ Class 1",
-        "note_fa": "چون Class 2 توان‌محدود است، تا نازکیِ #30 AWG هم مجاز است؛ ولی برای هادی‌های کنترلیِ Class 1 سقفِ جریان داریم: #18 تا ۵ A و #16 تا ۷ A"
+        "what_fa": "Class 2 conductor sizing، کاربردِ ELC conductor، و overcurrent protection برای conductorهای نازکِ Class 1",
+        "note_fa": "چون Class 2 power-limited است، تا نازکیِ #30 AWG هم مجاز است؛ ولی برای Class 1 control conductor یک overcurrent limit داریم: #18 max 5 A و #16 max 7 A"
       },
       {
         "ref": "Rule 16-212",
         "stars": 5,
         "what": "Separation of Class 2 from light/power/Class 1 conductors",
         "note": "where neither in raceway: 50 mm at ≤300 V, 600 mm at higher voltage (480 V)",
-        "what_fa": "فاصله‌گذاریِ مدارهای Class 2 از سیم‌های روشنایی/قدرت و از هادی‌های Class 1",
-        "note_fa": "وقتی هیچ‌کدام داخلِ لوله/raceway نیستند: در ≤۳۰۰ V فاصلهٔ ۵۰ mm و در ولتاژِ بالاتر (مثلِ ۴۸۰ V) فاصلهٔ ۶۰۰ mm کافی است — منطقش هم همین است: ولتاژِ بالاتر، فاصلهٔ بیشتر"
+        "what_fa": "separation (فاصله‌گذاری) مدارهای Class 2 از light/power conductor و از Class 1 conductor",
+        "note_fa": "وقتی هیچ‌کدام داخلِ raceway (لوله) نیستند: در ≤300 V فاصلهٔ 50 mm و در ولتاژِ بالاتر (مثلِ 480 V) فاصلهٔ 600 mm کافی است — منطقش هم همین است: voltage بالاتر، spacing بیشتر"
       },
       {
         "ref": "Rule 16-100",
         "stars": 3,
         "what": "Class 1 vs Class 2 classification",
         "note": "fire alarm = Class 1 life-safety even at 24 V",
-        "what_fa": "تفکیکِ Class 1 از Class 2",
-        "note_fa": "حواست باشد: مدارِ آژیرِ آتش (fire alarm) ایمنیِ‌جانی است و Class 1 حساب می‌شود، حتی اگر فقط ۲۴ V باشد — پایین بودنِ ولتاژ گول‌زننده است"
+        "what_fa": "classification (تفکیک) Class 1 از Class 2",
+        "note_fa": "حواست باشد: fire alarm circuit یک life-safety (ایمنیِ‌جانی) است و Class 1 حساب می‌شود، حتی اگر فقط 24 V باشد — پایین بودنِ voltage گول‌زننده است"
       },
       {
         "ref": "Rule 32-100",
         "stars": 3,
         "what": "Fire alarm conductor wiring (cross-ref from Sec 16)",
         "note": "#18 single / #19 minimum in an integral assembly of 4+ conductors",
-        "what_fa": "سیم‌کشیِ هادیِ آژیرِ آتش (ارجاعِ متقابل از Section 16)",
-        "note_fa": "حداقلِ سایز: اگر هادیِ تکی باشد #18، و اگر داخلِ یک مجموعهٔ یکپارچهٔ ۴ هادی یا بیشتر باشد، #19 هم پذیرفته می‌شود"
+        "what_fa": "fire alarm conductor wiring (ارجاعِ متقابل از Section 16)",
+        "note_fa": "min size: اگر single conductor باشد #18، و اگر داخلِ یک integral assembly از 4+ conductor باشد، #19 هم پذیرفته می‌شود"
       }
     ],
     "mustKnow": [
@@ -93,109 +93,109 @@
         "jump": "Rule 16-200 / 16-210",
         "why": "power-limited; smallest conductor #30 AWG",
         "stars": 5,
-        "why_fa": "توان‌محدود است؛ چون توانش کم است تا نازکیِ #30 AWG هم مجاز است"
+        "why_fa": "power-limited است؛ چون power کم است smallest conductor تا #30 AWG مجاز است"
       },
       {
         "kw": "\"smallest conductor size, Class 2\"",
         "jump": "Rule 16-210",
         "why": "#30 AWG permitted (power-limited)",
         "stars": 5,
-        "why_fa": "چون توان‌محدود است، تا #30 AWG هم مجاز است"
+        "why_fa": "چون power-limited است، smallest conductor تا #30 AWG مجاز است"
       },
       {
         "kw": "\"max fuse / overcurrent, Class 2 above 30 V\"",
         "jump": "Rule 16-200",
         "why": "100 VA cap → 100 ÷ V (e.g. 100/150 = 0.67 A)",
         "stars": 5,
-        "why_fa": "سقفِ ۱۰۰ VA ← فیوز = ۱۰۰ ÷ V (مثلاً در ۱۵۰ V می‌شود ۱۰۰/۱۵۰ = ۰٫۶۷ A)"
+        "why_fa": "100 VA cap ← fuse = 100 ÷ V (مثلاً در 150 V می‌شود 100/150 = 0.67 A)"
       },
       {
         "kw": "\"Class 1 ELV power circuit max V and VA\"",
         "jump": "Rule 16-200",
         "why": "30 V and 1000 VA",
         "stars": 5,
-        "why_fa": "سقفش ۳۰ V و ۱۰۰۰ VA است"
+        "why_fa": "max یعنی 30 V و 1000 VA"
       },
       {
         "kw": "\"extra-low-voltage limit / max ELV voltage\"",
         "jump": "Rule 16-200 (Sec 0 definition)",
         "why": "30 V — boundary is inclusive",
         "stars": 5,
-        "why_fa": "۳۰ V — و خودِ این مرز هم داخلِ ELV حساب می‌شود"
+        "why_fa": "30 V — و خودِ این boundary هم inclusive و داخلِ ELV حساب می‌شود"
       },
       {
         "kw": "\"separation Class 2 from power / Class 1\"",
         "jump": "Rule 16-212",
         "why": "50 mm at ≤300 V, 600 mm higher (neither in raceway)",
         "stars": 5,
-        "why_fa": "۵۰ mm در ≤۳۰۰ V و ۶۰۰ mm در ولتاژِ بالاتر (وقتی هیچ‌کدام داخلِ لوله نیست)"
+        "why_fa": "50 mm در ≤300 V و 600 mm در higher voltage (وقتی هیچ‌کدام داخلِ raceway نیست)"
       },
       {
         "kw": "\"Class 1 vs Class 2 / fire alarm classification\"",
         "jump": "Rule 16-100 / 32-100",
         "why": "fire alarm = Class 1 life-safety even at 24 V",
         "stars": 4,
-        "why_fa": "آژیرِ آتش Class 1 و ایمنیِ‌جانی است، حتی در ۲۴ V"
+        "why_fa": "fire alarm یعنی Class 1 و life-safety، حتی در 24 V"
       },
       {
         "kw": "\"ELC conductor / extra-low-voltage control wire\"",
         "jump": "Rule 16-210",
         "why": "Class 2 only, max 30 V; NOT for fire alarm",
         "stars": 4,
-        "why_fa": "فقط برای Class 2 و حداکثر ۳۰ V؛ به‌دردِ آژیرِ آتش نمی‌خورد"
+        "why_fa": "فقط برای Class 2 و max 30 V؛ برای fire alarm مجاز نیست"
       },
       {
         "kw": "\"TEW / equipment wire in open Class 2 wiring\"",
         "jump": "Rule 16-210 / 16-212",
         "why": "equipment wire NOT approved for open Class 2",
         "stars": 3,
-        "why_fa": "سیمِ تجهیزات برای سیم‌کشیِ بازِ Class 2 تأیید نشده است"
+        "why_fa": "equipment wire برای open Class 2 wiring approved نیست"
       },
       {
         "kw": "\"ELC / LVT cable ampacity (multi-conductor)\"",
         "jump": "Table 11",
         "why": "base AWG ampacity, derate by conductor count",
         "stars": 3,
-        "why_fa": "جریانِ پایه بر حسبِ AWG، بعد کاهش به نسبتِ تعدادِ هادی"
+        "why_fa": "base ampacity بر حسبِ AWG، بعد derate بر اساسِ conductor count"
       },
       {
         "kw": "\"#18 / #16 Class 1 conductor overcurrent\"",
         "jump": "Rule 16-210",
         "why": "#18 = 5 A, #16 = 7 A max",
         "stars": 3,
-        "why_fa": "سقفِ جریان: #18 تا ۵ A و #16 تا ۷ A"
+        "why_fa": "overcurrent limit: #18 max 5 A و #16 max 7 A"
       },
       {
         "kw": "\"fire alarm conductor minimum size\"",
         "jump": "Rule 32-100",
         "why": "#18 single, #19 in integral 4+ conductor assembly",
         "stars": 2,
-        "why_fa": "هادیِ تکی #18، و در مجموعهٔ یکپارچهٔ ۴ هادی یا بیشتر #19"
+        "why_fa": "single conductor یعنی #18، و در integral assembly از 4+ conductor یعنی #19"
       }
     ],
-    "summary_fa": "تعدادِ سوالش کم است ولی نمره‌اش راحت به جیب می‌رود: همهٔ ماجرا سرِ فرقِ Class 1 با Class 2 (توان‌محدود) و مرزِ ۳۰ V برای ولتاژِ فوق‌کم (ELV) می‌چرخد. بیشترِ سوال‌ها یک نگاهِ ساده به Rule 16-200/16-210/16-212 و جدولِ جریان‌دهیِ ELC/LVT است؛ پس این چند قانون را سرِ انگشتت داشته باش.",
+    "summary_fa": "تعدادِ سوالش کم است ولی نمره‌اش راحت به جیب می‌رود: همهٔ ماجرا سرِ فرقِ Class 1 با Class 2 (power-limited / توان‌محدود) و مرزِ 30 V برای ELV (extra-low-voltage / ولتاژِ فوق‌کم) می‌چرخد. بیشترِ سوال‌ها یک rule lookup ساده در Rule 16-200/16-210/16-212 و ELC/LVT ampacity table است؛ پس این چند rule را سرِ انگشتت داشته باش.",
     "mustKnow_fa": [
-      "ولتاژِ فوق‌کم (ELV) یعنی تا سقفِ ۳۰ V — و دقت کن مرز خودش هم داخل است؛ یعنی خودِ ۳۰ V هنوز ELV حساب می‌شود",
-      "Class 2 توان‌محدود است؛ به همین خاطر تا نازکیِ #30 AWG هم هادیِ مجاز داریم",
-      "مدارِ توانِ ELV از نوعِ Class 1 حداکثر ۳۰ V و ۱۰۰۰ VA است (Rule 16-200)",
-      "Class 2 بالای ۳۰ V به ۱۰۰ VA قفل است ← حداکثرِ فیوز = ۱۰۰ VA ÷ ولتاژِ کاری",
-      "فاصله‌گذاری (وقتی هیچ‌کدام داخلِ لوله نیست): ۵۰ mm در ≤۳۰۰ V و ۶۰۰ mm در ولتاژِ بالاتر (≈۴۸۰ V)",
-      "مدارِ آژیرِ آتش Class 1 است نه Class 2 — و سیمِ ELC را اصلاً برای آژیرِ آتش به کار نبر",
-      "سقفِ جریانِ هادی‌های کنترلیِ نازکِ Class 1: #18 تا ۵ A و #16 تا ۷ A"
+      "ELV (extra-low-voltage) یعنی not exceeding 30 V — و دقت کن boundary خودش هم inclusive است؛ یعنی خودِ 30 V هنوز ELV حساب می‌شود",
+      "Class 2 = power-limited؛ به همین خاطر smallest conductor تا #30 AWG مجاز است",
+      "Class 1 ELV power circuit حداکثر 30 V و 1000 VA است (Rule 16-200)",
+      "Class 2 بالای 30 V به 100 VA قفل است ← max fuse = 100 VA ÷ operating voltage",
+      "separation (وقتی هیچ‌کدام داخلِ raceway نیست): 50 mm در ≤300 V و 600 mm در ولتاژِ بالاتر (≈480 V)",
+      "fire alarm circuit یعنی Class 1 نه Class 2 — و ELC wire را اصلاً برای fire alarm به کار نبر",
+      "overcurrent limit برای Class 1 control conductor نازک: #18 max 5 A و #16 max 7 A"
     ],
     "traps_fa": [
-      "اینکه یک مدارِ آژیرِ آتشِ ۲۴ V را فقط به‌خاطرِ ولتاژِ پایینش Class 2 بنامی — نه! این مدار ایمنیِ‌جانی و Class 1 است",
-      "به‌کار بردنِ سیمِ تجهیزات (TEW) برای سیم‌کشیِ بازِ میدانیِ Class 2 — وقتی داخلِ لوله نیست فقط هادیِ تأییدشده برای Class 2 (مثلِ ELC) مجاز است",
-      "قاطی کردنِ دو فاصلهٔ Rule 16-212: ۵۰ mm مالِ ≤۳۰۰ V است و ۶۰۰ mm مالِ ولتاژِ بالاتر؛ جابه‌جا نزن",
-      "از یاد بردنِ سقفِ ۱۰۰ VA برای Class 2 بالای ۳۰ V — یادت باشد این VA حداکثرِ فیوز را تعیین می‌کند، نه یک عددِ آمپرِ ثابت"
+      "اینکه یک fire alarm circuit با 24 V را فقط به‌خاطرِ voltage پایینش Class 2 بنامی — نه! این circuit یک life-safety و Class 1 است",
+      "به‌کار بردنِ equipment wire (TEW) برای open field wiring از نوعِ Class 2 — وقتی داخلِ raceway نیست فقط conductorِ approved برای Class 2 (مثلِ ELC) مجاز است",
+      "قاطی کردنِ دو separation در Rule 16-212: 50 mm مالِ ≤300 V است و 600 mm مالِ higher voltage؛ جابه‌جا نزن",
+      "از یاد بردنِ 100 VA limit برای Class 2 بالای 30 V — یادت باشد این VA همان max fuse را تعیین می‌کند، نه یک fixed amp value"
     ],
     "method_fa": [
-      "سوالِ طبقه‌بندی ← اول برو سراغِ Rule 16-100: ایمنیِ‌جانی (آژیرِ آتش) است؟ پس Class 1. اگر نه، ببین توان‌محدود است یا نه ← Class 2.",
-      "حداکثرِ فیوزِ Class 2 بالای ۳۰ V ← به‌سادگی ۱۰۰ VA ÷ ولتاژِ کاری.",
-      "سوالِ فاصله‌گذاری ← Rule 16-212: در ≤۳۰۰ V بزن ۵۰ mm، در ولتاژِ بالاتر ۶۰۰ mm (به شرطِ اینکه هیچ‌کدام داخلِ لوله نباشد).",
-      "جریان‌دهیِ هادی/کابل ← Table 11: اول جریانِ پایه بر حسبِ AWG، بعد به نسبتِ تعدادِ هادی کاهش (derate) بده."
+      "classification question ← اول برو سراغِ Rule 16-100: life-safety (fire alarm) است؟ پس Class 1. اگر نه، ببین power-limited است یا نه ← Class 2.",
+      "Class 2 max fuse بالای 30 V ← به‌سادگی 100 VA ÷ operating voltage.",
+      "separation question ← Rule 16-212: در ≤300 V بزن 50 mm، در higher voltage بزن 600 mm (به شرطِ اینکه هیچ‌کدام داخلِ raceway نباشد).",
+      "conductor/cable ampacity ← Table 11: اول base ampacity بر حسبِ AWG، بعد بر اساسِ conductor count آن را derate کن."
     ],
-    "mnemonic_fa": "Class 2 = توان‌محدود (بالای ۳۰ V سقفِ ۱۰۰ VA)؛ آژیرِ آتش = Class 1 (Life یعنی Class 1)."
+    "mnemonic_fa": "Class 2 = power-limited (بالای 30 V سقفِ 100 VA)؛ fire alarm = Class 1 (Life یعنی Class 1)."
   },
   {
     "section": 26,
@@ -210,16 +210,16 @@
         "stars": 3,
         "what": "Transformer overcurrent device max % (primary/secondary, ≤750 V vs >750 V)",
         "use": "for transformer fuse/breaker sizing in 26-250/26-252",
-        "what_fa": "حداکثرِ درصدِ مجازِ وسیلهٔ اضافه‌جریانِ ترانسفورمر — هم برای اولیه و هم ثانویه، و با تفکیکِ ≤۷۵۰ V از >۷۵۰ V",
-        "use_fa": "وقتی می‌خواهی فیوز/بریکرِ ترانسفورمر را در Rule 26-250/26-252 سایز کنی، درصدش را از همین جدول بردار — مراقبِ ستونِ درستِ ولتاژ باش"
+        "what_fa": "max % برای overcurrent device ترانسفورمر (transformer) — هم primary و هم secondary، و با تفکیکِ ≤750 V از >750 V",
+        "use_fa": "وقتی می‌خواهی fuse/breaker ترانسفورمر را در Rule 26-250/26-252 سایز کنی، % را از همین Table 50 بردار — مراقبِ voltage column درست باش"
       },
       {
         "ref": "Table 13",
         "stars": 3,
         "what": "Standard overcurrent device (fuse/breaker) sizes",
         "use": "round the calculated transformer/capacitor OCPD to a standard size",
-        "what_fa": "سایزهای استانداردِ وسیلهٔ اضافه‌جریان (فیوز/بریکر)",
-        "use_fa": "بعد از اینکه OCPDِ ترانسفورمر/خازن را حساب کردی، عددش معمولاً سرراست نیست — با این جدول به سایزِ استانداردِ مجاز گردش کن"
+        "what_fa": "standard size های overcurrent device (fuse/breaker)",
+        "use_fa": "بعد از اینکه OCPD ترانسفورمر/capacitor را حساب کردی، عددش معمولاً سرراست نیست — با Table 13 به standard size مجاز round کن"
       }
     ],
     "keyRules": [
@@ -228,72 +228,72 @@
         "stars": 5,
         "what": "Dwelling receptacle spacing & counter/island requirements",
         "note": "no point on usable wall floor line >1.8 m from a receptacle → max 3.6 m apart",
-        "what_fa": "فاصله‌گذاریِ پریز در واحدِ مسکونی و الزاماتِ کانتر/جزیرهٔ آشپزخانه",
-        "note_fa": "منطقش این است: هیچ نقطه‌ای روی خطِ کفِ دیوارِ قابل‌استفاده نباید بیش از ۱٫۸ m تا یک پریز فاصله داشته باشد — پس وقتی دو طرفِ یک نقطه پریز باشد، پریزها تا ۳٫۶ m از هم فاصله می‌گیرند"
+        "what_fa": "receptacle spacing (فاصله‌گذاریِ پریز) در dwelling و الزاماتِ counter/island",
+        "note_fa": "منطقش این است: هیچ نقطه‌ای روی wall floor line قابل‌استفاده نباید بیش از 1.8 m تا یک receptacle فاصله داشته باشد — پس وقتی دو طرفِ یک نقطه receptacle باشد، receptacle ها تا 3.6 m از هم فاصله می‌گیرند"
       },
       {
         "ref": "Rule 26-700",
         "stars": 5,
         "what": "Receptacle general rules / faceplate / GFCI near sinks",
         "note": "face projects ≥0.4 mm past metal plate; GFCI within 1.5 m of a sink",
-        "what_fa": "قوانینِ عمومیِ پریز / صفحهٔ روکار / و الزامِ GFCI نزدیکِ سینک",
-        "note_fa": "رویهٔ پریز باید حداقل ۰٫۴ mm از صفحهٔ فلزیِ روکار بیرون بزند (تا فلز با برق‌دار تماس نگیرد)؛ و هر پریزی که در فاصلهٔ ۱٫۵ m از یک سینک باشد باید GFCI شود"
+        "what_fa": "general rule های receptacle / faceplate / و الزامِ GFCI نزدیکِ sink",
+        "note_fa": "face پریز باید حداقل 0.4 mm از metal faceplate بیرون بزند (تا فلز با live تماس نگیرد)؛ و هر receptacle که در 1.5 m از یک sink باشد باید GFCI شود"
       },
       {
         "ref": "Rule 26-714",
         "stars": 5,
         "what": "Outdoor receptacle GFCI (Class A) within 2.5 m of grade",
         "note": "residential outdoor ≤2.5 m of finished grade = Class A GFCI",
-        "what_fa": "الزامِ GFCI نوعِ Class A برای پریزِ بیرونی در فاصلهٔ ۲٫۵ m از سطحِ زمین",
-        "note_fa": "هر پریزِ بیرونیِ مسکونی که تا ۲٫۵ m از سطحِ نهاییِ زمین (grade) دسترس‌پذیر باشد، باید GFCI نوعِ Class A داشته باشد — چون احتمالِ تماس با رطوبت و زمین بالاست"
+        "what_fa": "الزامِ Class A GFCI برای outdoor receptacle در 2.5 m از grade (سطحِ زمین)",
+        "note_fa": "هر outdoor residential receptacle که تا 2.5 m از finished grade دسترس‌پذیر باشد، باید Class A GFCI داشته باشد — چون احتمالِ تماس با moisture و ground بالاست"
       },
       {
         "ref": "Rule 26-722",
         "stars": 5,
         "what": "Dwelling branch-circuit / AFCI / dedicated-circuit requirements",
         "note": "combination-type AFCI for 125 V receptacles ≤20 A; dedicated circuits (central vac, etc.)",
-        "what_fa": "الزاماتِ مدارِ شاخه، AFCI و مدارهای اختصاصیِ واحدِ مسکونی",
-        "note_fa": "برای پریزهای ۱۲۵ V با جریانِ ≤۲۰ A در واحدِ مسکونی AFCIِ ترکیبی (combination) لازم است؛ ضمناً بعضی بارها (مثلِ جاروبرقیِ مرکزی) باید مدارِ اختصاصیِ خودشان را داشته باشند"
+        "what_fa": "الزاماتِ branch circuit، AFCI و dedicated circuit در dwelling",
+        "note_fa": "برای 125 V receptacle با جریانِ ≤20 A در dwelling یک combination-type AFCI لازم است؛ ضمناً بعضی load ها (مثلِ central vac) باید dedicated circuit خودشان را داشته باشند"
       },
       {
         "ref": "Rule 26-724",
         "stars": 4,
         "what": "Required dwelling receptacles (outdoor, etc.)",
         "note": "min 2 outdoor duplex receptacles readily accessible from grade",
-        "what_fa": "پریزهای اجباریِ واحدِ مسکونی (از جمله بیرونی)",
-        "note_fa": "حداقل ۲ پریزِ دوبلِ بیرونی لازم است که از سطحِ زمین به‌راحتی در دسترس باشند"
+        "what_fa": "required receptacle های dwelling (از جمله outdoor)",
+        "note_fa": "min 2 outdoor duplex receptacle لازم است که از grade به‌راحتی readily accessible باشند"
       },
       {
         "ref": "Rule 26-210",
         "stars": 4,
         "what": "Capacitor conductor & overcurrent sizing",
         "note": "conductor ampacity ≥135% of capacitor rated current",
-        "what_fa": "سایزِ هادی و اضافه‌جریانِ خازن (capacitor)",
-        "note_fa": "جریان‌دهیِ هادیِ خازن باید حداقل ۱۳۵٪ جریانِ نامیِ خازن باشد — این ۱۳۵٪ را با ۱۲۵٪ شاخهٔ موتور قاطی نکن"
+        "what_fa": "conductor و overcurrent sizing برای capacitor (خازن)",
+        "note_fa": "ampacity هادیِ capacitor باید حداقل 135% از capacitor rated current باشد — این 135% را با 125% branch موتور قاطی نکن"
       },
       {
         "ref": "Rule 26-400",
         "stars": 4,
         "what": "Panelboard installation / handle height",
         "note": "highest operating handle ≤1.7 m above finished floor",
-        "what_fa": "نصبِ تابلو (panelboard) و ارتفاعِ دستهٔ کلیدها",
-        "note_fa": "بالاترین دستهٔ عملیاتیِ کلید نباید بیشتر از ۱٫۷ m بالای کفِ نهایی باشد — یعنی باید بدونِ نردبان قابلِ دسترس باشد"
+        "what_fa": "panelboard installation و handle height (ارتفاعِ دسته)",
+        "note_fa": "highest operating handle نباید بیشتر از 1.7 m بالای finished floor باشد — یعنی باید بدونِ نردبان قابلِ دسترس باشد"
       },
       {
         "ref": "Rule 26-244",
         "stars": 3,
         "what": "Dry-type transformer wall/floor clearance",
         "note": "floor-mounted dry-type ≈150 mm from wall for ventilation",
-        "what_fa": "فاصلهٔ ترانسفورمرِ خشک (dry-type) از دیوار و کف",
-        "note_fa": "ترانسفورمرِ خشکِ کف‌نشین باید حدودِ ۱۵۰ mm از دیوار فاصله بگیرد تا هوا بگردد و خنک بماند"
+        "what_fa": "wall/floor clearance برای dry-type transformer (ترانسفورمرِ خشک)",
+        "note_fa": "یک floor-mounted dry-type transformer باید حدودِ 150 mm از wall فاصله بگیرد تا ventilation داشته باشد و خنک بماند"
       },
       {
         "ref": "Rule 26-250 / 26-252",
         "stars": 3,
         "what": "Transformer overcurrent protection (interrupting rating, primary OCPD)",
         "note": "OCPD % from Table 50; secondary fault = FLA ÷ per-unit impedance",
-        "what_fa": "حفاظتِ اضافه‌جریانِ ترانسفورمر (ظرفیتِ قطع و OCPDِ سمتِ اولیه)",
-        "note_fa": "درصدِ OCPD را از Table 50 بردار؛ و جریانِ خطای ثانویه را اینطور حساب کن: FLA ÷ امپدانسِ پریونیت (per-unit)"
+        "what_fa": "transformer overcurrent protection (interrupting rating و primary OCPD)",
+        "note_fa": "OCPD % را از Table 50 بردار؛ و secondary fault current را اینطور حساب کن: FLA ÷ per-unit impedance (امپدانسِ پریونیت)"
       }
     ],
     "mustKnow": [
@@ -339,158 +339,158 @@
         "jump": "Rule 26-712",
         "why": "no point >1.8 m from a receptacle → max 3.6 m apart",
         "stars": 5,
-        "why_fa": "هیچ نقطه‌ای بیش از ۱٫۸ m از پریز نباشد ← پس حداکثر ۳٫۶ m بینِ پریزها"
+        "why_fa": "هیچ point بیش از 1.8 m از receptacle نباشد ← پس max 3.6 m بینِ receptacle ها"
       },
       {
         "kw": "\"kitchen counter / island receptacle required\"",
         "jump": "Rule 26-712",
         "why": "counter & island dimension thresholds trigger a receptacle",
         "stars": 4,
-        "why_fa": "وقتی ابعادِ کانتر یا جزیره از حدی بزرگ‌تر شود، یک پریز اجباری می‌شود"
+        "why_fa": "وقتی dimension همان counter یا island از یک threshold بزرگ‌تر شود، یک receptacle اجباری می‌شود"
       },
       {
         "kw": "\"GFCI required? (sink / kitchen / outdoor)\"",
         "jump": "Rule 26-700",
         "why": "within 1.5 m of a sink → Class A GFCI",
         "stars": 5,
-        "why_fa": "تا ۱٫۵ m از یک سینک ← باید GFCI نوعِ Class A شود"
+        "why_fa": "تا 1.5 m از یک sink ← باید Class A GFCI شود"
       },
       {
         "kw": "\"outdoor receptacle within 2.5 m of grade\"",
         "jump": "Rule 26-714",
         "why": "residential ≤2.5 m grade = Class A GFCI",
         "stars": 5,
-        "why_fa": "بیرونیِ مسکونیِ تا ۲٫۵ m از سطحِ زمین = GFCI نوعِ Class A"
+        "why_fa": "outdoor residential تا 2.5 m از grade = Class A GFCI"
       },
       {
         "kw": "\"AFCI / combination arc-fault, dwelling\"",
         "jump": "Rule 26-722",
         "why": "125 V receptacles ≤20 A in dwelling need combo AFCI",
         "stars": 5,
-        "why_fa": "پریزهای ۱۲۵ V با ≤۲۰ A در واحدِ مسکونی AFCIِ ترکیبی می‌خواهند"
+        "why_fa": "125 V receptacle با ≤20 A در dwelling یک combination AFCI می‌خواهد"
       },
       {
         "kw": "\"dedicated branch circuit (central vac, fridge, etc.)\"",
         "jump": "Rule 26-722",
         "why": "lists which dwelling loads need their own circuit + exceptions",
         "stars": 4,
-        "why_fa": "فهرستِ بارهایی که باید مدارِ اختصاصیِ خودشان را داشته باشند، به‌علاوهٔ استثناها"
+        "why_fa": "فهرستِ load هایی که باید dedicated circuit خودشان را داشته باشند، به‌علاوهٔ exception ها"
       },
       {
         "kw": "\"required dwelling receptacles (outdoor count)\"",
         "jump": "Rule 26-724",
         "why": "min 2 outdoor duplex readily accessible from grade",
         "stars": 4,
-        "why_fa": "حداقل ۲ پریزِ دوبلِ بیرونیِ در دسترس از سطحِ زمین"
+        "why_fa": "min 2 outdoor duplex receptacle که از grade readily accessible باشد"
       },
       {
         "kw": "\"panelboard handle height\"",
         "jump": "Rule 26-400",
         "why": "highest handle ≤1.7 m above finished floor",
         "stars": 5,
-        "why_fa": "بالاترین دسته حداکثر ۱٫۷ m بالای کفِ نهایی"
+        "why_fa": "highest handle max 1.7 m بالای finished floor"
       },
       {
         "kw": "\"receptacle face / metal faceplate projection\"",
         "jump": "Rule 26-700",
         "why": "face ≥0.4 mm beyond metal plate",
         "stars": 3,
-        "why_fa": "رویهٔ پریز حداقل ۰٫۴ mm از صفحهٔ فلزی بیرون بزند"
+        "why_fa": "face پریز حداقل 0.4 mm از metal faceplate بیرون بزند"
       },
       {
         "kw": "\"range receptacle height\"",
         "jump": "Rule 26-744",
         "why": "centre ≤130 mm above finished floor",
         "stars": 3,
-        "why_fa": "مرکزِ پریز حداکثر ۱۳۰ mm بالای کفِ نهایی"
+        "why_fa": "centre پریز max 130 mm بالای finished floor"
       },
       {
         "kw": "\"capacitor conductor / fuse sizing\"",
         "jump": "Rule 26-210",
         "why": "conductor ≥135% of capacitor rated current",
         "stars": 4,
-        "why_fa": "هادی حداقل ۱۳۵٪ جریانِ نامیِ خازن"
+        "why_fa": "conductor حداقل 135% از capacitor rated current"
       },
       {
         "kw": "\"transformer overcurrent / primary fuse or breaker\"",
         "jump": "Rule 26-250 / 26-252 + Table 50",
         "why": "OCPD % differs ≤750 V vs >750 V; round with Table 13",
         "stars": 4,
-        "why_fa": "درصدِ OCPD در ≤۷۵۰ V و >۷۵۰ V فرق دارد؛ آخرش با Table 13 گردش کن"
+        "why_fa": "OCPD % در ≤750 V و >750 V فرق دارد؛ آخرش با Table 13 round کن"
       },
       {
         "kw": "\"transformer fault current / interrupting rating\"",
         "jump": "Rule 26-250",
         "why": "secondary FLA ÷ per-unit impedance",
         "stars": 3,
-        "why_fa": "FLAِ ثانویه ÷ امپدانسِ پریونیت"
+        "why_fa": "secondary FLA ÷ per-unit impedance"
       },
       {
         "kw": "\"dry-type transformer wall / floor clearance\"",
         "jump": "Rule 26-244",
         "why": "floor-mounted ≈150 mm from wall for ventilation",
         "stars": 3,
-        "why_fa": "کف‌نشین حدودِ ۱۵۰ mm از دیوار برای تهویه و خنک‌شدن"
+        "why_fa": "floor-mounted حدودِ 150 mm از wall برای ventilation و خنک‌شدن"
       },
       {
         "kw": "\"liquid-filled transformer / capacitor vault\"",
         "jump": "Rule 26-350 / 26-012",
         "why": "vault/containment required above a liquid-quantity threshold",
         "stars": 2,
-        "why_fa": "بالای یک آستانهٔ مقدارِ مایع، محفظه/مهار (vault) اجباری می‌شود"
+        "why_fa": "بالای یک liquid-quantity threshold، vault/containment (محفظه/مهار) اجباری می‌شود"
       },
       {
         "kw": "\"fence / enclosure clearance to live parts\"",
         "jump": "Rule 26-302",
         "why": "min 1 m to enclosure; larger to unguarded live parts by voltage",
         "stars": 2,
-        "why_fa": "حداقل ۱ m تا محفظه؛ و تا اجزای برق‌دارِ محافظت‌نشده بسته به ولتاژ بیشتر"
+        "why_fa": "min 1 m تا enclosure؛ و تا unguarded live parts بسته به voltage بیشتر"
       },
       {
         "kw": "\"corridor receptacle spacing (apartment)\"",
         "jump": "Rule 26-710",
         "why": "max 15 m between duplex receptacles in public corridors",
         "stars": 2,
-        "why_fa": "در راهروهای عمومی حداکثر ۱۵ m بینِ پریزهای دوبل"
+        "why_fa": "در public corridor ها max 15 m بینِ duplex receptacle ها"
       },
       {
         "kw": "\"rooftop / HVAC maintenance receptacle\"",
         "jump": "Rule 26-708 / 26-714",
         "why": "5-20R, GFCI protected",
         "stars": 2,
-        "why_fa": "از نوعِ 5-20R و با حفاظتِ GFCI"
+        "why_fa": "از نوعِ 5-20R و با GFCI protection"
       }
     ],
-    "summary_fa": "این بلوک سوالش زیاد است ولی بیشترش جستجوی سریع است: فاصله‌گذاری و جانماییِ پریز، قوانینِ GFCI/AFCI، ارتفاعِ دستهٔ تابلو (panelboard) و حفاظت و فواصلِ ترانسفورمر/خازن. توصیهٔ من: قوانینِ پریزِ واحدِ مسکونی (dwelling) را مثلِ کفِ دست حفظ کن — اینها تقریباً نمرهٔ آسانِ تضمینی‌اند.",
+    "summary_fa": "این بلوک سوالش زیاد است ولی بیشترش fast lookup است: receptacle spacing و placement، قوانینِ GFCI/AFCI، panelboard handle height، و protection و clearance برای transformer/capacitor. توصیهٔ من: dwelling receptacle rule ها را مثلِ کفِ دست حفظ کن — اینها تقریباً نمرهٔ آسانِ تضمینی‌اند.",
     "mustKnow_fa": [
-      "فاصله‌گذاریِ پریز (Rule 26-712): حداکثر ۳٫۶ m بین پریزها — چون هیچ نقطه‌ای نباید بیش از ۱٫۸ m از یک پریز فاصله داشته باشد",
-      "ارتفاعِ دستهٔ تابلو (Rule 26-400): بالاترین دسته حداکثر ۱٫۷ m بالای کفِ نهایی",
-      "رویهٔ پریز باید حداقل ۰٫۴ mm از صفحهٔ فلزیِ روکار بیرون بزند (Rule 26-700)",
-      "مرکزِ پریزِ اجاق (range) حداکثر ۱۳۰ mm بالای کفِ نهایی (Rule 26-744)",
-      "پریزِ بیرونیِ مسکونیِ تا ۲٫۵ m از سطحِ زمین = GFCI نوعِ Class A (Rule 26-714)",
-      "هر پریزِ تا ۱٫۵ m از یک سینک باید GFCI باشد (Rule 26-700)",
-      "AFCIِ ترکیبی برای پریزهای ۱۲۵ V واحدِ مسکونی با جریانِ ≤۲۰ A (Rule 26-722)",
-      "هادیِ خازن حداقل ۱۳۵٪ جریانِ نامی (Rule 26-210)",
-      "حداقل ۲ پریزِ دوبلِ بیرونی در یک واحدِ مسکونی اجباری است (Rule 26-724)",
-      "جریانِ اتصالِ‌کوتاهِ سمتِ ثانویهٔ ترانسفورمر = جریانِ بارِ کاملِ ثانویه (FLA) ÷ امپدانسِ پریونیت"
+      "receptacle spacing (Rule 26-712): max 3.6 m بین receptacle ها — چون هیچ نقطه‌ای نباید بیش از 1.8 m از یک receptacle فاصله داشته باشد",
+      "panelboard handle height (Rule 26-400): highest handle max 1.7 m بالای finished floor",
+      "face پریز باید حداقل 0.4 mm از metal faceplate بیرون بزند (Rule 26-700)",
+      "centre پریزِ range max 130 mm بالای finished floor (Rule 26-744)",
+      "outdoor residential receptacle تا 2.5 m از grade = Class A GFCI (Rule 26-714)",
+      "هر receptacle تا 1.5 m از یک sink باید GFCI باشد (Rule 26-700)",
+      "combination AFCI برای 125 V receptacle های dwelling با جریانِ ≤20 A (Rule 26-722)",
+      "capacitor conductor حداقل 135% از rated current (Rule 26-210)",
+      "min 2 outdoor duplex receptacle در یک dwelling اجباری است (Rule 26-724)",
+      "transformer secondary fault current = secondary full-load current (FLA) ÷ per-unit impedance"
     ],
     "traps_fa": [
-      "اینکه Rule 26-712 را 'فاصلهٔ ۱٫۸ m' بخوانی — نه! آن ۱٫۸ m فاصلهٔ هر نقطه تا یک پریز است؛ پس خودِ پریزها تا ۳٫۶ m از هم فاصله می‌گیرند",
-      "زدنِ GFCI روی پریزِ اختصاصیِ یک دستگاهِ ثابت (لباسشوییِ پشتِ دستگاه، پمپِ چاهک) — اینها استثنا دارند",
-      "از یاد بردنِ آستانهٔ ۲٫۵ m از سطحِ زمین برای GFCIِ بیرونی (Rule 26-714)",
-      "قاطی کردنِ ۱۳۵٪ هادیِ خازن (Rule 26-210) با ۱۲۵٪ شاخهٔ موتور (Rule 28-106) — این دو عددِ خیلی شبیه به هم سرِ امتحان زمینت می‌زنند",
-      "استفاده از ستونِ ≤۷۵۰ V برای OCPDِ ترانسفورمر در حالی که اولیه >۷۵۰ V است (ستونِ Table 50 فرق دارد ← مثلاً تا ۳۰۰٪ مجاز می‌شود)",
-      "ارتفاعِ دسته: حواست باشد سقفش ۱٫۷ m است، نه ۲٫۱ m و نه ۱٫۵ m"
+      "اینکه Rule 26-712 را '1.8 m apart' بخوانی — نه! آن 1.8 m فاصلهٔ هر point تا یک receptacle است؛ پس خودِ receptacle ها تا 3.6 m از هم فاصله می‌گیرند",
+      "زدنِ GFCI روی dedicated receptacle یک stationary appliance (washer پشتِ دستگاه، sump pump) — اینها exception دارند",
+      "از یاد بردنِ trigger همان 2.5 m از grade برای outdoor GFCI (Rule 26-714)",
+      "قاطی کردنِ 135% capacitor conductor (Rule 26-210) با 125% branch موتور (Rule 28-106) — این دو عددِ خیلی شبیه به هم سرِ امتحان زمینت می‌زنند",
+      "استفاده از ≤750 V column برای transformer OCPD در حالی که primary بالای >750 V است (Table 50 column فرق دارد ← مثلاً تا 300% مجاز می‌شود)",
+      "handle height: حواست باشد max یعنی 1.7 m، نه 2.1 m و نه 1.5 m"
     ],
     "method_fa": [
-      "فاصله‌گذاری/جانماییِ پریزِ مسکونی ← Rule 26-712 (همان ۱٫۸ m / ۳٫۶ m، به‌علاوهٔ قوانینِ کانتر و جزیره).",
-      "سوالِ GFCI ← نزدیکِ سینک (۱٫۵ m) یا بیرونیِ تا ۲٫۵ m از سطحِ زمین ← GFCI نوعِ Class A؛ بعد استثناهای دستگاهِ اختصاصی را چک کن.",
-      "سوالِ AFCI / مدارِ اختصاصیِ واحدِ مسکونی ← Rule 26-722.",
-      "خازن ← Rule 26-210: هادی ≥۱۳۵٪ جریانِ نامی؛ و جریانِ نامی = kVA ÷ (V × √3 برای سه‌فاز).",
-      "OCPDِ ترانسفورمر ← اول جریانِ اولیه را در بیاور، بعد درصدِ Table 50 را بزن (مراقبِ ≤۷۵۰ V در برابرِ >۷۵۰ V باش) و با Table 13 گردش کن.",
-      "جریانِ خطا/ظرفیتِ قطعِ ترانسفورمر ← FLAِ ثانویه ÷ امپدانسِ پریونیت."
+      "receptacle spacing/placement در dwelling ← Rule 26-712 (همان 1.8 m / 3.6 m، به‌علاوهٔ counter و island rules).",
+      "GFCI question ← نزدیکِ sink (1.5 m) یا outdoor تا 2.5 m از grade ← Class A GFCI؛ بعد dedicated-appliance exception ها را چک کن.",
+      "AFCI / dedicated circuit در dwelling ← Rule 26-722.",
+      "capacitor ← Rule 26-210: conductor ≥135% از rated current؛ و rated current = kVA ÷ (V × √3 برای 3-phase).",
+      "transformer OCPD ← اول primary current را در بیاور، بعد Table 50 % را بزن (مراقبِ ≤750 V در برابرِ >750 V باش) و با Table 13 round کن.",
+      "transformer fault/interrupting rating ← secondary FLA ÷ per-unit impedance."
     ],
-    "mnemonic_fa": "پریزها: ۱٫۸ تا یک نقطه، پس ۳٫۶ بینِ خودشان؛ دستهٔ تابلو ۱٫۷؛ اجاق ۱۳۰؛ GFCIِ بیرونی تا ۲٫۵ از سطحِ زمین."
+    "mnemonic_fa": "receptacle ها: 1.8 تا یک point، پس 3.6 بینِ خودشان؛ panel handle 1.7؛ range 130؛ outdoor GFCI تا 2.5 از grade."
   },
   {
     "section": 28,
@@ -505,32 +505,32 @@
         "stars": 5,
         "what": "3-phase motor full-load current (FLC) by hp & voltage",
         "use": "USE THIS for conductors and branch OCPD, NOT the nameplate",
-        "what_fa": "جریانِ بارِ کاملِ موتورِ سه‌فاز (FLC) بر حسبِ hp و ولتاژ",
-        "use_fa": "برای هادی‌ها و OCPDِ شاخه همیشه از همین جدول بخوان، نه از روی پلاکِ موتور — این مهم‌ترین قانونِ بلوکِ موتور است"
+        "what_fa": "full-load current (FLC / جریانِ بارِ کامل) موتورِ 3-phase بر حسبِ hp و voltage",
+        "use_fa": "برای conductor ها و branch OCPD همیشه از همین Table 44 بخوان، not from the motor nameplate — این مهم‌ترین rule بلوکِ موتور است"
       },
       {
         "ref": "Table 45",
         "stars": 4,
         "what": "Single-phase motor FLC by hp & voltage",
         "use": "single-phase equivalent of Table 44",
-        "what_fa": "FLCِ موتورِ تک‌فاز بر حسبِ hp و ولتاژ",
-        "use_fa": "همان نقشِ Table 44 را دارد، فقط برای موتورهای تک‌فاز"
+        "what_fa": "FLC موتورِ single-phase بر حسبِ hp و voltage",
+        "use_fa": "همان نقشِ Table 44 را دارد، فقط برای single-phase motor"
       },
       {
         "ref": "Table 29",
         "stars": 5,
         "what": "Max motor branch-circuit fuse/breaker as % of FLC",
         "use": "time-delay fuse 175% (225% won't-start), non-time-delay 300%, inverse-time CB 250%, instantaneous-trip 1300%",
-        "what_fa": "حداکثرِ فیوز/بریکرِ شاخهٔ موتور، به‌صورتِ درصدی از FLC",
-        "use_fa": "فیوزِ تأخیری ۱۷۵٪ (اگر موتور راه نیفتد تا ۲۲۵٪)، فیوزِ غیرتأخیری ۳۰۰٪، بریکرِ زمان‌معکوس ۲۵۰٪، و تریپِ آنی ۱۳۰۰٪"
+        "what_fa": "max branch-circuit fuse/breaker موتور، به‌صورتِ % از FLC",
+        "use_fa": "time-delay fuse 175% (اگر موتور راه نیفتد تا 225%)، non-time-delay fuse 300%، inverse-time CB 250%، و instantaneous-trip 1300%"
       },
       {
         "ref": "Table 27",
         "stars": 4,
         "what": "Duty-cycle / non-continuous service percentages",
         "use": "replaces the 125% continuous factor for short-time/intermittent/periodic/varying duty",
-        "what_fa": "درصدهای سرویسِ دوره‌ای / غیرپیوسته (duty-cycle)",
-        "use_fa": "وقتی موتور کوتاه‌مدت/متناوب/دوره‌ای/متغیر کار می‌کند، به‌جای ضریبِ ۱۲۵٪ پیوسته از درصدِ این جدول استفاده کن — چون موتورِ غیرپیوسته دائم گرم نمی‌ماند"
+        "what_fa": "duty-cycle / non-continuous service percentages (سرویسِ دوره‌ای / غیرپیوسته)",
+        "use_fa": "وقتی موتور short-time/intermittent/periodic/varying duty کار می‌کند، به‌جای 125% continuous factor از % همین Table 27 استفاده کن — چون موتورِ non-continuous دائم گرم نمی‌ماند"
       }
     ],
     "keyRules": [
@@ -539,56 +539,56 @@
         "stars": 5,
         "what": "Branch-circuit conductor = 125% of FLC",
         "note": "FLC from Table 44/45; continuous duty",
-        "what_fa": "هادیِ مدارِ شاخهٔ موتور = ۱۲۵٪ FLC",
-        "note_fa": "FLC را از Table 44/45 بگیر (نه از پلاک)؛ این ۱۲۵٪ برای سرویسِ پیوسته است"
+        "what_fa": "branch-circuit conductor موتور = 125% از FLC",
+        "note_fa": "FLC را از Table 44/45 بگیر (not from the nameplate)؛ این 125% برای continuous duty است"
       },
       {
         "ref": "Rule 28-108",
         "stars": 5,
         "what": "Feeder conductor for a group of motors",
         "note": "125% of the largest motor FLC + sum of the other motors' FLCs (duty-adjusted via Table 27)",
-        "what_fa": "هادیِ فیدر برای گروهی از موتورها",
-        "note_fa": "فقط بزرگ‌ترین موتور ۱۲۵٪ می‌گیرد: ۱۲۵٪ FLCِ بزرگ‌ترین موتور + جمعِ FLCِ بقیهٔ موتورها (که اگر duty-cycle باشند با Table 27 تنظیم می‌شوند)"
+        "what_fa": "feeder conductor برای group of motors",
+        "note_fa": "فقط largest motor یک 125% می‌گیرد: 125% از FLC بزرگ‌ترین موتور + sum of the other motors' FLCs (که اگر duty-cycle باشند با Table 27 تنظیم می‌شوند)"
       },
       {
         "ref": "Rule 28-200",
         "stars": 5,
         "what": "Branch-circuit overcurrent (max % from Table 29)",
         "note": "next size NOT exceeding by default; next-higher only if motor won't start",
-        "what_fa": "اضافه‌جریانِ مدارِ شاخه (حداکثر درصدش از Table 29)",
-        "note_fa": "پیش‌فرض این است که به سایزِ استانداردِ بعدی که از حد تجاوز نکند گرد کنی؛ فقط در صورتی به سایزِ بالاتر برو که موتور راه نیفتد"
+        "what_fa": "branch-circuit overcurrent (max % از Table 29)",
+        "note_fa": "default این است که به next standard size که not exceeding باشد round کنی؛ فقط در صورتی به next-higher size برو که موتور راه نیفتد (won't start)"
       },
       {
         "ref": "Rule 28-306",
         "stars": 5,
         "what": "Overload sized from NAMEPLATE FLA",
         "note": "×1.25 if SF ≥1.15 or temp-rise ≤40 °C, else ×1.15; single-phase = 1 device",
-        "what_fa": "اضافه‌بار (overload) از FLAِ پلاک حساب می‌شود، نه از جدول",
-        "note_fa": "اگر ضریبِ بهره SF≥۱٫۱۵ باشد یا افزایشِ دما ≤۴۰ °C، ضربدرِ ۱٫۲۵؛ در غیرِ این صورت ضربدرِ ۱٫۱۵. برای موتورِ تک‌فاز هم ۱ وسیلهٔ اورلود کافی است"
+        "what_fa": "overload (اضافه‌بار) از nameplate FLA حساب می‌شود، not from the table",
+        "note_fa": "اگر service factor SF≥1.15 باشد یا temp-rise ≤40 °C، ×1.25؛ در غیرِ این صورت ×1.15. برای single-phase motor هم 1 overload device کافی است"
       },
       {
         "ref": "Rule 28-604",
         "stars": 4,
         "what": "Disconnecting means location",
         "note": "within sight of AND ≤9 m from the motor/equipment",
-        "what_fa": "محلِ نصبِ دیسکانکت/کلیدِ قطع",
-        "note_fa": "هم باید در دیدِ مستقیم باشد و هم تا ۹ m از خودِ موتور/تجهیزات — هر دو شرط با هم"
+        "what_fa": "disconnecting means location (محلِ نصبِ disconnect)",
+        "note_fa": "هم باید within sight باشد و هم ≤9 m از خودِ motor/equipment — هر دو شرط با هم"
       },
       {
         "ref": "Rule 28-204",
         "stars": 3,
         "what": "Feeder overcurrent for a group of motors",
         "note": "largest-motor branch OCPD + remaining motor FLCs, to next size not exceeding",
-        "what_fa": "اضافه‌جریانِ فیدر برای گروهی از موتورها",
-        "note_fa": "OCPDِ شاخهٔ بزرگ‌ترین موتور + FLCِ بقیهٔ موتورها، و بعد گرد به سایزِ بعدی که از حد تجاوز نکند"
+        "what_fa": "feeder overcurrent برای group of motors",
+        "note_fa": "largest-motor branch OCPD + FLC بقیهٔ موتورها، و بعد round به next size که not exceeding باشد"
       },
       {
         "ref": "Rule 28-300",
         "stars": 3,
         "what": "Air-conditioning / refrigeration (compressor) sizing",
         "note": "size on marked rated-load current; LRC = 6×FLC if not marked",
-        "what_fa": "سایزبندیِ تهویهٔ‌مطبوع / تبرید (کمپرسور)",
-        "note_fa": "بر اساسِ جریانِ بارِ نامیِ نشان‌داده‌شده روی پلاک سایز کن؛ و اگر جریانِ روتورِ قفل‌شده (LRC) نوشته نشده بود، آن را ۶×FLC در نظر بگیر"
+        "what_fa": "air-conditioning / refrigeration (compressor) sizing",
+        "note_fa": "بر اساسِ marked rated-load current روی nameplate سایز کن؛ و اگر locked-rotor current (LRC) نوشته نشده بود، آن را 6×FLC در نظر بگیر"
       }
     ],
     "mustKnow": [
@@ -635,158 +635,158 @@
         "jump": "Table 44 (3-φ) / Table 45 (1-φ)",
         "why": "NOT the nameplate",
         "stars": 5,
-        "why_fa": "از جدول بخوان، نه از پلاکِ موتور"
+        "why_fa": "از Table 44/45 بخوان، not from the nameplate"
       },
       {
         "kw": "\"motor branch-circuit conductor size\"",
         "jump": "Rule 28-106",
         "why": "125% of FLC (Table 44/45)",
         "stars": 5,
-        "why_fa": "۱۲۵٪ FLC از Table 44/45"
+        "why_fa": "125% از FLC (Table 44/45)"
       },
       {
         "kw": "\"max fuse / breaker for a motor branch\"",
         "jump": "Table 29 + Rule 28-200",
         "why": "TD fuse 175% (225% won't-start), non-TD 300%, inverse CB 250%, inst-trip 1300%",
         "stars": 5,
-        "why_fa": "فیوزِ تأخیری ۱۷۵٪ (۲۲۵٪ اگر راه نیفتد)، غیرتأخیری ۳۰۰٪، بریکرِ زمان‌معکوس ۲۵۰٪، تریپِ آنی ۱۳۰۰٪"
+        "why_fa": "time-delay fuse 175% (225% اگر won't-start)، non-time-delay 300%، inverse-time CB 250%، instantaneous-trip 1300%"
       },
       {
         "kw": "\"motor overload / heater size\"",
         "jump": "Rule 28-306",
         "why": "from NAMEPLATE FLA ×1.25 (SF≥1.15) or ×1.15",
         "stars": 5,
-        "why_fa": "از FLAِ پلاک: ×۱٫۲۵ (اگر SF≥۱٫۱۵) وگرنه ×۱٫۱۵"
+        "why_fa": "از nameplate FLA: ×1.25 (اگر SF≥1.15) وگرنه ×1.15"
       },
       {
         "kw": "\"feeder for a group of motors\"",
         "jump": "Rule 28-108",
         "why": "125% largest FLC + sum of other FLCs",
         "stars": 5,
-        "why_fa": "۱۲۵٪ FLCِ بزرگ‌ترین موتور + جمعِ FLCِ بقیه"
+        "why_fa": "125% از largest motor FLC + sum of other FLCs"
       },
       {
         "kw": "\"instantaneous-trip / magnetic-only breaker %\"",
         "jump": "Table 29",
         "why": "1300% of FLC",
         "stars": 4,
-        "why_fa": "۱۳۰۰٪ FLC — همین یک عدد"
+        "why_fa": "1300% از FLC — همین یک عدد"
       },
       {
         "kw": "\"time-delay fuse, motor won't start\"",
         "jump": "Rule 28-200 + Table 29",
         "why": "raise 175% → up to 225% only if it won't start",
         "stars": 4,
-        "why_fa": "از ۱۷۵٪ شروع کن؛ تا ۲۲۵٪ فقط در صورتی که موتور راه نیفتد"
+        "why_fa": "از 175% شروع کن؛ تا 225% فقط در صورتی که motor won't-start"
       },
       {
         "kw": "\"duty cycle / intermittent / short-time motor\"",
         "jump": "Table 27",
         "why": "use the duty % instead of 125% continuous",
         "stars": 4,
-        "why_fa": "به‌جای ۱۲۵٪ پیوسته از درصدِ duty استفاده کن"
+        "why_fa": "به‌جای 125% continuous از duty % استفاده کن"
       },
       {
         "kw": "\"motor disconnect distance / location\"",
         "jump": "Rule 28-604",
         "why": "within sight AND ≤9 m",
         "stars": 4,
-        "why_fa": "هم در دیدِ مستقیم، هم تا ۹ m — هر دو با هم"
+        "why_fa": "هم within sight، هم ≤9 m — هر دو با هم"
       },
       {
         "kw": "\"number of overload devices (single-phase)\"",
         "jump": "Rule 28-306 / Table 14",
         "why": "single-phase = 1 device",
         "stars": 3,
-        "why_fa": "تک‌فاز فقط ۱ وسیلهٔ اورلود"
+        "why_fa": "single-phase فقط 1 overload device"
       },
       {
         "kw": "\"overload multiplier, service factor not marked\"",
         "jump": "Rule 28-306",
         "why": "115% of nameplate FLA",
         "stars": 3,
-        "why_fa": "۱۱۵٪ FLAِ پلاک"
+        "why_fa": "115% از nameplate FLA"
       },
       {
         "kw": "\"feeder overcurrent for motor group\"",
         "jump": "Rule 28-204",
         "why": "largest-motor branch OCPD + remaining FLCs",
         "stars": 3,
-        "why_fa": "OCPDِ شاخهٔ بزرگ‌ترین موتور + FLCِ بقیه"
+        "why_fa": "largest-motor branch OCPD + remaining FLCs"
       },
       {
         "kw": "\"compressor / refrigeration / A-C motor sizing\"",
         "jump": "Rule 28-300 series",
         "why": "size on marked rated-load current; LRC = 6×FLC if unmarked",
         "stars": 3,
-        "why_fa": "بر اساسِ جریانِ بارِ نامیِ نشان‌داده‌شده؛ اگر LRC نوشته نشده، ۶×FLC"
+        "why_fa": "بر اساسِ marked rated-load current؛ اگر LRC نوشته نشده، 6×FLC"
       },
       {
         "kw": "\"DC motor conductor / breaker\"",
         "jump": "Table D2 (Appendix D) + Table 29",
         "why": "DC FLC from Table D2, not Table 44",
         "stars": 3,
-        "why_fa": "FLCِ موتورِ DC از Table D2 می‌آید، نه Table 44"
+        "why_fa": "DC motor FLC از Table D2 می‌آید، not from Table 44"
       },
       {
         "kw": "\"motor supply conductor insulation temp\"",
         "jump": "Rule 28-104 / Table 37",
         "why": "by motor enclosure/insulation class",
         "stars": 2,
-        "why_fa": "بسته به کلاسِ محفظه/عایقِ موتور"
+        "why_fa": "بسته به enclosure/insulation class موتور"
       },
       {
         "kw": "\"control circuit / holding (seal-in) contact\"",
         "jump": "Section 28 control (theory)",
         "why": "maintaining contact in parallel with start button",
         "stars": 3,
-        "why_fa": "کنتاکتِ نگه‌دارنده (seal-in) موازی با دکمهٔ استارت تا مدار وصل بماند"
+        "why_fa": "holding/seal-in contact موازی با start button تا control circuit وصل بماند"
       },
       {
         "kw": "\"low-voltage release vs protection (auto restart)\"",
         "jump": "Section 28 control (theory)",
         "why": "LV release = auto restart; LV protection = stays off",
         "stars": 2,
-        "why_fa": "رهایشِ ولتاژِ پایین = موتور خودش دوباره راه می‌افتد؛ حفاظتِ ولتاژِ پایین = خاموش می‌ماند تا دستی روشنش کنی"
+        "why_fa": "low-voltage release = motor خودش auto restart می‌شود؛ low-voltage protection = خاموش می‌ماند تا دستی روشنش کنی"
       },
       {
         "kw": "\"locked-rotor current\"",
         "jump": "Table 28",
         "why": "LRC by hp/voltage; or 6×FLC when unmarked",
         "stars": 2,
-        "why_fa": "LRC را از Table 28 بر حسبِ hp/ولتاژ بخوان؛ یا اگر نوشته نشده، ۶×FLC"
+        "why_fa": "LRC را از Table 28 بر حسبِ hp/voltage بخوان؛ یا اگر نوشته نشده، 6×FLC"
       }
     ],
-    "summary_fa": "سخت‌ترین بلوکِ امتحان است — پُر از محاسبه و دیاگرام. کلِ کار یک کلیدِ طلایی دارد: برای هادی‌ها و اضافه‌جریانِ شاخه همیشه از FLCِ جدولِ Table 44/45 شروع کن، نه از پلاکِ موتور؛ تنها جایی که سراغِ پلاک می‌روی، محاسبهٔ اضافه‌بار (overload) است. همین یک نکته نیمِ سوال‌های این بلوک را درست می‌کند.",
+    "summary_fa": "سخت‌ترین بلوکِ امتحان است — پُر از calculation و diagram. کلِ کار یک کلیدِ طلایی دارد: برای conductor ها و branch overcurrent همیشه از Table 44/45 FLC شروع کن، not from the motor nameplate؛ تنها جایی که سراغِ nameplate می‌روی، محاسبهٔ overload است. همین یک نکته نیمِ سوال‌های این بلوک را درست می‌کند.",
     "mustKnow_fa": [
-      "FLC را از Table 44 (سه‌فاز) / Table 45 (تک‌فاز) بخوان — نه از روی پلاک",
-      "هادیِ شاخه = ۱۲۵٪ FLC (Rule 28-106)",
-      "فیدر = ۱۲۵٪ FLCِ بزرگ‌ترین موتور + جمعِ FLCِ بقیهٔ موتورها (Rule 28-108)",
-      "اضافه‌بار از FLAِ پلاک: ×۱٫۲۵ (اگر ضریبِ بهره SF≥۱٫۱۵ یا افزایشِ دما ≤۴۰ °C) وگرنه ×۱٫۱۵ (Rule 28-306)",
-      "OCPDِ شاخه از Table 29: فیوزِ تأخیری ۱۷۵٪ (۲۲۵٪ اگر راه نیفتد)، فیوزِ غیرتأخیری ۳۰۰٪، بریکرِ زمان‌معکوس ۲۵۰٪، تریپِ آنی ۱۳۰۰٪",
-      "پیش‌فرض: OCPD را به سایزِ استانداردِ بعدی که از حد تجاوز نکند گرد کن؛ فقط وقتی موتور راه نمی‌افتد بالاتر برو",
-      "دیسکانکت/کلیدِ قطع هم در دیدِ مستقیم و هم تا ۹ m (Rule 28-604)",
-      "برای سرویسِ دوره‌ای (duty-cycle) به‌جای ضریبِ ۱۲۵٪ پیوسته از درصدِ Table 27 استفاده کن",
-      "موتورِ تک‌فاز فقط ۱ وسیلهٔ اضافه‌بار لازم دارد"
+      "FLC را از Table 44 (3-phase) / Table 45 (1-phase) بخوان — not from the nameplate",
+      "branch conductor = 125% از FLC (Rule 28-106)",
+      "feeder = 125% از FLC بزرگ‌ترین موتور + sum of remaining motor FLCs (Rule 28-108)",
+      "overload از nameplate FLA: ×1.25 (اگر service factor SF≥1.15 یا rise≤40 °C) وگرنه ×1.15 (Rule 28-306)",
+      "branch OCPD از Table 29: time-delay fuse 175% (225% اگر won't-start)، non-time-delay 300%، inverse-time CB 250%، instantaneous-trip 1300%",
+      "default: OCPD را به next standard size که not exceeding باشد round کن؛ فقط وقتی motor راه نمی‌افتد بالاتر برو",
+      "disconnect هم within sight و هم ≤9 m (Rule 28-604)",
+      "برای duty-cycle service به‌جای 125% continuous factor از % همان Table 27 استفاده کن",
+      "single-phase motor فقط 1 overload device لازم دارد"
     ],
     "traps_fa": [
-      "برداشتنِ FLAِ پلاک برای هادی‌ها/فیوزهای شاخه — اینجا باید FLCِ Table 44/45 را به کار ببری",
-      "برعکسش هم دام است: استفاده از FLCِ Table 44 برای اضافه‌بار — اورلود همیشه از FLAِ پلاک می‌آید (Rule 28-306)",
-      "قاطی کردنِ اضافه‌جریان با اضافه‌بار: اضافه‌جریان (فیوز/بریکر) از سیم (WIRE) محافظت می‌کند، اما اضافه‌بارِ حرارتی از خودِ موتور",
-      "وقتی نگفته‌اند موتور 'راه نمی‌افتد'، نباید OCPD را به سایزِ بالاتر گرد کنی — پیش‌فرض سایزِ بعدی است که تجاوز نکند",
-      "زدنِ ۱۲۵٪ به موتورِ duty-cycle — به‌جایش باید درصدِ Table 27 را به کار ببری",
-      "FLCِ موتورِ DC از Table D2 (Appendix D) می‌آید، نه از Table 44",
-      "در فیدر فقط بزرگ‌ترین موتور ۱۲۵٪ می‌گیرد؛ بقیه با FLCِ خشک و خالیِ خودشان جمع می‌شوند"
+      "برداشتنِ nameplate FLA برای conductor ها/branch fuse — اینجا باید Table 44/45 FLC را به کار ببری",
+      "برعکسش هم trap است: استفاده از Table 44 FLC برای overload — overload همیشه از nameplate FLA می‌آید (Rule 28-306)",
+      "قاطی کردنِ overcurrent با overload: overcurrent (fuse/breaker) از WIRE محافظت می‌کند، اما thermal overload از خودِ MOTOR",
+      "وقتی نگفته‌اند motor 'won't start'، نباید OCPD را به next-higher size round کنی — default همان next size که not exceeding باشد است",
+      "زدنِ 125% به یک duty-cycle motor — به‌جایش باید Table 27 percentage را به کار ببری",
+      "DC motor FLC از Table D2 (Appendix D) می‌آید، not from Table 44",
+      "در feeder فقط largest motor یک 125% می‌گیرد؛ بقیه با plain FLC خودشان جمع می‌شوند"
     ],
     "method_fa": [
-      "هادیِ شاخه: FLCِ Table 44/45 × ۱٫۲۵ (Rule 28-106).",
-      "OCPDِ شاخه: FLC × درصدِ Table 29 بسته به نوعِ وسیله؛ پیش‌فرض سایزِ استانداردِ بعدی که تجاوز نکند (Rule 28-200).",
-      "اضافه‌بار: FLAِ پلاک × ۱٫۲۵ یا ۱٫۱۵ طبقِ Rule 28-306 (تعدادِ وسایل: برای تک‌فاز ۱ تا).",
-      "فیدرِ گروهی: ۱۲۵٪ بزرگ‌ترین FLC + جمعِ بقیهٔ FLCها؛ برای موتورهای duty-cycle حتماً Table 27 را اعمال کن (Rule 28-108).",
-      "OCPDِ فیدر: OCPDِ شاخهٔ بزرگ‌ترین موتور + FLCِ بقیه، گرد به سایزِ بعدی که تجاوز نکند (Rule 28-204).",
-      "دیسکانکت: در دیدِ مستقیم و تا ۹ m (Rule 28-604).",
-      "کمپرسور/DC: به‌ترتیب جریانِ بارِ نامیِ نشان‌داده‌شده / FLCِ جدولِ Table D2."
+      "branch conductor: Table 44/45 FLC × 1.25 (Rule 28-106).",
+      "branch OCPD: FLC × Table 29 % بسته به device type؛ default همان next standard size که not exceeding باشد (Rule 28-200).",
+      "overload: nameplate FLA × 1.25 یا 1.15 طبقِ Rule 28-306 (count devices: برای single-phase همان 1 تا).",
+      "feeder (group): 125% از largest FLC + sum of other FLCs؛ برای duty-cycle motor ها حتماً Table 27 را اعمال کن (Rule 28-108).",
+      "feeder OCPD: largest-motor branch OCPD + remaining FLCs، round به next size که not exceeding باشد (Rule 28-204).",
+      "disconnect: within sight و ≤9 m (Rule 28-604).",
+      "compressor/DC: به‌ترتیب marked rated-load current / Table D2 FLC."
     ],
-    "mnemonic_fa": "سیم و فیوز = Table 44 (×۱٫۲۵ / Table 29)؛ اضافه‌بار = پلاک. اضافه‌جریان (OverCURRENT) سراغِ هادی‌هاست، اضافه‌بار (overLOAD) سراغِ خودِ موتور."
+    "mnemonic_fa": "wires & fuses = Table 44 (×1.25 / Table 29)؛ overload = nameplate. overCURRENT سراغِ conductor هاست، overLOAD سراغِ خودِ motor."
   }
 ]
