@@ -80,7 +80,10 @@
     if (!q) return;
     if (!getKey()) { gotoSettings("Add your API key to use the AI teacher."); return; }
     show("tutor"); langBar("chatLang", function () {});
-    sendChat(teachPromptText(q, null), getLang() === "fa" ? "🧑‍🏫 این سؤال را قدم‌به‌قدم یادم بده" : "🧑‍🏫 Teach me this question step by step");
+    var head = getLang() === "fa" ? "🧑‍🏫 آموزشِ این سؤال:" : "🧑‍🏫 Teach me this question:";
+    var label = head + "\n\n" + q.question + "\n" + (q.options || []).join("\n") +
+      (q.question_fa ? "\n\n" + q.question_fa : "");
+    sendChat(teachPromptText(q, null), label);
   }
 
   // ---------- markdown -> pretty HTML (tables, lists, hr, code, RTL-aware) ----------
