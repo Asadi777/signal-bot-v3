@@ -98,7 +98,7 @@
   var lastTeachQ = null;
   function openTeachChat(q) {
     if (!q) return;
-    if (!getKey()) { gotoSettings("Add your API key to use the AI teacher."); return; }
+    if (!aiReady()) { gotoSettings("Add your API key to use the AI teacher."); return; }
     lastTeachQ = q;
     show("tutor");
     langBar("chatLang", function () { if (lastTeachQ) { chatHistory = []; $("chat").innerHTML = ""; openTeachChat(lastTeachQ); } });
@@ -207,13 +207,21 @@
   // ---------- settings ----------
   function getKey() { return localStorage.getItem("cec_apikey") || ""; }
   function getModel() { return localStorage.getItem("cec_model") || "claude-opus-4-8"; }
+  // Optional shared proxy (Cloudflare Worker) so people can use AI WITHOUT a key.
+  // Paste your Worker URL here to bake it in for everyone (see proxy/README.md),
+  // or each user can enter it in Settings.
+  var PROXY_URL = "";
+  function getProxyBase() { return (localStorage.getItem("cec_proxy") || PROXY_URL || "").trim(); }
+  function getCode() { return (localStorage.getItem("cec_accesscode") || "").trim(); }
+  // AI is usable if the user has their own key OR a shared proxy is configured.
+  function aiReady() { return !!getKey() || !!getProxyBase(); }
 
-  // ---------- Claude API (direct from browser, streaming) ----------
+  // ---------- Claude API (direct from browser, or via shared proxy; streaming) ----------
   // messages: [{role, content}]; opts: {system, maxTokens, onText}
   function callClaude(messages, opts) {
     opts = opts || {};
-    var key = getKey();
-    if (!key) return Promise.reject(new Error("NO_KEY"));
+    var key = getKey(), proxy = getProxyBase();
+    if (!key && !proxy) return Promise.reject(new Error("NO_KEY"));
     var body = {
       model: getModel(),
       max_tokens: opts.maxTokens || 3000,
@@ -223,14 +231,26 @@
     };
     if (opts.system) body.system = opts.system;
 
-    return fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
+    var url, headers;
+    if (key) {
+      // personal key → talk to Anthropic directly
+      url = "https://api.anthropic.com/v1/messages";
+      headers = {
         "content-type": "application/json",
         "x-api-key": key,
         "anthropic-version": "2023-06-01",
         "anthropic-dangerous-direct-browser-access": "true"
-      },
+      };
+    } else {
+      // shared proxy → the key lives safely on the server
+      url = proxy;
+      headers = { "content-type": "application/json" };
+      if (getCode()) headers["x-access-code"] = getCode();
+    }
+
+    return fetch(url, {
+      method: "POST",
+      headers: headers,
       body: JSON.stringify(body)
     }).then(function (res) {
       if (!res.ok) {
@@ -501,7 +521,7 @@
   var teachConvo = [], teachQ = null, teachA = null;
   function teachThis() { teachQ = Q.list[Q.i]; teachA = Q.answers[Q.i]; startTeachPanel(); }
   function startTeachPanel() {
-    if (!getKey()) { gotoSettings("Add your API key to use the AI teacher."); return; }
+    if (!aiReady()) { gotoSettings("Add your API key to use the AI teacher."); return; }
     var host = $("teachout"); if (!host) return;
     teachConvo = [{ role: "user", content: teachPromptText(teachQ, teachA) }];
     host.innerHTML =
@@ -647,7 +667,7 @@
     var input = $("chatinput");
     var text = prefill || input.value.trim();
     if (!text) return;
-    if (!getKey()) { gotoSettings("Add your API key first to use the AI tutor."); return; }
+    if (!aiReady()) { gotoSettings("Add your API key first to use the AI tutor."); return; }
     if (!prefill) input.value = "";
     addMsg("user", displayLabel || text);
     chatHistory.push({ role: "user", content: text });
@@ -673,7 +693,7 @@
     });
   }
   function doGenerate(topic, count, secNum, statusEl, btn) {
-    if (!getKey()) { gotoSettings("Add your API key first to generate questions."); return; }
+    if (!aiReady()) { gotoSettings("Add your API key first to generate questions."); return; }
     if (btn) btn.disabled = true;
     var t0 = Date.now();
     var iv = setInterval(function () { statusEl.className = "status"; statusEl.textContent = "⏳ Generating " + count + " questions… " + Math.round((Date.now() - t0) / 1000) + "s"; }, 250);
@@ -756,7 +776,7 @@
   }
   function askVision() {
     var qtext = $("visionQ").value.trim() || "Explain this and how it relates to the CEC 2024 exam.";
-    if (!getKey()) { gotoSettings("Add your API key first to use vision."); return; }
+    if (!aiReady()) { gotoSettings("Add your API key first to use vision."); return; }
     if (!attached) { alert("Attach an image or PDF first."); return; }
     var out = $("visionOut"); out.classList.remove("hidden");
     var wait = thinking(out, "explain rich");
@@ -970,7 +990,7 @@
   }
   function lessonTeach() {
     var s = currentLesson; if (!s) return;
-    if (!getKey()) { gotoSettings("Add your API key to have the AI teach this section."); return; }
+    if (!aiReady()) { gotoSettings("Add your API key to have the AI teach this section."); return; }
     var out = $("lessonTeachOut");
     var wait = thinking(out, "rich teachbox"); var started = false;
     function paint(t) { if (!started) { started = true; wait.stop(); } out.className = "rich teachbox"; out.dir = dirFor(t); out.innerHTML = mdToHtml(t); }
@@ -1163,6 +1183,8 @@
     show("settings");
     $("apiKey").value = getKey();
     $("model").value = getModel();
+    if ($("accessCode")) $("accessCode").value = getCode();
+    if ($("proxyUrl")) $("proxyUrl").value = localStorage.getItem("cec_proxy") || "";
     populateTts();
     if (note) { var st = $("keyStatus"); st.className = "status err"; st.textContent = note; }
   }
@@ -1247,7 +1269,11 @@
   $("saveKey").onclick = function () {
     localStorage.setItem("cec_apikey", $("apiKey").value.trim());
     localStorage.setItem("cec_model", $("model").value);
-    var st = $("keyStatus"); st.className = "status ok"; st.textContent = "Saved on this device. ✅";
+    localStorage.setItem("cec_accesscode", $("accessCode").value.trim());
+    var pu = $("proxyUrl").value.trim();
+    if (pu) localStorage.setItem("cec_proxy", pu); else localStorage.removeItem("cec_proxy");
+    var st = $("keyStatus"); st.className = "status ok";
+    st.textContent = aiReady() ? "Saved — AI is ready. ✅" : "Saved on this device. ✅";
   };
   $("ttsVoice").onchange = function () { var v = $("ttsVoice").value; if (v) localStorage.setItem("cec_tts_voice", v); else localStorage.removeItem("cec_tts_voice"); speak("Read-aloud test. The minimum cover for a direct-buried cable."); };
   $("ttsRate").oninput = function () { var r = parseFloat($("ttsRate").value); localStorage.setItem("cec_tts_rate", r); $("ttsRateVal").textContent = r.toFixed(2) + "×"; };

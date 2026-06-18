@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <title>CEC Coach — PBR Holding · BC Construction Electrician (CEC 2024)</title>
-  <link rel="manifest" href="manifest.webmanifest?v=38" />
-  <link rel="icon" type="image/png" href="favicon.png?v=38" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=38" />
+  <link rel="manifest" href="manifest.webmanifest?v=39" />
+  <link rel="icon" type="image/png" href="favicon.png?v=39" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=39" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="CEC Coach" />
-  <link rel="stylesheet" href="styles.css?v=38" />
+  <link rel="stylesheet" href="styles.css?v=39" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand" data-home>
-      <img src="logo.png?v=38" class="brandlogo" alt="PBR Holding" />
+      <img src="logo.png?v=39" class="brandlogo" alt="PBR Holding" />
       <span class="brandtxt">PBR Holding<small>CEC Coach</small></span>
     </div>
     <div class="topright">
@@ -76,7 +76,7 @@
       </div>
 
       <div class="ai-row">
-        <div class="ai-label">✨ AI (needs your API key — tap ⚙️)</div>
+        <div class="ai-label">✨ AI (needs your API key — or a shared access code — tap ⚙️)</div>
         <div class="cards">
           <button class="card ai" data-go="tutor">
             <div class="card-ic">💬</div>
@@ -282,6 +282,7 @@
     <section id="settings" class="screen hidden">
       <button class="back" data-home>← Back</button>
       <h2>⚙️ Settings</h2>
+      <p class="foot" style="margin-top:0">برای استفاده از AI، یا کلیدِ شخصیِ خودت را بزن، یا اگر معلمت یک «رمزِ دسترسی» داده، آن را در پایین وارد کن.</p>
       <label class="fld">Anthropic API key (stays on this device only)
         <input id="apiKey" type="password" placeholder="sk-ant-…" />
       </label>
@@ -292,6 +293,15 @@
           <option value="claude-haiku-4-5">Haiku 4.5 — cheapest</option>
         </select>
       </label>
+
+      <h3 style="color:#fff;margin-top:18px">👥 Shared access (no key needed)</h3>
+      <label class="fld">Access code — رمزِ دسترسی (از معلمت بگیر)
+        <input id="accessCode" type="text" placeholder="مثلاً pbr-2026" />
+      </label>
+      <label class="fld">Shared AI server URL (اختیاری — اگر در اپ از قبل تنظیم نشده باشد)
+        <input id="proxyUrl" type="text" placeholder="https://…workers.dev" />
+      </label>
+
       <button id="saveKey" class="primary">Save</button>
       <div id="keyStatus" class="status"></div>
 
@@ -308,12 +318,12 @@
   </main>
 
   <footer class="copyright">
-    <img src="logo.png?v=38" class="cpright-logo" alt="" />
+    <img src="logo.png?v=39" class="cpright-logo" alt="" />
     © 2026 PBR Holding — All rights reserved. · CEC Coach
   </footer>
 
-  <script src="questions.js?v=38"></script>
-  <script src="study.js?v=38"></script>
-  <script src="app.js?v=38"></script>
+  <script src="questions.js?v=39"></script>
+  <script src="study.js?v=39"></script>
+  <script src="app.js?v=39"></script>
 </body>
 </html>
