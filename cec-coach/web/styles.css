@@ -42,6 +42,7 @@ h2{color:#fff; margin:6px 0 10px}
   cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,.18); transition:transform .12s, box-shadow .12s;
 }
 .card:active{transform:scale(.98)}
+.card[hidden]{display:none}
 .card:hover{box-shadow:0 10px 26px rgba(0,0,0,.26)}
 .card.ai{background:linear-gradient(160deg,#13243d,#0d1830); color:#eaf2ff}
 .card-ic{font-size:26px}
