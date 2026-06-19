@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BC Star Academy — Post Studio</title>
+
+<!-- Google Fonts: Vazirmatn (Persian) + Manrope (Latin) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+
+<!-- html2canvas for PNG export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+  :root{
+    --green-1:#0b3d2e;
+    --green-2:#0e2a20;
+    --green-3:#08251b;
+    --gold:#d8a73e;
+    --gold-light:#e7c25a;
+    --gold-muted:#c2a45e;
+    --white:#ffffff;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    background:#11181c;
+    color:#e9efe9;
+    font-family:'Vazirmatn', system-ui, sans-serif;
+    padding:32px 24px 80px;
+    line-height:1.6;
+  }
+
+  /* ---------- Page chrome (not exported) ---------- */
+  .page-head{
+    max-width:1100px;
+    margin:0 auto 32px;
+    background:linear-gradient(135deg,#16302a,#10211b);
+    border:1px solid rgba(216,167,62,.35);
+    border-radius:18px;
+    padding:24px 28px;
+  }
+  .page-head h1{
+    font-size:24px; font-weight:900; color:var(--gold-light);
+    margin-bottom:10px;
+  }
+  .page-head p{ font-size:15px; color:#cdd9cf; margin-bottom:6px; }
+  .page-head code{
+    font-family:'Manrope',monospace; background:rgba(0,0,0,.35);
+    padding:2px 8px; border-radius:6px; color:var(--gold-light); direction:ltr; display:inline-block;
+  }
+  .status{
+    margin-top:12px; font-size:14px; font-weight:600;
+    color:#f0d48a;
+  }
+
+  .studio{
+    display:flex; flex-wrap:wrap; gap:56px;
+    justify-content:center; align-items:flex-start;
+  }
+
+  .post-block{ display:flex; flex-direction:column; align-items:center; }
+
+  /* Scaled-down preview wrapper: a 1080x1080 node scaled to 0.5 = 540x540 footprint */
+  .preview{
+    width:540px; height:540px;
+    overflow:hidden; border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+  }
+  .preview .canvas{
+    transform:scale(0.5);
+    transform-origin:top left;
+  }
+
+  .dl-btn{
+    margin-top:18px;
+    font-family:'Vazirmatn',sans-serif;
+    font-size:16px; font-weight:800;
+    color:#1a1208;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    border:none; border-radius:12px;
+    padding:12px 26px; cursor:pointer;
+    transition:transform .12s ease, opacity .2s ease;
+    box-shadow:0 8px 20px rgba(216,167,62,.3);
+  }
+  .dl-btn:hover{ transform:translateY(-2px); }
+  .dl-btn:disabled{ opacity:.45; cursor:not-allowed; transform:none; }
+
+  /* ====================================================================
+     THE EXPORTABLE CANVAS — exactly 1080 x 1080
+     ==================================================================== */
+  .canvas{
+    width:1080px; height:1080px;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, rgba(216,167,62,.10), transparent 60%),
+      linear-gradient(160deg, var(--green-1) 0%, var(--green-2) 55%, var(--green-3) 100%);
+    color:var(--white);
+    font-family:'Vazirmatn',sans-serif;
+    padding:80px;
+    display:flex; flex-direction:column;
+    direction:rtl; text-align:right;
+  }
+
+  /* subtle, clean texture: faint diagonal sheen — kept very low opacity */
+  .canvas::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(900px 520px at 50% 40%, rgba(216,167,62,.07), transparent 70%);
+    pointer-events:none;
+  }
+  /* thin gold frame inset for a finished, premium feel */
+  .canvas::after{
+    content:""; position:absolute;
+    inset:36px;
+    border:1.5px solid rgba(216,167,62,.22);
+    border-radius:36px;
+    pointer-events:none;
+  }
+
+  .canvas > *{ position:relative; z-index:1; }
+
+  /* ---------- Logo lockup ---------- */
+  .logo-row{ display:flex; align-items:center; gap:26px; justify-content:flex-start; }
+  .logo-glow{ position:relative; }
+  .logo-glow::before{
+    content:""; position:absolute; inset:-40px;
+    background:radial-gradient(circle, rgba(216,167,62,.28), transparent 68%);
+    z-index:-1;
+  }
+  .wordmark{ display:flex; flex-direction:column; line-height:1; }
+  .wordmark .bc-star{
+    font-family:'Manrope',sans-serif; font-weight:800;
+    font-size:52px; color:var(--white); letter-spacing:2px; direction:ltr;
+  }
+  .wordmark .academy{
+    font-family:'Manrope',sans-serif; font-weight:600;
+    font-size:24px; color:var(--gold-light);
+    letter-spacing:11px; direction:ltr; margin-top:8px;
+  }
+
+  /* ---------- Content ---------- */
+  .spacer{ flex:1; }
+
+  .eyebrow{
+    display:inline-block; align-self:flex-start;
+    font-family:'Manrope',sans-serif; font-weight:600;
+    font-size:24px; color:var(--gold-light);
+    letter-spacing:1px; direction:ltr;
+    border:1.5px solid rgba(216,167,62,.5);
+    border-radius:999px; padding:8px 22px;
+    background:rgba(216,167,62,.08);
+    margin-bottom:34px;
+  }
+
+  .headline{
+    font-weight:900;
+    font-size:74px; line-height:1.28;
+    color:var(--white);
+    margin-bottom:30px;
+    max-width:920px;
+  }
+  .headline .hl-gold{ color:var(--gold-light); }
+  .headline .en{ font-family:'Manrope',sans-serif; font-weight:800; direction:ltr; unicode-bidi:isolate; }
+
+  .subhead{
+    font-weight:600;
+    font-size:34px; line-height:1.6;
+    color:var(--gold-muted);
+    margin-bottom:46px;
+    max-width:880px;
+  }
+  .subhead .en{ font-family:'Manrope',sans-serif; font-weight:600; direction:ltr; unicode-bidi:isolate; color:#d9c389; }
+
+  .pills{ display:flex; flex-wrap:wrap; gap:18px; margin-bottom:auto; }
+  .pill{
+    display:inline-flex; align-items:center; gap:12px;
+    font-weight:600; font-size:30px;
+    color:#f4ead0;
+    border:1.5px solid rgba(216,167,62,.6);
+    background:rgba(216,167,62,.10);
+    border-radius:999px;
+    padding:16px 30px;
+  }
+  .pill .dot{
+    width:12px; height:12px; border-radius:50%;
+    background:var(--gold); flex:0 0 auto;
+    box-shadow:0 0 12px rgba(216,167,62,.8);
+  }
+  .pill .en{ font-family:'Manrope',sans-serif; font-weight:600; direction:ltr; unicode-bidi:isolate; }
+
+  /* ---------- Footer / CTA ---------- */
+  .footer{ margin-top:54px; }
+  .cta{
+    display:inline-flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:38px;
+    color:#1a1208;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    border-radius:999px;
+    padding:24px 54px;
+    box-shadow:0 14px 36px rgba(216,167,62,.35);
+  }
+  .url{
+    margin-top:26px;
+    font-family:'Manrope',sans-serif; font-weight:600;
+    font-size:30px; color:var(--gold-light);
+    letter-spacing:1px; direction:ltr; text-align:right;
+  }
+
+  /* body copy variant for the "tip" post */
+  .body-copy{
+    font-weight:400; font-size:32px; line-height:1.7;
+    color:#e7eee7; max-width:880px; margin-bottom:auto;
+  }
+  .body-copy .en{ font-family:'Manrope',sans-serif; direction:ltr; unicode-bidi:isolate; color:#e7c25a; font-weight:600; }
+</style>
+</head>
+<body>
+
+<!-- ============== USAGE NOTE (not part of exports) ============== -->
+<div class="page-head" dir="rtl">
+  <h1>استودیوی پست — BC Star Academy</h1>
+  <p>هر طرح را در زیر می‌بینید. برای ذخیره، روی دکمه‌ی «دانلود PNG» زیر هر پست کلیک کنید؛ یک فایل تصویر دقیقاً با ابعاد <code>1080×1080</code> دانلود می‌شود که آماده‌ی انتشار در Instagram است.</p>
+  <p>دکمه‌ها تا زمانی که فونت‌ها کامل بارگذاری شوند غیرفعال‌اند تا متن فارسی درست رندر شود.</p>
+  <p>برای استفاده از لوگوی واقعی، در کد به جای <code>&lt;svg&gt;</code> از <code>&lt;img src="academy-logo.png"&gt;</code> استفاده کنید (راهنما داخل کد کامنت شده است).</p>
+  <div class="status" id="status">در حال بارگذاری فونت‌ها… دکمه‌ها به‌زودی فعال می‌شوند.</div>
+</div>
+
+<div class="studio">
+
+  <!-- ============================================================
+       POST 1 — Academy intro
+       ============================================================ -->
+  <div class="post-block">
+    <div class="preview">
+      <div class="canvas" id="post1">
+
+        <!-- ===== LOGO LOCKUP (reusable) =====
+             To use the real logo PNG, replace this <svg> with:
+             <img src="academy-logo.png" width="150" height="150" alt="BC Star Academy"> -->
+        <div class="logo-row">
+          <div class="logo-glow">
+            <svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-label="BC Star Academy logo">
+              <!-- dark-green rounded-square badge -->
+              <rect x="2" y="2" width="146" height="146" rx="34" fill="#0b3d2e" stroke="#d8a73e" stroke-width="3"/>
+              <!-- gold circular ring -->
+              <circle cx="75" cy="75" r="54" fill="none" stroke="#e7c25a" stroke-width="4"/>
+              <circle cx="75" cy="75" r="46" fill="none" stroke="#d8a73e" stroke-width="1.5" opacity="0.6"/>
+              <!-- 5-point star above the cap -->
+              <path d="M75 38 l6.5 13.6 15 2.1 -10.9 10.4 2.6 14.8 -13.2 -7 -13.2 7 2.6 -14.8 -10.9 -10.4 15 -2.1 Z" fill="#e7c25a"/>
+              <!-- graduation cap (mortarboard) -->
+              <g fill="#e7c25a">
+                <polygon points="75,82 108,94 75,106 42,94"/>
+                <path d="M54 99 L54 110 Q75 122 96 110 L96 99 L75 106 Z" fill="#d8a73e"/>
+                <line x1="108" y1="94" x2="108" y2="112" stroke="#e7c25a" stroke-width="2.5"/>
+                <circle cx="108" cy="114" r="3.5" fill="#e7c25a"/>
+              </g>
+            </svg>
+          </div>
+          <div class="wordmark">
+            <span class="bc-star">BC STAR</span>
+            <span class="academy">ACADEMY</span>
+          </div>
+        </div>
+        <!-- ===== /LOGO LOCKUP ===== -->
+
+        <div class="spacer"></div>
+
+        <span class="eyebrow">CEC 2024 · Exam Prep</span>
+
+        <h1 class="headline">
+          آماده‌ی قبولی در آزمونِ <span class="en hl-gold">Construction Electrician</span> هستی؟
+        </h1>
+        <p class="subhead">
+          <span class="en">CEC 2024</span> · ویژه‌ی برق‌کارهای فارسی‌زبانِ ونکوور
+        </p>
+
+        <div class="pills">
+          <span class="pill"><span class="dot"></span>۴۴۰ سوالِ تمرینی</span>
+          <span class="pill"><span class="dot"></span>آزمونِ شبیه‌سازیِ زمان‌دار</span>
+          <span class="pill"><span class="dot"></span>معلمِ هوشِ مصنوعی ۲۴/۷</span>
+        </div>
+
+        <div class="footer">
+          <div class="cta">همین حالا شروع کن →</div>
+          <div class="url">www.bcstarelectric.ca</div>
+        </div>
+      </div>
+    </div>
+    <button class="dl-btn" data-target="post1" data-name="bcstar-post-1-intro" disabled>دانلود PNG ۱۰۸۰×۱۰۸۰</button>
+  </div>
+
+  <!-- ============================================================
+       POST 2 — Value / "did you know" tip
+       ============================================================ -->
+  <div class="post-block">
+    <div class="preview">
+      <div class="canvas" id="post2">
+
+        <!-- To use the real logo PNG, replace this <svg> with:
+             <img src="academy-logo.png" width="150" height="150" alt="BC Star Academy"> -->
+        <div class="logo-row">
+          <div class="logo-glow">
+            <svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-label="BC Star Academy logo">
+              <rect x="2" y="2" width="146" height="146" rx="34" fill="#0b3d2e" stroke="#d8a73e" stroke-width="3"/>
+              <circle cx="75" cy="75" r="54" fill="none" stroke="#e7c25a" stroke-width="4"/>
+              <circle cx="75" cy="75" r="46" fill="none" stroke="#d8a73e" stroke-width="1.5" opacity="0.6"/>
+              <path d="M75 38 l6.5 13.6 15 2.1 -10.9 10.4 2.6 14.8 -13.2 -7 -13.2 7 2.6 -14.8 -10.9 -10.4 15 -2.1 Z" fill="#e7c25a"/>
+              <g fill="#e7c25a">
+                <polygon points="75,82 108,94 75,106 42,94"/>
+                <path d="M54 99 L54 110 Q75 122 96 110 L96 99 L75 106 Z" fill="#d8a73e"/>
+                <line x1="108" y1="94" x2="108" y2="112" stroke="#e7c25a" stroke-width="2.5"/>
+                <circle cx="108" cy="114" r="3.5" fill="#e7c25a"/>
+              </g>
+            </svg>
+          </div>
+          <div class="wordmark">
+            <span class="bc-star">BC STAR</span>
+            <span class="academy">ACADEMY</span>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <span class="eyebrow">Exam Tip · Open Book</span>
+
+        <h1 class="headline">
+          <span class="hl-gold">۷۰٪</span> برای قبولی کافی است — ولی کتاب باید تمیز و بدونِ <span class="en hl-gold">tab</span> باشد
+        </h1>
+
+        <p class="body-copy">
+          آزمونِ <span class="en">Construction Electrician</span> به‌صورتِ <span class="en">open-book</span> برگزار می‌شود. طبقِ قوانینِ جلسه، کتابِ <span class="en">code</span> باید بدونِ یادداشت، علامت یا <span class="en">tab</span> چسبیده باشد. پس مهارتِ واقعی، سرعت در پیدا کردنِ مرجع است — نه حفظ کردن. با تمرینِ زمان‌دار، این مهارت را بساز.
+        </p>
+
+        <div class="footer">
+          <div class="cta">تمرین کن → لینک در بیو</div>
+          <div class="url">www.bcstarelectric.ca</div>
+        </div>
+      </div>
+    </div>
+    <button class="dl-btn" data-target="post2" data-name="bcstar-post-2-tip" disabled>دانلود PNG ۱۰۸۰×۱۰۸۰</button>
+  </div>
+
+  <!-- ============================================================
+       POST 3 — Services
+       ============================================================ -->
+  <div class="post-block">
+    <div class="preview">
+      <div class="canvas" id="post3">
+
+        <!-- To use the real logo PNG, replace this <svg> with:
+             <img src="academy-logo.png" width="150" height="150" alt="BC Star Academy"> -->
+        <div class="logo-row">
+          <div class="logo-glow">
+            <svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-label="BC Star Academy logo">
+              <rect x="2" y="2" width="146" height="146" rx="34" fill="#0b3d2e" stroke="#d8a73e" stroke-width="3"/>
+              <circle cx="75" cy="75" r="54" fill="none" stroke="#e7c25a" stroke-width="4"/>
+              <circle cx="75" cy="75" r="46" fill="none" stroke="#d8a73e" stroke-width="1.5" opacity="0.6"/>
+              <path d="M75 38 l6.5 13.6 15 2.1 -10.9 10.4 2.6 14.8 -13.2 -7 -13.2 7 2.6 -14.8 -10.9 -10.4 15 -2.1 Z" fill="#e7c25a"/>
+              <g fill="#e7c25a">
+                <polygon points="75,82 108,94 75,106 42,94"/>
+                <path d="M54 99 L54 110 Q75 122 96 110 L96 99 L75 106 Z" fill="#d8a73e"/>
+                <line x1="108" y1="94" x2="108" y2="112" stroke="#e7c25a" stroke-width="2.5"/>
+                <circle cx="108" cy="114" r="3.5" fill="#e7c25a"/>
+              </g>
+            </svg>
+          </div>
+          <div class="wordmark">
+            <span class="bc-star">BC STAR</span>
+            <span class="academy">ELECTRIC</span>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <span class="eyebrow">Licensed · Greater Vancouver</span>
+
+        <h1 class="headline">
+          خدماتِ برقِ مسکونی و تجاری در سراسرِ <span class="en hl-gold">Greater Vancouver</span>
+        </h1>
+        <p class="subhead">
+          نصب، سرویس و رفعِ ایراد توسطِ تیمِ مجاز و حرفه‌ای
+        </p>
+
+        <div class="pills">
+          <span class="pill"><span class="dot"></span>نصب و سرویس</span>
+          <span class="pill"><span class="dot"></span><span class="en">Panel upgrade</span></span>
+          <span class="pill"><span class="dot"></span>بازرسی و رفعِ ایراد</span>
+        </div>
+
+        <div class="footer">
+          <div class="cta">تماس بگیر →</div>
+          <div class="url">www.bcstarelectric.ca</div>
+        </div>
+      </div>
+    </div>
+    <button class="dl-btn" data-target="post3" data-name="bcstar-post-3-services" disabled>دانلود PNG ۱۰۸۰×۱۰۸۰</button>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var statusEl = document.getElementById('status');
+  var buttons  = Array.prototype.slice.call(document.querySelectorAll('.dl-btn'));
+
+  // Enable the download buttons only once fonts are ready, otherwise
+  // html2canvas would capture fallback fonts.
+  function enableButtons() {
+    buttons.forEach(function (b) { b.disabled = false; });
+    statusEl.textContent = 'فونت‌ها آماده شد ✓ — حالا می‌توانید هر پست را دانلود کنید.';
+    statusEl.style.color = '#9fe6b4';
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      // Give the browser one frame to apply the loaded faces.
+      setTimeout(enableButtons, 150);
+    });
+  } else {
+    // Fallback for very old browsers.
+    window.addEventListener('load', function () { setTimeout(enableButtons, 800); });
+  }
+
+  function exportNode(node, filename, btn) {
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'در حال ساخت تصویر…';
+
+    // The on-screen node lives inside a wrapper scaled to 0.5. We capture the
+    // node itself with html2canvas scale:1; html2canvas reads the element's own
+    // 1080x1080 box (ignoring the ancestor CSS transform), producing a true
+    // 1080x1080 bitmap. width/height are pinned explicitly to be safe.
+    html2canvas(node, {
+      width: 1080,
+      height: 1080,
+      scale: 1,
+      useCORS: true,
+      backgroundColor: null,
+      windowWidth: 1080,
+      windowHeight: 1080
+    }).then(function (canvas) {
+      var link = document.createElement('a');
+      link.download = filename + '.png';
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }).catch(function (err) {
+      console.error('Export failed:', err);
+      alert('خطا در ساختِ تصویر. لطفاً دوباره تلاش کنید.');
+    }).then(function () {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var node = document.getElementById(btn.getAttribute('data-target'));
+      var name = btn.getAttribute('data-name') || 'bcstar-post';
+      exportNode(node, name, btn);
+    });
+  });
+})();
+</script>
+</body>
+</html>
