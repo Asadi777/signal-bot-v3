@@ -1,0 +1,36 @@
+{
+  "skill_name": "academy-ceo",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "goal-analysis-five-year-plan",
+      "prompt": "سلام. اهداف من برای آکادمی اینترنتی آموزش کسب‌وکارم اینه: تا ۲ سال دیگه برسیم به درآمد ماهی ۵۰۰ میلیون تومن و ۱۰ هزار دانشجو. الان پیج اینستاگراممون ۸ هزار فالوئر داره و ماهی حدود ۴۰ میلیون تومن فروش داریم با ۲ تا دوره. نظرت چیه؟ یه برنامه ۵ ساله هم بهم بده.",
+      "expected_output": "Candid CEO-style feasibility analysis with numbers (funnel math, gap analysis), a structured 5-year plan with yearly milestones and KPIs, goals recorded in academy/goals.md and plan in academy/strategy/five-year-plan.md, all in Persian.",
+      "files": [],
+      "assertions": [
+        "Reply (response.md) is written in Persian",
+        "Gives a candid, numbers-based feasibility verdict on the 500M-toman/month in 2 years goal (funnel or gap math, not just agreement)",
+        "Five-year plan includes year-by-year milestones with numeric targets for revenue and students",
+        "Records the goals in an academy/goals.md state file with a CEO opinion per goal",
+        "Creates academy/strategy/five-year-plan.md including risks and explicit assumptions",
+        "Plan includes quarterly OKRs or quarterly breakdown for year 1"
+      ]
+    },
+    {
+      "id": 1,
+      "eval_name": "instagram-month-plan-with-ads",
+      "prompt": "برای ماه آینده تقویم محتوای اینستاگرام آکادمی رو بچین (پیج ما درباره آموزش ترید و سرمایه‌گذاریه) و با بودجه ۵۰ میلیون تومن بگو چه تبلیغاتی بذاریم.",
+      "expected_output": "A monthly Instagram content calendar with dated posts, formats, and at least some fully-drafted captions; an ad plan that allocates the 50M toman budget across channels with tracking metrics (CPL/CAC) and a stop-loss rule; ads marked as requiring approval before spending; files saved under academy/, all in Persian.",
+      "files": [],
+      "assertions": [
+        "Reply (response.md) is written in Persian",
+        "Monthly Instagram calendar covers ~4 weeks with dated entries and post formats (reels/post/story)",
+        "At least two posts have fully drafted captions with a hook, hashtags, and a CTA",
+        "Ad plan allocates the 50M toman budget numerically across specific channels",
+        "Ad plan defines tracking (CPL/CAC/ROAS targets, discount codes or UTM) and a stop-loss rule",
+        "Ad spending is marked as pending owner approval rather than assumed authorized",
+        "Creates academy/ state files (instagram/calendar.md and ads/campaigns.md)"
+      ]
+    }
+  ]
+}
