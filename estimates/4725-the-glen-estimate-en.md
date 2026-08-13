@@ -1,93 +1,102 @@
-# Project Estimate — Basement Room Expansion (Under-Deck Enclosure)
+# Execution Budget — Basement Room Expansion (Under-Deck Enclosure)
+## Owner-Managed Scenario (Owner as Project Manager and Builder)
 
 **Project location:** 4725 The Glen, West Vancouver, BC V7S 3C3
-**Date:** August 13, 2026 | **Estimate validity:** 30 days | **Currency:** CAD
+**Date:** August 13, 2026 | **Currency:** CAD | **Technical basis:** BC Building Code 2024
 
 ---
 
+## Delivery Model
+
+- **Crew:** Owner + 1 lead tradesman + 2 labourers — performing demolition, excavation, rebar and concrete, framing, window/door installation, insulation, drywall and tape-and-mud, painting, flooring and trim, and all material purchasing.
+- **Subcontractors (3):** stucco (matched to the house), electrical (licensed electrician), and the roof waterproofing membrane (for a warrantied watertight assembly).
+
 ## Scope of Work
 
-- Complete removal of the existing exterior wall of the basement room (including the sliding glass door).
-- New ~19 ft front exterior wall built directly under the deck edge, with 2 top-tier Home Depot double-pane windows and 1 quality entry door.
-- Two new side exterior walls, ~9.5 ft each.
-- Conversion of the existing deck into the room's roof: remove composite decking, install sloped sheathing and waterproof membrane, insulate from above and below, install new composite decking and reinstate railings.
-- Stucco exterior with rainscreen, matched exactly to the home's existing finish.
-- Complete electrical, heating/ventilation, and interior finishes per BC Building Code 2024.
+- Complete removal of the existing basement exterior wall (including the sliding glass door).
+- New ~19 ft front wall under the deck edge with 2 top-tier Home Depot double-pane windows and 1 quality entry door; two ~9.5 ft side walls.
+- **Deck-to-roof conversion:** remove the existing composite decking (salvaged for reuse), install sloped sheathing and a **walkable waterproof membrane** (the current deck surface has open gaps and is not watertight), re-lay the decking on sleepers and reinstate the railings.
+- **Roof thermal insulation from below:** R-28 batt + poly vapour barrier (self-installed — same as the owner's previous project).
+- Foundation: footings and stem walls under 38 lineal ft of wall + under-slab insulation + radon rough-in + drainage.
+- Stucco exterior with rainscreen matched to the house; complete electrical; heating/ventilation; interior finishes.
 
-**Added floor area:** ~180 sq ft | **New exterior walls:** 38 lineal ft | **Ceiling height:** ~9 ft
+**Added floor area:** ~180 sq ft | **New walls:** 38 lineal ft | **Roof/deck area:** ~300 sq ft with edges
 
-## Key Technical Specifications
+## 1. Materials — Purchased Directly by Owner
 
-| Item | Specification |
+| # | Description | Amount |
+|---|---|---:|
+| 1 | Disposal bin rentals and dump fees | $1,500 |
+| 2 | Concrete + pump + rebar + form lumber (footings and stem walls, 38 lf) | $4,300 |
+| 3 | Slab infill: gravel, rigid under-slab foam, 6-mil poly, radon pipe, concrete | $2,000 |
+| 4 | Drainage and damp-proofing | $1,200 |
+| 5 | 2×6 framing lumber + wall sheathing + seismic hardware | $3,500 |
+| 6 | Deck joist reinforcement + hangers and blocking | $1,200 |
+| 7 | Sloped roof sheathing (plywood + tapered sleepers) | $1,800 |
+| 8 | Sleepers and fasteners for re-laying salvaged composite decking | $800 |
+| 9 | 2 top-tier Home Depot double-pane windows | $1,900 |
+| 10 | 1 quality fiberglass/steel entry door | $2,000 |
+| 11 | Wall insulation: R-22/24 batt + exterior rigid foam | $1,400 |
+| 12 | Roof insulation from below: R-28 batt + poly vapour barrier | $900 |
+| 13 | Soffit, fascia and flashings | $800 |
+| 14 | Heating: electric baseboards + thermostat + ventilation fan | $1,200 |
+| 15 | Drywall + taping materials | $1,300 |
+| 16 | Paint and painting supplies | $400 |
+| 17 | Interior flooring + baseboards and trim | $2,200 |
+| 18 | Consumables: screws, nails, adhesives, blades, PPE, misc. | $1,500 |
+| | **Materials total** | **≈ $30,000** |
+
+## 2. Subcontractors (Labour + Their Own Materials)
+
+| # | Description | Amount |
+|---|---|---:|
+| 1 | Stucco with rainscreen + WRB + acrylic finish, matched to house (~300 sq ft) | $8,000 – $10,000 |
+| 2 | Licensed electrician: circuits, receptacles, pot lights, smoke/CO, baseboard hookup | $4,500 – $6,000 |
+| 3 | Walkable waterproof roof membrane (60-mil vinyl or 2-ply SBS + flashings, warrantied) | $4,000 – $6,000 |
+| 4 | Equipment rentals: mini excavator, compactor, scaffolding | $1,500 – $2,500 |
+| | **Subcontractors and rentals total** | **$18,000 – $24,500** |
+
+## 3. Crew Labour
+
+| Crew | Day rate | Duration | Amount |
+|---|---:|---:|---:|
+| 1 lead tradesman | $400 – $500 | 35–45 working days | $14,000 – $22,500 |
+| 2 labourers | $200 – $250 each | 35–45 working days | $14,000 – $22,500 |
+| Owner | — | — | $0 |
+| | **Crew labour total** | | **$30,000 – $42,000** (avg ~$900/day) |
+
+## 4. Financial Summary
+
+| Item | Low | High |
+|---|---:|---:|
+| Materials (owner-purchased) | $27,000 | $33,000 |
+| Subcontractors + equipment rentals | $18,000 | $24,500 |
+| Crew labour | $30,000 | $42,000 |
+| **Base subtotal** | **$75,000** | **$99,500** |
+| Reserve for unforeseen conditions, 10% | $7,500 | $9,950 |
+| GST 5% (on materials and subcontractors) | $2,250 | $2,875 |
+| **Total** | **≈ $85,000** | **≈ $112,000** |
+
+**Most likely: around $92,000 – $97,000** — and if the work runs clean and the reserve goes unspent, roughly **$80,000 – $85,000**.
+
+## 5. Schedule (4-Person Crew)
+
+| Week | Activity |
 |---|---|
-| Exterior walls | 2×6 framing — R-22 effective (RSI 3.85) + full air sealing |
-| Roof (under deck) | Closed-cell spray foam below + sloped rigid insulation above — ~R-28 to R-31 effective |
-| Roof waterproofing | 2-ply SBS or PVC membrane + full flashing package |
-| Exterior finish | 3-coat stucco with acrylic finish + ≥10mm rainscreen + WRB |
-| Windows | Top-tier Home Depot double-pane, Low-E argon (USI ≤ 1.61) |
-| Floor | Rigid under-slab insulation + 6-mil poly + radon rough-in |
-| Foundation | Concrete footings and stem walls under all three walls + perimeter drainage |
+| 1 | Demolish wall, salvage deck boards, cut slab, excavate |
+| 2 | Rebar, forms, pour footings/stem walls, slab infill, radon, drainage |
+| 3 | Wall framing, joist reinforcement, sloped roof sheathing |
+| 4 | Membrane sub + flashings; window and door installation; WRB and rainscreen |
+| 5 | Electrical rough-in (electrician); wall and roof insulation + poly; stucco starts |
+| 6 | Stucco continues, soffit/fascia; drywall and taping |
+| 7 | Painting; re-lay composite decking and railings |
+| 8 | Interior flooring, trim, electrical finish, deficiencies and handover |
+| | **Total: 7 to 9 weeks** |
 
-## Cost Breakdown (Material and Labour per Item)
+## 6. Notes
 
-| # | Description | Material | Labour | Total |
-|---|---|---:|---:|---:|
-| 1 | Demolish existing exterior wall, dispose of debris | $1,200 | $3,800 | $5,000 |
-| 2 | Remove composite decking and railing sections | $800 | $3,500 | $4,300 |
-| 3 | Slab cutting, excavation, footings and stem walls (38 lf) | $6,000 | $9,000 | $15,000 |
-| 4 | Slab infill + under-slab insulation + 6-mil poly + radon | $3,500 | $5,000 | $8,500 |
-| 5 | Drainage and damp-proofing | $1,500 | $2,500 | $4,000 |
-| 6 | Frame 3 walls 2×6 + headers + seismic hardware | $4,500 | $7,000 | $11,500 |
-| 7 | Deck joist reinforcement + blocking | $2,000 | $3,500 | $5,500 |
-| 8 | Sloped sheathing + 2-ply membrane + flashings | $6,500 | $8,000 | $14,500 |
-| 9 | New composite decking + railing reinstatement | $5,500 | $5,000 | $10,500 |
-| 10 | 2 top-tier Home Depot double-pane windows, installed | $1,900 | $1,300 | $3,200 |
-| 11 | 1 quality fiberglass/steel entry door, installed | $2,000 | $1,200 | $3,200 |
-| 12 | Wall insulation to R-22 effective + air sealing | $2,000 | $2,400 | $4,400 |
-| 13 | Roof insulation (closed-cell spray foam + rigid) | $3,800 | $2,700 | $6,500 |
-| 14 | Stucco + rainscreen + WRB, matched to existing (~300 sq ft) | $3,500 | $7,500 | $11,000 |
-| 15 | Soffit, fascia and finishing flashings | $1,000 | $1,700 | $2,700 |
-| 16 | Complete electrical (circuits, receptacles, pot lights, smoke/CO) | $2,500 | $5,000 | $7,500 |
-| 17 | Heating and ventilation for the new space | $2,200 | $2,800 | $5,000 |
-| 18 | Drywall, taping and painting | $1,800 | $4,700 | $6,500 |
-| 19 | Interior flooring, baseboards and trim | $2,500 | $3,000 | $5,500 |
-| 20 | Scaffolding, protection, disposal bin, supervision, insurance | $3,000 | $4,500 | $7,500 |
-| 21 | 45-day schedule compression (overtime, trade overlap) | — | $4,000 | $4,000 |
-| | **Subtotal** | **$57,700** | **$88,100** | **$145,800** |
-
-## Financial Summary
-
-| Item | Amount |
-|---|---:|
-| Total material | $57,700 |
-| Total labour | $88,100 |
-| **Base subtotal** | **$145,800** |
-| Contingency 10% (concealed conditions) | $14,580 |
-| **Subtotal before tax** | **$160,380** |
-| GST 5% | $8,019 |
-| **Total contract amount** | **$168,399 ≈ $168,400** |
-
-## 45-Day Construction Schedule
-
-| Days | Activity |
-|---|---|
-| Pre-start | Order windows/door, decking, membrane; book trades |
-| 1–5 | Demolish existing wall, remove deck boards, cut slab, excavate |
-| 6–12 | Footings/stem walls and curing, slab infill, radon, drainage |
-| 13–18 | Wall framing, joist reinforcement, sloped sheathing |
-| 15–20 | Roof membrane and flashings |
-| 18–22 | Window and door installation, WRB and rainscreen |
-| 20–30 | Electrical rough-in, spray foam and insulation |
-| 25–35 | Stucco (acrylic finish) and soffit/fascia |
-| 28–36 | Drywall, taping and painting |
-| 35–42 | New decking and railings, interior flooring, trim, electrical finish |
-| 42–45 | Deficiencies, cleanup and handover |
-
-## Terms and Exclusions
-
-- Pricing based on Metro Vancouver 2025–2026 market rates; offer valid 30 days.
-- Materials as specified in the technical table; any brand/model upgrade by written owner approval with price adjustment.
-- Exclusions: furniture and decor, landscaping and garden restoration beyond the work area, relocation of unforeseen services within the existing wall/slab.
-- Concealed structural or soil conditions (if encountered) drawn from contingency with written owner approval.
-- Warranty: 2 years on workmanship; material warranties per manufacturer.
-- Suggested payment schedule: 10% on signing — 25% foundation complete — 25% framing and membrane complete — 25% exterior and insulation complete — 15% final handover.
+- **Composite decking:** priced assuming the existing boards are salvaged and re-laid; if they are damaged during removal, new boards add roughly **+$4,500** in material.
+- The membrane cuts and seams around the posts and at the house wall are the critical waterproofing points — the reason the membrane is assigned to a warrantied specialty sub.
+- Do not schedule the footing pour in wet weather; late summer/fall is the best execution window.
+- Crew rates reflect common Vancouver 2026 day rates; the final agreement with the lead tradesman may differ.
+- Pricing based on Metro Vancouver 2025–2026 market rates.
