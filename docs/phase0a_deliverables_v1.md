@@ -64,6 +64,35 @@ To finish Phase 0A, one run in an environment with egress to those four hosts
 is required. `make live-verify` is written to produce exactly the evidence the
 matrix rows are missing.
 
+## 3b. What was verified after all, without exchange egress
+
+The exchange hosts stayed blocked, but web search, documentation fetch and an
+attached Crypto.com market-data MCP server were reachable. That turned four
+questions from "unknown" into answers:
+
+| Question | Answer | Source |
+|---|---|---|
+| Does the Binance archive publish a checksum per file? | Yes, sha256, as a sibling `.CHECKSUM` | official repo |
+| Are archive timestamps stable across eras? | **No.** Spot timestamps are microseconds from 2025-01-01, milliseconds before | official repo |
+| Does the archive retain delisted symbols? | Documentation and third-party usage indicate yes (e.g. `ADABKRW`, a delisted pair). Not yet confirmed by us | search |
+| Can historical open interest be backfilled from the free REST API? | **No — 30-day retention, documented and hard.** But an archive `metrics` dataset with `sumOpenInterest` appears to exist at 5-minute granularity | official docs + search |
+
+The archive layout, the 12-column kline schema, the checksum scheme and the
+microsecond change all match what this implementation already handles. The
+microsecond detection was written defensively before the documentation was
+found; it turns out to be required, not optional.
+
+A live feed was also put through the pipeline end to end via the Crypto.com
+MCP server: 50 one-minute candles, schema validation passed, no false
+findings, and the three zero-volume minutes were correctly *not* flagged
+because their high equals their low. That is the first real-data exercise of
+the normalizer.
+
+It also produced a cross-venue fact worth keeping: **Crypto.com emits a candle
+with zero volume for a no-trade minute, while Binance omits the candle
+entirely.** "Missing minute" is venue-specific, which is exactly why gaps are
+classified rather than counted as loss.
+
 ## 4. Sample dataset
 
 `research/sample/` holds eight partitions, the data-quality report and one run
