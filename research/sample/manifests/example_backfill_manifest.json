@@ -1,9 +1,9 @@
 {
-  "run_id": "20260830T113404Z-5641aa7a",
+  "run_id": "20260830T114209Z-a0f03db1",
   "command": "backfill-ohlcv",
   "status": "SUCCESS",
-  "started_at": "2026-08-30T11:34:04.761+00:00",
-  "finished_at": "2026-08-30T11:34:08.475+00:00",
+  "started_at": "2026-08-30T11:42:09.342+00:00",
+  "finished_at": "2026-08-30T11:42:13.050+00:00",
   "schema_version": "ohlcv_1m.v1",
   "collector_version": "0.1.0",
   "config_hash": "c24d36b29c7c5ebdee331faa00ec591e30732553ff3067d30e5cc3c59cd9d838",
@@ -39,524 +39,524 @@
     "rate_limited_responses": 0,
     "not_found": 0,
     "bytes_downloaded": 7060897,
-    "rate_limit_wait_seconds": 0.978,
+    "rate_limit_wait_seconds": 0.979,
     "backoff_wait_seconds": 0.0
   },
   "partitions_written": [
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-01",
       "rows": 1261,
-      "content_sha256": "8ebb0ea2c000a57264047824601db7eaa7f03b6acca8780616df35e2cb3093ee"
+      "content_sha256": "cb9dc23c1485fae91c95cdb89d5a54adc2c4beaa967fe2e8865aece0e8cb2539"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-02",
       "rows": 1440,
-      "content_sha256": "fcaed9d05d58568ae228c3a55e6e331b75ef301f0f5579916a8b3a293099ba08"
+      "content_sha256": "04ee39518fa51d6cc2f6aa5bb937a8de1fb3c193c247b647da06cda623fe7ce6"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-03",
       "rows": 1440,
-      "content_sha256": "08ea9859b0c9911b9de5e09a7a29e9762235d2fca0acbc9d4f3400697cb6b7c3"
+      "content_sha256": "8132d9793efb5b91c1d6e401b43bcf391de42fc8f780a8415fc3d57b52351c28"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-04",
       "rows": 1440,
-      "content_sha256": "5e3017c405c9bb5ca1db3a8523eaac69535fcfe1e364744a25fe78ce02e0cabc"
+      "content_sha256": "956c757b5df77fdd025efc6bfdf51ed2f6b0277d973052d82baae5a1e6c35696"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-05",
       "rows": 1440,
-      "content_sha256": "6dbaa7b14a8432b72e30b1f22830b332afabf75786594bde021e335ce9e7362f"
+      "content_sha256": "3a7f93156ed70a66205060fd1a110c023ee8119f4f69f50aa379f8aba25e939e"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-06",
       "rows": 1440,
-      "content_sha256": "118de673031c6616ccfc1f2d70af455f38948f692dd60f6282c3e61e4b074af8"
+      "content_sha256": "6bf4ad343542c02edab32a04ebd2260293d54ea456302412175fe2a162ad1a4e"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-07",
       "rows": 1440,
-      "content_sha256": "894730fc6c200d3cbc26c6178f41333a56676cd21d20121c6d02b18a8c204f2d"
+      "content_sha256": "02b636289c6f12ff90dd4caf1b083c393f6bf7bd9f29d8a01a3cead2830f1426"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-08",
       "rows": 1440,
-      "content_sha256": "3f87f05d23af135cbfb64f84cb427fe89c8863acb28ff546ffddc6764c121654"
+      "content_sha256": "0f87e3521dd04d1880a9247a99f8c94e1d055e3d0d1372d47119d338fa2d7496"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-09",
       "rows": 1440,
-      "content_sha256": "519cbe27f2e0a373b16c397968cbedaf2c44115a1533ccf093e2361a9ccab9f8"
+      "content_sha256": "9ae8e2fa8ae70d6f930a9b3aaa69b87f781ab8d78d82b19abfef98e9a62e2ca0"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-10",
       "rows": 1440,
-      "content_sha256": "594d5d42373711e7593334d86e8d80dd09eb2287e8ef75414aa4bb46f2890ee7"
+      "content_sha256": "260f009e54d3dfc180fd2b75d48ab8fa5f7e94b5f50a6470fc4d1cd10ed16ae5"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-11",
       "rows": 1440,
-      "content_sha256": "5962aa2d7d8862f865c43222ec5964fca914894db30af0d5f76e6ffa062e6239"
+      "content_sha256": "a5ca5a16673d438555aa2e273a8faa12d1a9a8d6f79238e318c08f180a87436c"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-12",
       "rows": 1440,
-      "content_sha256": "3baa2b4eaf76e97131aa5e2294c2d00a28e66a0bf4805e74ba0eeac6514d5559"
+      "content_sha256": "dae6a7aea7971bec8c660fce168871f4c27b248143c2a0009b4666435d65599f"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-13",
       "rows": 1440,
-      "content_sha256": "53bbb5cfd3515362c412ba45f1789f178dc75a8b179442513b97f2797630a68d"
+      "content_sha256": "31fde0af4753b4b29e65971f0fe1e48b3be0768c6e58d251f2df61a9a244e37d"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-14",
       "rows": 1440,
-      "content_sha256": "1528f12b58ce54ccf4e851f15e2d8b91e505ce4b38c1589f705baf8589c53a6c"
+      "content_sha256": "3b9ecb64699e8e4e7bab3717b87e6d80e23fdd6052efcf5dfaaa7422fbb44ac8"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-15",
       "rows": 1440,
-      "content_sha256": "055ae33b14eb09e2b72a200d8c37c89d851da611c662f31b9e6a418ca42889c4"
+      "content_sha256": "d8eaac085d31408f053181996dadbf9333923565c8bbde636e003cd8fba16d5a"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-16",
       "rows": 1440,
-      "content_sha256": "ec71dd641b124341112f24b0c8eb2ca968bc9d611365c7ed443293ac15c04b69"
+      "content_sha256": "55f8a8d000382f0461fe11f45d352bec64117a4fc723cc1199b5f31f7e5f0cda"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-17",
       "rows": 1440,
-      "content_sha256": "34b496caa1320e76da2b57c9cd500135c1d39915d52e05218b2e34f32fb0a513"
+      "content_sha256": "6a746e52c1ce773e536061ed6093e5537cdf5c4073a70233e9477a72eb736746"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-18",
       "rows": 1440,
-      "content_sha256": "e79e723ebf7b7a94e369de14e0b351b7484474989dad1d0a9227647fe7fa3641"
+      "content_sha256": "e78e3477fa53443481ec5f87cabe33425904f3fcaee5dfbe477f65aa023e437a"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-19",
       "rows": 1440,
-      "content_sha256": "3bbf4207d0b6fe15782de6030bfd23656aaa5cf208a66829093b63d6474235be"
+      "content_sha256": "f35248671b5531771603f6e43bfdb1c63aee73450a54d76bcc1922e62b8d23fd"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-20",
       "rows": 1440,
-      "content_sha256": "96511a446c79cfe9c3b4243805298141fd95e918b4ad74fab33860db244e08d8"
+      "content_sha256": "ac7219393f39bc340b27d39e865d0a04d35243ccadcfdcde5a17a5474f604eeb"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-21",
       "rows": 1440,
-      "content_sha256": "044c9abf976a14210068a6ecff4ce73453d050d499dd0bc9984d4b5f7934d18f"
+      "content_sha256": "421fc894dab2f7f542c5788a7cd223b8c150dfc8a767c36a0dc01306f12c738c"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-22",
       "rows": 1440,
-      "content_sha256": "a7771511b415599b6ff5003d9827c2aff67ca1274d8164f3338883f4e191462e"
+      "content_sha256": "787a0084601cb98c220a72edc4543ec3969318db0eb0b2ab74ef3afb0f66441d"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-23",
       "rows": 1440,
-      "content_sha256": "5ebf8d00879a075f1bce6a99f17f9763103161bb5012bdb9e196eeb265f66036"
+      "content_sha256": "4cb59cd055238d74e9774b803c72789a494e5c3160cdbac21ca9ba3d97c082e7"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-24",
       "rows": 1440,
-      "content_sha256": "281d42a1f7da8ec5c340b5fe89fd771fb9b835453f0bf291fc5577535ed1c62a"
+      "content_sha256": "c2a26f1ca2bc4871d843e2dae52925dafb78098352f18465f6eb530c84c56d0b"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-25",
       "rows": 1440,
-      "content_sha256": "e44dd5cb7726b3d1215fe39e8fb907423761c6c0fcce28f959f547caeeba9240"
+      "content_sha256": "a801ff0992723617e46ee8fe60d34d6b514241930d064cb8dc995d00f1651ea6"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-26",
       "rows": 1440,
-      "content_sha256": "8ae8720f2d1cb8ba4cd48845b1b94037c62bd64337e361a91669fb3fc4079356"
+      "content_sha256": "55cfcfe473f19d8577a29e990a04c25ec8949835f0ac5b1834a5489e1e050b78"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-27",
       "rows": 1440,
-      "content_sha256": "cf1f91a2391db23d112eb7bcccff5c964c45b45902fbd6bee1f2628c52eedcc2"
+      "content_sha256": "73a40856ef30e85f298bf79b08adc36be5d519da6dd361315598e91397fc74d1"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-28",
       "rows": 1440,
-      "content_sha256": "324e41e2249e8ffdc41ed53ce7e532ed327a07d4060e6c363e0ca15ff0f7402b"
+      "content_sha256": "fc984d127033520d965dc28c57bee81d7984f7c3ea0f2c1e9138e46611450447"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-29",
       "rows": 1440,
-      "content_sha256": "b353288681b8619520bc1ed099ad18ea637841c6414c3be131f63d8ddd0320cf"
+      "content_sha256": "fa4fc9998f98c18925a392362053b65bfe19d0a6440b2844c60733de2abdf0da"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-30",
       "rows": 1440,
-      "content_sha256": "34a5211e06885d5bd7005c077071a180126fc01c793ea5333f2bcc97bab49ba6"
+      "content_sha256": "6d115ff5148e2ae544bf0cd8bde81e4ce48ba7ec69a7bb8b78c9af451319c85b"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=FIXTUSDT/date=2024-01-31",
       "rows": 1440,
-      "content_sha256": "e833762c31cc4596e1899835e54d04d83e3f79cdfe6077ee1268bb7d0aab9d71"
+      "content_sha256": "a87ee6fbeb2dad845f33d9abdb0de6bd85450faa48c54aa32c653f2a470c291d"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-01",
       "rows": 966,
-      "content_sha256": "5dee364562d604558914c1ad50fe5b528983e24d118b8ae532ff38c6c66b0af3"
+      "content_sha256": "b20c4694cb671c16012b356bfa8f03b161256464cbbff314c738db1ccc536683"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-02",
       "rows": 936,
-      "content_sha256": "919424aa168a363ed9a8a7451cfab2000b2582c3f2783e50bdbd408602be67a6"
+      "content_sha256": "00eb32bf398efa271359901736a006107af2464710f384652b61e1990ff7c0a9"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-03",
       "rows": 947,
-      "content_sha256": "424e40ddff989e4543317ed0ec309553f4b18e975f05e0e726bdeb8be78b31fd"
+      "content_sha256": "23d262161b5369ea75e8bf08820809a2660661176d981d31ed5986b75ac4289c"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-04",
       "rows": 919,
-      "content_sha256": "1555fa2255f96f843b678e23ad83602c3b03d9326c2725bee2fbee7e62f21f81"
+      "content_sha256": "f4d569325a485d34378b3cebde6c13da5d9481f1884367e837f1122491b5cd2e"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-05",
       "rows": 933,
-      "content_sha256": "04586453a206063a16253b407f91ca441bdf4bea6cabd4d520dcc3bcf87a0ddd"
+      "content_sha256": "1997542d75a41bccf3ec0f0782cd6d6d96410ead014ef8055e3c02dfd27ffd35"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-06",
       "rows": 933,
-      "content_sha256": "208926acda2442279cd799c0384269961e86c3bd7d6752fa61738086f3a82153"
+      "content_sha256": "49bc88ed82a58d513f6a705b3da63e2582e358b807bd0e98f5ba7ca42d9b38f2"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-07",
       "rows": 938,
-      "content_sha256": "064be37071445a04f86ac427477ee11eccefec992655225cd4466d7d349b67ae"
+      "content_sha256": "07adaf719a451749ffaa7eed21fa80747286c0df045b986faaeb17b11b309349"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-08",
       "rows": 899,
-      "content_sha256": "c0c48c79c5ba495aa4ea19ae9765d528da56779a2d42b4de73a814f18da675cb"
+      "content_sha256": "e7683f7eff80f632511e5dcd4f8fc6ee54faa886a48ebb7f733ce2164ae8b7eb"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-09",
       "rows": 925,
-      "content_sha256": "e83df57fd510179b66b6e8aa6f72d3cd71b7b2e2ba1ca3a023efb863a9ab773d"
+      "content_sha256": "10aeb6c67c36da7f56bcae11a32134867ca1448927f5ad08cb9fe84559d534fc"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-10",
       "rows": 931,
-      "content_sha256": "193050a90f4884d969f8847c0c60028cdc26eb66e42bdb1a2021007e504a0891"
+      "content_sha256": "5e8971fcfe56f04ecb7b2807f409d1632cf552f11b31ad4581f62066f80eedfb"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-11",
       "rows": 948,
-      "content_sha256": "a765ba49234886f9c95910f35651109da4cb6c40c4042ccdf9a5acf377e55aff"
+      "content_sha256": "de75964f8213807460f43ed7c4b039221581a47ecde960e4627ebb5861a05612"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-12",
       "rows": 945,
-      "content_sha256": "7c6b82c3f05eda6a2cdb6815ea9b7b7548fc254414de5064b0a1b3b4b3a4ff5d"
+      "content_sha256": "02e9b934f1e12067bc84986b87ce806eb85021d5a7c9a6a27a9e14cc494a8445"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-13",
       "rows": 946,
-      "content_sha256": "3a37d2c8b6212fbbfa4a36938427aa09807608731f6a74cea651ebc49899d9cf"
+      "content_sha256": "7a46d54934a0babcfc864868349e3d3c8e04eeb76c41cb92395f32545b208d7c"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-14",
       "rows": 945,
-      "content_sha256": "852f28d917c2d291c60372eaee5bb5917d77e44b6e017450b658dc290f5ef46a"
+      "content_sha256": "2b048e7c884c01ffc4d6c831ae6b97013c6d619108588a1c46da9212c94a25f1"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-15",
       "rows": 949,
-      "content_sha256": "d3e8c7c9e7f160c9a8c5b25acc5f16d879c5dbfc64725793540325192c0942a0"
+      "content_sha256": "4b1f1095c017696ece03658be15327a8dda042e3cd8bb5855a9a7d28b0b4f8c7"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-16",
       "rows": 933,
-      "content_sha256": "ba786e3dbfb012dca9462ec800afa5e055f2c34d0b023410c177a6404b752483"
+      "content_sha256": "7cac97d5980b1a4a0e99df73047b043ead0ec67035968a14013b683466ce5398"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-17",
       "rows": 930,
-      "content_sha256": "3ee91881ea8844bc573726ecdb85f9a78b294b02f5d91fbf175852e8078203b0"
+      "content_sha256": "ccd059525e4d6feeea8222a7d64e13e94a3a859fd594b4d0923a3b0c9d79d1a6"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-18",
       "rows": 928,
-      "content_sha256": "5529905cdd95a79ffe72463323d6f867dd68b486718d688ab58d2d1b8287ffb7"
+      "content_sha256": "e1724673a0b99922f020cd74ee97564639083dd5b225ad93d3969cf9e8556cf6"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-19",
       "rows": 928,
-      "content_sha256": "cec72ddcf7e7cb869a40953c4e8050d53ce6c59262834e1c38ae1a3063a01e58"
+      "content_sha256": "b8d14575969ad1bd3bab890593413175d26db03c8c8dca0412cb8a013362fe43"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-20",
       "rows": 940,
-      "content_sha256": "988f421b807121ac483c494ab12599fd8f01146979932dab0c44ab1b12e3b7aa"
+      "content_sha256": "81cbe278efd46818a91bd5718bc6533d0de6f8b3f2d3bd071edf4abd8fac632f"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-21",
       "rows": 925,
-      "content_sha256": "7bd534c9494980d6f3f71eafc9cee10d082fd4b457e375bce784adb56e9c124a"
+      "content_sha256": "4f933b07dacc5d53b9c3a9b0bb28cb751445e48685d8f7fcdd9ea741b9a6e316"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-22",
       "rows": 943,
-      "content_sha256": "df9bc87ad95610efd2a59995d42d04489b36f3dd9d23e84b865957ec67ec264c"
+      "content_sha256": "6c8338c88c4585bd99790732d53408c60a0697610e7984c2477991c20ab96c01"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-23",
       "rows": 935,
-      "content_sha256": "ccd6ea1a5a6c1869fbf0ba23cd0a82e36dece5fffcd3e7f4e4b59b9a73568e7d"
+      "content_sha256": "84dc4ebe55ad447a74e6833a11a017458ad461a42f432f1586e7a0b249e72e6c"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-24",
       "rows": 939,
-      "content_sha256": "25ce1e9a7683fe7309abc71d44d477baae096e9b7c07c9e472ded1e005d448bd"
+      "content_sha256": "24d209644feb9109b018ecd3bd59227a04dc031b37ed70e5cdac26cf95f3bf8e"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-25",
       "rows": 957,
-      "content_sha256": "f5280228433e1f0f82aea16173d09d5d63f568c836173b0afe58397aa979117c"
+      "content_sha256": "06501c25e6579b7c2ec5dacdcdfc95d82c12be7bd190ddb2e258940e06496c1b"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-26",
       "rows": 941,
-      "content_sha256": "91ff8fc3bb839882057dbb9a4aa17a5f94ef4d35fa23e5f59c554b30684a6618"
+      "content_sha256": "7d153bb5d83154e304e2fe3afb4769fe92407ef4c78bf84776839ca977b91a06"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-27",
       "rows": 919,
-      "content_sha256": "91f9b9eb0b061944b2c780b7966abab773f4bf6658308f57484571747b4a60a1"
+      "content_sha256": "4b4d7e453bf117c56211cd0067bf6190755e72df37a65c507ec864f666867842"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-28",
       "rows": 953,
-      "content_sha256": "0776d4d87e98949e06812b8067fdddcd653081b7238f3f46c10f0fd742298a83"
+      "content_sha256": "6b80c22065c447d15388ab913bcc9bf13fa30178a9986a4e2fd2199f8590528c"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-29",
       "rows": 902,
-      "content_sha256": "7e663b07756b0edf2bedf6b5d508e83ec8691a7ad766ac596243f72626d863e9"
+      "content_sha256": "15fdb764765115bae1df410e238b04c8d365f4ac0e8224fedf662ab1193c5b73"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-30",
       "rows": 950,
-      "content_sha256": "c0c76762f9f4454b53e16d88c216468b1942c370dd812e18660a3c830c5a40f1"
+      "content_sha256": "53b43525b15594f7a4dbad75b2762ff09fc06496e26771b62a846aaa3551dad2"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=GAPYUSDT/date=2024-01-31",
       "rows": 897,
-      "content_sha256": "df079af09c1e8e362e09b2eab58b19ea19aaa735ffc5644f100debfab9887b2d"
+      "content_sha256": "a600255c63a4e143a19c33485dce5851b90295a019ae18b950daed0d9ad43b6e"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-01",
       "rows": 1380,
-      "content_sha256": "54dd09e3939234b4f941070e23b73bf9c55f6596383ad0b46c22bd9018e15a45"
+      "content_sha256": "5032002220925654d8ceefaed65f4d3a967f5f3b0387cac4b5a009adc6241976"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-02",
       "rows": 1375,
-      "content_sha256": "19409af3a6b05877a499740a8472f4a40d3a2c8f20618ee275f4c9aec4088692"
+      "content_sha256": "9a0e02a14aaba806293f336f20bb3284c4226bab11c5328d7d7270496765bb2d"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-03",
       "rows": 1376,
-      "content_sha256": "cfcfc7d87e2e414df497912779b6e69f9e49091a78d7243c44aaa6b8c45f5fa9"
+      "content_sha256": "ff0244f01f8c7554debe353be8d3eb935fc8e797f0dde209b6987af1a478dd64"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-04",
       "rows": 1350,
-      "content_sha256": "bde55c38a306297ccb2bf1621ca3a5a8108c6e0d64f44467dd9136b8114963b2"
+      "content_sha256": "d31ca825d32206c988c42a8dcc65d99321181729a79c938331915088a3d23df1"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-05",
       "rows": 1370,
-      "content_sha256": "ce75274c94aa39b2c66138e8df41b7a626d97d3eb84c17aacd078782b1d84dc7"
+      "content_sha256": "61bbb8cac87c7cf9ec88a980f90e33cd1ecde8be378a283067968d9a7133699f"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-06",
       "rows": 1372,
-      "content_sha256": "c4b75ae853edf818a17a0f2cb15314612e712d555ae08ae1edc5af4fd2b92d99"
+      "content_sha256": "4325c5c9f253157beeb2573bc717f7c81ed8bcc017571eb370bc43e61bfe9361"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-07",
       "rows": 1356,
-      "content_sha256": "6481fea7389190fa534734c484b7bf2d89fcad44347f67f0bce810df2e70b679"
+      "content_sha256": "6461444d1f2500ecc4301811c533a53434947825d4154c41b1d179f15483ca25"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-08",
       "rows": 1349,
-      "content_sha256": "ae9db457e3766d726a8044fefdd713850d44ae6075d8a7f9dcf070e956b1ca0b"
+      "content_sha256": "3fb60ffa0002c0bf886b23cf7fa710e2dc6f9db6e1208e66ab0fafb3efc37fc5"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-09",
       "rows": 1386,
-      "content_sha256": "ead52be31b257e250691109296f53b15a4388aa5fdca1a104f503b828b539f5d"
+      "content_sha256": "1481af22b7385d43e4a34d178d026b3ef3da851ec839e529a156f427d9198b9d"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=spot/symbol=DEADUSDT/date=2024-01-10",
       "rows": 1367,
-      "content_sha256": "87ce9733ec5881ccf611696749f560293329accb61611aad305b129a24207511"
+      "content_sha256": "136dc4e1aeb74d3ef68f857591fd15c0e416009e21bde256cf932fcbd49b6809"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-01",
       "rows": 1422,
-      "content_sha256": "45eb6635d71f5288a1ba0e8b244fcfd183f8e769320974c5e091e7b81372e8ef"
+      "content_sha256": "f5295daa189b8c4d9fd7e66bbbcd40f7046d534f0473a9b2aada0d7563a335f1"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-02",
       "rows": 1430,
-      "content_sha256": "1d88a851acc33add322acf32f0ecb4903b41d377de8b08b6df106463b11f6afe"
+      "content_sha256": "5b1e6c5813ce5e78fa6a339d7fe164e29e679dfc70ee2e31ccda4702f38e6ab3"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-03",
       "rows": 1427,
-      "content_sha256": "c87a663dffd6adb4aef14ba6b4471bed3935bee5884850804e57fc8395f6a106"
+      "content_sha256": "b5d94ac92acdf71d8e122159b0d5bf35b67fec21257f5ad99e8a50c9229dba6a"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-04",
       "rows": 1426,
-      "content_sha256": "884662e4828ab3e4ce1d1016c5850ac4422af156e264427cedbd89d811fab449"
+      "content_sha256": "7f3eddfcb775d89ea7785d1b666a1447a19963e96542ca0e2acca3451bee2c03"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-05",
       "rows": 1427,
-      "content_sha256": "07605e6e98136e42c45b852b18fe80def2021f08e00f446a15a4703c184177a9"
+      "content_sha256": "0621ef296f03f596cacbd6d113886566ab5c4c44c5d46957909b8cb3f58924f9"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-06",
       "rows": 1427,
-      "content_sha256": "317ebb31f8eb239fcf8565b81a67255cf96dad46079d1b4be517c3a414a9065d"
+      "content_sha256": "7b89729cc8b2e14b2a4b39f629864ea9ce5b721a56d7d4caed4e276d1b8f28c9"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-07",
       "rows": 1423,
-      "content_sha256": "c4a8a0272354907db7faa2ee1d9746cebb7863baf3bc1bb915ebce0754bd09b8"
+      "content_sha256": "1c6ffe24b8e16f2e15f69b4e099606d8125bb1c45260cc30cb3879a4679ebe25"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-08",
       "rows": 1420,
-      "content_sha256": "565551a990c5fca8630b0b44cceef9e0af3ec8432317f144b20e8270238d05ab"
+      "content_sha256": "17486b95697916019f3e0a6b0033a2440bfae0a7c5ff50fdd2768d5515a08045"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-09",
       "rows": 1419,
-      "content_sha256": "6edb7e2277a72314d9f91544c6b77c1d1b943d711f802ce9f798204efaf64368"
+      "content_sha256": "aad5f7bd45920297bc64975633bf5a88adaff3d0218a861ae297653d1a72fe57"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-10",
       "rows": 1431,
-      "content_sha256": "1f9369532883264c7a3c9989d4255b1e1c65860051708a17b59e24d656fb6ab0"
+      "content_sha256": "4c4c18b89f73a53134119c76f4c943f0a5da72c42a9b8e6b3f89de031119e855"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-11",
       "rows": 1427,
-      "content_sha256": "db2432c784b02c3506cc0fdfd7fb6b394f3ab681e020fe0934a9109cdd9bd134"
+      "content_sha256": "c82003ec6a692f5a157b6e290d27b823958b1e94837c39deb897caac7f3563f6"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-12",
       "rows": 1426,
-      "content_sha256": "fe6f4a198318934083b6e3d7eaf6b4f876d837bb802c8cf46301b24d45668109"
+      "content_sha256": "423c989fd9a859455a328178603b91d218613394bf7032fdb6ffae7b0b25cba8"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-13",
       "rows": 1424,
-      "content_sha256": "8f0c8d89f56e2acfe5940a96dcbc5503b9328aafb643f40664b68b0ea6edb1e9"
+      "content_sha256": "0d33bc3b2c0ba9fb56e6399888735258a682a24443c65742ff2a131ac64037af"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-14",
       "rows": 1419,
-      "content_sha256": "20bccad08041b688315708d6bc3e5fd7766c74bb80841400968cce85ce4b792b"
+      "content_sha256": "ca52b18d92314c839c92708145a8736a691d0e4870af3ccd4398f19899550d43"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-15",
       "rows": 1425,
-      "content_sha256": "ec761cf97c6f6492498f867e321d8a2dd146d75c8624a03694ae9ea72cc46d4f"
+      "content_sha256": "e91cf0581e8dddfa43e647abaad78558ac50b23b9f2ac3a6bf99f43b1f66daf7"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-16",
       "rows": 1426,
-      "content_sha256": "7a20d73e2d1e5904d3cc1741ad4c66da6d229d03ac295baf46ba5abd506c419d"
+      "content_sha256": "05b4c5cf3b6989687bc6eeb4baa73b7f9ed1bf68402d48f943b8a84ac48b2baa"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-17",
       "rows": 1423,
-      "content_sha256": "017e5f5037a6306f9a167920b5217e6b8cb025da2b5308dfe4f78b9700ca3dda"
+      "content_sha256": "d8d628bf84dc98aba145febd62367ac7f464876b6ddbabd7a5aba20c53f2da42"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-18",
       "rows": 1433,
-      "content_sha256": "c83bdd976af7674f3c4aac902145eadb9837acc268af2c19c1cc76cd6b31ef32"
+      "content_sha256": "c65194ca7055b9917a69bdd32483a613e97f921c6afd071633372126c7bc507e"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-19",
       "rows": 1422,
-      "content_sha256": "80903895b5a0f639dd40ae0450be3a88bcced5c5ee88c829fc3d61031f886039"
+      "content_sha256": "9507e8cd8a634e265bdda299ede0e3c7862c3a26d09ec6fb9f2c93da06d28c35"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-20",
       "rows": 1425,
-      "content_sha256": "87d0ff755bb60513bd489494e46bf90775ea3f1b2a61c94d0e33bbd50495068b"
+      "content_sha256": "55ff453d97d19729506c946c229f1938f3b91b017125c82949f0b2d599505b5b"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-21",
       "rows": 1432,
-      "content_sha256": "a5d98503b641b6fbc4a8384cea1c09e17ff677b2468ee58932037d73d053f01a"
+      "content_sha256": "914c34b4cf5a35940d65887e78ab39fac02fd9949a2e685ae0717a00f6c509d5"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-22",
       "rows": 1429,
-      "content_sha256": "d07f9cd5fccd21fd0e351047d580ae4b626edf9601a744296d16c5135597eebe"
+      "content_sha256": "807672d02ca98346ff232389cfc3b45fa350d489a52631b803462833df1c3538"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-23",
       "rows": 1430,
-      "content_sha256": "f9dc7398f8ba965ab0bd6c61b6b19541f6f43274edba72e6ea0d88b425712e8d"
+      "content_sha256": "651e13f9fdf1db885950c5d2c50b372321543d0e2ae36a5ebc49ee222274fb75"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-24",
       "rows": 1433,
-      "content_sha256": "e96be1fe8b0112c96540256a25e6435d889c297eba7d96015f111a845cb1e430"
+      "content_sha256": "2713e6034a9ee5bd45935e502869ea6924624c1454f9d8cb0699f495fdb4ff36"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-25",
       "rows": 1426,
-      "content_sha256": "7d5d6e26f34f0789579d18a05ff40c0c02d2823c0d073866e6a4273ccdb64e6f"
+      "content_sha256": "50572160ae10f60caaf1174a32fcfa9808cec3dfec9408316871ae1819a23836"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-26",
       "rows": 1429,
-      "content_sha256": "f86b4b7a54f1e27ea4f61315cf561bccf9d4c7263e4a76ff5dae7b235c1080ed"
+      "content_sha256": "89a620d1fa5600f6813c4f784a98fdac99e850a083d31d51a1f00d1b82384d16"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-27",
       "rows": 1421,
-      "content_sha256": "31af53d9683344532441183a501a5bc1ee438ebc483c745ba957e55f084f5063"
+      "content_sha256": "984c0f612c8a17580cb8f059d514708a6c03ef3858c3c491f047bfaf1eb75207"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-28",
       "rows": 1425,
-      "content_sha256": "8444b2c2586ada1b595be383654d74db4c2873ba0af1b095e12e2ca49d9235e6"
+      "content_sha256": "8bb5f790368cb27be6e52d359d0d00e338733b07fd4ca4155e7bbb91da50cdab"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-29",
       "rows": 1425,
-      "content_sha256": "2385b8a469217f004db5d0aa220432118da57649b1e873ec77bf175e557bd8c0"
+      "content_sha256": "1a0f1ca208183129b2f4ca678f53c13af683827296846a5d8061dc8e868a2223"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-30",
       "rows": 1426,
-      "content_sha256": "128524eedbba6db6eef6e427d9e94641c6a0418ac21bf97f7dff0c6c95dbda22"
+      "content_sha256": "d42849e1249bbeb54ad1fd3fd68d1193039fccb9513d37222842c3fa8c4efe82"
     },
     {
       "path": "data/normalized/ohlcv_1m/exchange=binance/market_type=linear_perpetual/symbol=PERPUSDT/date=2024-01-31",
       "rows": 1429,
-      "content_sha256": "739236bfc4e39d9081f285da206e56aa632449e3f8dc13cd65e6d2d921469381"
+      "content_sha256": "5efb4b99f7ef7e50b9c1e02f12f7c4e333489f336065e5704f5ebc8aa8d90a0e"
     }
   ],
   "partitions_skipped": [],
@@ -564,7 +564,7 @@
     {
       "unit": "binance:spot:FIXTUSDT:2024-01",
       "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/spot/monthly/klines/FIXTUSDT/1m/FIXTUSDT-1m-2024-01.zip",
-      "source_revision": "sha256:e63c0fe3a5398a15dff8677de9ee57d2e3b858d0ae3a2d7458e86e29246d78d8",
+      "source_revision": "sha256:a2388329cd9ac0be6901a8d0be065f779932222d1e3af585166d7e26854866b9",
       "rows": 44461,
       "dates": [
         "2024-01-01",
@@ -601,7 +601,7 @@
       ],
       "meta": {
         "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/spot/monthly/klines/FIXTUSDT/1m/FIXTUSDT-1m-2024-01.zip",
-        "sha256": "e63c0fe3a5398a15dff8677de9ee57d2e3b858d0ae3a2d7458e86e29246d78d8",
+        "sha256": "a2388329cd9ac0be6901a8d0be065f779932222d1e3af585166d7e26854866b9",
         "month": "2024-01",
         "csv_name": "FIXTUSDT-1m-2024-01.csv",
         "rows": 44461,
@@ -613,7 +613,7 @@
     {
       "unit": "binance:spot:GAPYUSDT:2024-01",
       "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/spot/monthly/klines/GAPYUSDT/1m/GAPYUSDT-1m-2024-01.zip",
-      "source_revision": "sha256:e62953fb73aa23ea74bddb89422e6f153bc6e2e6f4b7b404b85720c485d4b4fa",
+      "source_revision": "sha256:b3cfd0cf8c6c4246dc07d3a1e21f4058372dd414c2de3cb70b19774da459df8f",
       "rows": 28980,
       "dates": [
         "2024-01-01",
@@ -650,7 +650,7 @@
       ],
       "meta": {
         "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/spot/monthly/klines/GAPYUSDT/1m/GAPYUSDT-1m-2024-01.zip",
-        "sha256": "e62953fb73aa23ea74bddb89422e6f153bc6e2e6f4b7b404b85720c485d4b4fa",
+        "sha256": "b3cfd0cf8c6c4246dc07d3a1e21f4058372dd414c2de3cb70b19774da459df8f",
         "month": "2024-01",
         "csv_name": "GAPYUSDT-1m-2024-01.csv",
         "rows": 28980,
@@ -662,7 +662,7 @@
     {
       "unit": "binance:spot:DEADUSDT:2024-01",
       "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/spot/monthly/klines/DEADUSDT/1m/DEADUSDT-1m-2024-01.zip",
-      "source_revision": "sha256:ea6ef3507c607fba5146391e46b5804814b2507e0933f84d5c6a17dba3dea236",
+      "source_revision": "sha256:bdb0a1423685ad92fb4ec96fbcc31b0caeafafb1b7324c0f078941027c8a5f71",
       "rows": 13681,
       "dates": [
         "2024-01-01",
@@ -678,7 +678,7 @@
       ],
       "meta": {
         "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/spot/monthly/klines/DEADUSDT/1m/DEADUSDT-1m-2024-01.zip",
-        "sha256": "ea6ef3507c607fba5146391e46b5804814b2507e0933f84d5c6a17dba3dea236",
+        "sha256": "bdb0a1423685ad92fb4ec96fbcc31b0caeafafb1b7324c0f078941027c8a5f71",
         "month": "2024-01",
         "csv_name": "DEADUSDT-1m-2024-01.csv",
         "rows": 13681,
@@ -690,7 +690,7 @@
     {
       "unit": "binance:linear_perpetual:PERPUSDT:2024-01",
       "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/futures/um/monthly/klines/PERPUSDT/1m/PERPUSDT-1m-2024-01.zip",
-      "source_revision": "sha256:a70ccf53a56bd1133bab86525dcadb24a0b1b4b9731bae0a5724e49277e46210",
+      "source_revision": "sha256:ac2fca8af395904157bf4fa068f9bb7d475622df14718002b883d0a6575cba33",
       "rows": 44207,
       "dates": [
         "2024-01-01",
@@ -727,7 +727,7 @@
       ],
       "meta": {
         "url": "file:///home/user/signal-bot-v3/research/data/fixtures/vision/data/futures/um/monthly/klines/PERPUSDT/1m/PERPUSDT-1m-2024-01.zip",
-        "sha256": "a70ccf53a56bd1133bab86525dcadb24a0b1b4b9731bae0a5724e49277e46210",
+        "sha256": "ac2fca8af395904157bf4fa068f9bb7d475622df14718002b883d0a6575cba33",
         "month": "2024-01",
         "csv_name": "PERPUSDT-1m-2024-01.csv",
         "rows": 44207,

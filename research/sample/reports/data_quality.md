@@ -1,6 +1,6 @@
 # Data Quality Report
 
-- Generated at: `2026-08-30T11:34:12+00:00`
+- Generated at: `2026-08-30T11:42:16+00:00`
 - Schema version: `ohlcv_1m.v1`
 - Collector version: `0.1.0`
 - Dataset: `ohlcv_1m` — 103 partitions, 11.392 MiB

@@ -1,10 +1,10 @@
 {
   "collector_version": "0.1.0",
-  "content_sha256": "8ebb0ea2c000a57264047824601db7eaa7f03b6acca8780616df35e2cb3093ee",
+  "content_sha256": "cb9dc23c1485fae91c95cdb89d5a54adc2c4beaa967fe2e8865aece0e8cb2539",
   "rows": 1261,
-  "run_id": "20260830T113404Z-5641aa7a",
+  "run_id": "20260830T114209Z-a0f03db1",
   "schema_version": "ohlcv_1m.v1",
   "source": "binance_vision_monthly_klines",
-  "source_revision": "sha256:e63c0fe3a5398a15dff8677de9ee57d2e3b858d0ae3a2d7458e86e29246d78d8",
-  "written_at": "2026-08-30T11:34:05.607+00:00"
+  "source_revision": "sha256:a2388329cd9ac0be6901a8d0be065f779932222d1e3af585166d7e26854866b9",
+  "written_at": "2026-08-30T11:42:10.153+00:00"
 }

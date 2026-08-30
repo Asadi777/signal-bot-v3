@@ -16,7 +16,7 @@
 | F — data-quality report | Done | `research/src/prepump/quality/`, `research/sample/reports/data_quality.md` |
 | G — deliverables | This document | |
 
-110 unit and offline end-to-end tests pass. 7 integration tests exist and are
+112 unit and offline end-to-end tests pass. 7 integration tests exist and are
 deselected by default; they are the ones that need network.
 
 ## 2. Setup and run
@@ -96,6 +96,15 @@ source has revised a file without downloading it again, which is what resume
 exists to avoid. The chosen contract: resume trusts the recorded revision, and
 a periodic `--no-resume` run is what catches upstream revisions. Documented in
 `docs/decisions/0001`.
+
+**Determinism is easy to claim and easy to get wrong.** The first cross-clone
+check failed — not in the pipeline, but in the fixture generator, which stamped
+a build time into its zip headers. Since every row's `source_revision` is the
+digest of the archive file it came from, that alone changed 103 partition
+checksums. Fixed by pinning the zip entry metadata, with a regression test.
+Two independent clones now produce byte-identical content checksums for all
+103 partitions. The lesson generalizes: a determinism claim that has not
+actually been run twice in two places is not a claim.
 
 **`available_at` for archive data is derived, not measured.** It is candle
 close plus a documented delta, carrying an explicit method and uncertainty on

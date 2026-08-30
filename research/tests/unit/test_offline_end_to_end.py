@@ -100,3 +100,19 @@ def test_interrupted_partition_is_rewritten_not_trusted(tmp_path):
     victim.unlink()  # simulates a crash between the data file and its sidecar
     manifest = run_backfill(settings)
     assert len(manifest.partitions_written) == 1
+
+
+def test_fixture_archives_are_byte_identical_across_builds(tmp_path):
+    # The source_revision of every row is the digest of the archive file, so a
+    # generator that stamped a build time into the zip would make the pipeline
+    # look non-deterministic when it is not.
+    first = fixtures_mod.build_archive(tmp_path / "a", MONTHS)
+    second = fixtures_mod.build_archive(tmp_path / "b", MONTHS)
+    assert [p.read_bytes() for p in first] == [p.read_bytes() for p in second]
+
+
+def test_content_checksums_match_across_independent_roots(tmp_path):
+    one, two = build(tmp_path / "one"), build(tmp_path / "two")
+    run_backfill(one)
+    run_backfill(two)
+    assert checksums(one) == checksums(two)

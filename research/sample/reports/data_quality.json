@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-30T11:34:12+00:00",
+  "generated_at": "2026-08-30T11:42:16+00:00",
   "schema_version": "ohlcv_1m.v1",
   "collector_version": "0.1.0",
   "run_id": null,
   "footprint": {
     "dataset": "ohlcv_1m",
     "partitions": 103,
-    "parquet_bytes": 11945646,
+    "parquet_bytes": 11945594,
     "parquet_mib": 11.392,
     "partitions_by_source": {
       "binance_vision_monthly_klines": 103

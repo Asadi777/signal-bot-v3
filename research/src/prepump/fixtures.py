@@ -126,7 +126,16 @@ def build_archive(root: Path, months: list[str], symbols=DEFAULT_SYMBOLS, seed: 
             zip_path = target_dir / zip_name
             payload = io.BytesIO()
             with zipfile.ZipFile(payload, "w", zipfile.ZIP_DEFLATED) as archive:
-                archive.writestr(csv_name, buffer.getvalue())
+                # A default writestr stamps the current time into the zip
+                # header, which would make the archive bytes -- and therefore
+                # the source_revision derived from them -- differ on every
+                # build. Real archive files on the exchange host are fixed
+                # bytes, so the fixture must be too, or it would report a
+                # determinism failure that the pipeline does not have.
+                entry = zipfile.ZipInfo(csv_name, date_time=(2020, 1, 1, 0, 0, 0))
+                entry.compress_type = zipfile.ZIP_DEFLATED
+                entry.external_attr = 0o600 << 16
+                archive.writestr(entry, buffer.getvalue())
             data = payload.getvalue()
             zip_path.write_bytes(data)
             digest = hashlib.sha256(data).hexdigest()
