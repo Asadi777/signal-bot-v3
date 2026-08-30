@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-08-30T11:34:12+00:00",
+  "schema_version": "ohlcv_1m.v1",
+  "collector_version": "0.1.0",
+  "run_id": null,
+  "footprint": {
+    "dataset": "ohlcv_1m",
+    "partitions": 103,
+    "parquet_bytes": 11945646,
+    "parquet_mib": 11.392,
+    "partitions_by_source": {
+      "binance_vision_monthly_klines": 103
+    }
+  },
+  "totals": {
+    "rows": 131329,
+    "symbols": 4,
+    "duplicate_rows": 1,
+    "out_of_order_rows": 0,
+    "missing_minutes": 16992,
+    "expected_minutes": 148320,
+    "zero_volume_minutes": 197
+  },
+  "dq_flag_totals": {
+    "OHLC_VIOLATION": 1,
+    "ZERO_VOLUME_WITH_RANGE": 197
+  },
+  "per_symbol": [
+    {
+      "exchange": "binance",
+      "market_type": "linear_perpetual",
+      "symbol": "PERPUSDT",
+      "rows": 44207,
+      "first_event_time_ms": 1704067200000,
+      "last_event_time_ms": 1706745540000,
+      "dates_present": 31,
+      "duplicate_rows": 0,
+      "duplicate_examples": [],
+      "out_of_order_rows": 0,
+      "expected_minutes": 44640,
+      "present_minutes": 44207,
+      "missing_minutes": 433,
+      "missing_pct": 0.97,
+      "gap_runs": {
+        "LIKELY_NO_TRADE": 429,
+        "SHORT_GAP_UNCLASSIFIED": 2
+      },
+      "longest_gap_minutes": 2,
+      "gap_examples": [
+        {
+          "after": "2024-01-06T18:24Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-10T21:11Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        }
+      ],
+      "dq_flag_counts": {
+        "ZERO_VOLUME_WITH_RANGE": 74
+      },
+      "zero_volume_minutes": 74
+    },
+    {
+      "exchange": "binance",
+      "market_type": "spot",
+      "symbol": "DEADUSDT",
+      "rows": 13681,
+      "first_event_time_ms": 1704067200000,
+      "last_event_time_ms": 1704931140000,
+      "dates_present": 10,
+      "duplicate_rows": 0,
+      "duplicate_examples": [],
+      "out_of_order_rows": 0,
+      "expected_minutes": 14400,
+      "present_minutes": 13681,
+      "missing_minutes": 719,
+      "missing_pct": 4.9931,
+      "gap_runs": {
+        "LIKELY_NO_TRADE": 675,
+        "SHORT_GAP_UNCLASSIFIED": 22
+      },
+      "longest_gap_minutes": 2,
+      "gap_examples": [
+        {
+          "after": "2024-01-01T11:03Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T14:28Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-02T06:29Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-03T10:51Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-03T13:22Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-03T18:04Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-05T10:26Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-05T14:26Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-05T19:20Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-06T03:31Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        }
+      ],
+      "dq_flag_counts": {
+        "ZERO_VOLUME_WITH_RANGE": 24
+      },
+      "zero_volume_minutes": 24
+    },
+    {
+      "exchange": "binance",
+      "market_type": "spot",
+      "symbol": "FIXTUSDT",
+      "rows": 44461,
+      "first_event_time_ms": 1704067200000,
+      "last_event_time_ms": 1706745540000,
+      "dates_present": 31,
+      "duplicate_rows": 1,
+      "duplicate_examples": [
+        "2024-01-01T01:59Z x2"
+      ],
+      "out_of_order_rows": 0,
+      "expected_minutes": 44640,
+      "present_minutes": 44460,
+      "missing_minutes": 180,
+      "missing_pct": 0.4032,
+      "gap_runs": {
+        "LONG_GAP_NEEDS_INVESTIGATION": 1
+      },
+      "longest_gap_minutes": 180,
+      "gap_examples": [
+        {
+          "after": "2024-01-01T03:19Z",
+          "missing_minutes": 180,
+          "classification": "LONG_GAP_NEEDS_INVESTIGATION"
+        }
+      ],
+      "dq_flag_counts": {
+        "OHLC_VIOLATION": 1,
+        "ZERO_VOLUME_WITH_RANGE": 58
+      },
+      "zero_volume_minutes": 58
+    },
+    {
+      "exchange": "binance",
+      "market_type": "spot",
+      "symbol": "GAPYUSDT",
+      "rows": 28980,
+      "first_event_time_ms": 1704067200000,
+      "last_event_time_ms": 1706745540000,
+      "dates_present": 31,
+      "duplicate_rows": 0,
+      "duplicate_examples": [],
+      "out_of_order_rows": 0,
+      "expected_minutes": 44640,
+      "present_minutes": 28980,
+      "missing_minutes": 15660,
+      "missing_pct": 35.0806,
+      "gap_runs": {
+        "LIKELY_NO_TRADE": 6520,
+        "SHORT_GAP_UNCLASSIFIED": 3578
+      },
+      "longest_gap_minutes": 9,
+      "gap_examples": [
+        {
+          "after": "2024-01-01T00:29Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T00:43Z",
+          "missing_minutes": 3,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T00:52Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:05Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:21Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:25Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:31Z",
+          "missing_minutes": 4,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:45Z",
+          "missing_minutes": 3,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:49Z",
+          "missing_minutes": 2,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        },
+        {
+          "after": "2024-01-01T01:57Z",
+          "missing_minutes": 4,
+          "classification": "SHORT_GAP_UNCLASSIFIED"
+        }
+      ],
+      "dq_flag_counts": {
+        "ZERO_VOLUME_WITH_RANGE": 41
+      },
+      "zero_volume_minutes": 41
+    }
+  ],
+  "cross_source": [],
+  "notes": [
+    "Missing minutes are classified, never filled. A one-minute gap on an illiquid pair is most likely 'no trade occurred', not lost data.",
+    "available_at is derived from candle close for archive data and is not a measured availability time; see available_at_method and available_at_uncertainty_ms on every row.",
+    "This dataset is a provisional smoke-test sample. It is not a research universe and must not be generalized (Master Spec \u00a765.3)."
+  ]
+}

@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# --- Phase 0A research package ---
+# Collected market data is never committed: it is regenerable, large, and its
+# redistribution rights are unverified. The sample under research/sample/ is
+# synthetic and intentionally tracked.
+research/data/
+!research/data/.gitignore
+research/.venv/
+.venv-research/
+research/src/*.egg-info/

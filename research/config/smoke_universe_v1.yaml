@@ -1,0 +1,80 @@
+version: smoke_universe_v1
+created_at: "2026-08-30"
+status: PROVISIONAL_PIPELINE_TEST_ONLY
+
+# Read this before using the dataset this file produces.
+limitations:
+  - "This is a pipeline smoke test, not a research universe. Master Spec 65.3 forbids treating a
+    hand-picked present-day list as the historical universe; no result from this sample may be
+    generalized."
+  - "Membership was chosen by hand for coverage of liquidity tiers and market types, not by any
+    as-of-time rule."
+  - "Symbols marked DELISTED_UNVERIFIED are candidates chosen to exercise the survivorship path.
+    Whether each was actually delisted, and whether the archive still serves it, is exactly what the
+    first network-enabled run must verify."
+  - "Bybit entries are conditional on the 1-minute historical depth probe; if depth is too shallow the
+    rows become a recorded gap, not a silent omission."
+
+symbols:
+  # --- mega-cap controls: the pipeline must be boring and correct here first ---
+  - {exchange: binance, market_type: spot, symbol: BTCUSDT, base_asset: BTC, quote_asset: USDT,
+     liquidity_tier: mega, expected_status: ACTIVE,
+     rationale: "Control. Deepest history and densest minute coverage; any gap here is ours, not the market's."}
+  - {exchange: binance, market_type: spot, symbol: ETHUSDT, base_asset: ETH, quote_asset: USDT,
+     liquidity_tier: mega, expected_status: ACTIVE,
+     rationale: "Second control for cross-checking archive vs REST."}
+
+  # --- large/mid caps with real pump behaviour ---
+  - {exchange: binance, market_type: spot, symbol: SOLUSDT, base_asset: SOL, quote_asset: USDT,
+     liquidity_tier: large, expected_status: ACTIVE,
+     rationale: "Large cap that still makes violent moves; useful contrast to BTC."}
+  - {exchange: binance, market_type: spot, symbol: DOGEUSDT, base_asset: DOGE, quote_asset: USDT,
+     liquidity_tier: large, expected_status: ACTIVE,
+     rationale: "Meme with a long history and documented attention-driven pumps."}
+  - {exchange: binance, market_type: spot, symbol: PEPEUSDT, base_asset: PEPE, quote_asset: USDT,
+     liquidity_tier: mid, expected_status: ACTIVE,
+     rationale: "Recent listing; tests short-history handling and the listing-date approximation path."}
+  - {exchange: binance, market_type: spot, symbol: FLOKIUSDT, base_asset: FLOKI, quote_asset: USDT,
+     liquidity_tier: mid, expected_status: ACTIVE,
+     rationale: "Mid-cap meme, the target liquidity band of the project."}
+  - {exchange: binance, market_type: spot, symbol: GALAUSDT, base_asset: GALA, quote_asset: USDT,
+     liquidity_tier: mid, expected_status: ACTIVE,
+     rationale: "Gaming sector, for sector-rotation contrast."}
+
+  # --- small caps: where minute gaps are normal and must not be mistaken for defects ---
+  - {exchange: binance, market_type: spot, symbol: CVCUSDT, base_asset: CVC, quote_asset: USDT,
+     liquidity_tier: small, expected_status: ACTIVE,
+     rationale: "Thin book. Exercises the no-trade vs collection-gap distinction."}
+  - {exchange: binance, market_type: spot, symbol: AGLDUSDT, base_asset: AGLD, quote_asset: USDT,
+     liquidity_tier: small, expected_status: ACTIVE,
+     rationale: "Second thin symbol so gap statistics are not driven by one pair."}
+
+  # --- survivorship path: symbols expected to be gone from live metadata ---
+  - {exchange: binance, market_type: spot, symbol: SRMUSDT, base_asset: SRM, quote_asset: USDT,
+     liquidity_tier: small, expected_status: DELISTED_UNVERIFIED,
+     rationale: "Delisting candidate. Must resolve from the archive while absent from live exchangeInfo."}
+  - {exchange: binance, market_type: spot, symbol: ANCUSDT, base_asset: ANC, quote_asset: USDT,
+     liquidity_tier: small, expected_status: DELISTED_UNVERIFIED,
+     rationale: "Second delisting candidate; without these the survivorship path is never tested."}
+  - {exchange: binance, market_type: spot, symbol: MIRUSDT, base_asset: MIR, quote_asset: USDT,
+     liquidity_tier: small, expected_status: DELISTED_UNVERIFIED,
+     rationale: "Third delisting candidate, different era of removal."}
+
+  # --- perpetuals: different market type, different metadata fields ---
+  - {exchange: binance, market_type: linear_perpetual, symbol: BTCUSDT, base_asset: BTC, quote_asset: USDT,
+     liquidity_tier: mega, expected_status: ACTIVE,
+     rationale: "Perp control; futures metadata carries onboardDate, spot does not."}
+  - {exchange: binance, market_type: linear_perpetual, symbol: PEPEUSDT, base_asset: PEPE, quote_asset: USDT,
+     liquidity_tier: mid, expected_status: ACTIVE,
+     rationale: "Same token on two market types; tests token-level vs pair-level identity."}
+  - {exchange: binance, market_type: linear_perpetual, symbol: GALAUSDT, base_asset: GALA, quote_asset: USDT,
+     liquidity_tier: mid, expected_status: ACTIVE,
+     rationale: "Mid-cap perp for derivative-side coverage checks."}
+
+  # --- second venue ---
+  - {exchange: bybit, market_type: spot, symbol: BTCUSDT, base_asset: BTC, quote_asset: USDT,
+     liquidity_tier: mega, expected_status: ACTIVE,
+     rationale: "Cross-venue control; the same minute must agree across venues within tolerance."}
+  - {exchange: bybit, market_type: linear_perpetual, symbol: SOLUSDT, base_asset: SOL, quote_asset: USDT,
+     liquidity_tier: large, expected_status: ACTIVE,
+     rationale: "Bybit perp; also the subject of the 1-minute depth probe."}

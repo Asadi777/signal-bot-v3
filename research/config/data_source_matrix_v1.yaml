@@ -1,0 +1,436 @@
+schema_version: data_source_matrix.v1
+title: "Crypto Pre-Pump Project — Data Source Matrix v1 (partially populated)"
+generated_note: >-
+  Every row is UNKNOWN. No source may be promoted above UNKNOWN until the seven evidence items are
+  actually collected, and none could be collected in the environment this file was written in: the
+  session's egress policy refused CONNECT to data.binance.vision, api.binance.com and api.bybit.com,
+  so no live documentation check, sample, depth check or rate-limit test was possible. The
+  descriptive columns below therefore record what each row is *expected* to show and exactly how to
+  verify it; they are not findings. Filling this in is the first task of the network-enabled run.
+
+rows:
+  # ---------------------------------------------------------------- OHLCV ----
+  - domain: OHLCV
+    provider: Binance
+    product: Public data archive
+    endpoint: "data.binance.vision /data/{spot|futures/um}/monthly/klines/{SYMBOL}/1m/*.zip"
+    exchanges_chains: Binance spot and USDⓈ-M futures
+    symbol_coverage: "Expected to include symbols no longer trading, which is the whole reason this row exists"
+    historical_start: "UNVERIFIED — expected to vary per symbol and market"
+    granularity: "1m and coarser"
+    raw_backfill: "Yes — whole-month zipped CSV per symbol"
+    event_time_quality: "Candle open/close from the exchange; unit has varied across dumps, so it is detected per file"
+    available_at_reliability: "Derived from candle close, not measured. Archive publication lag is a property of our access path, not of when the market knew the value"
+    ingested_at_capturable: "Yes, recorded by the pipeline"
+    revisions_backfills: "UNVERIFIED — published SHA256 makes a silent revision detectable"
+    rate_limits: "UNVERIFIED — static file host, expected to be far more permissive than the REST API"
+    monthly_cost: "0"
+    bulk_backfill_cost: "0 plus bandwidth"
+    licensing_redistribution: "UNVERIFIED — internal research use expected to be fine, redistribution is not assumed"
+    pit_suitability: "Expected good for closed candles; unusable for intra-candle availability questions"
+    known_gaps:
+      - "No candle is emitted for a minute with no trades; absence is not loss"
+      - "Delisting and listing dates are not stated by the archive, only implied by file coverage"
+    status: UNKNOWN
+    verification_plan:
+      - "Fetch one monthly file for a liquid symbol; confirm the published CHECKSUM matches"
+      - "Confirm the CSV column layout and whether a header row is present, on files from at least three different years"
+      - "Confirm the epoch unit of the time columns per market and per era"
+      - "Walk the S3-style listing to establish per-symbol coverage start and end"
+      - "Fetch one symbol believed delisted and confirm the archive still serves it"
+      - "Read the terms of use and record redistribution rights verbatim"
+    notes: "Chosen as the primary backfill path over the REST endpoint; see docs/decisions/0001."
+
+  - domain: OHLCV
+    provider: Binance
+    product: REST klines
+    endpoint: "GET /api/v3/klines, GET /fapi/v1/klines"
+    exchanges_chains: Binance spot and USDⓈ-M futures
+    symbol_coverage: "Live symbols only; delisted symbols expected to be absent"
+    historical_start: "UNVERIFIED"
+    granularity: "1m and coarser, 1000 candles per request"
+    raw_backfill: "Possible but weight-limited; used for the current month and cross-checks only"
+    event_time_quality: "Same candle semantics as the archive"
+    available_at_reliability: "Derived from close; a measured available_at needs a live websocket collector, which is out of Phase 0A scope"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "UNVERIFIED"
+    rate_limits: "Weight-based per IP, reported in X-MBX-USED-WEIGHT-1M; exact weights UNVERIFIED"
+    monthly_cost: "0"
+    bulk_backfill_cost: "0, but paid in time and ban risk"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Same as the archive for closed candles"
+    known_gaps:
+      - "Delisted symbols expected to be unreachable, which is why the archive leads"
+    status: UNKNOWN
+    verification_plan:
+      - "Measure the actual weight cost of a 1000-candle request from the response headers"
+      - "Compare one overlapping day against the archive and quantify any disagreement"
+      - "Confirm behaviour for a delisted symbol (expected: an error, handled cleanly)"
+
+  - domain: OHLCV
+    provider: Bybit
+    product: v5 market kline
+    endpoint: "GET /v5/market/kline?category=spot|linear&interval=1"
+    exchanges_chains: Bybit spot, linear and inverse
+    symbol_coverage: "Live symbols"
+    historical_start: "UNVERIFIED and suspected shallow for 1-minute data — this is the open question for Bybit"
+    granularity: "1m and coarser, newest-first, 1000 per page"
+    raw_backfill: "Depends entirely on the depth probe"
+    event_time_quality: "Candle start only; close time is derived by us"
+    available_at_reliability: "Derived from close"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "UNVERIFIED"
+    rate_limits: "Per-IP limits, exact values UNVERIFIED"
+    monthly_cost: "0"
+    bulk_backfill_cost: "0"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Conditional on depth"
+    known_gaps:
+      - "No trade count and no taker-side split; those columns stay null rather than being invented"
+    status: UNKNOWN
+    verification_plan:
+      - "Run `prepump probe-bybit-depth` and record the measured 1-minute depth as evidence"
+      - "If depth is insufficient, evaluate the public trade-level archive and the cost of aggregating candles from it"
+      - "Cross-check one overlapping day against Binance for the same token"
+
+  # --------------------------------------------------- Listing metadata ----
+  - domain: Listing / Delisting Metadata
+    provider: Binance
+    product: exchangeInfo
+    endpoint: "GET /api/v3/exchangeInfo, GET /fapi/v1/exchangeInfo"
+    exchanges_chains: Binance spot and futures
+    symbol_coverage: "Currently listed symbols only"
+    historical_start: "Not applicable; this is a live snapshot"
+    granularity: "Snapshot per collection"
+    raw_backfill: "No. History exists only as the series of snapshots we start taking now"
+    event_time_quality: "n/a"
+    available_at_reliability: "Snapshot collection time"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "Symbols appear and disappear without notice"
+    rate_limits: "Weight-based; one call per collection"
+    monthly_cost: "0"
+    bulk_backfill_cost: "n/a"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Weak. Membership-as-of-time can only be approximated from snapshot series plus archive coverage"
+    known_gaps:
+      - "Spot exchangeInfo exposes no listing date at all; futures exposes onboardDate"
+      - "Delisted symbols vanish, taking their delisting date with them"
+    status: UNKNOWN
+    verification_plan:
+      - "Collect one snapshot of each endpoint and confirm which fields actually arrive"
+      - "Decide and document the approximation rule for spot listing dates (first archive candle)"
+      - "Start the daily snapshot cadence immediately; every day not collected is history we cannot recover"
+
+  - domain: Listing / Delisting Metadata
+    provider: Bybit
+    product: v5 instruments-info
+    endpoint: "GET /v5/market/instruments-info?category=spot|linear"
+    exchanges_chains: Bybit
+    symbol_coverage: "Currently listed instruments"
+    historical_start: "n/a"
+    granularity: "Snapshot"
+    raw_backfill: "No"
+    event_time_quality: "n/a"
+    available_at_reliability: "Snapshot collection time"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "UNVERIFIED"
+    rate_limits: "UNVERIFIED"
+    monthly_cost: "0"
+    bulk_backfill_cost: "n/a"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Better than Binance spot if launchTime is populated"
+    known_gaps:
+      - "launchTime presence and reliability unverified"
+    status: UNKNOWN
+    verification_plan:
+      - "Collect one snapshot per category and measure how many rows carry a usable launchTime"
+
+  # ------------------------------------------------------------- Trades ----
+  - domain: Trades
+    provider: Binance
+    product: Public data archive (aggTrades / trades)
+    endpoint: "data.binance.vision /data/spot/monthly/aggTrades/..."
+    exchanges_chains: Binance
+    symbol_coverage: "Expected to match the kline archive"
+    historical_start: "UNVERIFIED"
+    granularity: "Individual trades"
+    raw_backfill: "Yes, at one to two orders of magnitude more volume than klines"
+    event_time_quality: "Per-trade timestamps"
+    available_at_reliability: "Derived from trade time"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "UNVERIFIED"
+    rate_limits: "Static file host"
+    monthly_cost: "0"
+    bulk_backfill_cost: "0 in money, large in storage — multi-TB at full universe scale"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Expected good"
+    known_gaps:
+      - "Not fetched in Phase 0A; storage cost must be planned before Stage C"
+    status: UNKNOWN
+    verification_plan:
+      - "Measure the compressed size of one month for one liquid symbol and extrapolate before committing"
+
+  # ------------------------------------------------------ Derivatives ------
+  - domain: Derivatives / OI
+    provider: Binance
+    product: Futures open interest
+    endpoint: "GET /futures/data/openInterestHist"
+    exchanges_chains: Binance USDⓈ-M
+    symbol_coverage: "Perpetual contracts"
+    historical_start: "Believed to be a short rolling window — the single most important thing to verify in this domain"
+    granularity: "5m and coarser"
+    raw_backfill: "Limited by the retention window"
+    event_time_quality: "Sampled series, not events"
+    available_at_reliability: "UNVERIFIED"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "UNVERIFIED"
+    rate_limits: "Weight-based"
+    monthly_cost: "0"
+    bulk_backfill_cost: "May require a paid vendor if retention is as short as expected"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "UNVERIFIED"
+    known_gaps:
+      - "If retention is short, Stage B history cannot be reconstructed from the free API and must be collected forward from today"
+    status: UNKNOWN
+    verification_plan:
+      - "Measure the oldest retrievable timestamp; if it is short, start collecting forward immediately and price the paid alternatives"
+
+  - domain: Funding / Basis
+    provider: Binance
+    product: Funding rate history
+    endpoint: "GET /fapi/v1/fundingRate"
+    exchanges_chains: Binance USDⓈ-M
+    symbol_coverage: "Perpetuals"
+    historical_start: "UNVERIFIED, expected long"
+    granularity: "Per funding interval"
+    raw_backfill: "Expected yes"
+    event_time_quality: "Funding timestamps"
+    available_at_reliability: "UNVERIFIED"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "UNVERIFIED"
+    rate_limits: "Weight-based"
+    monthly_cost: "0"
+    bulk_backfill_cost: "0"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "UNVERIFIED"
+    known_gaps: []
+    status: UNKNOWN
+    verification_plan:
+      - "Confirm depth and pagination for one perpetual"
+
+  - domain: Liquidations
+    provider: Binance
+    product: Force order stream
+    endpoint: "websocket forceOrder / no documented historical REST endpoint"
+    exchanges_chains: Binance USDⓈ-M
+    symbol_coverage: "Perpetuals"
+    historical_start: "Expected none — likely forward-collection only"
+    granularity: "Per event"
+    raw_backfill: "Expected not possible from the exchange"
+    event_time_quality: "Event timestamps"
+    available_at_reliability: "Live only"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "n/a"
+    rate_limits: "n/a"
+    monthly_cost: "0 live"
+    bulk_backfill_cost: "Vendor-dependent"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Good live, absent historically"
+    known_gaps:
+      - "A domain that cannot be backfilled cannot contribute to a historical Stage B test; this must be stated before anyone builds features on it"
+    status: UNKNOWN
+    verification_plan:
+      - "Confirm no historical endpoint exists, then decide between forward collection and a paid vendor"
+
+  - domain: Order Book / L2
+    provider: Binance
+    product: Depth snapshots / diff stream
+    endpoint: "websocket depth, REST depth snapshot"
+    exchanges_chains: Binance
+    symbol_coverage: "All"
+    historical_start: "None from the exchange"
+    granularity: "Snapshot / diff"
+    raw_backfill: "No"
+    event_time_quality: "Update ids and timestamps"
+    available_at_reliability: "Live only"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "n/a"
+    rate_limits: "Heavy"
+    monthly_cost: "0 live, storage dominates"
+    bulk_backfill_cost: "Paid vendors only"
+    licensing_redistribution: "UNVERIFIED"
+    pit_suitability: "Live good, historical absent"
+    known_gaps:
+      - "Stage C is forward-collection or paid; this is a schedule fact, not a detail"
+    status: UNKNOWN
+    verification_plan:
+      - "Price at least two vendors for historical L2 before Stage C is scheduled"
+
+  - domain: Trade Flow / Microstructure
+    provider: Binance
+    product: Kline taker-side columns
+    endpoint: "Included in every kline row"
+    exchanges_chains: Binance
+    symbol_coverage: "Same as klines"
+    historical_start: "Same as klines"
+    granularity: "1m"
+    raw_backfill: "Already collected, free, in the same payload"
+    event_time_quality: "Same as the candle"
+    available_at_reliability: "Same as the candle"
+    ingested_at_capturable: "Yes"
+    revisions_backfills: "Same as klines"
+    rate_limits: "None additional"
+    monthly_cost: "0"
+    bulk_backfill_cost: "0"
+    licensing_redistribution: "Same as klines"
+    pit_suitability: "Same as klines"
+    known_gaps:
+      - "Whether trade_count and the taker split belong to Stage A or Stage C is an open decision; they are stored and flagged, not used"
+    status: UNKNOWN
+    verification_plan:
+      - "Get a decision on the Stage A column policy (docs/decisions/0002) before Stage A features are built"
+
+  # ------------------------------------------------- On-chain and social ----
+  - domain: On-chain / Wallet
+    provider: TBD
+    product: TBD
+    endpoint: ""
+    exchanges_chains: "Multi-chain"
+    symbol_coverage: ""
+    historical_start: ""
+    granularity: ""
+    raw_backfill: ""
+    event_time_quality: "Block time is not availability time; confirmation depth matters"
+    available_at_reliability: ""
+    ingested_at_capturable: ""
+    revisions_backfills: "Reorgs are real revisions and must be modelled"
+    rate_limits: ""
+    monthly_cost: ""
+    bulk_backfill_cost: ""
+    licensing_redistribution: ""
+    pit_suitability: "This is where the bitemporal model actually earns its keep"
+    known_gaps:
+      - "Not investigated in Phase 0A by design"
+    status: UNKNOWN
+    verification_plan:
+      - "Deferred to Stage D. Do not collect anything here until the OHLCV path is verified"
+
+  - domain: Exchange Flows
+    provider: TBD
+    product: TBD
+    endpoint: ""
+    exchanges_chains: ""
+    symbol_coverage: ""
+    historical_start: ""
+    granularity: ""
+    raw_backfill: ""
+    event_time_quality: ""
+    available_at_reliability: "Label publication lag is the whole problem: exchange wallet labels are assigned after the fact"
+    ingested_at_capturable: ""
+    revisions_backfills: "Labels are revised retroactively, which is a leakage risk"
+    rate_limits: ""
+    monthly_cost: ""
+    bulk_backfill_cost: ""
+    licensing_redistribution: ""
+    pit_suitability: "Suspect until label revision history is available"
+    known_gaps:
+      - "A vendor that cannot tell us when a label was assigned cannot be used point-in-time"
+    status: UNKNOWN
+    verification_plan:
+      - "For any candidate vendor, ask specifically whether label assignment history is retrievable. If not, the domain is not PIT-usable"
+
+  - domain: Whale / Smart Money
+    provider: TBD
+    product: TBD
+    endpoint: ""
+    exchanges_chains: ""
+    symbol_coverage: ""
+    historical_start: ""
+    granularity: ""
+    raw_backfill: ""
+    event_time_quality: ""
+    available_at_reliability: ""
+    ingested_at_capturable: ""
+    revisions_backfills: ""
+    rate_limits: ""
+    monthly_cost: ""
+    bulk_backfill_cost: ""
+    licensing_redistribution: ""
+    pit_suitability: ""
+    known_gaps:
+      - "Not investigated in Phase 0A"
+    status: UNKNOWN
+    verification_plan:
+      - "Deferred to Stage D, after Exchange Flows label semantics are settled"
+
+  - domain: Social Attention
+    provider: TBD
+    product: TBD
+    endpoint: ""
+    exchanges_chains: ""
+    symbol_coverage: ""
+    historical_start: "Historical social data is usually the hardest and most expensive to obtain point-in-time"
+    granularity: ""
+    raw_backfill: ""
+    event_time_quality: "Post time is not indexing time"
+    available_at_reliability: ""
+    ingested_at_capturable: ""
+    revisions_backfills: "Deleted posts and retroactive bot filtering both change history"
+    rate_limits: ""
+    monthly_cost: ""
+    bulk_backfill_cost: ""
+    licensing_redistribution: "Scraping raises terms-of-service exposure that market data does not"
+    pit_suitability: ""
+    known_gaps:
+      - "Not investigated in Phase 0A"
+    status: UNKNOWN
+    verification_plan:
+      - "Deferred to Stage E. Legal review before any collection, not after"
+
+  - domain: News / Catalysts
+    provider: TBD
+    product: TBD
+    endpoint: ""
+    exchanges_chains: ""
+    symbol_coverage: ""
+    historical_start: ""
+    granularity: ""
+    raw_backfill: ""
+    event_time_quality: "Publication time versus our observation time differ materially here"
+    available_at_reliability: ""
+    ingested_at_capturable: ""
+    revisions_backfills: "Articles are edited and re-timestamped"
+    rate_limits: ""
+    monthly_cost: ""
+    bulk_backfill_cost: ""
+    licensing_redistribution: ""
+    pit_suitability: ""
+    known_gaps:
+      - "Not investigated in Phase 0A"
+    status: UNKNOWN
+    verification_plan:
+      - "Deferred to Stage E"
+
+  - domain: Fundamental / Tokenomics
+    provider: TBD
+    product: TBD
+    endpoint: ""
+    exchanges_chains: ""
+    symbol_coverage: ""
+    historical_start: ""
+    granularity: ""
+    raw_backfill: ""
+    event_time_quality: "Unlock schedules are known in advance, which makes them unusually clean point-in-time features"
+    available_at_reliability: ""
+    ingested_at_capturable: ""
+    revisions_backfills: "Supply figures are silently restated by aggregators"
+    rate_limits: ""
+    monthly_cost: ""
+    bulk_backfill_cost: ""
+    licensing_redistribution: ""
+    pit_suitability: ""
+    known_gaps:
+      - "Not investigated in Phase 0A"
+    status: UNKNOWN
+    verification_plan:
+      - "Deferred to Stage E"

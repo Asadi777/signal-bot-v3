@@ -1,0 +1,10 @@
+{
+  "collector_version": "0.1.0",
+  "content_sha256": "1d88a851acc33add322acf32f0ecb4903b41d377de8b08b6df106463b11f6afe",
+  "rows": 1430,
+  "run_id": "20260830T113404Z-5641aa7a",
+  "schema_version": "ohlcv_1m.v1",
+  "source": "binance_vision_monthly_klines",
+  "source_revision": "sha256:a70ccf53a56bd1133bab86525dcadb24a0b1b4b9731bae0a5724e49277e46210",
+  "written_at": "2026-08-30T11:34:08.135+00:00"
+}

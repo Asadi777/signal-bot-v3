@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prepump-research"
+version = "0.1.0"
+description = "Phase 0A research bootstrap: PIT-correct crypto market data collection"
+requires-python = ">=3.11"
+dependencies = [
+    "pyarrow>=15,<26",
+    "pydantic>=2.6,<3",
+    "pydantic-settings>=2.2,<3",
+    "typer>=0.12,<0.20",
+    "PyYAML>=6,<7",
+    "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+prepump = "prepump.cli.__main__:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: requires live network access to an exchange host (deselected by default)",
+]
+addopts = "-m 'not integration' -q"
